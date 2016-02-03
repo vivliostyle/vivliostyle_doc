@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8"/>
+  <title>“Vivliostyle” CSS組版システム</title>
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    @page {
+      @top-left {
+        content: "Page "counter(page) "　WebブラウザベースCSS組版システム";
+      }
+    }
+  </style>
+
+</head>
+
+<body class="contents">
+
+
+
+  <h1>Webブラウザベース
+    <br/>CSS組版システム</h1>
+
+  <section>
+    <h1>CSS組版とは</h1>
+    <ul>
+      <li>Web ページも電子書籍（EPUB）も、HTML＋CSS で出来ている。</li>
+      <li>紙の本だって、HTML＋CSS で組版して作ることが出来る。<br/>
+        （HTML+CSS ➡ PDF ➡ 印刷・製本）</li>
+      <li>Vivliostyle 以前にも本を作れるCSS組版エンジンはあった。</li>
+      <li>CSS組版で本を作っている世界の有名出版社の例
+        <ul>
+          <li>米オライリー社（組版エンジンは “AH Formatter”）</li>
+          <li>米アシェット社（組版エンジンは “Prince”）</li>
+        </ul>
+      </li>
+      <li>Vivliostyle の新しいところは、<em class="kenten">標準Webブラウザベース</em>で<em class="kenten">本格的な組版</em>を可能にすること</li>
+    </ul>
+  </section>
+
+  <section>
+    <h1>Vivliostyle の技術</h1>
+    <ul>
+      <li>次世代CSS組版
+        <ul>
+          <li>Webブラウザ上で高度な組版機能をサポートする JavaScript ライブラリ <strong>Vivliostyle.js</strong></li>
+          <li>次世代のCSS組版仕様の標準を、世界に先駆けて実装</li>
+        </ul>
+      </li>
+      <li>
+        <a href="http://www.w3.org"><img src="img/w3cmember-v.svg" alt="W3C Member" class="rs" style="width: 10em" /></a>Webと電子出版の標準仕様の技術の推進
+        <ul>
+          <li>Web標準技術が、世界の電子出版と組版仕様の基盤に</li>
+          <li>しかしWebブラウザベンダーは、ブラウザで印刷物品質の本格的な組版を実現することには消極的</li>
+          <li>そのギャップを埋めるため、W3C標準仕様策定に参加して標準化と実装を推進している。<br/>VivliostyleメンバーがEditorである仕様の例：<a href="http://www.w3.org/TR/css-page-floats-3/">CSS Page Floats</a>, <a href="https://www.w3.org/TR/mediaqueries-4/">Media Queries 4</a>, <a href="https://drafts.csswg.org/css-multicol-2/">CSS Multi-column 2</a>, <a href="https://drafts.csswg.org/css-overflow/">CSS Overflow 4</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h1>Vivliostyle 組版サンプル紹介</h1>
+    <figure>
+      <img src="img/layout.png" alt="組版例" style="max-height: 22em" />
+      <figcaption><a href="http://bit.ly/viv-gon">組版サンプル１</a> / <a href="http://bit.ly/viv-math">組版サンプル２</a></figcaption>
+    </figure>
+    <ul>
+      <li><a href="http://vivliostyle.com/ja/samples/">Vivliostyle.js サンプル ページ</a></li>
+      <li><a href="https://vivliostyle.github.io/vivliostyle.js/viewer/vivliostyle-viewer.html#x=../samples/scholarly/">What is Scholarly HTML?</a></li>
+      <li>
+        <ul>Project Gutenberg から
+          <li><a href="https://vivliostyle.github.io/vivliostyle.js/viewer/vivliostyle-viewer.html#x=../samples/gutenberg/Alice.html">Alice in Wonderland</a></li>
+          <li><a href="https://vivliostyle.github.io/vivliostyle.js/viewer/vivliostyle-viewer.html#x=../samples/gutenberg/Fang.html">White Fang</a></li>
+          <li><a href="https://vivliostyle.github.io/vivliostyle.js/viewer/vivliostyle-viewer.html#x=../samples/gutenberg/Sherlock.html">The Adventures of Sherlock Holmes</a></li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+
+
+</body>
+
+</html>
