@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8" />
+  <title>スタイルシート仕様 CSS の進化</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="contents">
+
+  <h1>スタイルシート仕様 CSS の進化</h1>
+
+  <section>
+    <h1>CSS＝Web 標準のスタイルシート仕様</h1>
+
+    <p>Web の初期の時代（「ネットスケープ」がブラウザの主流になる1995年ごろ）、本来は文書構造を表す意味がある HTML のタグが濫用され、</p>
+    <ul>
+      <li>見出しでないのに文字の大きさを変えるために見出しタグを使う</li>
+      <li>テーブル（表）ではないのにレイアウトの目的でテーブルタグを使う</li>
+    </ul>
+    <p>などが広まり、</p>
+    <ul>
+      <li>音声読み上げで読むのが難しくアクセシビリティーが欠如、</li>
+      <li>特定のブラウザでうまく表示されても別のブラウザ環境では崩れる</li>
+    </ul>
+    <p>など問題だった。そこで、CSS（Cascading Style Sheets）が提唱される。</p>
+    <ul>
+      <li>CSS（カスケーディング・スタイルシート）の名前の由来は、複数のスタイルの指定を重ね合わせること（カスケーディング）から。</li>
+      <li>各ブラウザ（あるいはリーディング・システム）には、デフォルトのスタイルシートが組み込まれているために、コンテンツの制作者がスタイルシートを指定しなくても、デフォルトのスタイルシートでコンテンツが表示される。たとえば、デフォルトのスタイルシートに次のようにあることで、見出し <code>h1</code> が本文の2倍の文字サイズで表示される:
+<pre>
+h1 { font-size: 2em; }
+</pre>
+      </li>
+      <li>コンテンツの制作者は、スタイルシートを指定して、デフォルトのスタイルを上書きすることができる。例えば、
+<pre>
+h1 {
+    font-size: 50pt;
+    font-family: "ユニークで豊かな書体";
+}
+</pre>
+      </li>
+      <li>ブラウザのデフォルト・スタイルシートと制作者のスタイルシートのほかに、ユーザー（閲覧者）の側でもスタイルシートを指定するしくみがあり、これにより、ユーザーによって読みやすいフォントで読むことなどできる。例えば、
+<pre>
+h1 {
+    font-family: "私の読みやすい書体" !important;
+}
+</pre>
+<p class="note"><code>!important</code> の指定は、制作者の指定よりもこちらを優先させるため。</p>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h1>CSS 以外の「スタイルシート」について</h1>
+    <ul>
+      <li>文書の要素とスタイルを関連付ける「スタイルシート」機能は、CSS 誕生より前からワープロや DTP ソフトに存在して、次のようなことができる：
+        <ul>
+          <li>「見出し1」「見出し2」「見出し3」など定義済みのスタイル名にそれぞれの体裁を設定して文書全体の見出しの体裁など一括で変えられる。
+            <ul>
+              <li>HTML で <code>h1</code>, <code>h2</code>, <code>h3</code> などのタグを使い、CSS でそれらの体裁を指定することに相当する。</li>
+            </ul>
+          </li>
+          <li>「段落スタイル」や「文字スタイル」を名前を付けて定義して、文書中のその特別なスタイルにしたいところに適用する。
+            <ul>
+              <li>HTML のブロック要素やインライン要素に <code>class</code> 属性でクラス名を与え、CSS でその体裁を指定することに相当する。</li>
+            </ul>
+          </li>
+        </ul>
+        <p class="note">ワープロや DTP ソフトでこの「スタイルシート」機能を活用することは、HTML・CSS への変換・移行をしやすくするために有用である。</p>
+      </li>
+      <li>W3C で標準化されたスタイルシート仕様には、CSS のほかに、XML 用のスタイルシート言語として XSL (Extensible Stylesheet Language) がある。
+        <p>XSL 仕様は、XML 文書の構造を変換する <a href="https://www.w3.org/TR/xslt-30/">XSLT (XSL Transformations)</a> と、組版を行うための <a href="https://www.w3.org/TR/xsl/">XSL-FO (XSL Formatting Objects)</a> とに分かれる。</p>
+        <p>このしくみを使う XML 組版の処理は次のようになる：</p>
+        <ul>
+          <li>XML 文書 + XSLT(変換) ⇒ (XSL-FO 組版) ⇒ PDF・印刷</li>
+        </ul>
+        <p>また、XSLT は、XML 文書を別形式（別の XML 形式や、HTML）に変換するためのツールとして有用である：</p>
+        <ul>
+          <li>XML 文書 + XSLT(変換) ⇒ HTML（+CSS で各出力媒体へ）</li>
+        </ul>
+        <p class="note">W3C は、XSL-FO 仕様の標準化作業はすでに終了していて、W3C でのスタイルシートについての標準化は CSS に集中している。</p>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h1>進化する CSS 仕様。「CSS 3」とは</h1>
+
+    <p>現在最新の HTML 仕様が HTML5 と呼ばれているように、最新の CSS 仕様は「CSS 3」と呼ばれることが多い。しかし、HTML の「5」はバージョン番号であるのに対して、CSS の番号は、基本的な機能か、より高度な機能かを表す「レベル(Level)」である。</p>
+    <p>CSS レベル2（1998年に W3C 勧告、2011年にその改訂版の <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/">CSS 2.1</a>）まではひとつの仕様書にまとまっているが、より高度な機能や新しい機能はモジュールごとに仕様書が作られて、それぞれ独立にレベル番号が付与される。「CSS3」という用語は、それら新しい CSS 仕様を大雑把に指して使われるバズワードであり、実際の CSS モジュールに付与されているレベルは「レベル4」のもの（例: <a href="https://drafts.csswg.org/selectors-4/">Selectors Level 4</a>）もあれば「レベル1」のもの（例: <a href="https://drafts.csswg.org/css-ruby-1/">CSS Ruby Level 1</a>）もあり、その仕様の完成度はまちまちである。現時点で完成している CSS 仕様は「<a href="https://drafts.csswg.org/css-2015/">CSS Snapshot 2015</a>」という文書にまとめられている。</p>
+  </section>
+
+  <section>
+		<h1>日本語組版関連 CSS 標準化</h1>
+
+		<ul>
+			<li>「<a href="http://www.w3.org/TR/jlreq/ja/">W3C 技術ノート　日本語組版処理の要件 (JLReq)</a>」
+        <ul>
+          <li>W3C 標準仕様に日本語組版に必要な要件を反映させるために、W3C と日本語組版の専門家からなる合同チーム「W3C 日本語組版タスクフォース」によってまとめられた文書（略称「JLReq」）。英語版と日本語版が同時に作られている。</li>
+          <li>JLReq 第1版が2009年、第2版が2012年に公開された。</li>
+          <li>この文書は W3C 標準仕様（とくに CSS 仕様）に日本語組版処理に関係する機能を反映させるために参照されているほか、ブラウザ開発者をはじめ世界の開発者たちが日本語組版処理を実装するのに役立っている。</li>
+          <li>電子出版の標準として、縦書きはじめ日本語組版に必要な機能が入った EPUB 3.0 の仕様が作られたときの要件としても JLReq が使われた。</li>
+          <li>W3C では JLReq に続き、世界中の言語の組版要件をまとめつつあり、すでに <a href="https://www.w3.org/TR/dpub-latinreq/">欧文</a>、<a href="https://www.w3.org/TR/klreq/">韓国語</a>、<a href="https://www.w3.org/TR/clreq/">中国語</a>、<a href="https://www.w3.org/TR/ilreq/">インド系言語</a>、<a href="http://w3c.github.io/tlreq/">チベット語</a>、<a href="http://w3c.github.io/alreq/">アラビア語</a>、<a href="http://w3c.github.io/elreq/">エチオピア語</a>の各言語の組版要件のドラフト文書がある。</li>
+        </ul>
+      </li>
+			<li>日本語や東アジア言語の組版にとくに関係する CSS 仕様
+				<ul>
+					<li><a href="https://drafts.csswg.org/css-writing-modes/">CSS Writing Modes</a>：縦書き</li>
+					<li><a href="https://drafts.csswg.org/css-text/">CSS Text</a>：禁則処理など</li>
+					<li><a href="https://drafts.csswg.org/css-text-decor/">CSS Text Decoration</a>：圏点、傍線など</li>
+					<li><a href="https://drafts.csswg.org/css-ruby/">CSS Ruby</a>：ルビの体裁</li>
+				</ul>
+			</li>
+			<li><a href="http://tategaki.github.io/">「次世代 Web ブラウザのテキストレイアウトに関する検討会」</a>
+				<ul>
+          <li>日本からの標準化支援活動として、電子書籍端末メーカー、印刷事業社、通信事業者などの民間企業等により構成され、総務省が支援。</li>
+					<li>CSS 縦書き関連仕様と実装の課題整理、実装とテスト作成支援、CSS 縦書きを利用した Web コンテンツの普及促進などの活動。</li>
+				</ul>
+			</li>
+		</ul>
+	</section>
+</body>
+
+</html>
