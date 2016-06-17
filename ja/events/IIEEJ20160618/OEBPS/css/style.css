@@ -1,9 +1,7 @@
 @charset "UTF-8";
 html {
   /* writing mode */
-  -webkit-writing-mode: horizontal-tb;
-      -ms-writing-mode: lr-tb;
-          writing-mode: horizontal-tb; }
+  writing-mode: horizontal-tb; }
 
 /* reset */
 * {
@@ -268,6 +266,8 @@ small {
   border-bottom: 1px dotted #cccccc; }
   .toc ol li a {
     text-decoration: none; }
+    .toc ol li a::after {
+      content: "　" target-counter(attr(href, url), page); }
 
 .toc ol li:first-child {
   border-top: 1px dotted #cccccc; }
@@ -300,22 +300,17 @@ small {
 
 /* もとの指定 */
 em.kenten {
-  -webkit-text-emphasis: filled;
-          text-emphasis: filled;
+  text-emphasis: filled;
   font-style: normal; }
 
 .vert {
-  -webkit-writing-mode: vertical-rl;
-      -ms-writing-mode: tb-rl;
-          writing-mode: vertical-rl; }
+  writing-mode: vertical-rl; }
   .vert h2 {
     margin-top: 0;
     margin-left: 1em; }
 
 .horiz {
-  -webkit-writing-mode: horizontal-tb;
-      -ms-writing-mode: lr-tb;
-          writing-mode: horizontal-tb; }
+  writing-mode: horizontal-tb; }
 
 .float {
   float: right; }
@@ -328,9 +323,7 @@ figure > img, figure > a > img {
   max-height: 22em; }
 
 .multicol {
-  -webkit-column-width: 12em;
-     -moz-column-width: 12em;
-          column-width: 12em; }
+  column-width: 12em; }
 
 section.vert {
   width: 100%; }
