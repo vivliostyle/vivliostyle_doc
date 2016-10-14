@@ -1,0 +1,229 @@
+/* COLOR INDEX */
+/*hsl(20, 40%, 90%);*/
+/* AH has trouble with real transparent */
+/* Fonts */
+/* Sizes */
+/* Original sizes
+$page_w: 8in;
+$page_h: 9.75in;
+$margin_top: .7in;
+$margin_bottom: 1in;
+$margin_outside: .5in;
+$margin_inside: .9in;
+$sidebar_gutter: .3in;
+$sidebar_width: 1.6in;
+*/
+/* Helper functions */
+/* Functions to create data URI SVGs */
+@import url("free_fonts.css");
+@import url("pdf.css");
+/* Set correct page trim size */
+@page {
+  bleed: 0; }
+@page {
+  size: a5 landscape; }
+:root {
+  font-size: 158.33333%; }
+
+[data-type="colophon"] .replace {
+  display: none; }
+
+/* Cover page */
+@-epubx-page-template {
+  body > section[data-type="titlepage"]#jp-cover {
+    -epubx-flow-into: cover-flow; } }
+/* reset pdf.css styles */
+section[data-type="titlepage"]#jp-cover {
+  display: block;
+  height: auto;
+  width: auto;
+  max-width: none;
+  background: #EEE;
+  padding: 3rem 2rem 1rem; }
+  section[data-type="titlepage"]#jp-cover * {
+    display: block;
+    text-indent: 0;
+    margin: 0;
+    padding: 0; }
+  section[data-type="titlepage"]#jp-cover em, section[data-type="titlepage"]#jp-cover strong, section[data-type="titlepage"]#jp-cover code, section[data-type="titlepage"]#jp-cover span, section[data-type="titlepage"]#jp-cover a, section[data-type="titlepage"]#jp-cover sup, section[data-type="titlepage"]#jp-cover sub, section[data-type="titlepage"]#jp-cover wbr, section[data-type="titlepage"]#jp-cover br {
+    display: inline; }
+  section[data-type="titlepage"]#jp-cover .dup {
+    display: none; }
+  section[data-type="titlepage"]#jp-cover::before, section[data-type="titlepage"]#jp-cover::after {
+    display: none;
+    content: none; }
+  section[data-type="titlepage"]#jp-cover header {
+    float: left;
+    max-width: 18.5rem;
+    margin-right: 0.5rem; }
+    section[data-type="titlepage"]#jp-cover header h1 {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #C00065;
+      line-height: 1.1;
+      text-align: left;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.125em;
+      padding: 0.3rem;
+      border: 2px solid;
+      background: white; }
+      section[data-type="titlepage"]#jp-cover header h1 .alphanum {
+        letter-spacing: normal; }
+    section[data-type="titlepage"]#jp-cover header [data-type="subtitle"] {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #655;
+      line-height: 1.2;
+      text-align: left;
+      padding: 0.25rem;
+      border: 2px dotted;
+      background: white; }
+      section[data-type="titlepage"]#jp-cover header [data-type="subtitle"] .alphanum.alphanum.alphanum {
+        margin: 0; }
+  section[data-type="titlepage"]#jp-cover img.the_book_cover {
+    display: block;
+    width: 7.5rem;
+    padding: 0.2rem;
+    border: 2px dotted gray;
+    background: white; }
+  section[data-type="titlepage"]#jp-cover .date {
+    font-size: 0.8rem;
+    font-family: Rokkitt, "Source Han Sans", serif;
+    font-weight: bold;
+    color: #C00065;
+    margin-top: 2.5rem;
+    margin-bottom: 0.5rem;
+    margin-left: 14rem; }
+    section[data-type="titlepage"]#jp-cover .date .revision {
+      font-size: 70%; }
+  section[data-type="titlepage"]#jp-cover .company_logo {
+    float: left;
+    width: 12rem; }
+  section[data-type="titlepage"]#jp-cover .author {
+    font-size: 1rem;
+    font-family: Rokkitt, "Source Han Sans", serif;
+    font-weight: bold;
+    color: #C00065;
+    line-height: 1.2;
+    margin-left: 14rem;
+    margin-right: -0.25rem; }
+    section[data-type="titlepage"]#jp-cover .author .surname {
+      font-variant: small-caps; }
+    section[data-type="titlepage"]#jp-cover .author .alphanum.alphanum.alphanum {
+      margin: 0; }
+  section[data-type="titlepage"]#jp-cover .company {
+    font-size: 1rem;
+    font-family: Rokkitt, "Source Han Sans", serif;
+    font-weight: normal;
+    color: #655;
+    line-height: 1.2;
+    margin-left: 14rem;
+    letter-spacing: 0.085em; }
+
+/* Dedication */
+section[data-type="dedication"]:not(.praise) {
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 100%; }
+  section[data-type="dedication"]:not(.praise) p:lang(ja) {
+    font-size: 1rem;
+    line-height: 1.3;
+    margin: 0.5rem auto;
+    text-align: center; }
+  section[data-type="dedication"]:not(.praise) img {
+    display: block;
+    margin: 0.5rem auto; }
+
+/* Praise page */
+section[data-type="dedication"].praise h1 {
+  font-size: 1rem; }
+section[data-type="dedication"].praise blockquote {
+  font-size: 0.8rem; }
+
+/* Introduction */
+body > section[data-type="chapter"].introduction.introduction section[data-type="sect1"] > h1 {
+  font-size: 1.5rem;
+  padding: 0;
+  margin: 0 0 0.5rem; }
+body > section[data-type="chapter"].introduction.introduction section[data-type="sect1"]:first-of-type {
+  page-break-before: auto; }
+  body > section[data-type="chapter"].introduction.introduction section[data-type="sect1"]:first-of-type > h1 {
+    page-break-before: auto; }
+body > section[data-type="chapter"].introduction.introduction section[data-type="sect2"] {
+  page-break-before: always;
+  margin-top: 0; }
+  body > section[data-type="chapter"].introduction.introduction section[data-type="sect2"] > h2 {
+    font-size: 1.2rem;
+    margin-top: 0; }
+body > section[data-type="chapter"].introduction.introduction section[data-type="sect2"]:first-of-type {
+  page-break-before: auto;
+  margin-top: 0.5rem; }
+
+/* Figures */
+figure:not(.block) img,
+figure.block img {
+  display: block;
+  width: auto;
+  margin: 0 auto; }
+figure:not(.block) figcaption,
+figure.block figcaption {
+  width: auto;
+  float: none;
+  display: block;
+  margin: 1em 0; }
+  figure:not(.block) figcaption:first-child,
+  figure.block figcaption:first-child {
+    page-break-after: avoid; }
+  figure:not(.block) figcaption:last-child,
+  figure.block figcaption:last-child {
+    page-break-before: avoid; }
+  figure:not(.block) figcaption:lang(ja)::before,
+  figure.block figcaption:lang(ja)::before {
+    font-size: 1em; }
+
+body > section[data-type="chapter"].introduction:lang(ja) figcaption::before {
+  content: none; }
+
+/* lists */
+body > section[data-type="chapter"] ul,
+body > section[data-type="chapter"] ol {
+  /* bulleted and numbered lists */
+  padding-left: 1rem; }
+
+ul ul li::before {
+  color: #9CBACC; }
+
+ul ul ul li::before {
+  color: #655; }
+
+/* Blockquotes */
+blockquote {
+  page-break-inside: auto; }
+
+/* Chapter */
+body > section[data-type="chapter"] > h1 {
+  margin-right: -1em; }
+
+/* Specs */
+.specs {
+  padding: 0.5rem 0.5rem 0.5rem 0; }
+  .specs h1 {
+    font-size: 1rem;
+    padding: .25em .5em; }
+
+/* Paragraph */
+p {
+  text-indent: 0;
+  margin: 0.5em 0; }
+
+/* Colophon */
+body > section[data-type="colophon"] .last-info {
+  margin-bottom: 3em; }
+  body > section[data-type="colophon"] .last-info > * {
+    text-align: center;
+    margin-left: 0; }
+body > section[data-type="colophon"] section[data-type="sect1"] h1 {
+  margin-top: 0; }
