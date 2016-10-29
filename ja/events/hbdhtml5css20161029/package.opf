@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://www.idpf.org/2007/opf">
+  <manifest>
+    <item id="cover" href="cover.html"/>
+    <item id="toc" href="toc.html"/>
+    <item id="slide001" href="slide001.html"/>
+    <item id="slide002" href="slide002.html"/>
+    <item id="slide003" href="slide003.html"/>
+    <item id="slide004" href="slide004.html"/>
+    <item id="slide005" href="slide005.html"/>
+  </manifest>
+  <spine>
+    <itemref idref="cover"/>
+    <itemref idref="toc"/>
+    <itemref idref="slide001"/>
+    <itemref idref="slide002"/>
+    <itemref idref="slide003"/>
+    <itemref idref="slide004"/>
+    <itemref idref="slide005"/>
+  </spine>
+</package>

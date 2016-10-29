@@ -1,0 +1,72 @@
+@charset "UTF-8";
+html {
+  /* writing mode */
+  writing-mode: horizontal-tb;
+}
+
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+header,footer,section,figure,aside {
+  display: block;
+}
+body {
+  counter-reset: sectno;
+}
+body > section {
+  page-break-before: always;
+  page-break-after: always;
+  counter-increment: sectno;
+}
+
+
+@page {
+  size: 210mm 148mm;
+  margin-top: 15mm;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  padding-bottom: 10mm;
+
+  /* The followings are inherited to page-margin boxes */
+  font-family: $heading-font-family;
+  font-size: 0.6rem;
+  line-height: $base-line-height;
+  vertical-align: bottom;
+  @top-right {
+    margin-top: 5mm;
+    margin-bottom: 3mm;
+    margin-right: 15mm;
+    content: "Webと出版と、CSSの未来の話　Page " counter(page);
+  }
+}
+@page :first {
+  margin: 0;
+  @top-right {
+    content: none;
+  }
+}
+
+/* 表紙フォーマットスタイル */
+body.cover {
+background-color: #0b6bb1;
+background-repeat: no-repeat;
+background-position: center bottom;
+background-image: url(../img/cover-bg.png);
+background-size: contain;
+}
+
+/* コンテンツページ・目次フォーマットスタイル */
+body.contents, body.toc {
+background-repeat: no-repeat;
+background-position: center bottom;
+background-image: url(../img/footer-bg.png);
+background-size: contain;
+}
+
+/* 各ページ余白 */
+body > section {
+  padding: 0 15mm 0mm 15mm;
+}
