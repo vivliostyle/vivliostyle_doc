@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8" />
+  <title>HTMLをセマンティックに</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+@page {
+  @top-right {
+    content: "HTMLをセマンティックに";
+  }
+}
+  </style>
+</head>
+
+<body class="contents">
+
+  <h1>HTMLをセマンティックに</h1>
+
+  <section>
+    <h1>HTML5でセマンティックな文書構造化が標準に</h1>
+    <ul>
+      <li>2014年にHTML5がW3C勧告、2016年11月には改訂版の<a target="_blank" href="https://www.w3.org/TR/html51/">HTML 5.1</a>が勧告</li>
+      <li>HTML5の新要素（section、article、nav、header、footer、aside、figure、figcaption 等）でセマンティックな文書構造が明確に</li>
+      <li>従来からのHTML要素もよりセマンティックな定義に。<br/>
+        例：small要素は「細目などの注釈」という意味に</li>
+    </ul>
+  </section>
+  <section>
+    <h1>role属性でHTML要素にさらに意味を付加</h1>
+    <ul>
+      <li><a target="_blank" href="https://www.w3.org/TR/wai-aria/">WAI-ARIA</a>：Webのアクセシビリティのためにセマンティックな情報をHTML要素に</li>
+      <li><a target="_blank" href="https://www.w3.org/TR/dpub-aria-1.0/">DPUB-ARIA</a>：デジタル出版のためのセマンティックな語彙を定義</li>
+    </ul>
+    <p>Scholarly HTMLで使えるrole属性の語彙の例：</p>
+    <ul class="multicol">
+      <li>contentinfo（コンテンツ情報）</li>
+      <li>doc-abstract（要旨）</li>
+      <li>doc-acknowledgments（謝辞）</li>
+      <li>doc-appendix（付録）</li>
+      <li>doc-bibliography（参考文献）</li>
+      <li>doc-conclusion（結論）</li>
+      <li>doc-endnote（後注）</li>
+      <li>doc-footnote（脚注）</li>
+      <li>doc-introduction（序論）</li>
+      <li>doc-subtitle（副題）</li>
+    </ul>
+  </section>
+  <section>
+    <h1>RDFa：セマンティックなメタ情報をHTMLに埋め込む方法</h1>
+    <ul>
+      <li>Scholarly HTMLでは <a target="_blank" href="https://schema.org/ScholarlyArticle">schema.org/ScholarlyArticle</a> の語彙を利用</li>
+    </ul>
+    <p>例：</p>
+    <pre>
+&lt;span property="schema:author" typeof="schema:Person">
+  &lt;span property="schema:familyName">村上&lt;/span>
+  &lt;span property="schema:givenName">真雄&lt;/span>
+  (&lt;span property="schema:affiliation">Vivliostyle Inc.&lt;/span>)
+&lt;/span>
+</pre>
+</section>
+<section>
+  <h1>Scholarly HTMLはこんな感じ</h1>
+<pre>
+&lt;!DOCTYPE html>
+&lt;html lang="ja">
+  &lt;head>
+    &lt;meta charset="utf-8">
+    &lt;title>Scholarly HTMLはこんな感じ&lt;/title>
+  &lt;/head>
+  &lt;body>
+    &lt;article typeof="schema:ScholarlyArticle">
+      &lt;header>
+        &lt;h1>Scholarly HTMLはこんな感じ&lt;/h1>
+        &lt;p role="doc-subtitle">ごく簡単な学術論文みたいな例&lt;/p>
+      &lt;/header>
+      &lt;div role="contentinfo">
+        &lt;!-- この辺はScholarly HTMLドラフト仕様をだいぶ簡略化 -->
+        &lt;ul>
+          &lt;li property="schema:author" typeof="schema:Person">
+            &lt;span property="schema:familyName">村上&lt;/span>
+            &lt;span property="schema:givenName">真雄&lt;/span>
+            &lt;span property="schema:affiliation">Vivliostyle Inc.&lt;/span>
+          &lt;/li>
+        &lt;/ul>
+      &lt;/div>
+      &lt;section data-role="doc-abstract">
+        &lt;h2>概要&lt;/h2>
+        &lt;p>本稿は、ごく簡単な学術論文みたいな例です。&lt;/p>
+      &lt;/section>
+      &lt;section data-role="doc-introduction">
+        &lt;h2>はじめに&lt;/h2>
+        &lt;p>論文を&lt;a href="#sh" role="doc-biblioref">Scholarly HTML&lt;/a>
+        で書いてみます。&lt;/p>
+      &lt;/section>
+      &lt;section>
+        &lt;h2>これはセクション見出し&lt;/h2>
+        &lt;section>
+          &lt;h3>これはサブセクション見出し&lt;/h3>
+          &lt;p>このようにセクションをネストします。ネストのレベルに応じた見出し要素 
+          h2-h6 を使います。&lt;/p>
+        &lt;/section>
+      &lt;/section>
+      &lt;section data-role="doc-acknowledgements">
+        &lt;h2>謝辞&lt;/h2>
+        &lt;p>みなさまに感謝。&lt;/p>
+      &lt;/section>
+      &lt;section data-role="doc-bibliography">
+        &lt;h2>参考文献&lt;/h2>
+        &lt;ol>
+          &lt;li typeof="schema:WebPage" role="doc-biblioentry" id="sh">
+            &lt;a href="https://w3c.github.io/scholarly-html/">Scholarly HTML&lt;/a>
+          &lt;/li>
+        &lt;/ol>
+      &lt;/section>
+    &lt;/article>
+  &lt;/body>
+&lt;/html>
+</pre>
+  </section>
+</body>

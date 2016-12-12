@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8" />
+  <title>構造化文書の共通語としてのHTML</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+@page {
+  @top-right {
+    content: "構造化文書の共通語としてのHTML";
+  }
+}
+  </style>
+</head>
+
+<body class="contents">
+
+  <h1>構造化文書の共通語としてのHTML</h1>
+
+  <section>
+    <h1>XMLでは分野ごとに最適な構造化文書形式</h1>
+    <ul>
+      <li>JATS（学術情報）、DITA（技術ドキュメント） など</li>
+      <li>それぞれに専用のツールがある</li>
+      <li>異なるXML文書形式やHTMLへの変換はXSLTで</li>
+      <li>表示するにはHTMLに変換</li>
+    </ul>
+  </section>
+  <section>
+    <h1>HTMLならば</h1>
+    <ul>
+      <li>ブラウザでそのまま表示できる</li>
+      <li>Webアクセシビリティの標準のしくみが整備されてきている</li>
+      <li>普及しているWeb用のツール（HTMLエディタ、各種CMSなど）が使える</li>
+      <li>扱える人が多く学習コストが低い</li>
+      <li>HTMLはもっとも普及している構造化文書形式であり、他とやりとりするのに<strong>「共通語」</strong>として便利</li>
+      <li>XHTML構文を使えばXMLのツールも使える（その必要がないなら緩いHTML構文でOK）</li>
+      <li>でも専用のXMLほどセマンティックな文書構造化はできない？</li>
+    </ul>
+  </section>
+</body>
+
+</html>

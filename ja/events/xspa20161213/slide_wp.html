@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8" />
+  <title>「Web出版物」の時代へ</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+@page {
+  @top-right {
+    content: "「Web出版物」の時代へ";
+  }
+}
+  </style>
+</head>
+
+<body class="contents">
+
+  <h1>「Web出版物」の時代へ</h1>
+
+  <section>
+    <h1>Webの標準 ＝ 電子出版の標準</h1>
+    <ul>
+      <li>電子書籍はHTML5やCSS3でできている
+        <img src="img/epub.png" alt="EPUBロゴ" height="100" class="float" />
+        <ul>
+          <li><strong>EPUB</strong> = (X)HTML + CSS + パッケージ化<br/>
+            (AmazonのKindle本も同様)
+          </li>
+          <li>世界標準のEPUB仕様で日本語の電子書籍が可能になったのは
+            <ul>
+              <li><strong><a target="_blank" href="http://www.w3.org/TR/css-writing-modes-3/">CSS3 Writing Modes</a></strong>で縦書きが可能に、ブラウザ実装が進む</li>
+              <li><strong>HTML5</strong>でルビのマークアップが標準に</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+<aside class="vert float" style="height: 8.5em; padding: 0.5em 0 0 0.5em; background: white;">
+  <p style="margin: 0;"><ruby>吾輩<rt>わがはい</rt></ruby>は猫である。名前はまだ無い。</p>
+</aside>
+<pre>
+html {
+  writing-mode: vertical-rl; /* 縦書き */
+}
+...
+&lt;p>&lt;ruby>吾輩&lt;rt>わがはい&lt;/rt>&lt;/ruby>は猫である。
+名前はまだ無い。&lt;/p>
+</pre>
+
+  </section>
+  <section>
+    <h1>Webと出版の融合＝Web出版物の標準化へ</h1>
+    <ul>
+      <li>２つの標準化団体の連携によりWeb標準を使う電子出版が実現した
+        <ul>
+          <li><strong><a target="_blank" href="http://www.w3.org/">W3C (World Wide Web Consortium)</a></strong></li>
+          <li><strong><a target="_blank" href="http://idpf.org/">IDPF (International Digital Publishing Forum)</a></strong></li>
+        </ul>
+      </li>
+      <li>さらに進み
+        <ul>
+          <li>「<strong>Web出版物</strong>」(<strong>Web Publication</strong>)の標準化へ<br/>
+            <a target="_blank" href="https://www.w3.org/TR/pwp/">Web Publications for the Open Web Platform</a>
+            <ul>
+              <li>オンラインでもオフラインでもシームレスに読める</li>
+              <li>WebサイトでもEPUBのようなパッケージ形式でも</li>
+            </ul>
+          </li>
+          <li>W3C・IDPFの両組織が統合へ（W3Cにマージ）<br/>
+            ☞<a target="_blank" href="http://current.ndl.go.jp/node/32889">国際電子出版フォーラム（IDPF）、加盟機関による投票の結果、W3Cとの統合計画を承認</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+
+</body>
+
+</html>
