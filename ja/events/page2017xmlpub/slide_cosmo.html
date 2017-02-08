@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8" />
+  <title>論文「宇宙論入門」のScholarly HTML化</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+@page {
+  @top-right {
+    content: "論文「宇宙論入門」のScholarly HTML化";
+  }
+}
+  </style>
+</head>
+
+<body class="contents">
+
+  <h1>論文「宇宙論入門」のScholarly HTML化</h1>
+
+  <section>
+    <h2>松原隆彦著「宇宙論入門」について</h2>
+    <ul>
+      <li>ウェブに公開されている、名古屋大学の<a target="_blank" href="http://www.c.phys.nagoya-u.ac.jp/taka/">松原隆彦</a>著の<a target="_blank" href="http://tmcosmos.org/cosmology/cosmology-web/">「宇宙論：オリジナルテキスト」（名古屋大学大学院講義ノート、2002-2006）</a>※を、当研究会に参加している東京大学（名誉教授）の釜江常好が了承を得てScholarly HTML化するサンプルとして利用。釜江が、幾つかの写真や図を追加し、テキストを少し編集。<br/>
+        ※<a target="_blank" href="http://tmcosmos.org/cosmology/cosmology-web/">http://tmcosmos.org/cosmology/cosmology-web/</a>
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h2>Scholarly HTMLマークアップ指針</h2>
+    <ul>
+      <li>Scholarly HTMLはまだ草案の段階で完成した仕様ではないので、仕様の細部にはこだわらずに簡略化したサブセットを使用</li>
+      <li>原稿のTeX形式の数式入りのテキストデータから単純に変換できるよう、数式はTeX形式のままとして表示に<a target="_blank" href="https://www.mathjax.org/">MathJax</a>（数式を表示するJavaScriptライブラリ）を利用。<br/>※Scholarly HTMLではWeb標準の数式記述方法であるMathMLを利用することになっているが、今回はそれにこだわらずTeX形式のままとした</li>
+    </ul>
+  </section>
+  <section>
+    <h2>マークアップ（タグ付け）方法のいろいろ</h2>
+    <p>研究会メンバーそれぞれが得意とする方法でやってみた</p>
+    <ul>
+      <li>Markdown形式から <a target="_blank" href="http://pandoc.org/">pandoc</a>利用でHTMLに変換</li>
+      <li>自動化スクリプト作成</li>
+      <li>Excelのマクロを作成して自動変換</li>
+      <li>テキストエディタでタグ付け</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Scholarly HTML版「宇宙論入門」サンプル公開</h2>
+    <ul>
+      <li>GitHubリポジトリ: <a target="_blank" href="https://github.com/JAGAT-XML-publishing-study-group/cosmology">https://github.com/JAGAT-XML-publishing-study-group/cosmology</a></li>
+      <li>☞<a target="_blank" href="https://jagat-xml-publishing-study-group.github.io/cosmology/">HTML通常表示版</a></li>
+      <li>☞<a target="_blank" href="https://vivliostyle.github.io/vivliostyle.js/viewer/vivliostyle-viewer.html#x=https://jagat-xml-publishing-study-group.github.io/cosmology/">ページレイアウト表示（Vivliostyle Viewer）</a></li>
+    </ul>
+  </section>
+</body>
+
+</html>

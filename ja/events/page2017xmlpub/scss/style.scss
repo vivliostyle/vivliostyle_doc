@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+//$base-font-family: 'Optima', 'Georgia', 'Yu Mincho', 'YuMincho', 'Hiragino Mincho ProN', serif;
+$heading-font-family: 'Optima', 'Avenir Next', 'Open Sans', 'Roboto', 'Candara', 'Yu Gothic', 'YuGothic', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+$base-font-family: $heading-font-family;
+$pre-font-family: 'Source Code Pro', 'Andale Mono', 'Courier', 'Courier New', 'Yu Gothic', 'YuGothic', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Meiryo', monospace;
+$base-font-size: 120%;
+$base-line-height: 1.5;
+
+// page format definition
+@import 'base/format';
+// typography style definition
+@import 'base/typography';
+// contents style definition
+@import 'base/contents';

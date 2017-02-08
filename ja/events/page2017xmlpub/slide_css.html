@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8" />
+  <title>CSS組版(Vivliostyle)によるページレイアウト</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+@page {
+  @top-right {
+    content: "CSS組版(Vivliostyle)によるページレイアウト";
+  }
+}
+  </style>
+</head>
+
+<body class="contents">
+
+  <h1>CSS組版(Vivliostyle)によるページレイアウト</h1>
+
+  <section>
+    <figure>
+      <figcaption>CSSでページのレイアウトを指定して、Vivliostyle Viewerで表示</figcaption>
+      <a target="_blank" href="https://vivliostyle.github.io/vivliostyle.js/viewer/vivliostyle-viewer.html#x=https://jagat-xml-publishing-study-group.github.io/cosmology/"><img src="img/cosmos-viv.png" alt="「宇宙論入門」のページレイアウト表示"></a>
+    </figure>
+  </section>
+  <section>
+    <h1>Vivliostyleの紹介</h1>
+    <ul class="multicol">
+      <li>印刷の世界と画⾯の世界を⼀元化
+        <figure>
+        	<img src="img/vivliostyle-osmu.png" alt="Vivliostyleでワンソース・マルチユース、多様なデバイスに出力するイメージ" height="230" />
+        	<figcaption style="background: #DEF; border: 1px solid #9BE;">印刷物も様々な画面も<br/>ひとまとめで扱える</figcaption>
+        </figure>
+      </li>
+      <li>Webブラウザさえあれば使える<br/>
+        <img src="img/browsers.png" alt="ブラウザたちのアイコン" />
+      </li>
+      <li>HTMLとCSSだけ<br/>
+        <img src="img/html5css3.png" alt="HTML5とCSS3のマーク" />
+      </li>
+      <li>オープンソース<br/>
+        <img src="img/GitHub_Logo.png"  alt="GitHubロゴ" /><br/>
+        <a target="_blank" href="https://github.com/vivliostyle/vivliostyle.js">github.com/vivliostyle/vivliostyle.js</a>
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h1>ページの組版に役立つCSS仕様</h1>
+    <img src="img/gon3.png" height="200" alt="ページレイアウトのサンプル" class="float" />
+    <ul>
+      <li>日本語組版関係
+        <ul class="multicol">
+          <li>縦書き <a target="_blank" href="http://www.w3.org/TR/css-writing-modes-3/">CSS Writing Modes</a></li>
+          <li>文字組・禁則処理 <a target="_blank" href="http://www.w3.org/TR/css-text-3/">CSS Text</a></li>
+          <li>装飾・圏点 <a target="_blank" href="http://www.w3.org/TR/css-text-decor-3/">CSS Text Decoration</a></li>
+          <li>ルビ配置 <a target="_blank" href="http://www.w3.org/TR/css-ruby-1/">CSS Ruby</a></li>
+        </ul>
+      </li>
+      <li>段組 <a target="_blank" href="https://www.w3.org/TR/css3-multicol/">CSS Multi-column Layout</a></li>
+      <li>ページのレイアウト※
+        <ul class="multicol">
+          <li>ページメディア <a target="_blank" href="https://drafts.csswg.org/css-page/">CSS Paged Media</a></li>
+          <li>柱や相互参照等 <a target="_blank" href="https://drafts.csswg.org/css-content/">CSS Generated Content</a></li>
+          <li>図版の配置 <a target="_blank" href="https://drafts.csswg.org/css-page-floats/">CSS Page Floats</a></li>
+        </ul>
+        ※W3Cで標準化作業中の仕様であり、現時点で利用できる環境は限られる
+      </li>
+    </ul>
+</body>
+
+</html>
