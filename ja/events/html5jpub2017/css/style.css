@@ -1,0 +1,377 @@
+@charset "UTF-8";
+html {
+  /* writing mode */
+  -webkit-writing-mode: horizontal-tb;
+      -ms-writing-mode: lr-tb;
+          writing-mode: horizontal-tb; }
+
+/* reset */
+* {
+  margin: 0;
+  padding: 0; }
+
+header, footer, section, figure, aside {
+  display: block; }
+
+body {
+  counter-reset: sectno; }
+
+body > section {
+  page-break-before: always;
+  page-break-after: always;
+  counter-increment: sectno; }
+
+@page {
+  size: 210mm 148mm;
+  margin-top: 15mm;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  padding-bottom: 12mm;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-image: url(../img/footer-bg.png);
+  background-size: contain;
+  /* The followings are inherited to page-margin boxes */
+  font-family: "Optima", "Avenir Next", "Open Sans", "Roboto", "Candara", "Yu Gothic", "YuGothic", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+  font-size: 0.6rem;
+  line-height: 1.5;
+  vertical-align: bottom;
+  @top-right-corner {
+    margin-top: 5mm;
+    margin-bottom: 3mm;
+    margin-left: -10mm;
+    content: counter(page); }
+  @top-right {
+    margin-top: 5mm;
+    margin-bottom: 3mm;
+    margin-right: 15mm;
+    content: ""; } }
+
+@page :first {
+  margin: 0;
+  background-color: #0b6bb1;
+  background-image: url(../img/footer-bg-c.png);
+  @top-right-corner {
+    content: none; }
+  @top-right {
+    content: none; } }
+
+/* 表紙フォーマットスタイル */
+header.cover,
+body.cover > * {
+  background-color: #0b6bb1; }
+
+/* コンテンツページ・目次フォーマットスタイル */
+/* 各ページ余白 */
+body > section {
+  padding: 0 15mm 0mm 15mm; }
+
+html {
+  font-family: "Optima", "Avenir Next", "Open Sans", "Roboto", "Candara", "Yu Gothic", "YuGothic", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+  font-weight: 500;
+  font-size: 120%;
+  line-height: 1.5; }
+
+h1 {
+  font-family: "Optima", "Avenir Next", "Open Sans", "Roboto", "Candara", "Yu Gothic", "YuGothic", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+  font-weight: bold;
+  font-size: 1.75em;
+  -webkit-font-feature-settings: "pwid" 1;
+          font-feature-settings: "pwid" 1;
+  color: #06A;
+  line-height: 1.5;
+  margin-bottom: 0.5em;
+  text-indent: 0;
+  /* forbid page/column break after it */
+  page-break-inside: avoid;
+  page-break-after: avoid; }
+
+body > h1 {
+  page-break-before: always;
+  page-break-after: always;
+  padding: 25mm 15mm 15mm 15mm;
+  font-size: 3em; }
+
+body.contents > section > *:first-child {
+  margin-top: 0; }
+
+h2 {
+  font-family: "Optima", "Avenir Next", "Open Sans", "Roboto", "Candara", "Yu Gothic", "YuGothic", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+  font-size: 1.5em;
+  -webkit-font-feature-settings: "pwid" 1;
+          font-feature-settings: "pwid" 1;
+  font-weight: bold;
+  text-indent: 0;
+  color: #06A;
+  page-break-inside: avoid;
+  page-break-after: avoid;
+  margin-top: 1.5em; }
+
+h3 {
+  font-family: "Optima", "Avenir Next", "Open Sans", "Roboto", "Candara", "Yu Gothic", "YuGothic", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+  font-size: 1.25em;
+  -webkit-font-feature-settings: "pwid" 1;
+          font-feature-settings: "pwid" 1;
+  color: #06A;
+  page-break-inside: avoid;
+  page-break-after: avoid;
+  margin-top: 1em; }
+
+p {
+  page-break-inside: avoid;
+  margin-top: 1em; }
+
+table p {
+  text-align: left;
+  margin-top: 0; }
+
+table {
+  page-break-inside: avoid;
+  margin-top: 1em; }
+
+pre {
+  font-family: "Source Code Pro", "Andale Mono", "Courier", "Courier New", "Yu Gothic", "YuGothic", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Meiryo", monospace;
+  font-weight: bold;
+  font-size: 0.8em;
+  background-color: #f6f6f6;
+  padding: 0.5em 0.5em;
+  margin-top: 0.5em; }
+
+ol {
+  margin-top: 1em;
+  counter-reset: li;
+  list-style: none; }
+  ol li {
+    margin-left: 1.5em;
+    text-indent: -2em; }
+    ol li p {
+      margin-top: 0;
+      margin-left: 1.5em;
+      text-indent: 0; }
+  ol li:before {
+    font-family: "Optima", "Avenir Next", "Open Sans", "Roboto", "Candara", "Yu Gothic", "YuGothic", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+    display: inline-block;
+    width: 1.5em;
+    color: #666666;
+    counter-increment: li;
+    content: counter(li) ". ";
+    text-align: right;
+    margin-right: 0.5em; }
+
+ul {
+  margin-top: 1em; }
+  ul li {
+    display: list-item;
+    margin-left: 1.5em;
+    margin-top: 0.5em; }
+
+li {
+  page-break-inside: avoid; }
+  li ol, li ul, li li {
+    margin-top: 0.33em; }
+
+address {
+  font-style: normal; }
+
+figure {
+  page-break-inside: avoid;
+  margin-top: 1em; }
+
+figcaption {
+  text-align: center;
+  font-family: "Optima", "Avenir Next", "Open Sans", "Roboto", "Candara", "Yu Gothic", "YuGothic", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+  font-size: 83.3%; }
+
+code {
+  font-family: "Source Code Pro", "Andale Mono", "Courier", "Courier New", "Yu Gothic", "YuGothic", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Meiryo", monospace;
+  font-weight: bold; }
+
+blockquote {
+  margin-left: 3em;
+  text-align: justify; }
+  blockquote::before {
+    font-size: 400%;
+    margin-left: -3rem;
+    color: #D6A;
+    float: left;
+    content: "\275d"; }
+  blockquote .name {
+    text-align: right; }
+
+.dash2 {
+  font-family: Yu Gothic, "Optima", "Avenir Next", "Open Sans", "Roboto", "Candara", "Yu Gothic", "YuGothic", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif; }
+
+/* もとの指定 */
+a {
+  color: #068;
+  background: none;
+  text-decoration: none; }
+
+rt {
+  font-size: 50%; }
+
+rt:lang(en) {
+  font-size: 70%; }
+
+small {
+  font-size: 70%; }
+
+.small {
+  font-size: 70%; }
+
+.small2 {
+  font-size: 50%; }
+
+.big {
+  font-size: 130%; }
+
+.smaller {
+  font-size: 83.3%; }
+
+.bigger {
+  font-size: 120%; }
+
+:lang(el), :lang(en) {
+  font-family: Georgia, Times New Roman, serif; }
+
+/* 表組の基本形 */
+.border-simple {
+  border-collapse: collapse; }
+  .border-simple th, .border-simple td {
+    box-sizing: border-box;
+    border: 1px solid #e6e6e6;
+    vertical-align: top;
+    font-size: 90%;
+    line-height: 1.5;
+    padding: 4px; }
+  .border-simple th {
+    text-align: left;
+    font-weight: bold;
+    background-color: #f6f6f6; }
+
+/* セルの改行抑止 */
+.nobr {
+  white-space: nowrap; }
+
+/* センタリング */
+.ct {
+  text-align: center; }
+
+/* float解除 */
+.cl {
+  clear: both; }
+
+/* 右フロート */
+.rs {
+  float: right;
+  margin: 0 0 1em 1em; }
+
+/* 左フロート */
+.ls {
+  float: left;
+  margin: 0 1em 1em 0; }
+
+/* 改ページ */
+.pb {
+  page-break-before: always; }
+  .pb h2 {
+    margin-top: 0; }
+
+/* 改ページ禁止 */
+.nopb {
+  page-break-inside: avoid; }
+
+/* 目次の指定 */
+.toc ol li {
+  line-height: 2.5em;
+  border-bottom: 1px dotted #cccccc; }
+  .toc ol li a {
+    text-decoration: none; }
+    .toc ol li a::after {
+      content: "　" target-counter(attr(href, url), page); }
+
+.toc ol li:first-child {
+  border-top: 1px dotted #cccccc; }
+
+/* 表紙の指定 */
+.cover {
+  color: #fff;
+  text-align: center; }
+  .cover h1 {
+    font-weight: bold;
+    font-size: 2.2em;
+    -webkit-font-feature-settings: "pwid" 1;
+            font-feature-settings: "pwid" 1;
+    line-height: 1.2;
+    text-align: center;
+    color: #fff;
+    margin-top: 1.5em;
+    margin-bottom: 0; }
+  .cover .event {
+    font-weight: bold;
+    font-size: 1em;
+    text-align: center;
+    color: #fff;
+    margin-top: 1em;
+    margin-bottom: 1em; }
+  .cover .author {
+    font-size: 1.25em;
+    text-align: center; }
+  .cover a {
+    color: inherit; }
+
+/* もとの指定 */
+em.kenten {
+  -webkit-text-emphasis: filled;
+          text-emphasis: filled;
+  font-style: normal; }
+
+.vert {
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl; }
+  .vert h2 {
+    margin-top: 0;
+    margin-left: 1em; }
+
+.horiz {
+  -webkit-writing-mode: horizontal-tb;
+      -ms-writing-mode: lr-tb;
+          writing-mode: horizontal-tb; }
+
+.float {
+  float: right; }
+
+figure {
+  text-align: center; }
+
+figure > img, figure > a > img {
+  max-width: 100%;
+  max-height: 22em; }
+
+.multicol {
+  -webkit-column-width: 12em;
+     -moz-column-width: 12em;
+          column-width: 12em; }
+  .multicol > *:first-child {
+    margin-top: 0; }
+
+section.vert {
+  width: 100%; }
+
+aside.vert {
+  float: right; }
+
+pre.sample {
+  padding: .5em;
+  margin: .5em;
+  background: #eeeeee; }
+
+p.note {
+  font-size: 90%;
+  padding-left: 1em;
+  text-indent: -1em;
+  margin-top: 0.5em; }
+  p.note::before {
+    content: "※"; }

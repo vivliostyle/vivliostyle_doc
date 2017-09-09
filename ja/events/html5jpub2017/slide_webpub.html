@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8" />
+  <title>html5j 電子出版部セッション「Webと本の未来どうなる？」</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+@page {
+  @top-right {
+    content: "html5j 電子出版部セッション「Webと本の未来どうなる？」";
+  }
+}
+  </style>
+</head>
+
+<body class="contents">
+
+  <h1>Web＋出版の新しい標準「Web出版物」って何？</h1>
+  <section>
+    <h2>Web出版物（Web Publication）とは</h2>
+    <ul>
+      <li>W3C Publishing Working Groupで仕様策定が始まったWeb+出版の標準<br/>
+        <a href="https://www.w3.org/TR/pwp/"><img src="img/note-pwp.png" style="height: 16em" alt="Web Publications for the Open Web Platform: Vision And Technical Challenges, W3C Interest Group Note 02 May 2017"/></a><a href="https://w3c.github.io/wpub/"><img src="img/ed-wpub.png" style="height: 16em" alt="Web Publications, W3C Editor's Draft 06 September 2017"/></a>
+      </li>
+      <li>「マニフェスト」を介してまとめられた1つ以上のリソース（HTMLファイルなど）の集合</li>
+      <li>デフォルトの読む順番を持つ</li>
+      <li>一意に識別可能（URLなど）</li>
+      <li>Open Web Platformテクノロジーを用いて閲覧できる（ブラウザでOK）</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Web出版物の「マニフェスト」とは</h2>
+    <ul>
+      <li>マニフェスト（manifest）とは、積み荷目録や乗客名簿のこと<br/>
+        （政党の宣言の「マニフェスト」のほうは “manifesto”）。<br/>
+        他の複数のファイルのことを記述してメタデータを含むファイルのこと</li>
+      <li>EPUBのパッケージドキュメント（OPFファイル）に相当</li>
+      <li>ファイルのフォーマットはJSON型式を使用、詳細は未定</li>
+      <li>例：WebPub manifestはだいたいこんな感じ
+        <pre>
+{
+  "metadata": {
+    "title": "Webと本の未来",
+    "author": "村上 真雄",
+    "language": "ja",
+    ...
+  },
+  "spine": [
+    {"href": "c001.html", "title": "第1章　Webと出版が融合？"}, 
+    {"href": "c002.html", "title": "第2章　電子出版の新しい標準"},
+    ...
+  ],
+  ...
+}
+</pre>
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h2>「Web出版物」は従来のWebコンテンツと何が違うの？</h2>
+    <ul>
+      <li>複数のHTMLページを論理的にまとめるマニフェストファイルがあること</li>
+      <li>「Web出版物」対応のUA（ブラウザ、リーディングシステム）で「本」のように読むことができること</li>
+      <li>オフラインでも読むことができること</li>
+      <li>パッケージ（1つのファイル）にまとめた形式（PWP = Packaged Web Publication、あるいは次世代EPUB4）にもなり、文書ファイルの1種として扱えること</li>
+    </ul>
+  </section>
+  <section>
+    <h2>「Web出版物」対応UAはどうなる</h2>
+    <ul>
+      <li><img src="img/browsers.png" class="float">ブラウザが標準で対応、あるいは専用アプリ、あるいはブラウザ拡張機能として提供されるだろう</li>
+      <li>リンクをクリックすることなく複数の章からなる読み物を連続して読むことができる</li>
+      <li>目次のナビゲーション機能も標準で備わる</li>
+      <li>スクロール方式（Web的）とページめくり方式（書籍的）のどちらもあり</li>
+      <li>「Web出版物」内でのテキスト検索</li>
+    </ul>
+  </section>
+  
+  
+</body>
+
+</html>
