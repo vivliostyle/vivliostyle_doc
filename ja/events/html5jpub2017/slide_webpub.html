@@ -21,9 +21,11 @@
     <h2>Web出版物（Web Publication）とは</h2>
     <ul>
       <li>W3C Publishing Working Groupで仕様策定が始まったWeb+出版の標準<br/>
-        <a href="https://www.w3.org/TR/pwp/"><img src="img/note-pwp.png" style="height: 16em" alt="Web Publications for the Open Web Platform: Vision And Technical Challenges, W3C Interest Group Note 02 May 2017"/></a><a href="https://w3c.github.io/wpub/"><img src="img/ed-wpub.png" style="height: 16em" alt="Web Publications, W3C Editor's Draft 06 September 2017"/></a>
+        <a target="_blank" href="https://www.w3.org/TR/pwp/"><img src="img/note-pwp.png" style="height: 16em" alt="Web Publications for the Open Web Platform: Vision And Technical Challenges, W3C Interest Group Note 02 May 2017"/></a><a target="_blank" href="https://w3c.github.io/wpub/"><img src="img/ed-wpub.png" style="height: 16em" alt="Web Publications, W3C Editor's Draft 06 September 2017"/></a>
       </li>
-      <li>「マニフェスト」を介してまとめられた1つ以上のリソース（HTMLファイルなど）の集合</li>
+      <li>「マニフェスト」を介してまとめられた1つ以上のリソース（HTMLファイルなど）の集合
+        <figure><img src="img/manifest-htmls.png" alt="（複数のHTMLファイルを「マニフェスト」でまとめてる図）"/></figure>
+      </li>
       <li>デフォルトの読む順番を持つ</li>
       <li>一意に識別可能（URLなど）</li>
       <li>Open Web Platformテクノロジーを用いて閲覧できる（ブラウザでOK）</li>
@@ -36,8 +38,8 @@
         （政党の宣言の「マニフェスト」のほうは “manifesto”）。<br/>
         他の複数のファイルのことを記述してメタデータを含むファイルのこと</li>
       <li>EPUBのパッケージドキュメント（OPFファイル）に相当</li>
-      <li>ファイルのフォーマットはJSON型式を使用、詳細は未定</li>
-      <li>例：WebPub manifestはだいたいこんな感じ
+      <li>ファイルのフォーマットはJSON型式。くわしい仕様策定はこれから</li>
+      <li>例：Web出版物の「マニフェスト」はだいたいこんな感じ
         <pre>
 {
   "metadata": {
@@ -47,8 +49,9 @@
     ...
   },
   "spine": [
-    {"href": "c001.html", "title": "第1章　Webと出版が融合？"}, 
-    {"href": "c002.html", "title": "第2章　電子出版の新しい標準"},
+    {"href": "第1章.html", "title": "Webと出版が融合？"}, 
+    {"href": "第2章.html", "title": "電子出版の新しい標準"},
+    {"href": "第3章.html", "title": "それでWebと本の未来はどうなる？"},
     ...
   ],
   ...
@@ -58,12 +61,12 @@
     </ul>
   </section>
   <section>
-    <h2>「Web出版物」は従来のWebコンテンツと何が違うの？</h2>
+    <h2>「Web出版物」は従来のWebコンテンツと何が違う？</h2>
     <ul>
       <li>複数のHTMLページを論理的にひとつにまとめるマニフェストファイルがあること</li>
       <li>「Web出版物」対応のUA（ブラウザ、リーディングシステム）で「本」のように読むことができること</li>
       <li>オフラインでも読むことができること</li>
-      <li>パッケージ（1つのファイル）にまとめた形式（PWP = Packaged Web Publication、あるいは次世代EPUB4）にもなり、文書ファイルの1種として扱えること</li>
+      <li><img src="img/epub4.png" class="float" style="width: 6em; margin: 0 0 0 1em;" alt="（EPUBマーク）">パッケージ（1つのファイル）にまとめた形式（PWP = Packaged Web Publication、あるいは次世代EPUB4）にもすることができて、文書ファイルの1種として扱えること</li>
     </ul>
   </section>
   <section>
@@ -84,8 +87,8 @@
     
     <ul>
       <li>Service Workerのしくみを使ってWeb出版物をローカルにキャッシュしてオフラインでも読めるように<br/>
-        <small>（図 <a href="https://www.w3.org/TR/pwp/">Web Publications for the Open Web Platform (W3C IG Note)</a> より）</small><br/>
-        <a href="https://www.w3.org/TR/pwp/#online-offline"><img src="https://www.w3.org/TR/pwp/figures/Workers-cache.png" style="width: 100%" alt="A laptop computer gaining access to the packaged publication from a web browser connecting to a Server via service workers."/></a>
+        <small>（図 <a target="_blank" href="https://www.w3.org/TR/pwp/">Web Publications for the Open Web Platform (W3C IG Note)</a> より）</small><br/>
+        <a target="_blank" href="https://www.w3.org/TR/pwp/#online-offline"><img src="https://www.w3.org/TR/pwp/figures/Workers-cache.png" style="width: 100%" alt="A laptop computer gaining access to the packaged publication from a web browser connecting to a Server via service workers."/></a>
       </li>
     </ul>
   </section>
