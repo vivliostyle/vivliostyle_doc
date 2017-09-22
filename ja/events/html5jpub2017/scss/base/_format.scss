@@ -30,10 +30,10 @@ body > section {
   margin-right: 0;
   padding-bottom: 12mm;
 
-  background-repeat: no-repeat;
+  /*background-repeat: no-repeat;
   background-position: center bottom;
   background-image: url(../img/footer-bg.png);
-  background-size: contain;
+  background-size: contain;*/
 
   /* The followings are inherited to page-margin boxes */
   font-family: $heading-font-family;
@@ -56,7 +56,7 @@ body > section {
 @page :first {
   margin: 0;
   background-color: #0b6bb1;
-  background-image: url(../img/footer-bg-c.png);
+  /*background-image: url(../img/footer-bg-c.png);*/
   
   @top-right-corner {
     content: none;
