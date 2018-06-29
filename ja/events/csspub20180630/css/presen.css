@@ -1,6 +1,6 @@
 @charset "UTF-8";
 html {
-  font-family: "Optima", "Candara", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "YuGothic", "Meiryo", sans-serif;
+  font-family: "Optima", "Candara", "Hiragino Sans", "Meiryo", sans-serif;
   font-feature-settings: "palt" on;
   font-size: 150%;
   font-weight: 300;
@@ -15,7 +15,7 @@ html {
   background-position: center bottom;
   background-repeat: no-repeat;
   background-size: contain;
-  font-family: "Optima", "Candara", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "YuGothic", "Meiryo", sans-serif;
+  font-family: "Optima", "Candara", "Hiragino Sans", "Meiryo", sans-serif;
   font-size: 11pt;
   line-height: 1.2;
   @top-right-corner {
