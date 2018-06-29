@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CSS組版について</title>
+  <link rel="stylesheet" href="css/presen.css">
+  <style>
+    @page {
+      @top-right {
+        content: "CSS組版について";
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <header id="cover">
+    <h1>CSS組版について</h1>
+    <p class="event">CSS組版・パブリッシング交流会</p>
+    <p class="date">2018-06-30</p>
+    <p class="author">JAGAT XML パブリッシング準研究会
+      <br>村上 真雄
+      <a href="https://twitter.com/MurakamiShinyu">@MurakamiShinyu</a>,
+      <a href="https://vivliostyle.org">Vivliostyle.org</a>
+    </p>
+  </header>
+  <nav id="toc" role="doc-toc">
+    <h2>目次</h2>
+    <ol>
+      <li>
+        <a href="#intro">はじめに</a>
+      </li>
+      <li>
+        <a href="#dtp-css">従来DTPとCSS組版の違い</a>
+      </li>
+      <li>
+        <a href="#css-engines">CSS組版エンジンいろいろ</a>
+      </li>
+      <li>
+        <a href="#page-css">ページレイアウト関連のCSS仕様</a>
+      </li>
+      <li>
+        <a href="#vivliostyle">Vivliostyle について</a>
+      </li>
+      <li>
+        <a href="#ending">おわりに</a>
+      </li>
+    </ol>
+  </nav>
+  <section id="intro">
+    <h2>はじめに</h2>
+    <section>
+      <h3>自己紹介</h3>
+      <p>村上 真雄
+        <a href="https://twitter.com/MurakamiShinyu">@MurakamiShinyu</a>,
+        <a href="https://vivliostyle.org">Vivliostyle.org</a>：
+      </p>
+      <ul>
+        <li>
+          <p>テキスト整形やXML・CSSの組版エンジンの開発など：</p>
+          <ul>
+            <li>1990年ごろ:
+              <a href="https://www3.atwiki.jp/uran/pages/37.html">テキスト整形ツールXTR</a> を開発、公開。</li>
+            <li>2000年ごろから:
+              <a href="http://www.antenna.co.jp/AHF/">Antenna House Formatter</a>（アンテナハウス社のXML/CSS組版エンジン）の開発に従事。</li>
+            <li>2014年: Vivliostyleプロジェクト開始、会社設立。</li>
+            <li>2018年:
+              <a href="https://vivliostyle.org/">Vivliostyle.org</a> でオープンソース版の再始動。</li>
+          </ul>
+        </li>
+        <li>W3C CSS標準化と関わってきています。</li>
+        <li>JAGAT XMLパブリッシング準研究会に参加してます。</li>
+      </ul>
+      <h4>JAGAT XMLパブリッシング準研究会とは</h4>
+      <p>
+        <a href="https://www.jagat.or.jp/">JAGAT（公益社団法人日本印刷技術協会）</a> XMLパブリッシング準研究会は、XMLやHTML/CSSでの出版技術・組版など研究しているグループです。</p>
+    </section>
+
+  </section>
+  <section id="dtp-css">
+    <h2>従来DTPとCSS組版の違い</h2>
+    <section id="dtp-workflow">
+      <h3>一般的なDTPでの制作工程</h3>
+      <ol>
+        <li>著者からの原稿（Wordファイルなど）</li>
+        <li>DTPソフト（Adobe InDesignなど）で、原稿データをページに流し込み割り当てていく</li>
+        <li>ページデザインの要求どおりになるように、DTPソフト上で１ページ１ページ仕上げていく</li>
+        <li>校正用のプリンタ出力 → 校正者・編集者・著者がチェックして赤字で修正指示 → DTPソフト上で修正（何回か繰り返し）</li>
+        <li>印刷に適したPDFの形式（PDF/X-1a など）に出力 → PDF入稿</li>
+        <li>印刷所で印刷 → 製本 → 納品</li>
+      </ol>
+    </section>
+    <section id="css-workflow">
+      <h3>CSS組版での制作工程</h3>
+      <ol>
+        <li>著者からの原稿（HTML化しやすい形式の何か）</li>
+        <li>原稿をHTMLデータ化</li>
+        <li>ページデザインの要求どおりになるよう、CSSスタイルシート作成</li>
+        <li>できあがったHTML+CSSから、CSS組版エンジンで組版（プレビュー表示、PDF出力）</li>
+        <li>組版チェック→HTMLとCSSを修正し再組版（完成まで繰り返し）</li>
+        <li>PDFを印刷所に入稿</li>
+        <li>印刷所で印刷 → 製本 → 納品</li>
+      </ol>
+    </section>
+    <section id="css-benefit">
+      <h3>CSS組版のメリット</h3>
+      <ul>
+        <li>Webと同じく HTML+CSS でできる
+          <br>（InDesign や TeX など使えなくてもいい）</li>
+        <li>HTML+CSS なので、Web版やEPUB版も一緒に作りやすい。
+          <br>（一般的なDTP組版からEPUBも作る場合、完成したDTPデータからテキストを取り出してEPUBデータ用に加工する作業が必要）</li>
+        <li>DTPソフトに依存しないデータなので管理しやすい</li>
+        <li>いろいろ自動化しやすい</li>
+        <li>共通の体裁の出版物をたくさん作るのが簡単（CSSを再利用）</li>
+      </ul>
+    </section>
+  </section>
+  <section id="css-engines">
+    <h2>CSS組版エンジンいろいろ</h2>
+    <section id="proprietary">
+      <h3>プロプライエタリ製品</h3>
+      <p>サーバー上で大量のPDFを生成する大規模自動組版の用途に使用されている。企業向け製品。</p>
+      <ul>
+        <li>
+          <a href="http://www.princexml.com/">Prince XML</a>：オーストラリアのYesLogic社の製品。CSSの提唱者で元Opera CTOのHåkon Wium Lie氏が役員として関係。</li>
+        <li>
+          <a href="http://www.realobjects.com/products/pdfreactor/">PDFreactor</a>：ドイツRealObjects社の製品</li>
+        <li>
+          <a href="http://copper-pdf.com/">Copper PDF</a>：GNN社の製品</li>
+        <li>
+          <a href="http://www.antenna.co.jp/AHF/">Antenna House Formatter</a>：アンテナハウス社の製品</li>
+        <li>
+          <a href="https://trim-marks.com/">VersaType Converter</a>：トリムマーク社の製品（旧 Vivliostyle Formatter）</li>
+      </ul>
+    </section>
+    <section id="oss">
+      <h3>オープンソースのCSS組版エンジン</h3>
+      <ul>
+        <li>
+          <a href="https://wkhtmltopdf.org/">wkhtmltopdf</a>：WebKitエンジンでHTMLをPDF化(C++)</li>
+        <li>
+          <a href="https://weasyprint.org/">WeasyPrint</a>：CSS Paged Mediaのベーシックな機能を実装(Python)</li>
+        <li>
+          <a href="https://vivliostyle.org/">Vivliostyle</a>：ブラウザ上で動き、ブラウザの印刷機能でPDF生成可能(JavaScript)</li>
+        <li>
+          <a href="https://gitlab.pagedmedia.org/tools/pagedjs">Paged.js</a>：
+          <a href="https://www.pagedmedia.org/">Paged Media initiative</a>で開発開始(JavaScript)</li>
+      </ul>
+    </section>
+  </section>
+  <section id="page-css">
+    <h2>ページレイアウト関連のCSS仕様</h2>
+    <section id="page-css-specs">
+      <h3>ページレイアウト関連CSSモジュール</h3>
+      <p>⭕：CSS組版エンジンでだいたい使える　🔺：CSS組版エンジンによっては使える　❌：今のところ使えない</p>
+      <ul>
+        <li>⭕
+          <a href="https://drafts.csswg.org/css-page/">CSS Paged Media</a>：ページメディアの基本</li>
+        <li>⭕
+          <a href="https://drafts.csswg.org/css-break/">CSS Fragmentation</a>：改ページなど</li>
+        <li>🔺
+          <a href="https://drafts.csswg.org/css-page-floats/">CSS Page Floats</a>：ページの図版配置</li>
+        <li>ページの要素の自動生成：目次や索引、相互参照、柱、脚注など
+          <ul>
+            <li>🔺
+              <a href="https://drafts.csswg.org/css-content/">CSS Generated Content</a>
+            </li>
+            <li>🔺
+              <a href="https://drafts.csswg.org/css-gcpm-3/">CSS Generated Content for Paged Media (GCPM) Level 3</a>
+            </li>
+            <li>❌
+              <a href="https://drafts.csswg.org/css-gcpm-4/">CSS Generated Content for Paged Media (GCPM) Level 4</a>
+            </li>
+          </ul>
+        </li>
+        <li>ページテンプレート関連
+          <ul>
+            <li>❌
+              <a href="https://drafts.csswg.org/css-regions/">CSS Regions</a>
+            </li>
+            <li>❌
+              <a href="https://drafts.csswg.org/css-page-template-1/">CSS Pagination Templates</a>
+            </li>
+            <li>🔺
+              <a href="http://www.idpf.org/epub/pgt/">“EPUB Adaptive Layout”</a>：かつて提案されたEPUB拡張案
+              <ul>
+                <li>ページ内に任意の数の領域を定義して、それらにコンテンツを割り当てていくというページテンプレート方式。</li>
+                <li>CSS Paged Media 仕様（ページに本体領域がひとつだけ）とはまったく別のもの。</li>
+                <li>
+                  <code>-epubx-</code> プレフィックス付きのCSS拡張構文を使用。</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+  </section>
+  <section id="vivliostyle">
+    <h2>Vivliostyle について</h2>
+    <section id="vivliostyle-features">
+      <h3>Vivliostyle の特徴</h3>
+      <ul>
+        <li>ブラウザ上で動くJavaScriptプログラム</li>
+        <li>ベースは
+          <a href="http://sorotokin.com/adaptive-layout/">EPUB Adaptive Layout のPeter Sorotokin氏による実装</a> なので、その機能が使える。
+        </li>
+        <li>CSS Paged Media、CSS Page Floats など、
+          <a href="#page-css-specs">ページレイアウト関連のCSS仕様</a>を
+          <a href="https://github.com/vivliostyle/vivliostyle.js/blob/master/doc/supported-features.md">いろいろ実装</a>している。</li>
+        <li>しかし今のところ、CSS Paged Media系のCSS仕様の実装は、先行している
+          <a href="#proprietary">プロプライエタリ製品</a>に比べてまだ不十分。</li>
+        <li>PDF出力はWebブラウザエンジンのものを使う。（ChromeのPDF出力が使えるが、印刷用にも配布用にもあまり最適ではない）</li>
+      </ul>
+    </section>
+    <section id="vivliostyle-versatype">
+      <h3>“Vivliostyle” と “VersaType” について</h3>
+      <p>旧ビブリオスタイル社Webサイトに掲載された
+        <a href="https://vivliostyle.com/ja/">変更の告知</a>：</p>
+      <blockquote>
+        株式会社ビブリオスタイルは社名を
+        <strong>
+          <a href="http://trim-marks.com">トリムマーク株式会社</a>
+        </strong> に変更いたしました。
+      </blockquote>
+      <blockquote>
+        Vivliostyle は製品名を
+        <strong>VersaType</strong> に変更いたしました。
+      </blockquote>
+      <blockquote>
+        トリムマーク株式会社は今後オープンソースでの開発を行いません。
+      </blockquote>
+      <blockquote>
+        Vivliostyle のオープンソース部分は
+        <strong>
+          <a href="https://vivliostyle.org">Vivliostyle.org</a>
+        </strong> へ移管しました。
+      </blockquote>
+      <p>VersaType製品の最新情報は：
+        <a href="https://www.facebook.com/TrimMarks.VersaType/">Trim-marks Inc.のFacebookページ</a>
+      </p>
+    </section>
+    <section id="vivliostyle-org">
+      <h3>Vivliostyle オープンソースについて</h3>
+      <ul>
+        <li>Vivliostyle オープンソース・プロジェクトとコミュニティーの維持管理は：
+          <strong>
+            <a href="https://vivliostyle.org">Vivliostyle.org</a>
+          </strong> （代表：村上真雄）</li>
+        <li>一般社団法人ビブリオスタイル（Vivliostyle Foundation）準備中</li>
+        <li>緩募：Vivliostyle 開発や運営に協力してくれる方</li>
+        <li>Communiy &amp; Contact:
+          <a href="https://vivliostyle.org/community/">https://vivliostyle.org/community/</a>
+        </li>
+      </ul>
+    </section>
+  </section>
+  <section id="ending">
+    <h2>Thanks!</h2>
+  </section>
+  </section>
+</body>
+
+</html>
