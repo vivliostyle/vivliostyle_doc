@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Typesetting</title>
+  <link rel="stylesheet" href="css/presen.css">
+  <style>
+    @page {
+      @top-right {
+        content: "CSS Typesetting";
+      }
+    }
+  </style>
+</head>
+<body>
+  <header id="cover">
+    <h1>CSS Typesetting</h1>
+    <p class="event">Digital Publication Layout and Presentation</p>
+    <p class="date">2018-09-19</p>
+    <p class="author"><a target="_blank" href="https://twitter.com/MurakamiShinyu">Shinyu Murakami</a><br>
+      <a target="_blank" href="https://vivliostyle.org">Vivliostyle Foundation</a>
+    </p>
+  </header>
+  <nav id="toc" role="doc-toc">
+    <h2>Table of Contents</h2>
+    <ol>
+      <li>
+        <a href="#my-background">My background</a>
+      </li>
+      <li>
+        <a href="#whats-css-typesetting">What's CSS typesetting</a>
+      </li>
+      <li>
+        <a href="#books-with-css-typesetting">Many books are already made with CSS typesetting</a>
+      </li>
+      <li>
+        <a href="#css-typesetting-engines">Various CSS typesetting engines</a>
+      </li>
+      <li>
+        <a href="#web-browser-css-typesetting">Web browser based CSS typesetting such as Vivliostyle and Paged.js</a>
+      </li>
+      <li>
+        <a href="#web-browser-printcss-typesetting">Web browser's print (save as PDF) problems</a>
+      </li>
+      <li>
+        <a href="#css-page-spec-and-implementation">CSS page layout spec and implementation status</a>
+      </li>
+      <li>
+        <a href="#pagination-on-web">Pagination on Web needs to be standardized</a>
+      </li>
+    </ol>
+  </nav>
+  <section id="intro">
+    <h2>Introduction</h2>
+    <section id="my-background">
+      <h3>My background</h3>
+      <p>I have been working on developing typesetting engines,</p>
+      <ul>
+        <li>Interested in typesetting and markup languages since I developed a text formatter (named “XTR”, free software) in the early 1990's</li>
+        <li>1999-2014 Antenna House Formatter
+          <ul>
+            <li>supporting both XSL-FO and CSS stylesheet languages</li>
+          </ul>
+        </li>
+        <li>Vivliostyle
+          <ul>
+            <li>open source and Web browser based CSS typesetting engine</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+  </section>
+  <section id="about-css-typesetting">
+    <h2>About CSS typesetting</h2>
+    <section id="whats-css-typesetting">
+      <h3>What's CSS typesetting</h3>
+      <ul>
+        <li>Print formatting of publications via CSS</li>
+        <li>There are dedicated softwares for CSS typesetting</li>
+        <li>Some of them use Web browser rendering engine, enhanced with JavaScript</li>
+      </ul>
+    </section>
+    <section id="books-with-css-typesetting">
+      <h3>Many books are already made with CSS typesetting</h3>
+      <ul>
+        <li>Technical books</li>
+        <li>Trade books</li>
+        <li>Manuals and catalogs</li>
+        <li>Academic journals</li>
+      </ul>
+    </section>
+    <section id="css-typesetting-engines">
+      <h3>Various CSS typesetting engines</h3>
+      <p>With CSS Paged Media support, can convert HTML documents to PDF</p>
+      <ul>
+        <li>Proprietary softwares
+          <ul>
+            <li><a target="_blank" href="http://www.princexml.com/">Prince</a></li>
+            <li><a target="_blank" href="http://www.realobjects.com/products/pdfreactor/">PDFreactor</a></li>
+            <li><a target="_blank" href="http://www.antenna.co.jp/AHF/">Antenna House Formatter</a></li>
+            <li><a target="_blank" href="https://trim-marks.com/">VersaType Converter</a>&emsp;(former name was Vivliostyle Formatter)</li>
+          </ul>
+        </li>
+        <li>Open source softwares
+          <ul>
+            <li><a target="_blank" href="https://weasyprint.org/">WeasyPrint</a></li>
+            <li><a target="_blank" href="https://vivliostyle.org/">Vivliostyle</a>&emsp;(pagination on browser; OSS project restarted under Vivliostyle Foundation = vivliostyle.org)</li>
+            <li><a target="_blank" href="https://gitlab.pagedmedia.org/tools/pagedjs">Paged.js</a>&emsp;(See: <a target="_blank" href="https://www.pagedmedia.org/pagedjs-sneak-peeks/">“Paged.js – sneak peeks” on PagedMedia.org</a>)</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+    <section id="web-browser-css-typesetting">
+      <h3>Web browser based CSS typesetting such as Vivliostyle and Paged.js</h3>
+      <ul>
+        <li>Advantages:
+          <ul>
+            <li>Can use Web browser capabilities and standards support</li>
+            <li>Enables pagination on the Web, with print support</li>
+            <li>Responsive or adaptive page design is possible</li>
+            <li>Houdini APIs can be expected as a basis of making next generation CSS typesetting</li>
+          </ul>
+        </li>
+        <li>Problems: Web browser's print/PDF output quality is poor ...</li>
+      </ul>
+    </section>
+  </section>
+  <section id="difficulties-pagination-print">
+    <h2>Difficulties of Browser-Based Pagination &amp; Print</h2>
+    <section id="web-browser-printcss-typesetting">
+      <h3>Web browser's print (save as PDF) problems</h3>
+      <p>Browser, esp. Chrome's Print→Save as PDF is useful. However, its quality is still poor and needs improvement</p>
+      <ul>
+        <li>Problems on font embedding to PDF
+          <ul>
+            <li>Chrome PDF output cannot embed OpenType/CFF fonts and embed them as Type3 fonts. This is problem because most quality fonts (e.g., Japanese fonts on Mac) are OpenType/CFF fonts, and Type3 fonts are not usually accepted by printing house.</li>
+          </ul>
+        </li>
+        <li>Limited to RGB color: Print needs CMYK color</li>
+        <li>Subpixel rendering: Chrome cannot output thin border (&lt;1px) in PDF</li>
+        <li>No standard-compliant PDF support, such as PDF/X, PDF/A or PDF/UA</li>
+      </ul>
+    </section>
+    <section id="css-page-spec-and-implementation">
+      <h3>CSS page layout spec and implementation status</h3>
+      <ul>
+        <li>CSS typesetting engines implement different draft CSS page layout spec and they are not very compatible</li>
+        <li>Standardization of CSS page layout specs, such as:
+          <ul>
+            <li>Generated content for paged media</li>
+            <li>Page floats</li>
+            <li>Page templates</li>
+          </ul>
+        </li>
+        <li>See also <a target="_blank" href="https://www.w3.org/Submission/2017/SUBM-CSJTUWT-20170102/">Current Status of Japanese Typography Using Web Technologies</a></li>
+      </ul>
+    </section>
+  </section>
+  <section id="towards-future">
+    <h2>Towards future</h2>
+    <section id="pagination-on-web">
+      <h3>Pagination on Web needs to be standardized</h3>
+      <ul>
+        <li>Scroll vs. pagination should be a user preference</li>
+        <li>In pagination mode, same page layout spec as printing should be available</li>
+        <li>CSS typesetting quality improvement brings about Web layout quality and readability improvement</li>
+      </ul>
+    </section>
+  </section>
+</body>
+</html>
