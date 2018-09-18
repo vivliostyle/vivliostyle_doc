@@ -14,11 +14,11 @@
 </head>
 <body>
   <header id="cover">
-    <h1>CSS Typesetting</h1>
-    <p class="event">Digital Publication Layout and Presentation</p>
+    <h1><ruby>CSS Typesetting<rt>&#x3000;&#x3000;CSS組版&#x3000;&#x3000;</rt></ruby></h1>
+    <p class="subtitle">Difficulties of Browser-Based Pagination &amp; Print</p>
     <p class="date">2018-09-19</p>
-    <p class="author"><a target="_blank" href="https://twitter.com/MurakamiShinyu">Shinyu Murakami</a><br>
-      <a target="_blank" href="https://vivliostyle.org">Vivliostyle Foundation</a>
+    <p class="author"><a target="_blank" href="https://twitter.com/MurakamiShinyu"><ruby>MURAKAMI Shinyu<rt>&#x3000;村上 真雄&#x3000;</rt></ruby><br>
+      <a target="_blank" href="https://vivliostyle.org">Vivliostyle Foundation (vivliostyle.org)</a>
     </p>
   </header>
   <nav id="toc" role="doc-toc">
@@ -37,7 +37,7 @@
         <a href="#css-typesetting-engines">Various CSS typesetting engines</a>
       </li>
       <li>
-        <a href="#web-browser-css-typesetting">Web browser based CSS typesetting such as Vivliostyle and Paged.js</a>
+        <a href="#browser-based-css-typesetting">Browser based CSS typesetting such as Vivliostyle and Paged.js</a>
       </li>
       <li>
         <a href="#web-browser-printcss-typesetting">Web browser's print (save as PDF) problems</a>
@@ -62,7 +62,7 @@
             <li>supporting both XSL-FO and CSS stylesheet languages</li>
           </ul>
         </li>
-        <li>Vivliostyle
+        <li>Vivliostyle (now, I'm Project Leader at <a target="_blank" href="https://vivliostyle.org">Vivliostyle Foundation = Vivliostyle.org</a>)
           <ul>
             <li>open source and Web browser based CSS typesetting engine</li>
           </ul>
@@ -83,42 +83,62 @@
     <section id="books-with-css-typesetting">
       <h3>Many books are already made with CSS typesetting</h3>
       <ul>
-        <li>Technical books</li>
-        <li>Trade books</li>
-        <li>Manuals and catalogs</li>
-        <li>Academic journals</li>
+        <li>Technical books
+          <ul>
+            <li>O'Reilly Media's books: <a target="_blank" href="https://www.balisage.net/Proceedings/vol10/print/Kleinfeld01/BalisageVol10-Kleinfeld01.html">“The Case for Authoring and Producing Books in (X)HTML5”, 2013 Sanders Kleinfeld</a></li>
+            <li><a target="_blank" href="http://trimmarks.github.io/private_samples/docs/css-secrets-long/viewer/vivliostyle-viewer.html#x=../doc/index.xhtml">Japanese version of “CSS Secrets” by Lea Verou (『CSSシークレット』published by O'Reilly Japan 2016), sample pages with Vivliostyle</a></li>
+          </ul>
+        </li>
+        <li>Trade books
+          <ul>
+            <li>Dave Cramer of Hachette: “For seven years, Hachette Book Group, the fourth-largest trade publisher in the U.S., has been creating both print and digital books with HTML and CSS.” (from <a target="_blank" href="https://www.xml.com/articles/2017/02/20/beyond-xml-making-books-html/"><em>“Beyond XML: Making Books with HTML”</em>, 2017 Dave Cramer</a></li>
+          </ul>
+        </li>
+        <li>Manuals and catalogs
+          <ul>
+            <li>Many product manuals and catalogs of global companies are made using CSS typesetting engines (esp. proprietary commercial ones, such as Antenna House's).</li>
+          </ul>
+        </li>
+        <li>Academic journals
+          <ul>
+            <li>
+              Wiley online journals: <a target="_blank" href="https://trimmarks.github.io/private_samples/docs/private/WIL/viewer/vivliostyle-viewer.html#x=../For%20Vivliostyle_R1%20Samples/AJHB22938/ajhb22938.html">a sample with Vivliostyle (currently, VersaType of Trim-marks Inc.) viewer</a>
+               <!--<a target="_blank" href="https://trimmarks.github.io/private_samples/docs/private/WIL/viewer/vivliostyle-viewer.html#x=../For%20Vivliostyle_R1%20Samples/NLA2075/nla2075.html">sample2</a>-->
+            </li>
+          </ul>
+        </li>
       </ul>
     </section>
     <section id="css-typesetting-engines">
       <h3>Various CSS typesetting engines</h3>
       <p>With CSS Paged Media support, can convert HTML documents to PDF</p>
       <ul>
-        <li>Proprietary softwares
+        <li>Proprietary commercial softwares
           <ul>
             <li><a target="_blank" href="http://www.princexml.com/">Prince</a></li>
             <li><a target="_blank" href="http://www.realobjects.com/products/pdfreactor/">PDFreactor</a></li>
             <li><a target="_blank" href="http://www.antenna.co.jp/AHF/">Antenna House Formatter</a></li>
-            <li><a target="_blank" href="https://trim-marks.com/">VersaType Converter</a>&emsp;(former name was Vivliostyle Formatter)</li>
+            <li><a target="_blank" href="https://trim-marks.com/">VersaType</a> of <a target="_blank" href="https://trim-marks.com/">Trim-marks Inc.</a> (= name changed from <a target="_blank" href="http://vivliostyle.com">Vivliostyle Inc.</a>)</li>
           </ul>
         </li>
         <li>Open source softwares
           <ul>
             <li><a target="_blank" href="https://weasyprint.org/">WeasyPrint</a></li>
-            <li><a target="_blank" href="https://vivliostyle.org/">Vivliostyle</a>&emsp;(pagination on browser; OSS project restarted under Vivliostyle Foundation = vivliostyle.org)</li>
-            <li><a target="_blank" href="https://gitlab.pagedmedia.org/tools/pagedjs">Paged.js</a>&emsp;(See: <a target="_blank" href="https://www.pagedmedia.org/pagedjs-sneak-peeks/">“Paged.js – sneak peeks” on PagedMedia.org</a>)</li>
+            <li><a target="_blank" href="https://vivliostyle.org/">Vivliostyle</a> (pagination on browser; OSS project restarted under <a target="_blank" href="https://vivliostyle.org/">Vivliostyle Foundation = vivliostyle.org</a>)</li>
+            <li><a target="_blank" href="https://gitlab.pagedmedia.org/tools/pagedjs">Paged.js</a> (See: <a target="_blank" href="https://www.pagedmedia.org/pagedjs-sneak-peeks/">“Paged.js – sneak peeks” on PagedMedia.org</a>)</li>
           </ul>
         </li>
       </ul>
     </section>
-    <section id="web-browser-css-typesetting">
-      <h3>Web browser based CSS typesetting such as Vivliostyle and Paged.js</h3>
+    <section id="browser-based-css-typesetting">
+      <h3>Browser based CSS typesetting such as Vivliostyle and Paged.js</h3>
       <ul>
         <li>Advantages:
           <ul>
-            <li>Can use Web browser capabilities and standards support</li>
-            <li>Enables pagination on the Web, with print support</li>
-            <li>Responsive or adaptive page design is possible</li>
-            <li>Houdini APIs can be expected as a basis of making next generation CSS typesetting</li>
+            <li>Can use Web browser capabilities and standards support.</li>
+            <li>Enables pagination on the Web, with print support.</li>
+            <li>Responsive or adaptive page design is possible.</li>
+            <li>Houdini APIs can be expected as a basis of making next generation CSS typesetting engine.</li>
           </ul>
         </li>
         <li>Problems: Web browser's print/PDF output quality is poor ...</li>
@@ -129,7 +149,7 @@
     <h2>Difficulties of Browser-Based Pagination &amp; Print</h2>
     <section id="web-browser-printcss-typesetting">
       <h3>Web browser's print (save as PDF) problems</h3>
-      <p>Browser, esp. Chrome's Print→Save as PDF is useful. However, its quality is still poor and needs improvement</p>
+      <p>Web browser, esp. Chrome's <b>Print</b>→<b>Save as PDF</b> is useful. However, its quality is still poor and needs improvement:</p>
       <ul>
         <li>Problems on font embedding to PDF
           <ul>
@@ -161,9 +181,9 @@
     <section id="pagination-on-web">
       <h3>Pagination on Web needs to be standardized</h3>
       <ul>
-        <li>Scroll vs. pagination should be a user preference</li>
-        <li>In pagination mode, same page layout spec as printing should be available</li>
-        <li>CSS typesetting quality improvement brings about Web layout quality and readability improvement</li>
+        <li>Scroll vs. pagination should be a user preference.</li>
+        <li>In pagination mode, same page layout spec as printing should be available.</li>
+        <li>CSS typesetting quality improvement brings about Web layout quality and readability improvement.</li>
       </ul>
     </section>
   </section>
