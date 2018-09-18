@@ -65,7 +65,7 @@ html {
   font-size: 300%;
   text-align: center;
   color: #fff;
-  padding-top: 30mm;
+  padding-top: 25mm;
   margin: 0;
 }
 
@@ -84,6 +84,10 @@ html {
 
 #cover a {
   color: inherit;
+}
+
+.bigger {
+  font-size: 150%;
 }
 
 /* 目次 */
