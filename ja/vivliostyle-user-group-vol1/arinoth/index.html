@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=s, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>EPUB Adaptive Layout による段組み混在レイアウトへの挑戦</title>
+    <link rel="stylesheet" href="main.css"/>
+  </head>
+  <body>
+    <article>
+<h1 id="epub-adaptive-layout-によるwbr段組みwbr混在wbrレイアウトwbrへのwbr挑戦">EPUB Adaptive Layout による<wbr>段組み<wbr>混在<wbr>レイアウト<wbr>への<wbr>挑戦</h1>
+<div class="draft-author">リブロワークス 大津雄一郎 @arinoth</div>
+<p>まだ完成していないので名前は伏せますが、某複合機の製品マニュアルのための PDF 生成用 CSS の作成に関わりました。そのマニュアルのレイアウトは、基本 2 段組みで上部に 1 段組みが混ざる場合があるという、異なる段組みが混在したものです。今までも書籍の「仮組み」を作る目的で Vivliostyle を使ってきましたが、完成印刷物（注：実案件のフィニッシュは複合機で印刷できることです）まで目指したのは今回がはじめてで、かなり苦労しました。</p>
+<p>今回はそのために作成した EPUB Adaptive Layout によるマスターページについて軽くお話しします。EPUB Adaptive Layout はなかなか難しいもので、手探りの試行錯誤で成果物を作ることは何とかできたというレベルなのですが、体験談の 1 つとしてお読みいただけると幸いです。</p>
+<p>※画像のサンプルはこの記事のために作成したもので、実案件の成果物とはまったく異なります<span class="footnote">この記事で使用するサンプルのデータ <a href="https://github.com/lwohtsu/atom-markdown-book-preview/tree/master/bookmasterpage_sample">https://github.com/lwohtsu/atom-markdown-book-preview/tree/master/bookmasterpage_sample</a></span>。</p>
+<p></p>
+<figure>
+  <img src="../assets/arinoth/sshot-2.png" alt="マスターイメージ">
+  <figcaption class="fig">マスターイメージ</figcaption>
+</figure>
+<p></p>
+<h2 id="epub-adaptive-layout-とは？">EPUB Adaptive Layout とは？</h2>
+<p>Vivliostyle にはページレイアウトを設定するための仕様が 2 種類あります。1 つは「CSS Paged Media」、もう1つは「EPUB Adaptive Layout<span class="footnote">EPUB Adaptive Layout <a href="http://www.idpf.org/epub/pgt/">http://www.idpf.org/epub/pgt/</a></span>」です。名前からして本命は前者のようなのですが、表現力は EPUB Adaptive Layout のほうが圧倒的に勝っています。</p>
+<p>EPUB Adaptive Layout の特徴は、「マスターページ」というものを設計し、どこに何を流し込むかを細かく指定できる点です。マスターページを複数作って切り替えながら使うこともできます（自在に使うのはかなり難しいですが）。</p>
+<p><strong>@-epubx-page-template ルール</strong>内に<strong>@-epubx-page-master ルール</strong>を書き、それが1つのマスターページの指定になります。マスターページの指定内には<strong>@-epubx-partition ルール</strong>を使ってパーティーション（領域）を作り、それがコンテンツが流し込まれる場所の指定となります。パーティーションとは InDesign でいうところのマスターアイテム的なものです。</p>
+<h6 id="マスターページのイメージコード" class="code-title">マスターページのイメージコード</h6>
+<pre><code class="language-css"><span class="token atrule"><span class="token rule">@-epubx-page-template</span></span> <span class="token punctuation">{</span>
+  <span class="token comment">/* ここからマスター設定 */</span>
+  <span class="token atrule"><span class="token rule">@-epubx-page-master</span> main</span> <span class="token punctuation">{</span>
+    <span class="token atrule"><span class="token rule">@-epubx-partition</span> back<span class="token number">1</span></span><span class="token punctuation">{</span>
+      背景飾り
+    <span class="token punctuation">}</span>
+    <span class="token atrule"><span class="token rule">@-epubx-partition</span> col<span class="token number">2</span></span><span class="token punctuation">{</span>
+      <span class="token number">2</span>段組み流し込み領域
+    <span class="token punctuation">}</span>
+    <span class="token atrule"><span class="token rule">@-epubx-partition</span> col<span class="token number">1</span></span><span class="token punctuation">{</span>
+      <span class="token number">1</span>段組み流し込み領域
+    <span class="token punctuation">}</span>
+    <span class="token atrule"><span class="token rule">@-epubx-partition</span></span> <span class="token punctuation">{</span>
+      ノンブル領域
+    <span class="token punctuation">}</span>
+    <span class="token atrule"><span class="token rule">@-epubx-partition</span></span> <span class="token punctuation">{</span>
+      柱流し込み領域
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p></p>
+<figure>
+  <img src="../assets/arinoth/sshot-6.JPG" alt="図版：マスターページ">
+  <figcaption class="fig">図版：マスターページ</figcaption>
+</figure>
+<p></p>
+<p>今回のサンプルではマスターページの指定は別ファイルに分けてインポートしています。ページサイズは @page ルールで指定します。</p>
+<h6 id="manualcss" class="code-title">manual.css</h6>
+<pre><code class="language-css"><span class="token comment">/*ページサイズ*/</span>
+<span class="token atrule"><span class="token rule">@page</span></span> <span class="token punctuation">{</span>
+  <span class="token property">size</span><span class="token punctuation">:</span> <span class="token number">210</span><span class="token unit">mm</span> <span class="token number">297</span><span class="token unit">mm</span><span class="token punctuation">;</span>  <span class="token comment">/*A4*/</span>
+<span class="token punctuation">}</span>
+
+<span class="token atrule"><span class="token rule">@-epubx-page-template</span></span> <span class="token punctuation">{</span>
+  <span class="token atrule"><span class="token rule">@import</span> <span class="token string">"masterpage_simple.css"</span><span class="token punctuation">;</span></span>
+<span class="token punctuation">}</span></code></pre>
+<p>サンプルの HTML は次のとおりです（実際のサンプルは Markdown から変換した都合で日本語が 16 進数表記になっています）。</p>
+<h6 id="master_testhtml" class="code-title">master_test.html</h6>
+<pre><code class="language-html"><span class="token doctype">&#x3C;!DOCTYPE html></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>html</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>title</span><span class="token punctuation">></span></span>doc<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>title</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>css/manual.css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>head</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>coverpage<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>h1</span><span class="token punctuation">></span></span>タイトルページ<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>h1</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>runninghead<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>ランニングヘッド<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>sect<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>uppersingle<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>h1</span><span class="token punctuation">></span></span>タイトル1<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>h1</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>p</span><span class="token punctuation">></span></span>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>p</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>dummyboxh<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>ダミーボックス<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span>
+
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>h2</span><span class="token punctuation">></span></span>中タイトル<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>h2</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>h3</span><span class="token punctuation">></span></span>小タイトル<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>h3</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>p</span><span class="token punctuation">></span></span>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>uppersingle<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>kissclipart-royal-exchange_cc0.png<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span>
+      ……後略……</code></pre>
+<p>上部の一段組み領域に流し込みたい部分は「<code>&#x3C;div class="uppersingle"></code>」で囲んでいます。また、カバーページにする部分は「<code>&#x3C;div class="coverpage"></code>」で囲んでいます。注目すべきところはそれぐらいで、あとは標準的な HTML です。</p>
+<h2 id="パーティーションの作成">パーティーションの作成</h2>
+<h3 id="ノンブルの配置">ノンブルの配置</h3>
+<p>マスターページ内に書く領域について 1 つずつ説明していきます。まずはたいていの文書で必要となるノンブル（ページ番号）の配置からです。</p>
+<p>Vivliostyle のマスターページは、InDesign のような見開き設定ができないため、左右ページでスタイルを変えたい場合でも 1 ページ分の設定の中に書かなければいけません。右ページと左ページで位置が変わる場合、領域も 2 つ必要となります。そして<strong>-epubx-enabled プロパティ</strong>を利用して、奇数ページと偶数ページのどちらかにだけ表示されるよう制限します。</p>
+<h6 id="masterpage_simplecss" class="code-title">masterpage_simple.css</h6>
+<pre><code class="language-css"><span class="token comment">/*偶数ノンブル*/</span>
+<span class="token atrule"><span class="token rule">@-epubx-partition</span></span> <span class="token punctuation">{</span>
+  <span class="token property">-epubx-enabled</span><span class="token punctuation">:</span> <span class="token function">-epubx-expr</span><span class="token punctuation">(</span> page-number % <span class="token number">2</span>==<span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token function">counter</span><span class="token punctuation">(</span>page<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">bottom</span><span class="token punctuation">:</span> <span class="token number">5</span><span class="token unit">mm</span><span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> <span class="token number">15</span><span class="token unit">mm</span><span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">170</span><span class="token unit">mm</span><span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">5</span><span class="token unit">mm</span><span class="token punctuation">;</span>
+  <span class="token property">text-align</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">12</span><span class="token unit">pt</span><span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token hexcode">#000</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">/*奇数ノンブル*/</span>
+<span class="token atrule"><span class="token rule">@-epubx-partition</span></span> <span class="token punctuation">{</span>
+  <span class="token property">-epubx-enabled</span><span class="token punctuation">:</span> <span class="token function">-epubx-expr</span><span class="token punctuation">(</span> page-number % <span class="token number">2</span>==<span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">content</span><span class="token punctuation">:</span>  <span class="token function">counter</span><span class="token punctuation">(</span>page<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">bottom</span><span class="token punctuation">:</span> <span class="token number">5</span><span class="token unit">mm</span><span class="token punctuation">;</span>
+  <span class="token property">right</span><span class="token punctuation">:</span> <span class="token number">15</span><span class="token unit">mm</span><span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">170</span><span class="token unit">mm</span><span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">5</span><span class="token unit">mm</span><span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token property">text-align</span><span class="token punctuation">:</span> right<span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">12</span><span class="token unit">pt</span><span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token hexcode">#000</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>ページ番号は<code>counter(page)</code>で表示し、「<code>counter-reset: page</code>」で初期化できるのですが、「<code>@-epubx-page-template {}</code>」内で初期化しないと効果がないようです。</p>
+<h3 id="2-段組みの本文領域の作成">2 段組みの本文領域の作成</h3>
+<p>次にメインとなる 2 段組み用の領域を作成します。2 段組みの実装方法としては、「マスターで 2 段組みの領域を作る」方法と、「マスターでは 1 段組みにして流し込まれる側に2段組みを設定する」方法の 2 とおりが考えられます。ただ、筆者が前に試したところでは、後者のやり方だと段がキレイにそろわず、理解しがたいところで次ページに送られた経験があります。</p>
+<p>このサンプルのようにマスター側で 2 段組みにした場合、実際のページでは Vivliostyle が 2 つのボックスを生成して配置します。どこまでを前段に残し、どこから次の段に送られるかという判断も Vivliostyle が行うようです。そのせいかはわかりませんが、結果として比較的きれいな段組みになる印象です。</p>
+<h6 id="masterpage_simplecss-1" class="code-title">masterpage_simple.css</h6>
+<pre><code class="language-css"><span class="token comment">/* 二段組み領域 */</span>
+<span class="token atrule"><span class="token rule">@-epubx-partition</span> col<span class="token number">2</span></span><span class="token punctuation">{</span>
+  <span class="token property">-epubx-flow-from</span><span class="token punctuation">:</span> body<span class="token punctuation">;</span>
+  <span class="token property">-epubx-required</span><span class="token punctuation">:</span> true<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> <span class="token number">25</span><span class="token unit">mm</span><span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> <span class="token number">20</span><span class="token unit">mm</span><span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">170</span><span class="token unit">mm</span><span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">247</span><span class="token unit">mm</span><span class="token punctuation">;</span>
+  <span class="token property">overflow</span><span class="token punctuation">:</span> visible<span class="token punctuation">;</span>
+  <span class="token comment">/*段数指定*/</span>
+  <span class="token property">column-count</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">;</span>
+  <span class="token property">column-gap</span><span class="token punctuation">:</span> <span class="token number">8</span><span class="token unit">mm</span><span class="token punctuation">;</span>
+  <span class="token property">column-rule</span><span class="token punctuation">:</span> dotted <span class="token number">0.5</span><span class="token unit">mm</span> <span class="token hexcode">#000</span><span class="token punctuation">;</span>
+  <span class="token property">column-fill</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token hexcode">#EFF</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>領域内で使用しているのはほとんどが一般的な CSS プロパティですが、重要なものが 2 つあります。まず「<code>-epubx-flow-from: body;</code>」は body 要素内のコンテンツをこの領域に流し込めという指示です。他の領域に流し込む指定がないコンテンツはすべてここに流し込まれます。</p>
+<p>その次の「<code>-epubx-required: true;</code>」はこの領域をマスター内に必ず配置しろという意味です。これはマスター内の<strong>1 つの領域に必ず書く</strong>必要があるらしく、「<code>-epubx-required: true;</code>」が 1 つもない場合や、複数の領域に書いた場合は Vivliostyle がフリーズするようです。</p>
+<h3 id="1-段組みの本文領域の作成">1 段組みの本文領域の作成</h3>
+<p>次に1段組み領域を作成します。領域の作り方自体はこれまでと同じです。ちなみに<code>@-epubx-partition</code>のあとに「<code>col1</code>」や「<code>col2</code>」という名前を付けていますが、これ自体はあまり意味はないようです（少なくともこのサンプル内では無意味です）。</p>
+<p>重要なのは、「<code>-epubx-flow-from: master-single-flow;</code>」です。これは<code>master-single-flow</code>という名前が表すフロー（コンテンツの流れ）をこの領域に流し込めという意味です。このフローは別のところで定義する必要があります。ちなみにフローの名前を間違えると Vivliostyle が止まったりするので、とても注意してください。</p>
+<h6 id="masterpage_simplecss-2" class="code-title">masterpage_simple.css</h6>
+<pre><code class="language-css"><span class="token comment">/* 一段組み領域 */</span>
+<span class="token atrule"><span class="token rule">@-epubx-partition</span> col<span class="token number">1</span></span><span class="token punctuation">{</span>
+  <span class="token property">-epubx-flow-from</span><span class="token punctuation">:</span> master-single-flow<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> <span class="token number">25</span><span class="token unit">mm</span><span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> <span class="token number">20</span><span class="token unit">mm</span><span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">170</span><span class="token unit">mm</span><span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token hexcode">#FFE</span><span class="token punctuation">;</span>
+  <span class="token property">overflow</span><span class="token punctuation">:</span> visible<span class="token punctuation">;</span>
+  <span class="token property">padding-bottom</span><span class="token punctuation">:</span> <span class="token number">10</span><span class="token unit">mm</span><span class="token punctuation">;</span>
+  <span class="token property">max-width</span><span class="token punctuation">:</span> <span class="token number">247</span><span class="token unit">mm</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>また、この領域は初期状態の高さを設定せず、<code>max-width</code>だけを指定しています。この場合、流し込むコンテンツがない場合は 1 段組み領域は表示されません。今回のフォーマットでは任意のページだけに 1 段組みを表示したいので、こういう指定にしています。ただし、このような領域を重ねる配置方法には、いくつか副作用があります。それについてはあとで説明します。</p><br>
+<p>今度は流し込む側の指定です。1 段組み領域に流し込むコンテンツは、HTML 側では<code>div.uppersingle</code>で囲んでいます。この場合<code>.uppersingle</code>をセレクタにして、「<code>-epubx-flow-into: master-single-flow;</code>」と指定します。つまり、コンテンツ側に<code>-epubx-flow-into</code>プロパティを書き、流し込む領域側に<code>-epubx-flow-from</code>プロパティを書き、両者を同じフロー名で紐付けるのです。</p>
+<p>なお、この指定は<code>@-epubx-page-template</code>の中、かつ<code>@-epubx-page-master</code>の外に書く必要があります。</p>
+<h6 id="masterpage_simplecss-3" class="code-title">masterpage_simple.css</h6>
+<pre><code class="language-css"><span class="token selector"><span class="token class">.uppersingle</span></span> <span class="token punctuation">{</span>
+  <span class="token property">-epubx-flow-into</span><span class="token punctuation">:</span> master-single-flow<span class="token punctuation">;</span>
+  <span class="token property">break-before</span><span class="token punctuation">:</span> page<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token atrule"><span class="token rule">@-epubx-flow</span> master-single-flow</span> <span class="token punctuation">{</span>
+  <span class="token property">-epubx-flow-consume</span><span class="token punctuation">:</span> all<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>そのあとの「<code>@-epubx-flow master-single-flow{-epubx-flow-consume: all;}</code>」ですが、これは流し込むものが柱の場合は不要で、本文的なコンテンツの場合は必要なものです。村上さんに質問したところによると、ないと一部が表示されない恐れがあるとのこと。</p>
+<p><code>-epubx-flow-into</code>と<code>-epubx-flow-from</code>を使うときに大事なのは、とにかく<strong>フロー名を間違えない</strong>ことです。マスターページを作り始めたころに、「何かよくわからないけど止まる……」原因はたいていフロー名の不一致です。</p>
+<h3 id="柱の作成">柱の作成</h3>
+<p>柱（runninghead）のための指定です。これはノンブルの配置と 1 段組み配置の合わせ技ですね。領域指定については特に新たに説明するものはありません。</p>
+<h6 id="masterpage_simplecss-4" class="code-title">masterpage_simple.css</h6>
+<pre><code class="language-css"><span class="token comment">/* 柱 */</span>
+<span class="token atrule"><span class="token rule">@-epubx-partition</span></span><span class="token punctuation">{</span>
+  <span class="token property">-epubx-enabled</span><span class="token punctuation">:</span> <span class="token function">-epubx-expr</span><span class="token punctuation">(</span> page-number % <span class="token number">2</span>==<span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">-epubx-flow-from</span><span class="token punctuation">:</span> master-running-flow<span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> <span class="token number">5</span><span class="token unit">mm</span><span class="token punctuation">;</span>
+  <span class="token property">right</span><span class="token punctuation">:</span> <span class="token number">15</span><span class="token unit">mm</span><span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">170</span><span class="token unit">mm</span><span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">5</span><span class="token unit">mm</span><span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">12</span><span class="token unit">pt</span><span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token hexcode">#000</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p><code>-epubx-flow-into</code>側では「<code>-epubx-flow-options: static exclusive last;</code>」を付けます。これがないと柱は 1 回しか表示されません。</p>
+<h6 id="masterpage_simplecss-5" class="code-title">masterpage_simple.css</h6>
+<pre><code class="language-css"><span class="token selector"><span class="token class">.runninghead</span></span> <span class="token punctuation">{</span>
+  <span class="token property">-epubx-flow-into</span><span class="token punctuation">:</span> master-running-flow<span class="token punctuation">;</span>
+  <span class="token property">-epubx-flow-options</span><span class="token punctuation">:</span> static exclusive last<span class="token punctuation">;</span>
+  <span class="token property">text-align</span><span class="token punctuation">:</span> right<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>なお、柱に流し込んだコンテンツは本文領域に表示されなくなるため、見出しを柱に表示したいときはどうしたらいいか悩みます。解決策は実は非常に単純で、見出しの要素と別に柱に表示する用の要素を作ればいいのです。</p>
+<pre><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>h2</span><span class="token punctuation">></span></span>見出しのタイトル<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>runninghead<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>見出しのタイトル<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>span</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>h2</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="ページに飾りを付ける">ページに飾りを付ける</h3>
+<p>領域回りの説明もこれで最後です。今回のマスターには、ページ回りに緑色の飾りを付けています。単に領域をいくつか置くだけです。</p>
+<h6 id="masterpage_simplecss-6" class="code-title">masterpage_simple.css</h6>
+<pre><code class="language-css"><span class="token comment">/* 背景装飾 */</span>
+<span class="token atrule"><span class="token rule">@-epubx-partition</span> back<span class="token number">1</span></span><span class="token punctuation">{</span>
+  <span class="token property">top</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">210</span><span class="token unit">mm</span><span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">297</span><span class="token unit">mm</span><span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token hexcode">#6D6</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token atrule"><span class="token rule">@-epubx-partition</span> back<span class="token number">2</span></span><span class="token punctuation">{</span>
+  <span class="token property">-epubx-enabled</span><span class="token punctuation">:</span> <span class="token function">-epubx-expr</span><span class="token punctuation">(</span> page-number % <span class="token number">2</span>==<span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span><span class="token number">15</span><span class="token unit">mm</span><span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> <span class="token number">10</span><span class="token unit">mm</span><span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">200</span><span class="token unit">mm</span><span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">267</span><span class="token unit">mm</span><span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token hexcode">#FFF</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token atrule"><span class="token rule">@-epubx-partition</span> back<span class="token number">2</span></span><span class="token punctuation">{</span>
+  <span class="token property">-epubx-enabled</span><span class="token punctuation">:</span> <span class="token function">-epubx-expr</span><span class="token punctuation">(</span> page-number % <span class="token number">2</span>==<span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span><span class="token number">15</span><span class="token unit">mm</span><span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">200</span><span class="token unit">mm</span><span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">267</span><span class="token unit">mm</span><span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token hexcode">#FFF</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>なお、マスターページ内に複数の領域を配置する場合、<code>@-epubx-page-master</code>内で<strong>先に記述したものが奥に配置されます</strong>。そのため、背景のための領域は先に書き、本文や柱のテキストはあとに書くといいでしょう。</p>
+<p><code>z-index</code>プロパティを使って強制的に領域の重ね順を変えることもできますが、使いすぎるとわけがわからなくなるので、基本は記述順で重ね順をコントロールし、それでどうしても不都合があるときだけ<code>z-index</code>を使ったほうがよさそうです。</p>
+<h2 id="「超」重要な改ページの制御">「超」重要な改ページの制御</h2>
+<p>改ページ用のプロパティは普通の CSS ではあまり意識されないものですが、CSS 組版では「超」重要です。そしてとてもやっかいです。うまく設定しないと、改ページをしてほしいところでしてくれず、しなくていいところでしたりします。</p>
+<p>改ページしたいところに要素（ボーダーを消した hr 要素など）を置いて強制改ページ指定するなら簡単ですが、それだと人間が手作業ですべて指定しなければいけなくなってしまいます。最低でも見出しをページ末に配置しない（<code>break-after: avoid-page</code>）設定はしておくべきでしょう。</p>
+<table>
+  <thead>
+    <tr>
+      <th>
+        <div style="min-width: 8rem">プロパティ</div>
+      </th>
+      <th>
+        <div style="min-width: 8rem">値</div>
+      </th>
+      <th>説明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>break-before</code></td>
+      <td><code>auto</code></td>
+      <td>初期値。</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><code>page</code></td>
+      <td>この要素の前で改ページする。</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><code>column</code></td>
+      <td>この要素の前で改段する。</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><code>left</code></td>
+      <td>この要素の前で改ページして、左ページから開始する。</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><code>right</code></td>
+      <td>この要素の前で改ページして、右ページから開始する。</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><code>avoid-page</code></td>
+      <td>この要素の前での改ページを避ける。つまり、直前の要素を上に引っ張ってくる。</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><code>avoid-column</code></td>
+      <td>この要素の前での改段を避ける。つまり、直前の要素を上に引っ張ってくる。</td>
+    </tr>
+    <tr>
+      <td><code>break-after</code></td>
+      <td><code>auto</code></td>
+      <td>初期値。</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><code>page</code></td>
+      <td>この要素のあとで改ページする。</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><code>column</code></td>
+      <td>この要素のあとで改段する。</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><code>left</code></td>
+      <td>この要素のあとで改ページして、左ページから開始する。</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><code>right</code></td>
+      <td>この要素のあとで改ページして、右ページから開始する。</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><code>avoid-page</code></td>
+      <td>この要素のあとでの改ページを避ける。つまり、要素がページ末に来そうなら、次のページに送る。</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><code>avoid-column</code></td>
+      <td>この要素のあとでの改段を避ける。つまり、要素が段末に来そうなら、次の段に送る。</td>
+    </tr>
+    <tr>
+      <td><code>break-inside</code></td>
+      <td><code>auto</code></td>
+      <td>初期値。</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><code>avoid-page</code></td>
+      <td>要素の途中での改ページ（泣き別れ）を避ける。つまり、改ページしそうなら丸ごと次ページに送る。</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><code>avoid-column</code></td>
+      <td>要素の途中での改段（泣き別れ）を避ける。つまり、改段しそうなら丸ごと次段に送る。</td>
+    </tr>
+  </tbody>
+</table>
+<p>プロパティが 3 種類、値もたくさんあるので、覚えきれないのではと心配するかもしれませんが、大丈夫です。<strong>うまく行くまで何度も調整することになるので、そのうちに忘れられなくなります</strong>。</p>
+<p>これらのプロパティは CSS 標準に属するので、ちゃんと MDN にも載っています<span class="footnote"><a href="https://developer.mozilla.org/ja/docs/Web/CSS/break-inside">https://developer.mozilla.org/ja/docs/Web/CSS/break-inside</a></span>。</p>
+<p></p>
+<figure>
+  <img src="../assets/arinoth/sshot-5.png" alt="MDNの画像">
+  <figcaption class="fig">MDNの画像</figcaption>
+</figure>
+<p></p>
+<p>なお、CSS には<code>pabe-break-before</code>のように<code>page-</code>で始まるプロパティもあり、今でも使えますが非推奨になったようです。</p>
+<p>改ページ位置は<code>orphans</code>（ページ末に表示する最小行数）と<code>widows</code>（ページ頭に表示する最小行数）の影響も受けます。これもいろいろ調整しながら最適な値をひねり出すしかありません。</p>
+<h2 id="さまざまなトラブルと暫定的な対処">さまざまなトラブルと暫定的な対処</h2>
+<p>ここからはマスターページを使っている内に起きたさまざまなトラブルについて書いていきます。ほぼ解決したのでさらっと書いていますが、夢に見るレベルで大変でした。</p>
+<h3 id="フローごとに改ページ制御が必要">フローごとに改ページ制御が必要</h3>
+<p>サンプルのように 1 段組み領域と 2 段組み領域があって個別に流し込む場合、フローは別々に処理されます。つまり、1 段組み領域と 2 段組み領域は別のコンテンツとして扱われます。ちょっと困ってしまうのは、コンテンツの分量によっては HTML の順番とは異なる表示になってしまうことです。</p>
+<p>次の図では HTML では「1段、2段、1段、2段」という順番にコンテンツが並んでいますが、ページ上の表示が「1段、2段、2段、1段」となってしまう場合があるということです。いわゆる非同期問題みたいなものですね。1 段組みのコンテンツが挿絵のようなものなら問題ないのですが、節見出しのようなコンテンツの区切りの場合、困ったことになります。</p>
+<p></p>
+<figure>
+  <img src="../assets/arinoth/sshot-7.JPG" alt="図版：前に流し込まれてしまう">
+  <figcaption class="fig">図版：前に流し込まれてしまう</figcaption>
+</figure>
+<p></p>
+<p>それで困る場合は、1 段組み、2 段組みフローそれぞれで改ページ指定する必要があります。</p>
+<p></p>
+<figure>
+  <img src="../assets/arinoth/sshot-8.JPG" alt="図版：改ページ指定を加えて合わせる">
+  <figcaption class="fig">図版：改ページ指定を加えて合わせる</figcaption>
+</figure>
+<p></p>
+<h3 id="領域を重ねると、いろいろと困った現象が起きる">領域を重ねると、いろいろと困った現象が起きる</h3>
+<p>サンプルのマスターは 1 段組み領域と 2 段組み領域を重ねています。聞いたところによると、領域が重なった場合、Vivliostyle が間に<strong>floatを設定した領域</strong>を挟み、下に来る要素（サンプルの場合は 2 段組み領域）の文字が隠れないように追い出してくれます。InDesign でいうところの「テキストの回り込み」処理ですね。ところがここで困るのは、文字は追い出してくれるのですが、<strong>要素自体は残ってしまう</strong>という点です。</p>
+<p>この結果、次のような問題が起きます。</p>
+<ul>
+  <li>段頭に配置された要素の上ボーダーが消える</li>
+  <li>段頭に配置された li 要素のマーカーが変な位置に来る／消える</li>
+</ul>
+<p>知らないとビックリしますが、要するに上の領域に、下の領域の要素が潜り込んでしまっているのです。</p>
+<p>実案件では問題が終盤に発覚したため、かなり強引な方法で解決することになってしまったのですが、紹介するほどいいやり方ではありません。そもそも「段組みを混在させるためにマスターページ内で領域を重ねる」という方法がよくないという説もあります。</p>
+<h3 id="版面からはみ出すカバーページを作りたい">版面からはみ出すカバーページを作りたい</h3>
+<p>カバーページ（本扉、章扉）はたいてい他のページとはデザインが異なります。ただ、そのためにマスターページを増やすと別の問題が起きるため、結構シンプルな方法で解決しました。</p>
+<p></p>
+<figure>
+  <img src="../assets/arinoth/sshot-1.png" alt="カバーページ">
+  <figcaption class="fig">カバーページ</figcaption>
+</figure>
+<p></p>
+<p>要素サイズをページサイズに合わせ、絶対配置にして版面外にはみ出させ、さらに<code>z-index</code>も増やしてマスターページの要素を隠してしまうのです。</p>
+<h6 id="manualcss-1" class="code-title">manual.css</h6>
+<pre><code class="language-css"><span class="token comment">/* カバーページ */</span>
+<span class="token selector"><span class="token class">.coverpage</span></span><span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">210</span><span class="token unit">mm</span><span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">297</span><span class="token unit">mm</span><span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token hexcode">#FFE</span><span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> <span class="token number">-25</span><span class="token unit">mm</span><span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> <span class="token number">-20</span><span class="token unit">mm</span><span class="token punctuation">;</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+  <span class="token property">flex-direction</span><span class="token punctuation">:</span> column<span class="token punctuation">;</span>
+  <span class="token property">justify-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+  <span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+  <span class="token property">z-index</span><span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="マスターページの適用順がおかしくなる">マスターページの適用順がおかしくなる</h3>
+<p>Vivliostyle では複数のマスターページを作ることができますが、この制御が結構難しく、油断すると HTML での順番を無視して<strong>書籍の冒頭に奥付が来る</strong>といったトラブルが起きます。</p>
+<p>いろいろと質問してみたり試行錯誤してみたりしたのですが、最終的に実案件では、マスターページの使い回しを減らし、<strong>台割の順番に合わせて似たようなマスターページを大量に作る</strong>という方法を採りました。つまり、仮に「白ページマスター」「赤ページマスター」が交互に来る書籍があった場合、「白ページマスター 1」「赤ページマスター 1」「白ページマスター 2」「赤ページマスター 2」のように大量に作ってしまうのです。</p>
+<p>きれいな方法ではありませんが、奥付が書籍の頭に表示されるよりはマシです。それに一般的な書籍であれば、せいぜい「前付けマスター」「目次マスター」「本文マスター」「後付けマスター」ぐらいで済むと思います。</p>
+<p>ちなみに実案件では、章のツメを動かすために章ごとにマスターページを作っています。ただ、あとから考えると、1 マスター内にツメの領域を複数作っておき、章ごとに流し込む領域を変えるという方法でもよかったかもしれません。</p>
+<h3 id="段頭に来た見出しの上マージン">段頭に来た見出しの上マージン</h3>
+<p>見出しの上マージンは、ページや段の先頭に来るときは 0、それ以外のときは空けたいものです。ページや段の先頭に来たときにマッチする擬似セレクタがあるといいのですがないので、上マージンを 0 にしておき、「<code>p+h2</code>」などの条件で上マージンを設定するのが一般的なやり方でしょうか。</p>
+<p>ただ、この方法でうまく行かないときや、特に指定していないのに上マージンが0になることもあってなかなか謎が多いです。</p>
+<h3 id="前処理で補助用のクラスをたくさん付けたほうがよさそう">前処理で補助用のクラスをたくさん付けたほうがよさそう</h3>
+<p>実案件では「HTML を入力しやすいようクラスは最低限に」という要望があって、最低限のクラス指定（それでも結構ありましたが）で進めた結果、『CSS 設計本』で禁じ手とされるややこしいセレクタ指定やスタイル打ち消しが大量に発生してしまい、いわゆるメンテナンスしにくい CSS になってしまいました。</p>
+<p>反省点なのですが、クラスを手で入力できないのであれば、何かのスクリプトの前処理でクラスを自動追加してしまえばよかったですね。例えばリストの入れ子がかなりあったので、スクリプトで階層をチェックして「<code>ol_level1</code>」「<code>ol_level2</code>」のようなクラスを自動追加するだけでも、かなりやりやすくなったのではないかという気がします。</p>
+<h2 id="まとめ">まとめ</h2>
+<p>今のところ、CSS 組版で最終印刷物まで持って行くのは、ノウハウなさ過ぎて大変です。InDesign だったら「赤字を入れて、はいお願い」で済むことに、何倍の時間かけているんだという気持ちになります。とはいえ、書き出した PDF を見ると「意外とちゃんとできてるなぁ」という印象はありますし、挑戦する人が増えてノウハウが蓄積されてくれば、また違った地平が見えて来るのではないでしょうか。</p>
+
+    </article>
+  </body>
+</html>

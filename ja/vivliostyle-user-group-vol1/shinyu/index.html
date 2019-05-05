@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=s, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Vivliostyle Viewer で CSS 組版ちょっと入門</title>
+    <link rel="stylesheet" href="main.css"/>
+  </head>
+  <body>
+    <article>
+<h1 id="vivliostyle-viewer-で-css-組版wbrちょっと入門">Vivliostyle Viewer で CSS 組版<wbr>ちょっと入門</h1>
+<div class="draft-author">村上 真雄 @MurakamiShinyu</div>
+<p>Vivliostyle は、CSS 組版で本を作るためのツールとして、少しずつ知られるようになってきたかと思います。そして、最近の更新では、目次ナビゲーション機能、Web Publications 対応など、Web／電子出版ビューアとしても、使い勝手のよいものを目指しています。この「Vivliostyle Viewer で CSS 組版ちょっと入門」では、Vivliostyle Viewer でできることを中心にした CSS 組版のちょっとだけ入門を書いてみます。</p>
+<h2 id="vivliostyle-viewer-の紹介">Vivliostyle Viewer の紹介</h2>
+<p>Vivliostyle Viewer<span class="footnote"><a href="https://vivliostyle.github.io/vivliostyle.js/viewer/vivliostyle-viewer.html">https://vivliostyle.github.io/vivliostyle.js/viewer/vivliostyle-viewer.html</a></span> は、ブラウザ上で動作する CSS 組版エンジン <a href="https://github.com/vivliostyle/vivliostyle.js/">vivliostyle.js</a> とビューア UI <a href="https://github.com/vivliostyle/vivliostyle-ui/">vivliostyle-ui</a> でできています。</p>
+<h3 id="何をするもの？">何をするもの？</h3>
+<p>Vivliostyle Viewer は次のように使われることを想定してます：</p>
+<ul>
+  <li>
+    <p>出版物を Web で公開するのに使える</p>
+    <ul>
+      <li>CSS 組版でレイアウトする本や雑誌の Web 版ができる</li>
+      <li>PDF とは違って、リフロー、文字サイズ可変、レスポンシブなレイアウトが可能</li>
+    </ul>
+  </li>
+  <li>
+    <p>Web で公開されている出版物を閲覧</p>
+    <ul>
+      <li>例えば公開されている EPUB や青空文庫の作品を Vivliostyle Viewer で読める</li>
+      <li>ユーザースタイルの設定によって読みやすい形にして読める</li>
+    </ul>
+  </li>
+  <li>
+    <p>CSS 組版で本を作るのに使える</p>
+    <ul>
+      <li>組版結果を確認するプレビューアとして</li>
+      <li>印刷／PDF 書き出しに</li>
+    </ul>
+  </li>
+</ul>
+<h3 id="設置・インストールについて">設置・インストールについて</h3>
+<ul>
+  <li>
+    <p>公開されてる Vivliostyle Viewer を使うならインストール不要</p>
+    <ul>
+      <li>URL: <a href="https://vivliostyle.github.io/vivliostyle.js/viewer/vivliostyle-viewer.html">https://vivliostyle.github.io/vivliostyle.js/viewer/vivliostyle-viewer.html</a></li>
+    </ul>
+  </li>
+  <li>
+    <p>ローカルにインストールしてローカルな Web サーバーで使用</p>
+    <ul>
+      <li>Vivliostyle のダウンロードページ<span class="footnote"><a href="https://vivliostyle.org/ja/download/">https://vivliostyle.org/ja/download/</a></span>からダウンロードしたパッケージ（最新開発版<code>vivliostyle-js-latest.zip</code>またはリリース版<code>vivliostyle-js-[version].zip</code>）を解凍してできた<code>vivliostyle-js-[version]</code>フォルダ内の<code>start-webserver</code>スクリプトを実行するとローカルな Web サーバーが起動して、ローカル環境で Vivliostyle Viewer が使えます。</li>
+    </ul>
+  </li>
+  <li>
+    <p>自分の Web サイトに設置</p>
+    <ul>
+      <li>ダウンロードしたパッケージ内の<code>viewer</code>フォルダを自分の Web サイトにコピーして、Vivliostyle Viewer で閲覧するコンテンツを公開するのに使うことができます。</li>
+    </ul>
+  </li>
+</ul>
+<p>設置・インストールと使い方について、Vivliostyle Viewer ユーザーガイド<span class="footnote"><a href="https://vivliostyle.github.io/vivliostyle.js/docs/ja/">https://vivliostyle.github.io/vivliostyle.js/docs/ja/</a></span>もご覧ください。</p>
+<h3 id="vivliostyle-viewer-の最初の画面">Vivliostyle Viewer の最初の画面</h3>
+<p>Vivliostyle Viewer の URL をパラメータなしで開くと、文書 URL の入力欄（“Input a document URL”）と使い方の説明が表示されます。（説明書きは今のところ英語だけですが、Vivliostyle Viewer ユーザーガイド（日本語）<span class="footnote"><a href="https://vivliostyle.github.io/vivliostyle.js/docs/ja/">https://vivliostyle.github.io/vivliostyle.js/docs/ja/</a></span>に日本語訳があります。）</p>
+<p>文書 URL の入力欄に表示対象の文書の URL を入れて Enter キーを押すと、その文書をロードして組版結果を表示します。これは Vivliostyle Viewer のURLに、フラグメントパラメータ<code>#b=&#x3C;文書のURL></code>で表示対象の文書を指定したのと同じことになります。</p>
+<p>なお、URL を入力する代わりに、HTML コードを入れることもできて、ちょっと Vivliostyle の組版を試してみるのに使えます。これで例えば<code>&#x3C;p>Hello, world!&#x3C;/p></code>から CSS 組版をはじめられます。</p>
+<figure>
+  <img src="../assets/shinyu/helloworld.png" alt="Vivliostyle Viewer スタート画面の文書 URL 入力欄に Hello, world! と入力したところ">
+  <figcaption class="fig">Vivliostyle Viewer スタート画面の文書 URL 入力欄に<code>&#x3C;p>Hello, world!&#x3C;/p></code>と入力したところ</figcaption>
+</figure>
+<h3 id="設定パネルからできること">設定パネルからできること</h3>
+<p>Vivliostyle Viewer の画面右上の設定ボタン 
+  <img alt="Settings (S)" src="../assets/shinyu/settings_button.png" style="width: 1.5em;"> をクリック（または、キーボードの S キー）で、設定パネルが表示されます。ここで設定を変更して <strong>Apply</strong> ボタンを押すと設定内容が適用されます。（<strong>Apply</strong> で通常はパネルが閉じますが、設定ボタン 2 度押しでパネルを開くと、適用してもパネルが開いたままにできます）。</p>
+<p></p>
+<figure>
+  <img src="../assets/shinyu/settings_panel.png" alt="Vivliostyle Viewer の設定パネル">
+  <figcaption class="fig">Vivliostyle Viewer の設定パネル</figcaption>
+</figure>
+<p></p>
+<h4 id="全ページをレンダリング（render-all-pages）onoff設定">全ページをレンダリング（Render All Pages）On/Off設定</h4>
+<p>この設定は、全ページのレンダリング（ブラウザのメモリ上でページを生成する組版処理をして表示や印刷ができる状態にする）を常に行うかどうかを指定します。Vivliostyle Viewer を使う目的によって、この設定が必要です：</p>
+<ul>
+  <li><strong>On</strong>：印刷向き（すべてのページが印刷可能で、ページ番号は期待されるとおりに機能します）</li>
+  <li><strong>Off</strong>：閲覧向き（おおまかなページ番号を使って、クイックロード）</li>
+</ul>
+<p>全ページの印刷／PDF 出力を行う場合や、CSS のページカウンタ（<code>counter(page)</code>, <code>counter(pages)</code>）を正しく表示するには、全ページをレンダリングするモード（Render All Pages: <strong>On</strong>）にする必要があります。</p>
+<p>閲覧向き（Render All Pages: <strong>Off</strong>）のモードでは、多数の HTML ファイルで構成される大規模な出版物（EPUB や Web Publications など）を、途中から閲覧するような場合にその部分だけの組版・ページ生成処理をするので、処理時間を待たされることなく閲覧できます。ページ番号のカウントは、実際に組版した結果のページ数ではなく、各 HTML ファイルの大きさと、HTML ファイル内での各要素の位置から計算された、擬似的なページ番号になります。</p>
+<h4 id="ユーザースタイル設定（user-style-preferences）">ユーザースタイル設定（User Style Preferences）</h4>
+<p>設定パネルの<strong>▶ User Style Preferences</strong>を開くと次のユーザースタイル設定項目があります：</p>
+<ul>
+  <li><strong>Page Size</strong>（ページサイズ） <strong>Preset</strong>で定義済みのページサイズ（<strong>A4</strong>など）を選べるほか、<strong>Custom size</strong>で任意の幅と高さを指定できます。単には CSS の単位（mm, cm, in, pt, px など）が使えます。</li>
+  <li>
+    <p><strong>Page Margins</strong>（ページ余白） Vivliostyle ではページ余白（<code>@page</code>ルールの<code>margin</code>プロパティ）のデフォルトは<code>10%</code>つまり、上下左右のマージンともページサイズ（高さ／幅）の 10% ずつになっています。</p>
+    <ul>
+      <li><strong>Set page margin to 0</strong>（ページ余白を 0 に） 固定レイアウトの EPUB など、画面いっぱいに表示するのに適したコンテンツを閲覧するのに役に立ちます。</li>
+      <li><strong>Custom margin</strong> で CSS の<code>margin</code>プロパティの値を指定できます。例えば<code>20mm 15mm 10mm</code>という指定の場合、上の余白が<code>20mm</code>、右と左の余白がともに<code>15mm</code>、下の余白が<code>10mm</code>ということになります。</li>
+      <li><strong>Set first page margin to 0</strong> （最初のページ余白を 0 に）という設定は、最初のページがカバー画像なので余白は不要というような場合のためです。</li>
+      <li><strong>Force html/body margin to 0</strong>（html/body マージンを 0 にする） HTML 文書にもともと指定されているスタイルシートで body 要素にマージンが設定されているような場合、Vivliostyle で設定されるページ余白とそのマージンの両方が合わさって余白がとても大きくなってしまう問題を解消するためです。</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Page Breaks</strong>（改ページ）</p>
+    <ul>
+      <li><strong>Allow widows and orphans</strong>（widows/orphans を許容） デフォルトで Vivliostyle が行っている段落内でのページ分割における widows/orphans の制御（CSS の<code>widows</code>／<code>orphans</code>プロパティで定義されているデフォルトの動作で、段落を分割するとき 2 行以上がページの先頭／末尾に残るようにする）を行わないようにします。</li>
+      <li><strong>Avoid page break inside paragraph</strong>（段落内で改ページしない） 段落の途中でページが変わると読みにくいという場合に指定してください。例えば音声読み上げでテキストを読む場合、文の途中でページが変わるとそこで読み上げが切れてしまうというアクセシビリティの問題を解消します。</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Images</strong>（画像）</p>
+    <ul>
+      <li><strong>Set image max-size to fit page</strong> は画像の最大サイズがページに収まるようにして、ページに収まらず欠けてしまうのを防ぎます。</li>
+      <li><strong>Keep aspect ratio</strong> は画像のサイズが調整されるとき縦横比を維持するようにします。</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Text</strong>（テキスト）</p>
+    <ul>
+      <li><strong>Font size</strong> のパーセント値の設定は、ツールバーにある <strong>A<sup>-</sup></strong> (Text: Smaller)、 <strong>A<sup>+</sup></strong> (Text: Larger) ボタンで変わる文字サイズと連動しています。これは、Vivliostyle の文字サイズの基本設定（一般のブラウザと同様 16px = 12pt がデフォルト）を変えることになります。</li>
+      <li><strong>Base font-size</strong> は、ルート要素での<code>font-size</code>プロパティ値を設定します。実際の文字サイズは <strong>Font size</strong> のパーセント値と掛け合わされたものになります。</li>
+      <li><strong>Base line-height</strong> は、ルート要素での<code>line-height</code>プロパティ値を設定します。単位をつけない数値で文字サイズを基準にした行の高さを指定します。指定しない場合のデフォルトはブラウザと同じ<code>line-height: normal</code>で、行の高さは使われるフォントに依存します。</li>
+      <li><strong>Base font-family</strong> は、ルート要素での<code>font-family</code>プロパティ値を設定します。</li>
+    </ul>
+  </li>
+  <li><strong>Override Document Style Sheets</strong>（文書のスタイルシートを上書きする） これをチェックすると、ここで設定したユーザースタイルが文書に指定されたスタイルシートよりも優先されるようになります（ユーザースタイルの CSS に<code>!important</code>が付く）。</li>
+</ul>
+<h4 id="設定される-css-コードの確認と追加・編集（css-details）">設定される CSS コードの確認と追加・編集（CSS Details）</h4>
+<p><strong>▶ CSS Details</strong> を開くと、ユーザースタイル設定の内容の CSS コードを確認することができます。また、ここでユーザーが CSS コードを直接書くこともできます。その場合は自動生成されたコメント<code>/*&#x3C;viewer>*/</code>と<code>/*&#x3C;/viewer>*/</code>で囲まれてた部分はそのままにして、その前か後に追加するようにしてください。</p>
+<h4 id="設定内容は-url-パラメータに反映">設定内容は URL パラメータに反映</h4>
+<p>
+  設定パネルで設定した内容は、Vivliostyle Viewer の URL パラメータに反映されるので、この設定付きの URL をブックマークしたり公開することもできます。
+  例えば、<a href="https://vivliostyle.github.io/vivliostyle.js/docs/ja/">Vivliostyle Viewer ユーザーガイド</a> にある <a href="https://vivliostyle.github.io/vivliostyle.js/viewer/vivliostyle-viewer.html#b=https://drafts.csswg.org/css2/&#x26;userStyle=data:,/*%3Cviewer%3E*/%0A@page%20%7B%20size:%20A4;%20%7D%0A/*%3C/viewer%3E*/%0A%0A@page%20:first%20%7B%0A%20%20@top-left%20%7B%0A%20%20%20%20content:%20none;%0A%20%20%7D%0A%20%20@top-right%20%7B%0A%20%20%20%20content:%20none;%0A%20%20%7D%0A%20%20@bottom-center%20%7B%0A%20%20%20%20content:%20none;%0A%20%20%7D%0A%7D%0A%0A@page%20:left%20%7B%0A%20%20font-size:%200.8rem;%0A%20%20@top-left%20%7B%0A%20%20%20%20content:%20env(pub-title);%0A%20%20%7D%0A%20%20@bottom-center%20%7B%0A%20%20%20%20content:%20counter(page);%0A%20%20%7D%0A%7D%0A%0A@page%20:right%20%7B%0A%20%20font-size:%200.8rem;%0A%20%20@top-right%20%7B%0A%20%20%20%20content:%20env(doc-title);%0A%20%20%7D%0A%20%20@bottom-center%20%7B%0A%20%20%20%20content:%20counter(page);%0A%20%20%7D%0A%7D&#x26;renderAllPages=true">Web 上に公開されている文書に、設定パネルからユーザースタイルの設定を加えた例： 『Cascading Style Sheets Level 2 Revision 2 (CSS 2.2) Specification』</a>。
+</p>
+<h2 id="vivliostyle-css-組版ちょっと入門">Vivliostyle CSS 組版ちょっと入門</h2>
+<p>ここでは、Vivliostyle Viewer で閲覧できて、印刷・PDF 出力できるような「本」を作るための、ちょっとしたポイントを解説します。</p>
+<h3 id="章ごとの-html-ファイルをまとめて本の形にする方法">章ごとの HTML ファイルをまとめて本の形にする方法</h3>
+<p>これまで CSS 組版で本を作る場合、原稿は章ごとに分けて書いていても、最後にひとつの大きな HTML ファイルにまとめたものを CSS 組版のソースにする方法がよく行われてました。</p>
+<p>しかし、Vivliostyle では複数の HTML ファイルのまま、まとめて組版して本の形にする方法が便利でおすすめです。</p>
+<p>複数の HTML ファイルをまとめる形式はいくつかあります。</p>
+<ul>
+  <li>EPUB 形式にする方法: EPUB は、複数の (X)HTML ファイルと、そのほかのリソース（CSS や画像）を、メタ情報や内容リストを XML 形式で記述した OPF ファイルと一緒にまとめて ZIP 形式に圧縮したものですが、Vivliostyle では、これを解凍した形式（複数のファイルになっている状態）を扱うことができます。</li>
+  <li>Web Publications<span class="footnote"><a href="https://www.w3.org/TR/wpub/">https://www.w3.org/TR/wpub/</a></span>: これは W3C で標準化が進められている Web 出版物の形式です。メタ情報や内容リストを JSON 形式のマニフェストデータとして記述します。</li>
+  <li>最初の HTML ファイル（通常<code>index.html</code>）にほかの HTML ファイルへのリンクをまとめた目次がある形式。</li>
+</ul>
+<h4 id="表紙から目次までをindexhtmlに">表紙から目次までを<code>index.html</code>に</h4>
+<p>最初の HTML ファイルの名前を<code>index.html</code>として、これに表紙（タイトルページ）から目次までを記述する例を説明します。</p>
+<h6 id="indexhtmlの例" class="code-title"><code>index.html</code>の例</h6>
+<pre><code class="language-html"><span class="token doctype">&#x3C;!DOCTYPE html></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ja<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>head</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>title</span><span class="token punctuation">></span></span>簡単な本<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>title</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>body</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>header</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>h1</span><span class="token punctuation">></span></span>簡単な本<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>h1</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>header</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>nav</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>toc<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>doc-toc<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>h2</span><span class="token punctuation">></span></span>目次<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>h2</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>ol</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>chapter1.html<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>最初の章<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>li</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>chapter2.html<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>２番目の章<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>li</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>chapter3.html<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>最後の章<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>li</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>ol</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>nav</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>html</span><span class="token punctuation">></span></span></code></pre>
+<h6 id="各章の-html-の例（chapter1html）" class="code-title">各章の HTML の例（<code>chapter1.html</code>）</h6>
+<pre><code class="language-html"><span class="token doctype">&#x3C;!DOCTYPE html></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ja<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>head</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>title</span><span class="token punctuation">></span></span>最初の章<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>title</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>body</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>h1</span><span class="token punctuation">></span></span>最初の章<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>h1</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>p</span><span class="token punctuation">></span></span>ほげ。<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>html</span><span class="token punctuation">></span></span></code></pre>
+<p>このように<code>index.html</code>ファイルと、各章の HTML ファイルを用意して、<code>index.html</code> の URL を Vivliostyle Viewer の<code>#b=</code>パラメータに指定して開くと、組版結果が表示されます。最初のページがタイトルと目次で、目次の項目をクリックするか、→または↓でページを進めると、各章のページへと移動します。目次パネル（Viewer 画面左上のボタンで表示）からのナビゲーションも有効になります。</p>
+<h4 id="改ページの指定-break-before-page--left--right--recto--verso">改ページの指定 <code>break-before: page | left | right | recto | verso</code></h4>
+<p>この「簡単な本」の例を、より「本」らしくするには、最初のページはタイトルが書かれた表紙ページ、ページをめくると目次ページ、とするのがよいでしょう。それには、まず、目次の要素の前で改ページするように CSS で指定します。CSS Fragmentation<span class="footnote"><a href="https://drafts.csswg.org/css-break/">https://drafts.csswg.org/css-break/</a></span> 仕様で定義されている<code>break-before</code>プロパティを使います。</p>
+<pre><code class="language-css"><span class="token selector">nav</span> <span class="token punctuation">{</span>
+  <span class="token property">break-before</span><span class="token punctuation">:</span> page<span class="token punctuation">;</span> <span class="token comment">/* この要素の前で改ページ */</span>
+<span class="token punctuation">}</span></code></pre>
+<p><code>break-before</code>プロパティの値<code>page</code>の代わりに、<code>left</code>または<code>right</code>を指定することもできて、改ページしたあとのページが見開きの左側または右側のページになるように自動的に空白ページを入れて改ページさせることができます。また、<code>right</code>・<code>left</code>の代わりに<code>recto</code>・<code>verso</code>という値を指定することもできます。これは、「表側」・「裏側」という意味で、ページ進行方向が左から右なら<code>recto</code>=<code>right</code>、<code>verso</code>=<code>left</code>、ページ進行方向が右から左ならその逆です。（つまり、表紙と同じ側が<code>recto</code>でその裏側が<code>verso</code>、奇数ページ番号が<code>recto</code>で偶数ページ番号が<code>verso</code>。）</p>
+<h4 id="表紙のページスタイル-page-first-">表紙のページスタイル <code>@page :first {...}</code></h4>
+<p>CSS Paged Media<span class="footnote"><a href="https://drafts.csswg.org/css-page-3/">https://drafts.csswg.org/css-page-3/</a></span> 仕様では、<code>@page</code>ルールで、ページサイズや余白などを指定します。</p>
+<pre><code class="language-css"><span class="token atrule"><span class="token rule">@page</span></span> <span class="token punctuation">{</span>
+  <span class="token property">size</span><span class="token punctuation">:</span> A<span class="token number">5</span><span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">15</span><span class="token unit">mm</span><span class="token punctuation">;</span>  <span class="token comment">/* ページの上下左右の余白を15mmずつに */</span>
+  <span class="token atrule"><span class="token rule">@top-center</span></span> <span class="token punctuation">{</span>
+    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">"簡単な本"</span><span class="token punctuation">;</span>    <span class="token comment">/* ページヘッダーにタイトル */</span>
+  <span class="token punctuation">}</span>
+  <span class="token atrule"><span class="token rule">@bottom-center</span></span> <span class="token punctuation">{</span>
+    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token function">counter</span><span class="token punctuation">(</span>page<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">/* ページフッターにページ番号 */</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>そして、<code>@page :first {...}</code>という構文で、文書の最初のページだけのスタイルを指定できるので、表紙のページを作るのに役に立ちます。</p>
+<pre><code class="language-css"><span class="token atrule"><span class="token rule">@page</span> <span class="token punctuation">:</span>first</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> gold<span class="token punctuation">;</span> <span class="token comment">/* ページ全体に背景色 */</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>              <span class="token comment">/* ページ余白無し */</span>
+  <span class="token atrule"><span class="token rule">@top-center</span></span> <span class="token punctuation">{</span>
+    <span class="token property">content</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>        <span class="token comment">/* ページヘッダー無し */</span>
+  <span class="token punctuation">}</span>
+  <span class="token atrule"><span class="token rule">@bottom-center</span></span> <span class="token punctuation">{</span>
+    <span class="token property">content</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>        <span class="token comment">/* ページフッター無し */</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="目次の作り方">目次の作り方</h3>
+<h4 id="nav-roledoc-tocで目次のマークアップ"><code>&#x3C;nav role="doc-toc"></code>で目次のマークアップ</h4>
+<p>HTML で目次を作るおすすめののマークアップは次のようなものです：</p>
+<pre><code class="language-html">  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>nav</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>toc<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>doc-toc<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>h2</span><span class="token punctuation">></span></span>目次<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>h2</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>ol</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>chapter1.html<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>最初の章<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>a</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>ol</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>chapter1.html#section1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>はじめのセクション<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>li</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>chapter1.html#section2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>ふたつめのセクション<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>li</span><span class="token punctuation">></span></span>
+          ...
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>ol</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>li</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>chapter2.html<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>２番目の章<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>a</span><span class="token punctuation">></span></span>
+        ...
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>li</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>chapter3.html<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>最後の章<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>a</span><span class="token punctuation">></span></span>
+        ...
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>li</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>ol</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>nav</span><span class="token punctuation">></span></span></code></pre>
+<p>「目次」を表す role 属性の値 "doc-toc" は、Digital Publishing WAI-ARIA<span class="footnote"><a href="https://www.w3.org/TR/dpub-aria-1.0/">https://www.w3.org/TR/dpub-aria-1.0/</a></span> という仕様で定義されてます。Vivliostyle は、この属性のある要素（通常は<code>&#x3C;nav></code>）を目次として認識して、リンクされている HTML をまとめて一冊の本のように扱い、Viewer の目次パネルのナビゲーションも有効にします。</p>
+<h4 id="vivliostyle-viewer-での目次パネル">Vivliostyle Viewer での目次パネル</h4>
+<p></p>
+<figure>
+  <img src="../assets/shinyu/toc_panel.png" alt="Vivliostyle Viewer の目次パネル">
+  <figcaption class="fig">Vivliostyle Viewer の目次パネル</figcaption>
+</figure>
+<p></p>
+<p>目次パネルでは、HTML の目次の項目のリスト（<code>&#x3C;ol></code>または<code>&#x3C;ul></code>要素）から、↓↑←→キーで操作できるツリー状のリストになります。章→セクション→サブセクションのような多階層の目次はリスト要素をネストさせて作ります。目次パネルでは最初トップレベルの項目のみ表示されて、「▸」をクリックして下位の項目が出るようになってます。</p>
+<h4 id="ページ番号参照-target-counter">ページ番号参照 <code>target-counter()</code></h4>
+<p>HTML の目次はリンクになってます。PDF でもリンクが有効です。でも紙の本にした場合はページ番号が必要でしょう。</p>
+<p>CSS Generated Content<span class="footnote"><a href="https://drafts.csswg.org/css-content/">https://drafts.csswg.org/css-content/</a></span> 仕様で定義されている<code>target-counter()</code>関数を、リンク要素<code>&#x3C;a></code>の<code>::after</code>擬似要素の<code>content</code>プロパティの値に使うことで、各目次項目のリンク先のページ番号を入れられます。</p>
+<pre><code class="language-css"><span class="token selector">nav li a<span class="token pseudo-element">::after</span></span> <span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token function">target-counter</span><span class="token punctuation">(</span><span class="token function">attr</span><span class="token punctuation">(</span>href<span class="token punctuation">)</span><span class="token punctuation">,</span> page<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>ページ番号を右寄せにして目次項目との間を点線で埋めるのは、次のように CSS Flexbox の<code>inline-flex</code>を使ってできます：</p>
+<pre><code class="language-css"><span class="token selector">nav li a</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> inline-flex<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">100</span><span class="token unit">%</span><span class="token punctuation">;</span>
+  <span class="token property">text-decoration</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> currentColor<span class="token punctuation">;</span>
+  <span class="token property">align-items</span><span class="token punctuation">:</span> baseline<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">nav li a<span class="token pseudo-element">::before</span></span> <span class="token punctuation">{</span>
+  <span class="token property">margin-left</span><span class="token punctuation">:</span> <span class="token number">0.5</span><span class="token unit">em</span><span class="token punctuation">;</span>
+  <span class="token property">margin-right</span><span class="token punctuation">:</span> <span class="token number">0.5</span><span class="token unit">em</span><span class="token punctuation">;</span>
+  <span class="token property">border-bottom</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token unit">px</span> dotted<span class="token punctuation">;</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">;</span>
+  <span class="token property">order</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token property">flex</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">nav li a<span class="token pseudo-element">::after</span></span> <span class="token punctuation">{</span>
+  <span class="token property">text-align</span><span class="token punctuation">:</span> right<span class="token punctuation">;</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token function">target-counter</span><span class="token punctuation">(</span><span class="token function">attr</span><span class="token punctuation">(</span>href<span class="token punctuation">)</span><span class="token punctuation">,</span> page<span class="token punctuation">)</span><span class="token punctuation">;</span>	
+  <span class="token property">align-self</span><span class="token punctuation">:</span> flex-end<span class="token punctuation">;</span>
+  <span class="token property">flex</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+  <span class="token property">order</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p></p>
+<figure>
+  <img src="../assets/shinyu/toc_page.png" alt="目次ページ">
+  <figcaption class="fig">目次ページ</figcaption>
+</figure>
+<p></p>
+<p>注意：ページ番号が正しく表示されるには、全ページをレンダリング（Render All Pages）の設定が On である必要があります。</p>
+<h3 id="各章を左ページあるいは右ページからに">各章を左ページあるいは右ページからに</h3>
+<p>各章を HTML ファイルひとつずつで作る場合、各 HTML は改ページした新しいページから開始するので、明示的の改ページの指定<code>break-before: page</code>は不要ですが、各章を必ず左右ページ（あるいは奇数・偶数ページ）のどちらかから開始するといった場合には、次のように<code>&#x3C;body></code>要素に指定します：</p>
+<pre><code class="language-css"><span class="token selector">body</span> <span class="token punctuation">{</span>
+  <span class="token property">break-before</span><span class="token punctuation">:</span> recto<span class="token punctuation">;</span> <span class="token comment">/* 奇数ページから開始 */</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="ページヘッダー／フッター（ページマージンボックス）">ページヘッダー／フッター（ページマージンボックス）</h3>
+<p><code>@page</code>ルールで次のように書くと、文字列（タイトルなど）やページ番号や画像をページヘッダー／フッターに出力することができます：</p>
+<pre><code class="language-css"><span class="token atrule"><span class="token rule">@page</span></span> <span class="token punctuation">{</span>
+  <span class="token atrule"><span class="token rule">@top-center</span></span> <span class="token punctuation">{</span>
+    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">"サンプル文書"</span><span class="token punctuation">;</span>  <span class="token comment">/* 固定の文字列を出力 */</span>
+  <span class="token punctuation">}</span>
+  <span class="token atrule"><span class="token rule">@bottom-center</span></span> <span class="token punctuation">{</span>
+    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token function">counter</span><span class="token punctuation">(</span>page<span class="token punctuation">)</span> <span class="token string">" / "</span> <span class="token function">counter</span><span class="token punctuation">(</span>pages<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">/* 「ページ番号 / 総ページ数」を出力 */</span>
+  <span class="token punctuation">}</span>
+  <span class="token atrule"><span class="token rule">@top-right-corner</span></span> <span class="token punctuation">{</span>
+    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token url">url(images/logo.png)</span><span class="token punctuation">;</span>  <span class="token comment">/* 画像を出力 */</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>ページヘッダー／フッターを指定する<code>@top-center</code>や<code>@bottom-center</code>など（ページマージンボックスという）は <a href="https://drafts.csswg.org/css-page-3/">CSS Paged Media</a> 仕様で次の 16 個が定義されています。</p>
+<table style="font-size: 80%">
+  <tbody>
+    <tr>
+      <td>@top-left-corner</td>
+      <td>@top-left</td>
+      <td>@top-center</td>
+      <td>@top-right</td>
+      <td>@top-right-corner</td>
+    </tr>
+    <tr>
+      <td>@left-top</td>
+      <td colspan="3" rowspan="3"></td>
+      <td>@right-top</td>
+    </tr>
+    <tr>
+      <td>@left-middle</td>
+      <td>@right-middle</td>
+    </tr>
+    <tr>
+      <td>@left-bottom</td>
+      <td>@right-bottom</td>
+    </tr>
+    <tr>
+      <td>@bottom-left-corner</td>
+      <td>@bottom-left</td>
+      <td>@bottom-center</td>
+      <td>@bottom-right</td>
+      <td>@bottom-right-corner</td>
+    </tr>
+  </tbody>
+</table>
+<h4 id="章タイトルなどをページヘッダー／フッターに-envpub-title-と-envdoc-title">章タイトルなどをページヘッダー／フッターに <code>env(pub-title)</code> と <code>env(doc-title)</code></h4>
+<p>Vivliostyle では、<code>env(pub-title)</code>あるいは<code>env(doc-title)</code>という特別な変数を使うことができて、これで本のタイトルや、章のタイトルを、ページヘッダー／フッターに出力することができます。</p>
+<ul>
+  <li><code>env(pub-title)</code>は、出版物タイトルを表します。この値は、メインのHTMLファイル（通常<code>index.html</code>）の<code>&#x3C;title></code>要素の内容のテキストです。</li>
+  <li><code>env(doc-title)</code>は、個別のHTML文書タイトルを表します。各HTMLファイルの<code>&#x3C;title></code>要素の内容のテキストです。</li>
+</ul>
+<p>本を作るのに章ごとの HTML ファイルにしている場合、<code>env(pub-title)</code>は本のタイトル、<code>env(doc-title)</code>は章のタイトルということになります。</p>
+<h4 id="左右ページのレイアウト-page-left-と-page-right">左右ページのレイアウト <code>@page :left</code> と <code>@page :right</code></h4>
+<p>次は、本の見開きページの左側と右側のページヘッダーにそれぞれ本のタイトルと章のタイトルを出力するという例です：</p>
+<pre><code class="language-css"><span class="token atrule"><span class="token rule">@page</span> <span class="token punctuation">:</span>left</span> <span class="token punctuation">{</span>     <span class="token comment">/* 左側ページ */</span>
+  <span class="token atrule"><span class="token rule">@top-left</span></span> <span class="token punctuation">{</span>
+    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token function">env</span><span class="token punctuation">(</span>pub-title<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">/* 本のタイトル */</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token atrule"><span class="token rule">@page</span> <span class="token punctuation">:</span>right</span> <span class="token punctuation">{</span>    <span class="token comment">/* 右側ページ */</span>
+  <span class="token atrule"><span class="token rule">@top-right</span></span> <span class="token punctuation">{</span>
+    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token function">env</span><span class="token punctuation">(</span>doc-title<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">/* 章のタイトル */</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h4 id="ページヘッダー／フッターへのフォントの指定">ページヘッダー／フッターへのフォントの指定</h4>
+<p>
+  <a href="https://drafts.csswg.org/css-page-3/">CSS Paged Media</a> 仕様で、継承プロパティの値は、ページマージンボックス（<code>@top-left {...}</code>など）はページコンテキスト（<code>@page {...}</code>）から継承して、ページコンテキストはルート要素から継承するとされています。
+  ただし、Vivliostyle は現在のところ、ルート要素からページコンテキストへのプロパティ値の継承は未サポートです。したがって、ページヘッダー／フッターに共通のフォントの指定をしたい場合は、ルート要素とは別に<code>@page {...}</code>にそのフォントの指定をする必要があります。
+</p>
+<pre><code class="language-css"><span class="token atrule"><span class="token rule">@page</span></span> <span class="token punctuation">{</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">"IPAexGothic"</span><span class="token punctuation">,</span> sans-serif<span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">0.75</span><span class="token unit">rem</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>このように<code>@page {...}</code>にフォントの指定をすると、ページマージンボックス（<code>@top-left {...}</code>など）に継承されるので、個別のページマージンボックスに指定しなくてもすみます。そして、ページの本体のほうの基本のフォントは、<code>@page {...}</code>ではなくて、ルート要素（<code>html {...}</code>あるいは<code>:root {...}</code>）で指定します。</p>
+<h3 id="トンボをつけるには">トンボをつけるには</h3>
+<p>印刷物を作るとき、ページの仕上がりサイズに断裁するための位置合わせのために、ページの四隅などに付ける目印のことをトンボといいます。これを出力するための CSS プロパティが <a href="https://drafts.csswg.org/css-page-3/">CSS Paged Media</a> 仕様で定義されていて、Vivliostyle はこれを実装しています。</p>
+<h4 id="トンボを出力-marks-crop-cross">トンボを出力 <code>marks: crop cross</code></h4>
+<pre><code class="language-css"><span class="token atrule"><span class="token rule">@page</span></span> <span class="token punctuation">{</span>
+  <span class="token property">size</span><span class="token punctuation">:</span> A<span class="token number">5</span><span class="token punctuation">;</span>
+  <span class="token property">marks</span><span class="token punctuation">:</span> crop cross<span class="token punctuation">;</span>
+  <span class="token property">bleed</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token unit">mm</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p><code>marks</code>プロパティの値<code>crop</code>は四隅のトンボ、<code>cross</code>は上下・左右の中央の位置を示すトンボです。通常は両方指定します。</p>
+<h4 id="塗り足し-bleed-3mm">塗り足し <code>bleed: 3mm</code></h4>
+<p><code>bleed</code>プロパティは、塗り足し領域（bleed）の幅を指定します。ページの端まで色を塗るとき、ページの仕上がりサイズぴったりのところまでしか色が塗られていないと、そこで断裁したときのずれによって塗られていない白い部分が残ってしまうため、ページの外側にはみ出して色を塗る塗り足し領域が必要です。このプロパティの仕様でデフォルトは 6pt（約 2.1mm）ですが、日本の印刷業界では 3mm とするのが標準的なので<code>bleed: 3mm</code>を指定します。</p>
+<h4 id="ページの背景色を塗り足し領域に広げる例">ページの背景色を塗り足し領域に広げる例</h4>
+<p>本の表紙のページ全体とタイトルのまわりに背景色をつけた例：</p>
+<pre><code class="language-css"><span class="token atrule"><span class="token rule">@page</span> <span class="token punctuation">:</span>first</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> gold<span class="token punctuation">;</span> <span class="token comment">/* ページ全体に背景色 */</span>
+  <span class="token property">marks</span><span class="token punctuation">:</span> crop cross<span class="token punctuation">;</span>      <span class="token comment">/* トンボを付ける */</span>
+  <span class="token property">bleed</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token unit">mm</span><span class="token punctuation">;</span>             <span class="token comment">/* 塗り足し領域 */</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">-3</span><span class="token unit">mm</span><span class="token punctuation">;</span>           <span class="token comment">/* ページ領域を塗り足し領域まで広げる */</span>
+<span class="token punctuation">}</span>
+<span class="token selector">header</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> rebeccapurple<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> <span class="token number">5</span><span class="token unit">vh</span> <span class="token number">5</span><span class="token unit">vw</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">header h1</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">4</span><span class="token unit">rem</span><span class="token punctuation">;</span>
+  <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<pre><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>body</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>header</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>h1</span><span class="token punctuation">></span></span>簡単な本<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>h1</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>header</span><span class="token punctuation">></span></span>
+  ...</code></pre>
+<p></p>
+<figure>
+  <img src="../assets/shinyu/marks_bleed.png" alt="トンボと塗り足しありで出力した簡単な本の表紙">
+  <figcaption class="fig">トンボと塗り足しありで出力した簡単な本の表紙</figcaption>
+</figure>
+<p></p>
+<p>この例では、<code>@page</code>ルールに<code>margin: -3mm</code>という指定をすることでページ領域を塗り足し領域まで広げて、ページ内に配置する要素（この例では紫色の背景色をつけた本のタイトル部分のブロック）が塗り足し領域から配置されるようにしています。</p>
+<p>通常のページ余白（<code>margin: 15mm</code>など）があるページの場合で、写真をページの隅に配置するような場合には、その要素にマイナスのマージン（ページ余白と塗り足し領域の分）を指定することで、写真の端を塗り足し領域まで広げるようにするとよいでしょう。</p>
+<pre><code class="language-css"><span class="token atrule"><span class="token rule">@page</span></span> <span class="token punctuation">{</span>
+  <span class="token property">marks</span><span class="token punctuation">:</span> crop cross<span class="token punctuation">;</span>      <span class="token comment">/* トンボを付ける */</span>
+  <span class="token property">bleed</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token unit">mm</span><span class="token punctuation">;</span>             <span class="token comment">/* 塗り足し領域 */</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">15</span><span class="token unit">mm</span><span class="token punctuation">;</span>           <span class="token comment">/* ページ余白 */</span>
+<span class="token punctuation">}</span>
+<span class="token selector">img<span class="token class">.photo</span></span> <span class="token punctuation">{</span>
+  <span class="token property">float</span><span class="token punctuation">:</span> right<span class="token punctuation">;</span>
+  <span class="token property">margin-right</span><span class="token punctuation">:</span> <span class="token number">-18</span><span class="token unit">mm</span><span class="token punctuation">;</span>    <span class="token comment">/* 画像右端を塗り足し領域に */</span>
+<span class="token punctuation">}</span></code></pre>
+<p></p>
+<figure>
+  <img src="../assets/shinyu/bleed_photo.png" alt="写真を塗り足し領域から配置してるページ">
+  <figcaption class="fig">写真を塗り足し領域から配置してるページ</figcaption>
+</figure>
+<p></p>
+<h3 id="ちょっと入門はここまで">ちょっと入門はここまで</h3>
+<p>ちょっと入門の次は、次のようなトピックなど、</p>
+<ul>
+  <li>段組</li>
+  <li>脚注</li>
+  <li>章番号や図や数式の番号の自動生成とクロスリファレンス</li>
+  <li>図版のページ配置：ページフロート</li>
+  <li>ページテンプレート（EPUB Adaptive Layout）</li>
+</ul>
+<p>またの機会に。</p>
+<p>チュートリアル「簡単な本」サンプルはGist <a href="https://gist.github.com/MurakamiShinyu/">https://gist.github.com/MurakamiShinyu/</a> に公開<span class="footnote"><a href="https://gist.github.com/MurakamiShinyu/4f0423fd3578a277c7d29f56a31912b7/">https://gist.github.com/MurakamiShinyu/4f0423fd3578a277c7d29f56a31912b7/</a></span>しています。</p>
+
+    </article>
+  </body>
+</html>

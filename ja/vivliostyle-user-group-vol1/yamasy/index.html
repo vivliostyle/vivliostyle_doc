@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=s, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>CSS 組版やってみた！</title>
+    <link rel="stylesheet" href="main.css"/>
+  </head>
+  <body>
+    <article>
+      <h1>CSS 組版<wbr/>やってみた！</h1>
+      <div class="draft-author">やましー @yamasy1549</div>
+      <p>本稿は、viola-savepdf (Viola, Vivliostyle) を用いて CSS 組版を行った際の流れや感想を書いたものです。</p>
+      <h2>はじめに</h2>
+      <p>はじめまして、<a href="https://twitter.com/yamasy1549">やましー</a>といいます。特に仕様に詳しいとかはなくて、ただの一般 CSS ユーザーです。TeX が色々と面倒だったのがきっかけで、学校のレポート等を CSS 組版で書いたりしています。</p>
+      <p>本稿では、まず筆者の CSS 組版経験、組版環境を説明します。それから、viola-savepdf を用いて同人誌と卒論を制作した際の感想を述べます。組版ツール開発者ではない、いちユーザーからの目線で紹介できたらいいなと思っています。</p>
+      <h2>筆者の CSS 組版経験</h2>
+      <p>CSS 組版に初めて触れたのは 2016 年頃です。最初の頃は Vivliostyle の存在も知らず、当時のブラウザ実装がカバーしている範囲でスタイルを作っていました。これは筆者が下手だったのですが、印刷用スタイルの知見がなく明示的にページを宣言する必要があるなど、一応組版は可能なものの実用的ではありませんでした。とはいえ、学校の薄いレポート程度ならこれでも充分に要件を満たしていました。今はもう残骸しかありませんが、yamasy1549/ZinkeN<span class="footnote"><a href="https://github.com/yamasy1549/ZinkeN">https://github.com/yamasy1549/ZinkeN</a></span>というリポジトリで見ることができます。</p>
+      <p>しばらくは ZinkeN を使っていたのですが、2018 年にはるさめさんの『CSS ではじめる同人誌制作 増訂版<span class="footnote"><a href="https://pentapod.booth.pm/items/969754">https://pentapod.booth.pm/items/969754</a></span>』を読んで、技術書典 5 に出した同人誌<span class="footnote"><a href="https://kosen14s.booth.pm/">https://kosen14s.booth.pm/</a></span>では本格的に CSS 組版に挑戦することになりました。</p>
+      <p>また、この同人誌を CSS 組版で書けたことが嬉しかったので、卒論も CSS 組版で制作することにしました。</p>
+      <div class="page-break"></div>
+      <div class="multifig">
+        <figure><img src="../assets/yamasy/265cbb0c-2e44-46c8-a31b-ee0018749c12.png" alt="同人誌TOGETHER見本"/>
+          <figcaption class="fig">同人誌TOGETHER見本</figcaption>
+        </figure>
+        <figure><img src="../assets/yamasy/b272dc5d-ebb9-4559-988f-b819a58b33cd.png" alt="卒論見本"/>
+          <figcaption class="fig">卒論見本</figcaption>
+        </figure>
+      </div>
+      <div class="page-break"></div>
+      <h2>CSS 組版の流れ</h2>
+      <p>おおむね以下のような構成、環境をとっています。
+        <figure><img src="../assets/yamasy/63bc6435-c7fd-4ded-8ea9-309165024c1b.png" alt="Untitled-1.png (76.2 kB)"/></figure>
+      </p>
+      <p>ソースコード群のサンプルは&nbsp;<a href="https://github.com/yamasy1549/nitac_tex_template/tree/master/5%E5%B9%B4_%E5%8D%92%E8%AB%96">https://github.com/yamasy1549/nitac-tex-template/5年_卒論</a> にあります。</p>
+      <h3>スタイルを生成する</h3>
+      <p>基本的な要素のスタイルを決めます。まずは以下のような要素を考えておけば、大体の要求はカバーできるでしょう。実際にコンテンツを書き始めてから「これも必要だった！」と気づくことも多いですが……。</p>
+      <p>改ページについては arinoth さんの記事『EPUB Adaptive Layout による段組み混在レイアウトへの挑戦』の『「超」重要な改ページの制御』、村上真雄さんの記事『Vivliostyle Viewer で CSS 組版ちょっと入門』の『改ページの指定』に詳細な説明があります。</p>
+      <table>
+        <thead>
+          <tr>
+            <th>要素</th>
+            <th>HTML タグ名、クラス名の例</th>
+            <th>設定するスタイルの例</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>章見出し</td>
+            <td><code>h1</code></td>
+            <td>直前で改ページ</td>
+          </tr>
+          <tr>
+            <td>節見出しなど</td>
+            <td><code>h2</code>-<code>h6</code></td>
+            <td>直後での改ページ回避</td>
+          </tr>
+          <tr>
+            <td>段落</td>
+            <td><code>p</code><code>.left</code><code>.right</code><code>.center</code></td>
+            <td>テキストの両端揃え、左右中央揃えオプション</td>
+          </tr>
+          <tr>
+            <td>打ち消し</td>
+            <td><code>del</code></td>
+            <td>打ち消し線</td>
+          </tr>
+          <tr>
+            <td>下線</td>
+            <td><code>.underline</code></td>
+            <td>下線</td>
+          </tr>
+          <tr>
+            <td>強調</td>
+            <td><code>strong</code></td>
+            <td>太さ</td>
+          </tr>
+          <tr>
+            <td>リンク</td>
+            <td><code>a</code></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>図</td>
+            <td><code>figure</code><code>img</code></td>
+            <td>要素内での改ページ回避</td>
+          </tr>
+          <tr>
+            <td>表</td>
+            <td><code>table</code></td>
+            <td>罫線</td>
+          </tr>
+          <tr>
+            <td>図表キャプション</td>
+            <td><code>figcaption</code><code>caption</code></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>引用</td>
+            <td><code>blockquote</code></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>箇条書き</td>
+            <td><code>ol</code><code>ul</code><code>dl</code></td>
+            <td>マーカー（点、連番など）</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>次に、CSS カウンターを用いて番号を振ります。以下のようなカウンターを用意すると良いでしょう。箇条書きのリスト番号もカウンターで管理するのは、<code>list-style</code>では<code>(1)</code>などの括弧付き連番マーカーが設定できないためです。</p>
+      <table>
+        <thead>
+          <tr>
+            <th>用途</th>
+            <th>カウンター名の例</th>
+            <th>カウンター表示場所の例</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>章節番号など</td>
+            <td><code>chapter</code><code>section</code></td>
+            <td><code>h1</code>-<code>h6</code>、目次</td>
+          </tr>
+          <tr>
+            <td>図番号</td>
+            <td><code>figure</code></td>
+            <td><code>figcaption</code>、参照文中</td>
+          </tr>
+          <tr>
+            <td>表番号</td>
+            <td><code>table</code></td>
+            <td><code>caption</code>、参照文中</td>
+          </tr>
+          <tr>
+            <td>脚注番号</td>
+            <td><code>footnote</code></td>
+            <td>脚注、参照文中</td>
+          </tr>
+          <tr>
+            <td>箇条書きのリスト番号</td>
+            <td><code>list</code></td>
+            <td>箇条書きのリスト</td>
+          </tr>
+          <tr>
+            <td>参考文献番号</td>
+            <td><code>ref</code></td>
+            <td>参考文献のリスト、参照文中</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3>文章構造を生成する</h3>
+      <p>Pug を採用しました。HTML タグの括弧を書かないのでレビュー時に文章が見やすいことと、要素にクラスを付与したりスタイルを直書きしたりしても記法が変わらないこと（候補にマークダウンがあったが、マークダウン記法に HTML 記法が混ざるのがあまり好きではない）が理由です。</p>
+      <p>また、PDF 生成時に数式の表示やシンタックスハイライトの有効化を行うため、ここで前処理をします。Pug の filter 機能を用いて、Pug 形式で書かれた数式を MathJax 形式に、コードブロックを Prism.js 形式に変換します。詳細な例は割愛しますが、文字列を受け取って決められたクラスを持つ要素の中に入れる、という処理になります。</p>
+      <p>スタイルと文章構造の生成は、gulp で該当ファイルを監視し、ファイルの保存をトリガーとして生成を行い、結果をブラウザで確認する、という流れになります。</p>
+      <h3>PDF を生成する</h3>
+      <p>コマンドひとつで HTML から PDF を生成できる viola-savepdf<span class="footnote"><a href="https://github.com/violapub/viola-savepdf">https://github.com/violapub/viola-savepdf</a></span>を採用しました。同人誌は複数人による合作で、構成ファイル数が多く、PDF 生成は CLI で操作できることが望ましいという条件があったためです。</p>
+      <div class="page-break"></div>
+      <h2>CSS 組版 (viola-savepdf, Viola, Vivliostyle) の手触り</h2>
+      <p>同人誌や卒論の制作に CSS 組版を用いた感想です。</p>
+      <h3>よかったところ</h3>
+      <ol>
+        <li>人によっては学習コストが低い<br/>Web アプリケーション開発などで CSS を触ったことのある人なら、新しい方法を覚えることなく、同じようにスタイルを作成できます。また先人が GitHub でサンプルを公開している場合もあるため、あまり時間をかけずに CSS 組版環境を準備できます。簡単な PDF を吐くだけのために、ン GB もするツールをインストールする必要もありません。</li>
+        <li>ブラウザでスタイルのデバッグができる<br/>以前は TeX を使っていたのですが、スタイルを変更したい場合、どの要素にどのようなスタイルが当たっているか知ることは困難でした。CSS 組版ならブラウザの開発者ツールですぐに確認できるため、スタイルを自分好みに変更しやすく、自由度が上がります。</li>
+        <li>手元に環境を作らなくても、頑張れば PDF の確認ができる<br/>これは CSS 組版に限った話ではないのですが、便利だったので紹介します。複数人による同人誌制作では Web フロントエンド開発に慣れていない人もおり、全員が手元に環境を用意できるわけではありませんでした。そこで Pug 形式で書いたファイルを GitHub に push すれば、CI が回って PDF を生成し、Google Drive にアップロードされる、という仕組みを用意しました。これで各人が自分の書いた記事の出力を確認できるようになりました。</li>
+      </ol>
+      <h3>こまったところ</h3>
+      <ol>
+        <li>脚注と他の要素が被ってしまう？<br/>ソースコードブロック等がうまく脚注を回避できず、脚注と重なって表示されてしまうことがありました。適宜手動で<code>page-break</code>を設定する必要がありました。</li>
+        <li>PDF のビルドが重い？<br/>計測比較は行っておらず体感ですが、画像、カウンター、ページ数が多いとビルドに要する時間が多くなりました。同人誌 70 ページ強は 60 秒くらいでした。</li>
+        <li>特殊なページの処理が難しい？<br/>同人誌の表紙を作りたかったのですが、画像をページ全面に隙間なく表示することが難しく、別に表紙だけの PDF を作って手動で結合する必要がありました。現在はこちらのプルリクにて修正されています（https://github.com/vivliostyle/vivliostyle.js/pull/514）。</li>
+        <li>特殊なページ数の表示制御が難しい？<br/>卒論で「表紙はページ番号なし、2〜3 ページ目は目次なので専用のページ番号、4 ページ目以降からメインのページ番号を数え始めたい」場合にちょっと詰まりました。Vivliostyle で使っているカウンター<code>page</code>は単純に最初のページから番号を数えていて、ユーザー側では上書きできないようです。従ってこれとは別に、以下のように目次専用ページ番号<code>toc</code>やメインのページ番号<code>p</code>を準備する必要がありました。</li>
+      </ol>
+<pre><code class="language-scss"><span class="token atrule"><span class="token rule">@page</span></span> <span class="token punctuation">{</span>
+  <span class="token comment">// 目次のページ番号とメインのページ番号のカウンター</span>
+  <span class="token property">counter-increment</span><span class="token punctuation">:</span> toc p<span class="token punctuation">;</span>
+  <span class="token comment">// 目次は2ページ目から、本論は4ページ目から始まるので</span>
+  <span class="token comment">// 1ページ目の時点で逆算しておく</span>
+  <span class="token selector"><span class="token parent important">&#x26;</span>:first </span><span class="token punctuation">{</span>
+    <span class="token comment">// 試していないけど、上手くやれば -1 や -3 などの直指定をやめられそう</span>
+    <span class="token property">counter-reset</span><span class="token punctuation">:</span> toc <span class="token number">-1</span> p <span class="token number">-3</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token atrule"><span class="token rule">@-epubx-page-master</span></span> <span class="token punctuation">{</span>
+  <span class="token atrule"><span class="token rule">@-epubx-partition</span></span> <span class="token punctuation">{</span>
+    <span class="token comment">// 1ページ目は表紙なのでページ番号なし</span>
+    <span class="token property">-epubx-enabled</span><span class="token punctuation">:</span> <span class="token function">-epubx-expr</span><span class="token punctuation">(</span>page-number <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token atrule"><span class="token rule">@-epubx-partition</span></span> <span class="token punctuation">{</span>
+    <span class="token comment">// 2ページ目から3ページ目までは目次専用のカウンターを用いる</span>
+    <span class="token property">-epubx-enabled</span><span class="token punctuation">:</span> <span class="token function">-epubx-expr</span><span class="token punctuation">(</span>page-number <span class="token operator">></span> <span class="token number">1</span> &#x26;&#x26; page-number <span class="token operator">&#x3C;</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token function">counter</span><span class="token punctuation">(</span>toc<span class="token punctuation">,</span> lower-roman<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token atrule"><span class="token rule">@-epubx-partition</span></span> <span class="token punctuation">{</span>
+    <span class="token comment">// 4ページ目以降は本論のページ番号</span>
+    <span class="token property">-epubx-enabled</span><span class="token punctuation">:</span> <span class="token function">-epubx-expr</span><span class="token punctuation">(</span>page-number <span class="token operator">></span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token function">counter</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+
+      <h2>おわりに</h2>
+      <p>CSS 組版をやってみた感想を書きました。「こまったところ」は筆者の CSS の書き方が良くなかったりするかもしれません、解決策をご存知の方は是非シェアしていただけると嬉しいです。</p>
+      <p>便利なツールが増え次第に広まりつつある CSS 組版ですが、細かい tips や事例の公開は少なく、まだまだこれからという印象があります。本稿が CSS 組版の需要を示す事例のひとつになれば幸いです。</p>
+    </article>
+  </body>
+</html>
