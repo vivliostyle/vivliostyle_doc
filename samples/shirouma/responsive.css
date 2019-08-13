@@ -1,0 +1,80 @@
+@import url('style.css');
+
+@page {
+	size: auto;
+	font-size: 0.8rem;
+}
+
+html {
+	columns: 12em;
+	font-size: 0.8333em;
+	line-height: 1.8em;
+}
+h1 {
+	font-size: 2rem;
+	line-height: 4.8rem;
+}
+h2 {
+	font-size: 1.2rem;
+	line-height: 3.225rem;
+	margin-right: 1.8rem;
+}
+.author {
+  line-height: 2.4rem;
+}
+.note {
+  font-size: 0.9rem;
+  line-height: 1.5rem;
+  }
+.linespace {
+  margin: 0 4.4rem 0 0;
+}
+.bibliographical_information {
+  font-size: 0.9rem;
+  line-height: 1.5rem;
+  margin-right: 4.4rem;
+}
+.topimg {
+  float: none;
+  height: auto;
+  width: auto;
+}
+.topimg img {
+  width: auto;
+  max-width: 100vw;
+  height: auto;
+  max-height: 100%;
+}
+/* Ugly workaround because vw doesn't work well */
+@media (max-width: 950px) { .topimg img { max-width: 800px; } }
+@media (max-width: 900px) { .topimg img { max-width: 750px; } }
+@media (max-width: 850px) { .topimg img { max-width: 700px; } }
+@media (max-width: 800px) { .topimg img { max-width: 650px; } }
+@media (max-width: 750px) { .topimg img { max-width: 600px; } }
+@media (max-width: 700px) { .topimg img { max-width: 550px; } }
+@media (max-width: 650px) { .topimg img { max-width: 500px; } }
+@media (max-width: 600px) { .topimg img { max-width: 450px; } }
+@media (max-width: 550px) { .topimg img { max-width: 400px; } }
+@media (max-width: 500px) { .topimg img { max-width: 350px; } }
+@media (max-width: 450px) { .topimg img { max-width: 300px; } }
+@media (max-width: 400px) { .topimg img { max-width: 250px; } }
+@media (max-width: 350px) { .topimg img { max-width: 200px; } }
+@media (max-width: 300px) { .topimg img { max-width: 150px; } }
+@media (max-width: 250px) { .topimg img { max-width: 100px; } }
+@media (max-width: 200px) { .topimg img { max-width: 50px; } }
+/* end woraround */
+.figure {
+  width: 18em;
+  margin-left: 1.8em;
+  margin-right: 1.8em;
+  display: flex;
+}
+.figure img {
+  height: auto;
+  max-height: 100%;
+  max-width: 100%;
+  margin: auto;
+}
+.heading {
+  break-inside: avoid;
+}
