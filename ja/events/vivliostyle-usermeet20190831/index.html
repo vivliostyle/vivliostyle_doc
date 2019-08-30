@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Vivliostyleと関連ツールの便利な使い方</title>
+  <link rel="stylesheet" href="css/presen.css">
+</head>
+
+<body>
+  <header id="cover">
+    <h1>Vivliostyleと関連ツールの便利な使い方</h1>
+    <p class="event">CSS組版 Vivliostyle 開発者とユーザーの集い 2019夏</p>
+    <p class="date">2019-08-31</p>
+    <p class="author">Vivliostyle ユーザー会<br>Vivliostyle Foundation
+      <br>村上 真雄
+      <a target="_blank" href="https://twitter.com/MurakamiShinyu">@MurakamiShinyu</a> /
+      <a target="_blank" href="https://vivliostyle.org">vivliostyle.org</a>
+    </p>
+  </header>
+  <nav id="toc" role="doc-toc">
+    <h2>目次</h2>
+    <ol>
+      <li><a href="#intro">はじめに</a></li>
+      <li><a href="#vivliostyle-viewer">Vivliostyle Viewer</a>
+        <ol>
+          <li><a href="#online-vivliostyle-viewer">公開されている Vivliostyle Viewer の活用</a></li>
+          <li><a href="#github-view">GitHub 上の HTML+CSS や EPUB データなどを Vivliostyle Viewer で組版表示</a></li>
+          <li><a href="#local-html-css-view">自分のパソコン上の HTML+CSS ファイルを Vivliostyle Viewer で組版表示</a></li>
+        </ol>
+      </li>
+      <li><a href="#vivliostyle-savepdf">vivliostyle-savepdf</a></li>
+      <li><a href="#ending">おわりに</a></li>
+    </ol>
+  </nav>
+  <section id="intro">
+    <h2>はじめに</h2>
+    <section id="aboutme">
+      <h3>自己紹介</h3>
+      <p>村上 真雄
+        <a target="_blank" href="https://twitter.com/MurakamiShinyu">@MurakamiShinyu</a>,
+        Vivliostyle Foundation 代表
+      </p>
+      <ul>
+        <li>1990年ごろ:
+          <a target="_blank" href="https://www3.atwiki.jp/uran/pages/37.html">テキスト整形ツールXTR</a> を開発、公開。</li>
+        <li>2000年ごろから:
+          <a target="_blank" href="https://www.antenna.co.jp/AHF/">Antenna House Formatter</a>（アンテナハウス社のXML/CSS組版エンジン）の開発に従事。</li>
+        <li>2014年: Vivliostyleプロジェクト開始、会社設立。</li>
+        <li>2018年: Vivliostyle Foundation<small>（一般社団法人ビブリオスタイル）</small>設立⇨<a target="_blank" href="https://vivliostyle.org/">vivliostyle.org</a> オープンソースプロジェクト再始動。</li>
+        <li>W3C CSS標準化・日本語組版TF、JAGAT XMLパブリッシング研究会などに関わってきています。</li>
+      </ul>
+    </section>
+  </section>
+
+  <section id="vivliostyle-viewer">
+    <h2>Vivliostyle Viewer</h2>
+    <section id="online-vivliostyle-viewer">
+      <h3>公開されている Vivliostyle Viewer の活用</h3>
+      <p><a href="https://vivliostyle.org/ja/samples/">Vivliostyle 公式サイトの「サンプル」ページ</a>では、
+        <a href="https://vivliostyle.github.io/vivliostyle.js/viewer/vivliostyle-viewer.html">vivliostyle.github.io/vivliostyle.js/viewer/vivliostyle-viewer.html</a>
+        という URL で公開の Vivliostyle Viewer を使っていますが、これは誰でも利用できます。
+      </p>
+      <p>つまり、インストールしなくても Vivliostyle Viewer を使えます⭐️</p>
+      
+      <p>Vivliostyle Viewer の使い方👉<a href="https://vivliostyle.github.io/vivliostyle.js/docs/ja/">Vivliostyle Viewer ユーザーガイド</a></p>
+    </section>
+    <section id="github-view">
+      <h3>GitHub 上の HTML+CSS や EPUB データなどを Vivliostyle Viewer で組版表示</h3>
+
+      <p>例えば、GitHub 上に公開されている IDPF / EPUB 3 Samples: <a href="https://github.com/IDPF/epub3-samples">github.com/IDPF/epub3-samples</a> で試してみる：</p>
+      <ul>
+        <li>「草枕」(<a href="https://github.com/IDPF/epub3-samples/tree/master/30/kusamakura-japanese-vertical-writing">kusamakura-japanese-vertical-writing</a>) の中のひとつのXHTMLファイル <a href="https://github.com/IDPF/epub3-samples/blob/master/30/kusamakura-japanese-vertical-writing/OPS/xhtml/%E4%B8%80.xhtml">一.xhtml</a> を <a href="https://vivliostyle.github.io/vivliostyle.js/viewer/vivliostyle-viewer.html#x=https://github.com/IDPF/epub3-samples/blob/master/30/kusamakura-japanese-vertical-writing/OPS/xhtml/%E4%B8%80.xhtml">Vivliostyle Viewer で組版表示</a></li>
+        <li><a href="https://vivliostyle.github.io/vivliostyle.js/viewer/vivliostyle-viewer.html#b=https://github.com/IDPF/epub3-samples/tree/master/30/kusamakura-japanese-vertical-writing">「草枕」EPUB をまるごと Vivliostyle Viewer で組版表示</a></li>
+      </ul>
+      <p>⭐️<a href="https://gist.github.com/">GitHub Gist</a> も使えます。例： <a href="https://gist.github.com/MurakamiShinyu/4f0423fd3578a277c7d29f56a31912b7">Vivliostyleちょっと入門サンプル</a></p>
+      <p>ちょっと試すのに、GitHub Gist や <a href="https://jsbin.com">JS Bin (jsbin.com)</a> が便利⭐</p>
+    </section>
+    <section id="local-html-css-view">
+      <h3>自分のパソコン上の HTML+CSS ファイルを Vivliostyle Viewer で組版表示</h3>
+
+      <p>まず自分のパソコンに <a href="https://github.com/nodeapps/http-server">http-server</a> を入れます。</p>
+      <p>インストール：<br>
+       （その前にまず Node.js がなかったらそれを入れる👉<a href="https://nodejs.org">nodejs.org</a>）</p>
+<pre>
+  npm install -g http-server
+</pre>
+      <h4>ローカル http-server + 公開 Vivliostyle Viewer</h4>
+
+      <p>組版表示したい HTML+CSS ファイルが含まれるディレクトリ上で http-server を次のように起動：</p>
+<pre>
+  http-server . --cors -o -c-1
+</pre>
+      <p>これで、<a href="http://localhost:8080">http://localhost:8080</a> がブラウザで開いて、自分のパソコン上の HTML+CSS ファイルが見れます。</p>
+      <p>その localhost 上の組版表示したい HTML ファイルの URL を、公開 Vivliostyle Viewer に指定すると、組版表示できます。<br>
+      （http-server に <code>--cors</code> オプションを指定してるので、これが可能です。<code>-o</code> はブラウザ起動、<code>-c-1</code> はキャッシュを無効にする指定）</p>
+    </section>
+  </section>
+  <section id="vivliostyle-savepdf">
+    <h2>vivliostyle-savepdf</h2>
+    <section id="vivliostyle-savepdf-usage">
+      <h3>vivliostyle-savepdf：<br>コマンドラインでCSS組版してPDFに保存</h3>
+      <ul>
+        <li>以前の名前は viola-savepdf、<a href="https://twitter.com/spring_raining">はるさめ(@spring_raining)</a>さん作</li>
+        <li><a href="https://github.com/vivliostyle/vivliostyle-savepdf">github.com/vivliostyle/vivliostyle-savepdf</a></li>
+        <li><a href="https://vivliostyle.org/ja/download/">Vivliostyle 公式サイトの「ダウンロード」ページ</a>にもあります。</li>
+      </ul>
+
+      <h4>vivliostyle-savepdf のインストールと使い方</h4>
+      <p>インストール： （まず Node.js がなかったら入れる👉<a href="https://nodejs.org">nodejs.org</a>）</p>
+<pre>
+  npm install -g vivliostyle-savepdf
+</pre>
+      <p>使い方の例： index.html を組版して、output.pdf に出力</p>
+<pre>
+  savepdf ./index.html
+</pre>
+      <p>プレビュー表示するには：</p>
+<pre>
+  savepdf --preview ./index.html
+</pre>
+      <p>そのほかのオプションは： <code>savepdf --help</code></p>
+    </section>
+  </section>
+
+  <section id="ending">
+    <h2>Thanks!</h2>
+  </section>
+</body>
+
+</html>
