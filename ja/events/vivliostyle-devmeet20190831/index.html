@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Vivliostyle開発のこれまでと、これからへ</title>
+  <link rel="stylesheet" href="css/presen.css">
+</head>
+
+<body>
+  <header id="cover">
+    <h1>Vivliostyle開発のこれまでと、これからへ</h1>
+    <p class="event">CSS組版 Vivliostyle 開発者とユーザーの集い 2019夏</p>
+    <p class="date">2019-08-31</p>
+    <p class="author">Vivliostyle ユーザー会<br>Vivliostyle Foundation
+      <br>村上 真雄
+      <a target="_blank" href="https://twitter.com/MurakamiShinyu">@MurakamiShinyu</a> /
+      <a target="_blank" href="https://vivliostyle.org">vivliostyle.org</a>
+    </p>
+  </header>
+  <nav id="toc" role="doc-toc">
+    <h2>目次</h2>
+    <ol>
+      <li><a href="#koremade">Vivliostyle のこれまで</a>
+        <ol>
+          <li><a href="#old-vivliostyle-code">以前の Vivliostyle.js ソースコードについて</a></li>
+          <li><a href="#js-to-ts">TypeScript への移行</a></li>
+          <li><a href="#js-to-ts-done">2019年8月、TypeScript 化作業完了</a></li>
+          <li><a href="#vivliostyle-2019">この1年間の Vivliostyle の進捗</a></li>
+        </ol>
+      </li>
+      <li><a href="#korekara">Vivliostyle のこれからの開発課題</a>
+        <ol>
+          <li><a href="#gh-projects">開発課題(issue)を GitHub Projects で管理</a></li>
+          <li><a href="#project-bugs">Bugs</a></li>
+          <li><a href="#project-pdf-printing">PDF printing</a></li>
+          <li><a href="#project-input-formats">Input formats</a></li>
+          <li><a href="#project-paged-media">Paged media</a></li>
+          <li><a href="#project-typography">Typography</a></li>
+          <li><a href="#project-layout-enhancement">Layout enhancement</a></li>
+          <li><a href="#project-web-standards">Web standards</a></li>
+          <li><a href="#project-other-improvements">Other improvements</a></li>
+        </ol>
+      </li>
+    </ol>
+  </nav>
+  <section id="intro">
+    <h2>はじめに</h2>
+    <section id="aboutme">
+      <h3>自己紹介</h3>
+      <p>村上 真雄
+        <a target="_blank" href="https://twitter.com/MurakamiShinyu">@MurakamiShinyu</a>,
+        Vivliostyle Foundation 代表
+      </p>
+      <ul>
+        <li>1990年ごろ:
+          <a target="_blank" href="https://www3.atwiki.jp/uran/pages/37.html">テキスト整形ツールXTR</a> を開発、公開。</li>
+        <li>2000年ごろから:
+          <a target="_blank" href="http://www.antenna.co.jp/AHF/">Antenna House Formatter</a>（アンテナハウス社のXML/CSS組版エンジン）の開発に従事。</li>
+        <li>2014年: Vivliostyleプロジェクト開始、会社設立。</li>
+        <li>2018年: Vivliostyle Foundation<small>（一般社団法人ビブリオスタイル）</small>設立⇨<a target="_blank" href="https://vivliostyle.org/">vivliostyle.org</a> オープンソースプロジェクト再始動。</li>
+        <li>W3C CSS標準化・日本語組版TF、JAGAT XMLパブリッシング研究会などに関わってきています。</li>
+      </ul>
+    </section>
+  </section>
+  <section id="koremade">
+    <h2>Vivliostyle のこれまで</h2>
+    <section id="old-vivliostyle-code">
+      <h3>以前の Vivliostyle.js ソースコードについて</h3>
+      <ul>
+        <li>Vivliostyle プロジェクト開始時（5年前）、いちから作るか既存のオープンソースを元にするか検討し、</li>
+        <li><a href="https://github.com/sorotokin/adaptive-layout">EPUB Adaptive Layout 実装</a>（GoogleのPeter Sorotokin氏による）をベースにして開発することに。</li>
+        <li>ソースコードは JavaScript (ES5) + <a href="https://github.com/google/closure-compiler/wiki/Annotating-JavaScript-for-the-Closure-Compiler">Closure Compiler 用の型注釈</a></li>
+        <li>これをベースに、本のページ組版に欠かせない機能が実装され Vivliostyle.js が作られた（メインの開発者は現 Trim-marks Inc. の <a href="https://twitter.com/kwkbtr_t">Toru Kawakubo</a> 氏）</li>
+        <li>2018年、Vivliostyle は非営利のオープンソース・プロジェクトとして再出発。開発しやすさのため、JSコードのモダン化を模索。</li>
+      </ul>
+    </section>
+    <section id="js-to-ts">
+      <h3>TypeScript への移行</h3>
+      <blockquote cite="https://ja.wikipedia.org/wiki/TypeScript">
+        <strong>TypeScript</strong> はマイクロソフトによって開発され、メンテナンスされているフリーでオープンソースのプログラミング言語である。TypeScript は JavaScript に対して、省略も可能な静的型付けとクラスベースオブジェクト指向を加えた厳密なスーパーセットとなっている。
+        ——<cite><a href="https://ja.wikipedia.org/wiki/TypeScript">ウィキペディア：TypeScript</a></cite>
+      </blockquote>
+      <ul>
+        <li>JavaScript + <a href="https://github.com/google/closure-compiler/wiki/Annotating-JavaScript-for-the-Closure-Compiler">Closure Compiler 用の型注釈</a> から TypeScript に、自動変換するツール：<a href="https://github.com/angular/clutz#gents---closure-to-typescript-converter">Gents - Closure to TypeScript converter</a></li>
+        <li>これで TypeScript への移行は簡単！ なはず…</li>
+      </ul>
+      <figure>
+        <img src="img/slack-ts-begin.png" alt="August 21st, 2018: Vivliostyle slack messages" style="max-height: 80vh">
+        <figcaption>2018年8月、TypeScript化作業開始時のSlackでの会話 “97% done.” 😃<br>
+          ちなみに、Vivliostyle の Slack は <a href="https://vivliostyle.org/ja/community/">Vivliostyle コミュニティ</a> から参加できます！
+
+        </figcaption>
+      </figure>
+    </section>
+    <section id="js-to-ts-done">
+      <h3>2019年8月、TypeScript 化作業完了</h3>
+      <figure>
+        <a href="https://github.com/vivliostyle/vivliostyle.js/pull/536"><img src="img/github-ts-finish.png" alt="GitHub: vivliostyle / vivliostyle.js JS-to-TS migration" style="max-height: 60vh"></a>
+        <figcaption>作業開始から（途中中断しながら）1年後、TypeScript 化完成!<br>
+          実際にどんな作業だったかは、このコミット履歴をご覧ください。<br>
+          Thanks contributors! johanneswilm, spring-raining, kubosho
+        </figcaption>
+      </figure>
+    </section>
+    <section id="vivliostyle-2019">
+      <h3>この1年間の Vivliostyle の進捗</h3>
+      <ul>
+        <li><a href="https://vivliostyle.org/ja/blog/2019/08/20/vivliostyle-2019.8.101-released/">Vivliostyle 2019.8.101</a>: 現時点(2019-08-31)での最新安定版</li>
+        <li><a href="https://vivliostyle.org/ja/blog/2019/08/16/vivliostyle-2019.8.100-released/">Vivliostyle 2019.8.100</a>: ソースコードTypeScript化</li>
+        <li><a href="https://vivliostyle.org/ja/blog/2019/02/27/vivliostyle-2019.1.101-released/">Vivliostyle 2019.1.101</a>: Viewer UIに目次パネル, Web publications (複数HTML文書), GitHubからの文書ロード, <code class="highlighter-rouge">env(pub-title)</code> と <code class="highlighter-rouge">env(doc-title)</code>, ビューポート・パーセント単位, <code class="highlighter-rouge">calc()</code>, Viewer UI 設定パネル改良, Viewerスタートページ, Render All Pages 設定, <code class="highlighter-rouge">vivliostyle</code> メディア型</li>
+        <li><a href="https://vivliostyle.org/ja/blog/2018/10/31/vivliostyle-2018.10.100-released/">Vivliostyle 2018.10.100</a>: Viewer UIにページ番号／総ページ数</li>
+        <li><a href="https://vivliostyle.org/ja/blog/2018/09/10/vivliostyle-2018.8.100-released/">Vivliostyle 2018.8.100</a>: Viewer UI 改良, CSS論理プロパティ</li>
+        <li>その他はバグ修正のマイナーリリース</li>
+      </ul>
+      <figure>
+        <img src="img/vivliostyle2018.png" alt="Vivliostyle 2018.8.100 では設定パネルにページ見開きとページサイズのみ" style="max-height: 80vh">
+        <figcaption>Vivliostyle 2018.8.100 の Viewer UI</figcaption>
+      </figure>
+      <figure>
+        <img src="img/vivliostyle2019.png" alt="Vivliostyle 2019 では、設定項目がいろいろ、ページ番号や目次パネルからのナビゲーションあり" style="max-height: 80vh">
+        <figcaption>Vivliostyle 2019.8.101 の Viewer UI<br>
+          新しいところ: UIにページ番号/ページ数、目次パネル、設定項目いろいろ、など
+        </figcaption>
+      </figure>
+    </section>
+  </section>
+  <section id="korekara">
+    <h2>Vivliostyle のこれからの開発課題</h2>
+    <section id="gh-projects">
+      <h3>開発課題(issue)を GitHub Projects で管理</h3>
+      <p>👉<a href="https://github.com/vivliostyle/vivliostyle.js/projects">github.com/vivliostyle/vivliostyle.js/projects</a></p>
+      <table id="table-projects">
+        <thead>
+          <tr>
+            <th>Project 名</th>
+            <th>説明</th>
+            <th>issue 数</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="https://github.com/vivliostyle/vivliostyle.js/projects/5">Bugs</a></td>
+            <td>バグ：レイアウトの不具合、CSS仕様の通りの結果にならないなど</td>
+            <td>31</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/vivliostyle/vivliostyle.js/projects/2">PDF printing</a></td>
+            <td>PDF出力および印刷に関する問題</td>
+            <td>9</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/vivliostyle/vivliostyle.js/projects/3">Input formats</a></td>
+            <td>入力文書フォーマット（EPUBやWeb出版物など）と文書に埋め込むメディアタイプ（MathML数式など）のサポート</td>
+            <td>6</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/vivliostyle/vivliostyle.js/projects/1">Paged media</a></td>
+            <td><a href="https://drafts.csswg.org/css-page-3/">CSS Paged Media</a> および <a href="https://drafts.csswg.org/css-gcpm/">CSS Generated Content for Paged Media</a> 仕様のサポート</td>
+            <td>11</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/vivliostyle/vivliostyle.js/projects/4">Typography</a></td>
+            <td>文字組版の問題：<a href="https://drafts.csswg.org/css-text-3/">CSS Text 3</a>, <a href="https://drafts.csswg.org/css-text-4/">CSS Text 4</a> や <a href="https://drafts.csswg.org/css-fonts/">CSS Fonts</a> 仕様などのサポート</td>
+            <td>8</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/vivliostyle/vivliostyle.js/projects/6">Layout enhancement</a></td>
+            <td>高度なレイアウトを実現するCSS仕様のサポート：<a href="https://drafts.csswg.org/css-page-floats/">CSS Page Floats</a>、<a href="https://drafts.csswg.org/css-grid/">CSS Grid Layout</a><a href="https://drafts.csswg.org/css-multicol/">CSS Multi-column Layout</a> など</td>
+            <td>16</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/vivliostyle/vivliostyle.js/projects/7">Web standards</a></td>
+            <td>Web標準仕様のサポート：最新ブラウザでサポートされているHTMLやCSSの機能など。他のプロジェクトに分類できるものを除く</td>
+            <td>7</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/vivliostyle/vivliostyle.js/projects/8">Other improvements</a></td>
+            <td>その他の課題</td>
+            <td>数件</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="project-bugs">
+      <h3><a href="https://github.com/vivliostyle/vivliostyle.js/projects/5">Bugs</a></h3>
+      <p class="project-desc">バグ：レイアウトの不具合、CSS仕様の通りの結果にならないなど</p>
+      <ul>
+        <li><span>31 issues open</span>
+          <ul>
+            <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/544"><code>column-fill: balance</code> on vertical writing mode causes columns left-aligned #544</a></li>
+            <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/438">footnotes in table are ignored #438</a></li>
+            <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/534">Table break when there are footnotes #534</a></li>
+            <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/406">breakable table cell + footnote stops vivliostyle.js #406</a></li>
+            <li>...</li>
+          </ul>
+        </li>
+      </ul>
+      <p class="issues-note">😅バグを地道に直して品質を上げたい。</p>
+    </section>
+    <section id="project-pdf-printing">
+      <h3><a href="https://github.com/vivliostyle/vivliostyle.js/projects/2">PDF printing</a></h3>
+      <p class="project-desc">PDF出力および印刷に関する問題</p>
+      <ul>
+        <li><span>9 issues open</span>
+          <ul>
+            <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/437">please use CID instead of Type3 #437</a></li>
+            <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/419">Minimum width of borders is too thick #419</a></li>
+            <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/418">Add TrimBox and BleedBox to output PDF #418</a></li>
+            <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/432">@page size value ignores decimal numbers #432</a></li>
+            <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/429">support PDF standard #429</a></li>
+            <li>...</li>
+          </ul>
+        </li>
+      </ul>
+      <p class="issues-note">🤔現状はブラウザのPDF出力に依存するためこれらの問題が。</p>
+    </section>
+    <section id="project-input-formats">
+      <h3><a href="https://github.com/vivliostyle/vivliostyle.js/projects/3">Input formats</a></h3>
+      <p class="project-desc">入力文書フォーマット（EPUBやWeb出版物など）と文書に埋め込むメディアタイプ（MathML数式など）のサポート</p>
+      <ul>
+        <li><span>6 issues open</span>
+          <ul>
+            <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/541">Support non-unzipped EPUB loading #541</a></li>
+            <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/524">Vexflow and vextab #524</a></li>
+            <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/168">Let authors use their own MathJax configuration #168</a></li>
+            <li>...</li>
+          </ul>
+        </li>
+      </ul>
+      <p class="issues-note">⭐EPUB や Web publications 等をもっと活用できるように。</p>
+      <p class="issues-note">⭐MathJax だけでなくJSライブラリで表示できるものを有効にしたい。</p>
+    </section>
+    <section id="project-paged-media">
+      <h3><a href="https://github.com/vivliostyle/vivliostyle.js/projects/1">Paged media</a></h3>
+      <p class="project-desc"><a href="https://drafts.csswg.org/css-page-3/">CSS Paged Media</a> および <a href="https://drafts.csswg.org/css-gcpm/">CSS Generated Content for Paged Media</a> 仕様のサポート</p>
+      <ul>
+        <li><span>11 issues open</span>
+          <ul>
+            <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/59">Root element styles are not inherited to page context #59</a></li>
+            <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/545">Support named strings for running headers and footers #545</a></li>
+            <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/428">Support &quot;@page :blank&quot; #428</a></li>
+            <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/425">Support for named pages? #425</a></li>
+            <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/149">Add support for GCPM bookmarks #149</a></li>
+            <li>...</li>
+          </ul>
+        </li>
+      </ul>
+      <p class="issues-note">⭐CSS ページメディア関連仕様をきちんとサポートしたい。柱の生成など。</p>
+    </section>
+    <section id="project-typography">
+      <h3><a href="https://github.com/vivliostyle/vivliostyle.js/projects/4">Typography</a></h3>
+      <p class="project-desc">文字組版の問題：<a href="https://drafts.csswg.org/css-text-3/">CSS Text 3</a>, <a href="https://drafts.csswg.org/css-text-4/">CSS Text 4</a> や <a href="https://drafts.csswg.org/css-fonts/">CSS Fonts</a> 仕様などのサポート</p>
+      <ul>
+        <li><span>8 issues open</span>
+          <ul>
+            <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/182">Support text-spacing #182</a></li>
+            <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/204">Support unicode-range descriptor #204</a></li>
+            <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/154">Support the font-variant-* longhands #154</a></li>
+            <li>...</li>
+          </ul>
+        </li>
+      </ul>
+      <p class="issues-note">⭐行頭や連続約物の詰めはブラウザでの実装がまだでも実装できそう。</p>
+      <p class="issues-note">😅ブラウザで実装されてる unicode-range が使えないのを直したい。</p>
+    </section>
+    <section id="project-layout-enhancement">
+      <h3><a href="https://github.com/vivliostyle/vivliostyle.js/projects/6">Layout enhancement</a></h3>
+      <p class="project-desc">高度なレイアウトを実現するCSS仕様のサポート：<a href="https://drafts.csswg.org/css-page-floats/">CSS Page Floats</a>、<a href="https://drafts.csswg.org/css-grid/">CSS Grid Layout</a><a href="https://drafts.csswg.org/css-multicol/">CSS Multi-column Layout</a> など</p>
+      <ul>
+        <li><span>16 issues open</span>
+          <ul>
+            <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/539">Support CSS Grid Layout #539</a></li>
+            <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/543">Update CSS Page Floats #543</a></li>
+            <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/107">Broken multi-column inside a non-root element #107</a></li>
+            <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/542">Support column-span #542</a></li>
+            <li>...</li>
+          </ul>
+        </li>
+      </ul>
+      <p class="issues-note">⭐ブラウザで実装されてる CSS Grid Layout を活かせるようにしたい</p>
+      <p class="issues-note">⭐Page Floats をもっと活用しやすくしたい。</p>
+      <p class="issues-note">⭐段組・段抜きのレイアウトをもっと自由にできるようにしたい。</p>
+    </section>
+    <section id="project-web-standards">
+      <h3><a href="https://github.com/vivliostyle/vivliostyle.js/projects/7">Web standards</a></h3>
+      <p class="project-desc">Web標準仕様のサポート：最新ブラウザでサポートされているHTMLやCSSの機能など。他のプロジェクトに分類できるものを除く</p>
+      <ul>
+        <li><span>7 issues open</span>
+          <ul>
+            <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/266">Support the fill, max-content, min-content, and fit-content values for width and height. #266</a></li>
+            <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/265">Support 'base' element #265</a></li>
+            <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/540">Support CSS custom properties (variables) #540</a></li>
+            <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/145">add support for user-select #145</a></li>
+            <li>...</li>
+          </ul>
+        </li>
+      </ul>
+      <p class="issues-note">⭐最新のWeb標準仕様への準拠度を高めたい。</p>
+    </section>
+    <section id="project-other-improvements">
+      <h3><a href="https://github.com/vivliostyle/vivliostyle.js/projects/8">Other improvements</a></h3>
+      <p class="project-desc">その他の課題</p>
+      <ul>
+        <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/460">autokill option #460</a></li>
+        <li><a href="https://github.com/vivliostyle/vivliostyle-ui/issues">Vivliostyle UI issues</a>
+          <ul>
+            <li><a href="https://github.com/vivliostyle/vivliostyle-ui/issues/71">Localization of Vivliostyle Viewer UI</a></li>
+            <li><a href="https://github.com/vivliostyle/vivliostyle-ui/issues/20">Include a search function in the UI</a></li>
+            <li>...</li>
+          </ul>
+        </li>
+        <li>Browser extension of Vivliostyle viewer</li>
+        <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/423">Documentation: supported-features #423</a></li>
+      </ul>
+      <p class="issues-note">⭐エラー処理改善、Viewer UI の多言語化、検索機能、Chrome拡張、…</p>
+      <p class="issues-note">⭐ドキュメンテーションの改善など</p>
+    </section>
+  </section>
+
+  <section id="ending">
+    <h2>Thanks!</h2>
+  </section>
+</body>
+
+</html>
