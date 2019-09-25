@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../bundle.css">
+    <title>EPUB ファイルから Vivliostyle で PDF を作りたい！</title>
+  </head>
+  <body role="doc-chapter">
+    <article>
+      <h1 id="epub-ファイルから-vivliostyle-で-pdf-を作りたい！">EPUB ファイルから Vivliostyle で PDF を作りたい！</h1>
+      <div class="draft-author">田嶋 淳（@JunTajima）<span class="footnote" style="text-align: left;"><a href="http://densyodamasii.com/">http://densyodamasii.com/</a></span></div>
+      <p>
+        印刷 DTP データからの EPUB 作成の仕事を長年やっていて、ずっと解決できないでいた悩みがあった。それは、<strong>「EPUB を PDF に出力すること」</strong>である。Web 方面の人はなぜそんなことが必要なのか不思議に思うかもしれない。それは <strong>「出版社に内容を確認してもらうため」</strong>に必要になるのだ（「検収」と呼ぶ）。もちろんわれわれ制作者は、できる限り元データの情報を失わない形で電子化をするのだけど、だからといってチェックもせずにそのまま販売はできない。そしてチェックのためには、<strong>できるだけ元の本の版面に近い形で EPUB を表示させ、それを元の本と見比べる</strong>必要が出てくる。出版社によっては外部の校正者に依頼するケースもあるから、可能ならプリントできる PDF 形式の変換データも渡すことが必要になってくるのだ。
+        ところが長いことこれが随分難しい話だった。<strong>商業用 EPUB ビューアには例外なく「印刷の機能がない」</strong>からだ。理由はまあ明確で、もし購入した電子本を印刷の機能を使って PDF にできてしまえば、それはすなわち<strong>海賊版の作成補助になってしまう</strong>からだ。これはどこの出版社も納得しないだろうからまあ仕方ない。
+        ただし、前述の理由で製作段階では紙に出力できる PDF を作る必要はあるから、現場ではスクリプト処理で連続スクリーンショットを取り、それを PDF 化するというような力技が必要になっていた。画像の塊だからこの PDF はファイルサイズが恐ろしくデカい。減色処理をしても平気で 400〜500MB にもなる。これだと作成そのものにも時間がかかるし、データを送付するのも大変だ。どうにかできないか、というのが長年の悩みだった。
+        そこで Vivliostyle である。EPUB の表示に対応済みと村上さんからお聞きしたとき、これならもしかして行けるのではないかとすぐに思った。なにしろ本来の素性が CSS 組版エンジンなので、組版表示の能力はかなり期待はできる。そこが貧弱だと検収用には使えないのだ。ということで村上さんにご指導をいただき、早速試してみた。
+      </p>
+      <h2 id="やりたいこと">やりたいこと</h2>
+      <p>最初に、やりたいことを箇条書きでまとめておく。</p>
+      <div class="page-break"></div>
+      <ol>
+        <li>EPUB を CSS の標準的な表現に沿った形で PDF 化したい</li>
+        <li>元の本の版面にできるだけ合わせたい</li>
+        <li>Web にアップロードせずローカルで処理したい</li>
+        <li>校正指示のためにページ番号は入れたい</li>
+        <li>元 EPUB の CSS はできれば触りたくない</li>
+        <li>Mac 標準のツール群でどうにかしたい</li>
+      </ol>
+      <p>
+        個々の項目に関して説明すると、まず 1 については、表示確認目的である以上、標準的な表現である方が望ましい。現在いくつかの EPUB ビューアは日本語を読みやすくする目的で独自に表現の拡張を行なっているが、そういったものはリファレンス的な用途には不向きだ。
+        2 については実際の表示確認のワークフローが底本との照らし合わせである以上必須になる。特に<strong>一行文字数は確実に合わせたい</strong>。これが合っていないと、校正におそろしく手間がかかる。これは実際にやってみればすぐわかる。可能ならば<strong>2 つの版面を並べて「絵として比較できる」状態が望ましい</strong>のだ。括弧類や句読点のツメ処理などの関係でどのみち全く同じ組版にはならないけれど、見比べる以上共通点は少しでも多い方がよい。
+        3 は販売前の商用 EPUB の制作に利用する以上は当然だ。データそのものを外部から見られる場所にアップロードするわけにはいかない。<strong>もし漏洩したら大問題になる</strong>。
+        4 はまあできればでよいけれど、修正箇所の指示で今出版社の担当者が大いに悩んでいそうなのは日々感じているので、入れられるなら入れてあげたい。
+        5 は 4 を踏まえた上で、その CSS 指定のために元の EPUB のファイル群は可能なら触りたくない。触ればヒューマンエラーも起きるし、手間もかかる。
+        で、その上で、できるなら追加でモジュール群などをインストールしてマシンを環境構築する手間は避けられるのなら避けたい。これは会社の複数台のマシンをメンテナンスする労力からくる要望だ。
+      </p>
+      <h2 id="vivliostyleでepubをローカル表示させpdf化する手順">VivliostyleでEPUBをローカル表示させPDF化する手順</h2>
+      <p>ということを踏まえて、実際に Vivliostyle で EPUB をローカル表示させ、PDF にするまでをやってみた。手順は以下の通り。</p>
+      <h3 id="1-webサーバをローカルで立てる">1. Webサーバをローカルで立てる</h3>
+      <p>Vivliostyle は本来サーバに置いて動かすようなソフトウェアなので、それをローカルで使うにはまず自分のマシン内にサーバを立てる必要がある。もちろんこれはローカルで完結していて外部からは見えない状態なのだが、いわば自分のマシン内に仮想的に立てたサーバ上のファイルをローカルのブラウザで見られる状態にする必要があるのだ。</p>
+      <p>Vivliostyle の公式説明では Node.JS を使うことになっていたのだが、Node.JS 自体のインストールを個々のマシンで行わなければならない上に、インストールで少々手こずってしまい、結果的に村上さんにアドバイスをいただいて Python のコマンドを使って解決した。Python ならば Mac に標準で入っているのでその方がむろん望ましい。</p>
+      <p>手順としては単純で、Mac に標準で入っている<strong>「ターミナル」上で「<code>python -m SimpleHTTPServer 8000</code>」のコマンドを打ち込むだけ</strong>だ。これだけでポート 8000 を対象としてローカルサーバが起動する。次の画面のようになっていれば OK。</p>
+      <p></p>
+      <figure id="image001" class="fig">
+        <img src="image001.png" alt="ローカルサーバが起動">
+        <figcaption>ローカルサーバが起動</figcaption>
+      </figure>
+      <p></p>
+      <h3 id="2-vivliostyle-viewerをローカルで起動">2. Vivliostyle Viewerをローカルで起動</h3>
+      <p>さて、無事ローカルサーバが立ち上がったら、その上でローカルのフォルダ内にある Vivliostyle Viewer を動かしてやる。例えばダウンロードしてきた <code>vivliostyle-js-2019.1.105</code> のフォルダが Mac のデスクトップ上の <code>vivliostyle_test</code> フォルダに置かれているなら、URL 指定は以下のような形になる。</p>
+      <blockquote>
+        <p><code>http://localhost:8000/Desktop/vivliostyle_test/vivliostyle-js-2019.1.105/viewer/vivliostyle-viewer.html</code></p>
+      </blockquote>
+      <p>これをブラウザのアドレスバーに入力して無事に Vivliostyle Viewer の画面が表示されればひとまずは成功。</p>
+      <p></p>
+      <figure id="image002" class="fig">
+        <img src="image002.png" alt="Vivliostyle Viewerが表示された">
+        <figcaption>Vivliostyle Viewerが表示された</figcaption>
+      </figure>
+      <p></p>
+      <p>デスクトップにフォルダを置きたくないというのであれば、「Documents」が Mac のログインユーザの「書類」フォルダに当たるようなのでそちらでもいいだろう。今どんなフォルダがサーバ上から見えているのかを知りたければ、<strong>「<code>localhost:8000</code>」</strong>とだけアドレスバーに入れてやればリストが出てくるはず。</p>
+      <p></p>
+      <figure id="image003" class="fig">
+        <img src="image003.png" alt="フォルダ一覧">
+        <figcaption>フォルダ一覧</figcaption>
+      </figure>
+      <p></p>
+      <h3 id="3-テストファイルをvivliostyleで表示">3. テストファイルをVivliostyleで表示</h3>
+      <p>さてそれではいよいよ EPUB ファイルを Vivliostyle 上で表示してみる。手順 2 の Vivliostyle Viewer の URL の後に<strong>「<code>#b=</code>」</strong>を書き、「<code>http://localhost:8000</code>」の後に表示ファイルのパスを指定してやればよい。EPUB表示の場合は解凍したEPUBフォルダのパスを指定するか、あるいはEPUB内.opfファイルのパスを指定してやればOKだ。</p>
+      <p>例えばデスクトップの <code>vivliostyle_test</code> フォルダ内に置いた <code>testepubfolder</code> を表示させたいのなら</p>
+      <blockquote>
+        <p><code>http://localhost:8000/Desktop/vivliostyle_test/vivliostyle-js-2019.1.105/viewer/vivliostyle-viewer.html#b=http://localhost:8000/Desktop/vivliostyle_test/testepubfolder/item/standard.opf</code></p>
+      </blockquote>
+      <p>のような記述になる。これで無事に EPUB が表示されれば成功だ。</p>
+      <p></p>
+      <figure id="image004" class="fig">
+        <img src="image004.png" alt="EPUBの表示に成功">
+        <figcaption>EPUBの表示に成功</figcaption>
+      </figure>
+      <p></p>
+      <h3 id="4-cssを追記してページ番号を表示">4. CSSを追記してページ番号を表示</h3>
+      <p>では、これに加えてページ番号を表示させてみよう。Vivliostyle には表示の際に CSS を追加して表示させる機能があるのでそれを使う。ブラウザ上の Vivliostyle Viewer の環境設定で<strong>「Override Document Style Sheets」</strong>のチェックボックスをチェックし、「CSS Details」に CSS を書き込んでやればよい。</p>
+      <p></p>
+      <figure id="image005" class="fig">
+        <img src="image005.png" alt="CSSを追記">
+        <figcaption>CSSを追記</figcaption>
+      </figure>
+      <p></p>
+      <p>今回はページ番号の表示のために以下の内容を追記した。</p>
+      <pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@page</span> <span class="token punctuation">:</span>left</span> <span class="token punctuation">{</span>
+  <span class="token property">margin-right</span><span class="token punctuation">:</span> <span class="token number">10</span><span class="token unit">mm</span><span class="token punctuation">;</span>
+  <span class="token atrule"><span class="token rule">@bottom-left</span></span> <span class="token punctuation">{</span>
+    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token function">counter</span><span class="token punctuation">(</span>page<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">margin-left</span><span class="token punctuation">:</span> <span class="token number">5</span><span class="token unit">pt</span><span class="token punctuation">;</span>
+    <span class="token property">margin-bottom</span><span class="token punctuation">:</span> <span class="token number">6</span><span class="token unit">mm</span><span class="token punctuation">;</span>
+    <span class="token property">writing-mode</span><span class="token punctuation">:</span> horizontal-tb<span class="token punctuation">;</span>
+    <span class="token property">font-weight</span><span class="token punctuation">:</span> normal<span class="token punctuation">;</span>
+    <span class="token property">font-family</span><span class="token punctuation">:</span> serif-ja<span class="token punctuation">,</span> serif<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token atrule"><span class="token rule">@page</span> <span class="token punctuation">:</span>right</span> <span class="token punctuation">{</span>
+  <span class="token property">margin-left</span><span class="token punctuation">:</span> <span class="token number">10</span><span class="token unit">mm</span><span class="token punctuation">;</span>
+  <span class="token atrule"><span class="token rule">@bottom-right</span></span> <span class="token punctuation">{</span>
+    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token function">counter</span><span class="token punctuation">(</span>page<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">margin-right</span><span class="token punctuation">:</span> <span class="token number">5</span><span class="token unit">pt</span><span class="token punctuation">;</span>
+    <span class="token property">margin-bottom</span><span class="token punctuation">:</span> <span class="token number">6</span><span class="token unit">mm</span><span class="token punctuation">;</span>
+    <span class="token property">writing-mode</span><span class="token punctuation">:</span> horizontal-tb<span class="token punctuation">;</span>
+    <span class="token property">font-weight</span><span class="token punctuation">:</span> normal<span class="token punctuation">;</span>
+    <span class="token property">font-family</span><span class="token punctuation">:</span> serif-ja<span class="token punctuation">,</span> serif<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token atrule"><span class="token rule">@page</span> <span class="token punctuation">:</span>first</span> <span class="token punctuation">{</span>
+  <span class="token atrule"><span class="token rule">@bottom-left</span></span> <span class="token punctuation">{</span>
+    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token atrule"><span class="token rule">@top-left</span></span> <span class="token punctuation">{</span>
+    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+      <p>最後の「<code>@page :first</code>」のブロックは 1 ページ目は書影なので番号を入れたくないから消しているだけなので、気にしないなら入れなくてもよいだろう。</p>
+      <p>同時に、環境設定メニューでチェックボックスをいくつかチェックしてやる。全ページレンダリング読み込み指定の<strong>「Render All Pages」</strong>と、画像表示最適化の<strong>「Set image max-size to fit page」</strong>および<strong>「Keep aspect ratio」</strong>だ。最終的に PDF 化するのが目的なので全ページ出てくれないと困るし、画像表示最適化のチェックを入れておかないと画像がページ内にきちんと収まってくれなかったりする。</p>
+      <p></p>
+      <figure id="image006" class="fig">
+        <img src="image006.png" alt="追加でチェックボックスをチェック">
+        <figcaption>追加でチェックボックスをチェック</figcaption>
+      </figure>
+      <p></p>
+      <p><strong>最後に「Apply」をクリックして設定を適用</strong>してやり、無事にページ番号が表示されていれば OK。</p>
+      <p></p>
+      <figure id="image007" class="fig">
+        <img src="image007.png" alt="ページ番号が表示された">
+        <figcaption>ページ番号が表示された</figcaption>
+      </figure>
+      <p></p>
+      <h3 id="5-プリントしてpdfを出力">5. プリントしてPDFを出力</h3>
+      <p>ここまでできれば、あとはブラウザの画面を元の本と見比べて 1 行文字数などを調整してやり、プリントメニューから PDF としてプリントを実行するだけだ。サイズはブラウザのウィンドウサイズで調整できるのでとてもラク。</p>
+      <p></p>
+      <figure id="image008" class="fig">
+        <img src="image008.png" alt="プリントメニューからPDFとしてプリント">
+        <figcaption>プリントメニューからPDFとしてプリント</figcaption>
+      </figure>
+      <p></p>
+      <p><strong>おつかれさまでした！</strong></p>
+      <h2 id="ここまでの手順をperlで自動化してみた">ここまでの手順をPerlで自動化してみた</h2>
+      <p>さて、できるにはできたのだけれど、これを毎回仕事でやるのは相当ツラい。なのでここまでの手順を Perl で自動化して楽をすることにした。</p>
+      <p></p>
+      <figure id="image009" class="fig">
+        <img src="image009.png" alt="Perlで自動化">
+        <figcaption>Perlで自動化</figcaption>
+      </figure>
+      <p></p>
+      <p>まあ一応ソースコードを載せておくけれど、実際大したことはしていない。<span class="footnote"><a href="https://github.com/JunTajima/epubVivliostylePreview.pl/blob/master/epubVivliostylePreview.pl">https://github.com/JunTajima/epubVivliostylePreview.pl/blob/master/epubVivliostylePreview.pl</a></span></p>
+      <pre class="language-perl"><code class="language-perl"><span class="token comment">######vivliostyleフォルダ、表示するepubファイルの順でパスを指定するとepubファイルをVivliostyleで起動する。Mac専用。######</span>
+<span class="token keyword">use</span> utf8<span class="token punctuation">;</span>
+<span class="token comment">#Encodeモジュールをインポート</span>
+<span class="token keyword">use</span> Encode <span class="token string">qw/encode decode/</span><span class="token punctuation">;</span>
+
+<span class="token comment">######Vivliostyleで表示する際のCSS追加指定######</span>
+<span class="token keyword">my</span> <span class="token variable">$addVivliostyleCss</span> <span class="token operator">=</span> <span class="token string">"&#x26;renderAllPages=true&#x26;userStyle=data:,/*%3Cviewer%3E*/%0Aimg,%20svg%20%7B%20max-inline-size:%20100%25%20!important;%20max-block-size:%20100vb%20!important;%20object-fit:%20contain%20!important;%20%7D%0A/*%3C/viewer%3E*/%0A\@page%20:left%20%7B%0Amargin-right:%2010mm;%0A\@bottom-left%20%7B%0Acontent:%20counter(page);%0Amargin-left:%205pt;%0Amargin-bottom:%206mm;%0Awriting-mode:%20horizontal-tb;%0Afont-weight:%20normal;%0Afont-family:%20serif-ja,%20serif;%0A%7D%0A%7D%0A\@page%20:right%20%7B%0Amargin-left:%2010mm;%0A\@bottom-right%20%7B%0Acontent:%20counter(page);%0Amargin-right:%205pt;%0Amargin-bottom:%206mm;%0Awriting-mode:%20horizontal-tb;%0Afont-weight:%20normal;%0Afont-family:%20serif-ja,%20serif;%0A%7D%0A%7D%0A\@page%20:first%20%7B%0A\@bottom-left%20%7B%0Acontent:%20%27%27;%0A%7D%0A\@top-left%20%7B%0Acontent:%20%27%27;%0A%7D%0A%7D&#x26;spread=true"</span><span class="token punctuation">;</span> <span class="token comment">#見開き表示、画像表示最適化、ノンブル表示の指定を追加</span>
+<span class="token comment">#############################################</span>
+
+<span class="token comment">#vivliostyleパッケージのパスを取得</span>
+<span class="token keyword">my</span> <span class="token variable">$vivliostyleFolderPath</span> <span class="token operator">=</span> <span class="token variable">$ARGV</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token variable">$vivliostyleFolderPath</span> <span class="token operator">=</span> decode<span class="token punctuation">(</span><span class="token string">'UTF-8'</span><span class="token punctuation">,</span> <span class="token variable">$vivliostyleFolderPath</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">#パッケージの親ディレクトリのパスを取得（そこを起点にローカルWebサーバを起動する）</span>
+<span class="token keyword">my</span> <span class="token variable">$currentFolderPath</span> <span class="token operator">=</span> <span class="token variable">$vivliostyleFolderPath</span><span class="token punctuation">;</span>
+<span class="token variable">$currentFolderPath</span> <span class="token operator">=~</span> <span class="token regex">s@^(.+?)/[^/]+$@$1@</span><span class="token punctuation">;</span>
+<span class="token comment">#vivliostyleフォルダ名を取得</span>
+<span class="token keyword">my</span> <span class="token variable">$vivliostyleFolderName</span> <span class="token operator">=</span> <span class="token variable">$vivliostyleFolderPath</span><span class="token punctuation">;</span>
+<span class="token variable">$vivliostyleFolderName</span> <span class="token operator">=~</span> <span class="token regex">s@^.+?/([^/]+)$@$1@</span><span class="token punctuation">;</span>
+
+<span class="token comment">#表示するepubファイルのパスを取得</span>
+<span class="token keyword">my</span> <span class="token variable">$epubFilePath</span> <span class="token operator">=</span> <span class="token variable">$ARGV</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token variable">$epubFilePath</span> <span class="token operator">=</span> decode<span class="token punctuation">(</span><span class="token string">'UTF-8'</span><span class="token punctuation">,</span> <span class="token variable">$epubFilePath</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">#乱数代わりに日時の数字を取得してepub解凍フォルダ名決定</span>
+<span class="token keyword">my</span> <span class="token variable">$getDateTimeNowCommand</span> <span class="token operator">=</span> <span class="token string">'date "+%Y%m%d%H%M%S"'</span><span class="token punctuation">;</span>
+<span class="token keyword">my</span> <span class="token variable">$datetimenow</span> <span class="token operator">=</span> <span class="token string">`$getDateTimeNowCommand`</span><span class="token punctuation">;</span>
+<span class="token keyword">my</span> <span class="token variable">$epubUnzipFoldername</span> <span class="token operator">=</span> <span class="token string">"vivliostyleepubtmp_"</span> <span class="token operator">.</span> <span class="token variable">$datetimenow</span><span class="token punctuation">;</span>
+<span class="token comment">#テンポラリフォルダ無ければ作る</span>
+<span class="token keyword">unless</span> <span class="token punctuation">(</span><span class="token operator">-d</span> <span class="token variable">$currentFolderPath</span> <span class="token operator">.</span> <span class="token string">"/tmp"</span><span class="token punctuation">)</span><span class="token punctuation">{</span>mkdir <span class="token variable">$currentFolderPath</span> <span class="token operator">.</span> <span class="token string">"/tmp"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment">#テンポラリフォルダにEPUBファイルを解凍する</span>
+<span class="token keyword">my</span> <span class="token variable">$epubUnzipCommand</span> <span class="token operator">=</span> <span class="token string">"unzip "</span> <span class="token operator">.</span> <span class="token variable">$epubFilePath</span> <span class="token operator">.</span> <span class="token string">" -d "</span> <span class="token operator">.</span> <span class="token variable">$currentFolderPath</span> <span class="token operator">.</span> <span class="token string">"/tmp/"</span> <span class="token operator">.</span> <span class="token variable">$epubUnzipFoldername</span><span class="token punctuation">;</span>
+system <span class="token variable">$epubUnzipCommand</span><span class="token punctuation">;</span>
+
+<span class="token comment">#ローカルWebサーバ起動処理</span>
+<span class="token keyword">my</span> <span class="token variable">$serverStartCommand</span> <span class="token operator">=</span> <span class="token string">'osascript -e \'tell application "Terminal" to do script "cd '</span> <span class="token operator">.</span> <span class="token variable">$currentFolderPath</span> <span class="token operator">.</span> <span class="token string">';python -m SimpleHTTPServer 8000"\''</span><span class="token punctuation">;</span>
+system <span class="token variable">$serverStartCommand</span><span class="token punctuation">;</span>
+
+<span class="token comment">#ディレイ処理</span>
+<span class="token keyword">my</span> <span class="token variable">$delayCommand</span> <span class="token operator">=</span> <span class="token string">"osascript -e 'delay 2'"</span><span class="token punctuation">;</span>
+system <span class="token variable">$delayCommand</span><span class="token punctuation">;</span>
+
+<span class="token comment">#Vivliostyle Viewer起動</span>
+<span class="token keyword">my</span> <span class="token variable">$openVivliostyleCmd</span> <span class="token operator">=</span> <span class="token string">'osascript -e \'tell application "Google Chrome" to open location "http://localhost:8000/'</span> <span class="token operator">.</span> <span class="token variable">$vivliostyleFolderName</span> <span class="token operator">.</span> <span class="token string">'/viewer/vivliostyle-viewer.html#b=http://localhost:8000/tmp/'</span> <span class="token operator">.</span> <span class="token variable">$epubUnzipFoldername</span> <span class="token operator">.</span> <span class="token variable">$addVivliostyleCss</span> <span class="token operator">.</span> "<span class="token operator">\</span><span class="token string">"'"</span><span class="token punctuation">;</span>
+system <span class="token variable">$openVivliostyleCmd</span><span class="token punctuation">;</span></code></pre>
+      <p>使い方はターミナルで <strong>「<code>$ perl スクリプトファイルのパス Vivliostyle のパッケージのパス EPUB ファイルのパス</code>」</strong>の順番で指定してやれば、自動でローカルサーバを起動し、Chrome の画面に Vivliostyle を使って EPUB を表示する。</p>
+      <p>注意点としては</p>
+      <ul>
+        <li>展開後の EPUB フォルダではなく展開前の EPUB ファイルを指定</li>
+        <li>Perl 内でシェルを呼んで osascript で Applescript でターミナルとか Chrome を立ち上げているので Mac 専用。EPUB の解凍とかにもシェルを使っている</li>
+        <li>vivliostyle パッケージと同じフォルダに展開した EPUB ファイルはそのまま残るのであとで消す必要がある</li>
+        <li>追加モジュール等は使ってないので Mac なら割と環境を選ばず動くはず</li>
+      </ul>
+      <p>ぐらいだろうか。</p>
+      <p>なお、職場用にはさらに Xojo で簡単な UI を付けてアプリ化した。そのあたりまでやらないと多分現場では使ってもらえない。</p>
+      <p></p>
+      <figure id="image010" class="fig">
+        <img src="image010.png" alt="Xojoでアプリ化">
+        <figcaption>Xojoでアプリ化</figcaption>
+      </figure>
+      <p></p>
+    </article>
+  </body>
+</html>

@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../bundle.css">
+    <title>CSS で View を定義する意義</title>
+  </head>
+  <body role="doc-chapter">
+    <article>
+      <h1 id="css-で-view-を定義する意義">CSS で View を定義する意義</h1>
+      <div class="draft-author">akabeko</div>
+      <p>アプリケーションや文書の View (外観) を定義する技術として見た、CSS の意義と期待について。</p>
+      <h2 id="アプリケーション">アプリケーション</h2>
+      <p>Web を除くデスクトップやモバイル向けのアプリケーション開発では View を独自の技術と記法により定義することが多い。例として、これまで私が開発を経験したプラットフォームと View 技術をまとめる。</p>
+      <table>
+        <thead>
+          <tr>
+            <th align="center">プラットフォーム</th>
+            <th align="center">技術</th>
+            <th>定義・編集</th>
+            <th>保存形式</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td align="center">Windows</td>
+            <td align="center">Win32/MFC</td>
+            <td>Visual Studio <a href="https://docs.microsoft.com/en-us/cpp/windows/resource-editors">Resource Editors</a></td>
+            <td>独自 (プレーン テキスト)</td>
+          </tr>
+          <tr>
+            <td align="center">〃</td>
+            <td align="center">Forms</td>
+            <td>Visual Studio <a href="https://docs.microsoft.com/ja-jp/visualstudio/ide/step-1-create-a-windows-forms-application-project">Form Designer</a></td>
+            <td>C#</td>
+          </tr>
+          <tr>
+            <td align="center">〃</td>
+            <td align="center">WPF</td>
+            <td>Visual Studio <a href="https://docs.microsoft.com/en-us/visualstudio/designers/creating-a-ui-by-using-xaml-designer-in-visual-studio">XAML Designer</a></td>
+            <td><a href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/xaml-overview-wpf">XAML</a> (XML)</td>
+          </tr>
+          <tr>
+            <td align="center">macOS</td>
+            <td align="center"><a href="https://developer.apple.com/documentation/appkit">AppKit</a></td>
+            <td>Xcode <a href="https://developer.apple.com/xcode/interface-builder/">Interface Builder</a></td>
+            <td>Storyboard (XML)、XIB (XML)</td>
+          </tr>
+          <tr>
+            <td align="center">iOS</td>
+            <td align="center"><a href="https://developer.apple.com/documentation/uikit">UIKit</a></td>
+            <td>Xcode <a href="https://developer.apple.com/xcode/interface-builder/">Interface Builder</a></td>
+            <td>Storyboard (XML)、XIB (XML)</td>
+          </tr>
+          <tr>
+            <td align="center">Android</td>
+            <td align="center"><a href="https://developer.android.com/reference/android/view/View">View</a></td>
+            <td>Android Studio <a href="https://developer.android.com/studio/write/layout-editor">Layout Editor</a></td>
+            <td><a href="https://developer.android.com/guide/topics/ui/declaring-layout">Layouts</a> (XML)</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>こうして並べると定義・編集の方法こそ違えど、保存形式は XML 系が多い。これは 1990 〜 2000 年代にかけて XML ブームがあったことが関係しているのかもしれない。データ構造を宣言的に定義するファイル形式として XML が好まれ、特に View は階層を持つことが多いため相性もよかった。</p>
+      <p>ならば XHTML のように装飾は CSS で定義するのかというと、そうなってはいない。いずれも独自の XML 属性により装飾している。以下は Android の例。</p>
+      <pre class="language-xml"><code class="language-xml"><span class="token prolog">&#x3C;?xml version="1.0" encoding="utf-8"?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>LinearLayout</span>
+    <span class="token attr-name"><span class="token namespace">xmlns:</span>android</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res/android<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">xmlns:</span>app</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res-auto<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">xmlns:</span>tools</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/tools<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">android:</span>orientation</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>vertical<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">tools:</span>context</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>.MainActivity<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>android.support.design.widget.TabLayout</span>
+        <span class="token attr-name"><span class="token namespace">android:</span>id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@+id/tabs<span class="token punctuation">"</span></span>
+        <span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@style/CustomTabLayout<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>wrap_content<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>background</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@color/colorPrimary<span class="token punctuation">"</span></span>
+        <span class="token punctuation">/></span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>android.support.v4.view.ViewPager</span>
+        <span class="token attr-name"><span class="token namespace">android:</span>id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@+id/pager<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
+        <span class="token punctuation">/></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>LinearLayout</span><span class="token punctuation">></span></span></code></pre>
+      <p>属性の値は直値や定数の他、<code>@+id/pager</code> のように外部リソース参照も指定可能。他の XAML や Storyboard なども設計は似通っている。そのため XML タグと属性の差を埋めれば共通化できそうに思えるが、参照しているリソースなどの仕組みは大きく異なるため難しい。結局は別物として学習・運用しなければならなず、コストがかさむ。</p>
+      <p>Web ブラウザーがそうであったようにプラットフォーム ベンダー間で開発環境に対する協調がおこなわれればよいのだが、それは難しいだろう。一方、このような状況を踏まえて Web 由来の技術をアプリケーション開発へ転用する動きもある。以下は代表的なもの。</p>
+      <ul>
+        <li>Apache Cordova<span class="footnote"><a href="https://cordova.apache.org/">https://cordova.apache.org/</a></span></li>
+        <li>React Native<span class="footnote"><a href="https://facebook.github.io/react-native/">https://facebook.github.io/react-native/</a></span></li>
+        <li>Electron<span class="footnote"><a href="https://electronjs.org/">https://electronjs.org/</a></span></li>
+        <li>PWA (Progressive Web Apps)<span class="footnote"><a href="https://developer.mozilla.org/en-US/docs/Web/">https://developer.mozilla.org/en-US/docs/Web/</a></span></li>
+      </ul>
+      <p>PWA を除き、他はネイティブ機能を呼び出す仕組みを提供している。そのためパフォーマンス問題に目をつぶれば、実質的に Web 技術でクロス プラットフォーム開発可能となる。もちろん View も CSS となるため運用と学習コストも低減されるだろう。</p>
+      <p>この中でも特に React Native の設計が面白い。他は View に既存 Web ブラウザーを利用するのだが React Native はレイアウトを <a href="https://yogalayout.com/">Yoga Layout</a> という独自エンジンにより処理する。</p>
+      <p>Yoga は CSS の Flexbox 的なレイアウトを実現するクロスプラットフォームの C++ ライブラリー。レイアウト機能限定だがネイティブなアプリケーション開発に CSS の知見を持ち込む事例と言ってよいだろう。これを利用するクロス プラットフォーム GUI ライブラリーに <a href="https://libyue.com/docs/latest/js/guides/getting_started.html">Yue</a> があり、こちらも注目株だ。</p>
+      <p>徐々にではあるが、ネイティブなアプリケーション開発の世界に CSS 的な View 定義が浸透し始めている。こうした技術により、プラットフォーム間の View 定義が共通化されてゆくことに期待したい。</p>
+      <h2 id="文書">文書</h2>
+      <p>私の専門はソフトウェア開発なので文書の View である組版について詳しくないのだが、いま在籍している会社が DTP 事業を手掛けていることもあり、Adobe InDesign で組版の基本を学ぶ研修を受けたことがある。そこでは段組み、文字詰め、禁則処理などの初歩を教わった。</p>
+      <p>研修を通して読みやすさに対する技術の一端に触れたわけだが、同時に疑問を持った。</p>
+      <ul>
+        <li>InDesign で処理される組版技術は CSS のように規格化されてるのだろうか？</li>
+        <li>規格化されているとして、組版を処理するソフトウェアはそれに準拠しているのだろうか？</li>
+        <li>例えば InDesign と他のソフトウェア間で組版技術の互換はあるのだろうか？</li>
+      </ul>
+      <p>規格については</p>
+      <ul>
+        <li>JIS X 4051:2004 日本語文書の組版方法 | 日本規格協会 JSA Group Webdesk<span class="footnote"><a href="https://webdesk.jsa.or.jp/books/W11M0090/index/?bunsyo_id=JIS%20X%204051:2004">https://webdesk.jsa.or.jp/books/W11M0090/index/?bunsyo_id=JIS%20X%204051:2004</a></span></li>
+        <li>日本語組版処理の要件 (JLREQ)<span class="footnote"><a href="https://www.w3.org/TR/jlreq/ja/">https://www.w3.org/TR/jlreq/ja/</a></span></li>
+      </ul>
+      <p>などがある。では組版ソフトウェアの対応状況はいかほどか。Web でいう <a href="https://caniuse.com/">Can I use</a> のようなサイトは存在しないようなので Google 検索や各種公式サイトから、ざっくりと調べてみた。</p>
+      <table>
+        <thead>
+          <tr>
+            <th>製品</th>
+            <th>JIS X 4051/JLREQ 対応</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="https://www.adobe.com/jp/products/indesign.html">Adobe InDesign</a></td>
+            <td><a href="https://helpx.adobe.com/jp/indesign/using/composing-cjk-characters.html">InDesign での CJK 文字の組版</a>に JIS X 4051 へ言及あり。JLREQ は不明。</td>
+          </tr>
+          <tr>
+            <td><a href="http://www.quark.com/jp/Products/QuarkXPress/">QuarkXPress</a></td>
+            <td>公式サイト、Google 検索ともに言及を見つけられず。</td>
+          </tr>
+          <tr>
+            <td><a href="https://www.latex-project.org/">LaTeX</a></td>
+            <td>公式サイト検索では見つからないが Google 検索で <a href="https://texwiki.texjp.org/?jlreq">jlreq - TeX Wiki</a> や <a href="http://zrbabbler.sp.land.to/pxrubrica.html">PXrubrica パッケージ ～美しい日本のルビ組版～ [電脳世界の奥底にて]</a> など複数の言及あり。</td>
+          </tr>
+          <tr>
+            <td><a href="https://vivliostyle.org/ja/">The Vivliostyle Project</a></td>
+            <td><a href="https://www.slideshare.net/shinyumurakami/jlreq">「日本語組版処理の要件(JLREQ)」とは何か</a>や<a href="https://www.slideshare.net/shinyumurakami/page2015vivliostyle">〈次世代 CSS 組版〉Vivliostyle プロジェクト</a>など複数の言及あり。</td>
+          </tr>
+          <tr>
+            <td>XML 組版</td>
+            <td>複数企業が独自に手掛けているようだが、見つけた言及は<a href="http://www.fujibi-g.co.jp/hp/dtp/dtp_xml/dtp_xml.html">富士美術印刷株式会社 XML 対応</a>のみ。</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>規格はあるものの、対応状況を明確に公開している製品はないようだ。そのため同じ文字詰めであっても、一方の操作と設定が他方で有効とは限らない。製品ごとの癖を学習して成果物を検証する必要がある。せっかく規格があるのに、現状はうまく活かせていないのではないか。</p>
+      <p>関連する動きとして JLREQ と CSS 関連に注目している。</p>
+      <ul>
+        <li>w3c/jlreq<span class="footnote"><a href="https://github.com/w3c/jlreq">https://github.com/w3c/jlreq</a></span></li>
+        <li>JLREQ と CSS（1） | 電書魂<span class="footnote"><a href="http://densyodamasii.com/?p=3222">http://densyodamasii.com/?p=3222</a></span></li>
+        <li>JLREQ と CSS（2） | 電書魂<span class="footnote"><a href="http://densyodamasii.com/?p=3258">http://densyodamasii.com/?p=3258</a></span></li>
+      </ul>
+      <p>これは Web ブラウザーやその技術を転用した EPUB 上で適切な組版を再現するための試みであると同時に、組版規格を共通のソフトウェア資産として定義・検証可能にするための絶好の機会ではなかろうか。</p>
+      <p>理想としては Web における <a href="https://github.com/w3c/csswg-drafts">w3c/csswg-drafts</a> や <a href="https://github.com/tc39/ecma262">tc39/ecma262</a> のように規格の議論と策定が公開され、採用するソフトウェア自身が対応状況を明示することが望ましい。Web もブラウザー間の互換性が問題になり、このような運用へ至った。文書の組版もそうなれば幸いだ。</p>
+      <h2 id="css-で-view-を定義できたなら">CSS で View を定義できたなら</h2>
+      <p>CSS によりアプリケーションや文書の統一的な View 定義が可能となった世界を想像してみる。極めて楽観的な展望だが、中には実現するものもあるかもしれない。</p>
+      <h3 id="アプリケーション-1">アプリケーション</h3>
+      <p>View や GUI において機能・構造と外観の分離が進み、HTML/CSS のような関係となるだろう。機能・構造はプラットフォーム固有だが、外観は CSS として共通化できる。例えばボタン。機能・構造にあたる API は異なれど、それらは共に CSS を参照する設計となるはず。</p>
+      <p>CSS の定義・参照まわりは Web の <a href="https://github.com/css-modules/css-modules">CSS Modules</a> や <a href="https://github.com/styled-components/styled-components">CSS in JS</a> のように設計されるだろう。最近は <a href="https://developer.apple.com/xcode/swiftui/">SwiftUI</a> と <a href="https://developer.android.com/jetpack/compose">Jetpack Compose</a> などプログラミング言語中に宣言的な GUI 定義をする動きがあるため、Web でいう React + CSS in JS のようになる可能性も考えられる。</p>
+      <p>開発体験としては Web における CSS のエコ システムが再現されるだろう。View の共有が容易となるため、<a href="https://material.io/design/">Material Design</a> や諸々の CSS フレームワークがネイティブ アプリケーションにやってくる。これらを利用せずに自作するとしても、Web フロントエンドの知見とツールを転用できるから開発コストは大きく低減されるはず。</p>
+      <p>Web 以外でも View のテストに <a href="https://storybook.js.org/">Storybook</a> を利用できるかもしれない。機能・構造と外観は分離され、View と密接な機能はクリックやホバーによる外観の変更だからテストは HTML/CSS で代替しやすくなる。例えばボタンの View をテストしたいとして、その構造表現はプラットフォーム固有 API でなく <code>&#x3C;div></code> や <code>&#x3C;span></code> であっても問題ないはず。</p>
+      <p>サード パーティー製 View コンポーネントの普及も見込める。プラットフォーム共通化が進むことで開発者は大幅に増加するだろう。結果、View コンポーネントをライブラリーとして配信する動きが現在より活発となり、<a href="https://www.grapecity.co.jp/">GrapeCity</a> のようにコンポーネント販売ビジネスする企業も増えそうだ。</p>
+      <h3 id="文書-1">文書</h3>
+      <p>CSS で View = 組版を定義できるなら、組版ソフトウェアと Web ブラウザー間で処理エンジンを共有する方向に進むだろう。自作にこだわる強い理由がない限り、既存エンジンを利用するほうが開発コスト的に好ましい。</p>
+      <p>Web ブラウザーでは Opera と Microsoft が独自エンジンをやめて Chromium を採用した。これは多様性の観点では損失だが、仕様の再現性としてはメリットになる。エンジン開発の優劣を競うより、それを利用する部分に注力したほうがよいと判断したのだろう。組版ソフトウェアでもそうなるかもしれない。</p>
+      <p>例えば自動組版。これを Adobe InDesign で処理する場合は ExtendScript Toolkit や XML などを駆使するわけだが、CSS で組版可能なら Web ブラウザーも選択肢となり得る。本書の作成に用いられた Vivliostyle はその実例で、Headless Chrome により Chrome を呼び出して組版している。</p>
+      <p>いずれはアプリケーションと文書の垣根さえも取り去られ、グラフィック デザイナーがどちらも扱う時代がくるかもしれない。</p>
+    </article>
+  </body>
+</html>
