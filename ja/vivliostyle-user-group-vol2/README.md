@@ -7,3 +7,5 @@
 * [通常ウェブページとして閲覧](https://vivliostyle.github.io/vivliostyle_doc/ja/vivliostyle-user-group-vol2/index.html)
 * [CSS組版ソース](https://github.com/vivliostyle/vivliostyle_doc/tree/gh-pages/ja/vivliostyle-user-group-vol2)
   * [原稿からのビルド](https://github.com/spring-raining/tbf07-draft)
+
+**関連記事:** [技術書典7に出展『Vivliostyle で本を作ろう Vol. 2』公開！](https://vivliostyle.org/ja/blog/2019/09/25/make-books-with-vivliostyle-vol2)
