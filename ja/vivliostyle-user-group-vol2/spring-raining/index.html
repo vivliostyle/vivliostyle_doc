@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../bundle.css">
+    <title>Remark で広げる Markdown の世界</title>
+  </head>
+  <body role="doc-chapter">
+    <article>
+      <h1 id="remark-で広げる-markdown-の世界">Remark で広げる Markdown の世界</h1>
+      <div class="draft-author">緑豆はるさめ（@spring_raining）</div>
+      <p>はじめましてこんにちは、はるさめです。本誌は名目上 Vivliostyle について紹介する同人誌なのですが、またしても空気を読まず Vivliostyle ではない OSS プロジェクト「<strong>Remark</strong>」について紹介したいと思います。</p>
+      <h2 id="remark">Remark</h2>
+      <p>Remark とは「Markdown processor」という紹介文の通り、Remark で書かれたテキストを読み込み様々な変換を施すことができる JavaScript 製のライブラリです。Remark は様々なライブラリと組み合わせて目的の形式のテキストに変換でき、<strong>Rehype</strong> と一緒に使うことで Markdown を HTML に変換できます。同様の処理をしてくれるライブラリとしては Marked.js が有名ですが、Remark の強力な機能は、Markdown を <strong>抽象構文木（AST）</strong>に変換することで、より柔軟に構文を改造できる点です。<span class="footnote">Haskell 製のライブラリ <strong><a href="https://pandoc.org/">Pandoc</a></strong> も同様の方針で実装されたテキスト変換ツールで、様々な形式のテキストを入力・出力できます</span></p>
+      <p>なお、非常に紛らわしいのですが、GitHub 上で検索すると「Remark」という名前のプロジェクトが 2 つ見つかります。今回紹介するプロジェクトは <code>gnab/remark</code> ではなく、<code>remarkjs/remark</code> のほうです。公式サイトも <a href="https://remarkjs.com">https://remarkjs.com</a> ではなく <a href="https://remark.js.org">https://remark.js.org</a> なので気をつけてください。</p>
+      <h2 id="unified-エコシステム">Unified エコシステム</h2>
+      <p>Remark をはじめとしたライブラリ群は役割ごとに細かくパッケージ化されており、それぞれの目的に応じて複数を組み合わせて用います。それぞれのパッケージは総称して <strong>Unified</strong> というプロジェクトに属しているのですが、各パッケージの役割が少し分かりづらいためここで整理しておきます。</p>
+      <ul>
+        <li><strong><a href="https://github.com/remarkjs/remark">remark</a>/<a href="https://github.com/rehypejs/rehype">rehype</a></strong> : Markdown/HTML の構文を解析・構築する処理系。それぞれに <strong>parse</strong> と <strong>stringify</strong> の 2 つのパッケージがあり、<strong><a href="https://github.com/remarkjs/remark/tree/master/packages/remark-parse">remark-parse</a></strong> は Markdown から mdast をへ変換でき、<strong><a href="https://github.com/remarkjs/remark/tree/master/packages/remark-stringify">remark-stringify</a></strong> は mdast からテキストの Markdown を構築できる</li>
+        <li><strong><a href="https://github.com/syntax-tree/mdast">mdast</a>/<a href="https://github.com/syntax-tree/hast">hast</a></strong> : Markdown/HTML の構文を解析して得られる AST の仕様。それぞれの仕様は <strong><a href="https://github.com/syntax-tree/unist">unist</a></strong> という仕様を拡張して定義されており、GitHub 上では <code>syntax-tree</code> という Organization で管理されている</li>
+        <li><strong><a href="https://github.com/remarkjs/remark-rehype">remark-rehype</a>/<a href="https://github.com/rehypejs/rehype-remark">rehype-remark</a></strong> : mdast（hast）から hast（mdast）に変換するパッケージ。実際の処理は <strong><a href="https://github.com/syntax-tree/mdast-util-to-hast">mdast-util-to-hast</a>/<a href="https://github.com/syntax-tree/hast-util-to-mdast">hast-util-to-mdast</a></strong> が実施している。</li>
+        <li><strong><a href="https://github.com/vfile/vfile">vfile</a></strong> : ファイルのパス情報を抽象化して管理するパッケージ</li>
+        <li><strong><a href="https://github.com/unifiedjs/unified">unified</a></strong> : Unified ファミリーの複数のライブラリを合成し、処理を実行する関数を得るためのパッケージ</li>
+      </ul>
+      <p>これらの処理をまとめた、unified の README にある便利な図を引用します。</p>
+      <pre class="language-text"><code class="language-text">| ........................ process ........................... |
+| .......... parse ... | ... run ... | ... stringify ..........|
+
+          +--------+                     +----------+
+Input ->- | Parser | ->- Syntax Tree ->- | Compiler | ->- Output
+          +--------+          |          +----------+
+                              X
+                              |
+                      +--------------+
+                      | Transformers |
+                      +--------------+</code></pre>
+      <p>Remark を使って文章を変換しようとする際は、<code>parse</code>、<code>run</code>、<code>stringify</code> の 3 つの処理を経ることになります。例えば Markdown から HTML へ変換する際は、<strong>remark-parse</strong> を使って mdast 形式に解析し、<strong>remark-rehype</strong> を使って hast 形式に変換した後 <strong>rehype-stringify</strong> で HTML 形式のテキストを出力します。</p>
+      <h2 id="markdown-をパースしてみる">Markdown をパースしてみる</h2>
+      <p>まずは Remark を使って Markdown を HTML に変換するところから始めてみます。ひとまず以下のパッケージをインストールします。<span class="footnote">以降の例では Node.js 上での実行を前提としますが、Remark はブラウザ上でも問題無く動作します</span></p>
+      <pre class="language-text"><code class="language-text">npm i -s unified remark-parse remark-rehype rehype-stringify</code></pre>
+      <p>インストールした Remark を使って簡単な Markdown をパースしてみます。以下のコードは、<code>input</code> に Markdown で記述した文字列を用意しており、<code>processor.process()</code> で HTML に変換しています。</p>
+      <pre class="language-js"><code class="language-js"><span class="token keyword">const</span> unified <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'unified'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> markdown <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'remark-parse'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> remark2rehype <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'remark-rehype'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> html <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'rehype-stringify'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> processor <span class="token operator">=</span> <span class="token function">unified</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span>markdown<span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span>remark2rehype<span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span>html<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> input <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+# はじめてのRemark
+**太字**_斜体_テキスト
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+processor<span class="token punctuation">.</span><span class="token method function property-access">process</span><span class="token punctuation">(</span>input<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> contents <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>contents<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+      <p>このコードを実行すると、以下の出力が得られます。まさに期待した通りの HTML です！</p>
+      <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>h1</span><span class="token punctuation">></span></span>はじめてのRemark<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>h1</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>p</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>strong</span><span class="token punctuation">></span></span>太字<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>strong</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>em</span><span class="token punctuation">></span></span>斜体<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>em</span><span class="token punctuation">></span></span>テキスト<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>p</span><span class="token punctuation">></span></span></code></pre>
+      <p>「Unified エコシステム」で紹介した通り、<code>processor</code> は <code>parse</code>、<code>run</code>、<code>stringify</code> を連続して実行したものです。以下のコードで、<code>parse</code> 終了時と <code>run</code> 終了時の内容を見てみましょう。</p>
+      <pre class="language-js"><code class="language-js"><span class="token keyword">const</span> inspect <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'unist-util-inspect'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> parsed <span class="token operator">=</span> processor<span class="token punctuation">.</span><span class="token method function property-access">parse</span><span class="token punctuation">(</span>input<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token function">inspect</span><span class="token punctuation">(</span>parsed<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> transformed <span class="token operator">=</span> processor<span class="token punctuation">.</span><span class="token method function property-access">runSync</span><span class="token punctuation">(</span>parsed<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token function">inspect</span><span class="token punctuation">(</span>transformed<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+      <p>2 回のコンソール出力では、それぞれ以下のように Markdown と HTML の AST が確認できます<span class="footnote"><code>unist-util-inspect</code> は AST を分かりやすく表示させるユーティリティーです。<code>inspect</code> せずに表示させると、同じ構造を持つ Object が得られます。</span>。それぞれの AST について、少し踏み込んで見ます。</p>
+      <h3 id="markdown-の-ast（mdast）">Markdown の AST（mdast）</h3>
+      <pre class="language-text"><code class="language-text">root[2] (1:1-4:1, 0-30)
+├─ heading[1] (2:1-2:14, 1-14) [depth=1]
+│  └─ text: "はじめてのRemark" (2:3-2:14, 3-14)
+└─ paragraph[3] (3:1-3:15, 15-29)
+    ├─ strong[1] (3:1-3:7, 15-21)
+    │  └─ text: "太字" (3:3-3:5, 17-19)
+    ├─ emphasis[1] (3:7-3:11, 21-25)
+    │  └─ text: "斜体" (3:8-3:10, 22-24)
+    └─ text: "テキスト" (3:11-3:15, 25-29)</code></pre>
+      <p>AST はその名の通り、木構造で構成されています。木構造とは、ノードと呼ばれる項目同士が紐付いて 1 つになった構造のことで、1 つの根（root）ノードが 1 つ以上の子ノードを持ち、そのノードがまた別の子ノードを持つ…というつながりにより木のように広がる構造を持ちます。</p>
+      <p>mdast では、葉（子ノードを持たないノード）は基本的に <code>text</code> というノードになり、<code>heading</code>（見出し）、<code>paragraph</code>（段落）のようにそれぞれの属性を表すノードが親となります。また、<code>heading</code> の <code>depth</code>（見出しの大きさ）のようにそのノード自体にも任意の情報を持たせることができます。また、各ノードの <code>(1:1-4:1, 0-37)</code> のような数字は、そのノードが元の文章の何行目・何文字目にあたるかを表しており、この情報を使って元文章に注釈をつけるといった活用ができるようになります。</p>
+      <h3 id="html-の-ast（hast）">HTML の AST（hast）</h3>
+      <pre class="language-text"><code class="language-text">root[3] (1:1-4:1, 0-30)
+├─ element[1] (2:1-2:14, 1-14) [tagName="h1"]
+│  └─ text: "はじめてのRemark" (2:3-2:14, 3-14)
+├─ text: "\n"
+└─ element[3] (3:1-3:15, 15-29) [tagName="p"]
+    ├─ element[1] (3:1-3:7, 15-21) [tagName="strong"]
+    │  └─ text: "太字" (3:3-3:5, 17-19)
+    ├─ element[1] (3:7-3:11, 21-25) [tagName="em"]
+    │  └─ text: "斜体" (3:8-3:10, 22-24)
+    └─ text: "テキスト" (3:11-3:15, 25-29)</code></pre>
+      <p>hast も基本的な構造は同じですが、<code>paragraph</code> などの代わりに <code>element</code> というノードが用いられています。この構造を見てピンと来たかと思いますが、hast は実のところ HTML のタグの構造と全く同じです。<code>tagName</code> はそのノードが何の HTML タグに置き換わるかを示しています。</p>
+      <h2 id="parser-を拡張してみる">Parser を拡張してみる</h2>
+      <p>AST による文章の構造化により、Remark は要求に応じて構文を定義することが簡単にできることが特徴です。それでは、本章で実際に独自の Markdown を作ってみます。今回はふりがなをふることができる「ルビ」を独自の構文で定義してみましょう。ルビを表現するための構文は色々と考えられますが、今回は某小説投稿サイトにしたがって以下のようなルールの構文を作ります。</p>
+      <ul>
+        <li>縦棒 <code>｜</code> でルビの開始地点を表す</li>
+        <li>二重山括弧 <code>《》</code> の中にルビ本体を記述する</li>
+      </ul>
+      <p>すなわち、<ruby>禁書目録<rt>インデックス</rt></ruby>を表すためには <code>｜禁書目録《インデックス》</code> のように書く、ということになります。</p>
+      <p>Parser を拡張するためにはいくつか方法がありますが、今回は remark-parse の動作に手を加えることで実現しようと思います。まず、Markdown を mdast 形式に変換する際にこの構文を正しく解析できるよう、プラグインとなる関数を用意するところから始めます。</p>
+      <pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">rubyAttacher</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> <span class="token maybe-class-name">Parser</span> <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token maybe-class-name">Parser</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span>inlineTokenizers<span class="token punctuation">,</span> inlineMethods<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token class-name">Parser</span><span class="token punctuation">.</span><span class="token property-access">prototype</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+      <p>プラグイン関数中の remark-parse 実装は <code>Parser</code> として定義されており、その中でも Tokenizer（字句解析; 文字列を適切な箇所で区切る処理）は大別して <code>blockTokenizers</code> と <code>inlineTokenizers</code> という名前で用意されます。今回のルビを字句解析する処理は、<code>inlineTokenizers</code> に追加します。</p>
+      <pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">rubyLocator</span><span class="token punctuation">(</span><span class="token parameter">value<span class="token punctuation">,</span> fromIndex</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> value<span class="token punctuation">.</span><span class="token method function property-access">indexOf</span><span class="token punctuation">(</span><span class="token string">'｜'</span><span class="token punctuation">,</span> fromIndex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">rubyTokenizer</span><span class="token punctuation">(</span><span class="token parameter">eat<span class="token punctuation">,</span> value<span class="token punctuation">,</span> silent</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>value<span class="token punctuation">.</span><span class="token method function property-access">charAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">!==</span> <span class="token string">'｜'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">const</span> rtStartIndex <span class="token operator">=</span> value<span class="token punctuation">.</span><span class="token method function property-access">indexOf</span><span class="token punctuation">(</span><span class="token string">'《'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> rtEndIndex <span class="token operator">=</span> value<span class="token punctuation">.</span><span class="token method function property-access">indexOf</span><span class="token punctuation">(</span><span class="token string">'》'</span><span class="token punctuation">,</span> rtStartIndex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>rtStartIndex <span class="token operator">&#x3C;=</span> <span class="token number">0</span> <span class="token operator">||</span> rtEndIndex <span class="token operator">&#x3C;=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">const</span> rubyRef <span class="token operator">=</span> value<span class="token punctuation">.</span><span class="token method function property-access">slice</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> rtStartIndex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> rubyText <span class="token operator">=</span> value<span class="token punctuation">.</span><span class="token method function property-access">slice</span><span class="token punctuation">(</span>rtStartIndex <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> rtEndIndex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>silent<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span> <span class="token comment">// Silentモードはconsumeせずtrueを返す</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">const</span> now <span class="token operator">=</span> eat<span class="token punctuation">.</span><span class="token method function property-access">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// テキスト中の現在の位置を取得</span>
+  now<span class="token punctuation">.</span><span class="token property-access">column</span> <span class="token operator">+=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  now<span class="token punctuation">.</span><span class="token property-access">offset</span> <span class="token operator">+=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token function">eat</span><span class="token punctuation">(</span>value<span class="token punctuation">.</span><span class="token method function property-access">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> rtEndIndex <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    type<span class="token punctuation">:</span> <span class="token string">'ruby'</span><span class="token punctuation">,</span>
+    rubyText<span class="token punctuation">,</span>
+    children<span class="token punctuation">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token method function property-access">tokenizeInline</span><span class="token punctuation">(</span>rubyRef<span class="token punctuation">,</span> now<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    data<span class="token punctuation">:</span> <span class="token punctuation">{</span> hName<span class="token punctuation">:</span> <span class="token string">'ruby'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+      <p>remark-parse でオリジナルの字句解析を実装するためには、<strong>locator</strong> と <strong>tokenizer</strong> の 2 つの関数が必要です。locator はその文法が何文字目から始まるかを指示する関数で、tokenizer で実際に文字列を区切る処理を実装します。ここでの locator は、単にルビの開始地点（<code>｜</code> の位置）を返すだけの関数です。</p>
+      <p>上記の tokenizer は、<code>《</code> と <code>》</code> の位置を元にルビの対象となるテキスト <code>rubyRef</code> とルビの内容 <code>rubyText</code> を取り出す処理を書いたものです。<code>eat</code> という関数は tokenizer を読みすすめるための関数で、引数にルビとして consume（消費）する文字列を与えることでその分だけ字句解析を進めます。<code>eat</code> の返値は関数になっており、消費した文字列に対応する mdast のノードを与えることで AST の構文木に追加できます。また、<code>now</code> は tokenizer の開始地点が元の文章のどの位置に対応するかを表します。参考コードのように、読み進める文字数だけ <code>column</code> と <code>offset</code> の値を更新した上で <code>tokenizeInline</code> に与えることで、再帰的に実行される tokenizer の位置情報を更新しています。</p>
+      <pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">rubyAttacher</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token spread operator">...</span>
+  rubyTokenizer<span class="token punctuation">.</span><span class="token property-access">locator</span> <span class="token operator">=</span> rubyLocator<span class="token punctuation">;</span>
+  inlineTokenizers<span class="token punctuation">.</span><span class="token property-access">ruby</span> <span class="token operator">=</span> rubyTokenizer<span class="token punctuation">;</span>
+  inlineMethods<span class="token punctuation">.</span><span class="token method function property-access">splice</span><span class="token punctuation">(</span>inlineMethods<span class="token punctuation">.</span><span class="token method function property-access">indexOf</span><span class="token punctuation">(</span><span class="token string">'text'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">'ruby'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+      <p>定義した locator と tokenizer を利用するよう <code>rubyAttacher</code> を修正します。<code>inlineMethod</code> には適用する tokenizer の名前が配列で示されており、配列内の順番がそのまま tokenizer を実行する順番（=優先順位）になります。これでプラグイン関数は完成です。<span class="footnote">参考コードの <code>rubyTokenizer</code> はとても簡単なケースにしか対応しておらず、まだまだ改善すべき点があります。例えばルビの入れ子が含まれた場合どうなるでしょうか？</span></p>
+      <pre class="language-js"><code class="language-js"><span class="token keyword">const</span> processor <span class="token operator">=</span> <span class="token function">unified</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span>markdown<span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span>rubyAttacher<span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span>remark2rehype<span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span>html<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+      <p>プラグインは unified のメソッドチェーンに付け加えるだけで利用できます（順番に気をつけてください）。早速 mdast へのパース結果を見てみましょう。</p>
+      <pre class="language-text"><code class="language-text">root[1]
+└─ paragraph[2]
+   ├─ text: "とある魔術の"
+   └─ ruby[1] [rubyText="インデックス"][data={"hName":"ruby"}]
+      └─ text: "禁書目録"</code></pre>
+      <p>正しくパースされているようです！ ルビの内容を <code>rubyText</code> に入れることで、このあと HTML への変換時に用いることができます。また、<code>hName</code> という名前のプロパティは remark-rehype が読み取りに対応しており、HTML 変換時のタグ名を指定できます。</p>
+      <h2 id="transformer-を拡張してみる">Transformer を拡張してみる</h2>
+      <p>次に、解析された構文木を正しく HTML に変換するため Transformer を改造します。remark-rehype にはオプションとして handler を追加できるため、ルビ用の handler を用意する形で実装します。</p>
+      <pre class="language-js"><code class="language-js"><span class="token keyword">const</span> all <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'mdast-util-to-hast/lib/all'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> u <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'unist-builder'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">rubyHandler</span><span class="token punctuation">(</span><span class="token parameter">h<span class="token punctuation">,</span> node</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> rtStart <span class="token operator">=</span> node<span class="token punctuation">.</span><span class="token property-access">children</span><span class="token punctuation">.</span><span class="token property-access">length</span> <span class="token operator">></span> <span class="token number">0</span>
+    <span class="token operator">?</span> node<span class="token punctuation">.</span><span class="token property-access">children</span><span class="token punctuation">[</span>node<span class="token punctuation">.</span><span class="token property-access">children</span><span class="token punctuation">.</span><span class="token property-access">length</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token property-access">position</span><span class="token punctuation">.</span><span class="token property-access">end</span>
+    <span class="token punctuation">:</span> node<span class="token punctuation">.</span><span class="token property-access">position</span><span class="token punctuation">.</span><span class="token property-access">start</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> rtNode <span class="token operator">=</span> <span class="token function">h</span><span class="token punctuation">(</span>
+    <span class="token punctuation">{</span>
+      start<span class="token punctuation">:</span> rtStart<span class="token punctuation">,</span>
+      end<span class="token punctuation">:</span> node<span class="token punctuation">.</span><span class="token property-access">position</span><span class="token punctuation">.</span><span class="token property-access">end</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token string">'rt'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token function">u</span><span class="token punctuation">(</span><span class="token string">'text'</span><span class="token punctuation">,</span> node<span class="token punctuation">.</span><span class="token property-access">rubyText</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token function">h</span><span class="token punctuation">(</span>node<span class="token punctuation">,</span> <span class="token string">'ruby'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token spread operator">...</span><span class="token method function property-access">all</span><span class="token punctuation">(</span>h<span class="token punctuation">,</span> node<span class="token punctuation">)</span><span class="token punctuation">,</span> rtNode<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+      <p><code>h</code> は mdast ノードから hast ノードへ変換する関数となっており、この関数の引数として実際の HTML タグ名などを指定します。<code>all</code> はすべての子ノードに <code>h</code> を適用するヘルパー関数で、<code>u</code> もまた unist ノードを作成するヘルパー関数です。この例では、<code>rtNode</code> という新しいノードを作成し、それを <code>&#x3C;ruby></code> タグのノードの子として挿入していることがわかります。</p>
+      <p>作成した handler は、以下の形式で利用します。オプションとして <code>handlers</code> にオブジェクト形式で与えることで、名前の一致する mdast ノードはこの関数を通して hast ノードが生成されるようになります。</p>
+      <pre class="language-js"><code class="language-js"><span class="token keyword">const</span> processor <span class="token operator">=</span> <span class="token function">unified</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span>markdown<span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span>rubyAttacher<span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span>remark2rehype<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    handlers<span class="token punctuation">:</span> <span class="token punctuation">{</span> ruby<span class="token punctuation">:</span> rubyHandler <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span>html<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+      <p>すると、出力される hast は以下のようになります。</p>
+      <pre class="language-text"><code class="language-text">root[1]
+└─ element[2] [tagName="p"]
+   ├─ text: "とある魔術の"
+   └─ element[2] [tagName="ruby"]
+      ├─ text: "禁書目録"
+      └─ element[1] [tagName="rt"]
+         └─ text: "インデックス"</code></pre>
+      <p>handler 無しでは存在しなかった <code>rt</code> タグが追加されました！ これにより、最終的に以下の HTML が出力されます。</p>
+      <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>p</span><span class="token punctuation">></span></span>とある魔術の<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>ruby</span><span class="token punctuation">></span></span>禁書目録<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>rt</span><span class="token punctuation">></span></span>インデックス<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>rt</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>ruby</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>p</span><span class="token punctuation">></span></span></code></pre>
+      <p>これで Markdown で自由に HTML のルビを挿入できるようになりました！</p>
+      <h2 id="まとめ">まとめ</h2>
+      <p>Vivliostyle と Remark は実際には無関係なライブラリです。しかし、Markdown の変換環境の構築によって Vivliostyle が読み込む HTML を素早く出力できるようになれば、そのまま文書完成までの時間が短縮できる大きなメリットがあります。Markdown は書きやすいだけでなくルールが少ない点も特徴であり、自分で文法を追加する余地が多くあります。ぜひ目的に適した拡張を追加して、快適な執筆環境を作ってみてください。</p>
+    </article>
+  </body>
+</html>
