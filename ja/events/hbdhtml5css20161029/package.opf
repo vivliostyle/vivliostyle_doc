@@ -2,7 +2,7 @@
 <package xmlns="http://www.idpf.org/2007/opf">
   <manifest>
     <item id="cover" href="cover.html"/>
-    <item id="toc" href="toc.html"/>
+    <item id="toc" href="toc.html" properties="nav"/>
     <item id="slide001" href="slide001.html"/>
     <item id="slide002" href="slide002.html"/>
     <item id="slide003" href="slide003.html"/>
