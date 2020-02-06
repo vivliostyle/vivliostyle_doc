@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>ウェブ出版と日本語組版の未来と CSS 組版 Vivliostyle</title>
+  <link rel="stylesheet" href="css/presen.css">
+</head>
+
+<body>
+  <header id="cover">
+    <h1>ウェブ出版と日本語組版の未来と<br>CSS 組版 Vivliostyle</h1>
+    <p class="event">JAGAT XML パブリッシング交流会</p>
+    <p class="date">2020-02-07</p>
+    <p class="author">Vivliostyle Foundation
+      <br>村上 真雄
+      <a target="_blank" href="https://twitter.com/MurakamiShinyu">@MurakamiShinyu</a> /
+      <a target="_blank" href="https://vivliostyle.org">vivliostyle.org</a>
+    </p>
+  </header>
+  <nav id="toc" role="doc-toc">
+    <h2>目次</h2>
+    <ol>
+      <li><a href="#ウェブ出版と日本語組版の未来について">ウェブ出版と日本語組版の未来について</a>
+        <ol>
+          <li><a href="#ウェブ出版とは何でしょう">ウェブ出版とは何でしょう</a></li>
+          <li><a href="#ウェブ出版と日本語組版の未来">ウェブ出版と日本語組版の未来</a></li>
+        </ol>
+      </li>
+      <li><a href="#css-組版と-vivliostyle">CSS 組版と Vivliostyle</a>
+        <ol>
+          <li><a href="#css-組版とは">CSS 組版とは</a></li>
+          <li><a href="#css-組版ソフトウェアの例">CSS 組版ソフトウェアの例</a></li>
+          <li><a href="#vivliostyle-の特徴">Vivliostyle の特徴</a></li>
+          <li><a href="#vivliostyle-デモ">Vivliostyle デモ</a></li>
+        </ol>
+      </li>
+    </ol>
+  </nav>
+
+  <section id="ウェブ出版と日本語組版の未来について" class="level2">
+    <h2>〈ウェブ出版と日本語組版の未来〉について</h2>
+    <section id="ウェブ出版とは何でしょう" class="level3">
+      <h3>〈ウェブ出版〉とは何でしょう？</h3>
+      <ul>
+        <li><strong>ウェブ出版 vs 印刷出版</strong>
+          <ul>
+            <li>紙とウェブの違い
+              <ul>
+                <li><a href="https://note.com/meirojin/n/n5c422e085c3d">「紙はWebよりも難解な内容を、より深く長く論じることに向いたメディア」</a></li>
+                <li>紙とウェブの組版スタイルの違い
+                  <ul>
+                    <li>ページめくり / スクロール</li>
+                    <li>固定ページサイズ＋文字数・行数 / 可変ページサイズ</li>
+                    <li>行末を揃える / 行末を揃えない</li>
+                    <li>段落区切りは段落先頭の1字下げ / 段落間のアキ</li>
+                    <li>縦書き / 横書き</li>
+                  </ul>
+                </li>
+                <li>紙とウェブでそれぞれに向く出版コンテンツが違うのは、UIや組版スタイルの影響もあり？
+                  <ul>
+                    <li>現状のウェブの組版スタイルは、現状のブラウザで使えるウェブ標準技術（とくに CSS）の制約も関係
+                      <ul>
+                        <li>ウェブ標準が進化することで変わってくる可能性も</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>EPUB・電子書籍
+          <ul>
+            <li>EPUB = ウェブ標準技術（HTML や CSS）を使った電子書籍フォーマット
+              <ul>
+                <li>EPUB 3.0 (2011年) で、縦書きなど日本語組版に必要な機能が標準に
+                  <ul>
+                    <li>世界標準フォーマットでの日本語電子書籍が普及</li>
+                    <li>W3C で関連する CSS 標準化（縦書き＝CSS Writing Modes など）が進んだことで実現</li>
+                    <li><a href="https://w3c.github.io/jlreq/">「日本語組版処理の要件(JLREQ)」</a>が役に立った！</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>EPUB は〈ウェブ出版〉といえるか？
+              <ul>
+                <li>ウェブの技術が使われているが、現状は、いろいろ違う</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+    <section id="ウェブ出版と日本語組版の未来" class="level3">
+      <h3>ウェブ出版と日本語組版の未来</h3>
+      <ul>
+        <li>ウェブ出版物 (Web publications) 関連の W3C 標準化動向
+          <ul>
+            <li>ウェブ上で本のようにも読める出版物の標準を作る動き
+              <ul>
+                <li>ウェブ出版物仕様（未完成でWGノートに） <a href="https://www.w3.org/TR/wpub/">Web Publications (W3C WGノート)</a>
+                  <ul>
+                    <li>将来の EPUB 4.0 は、このウェブ出版物のパッケージ化形式になる予定だったが、先行きは不透明</li>
+                  </ul>
+                </li>
+                <li>出版物の内容とメタ情報を JSON-LD 形式で記述 <a href="https://www.w3.org/TR/pub-manifest/">Publication Manifest (W3C 勧告候補)</a></li>
+              </ul>
+            </li>
+            <li>出版コンテンツの要素をセマンティックに <a href="https://www.w3.org/TR/dpub-aria-1.0/">Digital Publishing WAI-ARIA (W3C 勧告)</a></li>
+            <li>出版物のテキストレイアウトとページレイアウトの要求からの CSS 標準化
+              <ul>
+                <li><a href="https://w3c.github.io/jlreq/">「日本語組版処理の要件(JLREQ)」</a>をはじめ世界中の組版処理の要件</li>
+                <li>CSS でのページネーション
+                  <ul>
+                    <li>CSS Paged Media 関連はドラフト仕様はいろいろあるがブラウザへの実装は進んでいない</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>〈ウェブ出版物〉が進化するとウェブ出版と EPUB 電子出版と印刷出版がシームレスに？
+              <ul>
+                <li>ウェブで公開してブラウザで読める</li>
+                <li>パッケージ化して EPUB 電子書籍になる</li>
+                <li>CSS 組版によって、印刷出版にもなる</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>未来は
+          <ul>
+            <li>ウェブ出版が進化することで、その領域が広がって、<strong>印刷出版の領域とも重なっていく</strong>だろう
+              <ul>
+                <li>CSS 標準化が進むことで、<strong>ウェブ出版における日本語組版が進化</strong></li>
+              </ul>
+            </li>
+            <li>しかし、標準化が進むにはとても時間がかかる</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+  </section>
+  <section id="css-組版と-vivliostyle" class="level2">
+    <h2>CSS 組版と Vivliostyle</h2>
+    <section id="css-組版とは" class="level3">
+      <h3>CSS 組版とは</h3>
+      <ul>
+        <li>ウェブと同様に HTML + CSS を使って、印刷出版物にもなる組版を行う技術</li>
+        <li>CSS 組版のメリット
+          <ul>
+            <li>HTML + CSS が使える人には簡単
+              <ul>
+                <li>InDesign や TeX など専用の組版ソフトウェアを習得する必要ない</li>
+              </ul>
+            </li>
+            <li>自動化しやすい
+              <ul>
+                <li>例: 簡易マークアップ（マークダウン）から HTML への自動変換 → HTML + CSS からの PDF への自動 CSS 組版</li>
+              </ul>
+            </li>
+            <li>ワンソース・マルチユースを実現できる
+              <ul>
+                <li>ウェブ出版、電子出版、印刷出版をすべて HTML + CSS で
+                  <ul>
+                    <li>それぞれのメディア用に調整すればよい</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>出版物のアクセシビリティーの向上につながる
+              <ul>
+                <li>出版物のソースデータが HTML などテキストデータ</li>
+                <li>弱視者向けの大活字本を作るのもスタイルシートの調整で</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>ページ組版関連の CSS ドラフト仕様
+          <ul>
+            <li><a href="https://drafts.csswg.org/css-page/">CSS Paged Media</a></li>
+            <li><a href="https://drafts.csswg.org/css-break-3/">CSS Fragmentation</a></li>
+            <li><a href="https://drafts.csswg.org/css-gcpm/">CSS Generated Content for Paged Media</a></li>
+            <li><a href="https://drafts.csswg.org/css-content-3/">CSS Generated Content</a></li>
+            <li><a href="https://drafts.csswg.org/css-page-floats/">CSS Page Floats</a></li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+    <section id="css-組版ソフトウェアの例" class="level3">
+      <h3>CSS 組版ソフトウェアの例</h3>
+      <ul style="columns: 2">
+        <li>プロプライエタリ製品
+          <ul>
+            <li><a href="http://www.antenna.co.jp/AHF/">Antenna House Formatter</a></li>
+            <li><a href="http://copper-pdf.com/">Copper PDF</a></li>
+            <li><a href="http://www.princexml.com/">Prince</a></li>
+            <li><a href="http://www.realobjects.com/products/pdfreactor/">PDFreactor</a></li>
+            <li><a href="https://trim-marks.com/">VersaType Converter</a></li>
+          </ul>
+        </li>
+        <li>オープンソース製品
+          <ul>
+            <li><a href="https://vivliostyle.org/">Vivliostyle</a></li>
+            <li><a href="https://weasyprint.org/">WeasyPrint</a></li>
+            <li><a href="https://wkhtmltopdf.org/">wkhtmltopdf</a></li>
+            <li><a href="https://gitlab.pagedmedia.org/tools/pagedjs">Paged.js</a></li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+    <section id="vivliostyle-の特徴" class="level3">
+      <h3>Vivliostyle の特徴</h3>
+      <ul>
+        <li>オープンソース</li>
+        <li>ブラウザ上で動く JavaScript プログラム
+          <ul>
+            <li>ソースコードは 2019 年にそれまでの JavaScript から TypeScript に移行</li>
+          </ul>
+        </li>
+        <li><a href="https://github.com/sorotokin/adaptive-layout">EPUB Adaptive Layout の Peter Sorotokin 氏による実装</a> がベースなので、その機能が使える</li>
+        <li>CSS Paged Media、CSS Page Floats など、ページ組版関連の CSS ドラフト仕様をいろいろ実装している
+          <ul>
+            <li><a href="https://docs.vivliostyle.org/#/supported-features">Supported Features</a></li>
+          </ul>
+        </li>
+        <li>Vivliostyle ファミリー
+          <ul>
+            <li><a href="https://github.com/vivliostyle/vivliostyle/">Vivliostyle Core</a></li>
+            <li><a href="https://github.com/vivliostyle/vivliostyle/">Vivliostyle Viewer</a></li>
+            <li><a href="https://github.com/vivliostyle/vivliostyle-cli/">Vivliostyle CLI</a></li>
+            <li><a href="https://github.com/vivliostyle/vivliostyle-print/">Vivliostyle Print</a></li>
+            <li><a href="https://github.com/vivliostyle/vfm/issues">Vivliostyle Flavored Markdown (準備中)</a></li>
+            <li>Vivliostyle Pub (準備中)</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+    <section id="vivliostyle-デモ" class="level3">
+      <h3>Vivliostyle デモ</h3>
+      <ul>
+        <li><a
+            href="https://github.com/vivliostyle/vivliostyle_doc/tree/gh-pages/ja/vivliostyle-user-group-vol1">Vivliostyle で本を作ろう Vol. 1</a></li>
+        <li><a
+            href="https://github.com/vivliostyle/vivliostyle_doc/tree/gh-pages/ja/vivliostyle-user-group-vol2">Vivliostyleで本を作ろう Vol.2</a></li>
+        <li><a href="https://github.com/vivliostyle/vivliostyle_doc/tree/gh-pages/samples/webmag">Web Magazine Sample</a></li>
+        <li><a href="https://github.com/JAGAT-XML-publishing-study-group/cosmology">宇宙論入門</a></li>
+      </ul>
+    </section>
+  </section>
+
+  <section id="ending">
+    <h2>Thanks!</h2>
+    <img src="img/VivliostyleLogo.svg" alt="Vivliostyle" style="float: right; width: 400px">
+  </section>
+</body>
+
+</html>
