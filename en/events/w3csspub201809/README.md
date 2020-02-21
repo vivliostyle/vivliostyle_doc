@@ -1,3 +1,5 @@
 ## W3C Tokyo Workshop on Digital Publication Layout and Presentation
 
-https://vivliostyle.github.io/vivliostyle.js/viewer/vivliostyle-viewer.html#x=/vivliostyle_doc/en/events/w3csspub201809/index.html&spread=false
+### CSS Typesetting—Difficulties of Browser-Based Pagination & Print
+
+https://vivliostyle.github.io/vivliostyle.js/viewer/vivliostyle-viewer.html#b=/vivliostyle_doc/en/events/w3csspub201809/index.html&spread=false&renderAllPaged=true
