@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../bundle.css">
+    <title>「CSS 組版全然わからない！」からはじめる Vivliostyle 同人誌制作超入門</title>
+  </head>
+  <body role="doc-chapter">
+    <article>
+      <h1 id="「css-組版全然わからない！」からはじめる-vivliostyle-同人誌制作超入門">「CSS 組版全然わからない！」からはじめる Vivliostyle 同人誌制作超入門</h1>
+      <div class="draft-author">kondoyuko</div>
+      <p>はじめまして、kondoyuko と申します。私は 2019 年より個人のサークル「こりん堂」として、技術書典をはじめとした同人イベントに出展するようになりました。そして 2019 年末のコミックマーケット 97 で作ったとあるコピー本で、初めて Vivliostyle での組版に挑戦しました。「CSS 組版全然わからないよ」からスタートした私でも、2 日でコピー本を制作できました。本稿では、そんな Vivliosytle について、初心者がつまづいたポイントと、同人誌制作のはじめの一歩について紹介します。</p>
+      <h2 id="vivliostyle-を使おうとした背景">Vivliostyle を使おうとした背景</h2>
+      <p>筆者は 2019 年に、Re:VIEW で組版した技術同人誌を 2 冊制作しました。CircleCI と GitHub のリポジトリを連携しておいて、GitHub に原稿の更新を push すると、vvakame さんが作成した Re:VIEW 用の Docker イメージで原稿がビルドされる、といった組版方式を取りました。セットアップにも大きく困らず、開発者フレンドリーな本の制作を楽しんでいました。一方、デザイン面では、少し気に入らないところがあっても、短い制作期間において TeX を理解して修正することが現実的に難しかったり、そもそもの紙面デザインが「いかにも Re:VIEW で作りました」という見た目だったりと、気になる点もありました。</p>
+      <p>その後、2019 年末のコミックマーケット 97（以下、C97）でコピー本を出そうと思い、その際の組版をどうしようかと悩んでいました。作りたい本は技術同人誌ではなく、読んでよかった本を紹介するブックレビュー本であるため、Re:VIEW による紙面デザインは少しそぐわないと感じていました。最終的には横書きの本になりましたが、制作段階では縦書きも視野にいれていました。</p>
+      <p>そこで今回は、以下の理由により Vivliostyle を用いた CSS 組版に挑戦することにしました。</p>
+      <ul>
+        <li>組版に関して何か技術的に新しいチャレンジができそうなこと</li>
+        <li>本文は文字だけであるため、短期間で制作ができそうなこと</li>
+        <li>CSS による見た目の調整が可能なこと</li>
+        <li>サンプルのテンプレートのデザインが好みだったこと</li>
+      </ul>
+      <p>CSS に関しては、簡単な Web サイトのマークアップができる程度の理解があります。</p>
+      <h2 id="vivliostyle-で本を作ろうとしたときにぶつかる壁">Vivliostyle で本を作ろうとしたときにぶつかる壁</h2>
+      <p>CSS 組版に挑戦しようと、12 ⽉下旬より Vivliostyleの調査に着手しました。CSS 組版に挑戦した⽅によるこれまでの情報発信で「CSS 組版は難しい」というイメージが強く、制作が間に合うのか不安で、⼀時は別の⽅法で組版しようと考えていたほどでした。具体的には、次のような壁にぶつかりました。</p>
+      <h3 id="vivliostyle-でパパっと本を作る方法についての情報が少ない">Vivliostyle でパパっと本を作る方法についての情報が少ない</h3>
+      <p>Vivliostyle についての情報を得る前に、まず「Vivliostyle」で検索しました。「Vivliostyle で同人誌を作ってみた」的なライトなブログが見当たるとよかったのですが、期待するものは探せませんでした。『Vivliostyle で本を作ろう Vol.1』や『CSS ではじめる同人誌制作 増訂版』も参照したのですが、あまりに時間がなさすぎて、とりあえずパパっと本を作り始める方法がないものかと思っていました。</p>
+      <p>Vivliostyle の公式サイト<span class="footnote"><a href="https://vivliostyle.org/ja/">https://vivliostyle.org/ja/</a></span>のドキュメントを見たところ、CSS 組版の閲覧環境である「Vivliostyle Viewer」の使い方<span class="footnote"><a href="https://vivliostyle.github.io/vivliostyle.js/docs/ja/">https://vivliostyle.github.io/vivliostyle.js/docs/ja/</a></span>があったので、ひとまずこれが大事なんだろうと思い、セットアップすることにしました。手順に従い、ローカルで Web サーバーを起動しましたが、「で、本を作るにはこれからどうすればいいんだっけ？」という状態になってしまいました（これとは別に、最新安定版の Vivliostyle Viewer をダウンロードしたものの、ドキュメントは最新開発版にあわせた情報になっていて、このあたりの混乱も作業がスムーズに進められない一因でした。現在は、ドキュメントは修正されています）。</p>
+      <h3 id="サンプルはテンプレートとして使っていいのか？">サンプルはテンプレートとして使っていいのか？</h3>
+      <p>公式サイトには「Vivliostyle サンプル<span class="footnote"><a href="https://vivliostyle.org/ja/samples/">https://vivliostyle.org/ja/samples/</a></span>」というページにて、Vivliostyle で組版したサンプルが掲載されていました。凝ったレイアウトもあり、Vivliostyle の可能性を感じました。今回、洋書のようなイメージで同人誌を制作したいと思った私は、「英語小説」のサンプルのような書籍を制作したく、サンプルのライセンスが気になり、Vivliostyle Foundation の村上真雄さんに問い合わせました。すると「サンプルの CSS のコードについては、Vivliostyle プログラムと同じく AGPL の扱いでお願いします」という回答をいただきました。</p>
+      <h3 id="agpl-ライセンスがなんか怖い">AGPL ライセンスがなんか怖い</h3>
+      <p>「AGPL……？」と思った私は、AGPL とは何か、検索で調べてみることにしました。「オープンソースライセンス、どれなら使っても良いの？？<span class="footnote"><a href="https://qiita.com/fate_shelled/items/a928709d7610cee5aa66">https://qiita.com/fate_shelled/items/a928709d7610cee5aa66</a></span>」という Qiita の記事には、「AGPL のライセンスの OSS を使う場合には、すべてをさらけだす覚悟が必要」「現時点で最強の Copyleft」という記載があり「AGPL 怖い！」という思いでいっぱいになりました。サンプルを改変して利用したかった私は、「改変した本の CSS の公開義務があるのか、それとも本の全文公開をしないといけないのか……」と不安に思いました。</p>
+      <p>この疑問についても、村上さんより回答をいただきました。</p>
+      <blockquote>
+        <p>本を作る場合、HTML や CSSを公開するかどうかは自由です。公開の必要はありません。</p>
+        <p>AGPL はプログラムのユーザーに対して、そのプログラムのソースコードへのアクセスの権利を保証するものです。本の読者は、その CSS コードのユーザーではありません。</p>
+        <p>プログラムでも改変したものを自分で使うだけならば、公開する必要はありません。(A)GPL へのよくある誤解です。</p>
+      </blockquote>
+      <p>Vivliostyle のサンプルを改変して組版した本を印刷・PDF 頒布するのみなら、HTML や CSS を公開しなくてもいいということで、サンプルを利用して、安心して制作に臨むことができました。</p>
+      <p>ここまで挙げたハードルにより、2019 年 12 ⽉ 28 ⽇の午前中には「CSS 組版でやろうと思ってたけどよくわからない」と⾔って⾳を上げていたのが、村上さんの助けもあり、疑問が解消され、その翌⽇の 12 ⽉ 29 ⽇の⼣⽅には⼀通り書籍ができあがりました。テンプレートを改変するだけなら、簡単な CSS の知識があればそこまで苦労もなく、⾮常にスピーディーに制作できました。</p>
+      <h2 id="vivliosytle-で同人誌制作超入門">Vivliosytle で同人誌制作超入門</h2>
+      <p>ここからは、Vivliostyle を用いた簡単な書籍制作の方法を紹介します。制作するのは日本語横書きのトンボなし PDF です。</p>
+      <h3 id="vivliostyle-viewer-を起動する">Vivliostyle Viewer を起動する</h3>
+      <p>まずは、Vivliostyle 公式サイトの「ダウンロード」のページ<span class="footnote"><a href="https://vivliostyle.org/ja/download/">https://vivliostyle.org/ja/download/</a></span>にある「最新安定版のダウンロード」より、Vivliostyle の最新安定版を、ローカルの好きな場所にダウンロードします。</p>
+      <p>ダウンロードした <code>vivliostyle-latest.zip</code> を解凍します。そして、解凍して得られた <code>vivliostyle-js-[version]</code> フォルダに、ターミナルやコマンドプロンプトから入ります。</p>
+      <p>そして、以下のコマンドを実行します。</p>
+      <pre class="language-text"><code class="language-text">（macOS、Linuxなど）
+> ./start-webserver
+（Windows）
+> .\start-webserver</code></pre>
+      <p>Node.js、Ruby、Python がインストールされている場合、Web サーバーが立ち上がります。ブラウザで以下 URL を開くと、最新安定版に同梱されているドキュメントやサンプルを見ることができます。</p>
+      <ul>
+        <li><a href="http://localhost:8000/">http://localhost:8000/</a></li>
+      </ul>
+      <p></p>
+      <figure id="images001" class="fig">
+        <img src="images/001.png">
+      </figure>
+      <p></p>
+      <h3 id="vivliostyle-viewer-で-html-文書を表示する">Vivliostyle Viewer で HTML 文書を表示する</h3>
+      <p>以下にアクセスし「Vivliostyle Viewer ユーザーガイド」を確認します。</p>
+      <ul>
+        <li><a href="http://localhost:8000/docs/ja/">http://localhost:8000/docs/ja/</a></li>
+      </ul>
+      <p>「Vivliostyle Viewer で表示する HTML 文書の指定」の項目に、サンプルのドキュメントを Vivliostyle Viewer を通して閲覧する方法が紹介されています。例えば、サンプルの『ごん狐』（<code>samples/gon/index.html</code>）を表示するには以下の URL を開きます（2020 年 2 月 8 日時点の最新安定版である v2019.8.101 の場合）。</p>
+      <ul>
+        <li><a href="http://localhost:8000/viewer/vivliostyle-viewer.html#x=../samples/gon/index.html">http://localhost:8000/viewer/vivliostyle-viewer.html#x=../samples/gon/index.html</a></li>
+      </ul>
+      <p>近々正式リリースを予定している Vivliostyle 2020 については、HTML 文書の閲覧 URL が短くなったようです。同じ『ごん狐』を表示するには、以下の URL を開きます。</p>
+      <ul>
+        <li><a href="http://localhost:8000/viewer/#x=../samples/gon/index.html">http://localhost:8000/viewer/#x=../samples/gon/index.html</a></li>
+      </ul>
+      <h3 id="サンプルを取得する">サンプルを取得する</h3>
+      <p>Vivliostyle のサンプルのページ<span class="footnote"><a href="https://vivliostyle.org/ja/samples/">https://vivliostyle.org/ja/samples/</a></span>を見て、ベースにしていきたいデザインを選びます。</p>
+      <p>今回は横書きの同人誌を作りたいので、「英語小説」のサンプルを利用します。サンプルの取得方法ですが、GitHub で、Vivliostyle のドキュメントのホスティングしているリポジトリ<span class="footnote"><a href="https://github.com/vivliostyle/vivliostyle_doc">https://github.com/vivliostyle/vivliostyle_doc</a></span>にアクセスし、そこから Zip で取ってくるのが分かりやすいかなと思います。</p>
+      <p>この中の、<code>vivliostyle_doc-gh-pages/samples</code> にある <code>gutenberg</code> フォルダを、Vivliostyle Viewer の中身である <code>vivliostyle-js-[version]/samples</code> の中身にコピーします。</p>
+      <p>この中の <code>Alice.html</code> をコピーし、<code>index.html</code>とリネーム、<code>gutenberg.css</code>を <code>sample.css</code> とリネームして、作業を進めていきましょう。この <code>index.html</code> を閲覧するには、以下の URL を開きます。</p>
+      <ul>
+        <li><a href="http://localhost:8000/viewer/vivliostyle-viewer.html#x=../samples/gutenberg/index.html">http://localhost:8000/viewer/vivliostyle-viewer.html#x=../samples/gutenberg/index.html</a></li>
+      </ul>
+      <p>ざっと眺めてみると、最低限同人誌の体裁にするには以下のアレンジが必要そうです。</p>
+      <ol>
+        <li>HTML を修正し、不要なところを削除して本文を流し込む</li>
+        <li>紙面がブラウザ幅になっているので、指定のページサイズにする</li>
+        <li>章の冒頭の大きくなっている文字を普通のサイズにする</li>
+        <li>著者プロフィールと奥付を入れる</li>
+      </ol>
+      <p><code>index.html</code>と <code>sample.css</code> を改変して好みの紙面を作っていきます。</p>
+      <h3 id="サンプルを改変して好みの紙面にしていく">サンプルを改変して好みの紙面にしていく</h3>
+      <h4 id="1-html-を修正し、不要なところを削除して本文を流し込む">1. HTML を修正し、不要なところを削除して本文を流し込む</h4>
+      <p>まず、<code>index.html</code> の冒頭にある HTML の言語設定と、参照する CSS を変更します。</p>
+      <pre class="language-text"><code class="language-text">&#x3C;html lang="en">
+↓
+&#x3C;html lang="jp"></code></pre>
+      <pre class="language-text"><code class="language-text">&#x3C;link rel="stylesheet" href="gutenberg.css">
+↓
+&#x3C;link rel="stylesheet" href="sample.css"></code></pre>
+      <p>そして、<code>index.html</code> の、自分の同人誌に必要ない部分をガシガシ削ったり修正したり、本文を流し込んだりしていきましょう（本記事では、サンプルの本文として、夏目漱石著『私の個人主義』を用いています）。その際、Vivliostyle Viewer で都度確認しながら行うとよいでしょう。</p>
+      <div class="column-block">
+        <h4 id="vivliostyle-viewer-で更新が反映されないときには？">Vivliostyle Viewer で更新が反映されないときには？</h4>
+        <p>ブラウザのキャッシュのために、HTML や CSS の更新が反映されないことがあります。Google Chrome の場合、デベロッパーツールを開き、「Network」のタブにある「Disable cache」のチェックボックスをオンにしておくと、デベロッパーツールを開いている間、キャッシュが無効化されます。</p>
+        <ul>
+          <li>Google Chrome のキャッシュを無効化する方法： <a href="http://www-creators.com/archives/2781">http://www-creators.com/archives/2781</a></li>
+        </ul>
+      </div>
+      <h4 id="2-紙面がブラウザ幅になっているので、指定のページサイズにする">2. 紙面がブラウザ幅になっているので、指定のページサイズにする</h4>
+      <p>右上の Vivliostyle のマークをクリックすると、ページ設定のメニューが開きます。「User Style Preferences」の「Page Size」のところで、「Preset」のプルダウンから好みの紙面サイズを選んだり、「Costom size」から具体的に指定してページサイズを指定します。そして、下の方にある「Apply」をクリックします。</p>
+      <p></p>
+      <figure id="images002" class="fig">
+        <img src="images/002.png">
+      </figure>
+      <p></p>
+      <h4 id="3-章の冒頭の大きくなっている文字を普通のサイズにする">3. 章の冒頭の大きくなっている文字を普通のサイズにする</h4>
+      <p><code>sample.css</code> の以下の記述をごそっと削除し、ブラウザをリロードします。</p>
+      <pre class="language-text"><code class="language-text">p:first-of-type {
+	text-indent: 0;
+}
+p:first-of-type::first-letter {
+	font-weight: bold;
+	font-size: 1.8em;
+	line-height: 1;
+	padding-right: 1px
+}</code></pre>
+      <p></p>
+      <figure id="images003" class="fig">
+        <img src="images/003.png">
+      </figure>
+      <p></p>
+      <h4 id="4-著者プロフィールと奥付を入れる">4. 著者プロフィールと奥付を入れる</h4>
+      <p><code>index.html</code> の本文パート（<code>&#x3C;main>&#x3C;/main></code>）が終わったあとに、以下の内容を記載します。</p>
+      <pre class="language-text"><code class="language-text">&#x3C;section id="profile">
+  &#x3C;h3>著者プロフィール&#x3C;/h3>
+  &#x3C;div class="author">
+    &#x3C;div class="profile">
+      &#x3C;h4>kondoyuko&#x3C;/h4>
+      &#x3C;p>編集者。ITエンジニア向けWebメディアの編集とカンファレンスの企画の仕事をしています。趣味はテクノロジーや自分をハブにしたイベントを作って遊ぶこと。好きなゲームはカービィちゃん！&#x3C;/p>
+    &#x3C;/div>
+  &#x3C;/div>
+&#x3C;/section>
+
+&#x3C;section id="colophon">
+      &#x3C;h4 class="title">Vivliostyleサンプル書籍&#x3C;/h4>
+      &#x3C;ul class="editions">
+        &#x3C;li>
+          &#x3C;time datetime="2020-03-01">2020年03月01日&#x3C;/time>初版発行
+        &#x3C;/li>
+      &#x3C;/ul>
+      &#x3C;table class="info">
+        &#x3C;tr>
+            &#x3C;td>著者&#x3C;/td>
+            &#x3C;td>kondoyuko　Twitter:@kondoyuko&#x3C;/td>
+        &#x3C;/tr>
+        &#x3C;tr>
+          &#x3C;td>発行&#x3C;/td>
+          &#x3C;td>こりん堂　 https://yuko.pub&#x3C;/td>
+        &#x3C;/tr>
+        &#x3C;tr>
+          &#x3C;td>印刷&#x3C;/td>
+          &#x3C;td>どこか&#x3C;/td>
+        &#x3C;/tr>
+      &#x3C;/table>
+      &#x3C;div>
+        &#x3C;br/>
+        © kondoyuko
+      &#x3C;/div>
+&#x3C;/section></code></pre>
+      <p>このままでは奥付が期待する見た目にならないので、<code>sample.css</code> の末尾に以下の内容を追記します。</p>
+      <pre class="language-text"><code class="language-text">section#colophon {
+	position: relative;
+	float-reference: page;
+	float: bottom;
+	margin-bottom: 0;
+}
+
+section#colophon ul {
+	font-size: 1em
+}
+
+section#colophon ul.editions {
+	padding: 0;
+	list-style: none;
+  }
+  
+section#colophon ul.editions time {
+	display: inline-block;
+	width: 10em;
+}
+  
+section#colophon table.info {
+	margin: 0;
+	width: 100%;
+	border-top: 2px solid currentColor;
+}
+  
+section#colophon table.info tr {
+	border: 0;
+	box-shadow: none;
+}
+  
+section#colophon table.info tr:last-child {
+	border-bottom: 1px solid currentColor;
+}
+  
+section#colophon table.info td {
+	vertical-align: top;
+	padding-left: 0;
+	font-size: 1em;
+}</code></pre>
+      <p>このようにして、著者プロフィールと奥付を入れることができました。</p>
+      <p></p>
+      <figure id="images004" class="fig">
+        <img src="images/004.png">
+      </figure>
+      <p></p>
+      <p>Vivliostyle を用いて、同人誌に最低限必要な仕様を満たす組版ができました。ブラウザから印刷し「PDF に保存」することで、電子書籍やコピー本用の PDF データを取得できます。</p>
+      <p>
+        サンプルは GitHub に公開しました。<span class="footnote"><a href="https://github.com/kondoyuko/vivliostyle-sample-for-tbf08">https://github.com/kondoyuko/vivliostyle-sample-for-tbf08</a></span>
+        また、オンラインの Viviostyle Viewer を使い、以下の URL より紙面を確認できます。
+      </p>
+      <ul>
+        <li><a href="https://vivliostyle.org/viewer/#b=https://kondoyuko.github.io/vivliostyle-sample-for-tbf08/index.html">https://vivliostyle.org/viewer/#b=https://kondoyuko.github.io/vivliostyle-sample-for-tbf08/index.html</a></li>
+      </ul>
+      <p>ここから、フォントや文字サイズ、行間などをし、お好みの紙面デザインを作っていきましょう。</p>
+      <h2 id="おわりに">おわりに</h2>
+      <p>本記事では、Vivliostyle での CSS 組版に初めて取り組んだ筆者が、戸惑ったこととその解決策、および具体的な同人誌制作の方法について紹介しました。はじめはとっつきにくく感じた Vivliostyle ですが、慣れてくると、好みのデザインへの調整が容易で、スムーズに同人誌制作ができるツールだと感じました。今後、技術同人誌の制作にフィットしたサンプルが出てくることを期待します。</p>
+      <p>私の方では、C97で制作した同人誌を印刷所に入稿したいという展望があるため、入稿データをどのようにして作るかという課題が残されています。そして、次のサークル出展（5 月予定）には縦書きの同人誌を出したいと思っており、Viviostyle で縦書きの組版にもチャレンジしたいと考えています。</p>
+      <p>ブラウザで Markdown を書けば、組版されて印刷可能な PDF が得られる「Vivliostyle Pub」の構想もあるとのことで、Vivliostyle の今後を楽しみにしています。</p>
+      <h2 id="参考文献">参考文献</h2>
+      <ul>
+        <li>Vivliostyle
+          <ul>
+            <li><a href="https://vivliostyle.org/ja/">https://vivliostyle.org/ja/</a></li>
+          </ul>
+        </li>
+        <li>Vivliostyle Viewer ユーザーガイド
+          <ul>
+            <li><a href="https://vivliostyle.github.io/vivliostyle.js/docs/ja/">https://vivliostyle.github.io/vivliostyle.js/docs/ja/</a></li>
+          </ul>
+        </li>
+        <li>Vivliostyle Viewer README
+          <ul>
+            <li><a href="https://github.com/vivliostyle/vivliostyle-ui/blob/master/dist/README.ja.md">https://github.com/vivliostyle/vivliostyle-ui/blob/master/dist/README.ja.md</a></li>
+          </ul>
+        </li>
+        <li>Vivliostyle サンプル
+          <ul>
+            <li><a href="https://vivliostyle.org/ja/samples/">https://vivliostyle.org/ja/samples/</a></li>
+          </ul>
+        </li>
+        <li>『Vivliostyle で本を作ろう Vol.1』
+          <ul>
+            <li><a href="https://vivliostyle.org/ja/blog/2019/05/06/make-books-with-vivliostyle-vol1/">https://vivliostyle.org/ja/blog/2019/05/06/make-books-with-vivliostyle-vol1/</a></li>
+          </ul>
+        </li>
+        <li>『CSS ではじめる同人誌制作増訂版』
+          <ul>
+            <li><a href="https://pentapod.booth.pm/items/969754">https://pentapod.booth.pm/items/969754</a></li>
+          </ul>
+        </li>
+      </ul>
+    </article>
+  </body>
+</html>
