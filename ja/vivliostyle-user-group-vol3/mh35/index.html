@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../bundle.css">
+    <title>GitHub+Circle CI を用いた Vivliostyle+Markdown による組版をやってみた</title>
+  </head>
+  <body role="doc-chapter">
+    <article>
+      <h1 id="githubcircle-ci-を用いた-vivliostylemarkdown-による組版をやってみた">GitHub+Circle CI を用いた Vivliostyle+Markdown による組版をやってみた</h1>
+      <div class="draft-author">MH35</div>
+      <h2 id="circle-ci-とは">Circle CI とは</h2>
+      <p>Circle CI とは、継続的インテグレーションサービスの 1 つであり、コミットからデプロイまでのパイプラインを作成して自動化するサービスである。このサービスは、初期費用が無料であり、簡単に試すことができるのが利点である。今回、私はそれを使うことにした。</p>
+      <h2 id="circle-ci-のイメージ">Circle CI のイメージ</h2>
+      <p>出来合いのものを使おうとすると壁があったため(Pandoc を入れる必要があったから)、自前で作ることにした。その際には、以下のパッケージのインストールは必須である<span class="footnote"><a href="https://circleci.com/docs/ja/2.0/custom-images/">https://circleci.com/docs/ja/2.0/custom-images/</a></span>。</p>
+      <ul>
+        <li>git</li>
+        <li>ssh</li>
+        <li>tar</li>
+        <li>gzip</li>
+        <li>ca-certificates</li>
+      </ul>
+      <p>その際、いろいろと試行錯誤をしてみたが、結局こんな感じの構成になった。</p>
+      <ol>
+        <li>Pandoc をインストールする</li>
+        <li>レポジトリを入れるために Curl をインストールする</li>
+        <li>Node.js をインストールする</li>
+        <li>gcc や make をインストールする</li>
+        <li>gulp をインストールする</li>
+        <li>git をインストールする</li>
+        <li>gnupg と language-pack 各種をインストールする</li>
+        <li>Google Chrome をインストールする</li>
+      </ol>
+      <p>
+        あとは Docker のイメージをビルドした上で Docker Hub 上で公開すれば Docker 側の準備は完了である。
+        今回使ったイメージのレポジトリはこちら<span class="footnote"><a href="https://github.com/mh35/builddoc_docker">https://github.com/mh35/builddoc_docker</a></span>、イメージはこちら<span class="footnote"><a href="https://hub.docker.com/r/mh35jp/builddoc">https://hub.docker.com/r/mh35jp/builddoc</a></span>にある。
+      </p>
+      <h2 id="ビルドするコンテンツ">ビルドするコンテンツ</h2>
+      <p>
+        ざっくりいうと、本文・テンプレート・SCSS・フォントとビルドスクリプトから構成される。
+        ビルドスクリプトの Gulpfile の中身はこんな感じである。
+      </p>
+      <ol>
+        <li>SCSS をコンパイルして CSS にする</li>
+        <li>画像群をコピーする</li>
+        <li>Pandoc で Markdown を HTML にする</li>
+        <li>Vivliostyle で PDF に変換する</li>
+      </ol>
+      <p>それをうまい具合に CircleCI でつなぎこめばうまくいく…はずだった。</p>
+      <p>CircleCI へのつなぎこみは.circleci/config.yml でこのようにして行う。</p>
+      <pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token number">2.1</span>
+<span class="token key atrule">jobs</span><span class="token punctuation">:</span>
+  <span class="token key atrule">build</span><span class="token punctuation">:</span>
+    <span class="token key atrule">docker</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span>
+        <span class="token key atrule">image</span><span class="token punctuation">:</span> 誰の/どのイメージ<span class="token punctuation">:</span>イメージのタグ
+    <span class="token key atrule">steps</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> checkout
+      <span class="token punctuation">-</span>
+        <span class="token key atrule">run</span><span class="token punctuation">:</span>
+          <span class="token key atrule">command</span><span class="token punctuation">:</span> コマンド1
+          <span class="token key atrule">name</span><span class="token punctuation">:</span> コマンド1説明
+      <span class="token punctuation">-</span>
+        <span class="token key atrule">run</span><span class="token punctuation">:</span>
+          <span class="token key atrule">command</span><span class="token punctuation">:</span> コマンド2
+          <span class="token key atrule">name</span><span class="token punctuation">:</span> コマンド2説明
+      <span class="token punctuation">-</span>
+        <span class="token key atrule">run</span><span class="token punctuation">:</span>
+          <span class="token key atrule">command</span><span class="token punctuation">:</span> コマンド3
+          <span class="token key atrule">name</span><span class="token punctuation">:</span> コマンド3説明
+      <span class="token punctuation">-</span>
+        <span class="token key atrule">store_artifacts</span><span class="token punctuation">:</span>
+          <span class="token key atrule">path</span><span class="token punctuation">:</span> 成果物のパス</code></pre>
+      <h2 id="うまくいかない">うまくいかない</h2>
+      <p>うまくいかなくて延々と挫折していた。何が原因かわからずにずっと放置せざるを得なくなっていた。</p>
+      <h2 id="そして締切日に原稿投げてフィードバックもらって相談していたら">そして締切日に原稿投げてフィードバックもらって相談していたら</h2>
+      <p>締切日に原稿を送ったら、原稿が短いと言われた。だが、全く何をすればいいのかわからず、レポジトリを見てもらったら、spring-raining さん( <a href="https://github.com/spring-raining">https://github.com/spring-raining</a> )にフォントのパスがおかしいとの指摘をもらった。マージをして動かしたら、無事にフォントが埋め込まれた PDF ができた。単純に自分の CSS/SCSS の扱いが苦手というオチだった。</p>
+      <h2 id="こうして出来上がったレポジトリはこちら">こうして出来上がったレポジトリはこちら</h2>
+      <p>このレポジトリ<span class="footnote"><a href="https://github.com/mh35/builddoc_content">https://github.com/mh35/builddoc_content</a></span>になる。このレポジトリを clone して、CircleCI 側からレポジトリに接続すると、CircleCI が PDF をビルドしてくれる。必要なくなったら CircleCI 側からデプロイ設定を解除すればよい。</p>
+      <h2 id="教訓">教訓</h2>
+      <p>CSS の挙動は勉強したほうが良さそうである。</p>
+      <h2 id="今後の課題">今後の課題</h2>
+      <p>これをいかにして実用的な本に合わせた CSS にするかなど。Vivliostyle 自体の基本的な使い方である。そのあたりの勉強を始めていきたい。</p>
+    </article>
+  </body>
+</html>
