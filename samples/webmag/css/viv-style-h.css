@@ -42,7 +42,7 @@
     width:  auto;
     background: #BDC0C1;
     @-epubx-partition header-logo {
-      content: url(http://jbpress.ismedia.jp/common/feature/jdir/jdir_logo_no.svg);
+      content: url(https://jbpress.ismedia.jp/common/feature/jdir/jdir_logo_no.svg);
       filter: invert(100%);
       bottom: 0;
       left:   -epubx-expr(bleed + (page-number % 2 == 0 ? side-margin : 100vw - side-margin - header-logo.width));
@@ -114,7 +114,7 @@
       bottom: 0;
     }
     @-epubx-partition header-logo {
-      content: url(http://jbpress.ismedia.jp/common/feature/jdir/jdir_logo_no.svg);
+      content: url(https://jbpress.ismedia.jp/common/feature/jdir/jdir_logo_no.svg);
       filter: invert(100%);
       top:    -epubx-expr(bleed + 4vh);
       right:  -epubx-expr(bleed + side-margin);
@@ -177,7 +177,7 @@
       bottom: 0;
     }
     @-epubx-partition header-logo {
-      content: url(http://jbpress.ismedia.jp/common/feature/jdir/jdir_logo_no.svg);
+      content: url(https://jbpress.ismedia.jp/common/feature/jdir/jdir_logo_no.svg);
       filter: invert(100%);
       -epubx-enabled: -epubx-expr(page-number % 2 != 0);
       bottom: 0;
