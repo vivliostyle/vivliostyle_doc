@@ -1,9 +1,9 @@
 # Web Magazine Sample
 
-* [Horizontal writing mode, for Read (横書き、閲覧用)](https://vivliostyle.github.io/vivliostyle.js/viewer/vivliostyle-viewer.html#b=/vivliostyle_doc/samples/webmag/index.html&style=/vivliostyle_doc/samples/webmag/css/viv-style-h.css)
-  * [Horizontal writing mode, for Print (横書き、印刷用)](https://vivliostyle.github.io/vivliostyle.js/viewer/vivliostyle-viewer.html#b=/vivliostyle_doc/samples/webmag/index.html&style=/vivliostyle_doc/samples/webmag/css/viv-print-h.css&renderAllPages=true)
-* [Vertical writing mode, for Read (縦書き、閲覧用)](https://vivliostyle.github.io/vivliostyle.js/viewer/vivliostyle-viewer.html#b=/vivliostyle_doc/samples/webmag/index.html&style=/vivliostyle_doc/samples/webmag/css/viv-style-v.css)
-  * [Vertical writing mode, for Print (縦書き、印刷用)](https://vivliostyle.github.io/vivliostyle.js/viewer/vivliostyle-viewer.html#b=/vivliostyle_doc/samples/webmag/index.html&style=/vivliostyle_doc/samples/webmag/css/viv-print-v.css&renderAllPages=true)
+* [Horizontal writing mode, for Read (横書き、閲覧用)](https://vivliostyle.org/viewer/#src=https://vivliostyle.github.io/vivliostyle_doc/samples/webmag/index.html&bookMode=true&style=https://vivliostyle.github.io/vivliostyle_doc/samples/webmag/css/viv-style-h.css)
+  * [Horizontal writing mode, for Print (横書き、印刷用)](https://vivliostyle.org/viewer/#src=https://vivliostyle.github.io/vivliostyle_doc/samples/webmag/index.html&bookMode=true&style=https://vivliostyle.github.io/vivliostyle_doc/samples/webmag/css/viv-print-h.css)
+* [Vertical writing mode, for Read (縦書き、閲覧用)](https://vivliostyle.org/viewer/#src=https://vivliostyle.github.io/vivliostyle_doc/samples/webmag/index.html&bookMode=true&style=https://vivliostyle.github.io/vivliostyle_doc/samples/webmag/css/viv-style-v.css)
+  * [Vertical writing mode, for Print (縦書き、印刷用)](https://vivliostyle.org/viewer/#src=https://vivliostyle.github.io/vivliostyle_doc/samples/webmag/index.html&bookMode=true&style=https://vivliostyle.github.io/vivliostyle_doc/samples/webmag/css/viv-print-v.css)
 
 ### Acknowledgements
 

@@ -2,4 +2,4 @@
 
 「学術出版のHTML5標準化とCSS組版――Scholarly HTMLとVivliostyle」
 
-https://vivliostyle.github.io/vivliostyle.js/viewer/vivliostyle-viewer.html#b=/vivliostyle_doc/ja/events/page2017xmlpub/package.opf&spread=false&renderAllPages=true
+https://vivliostyle.org/viewer/#src=https://github.com/vivliostyle/vivliostyle_doc/tree/gh-pages/ja/events/page2017xmlpub/&bookMode=true&spread=false

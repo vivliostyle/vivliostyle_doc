@@ -2,4 +2,4 @@
 
 「ウェブ出版と日本語組版の未来と CSS 組版 Vivliostyle」
 
-https://vivliostyle.github.io/vivliostyle.js/viewer/vivliostyle-viewer.html#b=/vivliostyle_doc/ja/events/page2020xpub/&spread=false&renderAllPages=true
+https://vivliostyle.org/viewer/#src=https://vivliostyle.github.io/vivliostyle_doc/ja/events/page2020xpub/&bookMode=true&spread=false
