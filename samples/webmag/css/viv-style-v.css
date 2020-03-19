@@ -396,7 +396,7 @@ figure {
 }
 figure> img, figure > a > img {
   display: block;
-  height: 100%;
+  /* height: 100%; */
   max-width: 68vw;
   object-fit: cover;
 }
