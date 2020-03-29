@@ -1,7 +1,6 @@
 html {
   /* writing mode */
   writing-mode: horizontal-tb;
-
   orphans: 2;
   widows: 2;
 }
@@ -52,8 +51,8 @@ html {
 html {
   font-family: "Quattrocento", Georgia, serif;
   font-weight: normal;
-  font-size: 10pt;
-  line-height: 18pt;
+  font-size: 83.3333333333%;
+  line-height: 1.8;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -61,22 +60,18 @@ h1 {
   font-weight: bold;
   font-size: 2em;
   line-height: 1em;
-  margin-bottom: 10pt;
+  margin-bottom: 0.5em;
   text-indent: 0;
   /* forbid page/column break after it */
-  -webkit-column-break-after: avoid;
-     page-break-after: avoid;
-          break-after: avoid;
+  break-after: avoid;
 }
 
 h2 {
-  font-size: 12pt;
+  font-size: 1.2em;
   font-weight: bold;
   text-indent: 0;
   /* forbid page/column break after it */
-  -webkit-column-break-after: avoid;
-     page-break-after: avoid;
-          break-after: avoid;
+  break-after: avoid;
   line-height: 32pt;
   margin-top: 16pt;
 }
@@ -93,10 +88,11 @@ p.dropcap {
 }
 
 p.dropcap span.dropcap {
-  font-size: 36pt;
+  font-size: 3.6em;
   float: left;
-  line-height: 36pt;
-  margin-right: 2.25pt;
+  line-height: 1;
+  margin-right: 0.0625em;
+  margin-bottom: -0.2em;
 }
 
 p.author {
