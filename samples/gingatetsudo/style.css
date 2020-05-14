@@ -74,6 +74,9 @@ p.q {
 .tcy {
   text-combine-upright: all;
 }
+.upright {
+  text-orientation: upright;
+}
 
 /* 圏点（ゴマ） */
 em.sesame_dot {
