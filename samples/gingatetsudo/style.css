@@ -12,7 +12,7 @@ html {
 
 @page {
   size: 148mm 210mm;
-  width: 338pt;
+  width: 360pt;
   height: 468pt;
   margin: auto;
   font-size: 8.5pt;
@@ -38,14 +38,14 @@ html {
 html {
   font-family: "游明朝", "YuMincho", serif;
   text-align: justify;
-  line-height: 1.875rem;
+  line-height: 2rem;
 }
 
 h1 {
   font-weight: bold;
   font-size: 1.35rem;
   break-after: avoid;
-  line-height: 5.625rem;
+  line-height: 6rem;
   letter-spacing: 0.125em;
 }
 
@@ -54,7 +54,7 @@ h2 {
   font-size: 1.18rem;
   text-indent: 3rem;
   break-after: avoid;
-  line-height: 3.75rem;
+  line-height: 4rem;
 }
 
 ruby > rt {
@@ -95,7 +95,9 @@ em.sesame_dot {
 /* 奥付 */
 .colophon {
   font-size: 0.824rem;
-  margin-right: 5.65rem;
+  line-height: 1.5rem;
+  margin-block-start: 6rem;
+  break-inside: avoid;
 }
 
 /* 非表示 */
