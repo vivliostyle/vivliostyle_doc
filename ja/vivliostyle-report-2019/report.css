@@ -1,0 +1,20 @@
+﻿@page {
+  size: a4;
+  margin: 10%;
+  font: 8pt/1 "YuGothic", sans-serif;
+  @top-center {
+    content: env(doc-title);
+  }
+  @bottom-center {
+    content: counter(page);
+  }
+}
+@page :first {
+  @top-center {
+    content: none;
+  }
+}
+html {
+  font: 10pt/2 "YuGothic", sans-serif;
+  text-align: justify;
+}
