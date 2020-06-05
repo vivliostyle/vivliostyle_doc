@@ -16,6 +16,7 @@
     content: none;
   }
 }
+
 html {
   font-family: "YuGothic", "Yu Gothic", sans-serif;
 }
@@ -25,8 +26,32 @@ body {
   line-height: 2;
 }
 
+h1.title {
+  margin: 1.5em 0 2.5em;
+  font-size: 300%;
+  line-height: 1.5;
+  text-align: center;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+#TOC > ul > li > a {
+  font-size: 120%;
+  font-weight: bold;
+}
+
 p, li {
   text-align: justify;
+}
+
+h2 {
+  font-size: 133%;
+  line-height: 1.5;
+}
+
+h3 {
+  font-size: 120%;
+  line-height: 1.5;
 }
 
 h2,
