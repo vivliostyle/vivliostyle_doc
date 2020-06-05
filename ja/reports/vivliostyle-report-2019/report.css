@@ -1,7 +1,9 @@
 ﻿@page {
   size: a4;
   margin: 10%;
-  font: 8pt/1 "YuGothic", sans-serif;
+  font-family: "YuGothic", "Yu Gothic", sans-serif;
+  font-size: 9pt;
+  line-height: 1;
   @top-center {
     content: env(doc-title);
   }
@@ -15,6 +17,74 @@
   }
 }
 html {
-  font: 10pt/2 "YuGothic", sans-serif;
+  font-family: "YuGothic", "Yu Gothic", sans-serif;
+}
+
+body {
+  font-size: 87.5%;
+  line-height: 2;
+}
+
+p, li {
   text-align: justify;
 }
+
+h2,
+h2 ~ h2 ~ h3 ~ h3 {
+  break-before: page;
+}
+
+table {
+  border-collapse: collapse;
+  font-size: 87.5%;
+  line-height: 1.75;
+}
+
+th, td {
+  border: 1px solid gray;
+  padding: 0 0.5em;
+}
+
+th {
+  background-color: #EFF1F2;
+}
+
+td:nth-child(n+2) {
+  text-align: right;
+}
+
+#年度貸借対照表 + p + table > tbody > tr:nth-child(4),
+#年度貸借対照表 + p + table > tbody > tr:nth-child(9),
+#年度貸借対照表 + p + table > tbody > tr:nth-child(10),
+#年度貸借対照表 + p + table > tbody > tr:nth-child(15),
+#年度貸借対照表 + p + table > tbody > tr:nth-child(16),
+#年度貸借対照表 + p + table > tbody > tr:nth-child(19),
+#年度貸借対照表 + p + table > tbody > tr:nth-child(20),
+#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(5),
+#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(10),
+#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(13),
+#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(14),
+#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(16),
+#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(17),
+#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(20),
+#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(22),
+#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(23),
+#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(29),
+#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(33),
+#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(34),
+#年度収支計算書 + p + table > tbody > tr:nth-child(5),
+#年度収支計算書 + p + table > tbody > tr:nth-child(10),
+#年度収支計算書 + p + table > tbody > tr:nth-child(13),
+#年度収支計算書 + p + table > tbody > tr:nth-child(14),
+#年度収支計算書 + p + table > tbody > tr:nth-child(16),
+#年度収支計算書 + p + table > tbody > tr:nth-child(17),
+#年度収支計算書 + p + table > tbody > tr:nth-child(20),
+#年度収支計算書 + p + table > tbody > tr:nth-child(22),
+#年度収支計算書 + p + table > tbody > tr:nth-child(23),
+#年度収支計算書 + p + table > tbody > tr:nth-child(29),
+#年度収支計算書 + p + table > tbody > tr:nth-child(33),
+#年度収支計算書 + p + table > tbody > tr:nth-child(34) {
+  background-color: #EFF6FD;
+}
+
+
