@@ -22,11 +22,16 @@ html {
 }
 
 body {
-  font-size: 87.5%;
+  font-size: 94%;
   line-height: 1.75;
-  column-width: 34em;
-  column-gap: 1.5em;
-  column-fill: auto;
+}
+
+@media print {
+  body {
+    column-width: 34em;
+    column-gap: 1.5em;
+    column-fill: auto;
+  }
 }
 
 h1.title {
@@ -79,7 +84,7 @@ h2 ~ h2 ~ h3 ~ h3 {
 table {
   border-collapse: collapse;
   font-size: 87.5%;
-  line-height: 1.7;
+  line-height: 1.5;
 }
 
 th, td {
