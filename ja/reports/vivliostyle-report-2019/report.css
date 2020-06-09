@@ -1,5 +1,5 @@
 ﻿@page {
-  size: a4;
+  /* size: a4; */
   margin: 10%;
   font-family: "YuGothic", "Yu Gothic", sans-serif;
   font-size: 9pt;
@@ -24,10 +24,13 @@ html {
 body {
   font-size: 87.5%;
   line-height: 2;
+  column-width: 34em;
+  column-gap: 1.5em;
+  column-fill: auto;
 }
 
 h1.title {
-  margin: 1.5em 0 2.5em;
+  margin: 1.5em 0 1em;
   font-size: 300%;
   line-height: 1.5;
   text-align: center;
@@ -35,12 +38,19 @@ h1.title {
   overflow-wrap: break-word;
 }
 
+#title-block-header::after {
+  content: url(https://vivliostyle.org/assets/vivliostyle-logo.svg);
+  display: block;
+  width: min-content;
+  margin: 3em auto 5em;
+}
+
 #TOC > ul > li > a {
   font-size: 120%;
   font-weight: bold;
 }
 
-p, li {
+p {
   text-align: justify;
 }
 
@@ -54,9 +64,12 @@ h3 {
   line-height: 1.5;
 }
 
-h2,
-h2 ~ h2 ~ h3 ~ h3 {
+h2 {
   break-before: page;
+}
+
+h2 ~ h2 ~ h3 ~ h3 {
+  break-before: column;
 }
 
 table {
