@@ -1,0 +1,49 @@
+{
+  "@context": "https://readium.org/webpub-manifest/context.jsonld",
+  "metadata": {
+    "@type": "http://schema.org/Book",
+    "title": "Vivliostyle で本を作ろう Vol. 4",
+    "author": "spring-raining <harusamex.com@gmail.com>",
+    "language": "ja",
+    "modified": "2020-09-17T03:31:52.011Z"
+  },
+  "links": [],
+  "readingOrder": [
+    {
+      "href": "artifacts/content/index.html",
+      "type": "text/html",
+      "title": "Vivliostyle で本を作ろう Vol. 4"
+    },
+    {
+      "href": "artifacts/content/maegaki.html",
+      "type": "text/html",
+      "title": "まえがき"
+    },
+    {
+      "href": "artifacts/content/yamasy/index.html",
+      "type": "text/html",
+      "title": "@vivliostyle/theme-academic でレポート書いてみた！"
+    },
+    {
+      "href": "artifacts/content/spring-raining/index.html",
+      "type": "text/html",
+      "title": "CSS で技術系同人誌のレイアウトを作る際に気をつけていること"
+    },
+    {
+      "href": "artifacts/content/ogwata/index.html",
+      "type": "text/html",
+      "title": "Create Book で同人誌を作ろう！"
+    },
+    {
+      "href": "artifacts/content/shinyu/index.html",
+      "type": "text/html",
+      "title": "Vivliostyle FAQ よくある質問"
+    },
+    {
+      "href": "artifacts/content/atogaki.html",
+      "type": "text/html",
+      "title": "あとがき"
+    }
+  ],
+  "resources": []
+}

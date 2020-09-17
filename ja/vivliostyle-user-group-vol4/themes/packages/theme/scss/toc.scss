@@ -1,0 +1,50 @@
+@import './variables.scss';
+
+nav#toc {
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: 1em;
+  }
+
+  li a::after {
+    content: target-counter(attr(href), page);
+  }
+
+  li a {
+    display: inline-flex;
+    width: 100%;
+    text-decoration: none;
+    color: currentColor;
+    align-items: center;
+  }
+
+  li a::before {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    content: '';
+    order: 1;
+    flex: auto;
+    height: 1px;
+    $narrow-border-width: .4px;
+    box-shadow: 0 $narrow-border-width+.3px 0 -.3px currentColor;
+  }
+
+  li a::after {
+    text-align: right;
+    content: target-counter(attr(href), page);
+    flex: none;
+    order: 2;
+  }
+
+  .title {
+    font-size: 120%;
+  }
+  .author {
+    line-height: 1;
+  }
+}

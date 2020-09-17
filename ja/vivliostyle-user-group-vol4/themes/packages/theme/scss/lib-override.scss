@@ -1,0 +1,80 @@
+@import './variables.scss';
+
+// prism-okadia
+code[class*='language-'],
+pre[class*='language-'] {
+  line-height: 1.2 !important;
+  letter-spacing: 0.03rem !important;
+  border-radius: 0.2rem !important;
+  text-shadow: none !important;
+}
+:not(pre) > code {
+  padding: 0.2rem 0.4rem;
+  background-color: $color_silver;
+  border-radius: 0.2rem;
+  line-height: 1;
+}
+
+@media print {
+  .token.comment,
+  .token.prolog,
+  .token.doctype,
+  .token.cdata {
+    color: #8394a5;
+  }
+
+  .token.punctuation {
+    color: #ffffff;
+  }
+
+  .namespace {
+    opacity: 0.7;
+  }
+
+  .token.property,
+  .token.tag,
+  .token.constant,
+  .token.symbol,
+  .token.deleted {
+    color: #ff6aa0;
+  }
+
+  .token.boolean,
+  .token.number {
+    color: #bc9df7;
+  }
+
+  .token.selector,
+  .token.attr-name,
+  .token.string,
+  .token.char,
+  .token.builtin,
+  .token.inserted {
+    color: #d3fa85;
+  }
+
+  .token.operator,
+  .token.entity,
+  .token.url,
+  .language-css .token.string,
+  .style .token.string,
+  .token.variable {
+    color: #ffffff;
+  }
+
+  .token.atrule,
+  .token.attr-value,
+  .token.function,
+  .token.class-name {
+    color: #e6db74;
+  }
+
+  .token.keyword {
+    color: #97dfee;
+  }
+
+  .token.regex,
+  .token.important {
+    color: #fcbb71;
+  }
+}

@@ -1,0 +1,1024 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'body';
+  font-weight: 100;
+  src: local("TazuganeGothicStdN-UltLt");
+}
+
+@font-face {
+  font-family: 'body';
+  font-weight: 200;
+  src: local("TazuganeGothicStdN-Thin");
+}
+
+@font-face {
+  font-family: 'body';
+  font-weight: 300;
+  src: local("TazuganeGothicStdN-Light");
+}
+
+@font-face {
+  font-family: 'body';
+  font-weight: 400;
+  src: local("TazuganeGothicStdN-Book");
+}
+
+@font-face {
+  font-family: 'body';
+  font-weight: 500;
+  src: local("TazuganeGothicStdN-Regular");
+}
+
+@font-face {
+  font-family: 'body';
+  font-weight: 600;
+  src: local("TazuganeGothicStdN-Medium");
+}
+
+@font-face {
+  font-family: 'body';
+  font-weight: 700;
+  src: local("TazuganeGothicStdN-Heavy");
+}
+
+@font-face {
+  font-family: 'body';
+  font-weight: 800;
+  src: local("TazuganeGothicStdN-Black");
+}
+
+@font-face {
+  font-family: 'body';
+  font-weight: 900;
+  src: local("TazuganeGothicStdN-XBlack");
+}
+
+@font-face {
+  font-family: 'Yakumono';
+  src: url("assets/YakuCaltGothic/YakuCaltGothic-R.woff") format("woff"), url("assets/YakuCaltGothic/YakuCaltGothic-R.otf") format("opentype");
+}
+
+/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+code[class*='language-'],
+pre[class*='language-'] {
+  color: #f8f8f2;
+  background: none;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  font-size: 1em;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*='language-'] {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+  border-radius: 0.3em;
+}
+
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+  background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*='language-'] {
+  padding: 0.1em;
+  border-radius: 0.3em;
+  white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: slategray;
+}
+
+.token.punctuation {
+  color: #f8f8f2;
+}
+
+.namespace {
+  opacity: 0.7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+  color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+  color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+  color: #e6db74;
+}
+
+.token.keyword {
+  color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+  color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+code[class*='language-'],
+pre[class*='language-'] {
+  line-height: 1.2 !important;
+  letter-spacing: 0.03rem !important;
+  border-radius: 0.2rem !important;
+  text-shadow: none !important;
+}
+
+:not(pre) > code {
+  padding: 0.2rem 0.4rem;
+  background-color: #ecf0f1;
+  border-radius: 0.2rem;
+  line-height: 1;
+}
+
+@media print {
+  .token.comment,
+  .token.prolog,
+  .token.doctype,
+  .token.cdata {
+    color: #8394a5;
+  }
+  .token.punctuation {
+    color: #ffffff;
+  }
+  .namespace {
+    opacity: 0.7;
+  }
+  .token.property,
+  .token.tag,
+  .token.constant,
+  .token.symbol,
+  .token.deleted {
+    color: #ff6aa0;
+  }
+  .token.boolean,
+  .token.number {
+    color: #bc9df7;
+  }
+  .token.selector,
+  .token.attr-name,
+  .token.string,
+  .token.char,
+  .token.builtin,
+  .token.inserted {
+    color: #d3fa85;
+  }
+  .token.operator,
+  .token.entity,
+  .token.url,
+  .language-css .token.string,
+  .style .token.string,
+  .token.variable {
+    color: #ffffff;
+  }
+  .token.atrule,
+  .token.attr-value,
+  .token.function,
+  .token.class-name {
+    color: #e6db74;
+  }
+  .token.keyword {
+    color: #97dfee;
+  }
+  .token.regex,
+  .token.important {
+    color: #fcbb71;
+  }
+}
+
+:root {
+  font-family: "Neue Frutiger World", "Verdana", "Yakumono", "body", "Hiragino Sans", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+h1,
+h2,
+h3 {
+  font-feature-settings: 'palt', 'calt';
+}
+
+h1 {
+  font-size: 2.4rem;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 1.8rem;
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: 1.4rem;
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  color: #3498db;
+}
+
+a:visited {
+  color: #9b59b6;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #e74c3c;
+}
+
+p {
+  font-feature-settings: 'calt';
+  text-align: justify;
+}
+
+code {
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", "Neue Frutiger World", "Verdana", "Yakumono", "body", "Hiragino Sans", sans-serif !important;
+}
+
+pre {
+  box-decoration-break: clone;
+}
+
+ul, ol {
+  padding-inline-start: 1.5em;
+}
+
+figure {
+  margin: 1.5rem auto;
+  text-align: center;
+}
+
+figure img {
+  max-width: 100%;
+  margin: 0.5rem auto;
+}
+
+figure figcaption {
+  margin: 1rem auto;
+  width: 90%;
+  font-size: 90%;
+  break-inside: avoid;
+}
+
+figure img[src$='.png'],
+figure img[src$='.jpg'],
+figure img[src$='.jpeg'] {
+  image-resolution: 200dpi;
+}
+
+p > img {
+  width: 100%;
+}
+
+table {
+  display: table;
+  max-width: 100%;
+  margin: 1rem auto;
+  border-color: currentColor;
+  border-collapse: collapse;
+}
+
+table th, table td {
+  padding: .2em .2em .2em 0;
+  background-color: transparent;
+  border: 0;
+}
+
+table th:first-child, table td:first-child {
+  padding-left: .2em;
+}
+
+table th {
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+}
+
+table tr {
+  box-shadow: 0 0.7px 0 -0.3px currentColor;
+}
+
+table tr:last-child {
+  border-bottom: 1px solid;
+}
+
+blockquote {
+  margin: 1em 1.5rem;
+  background-color: #ecf0f1;
+  padding: 0.5em 1em;
+  border-radius: 0.2rem;
+}
+
+blockquote :not(pre) > code {
+  padding: 0;
+  word-break: break-all;
+}
+
+.draft-author {
+  text-align: right;
+  margin-bottom: 3rem;
+}
+
+.page-break {
+  page-break-after: always !important;
+}
+
+body {
+  counter-reset: section subsection fig tbl footnote cite;
+}
+
+a[data-ref="sec"],
+a[data-ref="subsec"],
+a[data-ref="fig"],
+a[data-ref="tbl"],
+a[data-ref="cite"] {
+  text-decoration: none;
+  color: inherit;
+  margin: 0 .15em;
+}
+
+a[data-ref="sec"]::before {
+  content: target-counter(attr(href), section) "章";
+}
+
+a[data-ref="subsec"]::before {
+  content: target-counter(attr(href), section) "." target-counter(attr(href url), subsection) "章";
+}
+
+a[data-ref="fig"]::before {
+  content: "図" target-counter(attr(href), fig);
+}
+
+a[data-ref="tbl"]::before {
+  content: "表" target-counter(attr(href), tbl);
+}
+
+a[data-ref="cite"]::before {
+  content: "[" target-counter(attr(href), cite) "]";
+}
+
+section {
+  counter-increment: section;
+  counter-reset: subsection;
+}
+
+section article {
+  counter-increment: subsection;
+}
+
+figure img.fig {
+  counter-increment: fig;
+}
+
+figure img.fig ~ figcaption::before {
+  content: "図" counter(fig) ": ";
+}
+
+figure.tbl {
+  counter-increment: tbl;
+}
+
+figure.tbl figcaption::before {
+  content: "表" counter(tbl) ": ";
+}
+
+.footnote {
+  counter-increment: footnote;
+}
+
+.footnote::footnote-call, .footnote::footnote-marker {
+  content: "[" counter(footnote) "]";
+}
+
+.footnote::footnote-call {
+  font-size: 80%;
+  margin: 0 .3rem;
+}
+
+.footnote::footnote-marker {
+  margin-right: .2rem;
+}
+
+ol.cite-items {
+  padding-left: 2rem;
+  list-style: none;
+}
+
+ol.cite-items li {
+  counter-increment: cite;
+  position: relative;
+}
+
+ol.cite-items li::before {
+  content: "[" counter(cite) "] ";
+  position: absolute;
+  left: -2rem;
+}
+
+@media screen {
+  body {
+    margin: auto 4rem;
+    margin: 0 auto;
+    padding: 8rem 8px 4rem;
+    max-width: 60rem;
+  }
+  section {
+    clear: both;
+  }
+  figure {
+    max-width: 50rem;
+  }
+  .footnote {
+    vertical-align: super;
+    background-color: rgba(214, 255, 0, 0.4);
+    margin: 0 0.1rem;
+    line-height: 0;
+  }
+  .footnote a {
+    word-break: break-all;
+  }
+  a[data-ref='sec'],
+  a[data-ref='subsec'],
+  a[data-ref='fig'],
+  a[data-ref='tbl'],
+  a[data-ref='cite'] {
+    color: #e74c3c;
+    background-color: rgba(255, 0, 0, 0.3);
+  }
+  a[data-ref='sec']::before {
+    content: 'XXX 章';
+  }
+  a[data-ref='subsec']::before {
+    content: 'XXX.XXX 章';
+  }
+  a[data-ref='fig']::before {
+    content: '図 XXX';
+  }
+  a[data-ref='tbl']::before {
+    content: '表 XXX';
+  }
+  a[data-ref='cite']::before {
+    content: '[XXX]';
+  }
+}
+
+@media print {
+  :root {
+    widows: 3;
+    orphans: 3;
+    hyphens: auto;
+    font-size: 12px;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    break-after: avoid;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  h3 {
+    font-size: 1.2rem;
+  }
+  tr,
+  th,
+  td {
+    break-inside: avoid;
+  }
+  a {
+    color: currentColor;
+    text-decoration: underline;
+  }
+  article > h1,
+  section#profile {
+    margin-top: -10mm;
+  }
+  code[class*='language-'],
+  pre[class*='language-'] {
+    font-size: 90%;
+    white-space: pre-wrap;
+  }
+  table {
+    font-size: 80%;
+  }
+  .footnote {
+    font-size: 10px;
+    float: footnote;
+    text-align: left;
+  }
+}
+
+@page {
+  size: 182mm 257mm;
+  margin-top: 25mm;
+  padding-top: 15mm;
+  margin-bottom: 33mm;
+  @top-left-corner {
+    content: '';
+    margin-bottom: 8mm;
+    background-color: #4e272d;
+    margin-top: -3mm;
+    margin-left: -3mm;
+  }
+  @top-center {
+    content: '';
+    margin-bottom: 8mm;
+    background-color: #4e272d;
+    margin-top: -3mm;
+    margin-left: -1mm;
+    margin-right: -1mm;
+    padding-left: 1mm;
+    padding-right: 1mm;
+  }
+  @top-right-corner {
+    content: '';
+    margin-bottom: 8mm;
+    background-color: #4e272d;
+    margin-top: -3mm;
+    margin-right: -3mm;
+  }
+  @bottom-left-corner {
+    content: '';
+    margin-top: -8mm;
+    margin-bottom: -3mm;
+    margin-left: -3mm;
+    z-index: 1000;
+  }
+  @bottom-right-corner {
+    content: '';
+    margin-top: -8mm;
+    margin-bottom: -3mm;
+    margin-right: -3mm;
+    z-index: 1000;
+  }
+}
+
+@page :first {
+  background-color: #4e272d;
+  @top-left-corner {
+    content: none;
+  }
+  @top-center {
+    content: none;
+  }
+  @top-right-corner {
+    content: none;
+  }
+  @bottom-center {
+    content: none;
+  }
+  @bottom-left-corner {
+    content: none;
+  }
+  @bottom-left {
+    content: none;
+  }
+  @bottom-right {
+    content: none;
+  }
+  @bottom-right-corner {
+    content: none;
+  }
+}
+
+@page :left {
+  margin-left: 18mm;
+  margin-right: 35mm;
+  @top-center {
+    content: env(pub-title);
+    font-family: "Neue Frutiger World", "Verdana", "Yakumono", "body", "Hiragino Sans", sans-serif;
+    font-size: 12px;
+    color: #ffffff;
+    text-align: left;
+    padding-top: 8mm;
+  }
+  @bottom-left {
+    content: counter(page);
+    font-family: "Neue Frutiger World", "Verdana", "Yakumono", "body", "Hiragino Sans", sans-serif;
+    font-size: 12px;
+    border-left: 1px solid;
+    margin-top: 15mm;
+    margin-bottom: -3mm;
+    padding: 0 4mm 15mm 4mm;
+    background-color: #ffffff;
+  }
+}
+
+@page :right {
+  margin-left: 35mm;
+  margin-right: 18mm;
+  @top-center {
+    content: env(doc-title);
+    font-family: "Neue Frutiger World", "Verdana", "Yakumono", "body", "Hiragino Sans", sans-serif;
+    font-size: 12px;
+    color: #ffffff;
+    text-align: right;
+    padding-top: 8mm;
+  }
+  @bottom-right {
+    content: counter(page);
+    font-family: "Neue Frutiger World", "Verdana", "Yakumono", "body", "Hiragino Sans", sans-serif;
+    font-size: 12px;
+    border-right: 1px solid;
+    margin-top: 15mm;
+    margin-bottom: -3mm;
+    padding: 0 4mm 15mm 4mm;
+    background-color: white;
+  }
+}
+
+@-adapt-footnote-area ::before {
+  margin-inline-start: -1000px;
+  margin-inline-end: 70%;
+  margin-block-end: 0.8em;
+}
+
+@-adapt-footnote-area {
+  word-break: break-all;
+}
+
+#cover {
+  break-after: page;
+}
+
+@media print {
+  #cover {
+    color: #ffffff;
+  }
+}
+
+nav#toc ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav#toc li {
+  margin-bottom: 1em;
+}
+
+nav#toc li a::after {
+  content: target-counter(attr(href), page);
+}
+
+nav#toc li a {
+  display: inline-flex;
+  width: 100%;
+  text-decoration: none;
+  color: currentColor;
+  align-items: center;
+}
+
+nav#toc li a::before {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  content: '';
+  order: 1;
+  flex: auto;
+  height: 1px;
+  box-shadow: 0 0.7px 0 -0.3px currentColor;
+}
+
+nav#toc li a::after {
+  text-align: right;
+  content: target-counter(attr(href), page);
+  flex: none;
+  order: 2;
+}
+
+nav#toc .title {
+  font-size: 120%;
+}
+
+nav#toc .author {
+  line-height: 1;
+}
+
+section#profile .author {
+  display: flex;
+  margin: 1rem 0;
+}
+
+section#profile .author img {
+  margin: 0 10px 8px 0;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+section#profile code {
+  margin: 0 0 0 0.5em;
+}
+
+section#profile code > i {
+  vertical-align: -0.03em;
+}
+
+section#profile .profile {
+  flex-grow: 1;
+}
+
+section#profile .profile h4 {
+  display: inline-block;
+  margin: 0 0 4px;
+}
+
+section#colophon {
+  position: relative;
+  float-reference: page;
+  float: bottom;
+  margin-bottom: 0;
+}
+
+@media screen {
+  section#colophon {
+    margin-top: 8rem;
+  }
+}
+
+section#colophon ul.editions {
+  padding: 0;
+  list-style: none;
+}
+
+section#colophon ul.editions time {
+  display: inline-block;
+  width: 10em;
+}
+
+section#colophon table.info {
+  margin: 0;
+  width: 100%;
+  font-size: 100%;
+  border-top: 2px solid currentColor;
+}
+
+section#colophon table.info tr {
+  border: 0;
+  box-shadow: none;
+}
+
+section#colophon table.info tr:last-child {
+  border-bottom: 1px solid currentColor;
+}
+
+section#colophon table.info td {
+  vertical-align: top;
+  padding-left: 0;
+}
+
+article > h1 {
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+article > h1::before {
+  content: '';
+  position: absolute;
+  left: -140px;
+  right: -140px;
+  bottom: -6rem;
+  height: 250px;
+  background: no-repeat url(assets/article_bg.png) bottom;
+  background-size: contain;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+@media screen {
+  article > h1::before {
+    left: 0;
+    right: 0;
+    height: 400px;
+    opacity: 0.5;
+  }
+}
+
+@media print {
+  section#vivliostyletheme-academic-でレポート書いてみた！ .wide-table {
+    margin-left: -2rem;
+    margin-right: -2rem;
+  }
+}
+
+section#vivliostyletheme-academic-でレポート書いてみた！ img#fig-a230c7c4-ab76-4fe7-a47c-fcdaf37ccb94 {
+  object-fit: contain;
+  height: 15rem;
+}
+
+section#vivliostyletheme-academic-でレポート書いてみた！ img#fig-c09197af-5aea-4151-86e4-cd2f8105ce39 {
+  object-fit: contain;
+  height: 25rem;
+}
+
+section#vivliostyletheme-academic-でレポート書いてみた！ img#fig-39de9443-ad8d-4f2b-a1f9-86eacd79c53c {
+  object-fit: contain;
+  height: 25rem;
+}
+
+section#vivliostyletheme-academic-でレポート書いてみた！ img[src='images/a4bc4bf4-bafa-459d-b381-857d758a701c.png'] {
+  width: 15rem;
+}
+
+section#vivliostyletheme-academic-でレポート書いてみた！ img[src='images/315c1674-7ab7-4143-83fb-70b40e65b5b0.png'] {
+  width: 15rem;
+}
+
+section#vivliostyletheme-academic-でレポート書いてみた！ img[src='images/ed95e8fb-7f77-4a74-89c7-0b15ccaea8dc.png'] {
+  width: 25rem;
+}
+
+section#vivliostyletheme-academic-でレポート書いてみた！ img[src='images/e0e284bf-b751-422b-9f86-3b39a10abbc5.png'] {
+  width: 15rem;
+}
+
+section#vivliostyletheme-academic-でレポート書いてみた！ img[src='images/1f445380-d999-4c6e-b3ec-b43cab5999eb.png'] {
+  width: 20rem;
+}
+
+section#vivliostyletheme-academic-でレポート書いてみた！ img[src='images/89850f6f-2912-4a49-b634-291c8603615d.png'] {
+  width: 20rem;
+}
+
+section#vivliostyletheme-academic-でレポート書いてみた！ img[src='images/4efbac99-7507-485e-a51f-fc611e7da766.png'] {
+  width: 25rem;
+}
+
+section#vivliostyletheme-academic-でレポート書いてみた！ img[src='images/451f19a4-0df6-4e57-aa21-d0ef0fbb87ab.png'] {
+  width: 10rem;
+}
+
+section#vivliostyletheme-academic-でレポート書いてみた！ img[src='images/07a6c20b-6901-473a-80c2-2642be25787e.png'] {
+  width: 25rem;
+}
+
+section#vivliostyletheme-academic-でレポート書いてみた！ img[src='images/f275ff0f-345a-49c2-bd28-d56d4250d5a8.png'] {
+  width: 25rem;
+}
+
+section#vivliostyletheme-academic-でレポート書いてみた！ img[src='images/5ac7cbdc-0faa-4848-98ef-7af5e4e5f5f9.png'] {
+  width: 25rem;
+}
+
+section#vivliostyletheme-academic-でレポート書いてみた！ img[src='images/c3067552-cacf-4f39-b04c-d29d4d74acc1.png'] {
+  width: 25rem;
+}
+
+section#vivliostyletheme-academic-でレポート書いてみた！ img[src='images/1c4f64ec-c728-4d20-9338-2725d00ca6df.png'] {
+  width: 25rem;
+  box-shadow: 0 0 0 0.5px #000000;
+}
+
+section#vivliostyletheme-academic-でレポート書いてみた！ img#fig-dc546b4c-b504-44ff-8afe-608432241fc8 {
+  object-fit: contain;
+  height: 20rem;
+}
+
+section#css-で技術系同人誌のレイアウトを作る際に気をつけていること img#img001 {
+  object-fit: contain;
+  height: 25rem;
+}
+
+section#css-で技術系同人誌のレイアウトを作る際に気をつけていること img#img002 {
+  object-fit: contain;
+  height: 30rem;
+}
+
+section#create-book-で同人誌を作ろう！ img#fig-1,
+section#create-book-で同人誌を作ろう！ img#fig-a,
+section#create-book-で同人誌を作ろう！ img#fig-b,
+section#create-book-で同人誌を作ろう！ img#fig-c,
+section#create-book-で同人誌を作ろう！ img#fig-d,
+section#create-book-で同人誌を作ろう！ img#fig-e,
+section#create-book-で同人誌を作ろう！ img#fig-f,
+section#create-book-で同人誌を作ろう！ img#fig-g,
+section#create-book-で同人誌を作ろう！ img#fig-h,
+section#create-book-で同人誌を作ろう！ img#fig-i,
+section#create-book-で同人誌を作ろう！ img#fig-j,
+section#create-book-で同人誌を作ろう！ img#fig-k,
+section#create-book-で同人誌を作ろう！ img#fig-l {
+  object-fit: contain;
+}
+
+section#create-book-で同人誌を作ろう！ img#fig-1 {
+  height: 22rem;
+}
+
+section#create-book-で同人誌を作ろう！ img#fig-a {
+  height: 20rem;
+}
+
+section#create-book-で同人誌を作ろう！ img#fig-b {
+  height: 15rem;
+}
+
+section#create-book-で同人誌を作ろう！ img#fig-c {
+  height: 15rem;
+}
+
+section#create-book-で同人誌を作ろう！ img#fig-d {
+  height: 3rem;
+}
+
+section#create-book-で同人誌を作ろう！ img#fig-e {
+  height: 3rem;
+}
+
+section#create-book-で同人誌を作ろう！ img#fig-f {
+  height: 3rem;
+}
+
+section#create-book-で同人誌を作ろう！ img#fig-g {
+  height: 25rem;
+}
+
+section#create-book-で同人誌を作ろう！ img#fig-h {
+  height: 7rem;
+}
+
+section#create-book-で同人誌を作ろう！ img#fig-i {
+  height: 30rem;
+}
+
+section#create-book-で同人誌を作ろう！ img#fig-j {
+  height: 15rem;
+}
+
+section#create-book-で同人誌を作ろう！ img#fig-k {
+  height: 40rem;
+}
+
+section#create-book-で同人誌を作ろう！ img#fig-l {
+  height: 25rem;
+}
+
+/*# sourceMappingURL=bundle.css.map */

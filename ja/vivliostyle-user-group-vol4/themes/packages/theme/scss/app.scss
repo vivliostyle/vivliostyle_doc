@@ -1,0 +1,268 @@
+@import './font.scss';
+@import './lib-prism-okaidia.scss';
+@import './lib-override.scss';
+@import './base.scss';
+@import './counter.scss';
+@import './media.scss';
+@import './cover.scss';
+@import './toc.scss';
+
+section#profile {
+  .author {
+    display: flex;
+    margin: 1rem 0;
+    img {
+      margin: 0 10px 8px 0;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+    }
+  }
+
+  code {
+    margin: 0 0 0 0.5em;
+    & > i {
+      vertical-align: -0.03em;
+    }
+  }
+
+  .profile {
+    flex-grow: 1;
+    h4 {
+      display: inline-block;
+      margin: 0 0 4px;
+    }
+  }
+}
+
+section#colophon {
+  position: relative;
+  float-reference: page;
+  float: bottom;
+  margin-bottom: 0;
+
+  @media screen {
+    & {
+      margin-top: 8rem;
+    }
+  }
+
+  ul.editions {
+    padding: 0;
+    list-style: none;
+    time {
+      display: inline-block;
+      width: 10em;
+    }
+  }
+
+  table.info {
+    margin: 0;
+    width: 100%;
+    font-size: 100%;
+    border-top: 2px solid currentColor;
+    tr {
+      border: 0;
+      box-shadow: none;
+    }
+    tr:last-child {
+      border-bottom: 1px solid currentColor;
+    }
+    td {
+      vertical-align: top;
+      padding-left: 0;
+    }
+  }
+}
+
+article > h1 {
+  margin-bottom: 1rem;
+  position: relative;
+  // text-shadow: 0 0 5px #ffffff;
+  // filter: blur(0); // fix text-shadow on PDF output
+  &::before {
+    content: '';
+    position: absolute;
+    left: -140px;
+    right: -140px;
+    bottom: -6rem;
+    height: 250px;
+    background: no-repeat url(assets/article_bg.png) bottom;
+    background-size: contain;
+    z-index: -1;
+    opacity: 0.7;
+
+    @media screen {
+      & {
+        left: 0;
+        right: 0;
+        height: 400px;
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+section#vivliostyletheme-academic-でレポート書いてみた！ {
+  @media print {
+    & .wide-table {
+      margin-left: -2rem;
+      margin-right: -2rem;
+    }
+  }
+
+  img#fig-a230c7c4-ab76-4fe7-a47c-fcdaf37ccb94 {
+    object-fit: contain;
+    height: 15rem;
+  }
+
+  img#fig-c09197af-5aea-4151-86e4-cd2f8105ce39 {
+    object-fit: contain;
+    height: 25rem;
+  }
+
+  img#fig-39de9443-ad8d-4f2b-a1f9-86eacd79c53c {
+    object-fit: contain;
+    height: 25rem;
+  }
+
+  img[src='images/a4bc4bf4-bafa-459d-b381-857d758a701c.png'] {
+    width: 15rem;
+  }
+
+  img[src='images/315c1674-7ab7-4143-83fb-70b40e65b5b0.png'] {
+    width: 15rem;
+  }
+
+  img[src='images/ed95e8fb-7f77-4a74-89c7-0b15ccaea8dc.png'] {
+    width: 25rem;
+  }
+
+  img[src='images/e0e284bf-b751-422b-9f86-3b39a10abbc5.png'] {
+    width: 15rem;
+  }
+
+  img[src='images/1f445380-d999-4c6e-b3ec-b43cab5999eb.png'] {
+    width: 20rem;
+  }
+
+  img[src='images/89850f6f-2912-4a49-b634-291c8603615d.png'] {
+    width: 20rem;
+  }
+
+  img[src='images/4efbac99-7507-485e-a51f-fc611e7da766.png'] {
+    width: 25rem;
+  }
+
+  img[src='images/451f19a4-0df6-4e57-aa21-d0ef0fbb87ab.png'] {
+    width: 10rem;
+  }
+
+  img[src='images/07a6c20b-6901-473a-80c2-2642be25787e.png'] {
+    width: 25rem;
+  }
+
+  img[src='images/f275ff0f-345a-49c2-bd28-d56d4250d5a8.png'] {
+    width: 25rem;
+  }
+
+  img[src='images/5ac7cbdc-0faa-4848-98ef-7af5e4e5f5f9.png'] {
+    width: 25rem;
+  }
+
+  img[src='images/c3067552-cacf-4f39-b04c-d29d4d74acc1.png'] {
+    width: 25rem;
+  }
+
+  img[src='images/1c4f64ec-c728-4d20-9338-2725d00ca6df.png'] {
+    width: 25rem;
+    box-shadow: 0 0 0 0.5px #000000;
+  }
+
+  img#fig-dc546b4c-b504-44ff-8afe-608432241fc8 {
+    object-fit: contain;
+    height: 20rem;
+  }
+}
+
+section#css-で技術系同人誌のレイアウトを作る際に気をつけていること {
+  img#img001 {
+    object-fit: contain;
+    height: 25rem;
+  }
+
+  img#img002 {
+    object-fit: contain;
+    height: 30rem;
+  }
+}
+
+section#create-book-で同人誌を作ろう！ {
+  img#fig-1,
+  img#fig-a,
+  img#fig-b,
+  img#fig-c,
+  img#fig-d,
+  img#fig-e,
+  img#fig-f,
+  img#fig-g,
+  img#fig-h,
+  img#fig-i,
+  img#fig-j,
+  img#fig-k,
+  img#fig-l {
+    object-fit: contain;
+  }
+
+  img#fig-1 {
+    height: 22rem;
+  }
+
+  img#fig-a {
+    height: 20rem;
+  }
+
+  img#fig-b {
+    height: 15rem;
+  }
+
+  img#fig-c {
+    height: 15rem;
+  }
+
+  img#fig-d {
+    height: 3rem;
+  }
+
+  img#fig-e {
+    height: 3rem;
+  }
+
+  img#fig-f {
+    height: 3rem;
+  }
+
+  img#fig-g {
+    height: 25rem;
+  }
+
+  img#fig-h {
+    height: 7rem;
+  }
+
+  img#fig-i {
+    height: 30rem;
+  }
+
+  img#fig-j {
+    height: 15rem;
+  }
+
+  img#fig-k {
+    height: 40rem;
+  }
+
+  img#fig-l {
+    height: 25rem;
+  }
+}

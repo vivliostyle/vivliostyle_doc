@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>@vivliostyle/theme-academic でレポート書いてみた！</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../../themes/packages/theme/bundle.css">
+</head>
+<body>
+<section id="vivliostyletheme-academic-でレポート書いてみた！"><h1>@vivliostyle/theme-academic でレポート書いてみた！</h1><div class="draft-author">
+やましー
+</div><p>本稿は、<a href="https://github.com/vivliostyle/themes/tree/master/packages/%40vivliostyle/theme-academic">@vivliostyle/theme-academic</a> を使えば Vivliostyle でアカデミックな文書も作れちゃうよ！　ということをお伝えするものです。</p><section id="はじめに"><h2>はじめに</h2><p>こんにちは、<a href="https://twitter.com/yamasy1549">やましー</a>といいます。毎日課題レポートに追われる学生をしています。ちょうど本稿の執筆締め切りと種々のレポート提出締め切りが重なっていて、さっきまでｱﾜｱﾜしていたところです。</p><p>Vivliostyle ユーザー歴は 3 年くらいです。過去の同人誌<a href="https://vivliostyle.github.io/vivliostyle_doc/ja/vivliostyle-user-group-vol1/">『Vivliostyle で本を作ろう Vol.1』</a> では<a href="https://vivliostyle.github.io/vivliostyle_doc/ja/vivliostyle-user-group-vol1/yamasy/index.html">『CSS 組版やってみた！』</a>という題で、Vivliostyle を使って同人誌や卒論を書いた際の tips などを紹介しました。そのご縁もあって、このたび <a href="https://vivliostyle.org/ja/make-books-with-create-book/">Create Book</a> のデフォルトテーマのひとつである <a href="https://github.com/vivliostyle/themes/tree/master/packages/%40vivliostyle/theme-academic">@vivliostyle/theme-academic</a>（以下、theme-academic）を作りました。本稿では、theme-academic を使ってアカデミックな文書を作成する方法を紹介します。</p></section><section id="theme-academic-で何ができる？"><h2>theme-academic で何ができる？</h2><section id="サンプルはこんな感じ"><h3>サンプルはこんな感じ</h3><p>theme-academic は、Vivliostyle でアカデミックな文書を作るためのスタイルテーマです。現状、Create Book というツールを通して使うことができます。</p><p><img src="images/a230c7c4-ab76-4fe7-a47c-fcdaf37ccb94.jpg" id="fig-a230c7c4-ab76-4fe7-a47c-fcdaf37ccb94"></p><p>theme-academic では、Markdown で構造化された文書を書くだけでいい感じにレポートらしい PDF が出力できることを目指しています。サンプルをいくつか紹介しましょう。</p><p><figure><img src="images/c09197af-5aea-4151-86e4-cd2f8105ce39.jpg" alt="https://github.com/vivliostyle/themes/blob/master/packages/@vivliostyle/theme-academic/example/fet.md より" class="fig" id="fig-c09197af-5aea-4151-86e4-cd2f8105ce39"><figcaption>https://github.com/vivliostyle/themes/blob/master/packages/@vivliostyle/theme-academic/example/fet.md より</figcaption></figure></p><p><figure><img src="images/39de9443-ad8d-4f2b-a1f9-86eacd79c53c.jpg" alt="https://github.com/vivliostyle/themes/blob/master/packages/@vivliostyle/theme-academic/example/microcomputer.md より" class="fig" id="fig-39de9443-ad8d-4f2b-a1f9-86eacd79c53c"><figcaption>https://github.com/vivliostyle/themes/blob/master/packages/@vivliostyle/theme-academic/example/microcomputer.md より</figcaption></figure></p><p>こんなレポートが CSS 組版で書けるなんてわくわくしますね！　特に表のスタイルなんかはこだわり甲斐がありそうです。では、実際にレポートを書いて自分好みにカスタマイズしてみましょう。</p></section><section id="サンプルのレポートをビルドしてみよう"><h3>サンプルのレポートをビルドしてみよう</h3><p>以下の環境を仮定します。</p><ul>
+<li>Node.js: v14.8.0</li>
+<li>@vivliostyle/core: 2.1.1</li>
+<li>@vivliostyle/cli: 3.0.0-pre.3</li>
+<li>@vivliostyle/vfm: 1.0.0-alpha.10</li>
+<li>@vivliostyle/theme-academic: 0.2.0</li>
+</ul><p>まずは Create Book を使ってプロジェクトを作りましょう。簡単は流れは次の通りです。詳細は <a href="https://vivliostyle.org/ja/make-books-with-create-book/#Create%20Book%20%E3%82%92%E4%BD%BF%E3%81%86%E3%81%AB%E3%81%AF">『特集企画：Create Book で同人誌を作ろう！』の『Create Book を使うには』の章</a>を参考にしてください。</p><ol>
+<li><code>npm create book お好きなプロジェクト名</code></li>
+<li>テーマは <code>@vivliostyle/theme-academic</code> を選択</li>
+</ol><p>"Happy writing!" と出てプロジェクトが作成できたら、サンプルのレポートをビルドして PDF を作ってみましょう。vivliostyle.config.js の <code>entry</code> の部分を以下のように変更して <code>yarn build</code> すると、先程のスクショと同じ PDF が生成されているはずです。</p><figure class="language-js"><figcaption>vivliostyle.config.js</figcaption><pre class="language-js"><code class="language-js">entry<span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token comment">// サンプルのレポート</span>
+    <span class="token string">'node_modules/@vivliostyle/theme-academic/example/microcomputer.md'</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">,</span></code></pre></figure><p>余談ですが、<code>yarn preview</code> で立ち上がる Chromium の印刷機能で生成した PDF は、文字の選択とコピーなどができないようです。自分はこれを知らないままレポートを出して教員を苦しめてしまった実績があります……。<code>yarn build</code> で作られた PDF は文字が選択できます。</p></section><section id="サンプルで学ぶ、基本の使い方"><h3>サンプルで学ぶ、基本の使い方</h3><p>theme-academic では、レポートを書く際に必要と思われる基本的な要素をサポートしています。以下の表はその一例です。具体的な記法は<a href="https://github.com/vivliostyle/themes/blob/master/packages/@vivliostyle/theme-academic/example/microcomputer.md">サンプルのレポート（マークダウンで書かれたもの）</a>をご覧ください。VFM の記法は <a href="https://vivliostyle.github.io/vfm/#/vfm">https://vivliostyle.github.io/vfm/#/vfm</a> にまとまっています。</p><div class="wide-table">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>基本的な要素</th><th>記法</th><th>出力（PDF）</th></tr></thead><tbody><tr><td>見出し</td><td>GFM 準拠。<code>.nocounter</code> でカウンタを削除（<a href="https://github.com/vivliostyle/themes/blame/700d2567bd232b697f2935c95f174548f7cbc46c/packages/%40vivliostyle/theme-academic/example/fet.md#L182-L187">例</a>）</td><td><img src="images/a4bc4bf4-bafa-459d-b381-857d758a701c.png"></td></tr><tr><td>箇条書き</td><td>GFM 準拠。<code>ol.nostyle</code> <code>ul.nostyle</code> で箇条書きの記号を削除</td><td><img src="images/315c1674-7ab7-4143-83fb-70b40e65b5b0.png"></td></tr><tr><td>参考文献リスト</td><td><code>ol.reference</code> に HTML をそのまま書く（<a href="https://github.com/vivliostyle/themes/blame/700d2567bd232b697f2935c95f174548f7cbc46c/packages/%40vivliostyle/theme-academic/example/fet.md#L189-L194">例</a>）</td><td><img src="images/ed95e8fb-7f77-4a74-89c7-0b15ccaea8dc.png"></td></tr><tr><td>図</td><td><a href="https://vivliostyle.org/ja/make-books-with-create-book/#%E7%94%BB%E5%83%8F%E3%81%AE%E3%82%B5%E3%82%A4%E3%82%BA%E3%81%A8%E3%82%AD%E3%83%A3%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3">VFM 準拠</a>（<a href="https://github.com/vivliostyle/themes/blame/700d2567bd232b697f2935c95f174548f7cbc46c/packages/%40vivliostyle/theme-academic/example/fet.md#L42">例</a>）</td><td><img src="images/e0e284bf-b751-422b-9f86-3b39a10abbc5.png"></td></tr><tr><td>表</td><td>表キャプションが未実装のため、HTML をそのまま書く（<a href="https://github.com/vivliostyle/themes/blame/700d2567bd232b697f2935c95f174548f7cbc46c/packages/%40vivliostyle/theme-academic/example/fet.md#L66-L105">例</a>）。キャプション無しなら GFM 準拠</td><td><img src="images/1f445380-d999-4c6e-b3ec-b43cab5999eb.png"></td></tr><tr><td>参考文献・図表カウンタの参照</td><td>VFM で仕様が決まっていないため、参照<span style="font-family: body">元</span>に <code>&#x3C;a href="#id" data-ref="fig">&#x3C;/a></code>、参照先に <code>&#x3C;span id="id">&#x3C;/span></code> を書くことで代用（<a href="https://github.com/vivliostyle/themes/blame/700d2567bd232b697f2935c95f174548f7cbc46c/packages/%40vivliostyle/theme-academic/example/fet.md#L25-L35">例</a>）</td><td></td></tr><tr><td>後注</td><td><a href="https://vivliostyle.org/ja/make-books-with-create-book/#%E5%BE%8C%E6%B3%A8">VFM 準拠</a></td><td><img src="images/89850f6f-2912-4a49-b634-291c8603615d.png"></td></tr><tr><td>右・中央・左寄せ</td><td><code>.right</code> <code>.center</code> <code>.left</code></td><td><img src="images/4efbac99-7507-485e-a51f-fc611e7da766.png"></td></tr><tr><td>数式</td><td>KaTeX の記法が使える（<a href="https://github.com/vivliostyle/themes/blame/700d2567bd232b697f2935c95f174548f7cbc46c/packages/%40vivliostyle/theme-academic/example/fet.md#L155-L157">例</a>）</td><td><img src="images/451f19a4-0df6-4e57-aa21-d0ef0fbb87ab.png"></td></tr><tr><td>ソースコード</td><td>prism.js を使用（<a href="https://github.com/vivliostyle/themes/blame/700d2567bd232b697f2935c95f174548f7cbc46c/packages/%40vivliostyle/theme-academic/example/microcomputer.md#L77-L101">例</a>）</td><td><img src="images/07a6c20b-6901-473a-80c2-2642be25787e.png"></td></tr><tr><td>囲み</td><td><code>.frame</code>（<a href="https://github.com/vivliostyle/themes/blame/700d2567bd232b697f2935c95f174548f7cbc46c/packages/%40vivliostyle/theme-academic/example/microcomputer.md#L75-L103">例</a>）</td><td><img src="images/f275ff0f-345a-49c2-bd28-d56d4250d5a8.png"></td></tr><tr><td>タイトル下の著者情報など</td><td><code>.author</code> 内に箇条書き（<a href="https://github.com/vivliostyle/themes/blame/700d2567bd232b697f2935c95f174548f7cbc46c/packages/%40vivliostyle/theme-academic/example/fet.md#L7-L10">例</a>）</td><td><img src="images/5ac7cbdc-0faa-4848-98ef-7af5e4e5f5f9.png"></td></tr><tr><td>ヘッダー・フッターのテキスト</td><td>SCSS の <code>$page-top-left</code> などの変数で指定。後述</td><td><img src="images/c3067552-cacf-4f39-b04c-d29d4d74acc1.png"></td></tr><tr><td>表紙の有無</td><td>SCSS の <code>$cover</code> 変数で指定。<code>section.cover</code> 要素が表紙になり、表紙はページ番号がつかない（<a href="https://github.com/vivliostyle/themes/blame/700d2567bd232b697f2935c95f174548f7cbc46c/packages/%40vivliostyle/theme-academic/example/microcomputer.md#L5-L17">例</a>）。後述</td><td><img src="images/1c4f64ec-c728-4d20-9338-2725d00ca6df.png"></td></tr></tbody></table></div></section><section id="スタイルをカスタマイズしよう"><h3>スタイルをカスタマイズしよう</h3><p>公式テーマのスタイルをどのようにカスタマイズすべきかは <a href="https://github.com/vivliostyle/themes/issues/9">How to customize the style of themes? #9</a> で目下議論中ですが、現状できる筋肉解決的な方法のひとつに、テーマで使っている SCSS ファイルを編集する方法があります。面倒ですが、package.json と vivliostyle.config.js を以下のように変更し、<code>yarn dev</code> で SCSS ファイルをトランスパイルすればスタイルをカスタマイズできます。</p><pre class="language-text"><code class="language-text">$ yarn add node-sass npm-run-all</code></pre><figure class="language-json"><figcaption>package.json</figcaption><pre class="language-json"><code class="language-json"><span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"build"</span><span class="token operator">:</span> <span class="token string">"vivliostyle build"</span><span class="token punctuation">,</span>
+    <span class="token property">"dev"</span><span class="token operator">:</span> <span class="token string">"run-p preview watch:scss"</span><span class="token punctuation">,</span>
+    <span class="token property">"preview"</span><span class="token operator">:</span> <span class="token string">"vivliostyle preview"</span><span class="token punctuation">,</span>
+    <span class="token property">"watch:scss"</span><span class="token operator">:</span> <span class="token string">"node-sass node_modules/@vivliostyle/theme-academic/scss/main.scss custom.css -w -r -q --source-map true --output-style expanded"</span>
+<span class="token punctuation">}</span></code></pre></figure><figure class="language-js"><figcaption>vivliostyle.config.js</figcaption><pre class="language-js"><code class="language-js">theme<span class="token operator">:</span> <span class="token string">'custom.css'</span></code></pre></figure><p>たとえば node_modules/@vivliostyle/theme-academic/scss/variables.scss で定義された変数の値を書き換えることで、たとえば以下のようなカスタマイズができます。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>変数名</th><th>効果</th></tr></thead><tbody><tr><td><code>$font-serif</code> <code>$font-sans-serif</code> <code>$font-monospace</code></td><td>セリフ体・サンセリフ体・ソースコードのフォント</td></tr><tr><td><code>$page-width</code> <code>$page-height</code> <code>$page-margin-top</code></td><td>レポートのサイズ・余白</td></tr><tr><td><code>$body-font-size</code> <code>$body-line-height</code></td><td>本文のフォントサイズ・行高さ</td></tr><tr><td><code>$page-top-left</code> など</td><td>ヘッダー・フッターのテキスト</td></tr><tr><td><code>$cover</code></td><td>表紙の有無。<code>true</code> の場合は <code>section.cover</code> が表紙になり、表紙にはページ番号がつかない</td></tr></tbody></table></section></section><section id="ここがまだだよ-theme-academic"><h2>ここがまだだよ theme-academic</h2><p>theme-academic はまだ作られたばかりで、できないこともたくさんあります。以下はその一部です。</p><ul>
+<li>独立した目次ページ</li>
+<li>レポートにありがちな行数文字数指定ができない。横幅と縦幅から自分で <code>line-height</code> と <code>font-size</code> を算出する必要があります……</li>
+<li>2 段組み。theme-academic-twocolumn というテーマを近日中に公開する予定です。次のスクショのように、段抜きもできるようになります</li>
+</ul><p><img src="images/dc546b4c-b504-44ff-8afe-608432241fc8.png" id="fig-dc546b4c-b504-44ff-8afe-608432241fc8"></p><p>また、VFM の仕様に起因する問題もあります。</p><ul>
+<li>キャプションに VFM 記法が使えない</li>
+<li>カウンタ参照の記法がまだない</li>
+</ul><p>不便なことがあれば、是非 <a href="https://github.com/vivliostyle/themes/issues">vivliostyle/theme</a> や <a href="https://github.com/vivliostyle/vfm/issues">vivliostyle/vfm</a> にご意見をお寄せください。より便利なレポート生活のために、theme-academic を充実させていけたらと思っています。今後は、学会・学術誌指定のスタイルを適用したテーマを作ってみるのも良さそうですね。</p></section><section id="おわりに"><h2>おわりに</h2><p>本稿では、<a href="https://github.com/vivliostyle/themes/tree/master/packages/%40vivliostyle/theme-academic">@vivliostyle/theme-academic</a> を使って Vivliostyle でレポートが書けることを紹介しました。この CSS 組版の利点は、生テキストなので差分をとりやすく Git で管理しやすいことと、スタイルを自分好みにいじりやすいことだと思っています。他にも、場合によってはワープロソフトで作った文書よりもサイズが小さく済むかもしれませんし、同時に HTML も出力されるので、PDF 形式だけでなく Web ページとしても公開したいケースでは大変うれしいですね。個人的には論文を固定サイズの PDF で読むのはしんどいので、HTML 形式の論文を好きなブラウザ幅で読めるような流れになっていけばいいのになぁと願っています。</p><p>上でも述べましたが、theme-academic はまだ生まれたてです。使ってみた感想や意見などを <a href="https://github.com/vivliostyle/themes/issues">vivliostyle/theme</a> や <a href="https://github.com/vivliostyle/vfm/issues">vivliostyle/vfm</a> で聞かせていただけるとうれしいです。</p></section></section>
+</body>
+</html>
