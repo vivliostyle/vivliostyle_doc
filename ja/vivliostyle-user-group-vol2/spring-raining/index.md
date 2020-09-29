@@ -14,7 +14,7 @@ author:
 
 ## Remark
 
-Remark とは「Markdown processor」という紹介文の通り、Remark で書かれたテキストを読み込み様々な変換を施すことができる JavaScript 製のライブラリです。Remark は様々なライブラリと組み合わせて目的の形式のテキストに変換でき、**Rehype** と一緒に使うことで Markdown を HTML に変換できます。同様の処理をしてくれるライブラリとしては Marked.js が有名ですが、Remark の強力な機能は、Markdown を **抽象構文木（AST）**に変換することで、より柔軟に構文を改造できる点です。[^ Haskell 製のライブラリ **<a href="https://pandoc.org/">Pandoc</a>** も同様の方針で実装されたテキスト変換ツールで、様々な形式のテキストを入力・出力できます]
+Remark とは「Markdown processor」という紹介文の通り、Markdown で書かれたテキストを読み込み様々な変換を施すことができる JavaScript 製のライブラリです。Remark は様々なライブラリと組み合わせて目的の形式のテキストに変換でき、**Rehype** と一緒に使うことで Markdown を HTML に変換できます。同様の処理をしてくれるライブラリとしては Marked.js が有名ですが、Remark の強力な機能は、Markdown を **抽象構文木（AST）**に変換することで、より柔軟に構文を改造できる点です。[^ Haskell 製のライブラリ **<a href="https://pandoc.org/">Pandoc</a>** も同様の方針で実装されたテキスト変換ツールで、様々な形式のテキストを入力・出力できます]
 
 なお、非常に紛らわしいのですが、GitHub 上で検索すると「Remark」という名前のプロジェクトが 2 つ見つかります。今回紹介するプロジェクトは `gnab/remark` ではなく、`remarkjs/remark` のほうです。公式サイトも https://remarkjs.com ではなく https://remark.js.org なので気をつけてください。
 
