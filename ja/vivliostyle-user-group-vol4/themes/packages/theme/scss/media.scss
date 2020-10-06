@@ -110,7 +110,7 @@
   }
 
   table {
-    font-size: 80%;
+    font-size: $master-font-size-for-print * 0.8;
   }
 
   .footnote {
