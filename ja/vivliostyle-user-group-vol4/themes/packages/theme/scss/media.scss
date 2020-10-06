@@ -62,7 +62,7 @@
     widows: 3;
     orphans: 3;
     hyphens: auto;
-    font-size: $master-font-size-for-print;
+    font-size: 100% * ($master-font-size-for-print / 16px);
   }
 
   h1,

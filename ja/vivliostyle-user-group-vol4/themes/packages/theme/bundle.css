@@ -252,7 +252,6 @@ pre[class*='language-'] {
 :root {
   font-family: "Neue Frutiger World", "Verdana", "Yakumono", "body", "Hiragino Sans", sans-serif;
   font-weight: 400;
-  font-size: 16px;
   line-height: 1.7;
 }
 
@@ -531,7 +530,7 @@ ol.cite-items li::before {
     widows: 3;
     orphans: 3;
     hyphens: auto;
-    font-size: 12px;
+    font-size: 75%;
   }
   h1,
   h2,
