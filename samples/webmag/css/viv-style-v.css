@@ -257,6 +257,7 @@ body {
 .viv-header-keyperson {
   -epubx-flow-into: keyperson;
   -epubx-flow-options: static;
+  display: block !important;
   font-family: -epubx-expr(header-font);
   font-weight: 100;
   font-size: -epubx-expr(3vh + 5vw);

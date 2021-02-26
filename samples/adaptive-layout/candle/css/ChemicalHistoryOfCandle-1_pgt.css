@@ -8,7 +8,7 @@
 		-epubx-page: 1;
 		-epubx-utilization: -epubx-expr(((1em / 1px) * (1em / 1px)) * 3943 / 786432);
 		-epubx-enabled: -epubx-expr(layout1);
-		background-color: #bababa;
+		/* background-color: #bababa; */
 		@-epubx-partition-group
 		{
 			/* Page Group */
@@ -18,7 +18,7 @@
 				/* Page Fill Region */
 				-epubx-wrap-flow: auto;
 				-epubx-flow-from: none;
-				background-color: rgb(255,255,255);
+				/* background-color: rgb(255,255,255); */
 				left: 0px;
 				width: -epubx-expr(page-width);
 				top: 0px;
@@ -63,7 +63,7 @@
 		/* Spread 4 */
 		-epubx-utilization: -epubx-expr(((1em / 1px) * (1em / 1px)) * 2494 / 786432);
 		-epubx-enabled: -epubx-expr(layout1);
-		background-color: #bababa;
+		/* background-color: #bababa; */
 		@-epubx-partition-group
 		{
 			/* Page Group */
@@ -73,7 +73,7 @@
 				/* Page Fill Region */
 				-epubx-wrap-flow: auto;
 				-epubx-flow-from: none;
-				background-color: rgb(255,255,255);
+				/* background-color: rgb(255,255,255); */
 				left: 0px;
 				width: -epubx-expr(page-width);
 				top: 0px;
@@ -152,7 +152,7 @@
 		/* Spread 5 */
 		-epubx-utilization: -epubx-expr(((1em / 1px) * (1em / 1px)) * 2881 / 786432);
 		-epubx-enabled: -epubx-expr(layout1);
-		background-color: #bababa;
+		/* background-color: #bababa; */
 		@-epubx-partition-group
 		{
 			/* Page Group */
@@ -162,7 +162,7 @@
 				/* Page Fill Region */
 				-epubx-wrap-flow: auto;
 				-epubx-flow-from: none;
-				background-color: rgb(255,255,255);
+				/* background-color: rgb(255,255,255); */
 				left: 0px;
 				width: -epubx-expr(page-width);
 				top: 0px;
@@ -242,7 +242,7 @@
 		/* Spread 6 */
 		-epubx-utilization: -epubx-expr(((1em / 1px) * (1em / 1px)) * 2459 / 786432);
 		-epubx-enabled: -epubx-expr(layout1);
-		background-color: #bababa;
+		/* background-color: #bababa; */
 		@-epubx-partition-group
 		{
 			/* Page Group */
@@ -252,7 +252,7 @@
 				/* Page Fill Region */
 				-epubx-wrap-flow: auto;
 				-epubx-flow-from: none;
-				background-color: rgb(255,255,255);
+				/* background-color: rgb(255,255,255); */
 				left: 0px;
 				width: -epubx-expr(page-width);
 				top: 0px;
@@ -417,7 +417,7 @@
 		/* Spread 7 */
 		-epubx-utilization: -epubx-expr(((1em / 1px) * (1em / 1px)) * 2496 / 786432);
 		-epubx-enabled: -epubx-expr(layout1);
-		background-color: #bababa;
+		/* background-color: #bababa; */
 		@-epubx-partition-group
 		{
 			/* Page Group */
@@ -427,7 +427,7 @@
 				/* Page Fill Region */
 				-epubx-wrap-flow: auto;
 				-epubx-flow-from: none;
-				background-color: rgb(255,255,255);
+				/* background-color: rgb(255,255,255); */
 				left: 0px;
 				width: -epubx-expr(page-width);
 				top: 0px;
@@ -505,7 +505,7 @@
 	{
 		/* Master Spread 1 */
 		-epubx-enabled: -epubx-expr(layout1);
-		background-color: #bababa;
+		/* background-color: #bababa; */
 		@-epubx-partition-group
 		{
 			/* Page Group */
@@ -515,7 +515,7 @@
 				/* Page Fill Region */
 				-epubx-wrap-flow: auto;
 				-epubx-flow-from: none;
-				background-color: rgb(255,255,255);
+				/* background-color: rgb(255,255,255); */
 				left: 0px;
 				width: -epubx-expr(page-width);
 				top: 0px;
