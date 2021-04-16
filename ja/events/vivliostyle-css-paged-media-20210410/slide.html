@@ -25,7 +25,7 @@
           <ol>
             <li><a href="#named-strings">Named strings—柱を本文の見出しから</a></li>
             <li><a href="#named-pages">Named pages—名前付きのページルール</a></li>
-            <li><a href="#nth-page">Nth Page Selector: nth()</a></li>
+            <li><a href="#nth-page">Nth page selector: nth()</a></li>
           </ol>
         </li>
         <li><a href="#specs-supported">ページメディア用CSS仕様サポート状況まとめ</a>
@@ -84,9 +84,10 @@
         <p>🐢やっと昨年末から、ぼちぼち実装を進めることができている。</p>
         <p>🌟最新バージョンで利用可能になったページメディア用CSS機能:</p>
         <ul>
-          <li>✅ <a href="https://www.w3.org/TR/css-gcpm-3/#named-strings">Named strings</a>（名前付き文字列） 🌟v2.4 (2020-12-28)</li>
-          <li>✅ <a href="https://www.w3.org/TR/css-gcpm-3/#document-page-selectors">Nth Page Selector</a> 🌟v2.5 (2021-02-26)</li>
-          <li>✅ <a href="https://www.w3.org/TR/css-page-3/#using-named-pages">Named pages</a>（名前付きページ） 🌟v2.7 (2021-04-07)</li>
+          <li>✅ <a href="https://www.w3.org/TR/css-gcpm-3/#named-strings">Named strings</a> （名前付き文字列） 🌟<small>v2.4 (2020-12-28)</small></li>
+          <li>✅ <a href="https://www.w3.org/TR/css-gcpm-3/#document-page-selectors">Nth page selector</a> （N番目ページセレクタ） 🌟<small>v2.5 (2021-02-26)</small></li>
+          <li>✅ <a href="https://www.w3.org/TR/css-page-3/#using-named-pages">Named pages</a> （名前付きページ） 🌟<small>v2.7 (2021-04-07)</small></li>
+          <li>✅ <a href="https://www.w3.org/TR/css-page-3/#blank-pseudo">Blank page selector</a> （空白ページセレクタ） 🌟<small>v2.8 (2021-04-16)</small></li>
         </ul>
       </section>
     </section>
@@ -123,7 +124,7 @@
 <span class="token punctuation">}</span></code></pre>
       </section>
       <section id="nth-page">
-        <h2>Nth Page Selector: nth()</h2>
+        <h2>Nth page selector: nth()</h2>
         <p>文書の N 番目のページのスタイルを定義することなどできます。</p>
         <p>構文: <code>@page :nth(An+B)</code><br>（CSS セレクタ <code>:nth-child(An+B)</code> のページ版のようなもの）</p>
         <p>例:</p>
@@ -183,7 +184,7 @@
                 <ul>
                   <li>4.2.1 Spread pseudo-classes: :left, :right ✅</li>
                   <li>4.2.2 First-page pseudo-class: :first ✅</li>
-                  <li>4.2.3 Blank-page pseudo-class: :blank ❌</li>
+                  <li>4.2.3 Blank-page pseudo-class: :blank ✅🌟<small>v2.8 (2021-04-16)</small></li>
                 </ul>
               </li>
             </ul>
@@ -203,7 +204,7 @@
           </li>
           <li>8 Page Breaks
             <ul>
-              <li>8.1 Using named pages: page ✅🌟v2.7 (2021-04-07)</li>
+              <li>8.1 Using named pages: page ✅🌟<small>v2.7 (2021-04-07)</small></li>
             </ul>
           </li>
         </ul>
@@ -214,14 +215,14 @@
         <ul>
           <li>1 Running headers and footers
             <ul>
-              <li>1.1 Named strings ✅🌟v2.4 (2020-12-28)</li>
+              <li>1.1 Named strings ✅🌟<small>v2.4 (2020-12-28)</small></li>
               <li>1.2 Running elements ❌</li>
             </ul>
           </li>
           <li>2 Footnotes ✅</li>
           <li>3 Selecting Pages
             <ul>
-              <li>3.1 Page Selectors: :nth(An+B) ✅🌟v2.5 (2021-02-26)</li>
+              <li>3.1 Page Selectors: :nth(An+B) ✅🌟<small>v2.5 (2021-02-26)</small></li>
               <li>3.2 Page groups: :nth(An+B of pagegroup) ❌</li>
             </ul>
           </li>

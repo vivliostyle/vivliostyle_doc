@@ -13,7 +13,7 @@ Vivliostyle Foundation
 2. [CSS Paged Media を使いこなそう！](#use-css-paged-media)
     1. [Named strings—柱を本文の見出しから](#named-strings)
     2. [Named pages—名前付きのページルール](#named-pages)
-    3. [Nth Page Selector: nth()](#nth-page)
+    3. [Nth page selector: nth()](#nth-page)
 3. [ページメディア用CSS仕様サポート状況まとめ](#specs-supported)
     1. [CSS Paged Media Level 3](#css-page)
     2. [CSS Generated Content for Paged Media (GCPM)](#css-gcpm)
@@ -68,9 +68,10 @@ Vivliostyle.js にはだいぶ前からページメディア用のCSS仕様の�
 🐢やっと昨年末から、ぼちぼち実装を進めることができている。
 
 🌟最新バージョンで利用可能になったページメディア用CSS機能:
-- ✅ [Named strings](https://www.w3.org/TR/css-gcpm-3/#named-strings)（名前付き文字列） 🌟v2.4 (2020-12-28)
-- ✅ [Nth Page Selector](https://www.w3.org/TR/css-gcpm-3/#document-page-selectors) 🌟v2.5 (2021-02-26)
-- ✅ [Named pages](https://www.w3.org/TR/css-page-3/#using-named-pages)（名前付きページ） 🌟v2.7 (2021-04-07)
+- ✅ [Named strings](https://www.w3.org/TR/css-gcpm-3/#named-strings) （名前付き文字列） 🌟<small>v2.4 (2020-12-28)</small>
+- ✅ [Nth page selector](https://www.w3.org/TR/css-gcpm-3/#document-page-selectors) （N番目ページセレクタ） 🌟<small>v2.5 (2021-02-26)</small>
+- ✅ [Named pages](https://www.w3.org/TR/css-page-3/#using-named-pages) （名前付きページ） 🌟<small>v2.7 (2021-04-07)</small>
+- ✅ [Blank page selector](https://www.w3.org/TR/css-page-3/#blank-pseudo) （空白ページセレクタ） 🌟<small>v2.8 (2021-04-16)</small>
 
 
 # CSS Paged Media を使いこなそう！ {#use-css-paged-media}
@@ -110,7 +111,7 @@ h1.chapter[title] {
 }
 ```
 
-## Nth Page Selector: nth() {#nth-page}
+## Nth page selector: nth() {#nth-page}
 
 文書の N 番目のページのスタイルを定義することなどできます。
 
@@ -181,7 +182,7 @@ https://www.w3.org/TR/css-page-3/
   - 4.2 Page selectors
     - 4.2.1 Spread pseudo-classes: :left, :right ✅
     - 4.2.2 First-page pseudo-class: :first ✅
-    - 4.2.3 Blank-page pseudo-class: :blank ❌
+    - 4.2.3 Blank-page pseudo-class: :blank ✅🌟<small>v2.8 (2021-04-16)</small>
 - 5 Page-Margin Boxes ✅
 - 6 Page Properties
   - 6.1 Page-based counters ✅
@@ -190,17 +191,17 @@ https://www.w3.org/TR/css-page-3/
   - 7.2 Crop and Registration Marks: the marks property ✅
   - 7.3 Bleed Area: the bleed property ✅
 - 8 Page Breaks
-  - 8.1 Using named pages: page ✅🌟v2.7 (2021-04-07)
+  - 8.1 Using named pages: page ✅🌟<small>v2.7 (2021-04-07)</small>
 
 ## CSS Generated Content for Paged Media (GCPM) {#css-gcpm}
 https://www.w3.org/TR/css-gcpm-3/
 
 - 1 Running headers and footers
-  - 1.1 Named strings ✅🌟v2.4 (2020-12-28)
+  - 1.1 Named strings ✅🌟<small>v2.4 (2020-12-28)</small>
   - 1.2 Running elements ❌
 - 2 Footnotes ✅
 - 3 Selecting Pages
-  - 3.1 Page Selectors: :nth(An+B) ✅🌟v2.5 (2021-02-26)
+  - 3.1 Page Selectors: :nth(An+B) ✅🌟<small>v2.5 (2021-02-26)</small>
   - 3.2 Page groups: :nth(An+B of pagegroup) ❌
 - 4 Leaders: leader() ❌
 - 5 Cross-references
