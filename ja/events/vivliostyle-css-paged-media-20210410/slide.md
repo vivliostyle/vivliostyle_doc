@@ -208,7 +208,7 @@ https://www.w3.org/TR/css-gcpm-3/
   - 5.1 The target-counter() function ✅
   - 5.2 The target-counters() function ✅
   - 5.3 target-text ❌
-- 6 Bookmarks
+- 6 Bookmarks ❌
 
 ## CSS Fragmentation Level 3 {#css-break}
 https://www.w3.org/TR/css-break-3/

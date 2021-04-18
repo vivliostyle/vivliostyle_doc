@@ -1,0 +1,19 @@
+{
+  "@context": [
+    "https://schema.org",
+    "https://www.w3.org/ns/pub-context"
+  ],
+  "type": "Book",
+  "conformsTo": "https://github.com/vivliostyle/vivliostyle-cli",
+  "author": "MurakamiShinyu <murakami@vivliostyle.org>",
+  "dateModified": "2021-04-18T06:30:19.845Z",
+  "name": "vivliostyle-css-paged-media",
+  "readingOrder": [
+    {
+      "url": "slide.html",
+      "title": "CSS Paged Media implementation in Vivliostyle.js"
+    }
+  ],
+  "resources": [],
+  "links": []
+}

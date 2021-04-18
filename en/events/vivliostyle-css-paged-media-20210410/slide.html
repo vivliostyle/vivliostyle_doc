@@ -1,0 +1,271 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>CSS Paged Media implementation in Vivliostyle.js</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="theme-slide/theme.css">
+  </head>
+  <body>
+    <section class="cover" id="css-paged-media-implementation-in-vivliostylejs">
+      <h1>CSS Paged Media implementation in Vivliostyle.js</h1>
+      <p>2021-04-10<br>Shinyu Murakami<br>Vivliostyle Foundation</p>
+    </section>
+    <section class="toc" role="doc-toc" id="contents">
+      <h1>Contents</h1>
+      <ol>
+        <li><a href="#js-core">CSS typesetting engine: Vivliostyle.js Core</a>
+          <ol>
+            <li><a href="#vivliostyle-idea">The idea of Vivliostyle.js, since 2014</a></li>
+            <li><a href="#css-specs">Which CSS specifications are required for CSS typesetting?</a></li>
+            <li><a href="#dev-css-paged-media">Redeveloping CSS Paged Media support</a></li>
+          </ol>
+        </li>
+        <li><a href="#use-css-paged-media">Let's get familiar with CSS Paged Media!</a>
+          <ol>
+            <li><a href="#named-strings">Named strings—for running headers</a></li>
+            <li><a href="#named-pages">Named pages—page type selector</a></li>
+            <li><a href="#nth-page">Nth page selector: nth()</a></li>
+          </ol>
+        </li>
+        <li><a href="#specs-supported">Summary of supported CSS specs for paged media</a>
+          <ol>
+            <li><a href="#css-page">CSS Paged Media Level 3</a></li>
+            <li><a href="#css-gcpm">CSS Generated Content for Paged Media (GCPM)</a></li>
+            <li><a href="#css-break">CSS Fragmentation Level 3</a></li>
+            <li><a href="#css-page-floats">CSS Page Floats</a></li>
+            <li><a href="#documents">For more info, visit Vivliostyle Documents→Supported CSS Features</a></li>
+          </ol>
+        </li>
+      </ol>
+    </section>
+    <section id="js-core">
+      <h1>CSS typesetting engine: Vivliostyle.js Core</h1>
+      <section id="vivliostyle-idea">
+        <h2>The idea of Vivliostyle.js, since 2014</h2>
+        <ul>
+          <li>Develop an open-source CSS typesetting engine that runs on web browsers that anyone can freely use.</li>
+          <li>Use web browsers' rendering engine and PDF output feature.</li>
+          <li>Supports the latest web standards.</li>
+          <li>Contribute to the standardization and dissemination of CSS typesetting specifications<br>❌ Aiming for highly functional typesetting with own specifications (No, it's not.)</li>
+        </ul>
+      </section>
+      <section id="css-specs">
+        <h2>Which CSS specs are required for CSS typesetting?</h2>
+        <ul>
+          <li>Basic CSS specs that are standard in web browsers
+            <ul>
+              <li>CSS 2.1</li>
+              <li>Selectors Level 3</li>
+              <li>CSS Backgrounds and Borders Level 3</li>
+              <li>CSS Fonts Level 3</li>
+              <li>CSS Writing Modes Level 3</li>
+              <li>CSS Multi-column Layout Level 1</li>
+              <li>CSS Flexible Box Level 1</li>
+              <li>etc.</li>
+            </ul>
+          </li>
+          <li>CSS specs for paged media
+            <ul>
+              <li>CSS Paged Media Level 3<br>⭐️The basic CSS spec for paged media</li>
+              <li>CSS Generated Content for Paged Media (GCPM) 3<br>⭐️Running headers, footnotes, cross-references, etc.</li>
+              <li>CSS Fragmentation ⭐️Page breaks, etc.</li>
+              <li>CSS Page Floats<br>⭐️Positioning fugures in page</li>
+            </ul>
+          </li>
+        </ul>
+        <p>Vivliostyle.js uses web browsers,<br>so it can basically use any CSS specs for the web.<br>We just need to add support for CSS specs for paged media🌟</p>
+        <p>And so Vivliostyle.js development began. 👉<a href="https://vivliostyle.org/history/">History of Vivliostyle</a></p>
+      </section>
+      <section id="dev-css-paged-media">
+        <h2>Redeveloping CSS Paged Media support</h2>
+        <p>Many CSS paged media features have been implemented in Vivliostyle.js for quite some time. (Thanks to the <a href="https://vivliostyle.org/history/#based-on-the-epub-adaptive-layout-implementation-making-a-css-paged-media-implementation">early devs</a> 🙏）</p>
+        <p>However, a few important features remained unimplemented.</p>
+        <p>And finally, since the end of 2020, we have made some progress.</p>
+        <p>🌟CSS features for page media now available in the latest version:</p>
+        <ul>
+          <li>✅ <a href="https://www.w3.org/TR/css-gcpm-3/#named-strings">Named strings</a> 🌟<small>v2.4 (2020-12-28)</small></li>
+          <li>✅ <a href="https://www.w3.org/TR/css-gcpm-3/#document-page-selectors">Nth page selector</a> 🌟<small>v2.5 (2021-02-26)</small></li>
+          <li>✅ <a href="https://www.w3.org/TR/css-page-3/#using-named-pages">Named pages</a> 🌟<small>v2.7 (2021-04-07)</small></li>
+          <li>✅ <a href="https://www.w3.org/TR/css-page-3/#blank-pseudo">Blank page selector</a> 🌟<small>v2.8 (2021-04-16)</small></li>
+        </ul>
+      </section>
+    </section>
+    <section id="use-css-paged-media">
+      <h1>Let's get familiar with CSS Paged Media!</h1>
+      <section id="named-strings">
+        <h2>Named strings—for running headers</h2>
+        <p>An example usage of named string:</p>
+        <pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@page</span> <span class="token punctuation">:</span>right</span> <span class="token punctuation">{</span>  <span class="token comment">/* chapter title in the right page top-right header */</span>
+  <span class="token atrule"><span class="token rule">@top-right</span></span> <span class="token punctuation">{</span>  <span class="token comment">/* except in the first page of the chapter */</span>
+    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token function">string</span><span class="token punctuation">(</span>chap-title<span class="token punctuation">,</span> first-except<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+  <span class="token punctuation">}</span>            
+<span class="token punctuation">}</span>
+<span class="token selector">h1<span class="token class">.chapter</span></span> <span class="token punctuation">{</span>          <span class="token comment">/* chapter heading */</span>
+  <span class="token property">string-set</span><span class="token punctuation">:</span> chap-title <span class="token function">content</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">h1<span class="token class">.chapter</span><span class="token attribute"><span class="token punctuation">[</span><span class="token attr-name">title</span><span class="token punctuation">]</span></span></span> <span class="token punctuation">{</span>   <span class="token comment">/* can also use an attribute value */</span>
+  <span class="token property">string-set</span><span class="token punctuation">:</span> chap-title <span class="token function">attr</span><span class="token punctuation">(</span>title<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+      </section>
+      <section id="named-pages">
+        <h2>Named pages—page type selector</h2>
+        <p>Define page style by naming each type of page. An example:</p>
+        <pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@page</span> cover</span> <span class="token punctuation">{</span> <span class="token comment">/* Named page rule (name: "cover") */</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>  <span class="token comment">/* "cover" page should have no margins */</span>
+
+  <span class="token comment">/* "cover" page should have no page headers */</span>
+  <span class="token atrule"><span class="token rule">@top-left</span></span> <span class="token punctuation">{</span> <span class="token property">content</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+  <span class="token atrule"><span class="token rule">@top-right</span></span> <span class="token punctuation">{</span> <span class="token property">content</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector"><span class="token class">.cover</span></span> <span class="token punctuation">{</span>
+  <span class="token property">page</span><span class="token punctuation">:</span> cover<span class="token punctuation">;</span>  <span class="token comment">/* specify the named page with the page property */</span>
+<span class="token punctuation">}</span></code></pre>
+      </section>
+      <section id="nth-page">
+        <h2>Nth page selector: nth()</h2>
+        <p>Define the style of the Nth page of a document.</p>
+        <p>Syntax: <code>@page :nth(An+B)</code><br>(Like a page version of the <code>:nth-child(An+B)</code> selector)</p>
+        <p>Example:</p>
+        <pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@page</span> <span class="token punctuation">:</span><span class="token function">nth</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>cover.png<span class="token punctuation">)</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+        <section id="first-and-nth1">
+          <h3>Difference between <code>:first</code> and <code>:nth(1)</code> in multiple HTML documents concatenated</h3>
+          <p>When combining multiple HTML documents into a single book (PDF, WebPub):</p>
+          <ul>
+            <li><code>@page :first</code> matches only the first page of the first document.
+              <ul>
+                <li>This behavior has been in Vivliostyle since before. Note that the current CSS Paged Media spec does not define the behavior when combining multiple HTML documents into a book, so this behavior is not a standard.</li>
+              </ul>
+            </li>
+            <li><code>@page :nth(1)</code> matches the first page of each document.</li>
+          </ul>
+          <p>That is, if you have separate files for each chapter, <code>@page :nth(1)</code> matches to the first page of each chapter, and <code>@page :first</code> matches only to the first page of the whole.</p>
+        </section>
+        <section id="named-string-nth">
+          <h3>Combination of named page and :nth() example</h3>
+          <pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@page</span> <span class="token punctuation">:</span>first</span> <span class="token punctuation">{</span> <span class="token comment">/* matches only to the first page of the whole */</span>
+  <span class="token property">counter-reset</span><span class="token punctuation">:</span> chapter<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token atrule"><span class="token rule">@page</span> <span class="token property">chapter</span><span class="token punctuation">:</span><span class="token function">nth</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span></span> <span class="token punctuation">{</span> <span class="token comment">/* the first page of each chapter file */</span>
+  <span class="token property">counter-increment</span><span class="token punctuation">:</span> chapter<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">h1<span class="token pseudo-element">::before</span></span> <span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">"Chapter "</span> <span class="token function">counter</span><span class="token punctuation">(</span>chapter<span class="token punctuation">)</span> <span class="token string">". "</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.chapter</span></span> <span class="token punctuation">{</span>
+  <span class="token property">page</span><span class="token punctuation">:</span> chapter<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+          <p>The HTML file for each chapter looks like:</p>
+          <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>body</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>section</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>chapter<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>h1</span><span class="token punctuation">></span></span>The chapter title<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>h1</span><span class="token punctuation">></span></span>
+    ...
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>section</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>body</span><span class="token punctuation">></span></span></code></pre>
+          <p>This allows you to reset the chapter counter at the beginning of the whole and increment it at the beginning of each chapter.</p>
+          <p><strong>Note:</strong> If you have multiple chapters in a single HTML file, <code>@page chapter:nth(1)</code> will match only the first page of the HTML file, not each chapter.</p>
+        </section>
+      </section>
+    </section>
+    <section id="specs-supported">
+      <h1>Summary of supported CSS specs for paged media</h1>
+      <section id="css-page">
+        <h2>CSS Paged Media Level 3</h2>
+        <p><a href="https://www.w3.org/TR/css-page-3/">https://www.w3.org/TR/css-page-3/</a></p>
+        <ul>
+          <li>4 Page Selectors and the Page Context
+            <ul>
+              <li>4.1 The @page Rule ✅</li>
+              <li>4.2 Page selectors
+                <ul>
+                  <li>4.2.1 Spread pseudo-classes: :left, :right ✅</li>
+                  <li>4.2.2 First-page pseudo-class: :first ✅</li>
+                  <li>4.2.3 Blank-page pseudo-class: :blank ✅🌟<small>v2.8 (2021-04-16)</small></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>5 Page-Margin Boxes ✅</li>
+          <li>6 Page Properties
+            <ul>
+              <li>6.1 Page-based counters ✅</li>
+            </ul>
+          </li>
+          <li>7 Page Size
+            <ul>
+              <li>7.1 Page size: the size property ✅</li>
+              <li>7.2 Crop and Registration Marks: the marks property ✅</li>
+              <li>7.3 Bleed Area: the bleed property ✅</li>
+            </ul>
+          </li>
+          <li>8 Page Breaks
+            <ul>
+              <li>8.1 Using named pages: page ✅🌟<small>v2.7 (2021-04-07)</small></li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      <section id="css-gcpm">
+        <h2>CSS Generated Content for Paged Media (GCPM)</h2>
+        <p><a href="https://www.w3.org/TR/css-gcpm-3/">https://www.w3.org/TR/css-gcpm-3/</a></p>
+        <ul>
+          <li>1 Running headers and footers
+            <ul>
+              <li>1.1 Named strings ✅🌟<small>v2.4 (2020-12-28)</small></li>
+              <li>1.2 Running elements ❌</li>
+            </ul>
+          </li>
+          <li>2 Footnotes ✅</li>
+          <li>3 Selecting Pages
+            <ul>
+              <li>3.1 Page Selectors: :nth(An+B) ✅🌟<small>v2.5 (2021-02-26)</small></li>
+              <li>3.2 Page groups: :nth(An+B of pagegroup) ❌</li>
+            </ul>
+          </li>
+          <li>4 Leaders: leader() ❌</li>
+          <li>5 Cross-references
+            <ul>
+              <li>5.1 The target-counter() function ✅</li>
+              <li>5.2 The target-counters() function ✅</li>
+              <li>5.3 target-text ❌</li>
+            </ul>
+          </li>
+          <li>6 Bookmarks ❌</li>
+        </ul>
+      </section>
+      <section id="css-break">
+        <h2>CSS Fragmentation Level 3</h2>
+        <p><a href="https://www.w3.org/TR/css-break-3/">https://www.w3.org/TR/css-break-3/</a></p>
+        <ul>
+          <li>3.1 Breaks Between Boxes: the break-before and break-after properties ✅</li>
+          <li>3.2 Breaks Within Boxes: the break-inside property ✅</li>
+          <li>3.3 Breaks Between Lines: orphans, widows ✅</li>
+          <li>5.4 Fragmented Borders and Backgrounds: the box-decoration-break property ✅</li>
+        </ul>
+      </section>
+      <section id="css-page-floats">
+        <h2>CSS Page Floats</h2>
+        <p><a href="https://www.w3.org/TR/css-page-floats-3/">https://www.w3.org/TR/css-page-floats-3/</a></p>
+        <ul>
+          <li>3.1 The float-reference property ✅</li>
+          <li>3.2 The float property ✅</li>
+          <li>4 The clear property ✅</li>
+        </ul>
+      </section>
+      <section id="documents">
+        <h2>For more info, visit Vivliostyle Documents→Supported CSS Features</h2>
+        <ul>
+          <li>Vivliostyle Documents: <a href="https://vivliostyle.org/documents/">https://vivliostyle.org/documents/</a>
+            <ul>
+              <li>Supported CSS Features: <a href="https://docs.vivliostyle.org/#/supported-css-features">https://docs.vivliostyle.org/#/supported-css-features</a></li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+    </section>
+  </body>
+</html>
