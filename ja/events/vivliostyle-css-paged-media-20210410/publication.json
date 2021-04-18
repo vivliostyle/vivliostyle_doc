@@ -6,7 +6,8 @@
   "type": "Book",
   "conformsTo": "https://github.com/vivliostyle/vivliostyle-cli",
   "author": "MurakamiShinyu <murakami@vivliostyle.org>",
-  "dateModified": "2021-04-16T06:57:47.549Z",
+  "inLanguage": "ja",
+  "dateModified": "2021-04-18T07:51:01.881Z",
   "name": "vivliostyle-css-paged-media",
   "readingOrder": [
     {

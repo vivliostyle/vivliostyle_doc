@@ -1,7 +1,7 @@
 module.exports = {
   title: 'vivliostyle-css-paged-media', // populated into `manifest.json`, default to `title` of the first entry or `name` in `package.json`.
   author: 'MurakamiShinyu <murakami@vivliostyle.org>', // default to `author` in `package.json` or undefined.
-  // language: 'ja', // default to undefined.
+  language: 'en', // default to undefined.
   // size: 'A4', // paper size.
   theme: 'theme-slide/theme.css', // .css or local dir or npm package. default to undefined.
   entry: [

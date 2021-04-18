@@ -33,10 +33,11 @@ html {
     content: none;
   }
 }
-body {
-  margin: 0;
+@media print {
+  body {
+    margin: 0;
+  }
 }
-
 /* 表紙 */
 .cover {
   page: cover;
@@ -48,6 +49,11 @@ body {
   background-size: cover;
   padding: 10mm;
   color: #fff;
+}
+@media print {
+  .cover {
+    height: 100vh;
+  }
 }
 .cover h1 {
   color: inherit;

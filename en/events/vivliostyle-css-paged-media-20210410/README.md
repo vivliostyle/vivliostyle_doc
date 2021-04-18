@@ -1,11 +1,14 @@
 ## CSS Paged Media implementation in Vivliostyle.js (2021-04-10)
 
-View with Vivliostyle Viewer:
-https://vivliostyle.org/viewer/#src=https://vivliostyle.github.io/vivliostyle_doc/en/events/vivliostyle-css-paged-media-20210410/slide.html&bookMode=true&spread=false
+**View with Vivliostyle Viewer:**
+- https://vivliostyle.org/viewer/#src=https://vivliostyle.github.io/vivliostyle_doc/en/events/vivliostyle-css-paged-media-20210410/slide.html&bookMode=true&spread=false
+- Short URL: http://bit.ly/vivliostyle202104en
 
-Event: [Vivliostyle User/Dev Meetup 2021 Spring (Japanese)](https://vivliostyle.connpass.com/event/208401/)
+**HTML:** https://vivliostyle.github.io/vivliostyle_doc/en/events/vivliostyle-css-paged-media-20210410/slide.html
 
-[Japanese version](https://github.com/vivliostyle/vivliostyle_doc/tree/gh-pages/ja/events/vivliostyle-css-paged-media-20210410)
+**Event:** [Vivliostyle User/Dev Meetup 2021 Spring (Japanese)](https://vivliostyle.connpass.com/event/208401/)
+
+**Japanese version:** [Vivliostyle.js における CSS Paged Media の実装](https://github.com/vivliostyle/vivliostyle_doc/tree/gh-pages/ja/events/vivliostyle-css-paged-media-20210410)
 
 
 ------------------------------

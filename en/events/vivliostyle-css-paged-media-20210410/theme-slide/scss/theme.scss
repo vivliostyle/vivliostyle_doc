@@ -38,8 +38,10 @@ html {
   }
 }
 
-body {
-  margin: 0;
+@media print {
+  body {
+    margin: 0;
+  }
 }
 
 /* 表紙 */
@@ -54,6 +56,10 @@ body {
   background-size: cover;
   padding: 10mm;
   color: #fff;
+
+  @media print {
+    height: 100vh;
+  }
 
   h1 {
     color: inherit;

@@ -38,15 +38,16 @@ html {
   }
 }
 
-body {
-  margin: 0;
+@media print {
+  body {
+    margin: 0;
+  }
 }
 
 /* 表紙 */
 
 .cover {
   page: cover;
-  height: 100vh;
   background-color: #212057;
   background-image: url(https://vivliostyle.org/assets/header-image.svg);
   background-position: center;
@@ -54,6 +55,10 @@ body {
   background-size: cover;
   padding: 15mm;
   color: #fff;
+
+  @media print {
+    height: 100vh;
+  }
 
   h1 {
     color: inherit;
