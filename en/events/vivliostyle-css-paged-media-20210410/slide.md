@@ -31,7 +31,7 @@ Vivliostyle Foundation
 - Use web browsers' rendering engine and PDF output feature.
 - Supports the latest web standards.
 - Contribute to the standardization and dissemination of CSS typesetting specifications \
-  ❌ Aiming for highly functional typesetting with own specifications (No, it's not.)
+  ❌ No proprietary specification
 
 ## Which CSS specs are required for CSS typesetting? {#css-specs}
 
@@ -131,15 +131,15 @@ Example:
 When combining multiple HTML documents into a single book (PDF, WebPub):
 
 - `@page :first` matches only the first page of the first document.
-  - This behavior has been in Vivliostyle since before. Note that the current CSS Paged Media spec does not define the behavior when combining multiple HTML documents into a book, so this behavior is not a standard.
+  - This is how Vivliostyle already behaved. Note that the current CSS Paged Media spec does not define the behavior when combining multiple HTML documents into a book, so this behavior is not a standard.
 - `@page :nth(1)` matches the first page of each document.
 
-That is, if you have separate files for each chapter, `@page :nth(1)` matches to the first page of each chapter, and `@page :first` matches only to the first page of the whole.
+That is, if you have separate files for each chapter, `@page :nth(1)` matches the first page of each chapter, and `@page :first` matches only to the first page of the whole book.
 
 ### Combination of named page and :nth() example {#named-string-nth}
 
 ```css
-@page :first { /* matches only to the first page of the whole */
+@page :first { /* matches only the first page of the whole book */
   counter-reset: chapter;
 }
 @page chapter:nth(1) { /* the first page of each chapter file */
@@ -164,7 +164,7 @@ The HTML file for each chapter looks like:
 </body>
 ```
 
-This allows you to reset the chapter counter at the beginning of the whole and increment it at the beginning of each chapter.
+This allows you to initialize the chapter counter at the beginning of the whole book and increment it at the beginning of each chapter.
 
 **Note:** If you have multiple chapters in a single HTML file, `@page chapter:nth(1)` will match only the first page of the HTML file, not each chapter.
 

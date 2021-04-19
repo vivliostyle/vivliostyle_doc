@@ -47,7 +47,7 @@
           <li>Develop an open-source CSS typesetting engine that runs on web browsers that anyone can freely use.</li>
           <li>Use web browsers' rendering engine and PDF output feature.</li>
           <li>Supports the latest web standards.</li>
-          <li>Contribute to the standardization and dissemination of CSS typesetting specifications<br>❌ Aiming for highly functional typesetting with own specifications (No, it's not.)</li>
+          <li>Contribute to the standardization and dissemination of CSS typesetting specifications<br>❌ No proprietary specification</li>
         </ul>
       </section>
       <section id="css-specs">
@@ -138,16 +138,16 @@
           <ul>
             <li><code>@page :first</code> matches only the first page of the first document.
               <ul>
-                <li>This behavior has been in Vivliostyle since before. Note that the current CSS Paged Media spec does not define the behavior when combining multiple HTML documents into a book, so this behavior is not a standard.</li>
+                <li>This is how Vivliostyle already behaved. Note that the current CSS Paged Media spec does not define the behavior when combining multiple HTML documents into a book, so this behavior is not a standard.</li>
               </ul>
             </li>
             <li><code>@page :nth(1)</code> matches the first page of each document.</li>
           </ul>
-          <p>That is, if you have separate files for each chapter, <code>@page :nth(1)</code> matches to the first page of each chapter, and <code>@page :first</code> matches only to the first page of the whole.</p>
+          <p>That is, if you have separate files for each chapter, <code>@page :nth(1)</code> matches the first page of each chapter, and <code>@page :first</code> matches only to the first page of the whole book.</p>
         </section>
         <section id="named-string-nth">
           <h3>Combination of named page and :nth() example</h3>
-          <pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@page</span> <span class="token punctuation">:</span>first</span> <span class="token punctuation">{</span> <span class="token comment">/* matches only to the first page of the whole */</span>
+          <pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@page</span> <span class="token punctuation">:</span>first</span> <span class="token punctuation">{</span> <span class="token comment">/* matches only the first page of the whole book */</span>
   <span class="token property">counter-reset</span><span class="token punctuation">:</span> chapter<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span class="token atrule"><span class="token rule">@page</span> <span class="token property">chapter</span><span class="token punctuation">:</span><span class="token function">nth</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span></span> <span class="token punctuation">{</span> <span class="token comment">/* the first page of each chapter file */</span>
@@ -166,7 +166,7 @@
     ...
   <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>section</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>body</span><span class="token punctuation">></span></span></code></pre>
-          <p>This allows you to reset the chapter counter at the beginning of the whole and increment it at the beginning of each chapter.</p>
+          <p>This allows you to initialize the chapter counter at the beginning of the whole book and increment it at the beginning of each chapter.</p>
           <p><strong>Note:</strong> If you have multiple chapters in a single HTML file, <code>@page chapter:nth(1)</code> will match only the first page of the HTML file, not each chapter.</p>
         </section>
       </section>
