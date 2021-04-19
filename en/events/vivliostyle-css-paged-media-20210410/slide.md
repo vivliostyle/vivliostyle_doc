@@ -51,7 +51,7 @@ Vivliostyle Foundation
     ⭐️Running headers, footnotes, cross-references, etc.
   - CSS Fragmentation ⭐️Page breaks, etc.
   - CSS Page Floats \
-    ⭐️Positioning fugures in page
+    ⭐️Positioning figures in page
 
 Vivliostyle.js uses web browsers, \
 so it can basically use any CSS specs for the web. \
@@ -78,7 +78,7 @@ And finally, since the end of 2020, we have made some progress.
 
 ## Named strings—for running headers {#named-strings}
 
-An example usage of named string:
+Example usage of named string:
 ```css
 @page :right {  /* chapter title in the right page top-right header */
   @top-right {  /* except in the first page of the chapter */
@@ -95,7 +95,7 @@ h1.chapter[title] {   /* can also use an attribute value */
 
 ## Named pages—page type selector {#named-pages}
 
-Define page style by naming each type of page. An example:
+Define page style by naming each type of page. Example:
 
 ```css
 @page cover { /* Named page rule (name: "cover") */

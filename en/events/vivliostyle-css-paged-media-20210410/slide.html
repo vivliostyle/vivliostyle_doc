@@ -70,7 +70,7 @@
               <li>CSS Paged Media Level 3<br>⭐️The basic CSS spec for paged media</li>
               <li>CSS Generated Content for Paged Media (GCPM) 3<br>⭐️Running headers, footnotes, cross-references, etc.</li>
               <li>CSS Fragmentation ⭐️Page breaks, etc.</li>
-              <li>CSS Page Floats<br>⭐️Positioning fugures in page</li>
+              <li>CSS Page Floats<br>⭐️Positioning figures in page</li>
             </ul>
           </li>
         </ul>
@@ -95,7 +95,7 @@
       <h1>Let's get familiar with CSS Paged Media!</h1>
       <section id="named-strings">
         <h2>Named strings—for running headers</h2>
-        <p>An example usage of named string:</p>
+        <p>Example usage of named string:</p>
         <pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@page</span> <span class="token punctuation">:</span>right</span> <span class="token punctuation">{</span>  <span class="token comment">/* chapter title in the right page top-right header */</span>
   <span class="token atrule"><span class="token rule">@top-right</span></span> <span class="token punctuation">{</span>  <span class="token comment">/* except in the first page of the chapter */</span>
     <span class="token property">content</span><span class="token punctuation">:</span> <span class="token function">string</span><span class="token punctuation">(</span>chap-title<span class="token punctuation">,</span> first-except<span class="token punctuation">)</span><span class="token punctuation">;</span> 
@@ -110,7 +110,7 @@
       </section>
       <section id="named-pages">
         <h2>Named pages—page type selector</h2>
-        <p>Define page style by naming each type of page. An example:</p>
+        <p>Define page style by naming each type of page. Example:</p>
         <pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@page</span> cover</span> <span class="token punctuation">{</span> <span class="token comment">/* Named page rule (name: "cover") */</span>
   <span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>  <span class="token comment">/* "cover" page should have no margins */</span>
 
