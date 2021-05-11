@@ -46,7 +46,7 @@ html {
 
 /* 表紙 */
 
-.cover {
+section.cover {
   page: cover;
   background-color: #212057;
   background-image: url(https://vivliostyle.org/assets/header-image.svg);
@@ -83,7 +83,7 @@ html {
 
 /* 目次 */
 
-.toc {
+section.toc {
   page-break-before: always;
 
   h1 {

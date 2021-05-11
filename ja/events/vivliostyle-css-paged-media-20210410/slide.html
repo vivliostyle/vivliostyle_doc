@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="theme-slide/theme.css">
   </head>
   <body>
-    <section class="cover" id="vivliostylejs-における-css-paged-media-の実装">
-      <h1>Vivliostyle.js における CSS Paged Media の実装</h1>
+    <section class="level1 cover" id="vivliostylejs-における-css-paged-media-の実装">
+      <h1 class="cover">Vivliostyle.js における CSS Paged Media の実装</h1>
       <p>2021-04-10<br>Shinyu Murakami<br>Vivliostyle Foundation</p>
     </section>
-    <section class="toc" role="doc-toc" id="目次">
-      <h1>目次</h1>
+    <section class="level1 toc" role="doc-toc" id="目次">
+      <h1 class="toc" role="doc-toc">目次</h1>
       <ol>
         <li><a href="#js-core">CSS組版エンジン Vivliostyle.js Core</a>
           <ol>
@@ -39,9 +39,9 @@
         </li>
       </ol>
     </section>
-    <section id="js-core">
+    <section id="js-core" class="level1">
       <h1>CSS組版エンジン Vivliostyle.js Core</h1>
-      <section id="vivliostyle-idea">
+      <section id="vivliostyle-idea" class="level2">
         <h2>Vivliostyle.js のアイデア　since 2014</h2>
         <ul>
           <li>だれもが自由に使えるWebブラウザ上で動くCSS組版エンジンをオープンソースで開発</li>
@@ -50,7 +50,7 @@
           <li>CSS組版仕様の標準化と普及に貢献<br>❌ 独自仕様で高機能組版を目指す（というのではない。）</li>
         </ul>
       </section>
-      <section id="css-specs">
+      <section id="css-specs" class="level2">
         <h2>CSS組版に必要なCSS仕様は？</h2>
         <ul>
           <li>Webブラウザで標準で使える基本的なCSS仕様
@@ -77,7 +77,7 @@
         <p>Vivliostyle.js はWebブラウザを利用する。<br>したがってWeb用のCSS仕様は基本的に利用できる。<br>ページメディア用のCSS仕様サポートを追加すればよい🌟</p>
         <p>そうして Vivliostyle.js 開発がスタート　👉<a href="https://vivliostyle.org/ja/history/">Vivliostyle のなりたち</a></p>
       </section>
-      <section id="dev-css-paged-media">
+      <section id="dev-css-paged-media" class="level2">
         <h2>再開発途上 CSS Paged Media サポート</h2>
         <p>Vivliostyle.js にはだいぶ前からページメディア用のCSS仕様の多くの機能が実装済み。（<a href="https://vivliostyle.org/ja/history/#epub-adaptive-layout-%E5%AE%9F%E8%A3%85%E3%82%92%E3%83%99%E3%83%BC%E3%82%B9%E3%81%AB-css-paged-media-%E3%81%AE%E5%AE%9F%E8%A3%85">初期の開発者たち</a>に感謝🙏）</p>
         <p>しかし、いくつかの重要な機能が実装されずに残っていた。</p>
@@ -91,9 +91,9 @@
         </ul>
       </section>
     </section>
-    <section id="use-css-paged-media">
+    <section id="use-css-paged-media" class="level1">
       <h1>CSS Paged Media を使いこなそう！</h1>
-      <section id="named-strings">
+      <section id="named-strings" class="level2">
         <h2>Named strings—柱を本文の見出しから</h2>
         <p>名前付き文字列(Named strings)の使用例:</p>
         <pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@page</span> <span class="token punctuation">:</span>right</span> <span class="token punctuation">{</span>
@@ -108,7 +108,7 @@
   <span class="token property">string-set</span><span class="token punctuation">:</span> chap-title <span class="token function">attr</span><span class="token punctuation">(</span>title<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">/* 属性の値を使うことも可能 */</span>
 <span class="token punctuation">}</span></code></pre>
       </section>
-      <section id="named-pages">
+      <section id="named-pages" class="level2">
         <h2>Named pages—名前付きのページルール</h2>
         <p>ページの種類ごとに名前をつけてページ設定を定義。 例:</p>
         <pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@page</span> cover</span> <span class="token punctuation">{</span> <span class="token comment">/* 名前付きのページ設定（名前: "cover"） */</span>
@@ -123,7 +123,7 @@
   <span class="token property">page</span><span class="token punctuation">:</span> cover<span class="token punctuation">;</span>  <span class="token comment">/* pageプロパティで使用する名前付きページを指定 */</span>
 <span class="token punctuation">}</span></code></pre>
       </section>
-      <section id="nth-page">
+      <section id="nth-page" class="level2">
         <h2>Nth page selector: nth()</h2>
         <p>文書の N 番目のページのスタイルを定義することなどできます。</p>
         <p>構文: <code>@page :nth(An+B)</code><br>（CSS セレクタ <code>:nth-child(An+B)</code> のページ版のようなもの）</p>
@@ -132,7 +132,7 @@
   <span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
   <span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>cover.png<span class="token punctuation">)</span></span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
-        <section id="first-and-nth1">
+        <section id="first-and-nth1" class="level3">
           <h3>複数HTML文書連結の場合の <code>@page :first</code> と <code>@page :nth(1)</code> の違い</h3>
           <p>複数HTML文書をまとめて１つの本（PDF、WebPub）にする場合:</p>
           <ul>
@@ -145,7 +145,7 @@
           </ul>
           <p>つまり、章ごとにファイルを分けている場合、<code>@page :nth(1)</code> は各章の先頭ページに適用、 <code>@page :first</code> は全体の先頭ページだけ。</p>
         </section>
-        <section id="named-string-nth">
+        <section id="named-string-nth" class="level3">
           <h3>名前付きページと <code>:nth()</code> の組み合わせの例</h3>
           <pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@page</span> <span class="token punctuation">:</span>first</span> <span class="token punctuation">{</span>　<span class="token comment">/* 全体の一番最初のページのみに適用 */</span>
   <span class="token property">counter-reset</span><span class="token punctuation">:</span> chapter<span class="token punctuation">;</span>
@@ -171,9 +171,9 @@
         </section>
       </section>
     </section>
-    <section id="specs-supported">
+    <section id="specs-supported" class="level1">
       <h1>ページメディア用CSS仕様サポート状況まとめ</h1>
-      <section id="css-page">
+      <section id="css-page" class="level2">
         <h2>CSS Paged Media Level 3</h2>
         <p><a href="https://www.w3.org/TR/css-page-3/">https://www.w3.org/TR/css-page-3/</a></p>
         <ul>
@@ -209,7 +209,7 @@
           </li>
         </ul>
       </section>
-      <section id="css-gcpm">
+      <section id="css-gcpm" class="level2">
         <h2>CSS Generated Content for Paged Media (GCPM)</h2>
         <p><a href="https://www.w3.org/TR/css-gcpm-3/">https://www.w3.org/TR/css-gcpm-3/</a></p>
         <ul>
@@ -237,7 +237,7 @@
           <li>6 Bookmarks ❌</li>
         </ul>
       </section>
-      <section id="css-break">
+      <section id="css-break" class="level2">
         <h2>CSS Fragmentation Level 3</h2>
         <p><a href="https://www.w3.org/TR/css-break-3/">https://www.w3.org/TR/css-break-3/</a></p>
         <ul>
@@ -247,7 +247,7 @@
           <li>5.4 Fragmented Borders and Backgrounds: the box-decoration-break property ✅</li>
         </ul>
       </section>
-      <section id="css-page-floats">
+      <section id="css-page-floats" class="level2">
         <h2>CSS Page Floats</h2>
         <p><a href="https://www.w3.org/TR/css-page-floats-3/">https://www.w3.org/TR/css-page-floats-3/</a></p>
         <ul>
@@ -256,7 +256,7 @@
           <li>4 The clear property ✅</li>
         </ul>
       </section>
-      <section id="documents">
+      <section id="documents" class="level2">
         <h2>より詳しくは Vivliostyle ドキュメント→「サポートする CSS 機能」へ</h2>
         <ul>
           <li>日本語ドキュメントページ: <a href="https://vivliostyle.org/ja/documents/">https://vivliostyle.org/ja/documents/</a>

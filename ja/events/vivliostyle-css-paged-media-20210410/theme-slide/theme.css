@@ -39,7 +39,7 @@ html {
   }
 }
 /* 表紙 */
-.cover {
+section.cover {
   page: cover;
   background-color: #212057;
   background-image: url(https://vivliostyle.org/assets/header-image.svg);
@@ -50,11 +50,11 @@ html {
   color: #fff;
 }
 @media print {
-  .cover {
+  section.cover {
     height: 100vh;
   }
 }
-.cover h1 {
+section.cover h1 {
   color: inherit;
   font-weight: 600;
   font-size: 220%;
@@ -63,40 +63,40 @@ html {
   margin-top: 1.25em;
   margin-bottom: 1.25em;
 }
-.cover p {
+section.cover p {
   font-size: 130%;
   font-weight: 500;
   text-align: center;
 }
-.cover a {
+section.cover a {
   color: inherit;
 }
 
 /* 目次 */
-.toc {
+section.toc {
   page-break-before: always;
 }
-.toc h1 {
+section.toc h1 {
   color: #06a;
   font-size: 120%;
   font-weight: 600;
   margin: 0 0 0.5em;
 }
-.toc > ol {
+section.toc > ol {
   font-size: 83%;
   margin: 0;
 }
-.toc > ol > li {
+section.toc > ol > li {
   padding-top: 0.125em;
   padding-bottom: 0.125em;
 }
-.toc li a {
+section.toc li a {
   text-decoration: none;
 }
-.toc ol li a::after {
+section.toc ol li a::after {
   content: "　" target-counter(attr(href url), page);
 }
-.toc > ol > li > ol {
+section.toc > ol > li > ol {
   font-size: 83%;
 }
 
