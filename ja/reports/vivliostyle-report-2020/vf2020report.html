@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>一般社団法人ビブリオスタイル 2020年度事業報告書</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="report.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">一般社団法人ビブリオスタイル 2020年度事業報告書</h1>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#第1章-2020年度第3期-2020年4月1日2021年3月31日事業報告"><strong>第1章 2020年度（第3期 2020年4月1日〜2021年3月31日）事業報告</strong></a>
+<ul>
+<li><a href="#年度のまとめ">2019年度のまとめ</a></li>
+<li><a href="#コロナ禍の襲来">コロナ禍の襲来</a></li>
+<li><a href="#vivliostyle-ユーザーと開発者の集い-2020春を開催">「Vivliostyle ユーザーと開発者の集い 2020春」を開催</a></li>
+<li><a href="#未踏アドバンスト事業への応募">未踏アドバンスト事業への応募</a></li>
+<li><a href="#公式サイトのリニューアルと経営体制の拡充">公式サイトのリニューアルと経営体制の拡充</a></li>
+<li><a href="#vivliostyle-pubをめぐる外部企業との交渉">Vivliostyle Pubをめぐる外部企業との交渉</a></li>
+<li><a href="#プロダクトの拡大と開発の中断">プロダクトの拡大と開発の中断</a></li>
+<li><a href="#開発体制のリブート">開発体制のリブート</a></li>
+<li><a href="#vivliostyle-coreの進化と売上の確保">Vivliostyle Coreの進化と売上の確保</a></li>
+<li><a href="#受託開発によるvivliostyle-viewerおよびcoreの開発促進">受託開発によるVivliostyle ViewerおよびCoreの開発促進</a></li>
+<li><a href="#年度のまとめ-1">2020年度のまとめ</a></li>
+</ul></li>
+<li><a href="#第2章-2020年度第3期-2020年4月1日2021年3月31日決算報告">第2章 2020年度（第3期 2020年4月1日〜2021年3月31日）決算報告</a>
+<ul>
+<li><a href="#年度-貸借対照表">2020年度 貸借対照表</a></li>
+<li><a href="#年度-正味財産増減計算書">2020年度 正味財産増減計算書</a></li>
+<li><a href="#年度収支計算書">2020年度収支計算書</a></li>
+</ul></li>
+</ul>
+</nav>
+<h2 id="第1章-2020年度第3期-2020年4月1日2021年3月31日事業報告"><strong>第1章 2020年度（第3期 2020年4月1日〜2021年3月31日）事業報告</strong></h2>
+<h3 id="年度のまとめ">2019年度のまとめ</h3>
+<ul>
+<li>新たな開発体制の構築
+<ul>
+<li>開発イベントを開催し、そこでコントリビュータになり得るエンジニアを集める</li>
+<li>月次で開発者会議を開催することにし、そこで開発についてコントリビュータと議論することにする</li>
+</ul></li>
+<li>そうして開発者会議からVivliostyle Pubの構想がたちあがる
+<ul>
+<li>ターゲットユーザ
+<ul>
+<li>技術系同人誌をつくるエンジニア</li>
+</ul></li>
+<li>開発の趣旨
+<ul>
+<li>Vivliostyle CLI をクラウドにおき、コンテンツはGitHubで管理し、ユーザはブラウザで操作するWebアプリ</li>
+</ul></li>
+<li>ビジネスモデル
+<ul>
+<li>前提として、印刷会社にVivliostyle Pubを使った印刷プランを作ってもらう</li>
+<li>PDFの生成後に印刷会社別の納品ページに直接遷移できるようにする</li>
+<li>これにより、PDFを作ればダイレクトに印刷データの納品が可能になる</li>
+<li>つまり、印刷会社はVivliostyle Pubを自社の営業窓口にできる</li>
+<li>成約した場合、当法人は印刷会社から割り戻しをいただくことにする</li>
+</ul></li>
+</ul></li>
+<li>残された課題はVivliostyle Pubの開発を支える資金の確保であり、これが2020年度の課題となる</li>
+</ul>
+<h3 id="コロナ禍の襲来">コロナ禍の襲来</h3>
+<ul>
+<li>4/7：東京、神奈川、埼玉、千葉、大阪、兵庫、福岡の7都府県に緊急事態宣言が出され、空前の景気後退が懸念される状況に突入</li>
+<li>この状況で、当てにしていた外部企業からのVivliostyle Viewer関連の受託開発も棚上げになり、売上の見込みがなくなる</li>
+<li>当法人は4月に収益事業開始届をだしたばかりなので、国による支援金も当てにできない</li>
+<li>6月には信用金庫に融資を申し込むが、実績がなく事業の継続性が担保されないとの理由で、あえなく断られてしまう</li>
+<li>ただし業務面に限れば、以前から事務所を持たずにリモートで仕事をするスタイルだったので、とくに影響がなかったのは幸いだった</li>
+<li>結局、辛かったのは年度前半だけで、巣ごもり需要を追い風にしてIT業界全体が売上を伸ばしたのと同様、後半はむしろコロナ禍が好材料となった（後述）</li>
+</ul>
+<h3 id="vivliostyle-ユーザーと開発者の集い-2020春を開催">「Vivliostyle ユーザーと開発者の集い 2020春」を開催</h3>
+<ul>
+<li>各種イベントが中止になる中、公式サイトのリニューアル作業で忙殺されていることもあり、イベント自体を中止にする判断もあり得た</li>
+<li>しかし、あえて攻めに出ることにして、オンラインのみに切り替えて開催</li>
+<li>結果として、参加申込142名という大反響を得ることができた
+<ul>
+<li>この記録は現在も破られていない</li>
+</ul></li>
+<li>また発表準備のためにコミットが急増する「イベントドリブン開発」効果も見られた</li>
+</ul>
+<h3 id="未踏アドバンスト事業への応募">未踏アドバンスト事業への応募</h3>
+<ul>
+<li>4/2：資金確保を目指し、コントリビュータが主体となって未踏アドバンスト事業に応募
+<ul>
+<li>テーマはVivliostyle Pubの開発</li>
+</ul></li>
+<li>5/15：ぶじに一次予選を通過→5/16：二次審査を受験（この段階でVivliostyle Pubはα版を完成させる）→6/10：あえなく落選
+<ul>
+<li>落選の理由：独自記法を覚える必要があることと、細かい調整をするためには記法が複雑になる懸念があり、これらを簡便に扱える説得力のある解決策がありませんでした</li>
+</ul></li>
+<li>好むと好まざるとに関わらず、この落選は以降の開発／活動に大きな影響を与えることになった</li>
+</ul>
+<h3 id="公式サイトのリニューアルと経営体制の拡充">公式サイトのリニューアルと経営体制の拡充</h3>
+<ul>
+<li>4/10：ドイツ国立科学技術図書館によるVivliostyleを使ったCOVID-19対策の教科書出版を公式サイトのブログで報じる</li>
+<li>4/29：GitHub Sponsors による支援を公式サイトで呼びかける</li>
+<li>5/29：TechSoup への登録が承認され、G Suites、Slack、GitHub等が無償利用できるように</li>
+<li>6/11：2019年度事業報告書を公式サイトで公開</li>
+<li>8/29：円建てクレジットカード決済（Robot Payment）によるスポンサー募集を公式サイトで開始
+<ul>
+<li>2020年度は、全部で61,209円の寄付金をいただくことができた（別表1）</li>
+</ul></li>
+</ul>
+<h3 id="vivliostyle-pubをめぐる外部企業との交渉">Vivliostyle Pubをめぐる外部企業との交渉</h3>
+<ul>
+<li>組版エンジンであるVivliostyleのパートナー候補としては、出版社や印刷会社など種々考えられる</li>
+<li>その中で双方にとってメリットのある提携ができるのがフォントベンダーだと考えていた</li>
+<li>そうした中で、コントリビュータが主体となって応募した未踏アドバンスト事業に落選してしまった</li>
+<li>いよいよ、当法人が提携先を見つけ、開発資金を確保するしかない</li>
+<li>7/9：あるフォントベンダーの知人にメールでビデオ会議を申し込み、提携にむけて交渉入り</li>
+<li>9/11：ビデオ会議で、パートナーとして当法人と一緒にVivliostyle Pubの開発／運用するよう提案するプレゼンをおこなう
+<ul>
+<li><a href="https://www.dropbox.com/s/oelj7kczvnepe8s/20200911_Vivliostyle%20%E3%81%AE%E3%81%94%E7%B4%B9%E4%BB%8B.png?dl=0">20200911_Vivliostyle のご紹介.png</a></li>
+</ul></li>
+<li>開発者会議でコントリビュータと開発方針を討議した上で、以下のような事業計画を送った
+<ul>
+<li>先方に100％子会社を設立してもらい、その会社がVivliostyle Pubの運用と営業をおこない、収益を上げる</li>
+<li>当法人は子会社から委託料をもらい、Vivliostyle Pubの開発と保守を持続的におこなう</li>
+<li>開発日程は別表2を参照</li>
+</ul></li>
+<li>11/11：先方から断りの返事をもらう</li>
+<li>その後の開発者会議で、「Markdow原稿からPDFが出力できるだけでも、前述ビジネスモデルは問題なく実現できる」という判断の下、以下の日程により最小限の機能を実現したバージョンのローンチを目指すことになった
+<ul>
+<li>2021年8月末……ベータ版公開</li>
+<li>2021年12月……ローンチ</li>
+</ul></li>
+<li>その上で、引き続き開発を進めながら提携先を模索することになった</li>
+</ul>
+<h3 id="プロダクトの拡大と開発の中断">プロダクトの拡大と開発の中断</h3>
+<ul>
+<li>以下はいずれもコントリビュータのuetchy 氏がブルドーザーのような勢いで開発を進めてくれたプロダクト。（どれも未踏アドバンスト事業の落選後であること、そしてこれらはVivliostyle Pubの要素技術でもあることに注意）
+<ul>
+<li>6/13：vfm v1.0.0-alpha.0をリリース（リポジトリ作成は1/22）</li>
+<li>6/24：create-book v0.1.0をリリース（リポジトリ作成は6/24）</li>
+<li>7/1：<span class="citation" data-cites="vivliostyle/react">@vivliostyle/react</span> <a href="https://github.com/vivliostyle/vivliostyle.js/commit/57e20fef20d29c97732d7166dc1346f0c43120cd#diff-c4e04145a0c0890aa93bb707d9ce1f8dc425719d02eb095c2f242280bee34b2b">v2.1.0</a>をリリース（最初のコミットは6/22）</li>
+<li>7/1：<span class="citation" data-cites="vivliostyle/theme-bunko">@vivliostyle/theme-bunko</span><span class="citation" data-cites="0.2.1">@0.2.1</span> をリリース（リポジトリ作成は6/15）</li>
+<li>7/1：CLI 3.0 pre.1をリリース</li>
+</ul></li>
+<li>たった一人で驚くべき作業量だが、その反面 <a href="http://glazman.org/e0/webbook.html">Web Book</a> や <a href="https://www.w3.org/TR/wpub/">Web Publications</a> （以下、Webブックと総称）、unzipEPUB がサポートされなくなる等の破壊的変更が加えられていた</li>
+<li>8月下旬をすぎるとuetchy 氏のコミットはピタリと途絶え、7月を最後に月例開発者会議にも参加しなくなってしまった
+<ul>
+<li>どうやらuetchy 氏は去ってしまったらしい。さて、どうする？</li>
+</ul></li>
+</ul>
+<h3 id="開発体制のリブート">開発体制のリブート</h3>
+<ul>
+<li>10/24 「Vivliostyle ユーザーと開発者の集い 2020秋」を開催</li>
+<li>そこでドイツ国立科学技術図書館のSimon Worthington氏に発表を依頼</li>
+<li>Simon Worthington氏と議論する中で、村上はWebブックを中間ファイルにすれば、それほど工数がかからずに、PDFはもちろんEPUBへの書き出しができ、ワン・ソース・マルチユースが実現できることに気づく</li>
+<li>折りからuetchy 氏が離脱した後の体制立て直しを迫られていた村上は、Webブックへの対応を軸に、Vivliostyle PubとVivliostyle CLI 新バージョンの要件定義をまとめた。
+<ul>
+<li>11/9 <a href="https://github.com/vivliostyle/community/wiki/Vivliostyle-Pub-v1-Req">Vivliostyle Pub v1 Req</a></li>
+<li>11/9〜2/9 <a href="https://github.com/vivliostyle/community/wiki/Vivliostyle-CLI-v3.0-new-spec">Vivliostyle CLI v3.0 new spec</a></li>
+</ul></li>
+<li>この要件定義を叩き台にして、開発会議やGitHub issue上でコントリビュータが議論し、新バージョンの仕様が作られた。</li>
+<li>さらにプロダクトごとに担当者を決め、主体的に開発を進めてもらうよう体制を立て直した</li>
+</ul>
+<h3 id="vivliostyle-coreの進化と売上の確保">Vivliostyle Coreの進化と売上の確保</h3>
+<ul>
+<li>ここまで見てきたように、売り上げ確保の努力はことごとく失敗に終わっていた</li>
+<li>このままでは手持ち資金が底をついてしまう</li>
+<li>そんな八方塞がりの状況を打ち破ったのは、村上が以前から進めてきた一般企業からのVivliostyle Viewer関連の受託開発だった</li>
+<li>その背景には巣ごもり需要を追い風にしたIT業界全体の好況があったと考えられる</li>
+<li>そうした好況により、止まっていたVivliostyle Viewer関連の受託開発が動き出し、いくつか受注をいただくことができた</li>
+<li>別表1の「事業収益」とは、すべてこのVivliostyle Viewer関連の受託開発および付随する保守・サポート料である</li>
+<li>（とはいえ、資金繰りの綱渡りは次期以降に持ち越される……）</li>
+</ul>
+<h3 id="受託開発によるvivliostyle-viewerおよびcoreの開発促進">受託開発によるVivliostyle ViewerおよびCoreの開発促進</h3>
+<ul>
+<li>受託開発をすすめることで、Vivliostyle Viewerの開発も順調に進めることができた
+<ul>
+<li>2020/12/07：v.2.3.0……ページスライダー機能、見開き表示改良</li>
+<li><strong>2020/12/28：v.2.4.0……見出しの柱表示機能（CSS Paged Media: named strings for running headers and footers）</strong></li>
+<li>2021/01/31：v2.4.2……簡易版設定メニュー</li>
+<li><strong>2021/02/26：v2.5.0……特定のページを指定できる “nth() page selector”（</strong><a href="https://www.w3.org/TR/css-gcpm-3/"><strong>CSS Generated Content for Paged Media (GCPM) 3</strong></a><strong>）</strong></li>
+</ul></li>
+<li>結果として、今まで懸案になっていたVivliostyle CoreにおけるCSS Paged MediaやCSS Generated Content for Paged Media (GCPM) の実装も進めることができた（上記、太字項目）</li>
+<li>これらの成果はVivliostyle CLIを経由してVivliostyle Pubにも受け継がれる予定</li>
+</ul>
+<h3 id="年度のまとめ-1">2020年度のまとめ</h3>
+<ul>
+<li>Vivliostyle のコアコンピタンス（中核となる強み）は「標準（HTML+CSS）にもとづくページ組版を、オープンソース開発によって実現していること」である</li>
+<li>今期を振り返って感じるのは、Vivliostyle は自らのコアコンピタンスによって今期をしのぐことができたということだ
+<ul>
+<li>コアコンピタンスに共鳴したからこそ多くの優秀なコントリビュータが集まってくれたのだし、コアコンピタンスによって何らかの利益が期待できるからこそ企業も開発を委託してくれた</li>
+<li>つまり、当法人は自らのコアコンピタンスによって、かろうじて危機を乗り越えることができた</li>
+</ul></li>
+<li>ただし、初めてまとまった額の事業収益を計上できたとはいえ、赤字を解消するにはほど遠いのが現実だ
+<ul>
+<li>貸借対照表（第2章）を見ると明らかなように、2,052,730円の赤字決算であり、役員借入金によって当座の資金を確保したに過ぎない</li>
+<li>来期はせめて累積赤字を減少に転じさせないと、持続可能性に赤信号がつく</li>
+</ul></li>
+<li>現状において、当法人のコアコンピタンスを具現化するプロダクトがVivliostyle Pubである
+<ul>
+<li>現在、ある企業から2021年9月（ベータ版）以降に自社事業に使う引き合いをいただいている。
+<ul>
+<li>当法人は、サポートと周辺ツールの委託開発、及び保守管理で収益を上げる予定</li>
+</ul></li>
+<li>また、別のある印刷会社から前述ビジネスモデルによる印刷をしたい旨、申し出をいただいている</li>
+<li>これらの申し出により、Vivliostyle Pubのローンチ後もサービスを維持できる目途は立ったと言える</li>
+</ul></li>
+<li>一定の品質でVivliostyle Pubのサービスを維持すれば、自社の事業に利用したい企業が増えると見込まれる
+<ul>
+<li>そうした企業からの収益で体力を蓄えつつ、より多くの人に使いやすいサービスへと発展させるため、パートナーとなる提携先企業を探したい</li>
+</ul></li>
+<li>そのために最も大切なことは、当法人の原点でもあるコアコンピタンスを守ることであろう</li>
+</ul>
+<p>別表1：経常収益</p>
+<p><img src="https://paper-attachments.dropbox.com/s_F001F0895104356CB9C308C0852ED6227056353C3C8446F5F3132D88CABBE13D_1622188995822_.png" /></p>
+<p>別表2：交渉で提示したVivliostyle Pubの開発日程</p>
+<table>
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 24%" />
+<col style="width: 19%" />
+<col style="width: 16%" />
+<col style="width: 14%" />
+<col style="width: 19%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>目標</strong></th>
+<th><strong>開発マイルストーン</strong></th>
+<th><strong>サポートする主な機能</strong></th>
+<th><strong>売り物とする機能</strong></th>
+<th><strong>主要なユーザ対象</strong></th>
+<th><strong>主要な収益源</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2021/6</td>
+<td>ブラウザ版リリース (GitHubアカウント)</td>
+<td>PDF/x-1a、フォント埋込EPUBの出力</td>
+<td>Markdown→CSS組版→PDF</td>
+<td>技術系同人誌作家</td>
+<td>印刷会社からのバックマージン</td>
+</tr>
+<tr class="even">
+<td>2022/6</td>
+<td>自社アカウントに移行</td>
+<td>小説投稿サイトと連携したファイル入力</td>
+<td>フォント埋め込みEPUBの出力</td>
+<td>(上記に加え) 小説系同人誌作家</td>
+<td>(上記に加え) 有料会員収入</td>
+</tr>
+<tr class="odd">
+<td>2022/12</td>
+<td>アプリ版リリース</td>
+<td></td>
+<td>小説投稿サイトと連携したファイル入力</td>
+<td>(上記に加え) なろう系作家</td>
+<td>(上記に加え) 電子書店からのバックマージン</td>
+</tr>
+<tr class="even">
+<td>2023/12</td>
+<td>ブラウザ版／アプリ版でWYSIWIG モードをサポート</td>
+<td>WYSIWIG モード</td>
+<td>WYSIWIG モード</td>
+<td>同上</td>
+<td>同上</td>
+</tr>
+</tbody>
+</table>
+<h2 id="第2章-2020年度第3期-2020年4月1日2021年3月31日決算報告">第2章 2020年度（第3期 2020年4月1日〜2021年3月31日）決算報告</h2>
+<h3 id="年度-貸借対照表">2020年度 貸借対照表</h3>
+<table>
+<thead>
+<tr class="header">
+<th>科目</th>
+<th><strong>当年度</strong></th>
+<th><strong>前年度</strong></th>
+<th><strong>増減</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Ⅰ 資産の部</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>1 流動資産</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>現金・預金</strong></td>
+<td>345,708</td>
+<td>52,565</td>
+<td>293,143</td>
+</tr>
+<tr class="even">
+<td><strong>流動資産合計</strong></td>
+<td>345,708</td>
+<td>52,565</td>
+<td>293,143</td>
+</tr>
+<tr class="odd">
+<td><strong>2 固定資産</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>創立費</strong></td>
+<td>113,050</td>
+<td>113,050</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td><strong>資産合計</strong></td>
+<td>458,758</td>
+<td>165,615</td>
+<td>293,143</td>
+</tr>
+<tr class="even">
+<td><strong>Ⅱ 負債の部</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>1 流動負債</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>預り金</strong></td>
+<td>31,139</td>
+<td>72,568</td>
+<td>-41,429</td>
+</tr>
+<tr class="odd">
+<td><strong>役員借入金</strong></td>
+<td>3,806,561</td>
+<td>1,186,477</td>
+<td>2,620,084</td>
+</tr>
+<tr class="even">
+<td><strong>負債合計</strong></td>
+<td>3,837,700</td>
+<td>1,259,045</td>
+<td>2,578,655</td>
+</tr>
+<tr class="odd">
+<td><strong>Ⅲ 正味財産の部</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>1 一般正味財産</strong></td>
+<td>-3,378,942</td>
+<td>-1,093,430</td>
+<td>-2,285,512</td>
+</tr>
+<tr class="odd">
+<td><strong>正味財産合計</strong></td>
+<td>-3,378,942</td>
+<td>-1,093,430</td>
+<td>-2,285,512</td>
+</tr>
+<tr class="even">
+<td><strong>正味財産合計</strong></td>
+<td>458,758</td>
+<td>165,615</td>
+<td>293,143</td>
+</tr>
+</tbody>
+</table>
+<h3 id="年度-正味財産増減計算書">2020年度 正味財産増減計算書</h3>
+<table>
+<thead>
+<tr class="header">
+<th>科目</th>
+<th><strong>当年度</strong></th>
+<th><strong>前年度</strong></th>
+<th><strong>増減</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Ⅰ. 一般正味財産増減の部</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>1. 経常増減の部</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>⑴ 経常収益</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>①事業収益</td>
+<td>1,503,721</td>
+<td>0</td>
+<td>1,503,721</td>
+</tr>
+<tr class="odd">
+<td>事業収益1</td>
+<td>1,503,721</td>
+<td></td>
+<td>1,503,721</td>
+</tr>
+<tr class="even">
+<td>②受け取り寄付金</td>
+<td>61,209</td>
+<td></td>
+<td>61,209</td>
+</tr>
+<tr class="odd">
+<td>受け取り寄付金</td>
+<td>61,209</td>
+<td>0</td>
+<td>61,209</td>
+</tr>
+<tr class="even">
+<td>③雑収益</td>
+<td>4</td>
+<td>1</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>受取利息</td>
+<td>4</td>
+<td>1</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>経常利益計</td>
+<td>1,564,934</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>⑵ 経常費用</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>① 事業費</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>事業経費</td>
+<td>373,823</td>
+<td>67,850</td>
+<td>305,973</td>
+</tr>
+<tr class="even">
+<td>旅費交通費</td>
+<td>11,527</td>
+<td>12,080</td>
+<td>△553</td>
+</tr>
+<tr class="odd">
+<td>通信運搬費</td>
+<td>252</td>
+<td></td>
+<td>252</td>
+</tr>
+<tr class="even">
+<td>雑費</td>
+<td>39,064</td>
+<td></td>
+<td>39,064</td>
+</tr>
+<tr class="odd">
+<td>事業費・経費1</td>
+<td>65,575</td>
+<td>55,770</td>
+<td>9,805</td>
+</tr>
+<tr class="even">
+<td>事業費・経費2</td>
+<td>257,405</td>
+<td></td>
+<td>257,405</td>
+</tr>
+<tr class="odd">
+<td>事業費計</td>
+<td>373,823</td>
+<td>67,850</td>
+<td>305,973</td>
+</tr>
+<tr class="even">
+<td>② 管理費</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>人件費1</td>
+<td>3,454,000</td>
+<td>984,881</td>
+<td>2,469,119</td>
+</tr>
+<tr class="even">
+<td>会議費</td>
+<td>2,623</td>
+<td></td>
+<td>2,623</td>
+</tr>
+<tr class="odd">
+<td>管理費計</td>
+<td>3,456,623</td>
+<td>984,881</td>
+<td>2,471,742</td>
+</tr>
+<tr class="even">
+<td>経常費用計</td>
+<td>3,830,446</td>
+<td>1,052,731</td>
+<td>2,777,715</td>
+</tr>
+<tr class="odd">
+<td>評価損益等調整前当期経常増減額</td>
+<td>△2,265,512</td>
+<td>△1,052,730</td>
+<td>△1,212,782</td>
+</tr>
+<tr class="even">
+<td>評価損益等計</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>当期経常増減額</td>
+<td>△2,265,512</td>
+<td>△1,052,730</td>
+<td>△1,212,782</td>
+</tr>
+<tr class="even">
+<td>2. 経常外増減の部</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>⑴ 経常外収益</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>経常外収益計</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>⑵ 経常外費用</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>経常外費用計</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>当期経常外増減額</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>他会計振替前当期一般正味財産増減額</td>
+<td>△2,265,512</td>
+<td>△1,052,730</td>
+<td>△1,212,782</td>
+</tr>
+<tr class="odd">
+<td>税引前当期一般正味財産増減額</td>
+<td>△2,265,512</td>
+<td>△1,052,730</td>
+<td>△1,212,782</td>
+</tr>
+<tr class="even">
+<td>法人税、住民税及び事業税</td>
+<td>20,000</td>
+<td>40,700</td>
+<td>△20,700</td>
+</tr>
+<tr class="odd">
+<td>当期一般正味財産増減額</td>
+<td>△2,285,512</td>
+<td>△1,052,730</td>
+<td>△1,192,082</td>
+</tr>
+<tr class="even">
+<td>一般正味財産期首残高</td>
+<td>△1,093,430</td>
+<td>0</td>
+<td>△1,093,430</td>
+</tr>
+<tr class="odd">
+<td>一般正味財産期末残高</td>
+<td>△3,378,942</td>
+<td>△1,093,430</td>
+<td>△2,285,512</td>
+</tr>
+<tr class="even">
+<td><strong>Ⅱ. 指定正味財産増減の部</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>当期指定正味財産増減額</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>指定正味財産期首残高</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>指定正味財産期末残高</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td><strong>Ⅲ. 正味財産期末残高</strong></td>
+<td>△3,378,942</td>
+<td>△1,093,430</td>
+<td>△1,093,430</td>
+</tr>
+</tbody>
+</table>
+<h3 id="年度収支計算書">2020年度収支計算書</h3>
+<table>
+<thead>
+<tr class="header">
+<th>科目</th>
+<th>予算額</th>
+<th>決算額</th>
+<th>差異</th>
+<th>備考</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Ⅰ. 一般正味財産増減の部</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>1. 経常増減の部</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>⑴ 経常収益</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>①事業収益</td>
+<td>0</td>
+<td>1,503,721</td>
+<td>△1,503,721</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>事業収益1</td>
+<td></td>
+<td>1,503,721</td>
+<td>△1,503,721</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>②受け取り寄付金</td>
+<td>0</td>
+<td>61,209</td>
+<td>△61,209</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>受け取り寄付金</td>
+<td></td>
+<td>61,209</td>
+<td>△61,209</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>③雑収益</td>
+<td>0</td>
+<td>4</td>
+<td>△4</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>受取利息</td>
+<td></td>
+<td>4</td>
+<td>△4</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>経常利益計</td>
+<td>0</td>
+<td>1,564,934</td>
+<td>△1,564,934</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>⑵ 経常費用</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>① 事業費</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>事業経費</td>
+<td>0</td>
+<td>373,823</td>
+<td>△373,823</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>旅費交通費</td>
+<td></td>
+<td>11,527</td>
+<td>△11,527</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>通信運搬費</td>
+<td></td>
+<td>252</td>
+<td>△252</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>雑費</td>
+<td></td>
+<td>39,064</td>
+<td>△39,064</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>事業費・経費1</td>
+<td></td>
+<td>65,575</td>
+<td>△65,575</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>事業費・経費2</td>
+<td></td>
+<td>257,405</td>
+<td>△257,405</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>事業費計</td>
+<td>0</td>
+<td>373,823</td>
+<td>△373,823</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>② 管理費</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>人件費1</td>
+<td></td>
+<td>3,454,000</td>
+<td>△3,454,000</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>会議費</td>
+<td></td>
+<td>2,623</td>
+<td>△2,623</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>管理費計</td>
+<td>0</td>
+<td>3,456,623</td>
+<td>△3,456,623</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>経常費用計</td>
+<td>0</td>
+<td>3,830,446</td>
+<td>△3,830,446</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>評価損益等調整前当期経常増減額</td>
+<td>0</td>
+<td>△2,265,512</td>
+<td>2,265,512</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>評価損益等計</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>当期経常増減額</td>
+<td>0</td>
+<td>△2,265,512</td>
+<td>2,265,512</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2. 経常外増減の部</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>⑴ 経常外収益</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>経常外収益計</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>⑵ 経常外費用</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>経常外費用計</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>当期経常外増減額</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>他会計振替前当期一般正味財産増減額</td>
+<td>0</td>
+<td>△2,265,512</td>
+<td>2,265,512</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>税引前当期一般正味財産増減額</td>
+<td>0</td>
+<td>△2,265,512</td>
+<td>2,265,512</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>法人税、住民税及び事業税</td>
+<td>0</td>
+<td>20,000</td>
+<td>△20,000</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>当期一般正味財産増減額</td>
+<td>0</td>
+<td>△2,285,512</td>
+<td>2,285,512</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>一般正味財産期首残高</td>
+<td>0</td>
+<td>△1,093,430</td>
+<td>1,093,430</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>一般正味財産期末残高</td>
+<td>0</td>
+<td>△3,378,942</td>
+<td>3,378,942</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>Ⅱ. 指定正味財産増減の部</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>当期指定正味財産増減額</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>指定正味財産期首残高</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>指定正味財産期末残高</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>Ⅲ. 正味財産期末残高</strong></td>
+<td>0</td>
+<td>△3,378,942</td>
+<td>3,378,942</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
