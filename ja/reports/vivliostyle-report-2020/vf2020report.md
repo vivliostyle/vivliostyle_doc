@@ -167,7 +167,7 @@ CSS組版は先端的な技術分野であり、それをWebアプリにより�
 
 [^14]: [公開する #51](https://github.com/vivliostyle/vivliostyle-pub/issues/51)
 
-図4からは、6月〜8月に大きな開発のピークがあり、11月〜3月に次いでピークがあることが見て取れる。そして図5を見ると、前半のピークはYasuaki Uechi氏（時5濃緑部分）がほぼ1人で支えていたことが分かる。とくに目を引くコミットを抜き出してみよう。
+図4からは、6月〜8月に大きな開発のピークがあり、11月〜3月に次いでピークがあることが見て取れる。そして図5を見ると、前半のピークはYasuaki Uechi氏（時5濃緑部分）がほぼ1人で支えていたことが分かる。とくに目を引く彼のコミットを抜き出してみよう。
 
 - 6/13：[vfmリポジトリの作成後、最初のリリース（リポジトリ作成は1/22）](https://github.com/vivliostyle/vfm/releases/tag/v1.0.0-alpha.0)
 - 6/24：[create-bookリポジトリの作成後、最初のリリース（リポジトリ作成は6/24）](https://github.com/vivliostyle/create-book/releases/tag/v0.1.0)
@@ -175,7 +175,7 @@ CSS組版は先端的な技術分野であり、それをWebアプリにより�
 - 7/1：[themesリポジトリの作成後、最初のリリース（リポジトリ作成は6/15）](https://github.com/vivliostyle/themes/releases/tag/create-vivliostyle-theme%400.1.0)
 - 7/1：[vivliostyle CLI 3.0 pre.1をリリース](https://github.com/vivliostyle/vivliostyle-cli/releases/tag/v3.0.0-pre.1)
 
-
+6月以降、Vivliostyleのリポジトリは急速に数を増やすのだが、それは彼の貢献であったことが分かる。
 
 
 
@@ -253,13 +253,6 @@ CSS組版は先端的な技術分野であり、それをWebアプリにより�
 - 一定の品質でVivliostyle Pubのサービスを維持すれば、自社の事業に利用したい企業が増えると見込まれる
     - そうした企業からの収益で体力を蓄えつつ、より多くの人に使いやすいサービスへと発展させるため、パートナーとなる提携先企業を探したい
 - そのために最も大切なことは、当法人の原点でもあるコアコンピタンスを守ることであろう
-
-
-
-
-
-別表2：交渉で提示したVivliostyle Pubの開発日程
-
 
 ## 12. 理事
 
