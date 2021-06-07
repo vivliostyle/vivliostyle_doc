@@ -208,18 +208,23 @@
 </table>
 <p>しかし残念ながら、11月11日に先方から「今回頂戴致しましたお話を先に進めるのは難しいという結論に至りました」との返事をいただいた。未踏アドバンスト事業につづく2度目の挫折である。</p>
 <h3 id="プロダクトの拡大と開発の中断">7. プロダクトの拡大と開発の中断</h3>
-<p>まず、今期の開発状況を概観してみよう。以下の表はVivliostyleのGitHub<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a>リポジトリにおいて、「Releases」のタグがつけられたコミットを月毎に集計したものだ。図4はプロダクトごとに、図5は 作者ごとにソートして積み上げ棒グラフにしてある。</p>
+<p>まず、今期の開発状況を概観してみよう。以下の表はVivliostyleのGitHub<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a>リポジトリにおいて、「Releases」のタグがつけられたコミットの数を月毎に集計したものだ。図4はプロダクトごとに、図5は作者ごとにソートして積み上げ棒グラフにしてある。</p>
 <figure>
 <img src="./img/fig-4.png" style="width:100.0%" alt="図4 「Releases」のタグがつけられたコミット数を、プロダクトごとに集計した" /><figcaption aria-hidden="true">図4 「Releases」のタグがつけられたコミット数を、プロダクトごとに集計した</figcaption>
 </figure>
 <figure>
 <img src="./img/fig-5.png" style="width:100.0%" alt="図5 「Releases」のタグがつけられたコミット数を、作者ごとに集計した" /><figcaption aria-hidden="true">図5 「Releases」のタグがつけられたコミット数を、作者ごとに集計した</figcaption>
 </figure>
-<p>お断りしなければならないのは、これらのグラフで「今期の開発状況」全ては表現できないということだ。たとえば、Vivliostyle Pubの開発が最も盛んだったのは3月〜6月だが、この当時はプライベートリポジトリだったこともあり（11月15日よりパブリックに移行<a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a>）、「Releases」タグ自体を採用しておらず、上記グラフにはまったく反映されていない。ドキュメント系のリポジトリのvivliostyle.org 、vivliostyle_doc等も「Releases」タグを使っていないので同様だ。それから、「Releases」タグがついてないからといって決して価値が低いコミットではないが、これらのグラフでは捨象されている。こうした問題はありつつも、Vivliostyle Pubを覗くプロダクトのアクティビティを、ある程度客観的に把握できると思う。</p>
-<p>グラフで目を引くのがYasuaki Uechi氏（以下、uetchy氏）の旺盛な開発意欲だ。</p>
+<p>お断りしなければならないのは、これらのグラフは「今期の開発状況」全てを表現してはいないということだ。たとえば、Vivliostyle Pubの開発が最も盛んだったのは3月〜6月だが、この当時はプライベートリポジトリだったこともあり（11月15日よりパブリックに移行<a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a>）、「Releases」タグ自体を採用してないので、上記グラフにはまったく反映されていない。ドキュメント系であるvivliostyle.org 、vivliostyle_doc等も「Releases」タグを使っていないので同様だ。もちろん、「Releases」タグがついてないからといって決して価値が低いコミットではないのだが、グラフでは捨象されている。こうした問題はありつつも、Vivliostyle Pubを除くプロダクトのアクティビティを、ある程度客観的に把握できると思う。</p>
+<p>図4からは、6月〜8月に大きな開発のピークがあり、11月〜3月に次いでピークがあることが見て取れる。そして図5を見ると、前半のピークはYasuaki Uechi氏（時5濃緑部分）がほぼ1人で支えていたことが分かる。とくに目を引くコミットを抜き出してみよう。</p>
 <ul>
-<li><a href="https://github.com/vivliostyle/community/issues/60">Vivliostyle 2020 Release Plan #60</a></li>
-<li>以下はいずれもコントリビュータのuetchy 氏がブルドーザーのような勢いで開発を進めてくれたプロダクト。（どれも未踏アドバンスト事業の落選後であること、そしてこれらはVivliostyle Pubの要素技術でもあることに注意）
+<li><p>6/13：<a href="https://github.com/vivliostyle/vfm/releases/tag/v1.0.0-alpha.0">vfmリポジトリの作成後、最初のリリース（リポジトリ作成は1/22）</a></p></li>
+<li><p>6/24：<a href="https://github.com/vivliostyle/create-book/releases/tag/v0.1.0">create-bookリポジトリの作成後、最初のリリース（リポジトリ作成は6/24）</a></p></li>
+<li><p>7/1：<span class="citation" data-cites="vivliostyle/react">[@vivliostyle/react v2.1.0をリリース（最初のコミットは6/22）]</span>(https://github.com/vivliostyle/vivliostyle.js/commit/57e20fef20d29c97732d7166dc1346f0c43120cd#diff-c4e04145a0c0890aa93bb707d9ce1f8dc425719d02eb095c2f242280bee34b2b)</p></li>
+<li><p>7/1：<a href="https://github.com/vivliostyle/themes/releases/tag/create-vivliostyle-theme%400.1.0">themesリポジトリの作成後、最初のリリース（リポジトリ作成は6/15）</a></p></li>
+<li><p>7/1：<a href="https://github.com/vivliostyle/vivliostyle-cli/releases/tag/v3.0.0-pre.1">vivliostyle CLI 3.0 pre.1をリリース</a></p></li>
+<li><p><a href="https://github.com/vivliostyle/community/issues/60">Vivliostyle 2020 Release Plan #60</a></p></li>
+<li><p>以下はいずれもコントリビュータのuetchy 氏がブルドーザーのような勢いで開発を進めてくれたプロダクト。（どれも未踏アドバンスト事業の落選後であること、そしてこれらはVivliostyle Pubの要素技術でもあることに注意）</p>
 <ul>
 <li>6/13：vfm v1.0.0-alpha.0をリリース（リポジトリ作成は1/22）</li>
 <li>6/24：create-book v0.1.0をリリース（リポジトリ作成は6/24）</li>
@@ -227,8 +232,8 @@
 <li>7/1：<span class="citation" data-cites="vivliostyle/theme-bunko">@vivliostyle/theme-bunko</span><span class="citation" data-cites="0.2.1">@0.2.1</span> をリリース（リポジトリ作成は6/15）</li>
 <li>7/1：CLI 3.0 pre.1をリリース</li>
 </ul></li>
-<li>たった一人で驚くべき作業量だが、その反面 <a href="http://glazman.org/e0/webbook.html">Web Book</a> や <a href="https://www.w3.org/TR/wpub/">Web Publications</a> （以下、Webブックと総称）、unzipEPUB がサポートされなくなる等の破壊的変更が加えられていた</li>
-<li>8月下旬をすぎるとuetchy 氏のコミットはピタリと途絶え、7月を最後に月例開発者会議にも参加しなくなってしまった
+<li><p>たった一人で驚くべき作業量だが、その反面 <a href="http://glazman.org/e0/webbook.html">Web Book</a> や <a href="https://www.w3.org/TR/wpub/">Web Publications</a> （以下、Webブックと総称）、unzipEPUB がサポートされなくなる等の破壊的変更が加えられていた</p></li>
+<li><p>8月下旬をすぎるとuetchy 氏のコミットはピタリと途絶え、7月を最後に月例開発者会議にも参加しなくなってしまった</p>
 <ul>
 <li>どうやらuetchy 氏は去ってしまったらしい。さて、どうする？</li>
 </ul></li>

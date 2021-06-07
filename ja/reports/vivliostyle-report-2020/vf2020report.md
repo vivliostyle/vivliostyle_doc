@@ -155,8 +155,7 @@ CSS組版は先端的な技術分野であり、それをWebアプリにより�
 
 ### 7. プロダクトの拡大と開発の中断
 
-まず、今期の開発状況を概観してみよう。以下の表はVivliostyleのGitHub[^13]リポジトリにおいて、「Releases」のタグがつけられたコミットを月毎に集計したものだ。図4はプロダクトごとに、図5は
-作者ごとにソートして積み上げ棒グラフにしてある。
+まず、今期の開発状況を概観してみよう。以下の表はVivliostyleのGitHub[^13]リポジトリにおいて、「Releases」のタグがつけられたコミットの数を月毎に集計したものだ。図4はプロダクトごとに、図5は作者ごとにソートして積み上げ棒グラフにしてある。
 
 [^13]: [Vivliostyle](https://github.com/vivliostyle)
 
@@ -164,11 +163,22 @@ CSS組版は先端的な技術分野であり、それをWebアプリにより�
 
 ![図5 「Releases」のタグがつけられたコミット数を、作者ごとに集計した](./img/fig-5.png){ width=100% }
 
-お断りしなければならないのは、これらのグラフで「今期の開発状況」全ては表現できないということだ。たとえば、Vivliostyle Pubの開発が最も盛んだったのは3月〜6月だが、この当時はプライベートリポジトリだったこともあり（11月15日よりパブリックに移行[^14]）、「Releases」タグ自体を採用しておらず、上記グラフにはまったく反映されていない。ドキュメント系のリポジトリのvivliostyle.org 、vivliostyle_doc等も「Releases」タグを使っていないので同様だ。それから、「Releases」タグがついてないからといって決して価値が低いコミットではないが、これらのグラフでは捨象されている。こうした問題はありつつも、Vivliostyle Pubを覗くプロダクトのアクティビティを、ある程度客観的に把握できると思う。
+お断りしなければならないのは、これらのグラフは「今期の開発状況」全てを表現してはいないということだ。たとえば、Vivliostyle Pubの開発が最も盛んだったのは3月〜6月だが、この当時はプライベートリポジトリだったこともあり（11月15日よりパブリックに移行[^14]）、「Releases」タグ自体を採用してないので、上記グラフにはまったく反映されていない。ドキュメント系であるvivliostyle.org 、vivliostyle_doc等も「Releases」タグを使っていないので同様だ。もちろん、「Releases」タグがついてないからといって決して価値が低いコミットではないのだが、グラフでは捨象されている。こうした問題はありつつも、Vivliostyle Pubを除くプロダクトのアクティビティを、ある程度客観的に把握できると思う。
 
 [^14]: [公開する #51](https://github.com/vivliostyle/vivliostyle-pub/issues/51)
 
-グラフで目を引くのがYasuaki Uechi氏（以下、uetchy氏）の旺盛な開発意欲だ。
+図4からは、6月〜8月に大きな開発のピークがあり、11月〜3月に次いでピークがあることが見て取れる。そして図5を見ると、前半のピークはYasuaki Uechi氏（時5濃緑部分）がほぼ1人で支えていたことが分かる。とくに目を引くコミットを抜き出してみよう。
+
+- 6/13：[vfmリポジトリの作成後、最初のリリース（リポジトリ作成は1/22）](https://github.com/vivliostyle/vfm/releases/tag/v1.0.0-alpha.0)
+- 6/24：[create-bookリポジトリの作成後、最初のリリース（リポジトリ作成は6/24）](https://github.com/vivliostyle/create-book/releases/tag/v0.1.0)
+- 7/1：[@vivliostyle/react v2.1.0をリリース（最初のコミットは6/22）](https://github.com/vivliostyle/vivliostyle.js/commit/57e20fef20d29c97732d7166dc1346f0c43120cd#diff-c4e04145a0c0890aa93bb707d9ce1f8dc425719d02eb095c2f242280bee34b2b)
+- 7/1：[themesリポジトリの作成後、最初のリリース（リポジトリ作成は6/15）](https://github.com/vivliostyle/themes/releases/tag/create-vivliostyle-theme%400.1.0)
+- 7/1：[vivliostyle CLI 3.0 pre.1をリリース](https://github.com/vivliostyle/vivliostyle-cli/releases/tag/v3.0.0-pre.1)
+
+
+
+
+
 
 
 
