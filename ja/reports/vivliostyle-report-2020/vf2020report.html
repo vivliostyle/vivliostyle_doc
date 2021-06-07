@@ -99,7 +99,7 @@
 <p>こうして成功裏に開発／ユーザイベントを終えることができた当法人だが、その後もコロナ禍に苦しめられる状況がつづいた。緊急事態宣言の中で発せられた小池百合子東京都知事の「3密」「ステイ（アット）ホーム」が流行語になり、一時的に社会全体が巣ごもりの状態に追い込まれた。こうした中、前年度から動いていた外部企業からのVivliostyle Viewer関連の受託開発も当然のように棚上げとなり、当てにしていた入金も煙のように消えてしまった。</p>
 <p>自粛要請に応じた法人には国や自治体による特別支援金が支払われることになっていたが、当法人は今期4月に収益事業開始届をだしたばかりなので対象外となる。思い切って6月には信用金庫に融資を申し込むが、実績がなく事業の継続性が担保されないとの理由で、あえなく断られてしまった。</p>
 <p>このように経営面では苦境に立たされたとはいえ、業務面に限れば以前からステイホームでリモート勤務していたこともあり、とくに影響もなくこなせたのは不幸中の幸いだった。</p>
-<p>前掲図1を見返していただくと一目瞭然だが、株価は3月後半に底を打ち、その後は上昇に転じる。11月には下落以前の株価を回復しただけでなく、青天井の勢いで上昇を続けている。少なくとも世界恐慌は杞憂に終わった。ただし、IT・メディア系などの業界が巣ごもり需要を追い風にできた一方で<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>、百貨店、アパレル、外食や小売など回復を不安視されている業界も多い<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>。</p>
+<p>前掲図1を見返していただくと一目瞭然だが、株価は3月後半に底を打ち、その後は上昇に転じる。11月には下落以前の株価を回復しただけでなく、変わらず上昇を続けている。少なくとも世界恐慌は杞憂に終わった。ただし、IT・メディア系などの業界が巣ごもり需要／テレワーク需要を追い風にできた一方で<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>、百貨店、アパレル、外食や小売など回復を不安視されている業界も多い<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>。</p>
 <p>まことに幸運なことに、当法人は前者に属する。経営面が辛かったのは今期前半だけであり、後述するように後半はむしろコロナ禍が好材料となったのである。</p>
 <h3 id="未踏アドバンスト事業への応募">4. 未踏アドバンスト事業への応募</h3>
 <p>当法人にとって、開発資金の調達が至上命題となっていたことは前述の通りだ。これに対して、前期3月の開発者会議において、コントリビュータから未踏アドバンスト事業<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a>にVivliostyle Pubの開発で応募してみてはどうかという提案があった<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a>。</p>
@@ -208,6 +208,14 @@
 </table>
 <p>しかし残念ながら、11月11日に先方から「今回頂戴致しましたお話を先に進めるのは難しいという結論に至りました」との返事をいただいた。未踏アドバンスト事業につづく2度目の挫折である。</p>
 <h3 id="プロダクトの拡大と開発の中断">7. プロダクトの拡大と開発の中断</h3>
+<p>まず、今期の開発状況を概観してみよう。以下の表はVivliostyleのGitHub<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a>リポジトリにおいて、「Releases」のタグがつけられたコミットを月毎に集計したものだ。図4はプロダクトごとに、図5は 作者ごとにソートして積み上げ棒グラフにしてある。</p>
+<figure>
+<img src="./img/fig-4.png" style="width:100.0%" alt="図4 「Releases」のタグがつけられたコミット数を、プロダクトごとに集計" /><figcaption aria-hidden="true">図4 「Releases」のタグがつけられたコミット数を、プロダクトごとに集計</figcaption>
+</figure>
+<figure>
+<img src="./img/fig-5.png" style="width:100.0%" alt="図5 「Releases」のタグがつけられたコミット数を、作者ごとに集計" /><figcaption aria-hidden="true">図5 「Releases」のタグがつけられたコミット数を、作者ごとに集計</figcaption>
+</figure>
+<p>お断りしなければならないのは、これらのグラフで「今期の開発状況」全ては表現できていないということだ。たとえば、Vivliostyle Pubの開発が最も盛んだったのは3月〜6月だが、この当時はプライベートリポジトリだったこともあり（11月15日よりパブリックに移行<a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a>）、「Releases」タグ自体を採用しておらず、このグラフにはまったく反映されていない。公式サイトのvivliostyle.org や同じくドキュメントページのvivliostyle_doc等、ドキュメント系のリポジトリも「Releases」タグを使っていないので同様だ。また、「Releases」タグがついてないからといって決して価値が低いコミットではないが、これらのグラフでは捨象されている。こうした問題はありつつも、Vivliostyle Pub以外のプロダクトのアクティブティを、ある程度客観的に把握することができると思う。</p>
 <ul>
 <li><a href="https://github.com/vivliostyle/community/issues/60">Vivliostyle 2020 Release Plan #60</a></li>
 <li>以下はいずれもコントリビュータのuetchy 氏がブルドーザーのような勢いで開発を進めてくれたプロダクト。（どれも未踏アドバンスト事業の落選後であること、そしてこれらはVivliostyle Pubの要素技術でもあることに注意）
@@ -1028,6 +1036,8 @@
 <li id="fn10" role="doc-endnote"><p><a href="https://github.com/vivliostyle/community/wiki/slack-meeting-log-2020-03-07">slack meeting log 2020 03 07</a><a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn11" role="doc-endnote"><p><a href="https://www.ipa.go.jp/files/000079466.pdf">2020年度未踏アドバンスト事業公募要領[PDF]</a><a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn12" role="doc-endnote"><p>前掲「2020年度未踏アドバンスト事業公募概要」<a href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn13" role="doc-endnote"><p><a href="https://github.com/vivliostyle">Vivliostyle</a><a href="#fnref13" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn14" role="doc-endnote"><p><a href="https://github.com/vivliostyle/vivliostyle-pub/issues/51">公開する #51</a><a href="#fnref14" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 </body>
