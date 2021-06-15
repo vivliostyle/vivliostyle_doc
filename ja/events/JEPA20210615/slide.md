@@ -74,8 +74,8 @@ Web出版、電子出版、印刷出版すべてHTML+CSSでできるので、 \
 
 - 最新のWeb標準技術が利用できる \
   （ブラウザで実現されている機能を新たに開発しなくてよい）
-  - [HTML Living Standard](https://html.spec.whatwg.org/) （いわゆる HTML5”）
-  - [CSS Snapshot 2020](https://www.w3.org/TR/css-2020/) （いわゆる ”HTML5”）
+  - [HTML Living Standard](https://html.spec.whatwg.org/) （いわゆる “HTML5”）
+  - [CSS Snapshot 2020](https://www.w3.org/TR/css-2020/) （いわゆる “CSS3”）
   - JavaScript, MathML, SVG, Web Fonts, etc.
 
 Vivliostyle.js （CSS組版のJavaScriptライブラリ）には、ブラウザの標準の機能では足りないCSS組版の機能が実装されている。 \
