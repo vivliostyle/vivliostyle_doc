@@ -1,0 +1,24 @@
+{
+  "name": "vivliostyle-jepa-seminar",
+  "description": "vivliostyle-jepa-seminar",
+  "version": "0.0.0",
+  "author": "MurakamiShinyu <murakami@vivliostyle.org>",
+  "scripts": {
+    "build": "run-s doctoc build:scss build:pdf",
+    "build:pdf": "vivliostyle build",
+    "build:scss": "sass theme-slide/scss:theme-slide",
+    "dev": "run-p preview watch:scss",
+    "preview": "vivliostyle preview",
+    "watch:scss": "sass --watch theme-slide/scss:theme-slide",
+    "doctoc": "doctoc --notitle --maxlevel 2 slide.md"
+  },
+  "dependencies": {
+    "@vivliostyle/cli": "latest",
+    "@vivliostyle/theme-slide": "^0.4.0",
+    "doctoc": "^2.0.1",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.32.8"
+  },
+  "license": "CC0-1.0",
+  "private": true
+}
