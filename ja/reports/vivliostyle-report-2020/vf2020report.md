@@ -7,14 +7,14 @@ lang: ja
 
 ### 1. 開発者／ユーザイベントの開催
 
-当法人は、2019年8月31日に開催された「Vivliostyle 開発者とユーザーの集い 2019夏」を第1回として、年2回の開発者／ユーザイベントを開催している。本年度も以下のように2回とも無事に開催することができた。
+当法人は、Vivliostyleを広くユーザや開発者に知っていただく場として、開発者／ユーザイベントを年2回開催することにしている。本年度も以下のように開催することができた。
 
 - [2020年4月4日：Vivliostyle ユーザーと開発者の集い 2020春（オンライン）](https://vivliostyle.connpass.com/event/170939/)
 -  [2020年10月24日 ：ivliostyle ユーザーと開発者の集い 2020秋（オンライン）](https://vivliostyle.connpass.com/event/189940/)
 
-前者の春イベントは、いわゆるコロナ禍に重なった。当初は日本印刷技術協会（JAGAT）を会場に開催予定だったが、3密回避が至上命題になる状況の中、オンライン配信に切り替えることで乗り切ることができた。同種のイベントがほとんど中止になったことも手伝い、参加申込は142名に達した。内容的にも当時アルファ版の開発真っ最中だった Vivliostyle Pub の報告をはじめ、当法人のリアルな動きを伝えることができたように思う。
+前者の春イベントは、いわゆるコロナ禍に重なった。当初は日本印刷技術協会（JAGAT）を会場に開催予定だったが、3密回避が至上命題となりつつある状況の中、オンライン配信に切り替えることで乗り切ることができた。同種のイベントがほとんど中止になったことも手伝い、ありがたいことに参加申込は142名にも達した。内容的にも当時アルファ版の開発真っ最中だった Vivliostyle Pub の報告を中心に、当法人のリアルな動きをお知らせすることができたように思う。
 
-このように春イベントは緊急事態の中で開催を強行した面があるが、それに比べると秋イベントは、CSS組版を主題とした開発イベントとして、バランスよく構成された内容だったように思える。たとえばドイツ国立科学図書館オープン・サイエンス・ラボSimon Worthington氏によるCOVID-19に対する公衆衛生教科書の迅速な出版のレポートや、コントリビュータakabeko氏によるVivliostyleの競合、Paged.jsの使用レポートなど、幅広いCSS組版の魅力を伝えることができたのではないだろうか。
+春イベントは緊急事態の中、慌ただしく当日を迎えることになったが、それに比べると秋イベントは、CSS組版を主題とするセミナーとして、ある程度熟成できたように思える。たとえばドイツ国立科学図書館オープン・サイエンス・ラボ[Simon Worthington](https://www.force11.org/users/simon-worthington)氏によるCOVID-19に対する公衆衛生教科書の迅速な出版のレポートや、コントリビュータ[akabeko](https://github.com/akabekobeko)氏によるVivliostyleの競合、Paged.jsの使用レポートなど、幅広くCSS組版の魅力を伝えることができたのではないだろうか。
 
 ### 2. 公式ウェブサイトのリニューアル**
 
@@ -28,7 +28,7 @@ lang: ja
     - ユーザガイドやチュートリアルガイド等の詳細な開発ドキュメント
     - ユーザの疑問を解決するFAQ
 
-平行して4月4日の開催が決まっていた開発者／ユーザイベント（前節参照）の準備をすすめる必要があり作業は難航したが、なんとかイベント前日の4月3日にリニューアルオープンさせることができた。その後も、以下のような情報を追加していった。
+平行して4月4日の開催が決まっていた開発者／ユーザイベント（前節参照）の準備をすすめなければならなかったが、なんとかイベント前日の4月3日にリニューアルオープンさせることができた。その後も、以下のような情報を追加していった。
 
 - 4月10日：[ドイツ国立科学技術図書館がVivliostyleを使ってCOVID-19対策の教科書を出版したことを知らせる](https://vivliostyle.org/ja/blog/2020/04/10/tib-book-against-covid19/)
 - 4月29日：[GitHub Sponsors による支援を公式サイトで呼びかける](https://vivliostyle.org/ja/blog/2020/04/29/become-a-sponsor-to-vivliostyle-via-github-sponsors/)
@@ -36,82 +36,87 @@ lang: ja
 - 8月19日：[Create Bookのチュートリアルを特集企画として公開](https://vivliostyle.org/ja/make-books-with-create-book/)
 - 8月29日：[円建てクレジットカード決済（Robot Payment）によるスポンサー募集を公式サイトで開始](https://vivliostyle.org/ja/blog/2020/11/20/You-can-support-Vivliostyle-without-a-GitHub-account/)
 
-中でも寄付による支援の呼びかけは、営利を目的としない（利益の分配をしない）一般社団法人として重要なもので、実際に今期は全部で61,209円の寄付金を集めることができた（図1）。これは経常収益全体の約4%にあたる。これからも当法人の活動に賛同してくださる人々の受け皿として、寄付金は大事に育てていかねばならないと考えている。
+中でも寄付による支援の呼びかけは、営利を目的としない（利益の分配をしない）一般社団法人として重要なもので、実際に今期は全部で61,209円の寄付金を集めることができた（図1）。これは経常収益全体の約4%にあたる。今はまだ決して多いとは言えないが、今後も当法人の活動に賛同してくださる人々の受け皿として、大事に育てていきたいと考えている。
 
 ![図1 今期決算における経常収益の内訳](./img/fig-1.png){ width=50% }
  
 ### 3. プロダクトの開発状況
 
-ここでは、プロダクトごとに本年度の開発状況を説明する。
+本節では、プロダクトごとに今期の開発状況を説明する。
 
-#### Vivliostyle CoreとVivliostyle Viewer
+#### [Vivliostyle CoreとVivliostyle Viewer（vivliostyle.js）](https://github.com/vivliostyle/vivliostyle.js)
 
+プロダクト全体の基盤でもあるVivliostyle CoreとVivliostyle Viewer（vivliostyle.js）は、今期多くの機能追加ができた。この結果、これまで十分とは言えなかった[CSS Paged Media](https://www.w3.org/TR/css-page-3/)への対応をすすめることができた。
 
+ - ページナビゲーション（目次パネル）のサポート（[v2.1.0-pre.1 / 6月30日](https://github.com/vivliostyle/vivliostyle.js/releases/tag/v2.1.0-pre.1)）
+ - ページ移動用のスライドバーの実装、マウスホイールのサポート（[v2.2.0 / 11月26日](https://github.com/vivliostyle/vivliostyle.js/releases/tag/v2.2.0)）
+- 解凍ずみEPUBの読み込みをサポート（[v2.3.0 / 12月7日](https://github.com/vivliostyle/vivliostyle.js/releases/tag/v2.3.0)）
+- ヘッダーやフッター等を実現する名前付き文字列のサポート（[v2.4.0 / 12月28日](https://github.com/vivliostyle/vivliostyle.js/releases/tag/v2.4.0)）
+- n番目ページセレクターのサポート（[v2.5.0 / 2月26日](https://github.com/vivliostyle/vivliostyle.js/releases/tag/v2.5.0)）
+- 印刷ボタンの追加（[v2.6.0 / 3月14日](https://github.com/vivliostyle/vivliostyle.js/releases/tag/v2.6.0)）
 
-#### Vivliostyle CLI
+#### [Vivliostyle CLI](https://github.com/vivliostyle/vivliostyle-cli)
 
+Markdown形式の入力をサポートしたことにより、活用の幅が一気に広がった。また、プレビューのUI（画面）がVivliostyle Viewerに統合されたことで、単に組版結果を確認できるだけでなく「長文を読む」プロダクトに成長したと言える。
 
+- プレビューのUIをVivliostyle Viewerに置き換え（[v3.2.0 / 3月29日](https://github.com/vivliostyle/vivliostyle-cli/releases/tag/v3.2.0)）
+- Markdownをはじめ様々なファイル形式の入力をサポート、[Vivliostyle Themes](https://github.com/vivliostyle/themes)のサポート、Webブックをはじめ複数の出力をサポート、urlによる外部Webページの読み込みをサポート（[v3.0.0 / 2月7日](https://github.com/vivliostyle/vivliostyle-cli/releases/tag/v3.0.0)）
 
-#### Vivliostyle Flavored Markdown (VFM)
+#### [Vivliostyle Flavored Markdown (VFM)](https://github.com/vivliostyle/vfm)
 
+ルビ、画像サイズ、キャプション、脚注などを実現した、書籍組版のためのMarkdown方言。最も普及しているGitHub Flavored Markdown（GFM）の上位互換である。Vivliostyle CLI v.3.0の原稿作成用に開発されており、6月13日にv1.0.0-alpha.0をリリースし、今期末時点でv1.0.0-alpha.17。
 
+#### [Themes](https://github.com/vivliostyle/themes)
 
-#### Create Book
+Vivliostyle CLIでCSS組版をするためのスタイルシートを、パッケージとして公開／再利用するための仕組み。7月1日に最初の公式Themeがリリースされ、今期末時点で以下の4つのテーマがリリースされている。
 
+- [theme-slide（スライド）](https://github.com/vivliostyle/themes/tree/master/packages/@vivliostyle/theme-slide)
+- [theme-bunko（縦組書籍）](https://github.com/vivliostyle/themes/tree/master/packages/@vivliostyle/theme-bunko#bunko)
+- [theme-techbook（横書技術書）](https://github.com/vivliostyle/themes/releases/tag/%40vivliostyle%2Ftheme-techbook%400.2.0)
+- {[theme-academic（横組学術レポート）]
 
+#### [Create Book](https://github.com/vivliostyle/create-book)
 
-#### Vivliostyle Pub
+Vivliostyle CLIを使った書籍制作用の環境を、ローカルに構築するインストーラー。今期末時点でv0.1.6がリリースされている。詳しくは、公式サイトに掲載した以下の記事を参照。
 
+- [特集企画：Create Book で同人誌を作ろう！](https://vivliostyle.org/ja/make-books-with-create-book/)
 
+#### [Vivliostyle Pub](https://github.com/vivliostyle/vivliostyle-pub)
 
+当法人のプロダクトの集大成ともいえるのがVivliostyle Pubだ。そこで開発の経緯を含め、少し詳しく説明する。その出発点はブラウザ上で動作するオンラインエディタ “Viola”である。これを当法人に移譲するので、コントリビュータが協力して作り直してはどうかと申し出てくれたのが、その作者[spring-raining](https://github.com/orgs/vivliostyle/people/spring-raining) 氏だった。その後、月例の開発者会議の中で村上代表理事によりプロジェクト名として “Vivliostyle Pub” が与えられ、正式に開発が開始された。このことは、[前記事業報告書](https://vivliostyle.github.io/vivliostyle_doc/ja/reports/vivliostyle-report-2019/vf2019report.html)でも述べた。
 
-    - CoreとViewer
-        - CSS Paged Mediaへの対応がすすんだ
-        - スライドバーなどUIの改善
-            - CLIからもViewerが使えるように
-            - 最低限度の機能に限られていた
-            - 以前のプレビューではリロードにより最初のページに戻ってしまう
-            - ページ移動が左右矢印に限られていた
-            - 目次パネルでナビゲーションができなかった
-            - 内部リンクがサポートされていない
-            - 見開きの未サポート
-        - 読むためのものではなく、組版結果のプレビュー
-    - CLI V.3
-        - Introduce of the new configure file, vivliostyle.config.js!
-        - Replace preview UI with Vivliostyle Viewer (18265f2),
-        - Markdown対応
-        - Support zipped EPUB inputs (dac8afc)
-            - （urlによる外部Webページの読み込み）
-    - CLI V.3関連
-        - themes
-            - CLIでCSS組版をするためのスタイルシートをパッケージとして公開／再利用するための仕組み
-    - VFM
-        - CLIにおける原稿用フォーマット
-        - 書籍組版に適したMarkdown標準
-        - Common Mark、GFMの上位互換
-    - Create Book
-        - CLIやthemesを使った書籍作成用の環境作成ツール
-        - CLI v.3のインストーラー
-    - Vivliostyle Pub
-        - 未踏アドバンスト事業への応募のために着手
-            - アルファ版まで開発
-                - VFMのごく初期のパーサー
-                - ウェブブラウザでMarkdownを書いてGitHubと連携することができる
-                - CLIが動いてHTMLへの変換とPDFへの出力ができる
-                - ライブでプレビューできる
-                - エクスポートメニューからPDFが出力
-                - 保存するとGitHub上のファイルが更新
-            - しかし落選
-        - 実装としてはアルファ版のまま
-        - しかし要件定義で道筋は示されている
-        - その後、CLI v3、themes、VFMなどコンポーネントは揃った
-        - 組み込むための各プロダクトは進捗
-            - 組み込みは来期に託された
-        - 開発日程
-            - 8月末：ベータ版公開
-            - 12月末：ローンチ
+前期末、2020年3月の時点で、最大の懸案は開発資金の確保だった。開発者会議でその解決策が話し合われ、コントリビュータから出されたのが、Vivliostyle Pubの開発をテーマにして[未踏アドバンスト事業](https://www.ipa.go.jp/jinzai/advanced/2020/koubo_index.html)へ応募することだった。このときの開発メンバーは、既述したコントリビュータに加え、[uetchy](https://github.com/orgs/vivliostyle/people/uetchy)氏、[youchan](https://github.com/orgs/vivliostyle/people/youchan)氏、[takanakahiko](https://github.com/orgs/vivliostyle/people/takanakahiko)氏である。
+
+話はまとまった。コントリビュータが一丸となり、日に夜を継いでVivliostyle Pubの開発作業がはじまる。目指すのは5月中旬に予定されている2次審査だ。この時点のバージョンで実装されていたのは、下記のような機能だった。
+
+- クラウド上にデプロイされたVivliostyle CLIには、VFMのごく初期のパーサーが実装
+- Vivliostyle CLIはCSS組版した結果を、ライブで出力できる
+- 同じくエクスポートメニューからPDFが出力できる
+- Webブラウザ経由でエディタで保存すると、GitHub上のファイルが更新される
+- こうした結果、ウェブブラウザ画面左のエディタでMarkdownを書くと、画面右で組版結果がライブで確認できる
+
+以下は当時takanakahiko氏が作業用に作った、Vivliostyle Pubのフローチャート（図2）だ。
+
+![図2 開発初期のVivliostyle Pubフローチャート（作図：@takanakahiko氏）](./img/fig-2.png){ width=100% }
+
+しかし残念ながら6月10日に落選通知を受け取ることとなった。その後、Vivliostyle Pubはごくマイナーなアップデートはされたが、現在動いているのはこの時のアルファ版から大きく変わってはいない。現在のスクリーンショットを示す。
+
+![図3 現在のVivliostyle Pub](./img/fig-3.png){ width=100% }
+
+他方、開発がほぼ止まったVivliostyle Pubをよそに、その部品とも言えるプロダクト、VFM、Themes、Vivliostyle CL、そしてVivliostyle Viewerの方は大きく進化した。その指針となった文書が、村上代表理事による下記のものだ。
+
+- [Vivliostyle Pub v1 Req (11/9)](https://github.com/vivliostyle/community/wiki/Vivliostyle-Pub-v1-Req)
+- [Vivliostyle CLI v3.0 new spec (11/9〜2/9)](https://github.com/vivliostyle/community/wiki/Vivliostyle-CLI-v3.0-new-spec)
+
+こうして開発が進んだVFM、Themes、Vivliostyle CLIを組み込んでいけば、Vivliostyle Pub v1は完成する。次期、2021年8月末にベータ版を公開、同年12月末にローンチを目指して開発が進められることになった。
 
 ### 4. Vivliostyleと連携する外部のプロジェクトとの協力
+
+
+
+
+
+
 - ドイツ国立科学技術図書館との連携
 - 外部企業からの受託開発と保守管理
 - プロダクトの進展
