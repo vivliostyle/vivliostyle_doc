@@ -97,31 +97,24 @@ Vivliostyle CLIを使った書籍制作用の環境を、ローカルに構築�
 
 以下は当時takanakahiko氏が作業用に作った、Vivliostyle Pubのフローチャート（図2）だ。
 
-![図2 開発初期のVivliostyle Pubフローチャート（作図：@takanakahiko氏）](./img/fig-2.png){ width=100% }
+![図2 開発初期のVivliostyle Pubフローチャート（作図：@takanakahiko氏）](./img/fig-2.png){ width=50% }
 
 しかし残念ながら6月10日に落選通知を受け取ることとなった。その後、Vivliostyle Pubはごくマイナーなアップデートはされたが、現在動いているのはこの時のアルファ版から大きく変わってはいない。現在のスクリーンショットを示す。
 
-![図3 現在のVivliostyle Pub](./img/fig-3.png){ width=100% }
+![図3 現在のVivliostyle Pub](./img/fig-3.png){ width=50% }
 
-他方、開発がほぼ止まったVivliostyle Pubをよそに、その部品とも言えるプロダクト、VFM、Themes、Vivliostyle CL、そしてVivliostyle Viewerの方は大きく進化した。その指針となった文書が、村上代表理事による下記のものだ。
+開発がほぼ止まったVivliostyle Pubをよそに、その部品とも言えるプロダクト、VFM、Themes、Vivliostyle CL、そしてVivliostyle Viewerの方は大きく進化した。これは前項でも述べた。その指針となった文書が、村上代表理事による下記のものだ。
 
 - [Vivliostyle Pub v1 Req (11/9)](https://github.com/vivliostyle/community/wiki/Vivliostyle-Pub-v1-Req)
 - [Vivliostyle CLI v3.0 new spec (11/9〜2/9)](https://github.com/vivliostyle/community/wiki/Vivliostyle-CLI-v3.0-new-spec)
 
-こうして開発が進んだVFM、Themes、Vivliostyle CLIを組み込んでいけば、Vivliostyle Pub v1は完成する。次期、2021年8月末にベータ版を公開、同年12月末にローンチを目指して開発が進められることになった。
+こうして開発が進んだVFM、Themes、Vivliostyle CLIを組み込めば、Vivliostyle Pub v.1は完成するはずだ。次期、2021年8月末にベータ版を公開、同年12月末にローンチを目指して開発が進められることになった。
 
 ### 4. Vivliostyleと連携する外部のプロジェクトとの協力
 
+前期の事業収入は0円であった。しかし次章や前掲図1にあるとおり、今期は1,503,721円の事業収入を上げることができた。とくに大きかったのは、以前から村上代表理事が関係してきた外部企業からの受託開発だ。じつは、前節Vivliostyle CoreとVivliostyle Viewerの項で挙げた開発成果は、多くがこの外部企業からの受託開発によるものだった。
 
-
-
-
-
-- ドイツ国立科学技術図書館との連携
-- 外部企業からの受託開発と保守管理
-- プロダクトの進展
-      - 売り上げがあった
-      - CSS組版の開発を進めることができた
+また、村上代表理事は第1節でふれたSimon Worthington氏とイベント後も議論をつづけ、彼等の開発を援助した。これにより、彼等からVivliostyle Viewerの開発援助を受けることができた。このように、外部とのコラボレイトがそのままVivliostyleの開発につながり、さらにその結果として、以前から課題だったCSS Paged Mediaへの対応も進めることができたのは、大変ありがたいことだった。
 
 ### 5. 理事
 
