@@ -103,18 +103,18 @@ lang: ja
 
 ![図3 現在のVivliostyle Pub](./img/fig-3.png){ width=50% }
 
-開発がほぼ止まったVivliostyle Pubをよそに、その部品とも位置づけられるプロダクト、VFM、Themes、Vivliostyle CLI、そして基盤となるVivliostyle Core / Viewerの方は、大きく進化させることができた。しかしそのためには、未踏アドバンスト事業落選のインパクトを乗り越える必要があった。その指針となったのが、村上代表理事による下記の文書だ。
+開発がほぼ止まったVivliostyle Pubをよそに、その部品とも位置づけられるVFM、Themes、Vivliostyle CLI、そしてVivliostyle Core / Viewerの方は、大きく進化させることができた。しかしそのためには、未踏アドバンスト事業落選のインパクトを乗り越える必要があった。その指針となったのが、村上代表理事による下記の文書である。
 
 - [Vivliostyle Pub v1 Req (11/9)](https://github.com/vivliostyle/community/wiki/Vivliostyle-Pub-v1-Req)
 - [Vivliostyle CLI v3.0 new spec (11/9〜2/9)](https://github.com/vivliostyle/community/wiki/Vivliostyle-CLI-v3.0-new-spec)
 
-こうして開発が進んだVFM、Themes、Vivliostyle CLIを組み込めば、Vivliostyle Pub v.1は無事にリリースできるだろう。それこそが次期の課題となるはずだ。それを果たすため、2021年8月末にベータ版公開、同年12月末ローンチを目指して開発が進められることになった。
+こうして開発が進んだVFM、Themes、Vivliostyle CLIを組み込めば、無事にVivliostyle Pub v.1がリリースできる。それこそが次期の課題となるはずだ。それを果たすため、2021年8月末にベータ版公開、同年12月末ローンチを目指して開発が進められることになった。
 
 ### 4. Vivliostyleと連携する外部のプロジェクトとの協力
 
 前期の事業収入は0円であった。しかし次章や前掲図1にあるとおり、今期は1,503,721円の事業収入を上げることができた。とくに大きかったのは、以前から村上代表理事が関係してきた外部企業からの受託開発だ。じつは、前節Vivliostyle Core / Viewerの項で挙げた開発成果は、多くがこの外部企業からの受託開発によるものだ。
 
-また、村上代表理事は第1節でふれたSimon Worthington氏と、イベント後も議論をつづけることで彼等の開発にコミットした。これにより彼等から開発援助の名目で事業収入を得ることができた。このように、外部とのコラボレイトがそのままVivliostyleの開発につながり、さらにその結果として課題だったCSS Paged Mediaへの対応も進めることができたのは、大変ありがたいことだった。
+また、村上代表理事は第1節でふれたSimon Worthington氏と、イベント後も議論をつづけることで彼等の開発にコミットした。これにより彼等から開発援助の名目で事業収入を得ることができた。このように、外部との協働がそのままVivliostyleの開発につながり、さらにその結果として課題だったCSS Paged Mediaへの対応も進めることができた。これは大変ありがたいことだった。
 
 ### 5. 理事
 
