@@ -77,13 +77,13 @@ Markdown形式の入力をサポートしたことにより、活用の幅が一
 
 #### [Create Book](https://github.com/vivliostyle/create-book)
 
-Vivliostyle CLIを使った書籍制作用の環境をローカルに構築するインストーラーであり、Vivliostyle Pubのローカル版という一面もある。後述する未踏アドバンスト事業落選を契機に、[uetchy](https://github.com/orgs/vivliostyle/people/uetchy)氏によって作られた。今期末時点でv0.1.6がリリースされている。操作をはじめとした詳細は、公式サイトに掲載した以下の記事を参照してほしい。
+これはVivliostyle CLIを使った書籍制作用の環境をローカルに構築するインストーラーであり、Vivliostyle Pubのローカル版という一面もある。後述する未踏アドバンスト事業落選を契機に、[uetchy](https://github.com/orgs/vivliostyle/people/uetchy)氏によって作られた。今期末時点でv0.1.6がリリースされている。詳細は、公式サイトに掲載した以下の記事を参照してほしい。
 
 - [特集企画：Create Book で同人誌を作ろう！](https://vivliostyle.org/ja/make-books-with-create-book/)
 
 #### [Vivliostyle Pub](https://github.com/vivliostyle/vivliostyle-pub)
 
-当法人プロダクトの集大成ともいえるのがVivliostyle Pubだ。そこで開発の経緯を含め、少し詳しく本項で説明する。その出発点はブラウザ上で動作するオンラインエディタ “Viola” である。作者[spring-raining](https://github.com/orgs/vivliostyle/people/spring-raining) 氏は、これを当法人に移譲するので、コントリビュータが協力して作り直してはどうかと申し出てくれた。その後、月例の開発者会議の中で村上代表理事により “Vivliostyle Pub” というプロジェクト名が与えられ、正式に開発が開始された。このことは、[前記事業報告書](https://vivliostyle.github.io/vivliostyle_doc/ja/reports/vivliostyle-report-2019/vf2019report.html)でも述べた。
+当法人プロダクトの集大成ともいえるのがVivliostyle Pubだ。そこで開発の経緯について、少し詳しく本項で説明する。その出発点はブラウザ上で動作するオンラインエディタ “Viola” である。作者[spring-raining](https://github.com/orgs/vivliostyle/people/spring-raining) 氏は、これを当法人に移譲するので、コントリビュータが協力して作り直してはどうかと申し出てくれた。その後、月例の開発者会議の中で村上代表理事により “Vivliostyle Pub” というプロジェクト名が与えられ、正式に開発が開始された。このことは、[前記事業報告書](https://vivliostyle.github.io/vivliostyle_doc/ja/reports/vivliostyle-report-2019/vf2019report.html)でも述べた。
 
 前期末の時点で、最大の懸案は開発資金の確保だった。開発者会議でその解決策が話し合われた。そこでコントリビュータから提案されたのが、Vivliostyle Pubの開発をテーマにして[未踏アドバンスト事業](https://www.ipa.go.jp/jinzai/advanced/2020/koubo_index.html)に応募することだった。このときの開発メンバーは、既述したコントリビュータに加え、[youchan](https://github.com/orgs/vivliostyle/people/youchan)氏、[takanakahiko](https://github.com/orgs/vivliostyle/people/takanakahiko)氏である。
 
