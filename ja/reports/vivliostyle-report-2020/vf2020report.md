@@ -14,7 +14,7 @@ lang: ja
 
 前者の春イベントは、いわゆるコロナ禍に重なった。当初は日本印刷技術協会（JAGAT）を会場に開催予定だったが、3密回避が至上命題となりつつある状況の中、オンライン配信に切り替えることで乗り切ることができた。同種のイベントがほとんど中止になったことも手伝い、ありがたいことに参加申込は142名にも達した。内容的にも当時アルファ版の開発真っ最中だった Vivliostyle Pub の報告を中心に、当法人のリアルな動きをお知らせすることができたように思う。
 
-他方、秋イベントはCSS組版を主題とするセミナーとして、春イベントに比べてじっくり取り組めたように思える。たとえばドイツ国立科学図書館オープン・サイエンス・ラボの[Simon Worthington](https://www.force11.org/users/simon-worthington)氏によるCOVID-19に対する公衆衛生教科書の迅速な出版のレポートや、コントリビュータ[akabeko](https://github.com/akabekobeko)氏による[Paged.js](https://www.pagedmedia.org/paged-js/)（Vivliostyleの競合）の使用レポートなど、Vivliostyleに留まらないCSS組版の魅力を、幅広く伝えることができたのではないだろうか。
+他方、秋イベントはCSS組版を主題とするセミナーとして、じっくり取り組めたように思える。たとえばドイツ国立科学図書館オープン・サイエンス・ラボの[Simon Worthington](https://www.force11.org/users/simon-worthington)氏によるCOVID-19に対する公衆衛生教科書の迅速な出版のレポートや、コントリビュータ[akabeko](https://github.com/akabekobeko)氏による[Paged.js](https://www.pagedmedia.org/paged-js/)（Vivliostyleの競合）の使用レポートなど、Vivliostyleに留まらないCSS組版の魅力を、幅広く伝えることができたのではないだろうか。
 
 ### 2. 公式ウェブサイトのリニューアル**
 
@@ -57,7 +57,7 @@ lang: ja
 
 #### [Vivliostyle CLI](https://github.com/vivliostyle/vivliostyle-cli)
 
-これはコマンドライン・インターフェイスでCSS組版をするコンバーターである。今期Markdown形式の入力をサポートしたことにより、活用の幅が一気に広がった。また、プレビューのUI（画面）がVivliostyle Viewerに統合されたことで、単に組版結果を確認できるだけでなく「長文を読める」プロダクトに成長したと言える。後述するが、これは将来のVivliostyle Pubにも良い影響を及ぼすことが期待できる。リリースごとの詳細は下記の通りだ。
+これはコマンドライン・インターフェイスでCSS組版ができるコンバーターである。今期Markdown形式の入力をサポートしたことにより、活用の幅が一気に広がった。また、プレビュー画面がVivliostyle Viewerに統合されたことで、単に組版結果を確認できるだけでなく「長文を読める」プロダクトに成長したと言える。後述するが、これは将来のVivliostyle Pub v1にも良い影響を及ぼすことが期待できる。リリースごとの詳細は下記の通りだ。
 
 - プレビューのUIをVivliostyle Viewerに置き換えた（[v3.2.0 / 3月29日](https://github.com/vivliostyle/vivliostyle-cli/releases/tag/v3.2.0)）
 - Markdownをはじめ様々なファイル形式の入力をサポート、[Vivliostyle Themes](https://github.com/vivliostyle/themes)のサポート、Webブックをはじめ複数の出力をサポート、urlによる外部Webページの読み込みをサポート（[v3.0.0 / 2月7日](https://github.com/vivliostyle/vivliostyle-cli/releases/tag/v3.0.0)）
@@ -65,11 +65,11 @@ lang: ja
 
 #### [Vivliostyle Flavored Markdown (VFM)](https://github.com/vivliostyle/vfm)
 
-これはルビ、画像サイズ、キャプション、脚注などを実現した、書籍組版のためのMarkdown方言である。最も普及しているMarkdown仕様、GitHub Flavored Markdown（GFM）の上位互換だ。Vivliostyle CLI v.3.0の原稿作成用に開発されており、6月13日にv1.0.0-alpha.0をリリースし、今期末時点でv1.0.0-alpha.17をリリースし、継続して開発中である。
+これはルビ、画像サイズ、キャプション、脚注などを実現した、書籍組版のためのMarkdown方言である。最も普及しているMarkdown仕様、GitHub Flavored Markdown（GFM）の上位互換だ。Vivliostyle CLI v3.0の原稿作成用に開発されており、6月13日にv1.0.0-alpha.0をリリースし、今期末時点でv1.0.0-alpha.17をリリースし、継続して開発中である。
 
 #### [Themes](https://github.com/vivliostyle/themes)
 
-これはVivliostyle CLIでCSS組版をするためのスタイルシートを、パッケージとして公開／再利用するための仕組みだ。7月1日に最初の公式Themeがリリースされ、今期末時点で以下の4つのテーマがリリースされている。引き続き拡張していきたい。
+これはVivliostyle CLIでCSS組版をするためのスタイルシートを、パッケージとして公開／再利用するための仕組みだ。7月1日に最初の公式Themeがリリースされ、今期末時点で以下の3つのテーマがリリースされている。引き続き拡張していきたい。
 
 - [theme-slide（スライド）](https://github.com/vivliostyle/themes/tree/master/packages/@vivliostyle/theme-slide)
 - [theme-bunko（縦組書籍）](https://github.com/vivliostyle/themes/tree/master/packages/@vivliostyle/theme-bunko#bunko)
@@ -83,11 +83,11 @@ lang: ja
 
 #### [Vivliostyle Pub](https://github.com/vivliostyle/vivliostyle-pub)
 
-当法人プロダクトの集大成ともいえるのがVivliostyle Pubだ。そこで開発の経緯について、少し詳しく本項で説明する。その出発点はブラウザ上で動作するオンラインエディタ “Viola” である。作者[spring-raining](https://github.com/orgs/vivliostyle/people/spring-raining) 氏は、これを当法人に移譲するので、コントリビュータが協力して作り直してはどうかと申し出てくれた。その後、月例の開発者会議の中で村上代表理事により “Vivliostyle Pub” というプロジェクト名が与えられ、正式に開発が開始された。このことは、[前記事業報告書](https://vivliostyle.github.io/vivliostyle_doc/ja/reports/vivliostyle-report-2019/vf2019report.html)でも述べた。
+当法人プロダクトの集大成ともいえるのがVivliostyle Pubだ。そこで開発の経緯について、少し詳しく本項で説明する。その出発点はブラウザ上で動作するオンラインエディタ “Viola” である。その作者である[spring-raining](https://github.com/orgs/vivliostyle/people/spring-raining) 氏は、これを当法人に移譲するので、コントリビュータが協力して作り直してはどうかと申し出てくれた。その後、月例の開発者会議の中で村上代表理事により “Vivliostyle Pub” というプロジェクト名が与えられ、正式に開発が開始された。このことは前期事業報告書でも述べた。
 
 前期末の時点で、最大の懸案は開発資金の確保であり、開発者会議でその解決策が話し合われた。そこでコントリビュータから提案されたのが、Vivliostyle Pubの開発をテーマにして[未踏アドバンスト事業](https://www.ipa.go.jp/jinzai/advanced/2020/koubo_index.html)に応募することだった。このときの開発メンバーは、既述したコントリビュータに加え、[youchan](https://github.com/orgs/vivliostyle/people/youchan)氏、[takanakahiko](https://github.com/orgs/vivliostyle/people/takanakahiko)氏である。
 
-話はまとまった。コントリビュータが一丸となり、日に夜を継いでVivliostyle Pubの開発作業がはじまる。目指すのは5月中旬に予定されている2次審査である。この時点のバージョン（アルファ版）の概要は下記の通りだ。
+話はまとまった。コントリビュータが一丸となり、夜を日に継いでVivliostyle Pubの開発作業がはじまる。目指すのは5月中旬に予定されている2次審査である。この時点のバージョン（アルファ版）の概要は下記の通りだ。
 
 - クラウド上にデプロイされたVivliostyle CLIには、VFMのごく初期のパーサーが実装されている
 - Vivliostyle CLIはCSS組版した結果をブラウザに出力できる
@@ -103,18 +103,18 @@ lang: ja
 
 ![図3 現在のVivliostyle Pub](./img/fig-3.png){ width=50% }
 
-開発がほぼ止まったVivliostyle Pubをよそに、その部品とも位置づけられるVFM、Themes、Vivliostyle CLI、そしてVivliostyle Core / Viewerの方は、大きく進化させることができた。しかしそのためには、未踏アドバンスト事業落選のインパクトを乗り越える必要があった。その指針となったのが、村上代表理事による下記の文書である。
+開発がほぼ止まったVivliostyle Pubをよそに、その部品とも位置づけられるVFM、Themes、Vivliostyle CLI、そしてVivliostyle Core / Viewerの方は、大きく進化させることができている。しかしそのためには、未踏アドバンスト事業落選のインパクトを乗り越える必要があった。その指針となったのが、村上代表理事による下記の文書である。
 
 - [Vivliostyle Pub v1 Req (11/9)](https://github.com/vivliostyle/community/wiki/Vivliostyle-Pub-v1-Req)
 - [Vivliostyle CLI v3.0 new spec (11/9〜2/9)](https://github.com/vivliostyle/community/wiki/Vivliostyle-CLI-v3.0-new-spec)
 
-こうして開発が進んだVFM、Themes、Vivliostyle CLIを組み込めば、無事にVivliostyle Pub v.1がリリースできる。それこそが次期の課題となるはずだ。それを果たすため、2021年8月末にベータ版公開、同年12月末ローンチを目指して開発が進められることになった。
+こうして開発が進んだVFM、Themes、Vivliostyle CLIを組み込めば、無事にVivliostyle Pub v1がリリースできる。それこそが次期の課題となるはずだ。それを果たすために、2021年8月末にベータ版公開、同年12月末ローンチを目指して開発が進められることになった。
 
-### 4. Vivliostyleと連携する外部のプロジェクトとの協力
+### 4. Vivliostyleと連携する外部組織との協働
 
-前期の事業収入は0円であった。しかし次章や前掲図1にあるとおり、今期は1,503,721円の事業収入を上げることができた。とくに大きかったのは、以前から村上代表理事が関係してきた外部企業からの受託開発だ。じつは、前節Vivliostyle Core / Viewerの項で挙げた開発成果は、多くがこの外部企業からの受託開発によるものだ。
+前期の事業収入は0円であった。しかし次章や前掲図1にあるとおり、今期は1,503,721円の事業収入を上げることができた。とくに大きかったのは、以前から村上代表理事が関係してきた外部企業からの受託開発だ。じつは、前節Vivliostyle Core / Viewerの項で挙げた開発成果は、多くがこの外部企業からの報酬によるものだ。
 
-また、村上代表理事は第1節でふれたSimon Worthington氏と、イベント後も議論をつづけることで彼等の開発にコミットした。これにより彼等から開発援助の名目で事業収入を得ることができた。このように、外部との協働がそのままVivliostyleの開発につながり、さらにその結果として課題だったCSS Paged Mediaへの対応も進めることができた。これは大変ありがたいことだった。
+また、村上代表理事は第1節でふれたSimon Worthington氏と、その後も議論をつづけることで彼等の開発にコミットし続けた。これにより彼等から開発援助の名目で事業収入を得ることができた。このように、外部組織との協働がそのままVivliostyleの開発につながり、さらにその結果として課題だったCSS Paged Mediaへの対応も進めることができた。これは大変ありがたいことだった。
 
 ### 5. 理事
 
