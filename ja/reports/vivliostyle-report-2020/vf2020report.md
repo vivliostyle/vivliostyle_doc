@@ -103,7 +103,7 @@ lang: ja
 
 ![図3 現在のVivliostyle Pub](./img/fig-3.png){ width=50% }
 
-開発がほぼ止まったVivliostyle Pubをよそに、その部品とも位置づけられるプロダクト、VFM、Themes、Vivliostyle CLI、そして基盤となるVivliostyle Core / Viewerの方は今期を通して大きく進化させることができた。これは前項まで述べた通りだ。その指針となった文書が、村上代表理事による下記のものだ。
+開発がほぼ止まったVivliostyle Pubをよそに、その部品とも位置づけられるプロダクト、VFM、Themes、Vivliostyle CLI、そして基盤となるVivliostyle Core / Viewerの方は、今期を通して大きく進化させることができた。それはここまで述べた通りだ。その指針となった文書が、村上代表理事による下記のものだ。
 
 - [Vivliostyle Pub v1 Req (11/9)](https://github.com/vivliostyle/community/wiki/Vivliostyle-Pub-v1-Req)
 - [Vivliostyle CLI v3.0 new spec (11/9〜2/9)](https://github.com/vivliostyle/community/wiki/Vivliostyle-CLI-v3.0-new-spec)
