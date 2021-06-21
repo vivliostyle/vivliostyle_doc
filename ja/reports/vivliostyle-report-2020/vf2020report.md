@@ -73,7 +73,6 @@ Markdown形式の入力をサポートしたことにより、活用の幅が一
 - [theme-slide（スライド）](https://github.com/vivliostyle/themes/tree/master/packages/@vivliostyle/theme-slide)
 - [theme-bunko（縦組書籍）](https://github.com/vivliostyle/themes/tree/master/packages/@vivliostyle/theme-bunko#bunko)
 - [theme-techbook（横書技術書）](https://github.com/vivliostyle/themes/releases/tag/%40vivliostyle%2Ftheme-techbook%400.2.0)
-- {[theme-academic（横組学術レポート）]
 
 #### [Create Book](https://github.com/vivliostyle/create-book)
 
