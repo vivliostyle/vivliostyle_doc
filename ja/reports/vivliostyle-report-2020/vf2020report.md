@@ -57,10 +57,11 @@ lang: ja
 
 #### [Vivliostyle CLI](https://github.com/vivliostyle/vivliostyle-cli)
 
-- プレビューのUIをVivliostyle Viewerに置き換え（[v3.2.0 / 3月29日](https://github.com/vivliostyle/vivliostyle-cli/releases/tag/v3.2.0)）
+これはコマンドライン・インターフェイスでCSS組版をするコンバーターである。今期Markdown形式の入力をサポートしたことにより、活用の幅が一気に広がった。また、プレビューのUI（画面）がVivliostyle Viewerに統合されたことで、単に組版結果を確認できるだけでなく「長文を読める」プロダクトに成長したと言える。後述するが、これは将来のVivliostyle Pubにも良い影響を及ぼすことが期待できる。リリースごとの詳細は下記の通りだ。
+
+- プレビューのUIをVivliostyle Viewerに置き換えた（[v3.2.0 / 3月29日](https://github.com/vivliostyle/vivliostyle-cli/releases/tag/v3.2.0)）
 - Markdownをはじめ様々なファイル形式の入力をサポート、[Vivliostyle Themes](https://github.com/vivliostyle/themes)のサポート、Webブックをはじめ複数の出力をサポート、urlによる外部Webページの読み込みをサポート（[v3.0.0 / 2月7日](https://github.com/vivliostyle/vivliostyle-cli/releases/tag/v3.0.0)）
 
-Markdown形式の入力をサポートしたことにより、活用の幅が一気に広がった。とくに、プレビューのUI（画面）がVivliostyle Viewerに統合されたことで、単に組版結果を確認できるだけでなく「長文を読める」プロダクトに成長したと言える。後述するが、これは将来のVivliostyle Pubにも良い影響を及ぼすことが期待できる。
 
 #### [Vivliostyle Flavored Markdown (VFM)](https://github.com/vivliostyle/vfm)
 
@@ -84,7 +85,7 @@ Markdown形式の入力をサポートしたことにより、活用の幅が一
 
 当法人プロダクトの集大成ともいえるのがVivliostyle Pubだ。そこで開発の経緯について、少し詳しく本項で説明する。その出発点はブラウザ上で動作するオンラインエディタ “Viola” である。作者[spring-raining](https://github.com/orgs/vivliostyle/people/spring-raining) 氏は、これを当法人に移譲するので、コントリビュータが協力して作り直してはどうかと申し出てくれた。その後、月例の開発者会議の中で村上代表理事により “Vivliostyle Pub” というプロジェクト名が与えられ、正式に開発が開始された。このことは、[前記事業報告書](https://vivliostyle.github.io/vivliostyle_doc/ja/reports/vivliostyle-report-2019/vf2019report.html)でも述べた。
 
-前期末の時点で、最大の懸案は開発資金の確保だった。開発者会議でその解決策が話し合われた。そこでコントリビュータから提案されたのが、Vivliostyle Pubの開発をテーマにして[未踏アドバンスト事業](https://www.ipa.go.jp/jinzai/advanced/2020/koubo_index.html)に応募することだった。このときの開発メンバーは、既述したコントリビュータに加え、[youchan](https://github.com/orgs/vivliostyle/people/youchan)氏、[takanakahiko](https://github.com/orgs/vivliostyle/people/takanakahiko)氏である。
+前期末の時点で、最大の懸案は開発資金の確保であり、開発者会議でその解決策が話し合われた。そこでコントリビュータから提案されたのが、Vivliostyle Pubの開発をテーマにして[未踏アドバンスト事業](https://www.ipa.go.jp/jinzai/advanced/2020/koubo_index.html)に応募することだった。このときの開発メンバーは、既述したコントリビュータに加え、[youchan](https://github.com/orgs/vivliostyle/people/youchan)氏、[takanakahiko](https://github.com/orgs/vivliostyle/people/takanakahiko)氏である。
 
 話はまとまった。コントリビュータが一丸となり、日に夜を継いでVivliostyle Pubの開発作業がはじまる。目指すのは5月中旬に予定されている2次審査だ。この時点のバージョン（アルファ版）の概要は下記の通りだ。
 
@@ -113,7 +114,7 @@ Markdown形式の入力をサポートしたことにより、活用の幅が一
 
 前期の事業収入は0円であった。しかし次章や前掲図1にあるとおり、今期は1,503,721円の事業収入を上げることができた。とくに大きかったのは、以前から村上代表理事が関係してきた外部企業からの受託開発だ。じつは、前節Vivliostyle Core / Viewerの項で挙げた開発成果は、多くがこの外部企業からの受託開発によるものだ。
 
-また、村上代表理事は第1節でふれたSimon Worthington氏とイベント後も議論をつづけることで、彼等の開発にコミットした。これにより彼等から開発援助の名目で事業収入を得ることができた。このように、外部とのコラボレイトがそのままVivliostyleの開発につながり、さらにその結果として課題だったCSS Paged Mediaへの対応も進めることができたのは、大変ありがたいことだった。
+また、村上代表理事は第1節でふれたSimon Worthington氏と、イベント後も議論をつづけることで彼等の開発にコミットした。これにより彼等から開発援助の名目で事業収入を得ることができた。このように、外部とのコラボレイトがそのままVivliostyleの開発につながり、さらにその結果として課題だったCSS Paged Mediaへの対応も進めることができたのは、大変ありがたいことだった。
 
 ### 5. 理事
 
