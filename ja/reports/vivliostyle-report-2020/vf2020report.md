@@ -103,12 +103,12 @@ lang: ja
 
 ![図3 現在のVivliostyle Pub](./img/fig-3.png){ width=50% }
 
-開発がほぼ止まったVivliostyle Pubをよそに、その部品とも位置づけられるプロダクト、VFM、Themes、Vivliostyle CLI、そして基盤となるVivliostyle Core / Viewerの方は、今期を通して大きく進化させることができた。それはここまで述べた通りだ。未踏アドバンスト事業落選の状況の中で、その指針となった文書が村上代表理事による下記のものだ。
+開発がほぼ止まったVivliostyle Pubをよそに、その部品とも位置づけられるプロダクト、VFM、Themes、Vivliostyle CLI、そして基盤となるVivliostyle Core / Viewerの方は、大きく進化させることができた。しかしそのためには、未踏アドバンスト事業落選のインパクトを乗り越える必要があった。その指針となったのが、村上代表理事による下記の文書だ。
 
 - [Vivliostyle Pub v1 Req (11/9)](https://github.com/vivliostyle/community/wiki/Vivliostyle-Pub-v1-Req)
 - [Vivliostyle CLI v3.0 new spec (11/9〜2/9)](https://github.com/vivliostyle/community/wiki/Vivliostyle-CLI-v3.0-new-spec)
 
-このように開発が進んだVFM、Themes、Vivliostyle CLIを組み込めば、Vivliostyle Pub v.1はリリースできる。それこそが次期の課題となるだろう。2021年8月末にベータ版を公開、同年12月末にローンチを目指して開発が進められている。
+こうして開発が進んだVFM、Themes、Vivliostyle CLIを組み込めば、Vivliostyle Pub v.1は無事にリリースできるだろう。それこそが次期の課題となるはずだ。それを果たすため、2021年8月末にベータ版公開、同年12月末ローンチを目指して開発が進められることになった。
 
 ### 4. Vivliostyleと連携する外部のプロジェクトとの協力
 
