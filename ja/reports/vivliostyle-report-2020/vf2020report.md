@@ -71,8 +71,8 @@ lang: ja
 これはVivliostyle CLIでCSS組版をするためのスタイルシートを、パッケージとして公開／再利用するための仕組みだ。7月1日に最初の公式Themeがリリースされ、今期末時点で以下の3つのテーマがリリースされている。引き続き拡張していきたい。
 
 - [theme-slide（スライド）](https://github.com/vivliostyle/themes/tree/master/packages/@vivliostyle/theme-slide)
-- [theme-bunko（縦組書籍）](https://github.com/vivliostyle/themes/tree/master/packages/@vivliostyle/theme-bunko#bunko)
-- [theme-techbook（横書技術書）](https://github.com/vivliostyle/themes/releases/tag/%40vivliostyle%2Ftheme-techbook%400.2.0)
+- [theme-bunko（縦組書籍）](https://github.com/vivliostyle/themes/tree/master/packages/@vivliostyle/theme-bunko)
+- [theme-techbook（技術書）](https://github.com/vivliostyle/themes/tree/master/packages/%40vivliostyle/theme-techbook)
 
 #### [Create Book](https://github.com/vivliostyle/create-book)
 
