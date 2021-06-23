@@ -3,42 +3,44 @@ title: "Vivliostyle Foundation FY2020 Activity Report"
 lang: en
 ---
 
-## **第1章  2020年度（第3期 2020年4月1日〜2021年3月31日）事業報告**
+## **Chapter 1: Activity Report for FY2019**
 
-### 1. 開発者／ユーザーイベントの開催
+(The 3rd Fiscal Year: from April 1, 2020 to March 31, 2021)
 
-当法人は、Vivliostyleを広くユーザーや開発者に知っていただく場として、開発者／ユーザーイベントを年2回開催することにしている。本年度も以下のように開催することができた。
+### 1. Organize developer/user meetup
 
-- [2020年4月4日：Vivliostyle ユーザーと開発者の集い 2020春（オンライン）](https://vivliostyle.connpass.com/event/170939/)
-- [2020年10月24日：Vivliostyle ユーザーと開発者の集い 2020秋（オンライン）](https://vivliostyle.connpass.com/event/189940/)
+We have decided to hold developer/user meetup twice a year as a place to widely let users and developers know about Vivliostyle. This year, we were able to hold the following meetups.
 
-前者の春イベントは、いわゆるコロナ禍に重なった。当初は日本印刷技術協会（JAGAT）を会場に開催予定だったが、3密回避が至上命題となりつつある状況の中、オンライン配信に切り替えることで乗り切ることができた。同種のイベントの多くが中止になった中で、ありがたいことに参加申込は142名にも達した。内容的にも当時アルファ版の開発真っ最中だった Vivliostyle Pub の報告を中心に、当法人のリアルな動きをお知らせすることができたように思う。
+- [April 4, 2020: Vivliostyle User/Dev Meetup 2020 Spring (Held online)](https://vivliostyle.connpass.com/event/170939/)
+- [October 24, 2020: Vivliostyle User/Dev Meetup 2020 Autumn (Held online)](https://vivliostyle.connpass.com/event/189940/)
 
-他方、秋イベントはCSS組版を主題とするセミナーとして、じっくり取り組めたように思える。たとえばドイツ国立科学図書館オープン・サイエンス・ラボの[Simon Worthington](https://www.force11.org/users/simon-worthington)氏によるCOVID-19に対する公衆衛生教科書の迅速な出版のレポートや、コントリビュータ[akabeko](https://github.com/akabekobeko)氏による[Paged.js](https://www.pagedmedia.org/paged-js/)（Vivliostyleの競合）の使用レポートなど、Vivliostyleに留まらないCSS組版の魅力を、幅広く伝えることができたのではないだろうか。
+The spring meetup coincided with the COVID 19 calamity. Initially, the event was scheduled to be held at the Japan Association of Graphic Arts Technology (JAGAT), but as Avoid the “Three Cs” was becoming a top priority, we were able to get through it by switching to online distribution. While most of the similar events were cancelled, thankfully, 142 people registered for the event. In terms of content, we were able to inform people about the real activities of our corporation, focusing on the report of Vivliostyle Pub, which was in the midst of alpha development at the time.
 
-### 2. 公式ウェブサイトのリニューアル
+On the other hand, the fall event was a thoughtful seminar on CSS typesetting. For example, [Simon Worthington](https://www.force11.org/users/simon-worthington)of the Open Science Lab - German National Library of Science and Technology reported on Rapid publishing for public health books against COVID 19. And our contributor [akabeko](https://github.com/akabekobeko) reported on Vivliostyle's competitor [Paged.js](https://www.pagedmedia.org/paged-js/). In this way, we were able to show the appeal of CSS typesetting beyond Vivliostyle.
 
-[前期の事業報告書](https://vivliostyle.org/ja/about-us/#2019%E5%B9%B4%E5%BA%A6%E4%BA%8B%E6%A5%AD%E5%A0%B1%E5%91%8A%E6%9B%B8)でも簡単に触れたが、当法人の創設以来、公式サイトのデザインは2年あまりも変わらないままだった。これを一新するべく、開発者会議で討議を重ねて以下の方針を定め、2019年12月から[yamasy1549](https://github.com/yamasy1549)氏にお願いして作業にとりかかった。
+### 2. Official website renewal
 
-- モバイル環境に対応したシングルカラムレイアウト
-- トップページに「Vivliostyle とはなにか」が直感できるアニメを配置
-- 各ページの目立つところに GitHub リポジトリのリンクを配置
-- ユーザーの利便性のため、以下のページを新設
-    - プロダクトの概要をまとめた「使ってみる」
-    - ユーザーガイドやチュートリアルガイド等の詳細な開発ドキュメント
-    - ユーザーの疑問を解決するFAQ
+As briefly mentioned in [the previous year's annual report](https://vivliostyle.github.io/vivliostyle_doc/en/reports/vivliostyle-report-2019/vf2019report.html), the design of the official website had remained unchanged for over two years since the founding of the corporation. In order to revamp it, we had a series of discussions at the developper meeting and decided on the following policy, and commissioned [yamasy1549](https://github.com/yamasy1549) to start work on it in December 2019.
 
-平行して開発者／ユーザーイベント（前節参照）の準備をすすめなければならなかったが、なんとかイベント前日の4月3日にリニューアルオープンさせることができた。その後も、以下のような情報を追加していった。
+- Single column layout for mobile viewing.
+- The top page of the site features an animation that provides an intuitive understanding of what Vivliostyle is all about.
+- Place the GitHub repository link prominently on each page.
+- For the convenience of users, the following pages will be newly added.
+    - “Getting Started” that summarizes the product outline. 
+    - Detailed development documentation, including “User Guides” and “Tutorial Guides”.
+    - “FAQ” to solve users' doubts.
 
-- 4月10日：[ドイツ国立科学技術図書館がVivliostyleを使ってCOVID-19対策の教科書を出版したことを知らせる](https://vivliostyle.org/ja/blog/2020/04/10/tib-book-against-covid19/)
-- 4月29日：[GitHub Sponsors による支援を公式サイトで呼びかける](https://vivliostyle.org/ja/blog/2020/04/29/become-a-sponsor-to-vivliostyle-via-github-sponsors/)
-- 6月11日：[2019年度事業報告書を公式サイトで公開](https://vivliostyle.org/ja/about-us/#2019%E5%B9%B4%E5%BA%A6%E4%BA%8B%E6%A5%AD%E5%A0%B1%E5%91%8A%E6%9B%B8)
-- 8月19日：[Create Bookのチュートリアルを特集企画として公開](https://vivliostyle.org/ja/make-books-with-create-book/)
-- 8月29日：[円建てクレジットカード決済（Robot Payment）によるスポンサー募集を公式サイトで開始](https://vivliostyle.org/ja/blog/2020/11/20/You-can-support-Vivliostyle-without-a-GitHub-account/)
+It was difficult to prepare for the developer/user event (see the previous section) at the same time, but we managed to reopen the site on April 3, the day before the event. After that, the following information was added.
 
-中でも寄付による支援の呼びかけは、営利を目的としない（利益の分配をしない）一般社団法人として重要なもので、実際に今期は全部で61,209円の寄付金を集めることができた（図1）。これは経常収益全体の約4%にあたる。今はまだ決して多いとは言えないが、今後も当法人の活動に賛同してくださる人々の受け皿として、大事に育てていきたいと考えている。
+- April 10: [Notified that the German National Library of Science and Technology has published a textbook on COVID-19 measures using Vivliostyle.](https://vivliostyle.org/blog/2020/04/10/tib-book-against-covid19/)
+- April 29 : [Called for support from GitHub Sponsors.](https://vivliostyle.org/blog/2020/04/29/become-a-sponsor-to-vivliostyle-via-github-sponsors/)
+- June 11: [2019 Annual Report released.](https://vivliostyle.github.io/vivliostyle_doc/en/reports/vivliostyle-report-2019/vf2019report.html)
+- 8月19日：[Creator Book Tutorial Guide Released.](https://vivliostyle.org/make-books-with-create-book/)
+- 8月29日：[Recruitment of sponsors by Credit Card Payment denominated in yen has started.](https://vivliostyle.org/blog/2020/11/20/You-can-support-Vivliostyle-without-a-GitHub-account/)
 
-![図1 今期決算における経常収益の内訳](./img/fig-1.png){ width=50% }
+In particular, the appeal for donations is important for a general incorporated association that does not make a profit (and does not distribute profits). In fact, we were able to collect 61,209 yen in total this fiscal year (Fig. 1), which is about 4% of our total ordinary income. This is still not a large amount, but we would like to continue to nurture it as a receptacle for people who support our activities.
+
+![Figure 1: Breakdown of ordinary income for the current fiscal year](./img/fig-1.png){ width=50% }
  
 ### 3. プロダクトの開発状況
 
