@@ -111,7 +111,7 @@ They successfully passed the first round of screening on May 15. On the followin
 
 Since then, Vivliostyle Pub has had some very minor updates, but the Vivliostyle Pub that is running as of the end of this fiscal year has not changed much from the alpha version. Here is a screenshot of the current version.
 
-![図3 現在のVivliostyle Pub](./img/fig-3.png){ width=50% }
+![Figure 3 Current Vivliostyle Pub](./img/fig-3.png){ width=50% }
 
 Vivliostyle Pub has almost stopped development, while its components, VFM, Themes, Vivliostyle CLI, and Vivliostyle Core / Viewer, have evolved significantly.  However, in order to do so, it was necessary to overcome the impact of the failure of the Mitou Advanced Project. The following document by Representative Director Murakami served as a roadmap.
 
