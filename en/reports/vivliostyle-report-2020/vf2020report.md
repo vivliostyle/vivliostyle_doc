@@ -3,7 +3,7 @@ title: "Vivliostyle Foundation FY2020 Activity Report"
 lang: en
 ---
 
-## **Chapter 1: Activity Report for FY2019**
+## **Chapter 1: Activity Report for FY2020**
 
 (The 3rd Fiscal Year: from April 1, 2020 to March 31, 2021)
 
@@ -20,7 +20,7 @@ On the other hand, the fall event was a thoughtful seminar on CSS typesetting. F
 
 ### 2. Official website renewal
 
-As briefly mentioned in [the previous year's annual report](https://vivliostyle.github.io/vivliostyle_doc/en/reports/vivliostyle-report-2019/vf2019report.html), the design of the official website had remained unchanged for over two years since the founding of the corporation. In order to revamp it, we had a series of discussions at the developper meeting and decided on the following policy, and commissioned [yamasy1549](https://github.com/yamasy1549) to start work on it in December 2019.
+As briefly mentioned in [the previous year's activity report](https://vivliostyle.github.io/vivliostyle_doc/en/reports/vivliostyle-report-2019/vf2019report.html), the design of the official website had remained unchanged for over two years since the founding of the corporation. In order to revamp it, we had a series of discussions at the developper meeting and decided on the following policy, and commissioned [yamasy1549](https://github.com/yamasy1549) to start work on it in December 2019.
 
 - Single column layout for mobile viewing.
 - The top page of the site features an animation that provides an intuitive understanding of what Vivliostyle is all about.
@@ -32,99 +32,108 @@ As briefly mentioned in [the previous year's annual report](https://vivliostyle.
 
 It was difficult to prepare for the developer/user event (see the previous section) at the same time, but we managed to reopen the site on April 3, the day before the event. After that, the following information was added.
 
-- April 10: [Notified that the German National Library of Science and Technology has published a textbook on COVID-19 measures using Vivliostyle.](https://vivliostyle.org/blog/2020/04/10/tib-book-against-covid19/)
-- April 29 : [Called for support from GitHub Sponsors.](https://vivliostyle.org/blog/2020/04/29/become-a-sponsor-to-vivliostyle-via-github-sponsors/)
-- June 11: [2019 Annual Report released.](https://vivliostyle.github.io/vivliostyle_doc/en/reports/vivliostyle-report-2019/vf2019report.html)
-- August 19: [Creator Book Tutorial Guide Released.](https://vivliostyle.org/make-books-with-create-book/)
-- August 29: [Announced the start of accepting donations in Japanese yen by credit card.](https://vivliostyle.org/blog/2020/11/20/You-can-support-Vivliostyle-without-a-GitHub-account/)
+-2020/4/10: [Notified that the German National Library of Science and Technology has published a textbook on COVID-19 measures using Vivliostyle.](https://vivliostyle.org/blog/2020/04/10/tib-book-against-covid19/)
+- 2020/4/29: [Called for support from GitHub Sponsors.](https://vivliostyle.org/blog/2020/04/29/become-a-sponsor-to-vivliostyle-via-github-sponsors/)
+- 2020/6/11: [2019 Activity Report released.](https://vivliostyle.github.io/vivliostyle_doc/en/reports/vivliostyle-report-2019/vf2019report.html)
+- 2020/8/19: [Creator Book Tutorial Guide Released.](https://vivliostyle.org/make-books-with-create-book/)
+- 2020/8/29: [Announced the start of accepting donations in Japanese yen by credit card.](https://vivliostyle.org/blog/2020/11/20/You-can-support-Vivliostyle-without-a-GitHub-account/)
 
 In particular, the appeal for donations is important for a general incorporated association that does not make a profit (and does not distribute profits). In fact, we were able to collect 61,209 yen in total this fiscal year (Fig. 1), which is about 4% of our total ordinary income. This is still not a large amount, but we would like to continue to nurture it as a receptacle for people who support our activities.
 
 ![Figure 1: Breakdown of ordinary income for the current fiscal year](./img/fig-1.png){ width=50% }
  
-### 3. プロダクトの開発状況
+### 3. Product Development Status
 
-本節では、プロダクトごとに今期の開発状況を説明する。
+In this section, we will explain the development status of each product for this fiscal year.
 
-#### [Vivliostyle Core / Viewer（vivliostyle.js）](https://github.com/vivliostyle/vivliostyle.js)
+#### [Vivliostyle Core / Viewer (vivliostyle.js)](https://github.com/vivliostyle/vivliostyle.js)
 
-プロダクト全体の基盤でもあるVivliostyle CoreとVivliostyle Viewer（vivliostyle.js）は、今期多くの機能追加ができた。この結果、これまで十分とは言えなかった[CSS Paged Media](https://www.w3.org/TR/css-page-3/)への対応をすすめることができた。
+We were able to add many functions to Vivliostyle Core and Vivliostyle Viewer (Vivliostyle.js), which are the foundation of the entire product, this year. As a result, we were able to promote support for [CSS Paged Media](https://www.w3.org/TR/css-page-3/), which had not been sufficiently supported in the past. The main features we added are as follows.
 
- - ページ移動用のスライドバーの実装、マウスホイールのサポート（[v2.2.0 / 11月26日](https://github.com/vivliostyle/vivliostyle.js/releases/tag/v2.2.0)）
-- EPUBの見開き表示指定に対応（[v2.3.0 / 12月7日](https://github.com/vivliostyle/vivliostyle.js/releases/tag/v2.3.0)）
-- ヘッダーやフッター等を実現する名前付き文字列のサポート（[v2.4.0 / 12月28日](https://github.com/vivliostyle/vivliostyle.js/releases/tag/v2.4.0)）
-- n番目ページセレクターのサポート（[v2.5.0 / 2月26日](https://github.com/vivliostyle/vivliostyle.js/releases/tag/v2.5.0)）
-- 印刷ボタンの追加（[v2.6.0 / 3月14日](https://github.com/vivliostyle/vivliostyle.js/releases/tag/v2.6.0)）
+ - Implementation of a slide bar for page navigation, and support for mouse wheel. ([v2.2.0 / 2020/11/26](https://github.com/vivliostyle/vivliostyle.js/releases/tag/v2.2.0))
+- Support for specifying EPUB spread view. ([v2.3.0 / 2020/12/7](https://github.com/vivliostyle/vivliostyle.js/releases/tag/v2.3.0))
+- Support for named strings to realize headers, footers, etc. ([v2.4.0 / 2020/12/28](https://github.com/vivliostyle/vivliostyle.js/releases/tag/v2.4.0))
+- Support for n-th page selector. ([v2.5.0 / 2021/2/26](https://github.com/vivliostyle/vivliostyle.js/releases/tag/v2.5.0))
+- 印刷ボタンの追加 ([v2.6.0 / 2021/3/14](https://github.com/vivliostyle/vivliostyle.js/releases/tag/v2.6.0))
 
 #### [Vivliostyle CLI](https://github.com/vivliostyle/vivliostyle-cli)
 
-これはコマンドライン・インターフェイスでCSS組版ができるコンバーターである。今期Markdown形式の入力をサポートしたことにより、活用の幅が一気に広がった。また、プレビュー画面がVivliostyle Viewerに統合されたことで、単に組版結果を確認できるだけでなく「長文を読める」プロダクトに成長したと言える。後述するが、これは将来のVivliostyle Pub v1にも良い影響を及ぼすことが期待できる。リリースごとの詳細は下記の通りだ。
+This is a converter that allows CSS typesetting with a command line interface. With the addition of support for Markdown format input this fiscal year, the scope of its use has expanded dramatically. In addition, since the preview screen has been integrated into Vivliostyle Viewer, it can be said that Vivliostyle Viewer has grown into a product that allows users to read long texts, not just to check the formatting results. As will be discussed later, this is expected to have a positive impact on the future Vivliostyle Pub v1. The details for each release are as follows.
 
-- プレビューのUIをVivliostyle Viewerに置き換えた（[v3.2.0 / 3月29日](https://github.com/vivliostyle/vivliostyle-cli/releases/tag/v3.2.0)）
-- Markdownをはじめ様々なファイル形式の入力をサポート、[Themes](https://github.com/vivliostyle/themes)のサポート、Webブックをはじめ複数の出力をサポート、URLによる外部Webページの読み込みをサポート（[v3.0.0 / 2月7日](https://github.com/vivliostyle/vivliostyle-cli/releases/tag/v3.0.0)）
+- Replaced the preview UI with Vivliostyle Viewer. ([v3.2.0 / 2021/3/29](https://github.com/vivliostyle/vivliostyle-cli/releases/tag/v3.2.0))
+- Supports input of various file formats including Markdown/ Support for [Themes](https://github.com/vivliostyle/themes)/ Supports multiple outputs, including web books/ Support loading external web pages by URL. ([v3.0.0 / 2021/2/7](https://github.com/vivliostyle/vivliostyle-cli/releases/tag/v3.0.0))
+
 
 
 #### [Vivliostyle Flavored Markdown (VFM)](https://github.com/vivliostyle/vfm)
 
-これはルビ、画像サイズ、キャプション、脚注などを実現した、書籍組版のためのMarkdown方言である。最も普及しているMarkdown仕様、GitHub Flavored Markdown（GFM）の上位互換だ。Vivliostyle CLI v3.0の原稿作成用に開発されており、6月13日にv1.0.0-alpha.0をリリースし、今期末時点でv1.0.0-alpha.17をリリースし、継続して開発中である。
+This is a Markdown dialect for book typesetting that allows for ruby, image size specification, captions, footnotes, etc. It is upwardly compatible with the most popular Markdown specification, GitHub Flavored Markdown (GFM), and was developed for input data in Vivliostyle CLI v3.0. v1.0.0-alpha.0 was released on June 13, and v1.0.0-alpha.17 was released as of the end of this fiscal year. It has been under continuous development since then.
+
+
 
 #### [Themes](https://github.com/vivliostyle/themes)
 
-これはVivliostyle CLIでCSS組版をするためのスタイルシートを、パッケージとして公開／再利用するための仕組みだ。7月1日に最初の公式Themeがリリースされ、今期末時点で以下の3つのテーマがリリースされている。引き続き拡張していきたい。
+This is a mechanism to publish/reuse style sheets for CSS typesetting in Vivliostyle CLI as a package. The first official theme was released on July 1, and as of the end of this fiscal year, the following three themes have been released. We will continue to expand them.
 
-- [theme-slide（スライド）](https://github.com/vivliostyle/themes/tree/master/packages/@vivliostyle/theme-slide)
-- [theme-bunko（縦組書籍）](https://github.com/vivliostyle/themes/tree/master/packages/@vivliostyle/theme-bunko)
-- [theme-techbook（技術書）](https://github.com/vivliostyle/themes/tree/master/packages/%40vivliostyle/theme-techbook)
+- [theme-slide (Slide)](https://github.com/vivliostyle/themes/tree/master/packages/@vivliostyle/theme-slide)
+- [theme-bunko (Vertical Book)](https://github.com/vivliostyle/themes/tree/master/packages/@vivliostyle/theme-bunko)
+- [theme-techbook (Tech book)](https://github.com/vivliostyle/themes/tree/master/packages/%40vivliostyle/theme-techbook)
 
 #### [Create Book](https://github.com/vivliostyle/create-book)
 
-これはVivliostyle CLIを使った書籍制作用の環境をローカルに構築するインストーラーであり、Vivliostyle Pubのローカル版という一面もある。後述する未踏アドバンスト事業落選を契機に、[uetchy](https://github.com/uetchy)氏によって作られた。今期末時点でv0.1.6がリリースされている。詳細は、公式サイトに掲載した以下の記事を参照してほしい。
+This is an installer that builds an environment for book production using the Vivliostyle CLI locally, and it is also a local version of the Vivliostyle Pub. It was created by [uetchy](https://github.com/uetchy) in the wake of the Mitou Advanced program defeat, which will be described later. As of the end of this fiscal year, v0.1.6 has been released. For details, please refer to the following article posted on the official website. 
 
-- [特集企画：Create Book で同人誌を作ろう！](https://vivliostyle.org/ja/make-books-with-create-book/)
+- [Feature Articles: Let's self-publish with Create Book!](https://vivliostyle.org/make-books-with-create-book/)
 
 #### [Vivliostyle Pub](https://github.com/vivliostyle/vivliostyle-pub)
 
-当法人プロダクトの集大成ともいえるのがVivliostyle Pubだ。そこで開発の経緯について、少し詳しく本項で説明する。その出発点はブラウザ上で動作するオンラインエディタ “Viola” である。その作者である[spring-raining](https://github.com/spring-raining) 氏は、これを当法人に移譲するので、コントリビュータが協力して作り直してはどうかと申し出てくれた。その後、月例の開発者会議の中で村上代表理事により “Vivliostyle Pub” というプロジェクト名が与えられ、正式に開発が開始された。このことは前期事業報告書でも述べた。
+The Vivliostyle Pub is the culmination of our products. I will explain the development process in some detail in this section. The starting point is “Viola”, an online editor that runs in a browser. The author, [spring-raining](https://github.com/spring-raining), offered to give it to our organization so that the contributors could work together to recreate it. Later, during the monthly developer's meeting, the project was given the name "Vivliostyle Pub" by Representative Director Murakami, and development was officially started. This was also mentioned in the previous year's activity report.
 
-前期末の時点で、最大の懸案は開発資金の確保であり、開発者会議でその解決策が話し合われた。そこでコントリビュータから提案されたのが、Vivliostyle Pubの開発をテーマにして[未踏アドバンスト事業](https://www.ipa.go.jp/jinzai/advanced/2020/koubo_index.html)に応募することだった。
 
-皆で検討した結果「挑戦してみよう」と決まった。規定により法人は応募できないので、村上代表理事と既述したコントリビュータに加え、[youchan](https://github.com/youchan)氏、[takanakahiko](https://github.com/takanakahiko)氏からなる個人の集まりという形で、4月2日に応募を完了。そこから全員が一丸となり、夜を日に継いでVivliostyle Pubの開発作業がはじまる。目指すのは5月中旬に予定されている2次審査である。この時点のバージョン（アルファ版）の概要は下記の通りだ。
+As of the end of the previous fiscal year, the biggest concern was securing development funding, and the solution was discussed at the developer meeting. Therefore, the contributors suggested that they apply for the [Mitou Advanced Project](https://www.ipa.go.jp/jinzai/advanced/2020/koubo_index.html) with the theme of developing Vivliostyle Pub. 
 
-- クラウド上にデプロイされたVivliostyle CLIには、VFMのごく初期のパーサーが実装されている
-- Vivliostyle CLIはCSS組版した結果をブラウザに出力できる
-- 同じくエクスポートメニューからPDFをダウンロードできる
-- エディタで保存すると、GitHub上のファイルが更新される
-- こうした結果、ウェブブラウザ画面左のエディタでMarkdownを書くと、組版結果が画面右で即座に表示される
+As a result of discussions among the members, it was decided to take on the challenge. Since organizations are not allowed to apply due to regulations, we completed the application on April 2 as a group of individuals consisting of [youchan](https://github.com/youchan) and [takanakahiko](https://github.com/takanakahiko), in addition to the aforementioned contributors and Representative Director Murakami.
 
-以下は当時takanakahiko氏が作業用に作った、Vivliostyle Pubのフローチャート（図2）だ。
+From that point on, all of the members of the team worked together, and day after day, night after night, the development of Vivliostyle Pub began. The goal is the second round of review scheduled for mid-May. The following is an overview of the version (alpha version) at this point.
 
-![図2 開発初期のVivliostyle Pubフローチャート（作図：@takanakahiko氏）](./img/fig-2.png){ width=50% }
 
-5月15日には無事に第1次審査を通過。翌16日に第2次審査に臨んだものの、残念ながら6月10日に落選通知を受け取ることとなった。その後、Vivliostyle Pubはごくマイナーなアップデートはされたが、今期末の時点で動いているVivliostyle Pubは、アルファ版からあまり変わってはいない。現在のスクリーンショットを示す。
+- The Vivliostyle CLI deployed in the cloud implements a very early parser for VFM.
+- Vivliostyle CLI can output the result of CSS typesetting to the browser.
+- Vivliostyle CLI can generate and download a PDF of the CSS typesetting result from the Export menu.
+- Saving from the editor will update the file on GitHub.
+- As a result, when you write Markdown in the editor on the left side of the browser screen, the result of the typesetting is quickly displayed on the right side of the screen.
+
+The following is a flowchart of the Vivliostyle Pub (Figure 2) that takanakahiko created for collaboration at the time.
+
+![Figure 2: Vivliostyle Pub flowchart in early development (By takanakahiko)](./img/fig-2.png){ width=50% }
+
+They successfully passed the first round of screening on May 15. On the following day, May 16, they went through the second round of screening, but unfortunately they received a message on June 10 that they had not been selected.
+
+Since then, Vivliostyle Pub has had some very minor updates, but the Vivliostyle Pub that is running as of the end of this fiscal year has not changed much from the alpha version. Here is a screenshot of the current version.
 
 ![図3 現在のVivliostyle Pub](./img/fig-3.png){ width=50% }
 
-開発がほぼ止まったVivliostyle Pubをよそに、その部品とも位置づけられるVFM、Themes、Vivliostyle CLI、そしてVivliostyle Core / Viewerの方は、大きく進化させることができている。しかしそのためには、未踏アドバンスト事業落選のインパクトを乗り越える必要があった。その指針となったのが、村上代表理事による下記の文書である。
+Vivliostyle Pub has almost stopped development, while its components, VFM, Themes, Vivliostyle CLI, and Vivliostyle Core / Viewer, have evolved significantly.  However, in order to do so, it was necessary to overcome the impact of the failure of the Mitou Advanced Project. The following document by Representative Director Murakami served as a roadmap.
 
-- [Vivliostyle Pub v1 Req (11/9)](https://github.com/vivliostyle/community/wiki/Vivliostyle-Pub-v1-Req)
-- [Vivliostyle CLI v3.0 new spec (11/9〜2/9)](https://github.com/vivliostyle/community/wiki/Vivliostyle-CLI-v3.0-new-spec)
+- [Vivliostyle Pub v1 Req (2020/11/9)](https://github.com/vivliostyle/community/wiki/Vivliostyle-Pub-v1-Req)
+- [Vivliostyle CLI v3.0 new spec (2020/11/9-2021/2/9)](https://github.com/vivliostyle/community/wiki/Vivliostyle-CLI-v3.0-new-spec)
 
-こうして開発が進んだVFM、Themes、Vivliostyle CLIを組み込めば、無事にVivliostyle Pub v1がリリースできる。それこそが次期の課題となるはずだ。それを果たすために、2021年8月末にベータ版公開、同年12月末ローンチを目指して開発が進められることになった。
+If we can incorporate the VFM, Themes, and Vivliostyle CLI that have been developed in this way, we can successfully release Vivliostyle Pub v1. That will be the task for the next fiscal year. In order to accomplish this, the development is now underway with the aim of releasing the beta version at the end of August 2021 and launching it at the end of December of the same year.
 
-### 4. Vivliostyleと連携する外部組織との協働
+### 4. Collaborate with external organizations that work with Vivliostyle
 
-前期の事業収入は0円であった。しかし次章や前掲図1にあるとおり、今期は1,503,721円の事業収入を上げることができた。とくに大きかったのは、以前から村上代表理事が関係してきた外部企業からの受託開発だ。じつは、前節Vivliostyle Core / Viewerの項で挙げた開発成果は、多くがこの外部企業からの報酬によるものだ。
+In the previous fiscal year, the project income was 0 yen. However, as shown in the next chapter and Figure 1 above, we were able to generate 1,503,721 yen in business income this fiscal year. Especially significant was the development contracted by a company that Representative Director Murakami has been involved with for a long time. In fact, many of the development results mentioned in the previous section on Vivliostyle Core / Viewer were paid for by these companies.
 
-また、村上代表理事は第1節でふれたSimon Worthington氏と、その後も議論をつづけることで彼等の開発にコミットし続けた。これにより彼等から開発受注が発生して事業収入を得ることができた。このように、外部組織との協働がそのままVivliostyleの開発につながり、さらにその結果として課題だったCSS Paged Mediaへの対応も進めることができた。これは大変ありがたいことだった。
+In addition, Representative Director Murakami continued to have discussions with Simon Worthington, who was mentioned in Section 1, and continued to commit himself to their development. As a result, he was able to receive development orders from them and earn business income. In this way, collaboration with external organizations led directly to the development of Vivliostyle, and as a result, we were able to proceed with the CSS Paged Media support, which had been an issue. We are very grateful for this.
 
-### 5. 理事
+### 5. Directors
 
-- [村上真雄 (Shinyu Murakami)](https://github.com/MurakamiShinyu)〈代表理事、設立時社員〉
-- [リボアル・フロリアン (Florian Rivoal)](https://github.com/frivoal)〈理事、設立時社員〉
-- [ヨハネス・ウィルム (Johannes Wilm)](https://github.com/johanneswilm)〈理事、設立時社員〉
-- [小形克宏 (Katsuhiro Ogata)](https://github.com/ogwata)〈理事、2020年1月21日より〉
+- [Shinyu Murakami](https://github.com/MurakamiShinyu) (Representative Director, Founding Member)
+- [Florian Rivoal](https://github.com/frivoal) (Director, Founding Member)
+- [Johannes Wilm](https://github.com/johanneswilm) (Director, Founding Member)
+- [Katsuhiro Ogata](https://github.com/ogwata) (Director, From January 21, 2020)
 
-## 第2章 2020年度（第3期 2020年4月1日〜2021年3月31日）決算報告
+## 第2章 2020年度 (第3期 2020年4月1日〜2021年3月31日）決算報告
 
 ### 2020年度 貸借対照表
 
