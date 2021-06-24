@@ -7,14 +7,14 @@ lang: en
 
 (The 3rd Fiscal Year: from April 1, 2020 to March 31, 2021)
 
-### 1. Organize developer/user meetup
+### 1. Organize developer/user events
 
-We have decided to hold developer/user meetup twice a year as a place to widely let users and developers know about Vivliostyle. This year, we were able to hold the following meetups.
+We have decided to hold developer/user events twice a year as a place to widely let users and developers know about Vivliostyle. This year, we were able to hold the following events.
 
 - [April 4, 2020: Vivliostyle User/Dev Meetup 2020 Spring (Held online)](https://vivliostyle.connpass.com/event/170939/)
 - [October 24, 2020: Vivliostyle User/Dev Meetup 2020 Autumn (Held online)](https://vivliostyle.connpass.com/event/189940/)
 
-The spring meetup coincided with the COVID 19 calamity. Initially, the event was scheduled to be held at the Japan Association of Graphic Arts Technology (JAGAT), but as Avoid the “Three Cs” was becoming a top priority, we were able to get through it by switching to online distribution. While most of the similar events were cancelled, thankfully, 142 people registered for the event. In terms of content, we were able to inform people about the real activities of our corporation, focusing on the report of Vivliostyle Pub, which was in the midst of alpha development at the time.
+The spring event coincided with the COVID 19 calamity. Initially, the event was scheduled to be held at the Japan Association of Graphic Arts Technology (JAGAT), but as Avoid the “Three Cs” was becoming a top priority, we were able to get through it by switching to online distribution. While most of the similar events were cancelled, thankfully, 142 people registered for the event. In terms of content, we were able to inform people about the real activities of our corporation, focusing on the report of Vivliostyle Pub, which was in the midst of alpha development at the time.
 
 On the other hand, the fall event was a thoughtful seminar on CSS typesetting. For example, [Simon Worthington](https://www.force11.org/users/simon-worthington)of the Open Science Lab - German National Library of Science and Technology reported on Rapid publishing for public health books against COVID 19. And our contributor [akabeko](https://github.com/akabekobeko) reported on Vivliostyle's competitor [Paged.js](https://www.pagedmedia.org/paged-js/). In this way, we were able to show the appeal of CSS typesetting beyond Vivliostyle.
 
@@ -35,8 +35,8 @@ It was difficult to prepare for the developer/user event (see the previous secti
 - April 10: [Notified that the German National Library of Science and Technology has published a textbook on COVID-19 measures using Vivliostyle.](https://vivliostyle.org/blog/2020/04/10/tib-book-against-covid19/)
 - April 29 : [Called for support from GitHub Sponsors.](https://vivliostyle.org/blog/2020/04/29/become-a-sponsor-to-vivliostyle-via-github-sponsors/)
 - June 11: [2019 Annual Report released.](https://vivliostyle.github.io/vivliostyle_doc/en/reports/vivliostyle-report-2019/vf2019report.html)
-- 8月19日：[Creator Book Tutorial Guide Released.](https://vivliostyle.org/make-books-with-create-book/)
-- 8月29日：[Recruitment of sponsors by Credit Card Payment denominated in yen has started.](https://vivliostyle.org/blog/2020/11/20/You-can-support-Vivliostyle-without-a-GitHub-account/)
+- August 19: [Creator Book Tutorial Guide Released.](https://vivliostyle.org/make-books-with-create-book/)
+- August 29: [Announced the start of accepting donations in Japanese yen by credit card.](https://vivliostyle.org/blog/2020/11/20/You-can-support-Vivliostyle-without-a-GitHub-account/)
 
 In particular, the appeal for donations is important for a general incorporated association that does not make a profit (and does not distribute profits). In fact, we were able to collect 61,209 yen in total this fiscal year (Fig. 1), which is about 4% of our total ordinary income. This is still not a large amount, but we would like to continue to nurture it as a receptacle for people who support our activities.
 
