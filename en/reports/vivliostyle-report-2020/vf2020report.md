@@ -120,7 +120,7 @@ Vivliostyle Pub has almost stopped development, while its components, VFM, Theme
 
 If we can incorporate the VFM, Themes, and Vivliostyle CLI that have been developed in this way, we can successfully release Vivliostyle Pub v1. That will be the task for the next fiscal year. In order to accomplish this, the development is now underway with the aim of releasing the beta version at the end of August 2021 and launching it at the end of December of the same year.
 
-### 4. Collaborate with external organizations that work with Vivliostyle
+### 4. Collaborate with external organizations
 
 In the previous fiscal year, the project income was 0 yen. However, as shown in the next chapter and Figure 1 above, we were able to generate 1,503,721 yen in business income this fiscal year. Especially significant was the development contracted by a company that Representative Director Murakami has been involved with for a long time. In fact, many of the development results mentioned in the previous section on Vivliostyle Core / Viewer were paid for by these companies.
 
@@ -133,128 +133,131 @@ In addition, Representative Director Murakami continued to have discussions with
 - [Johannes Wilm](https://github.com/johanneswilm) (Director, Founding Member)
 - [Katsuhiro Ogata](https://github.com/ogwata) (Director, From January 21, 2020)
 
-## 第2章 2020年度 (第3期 2020年4月1日〜2021年3月31日）決算報告
+## Chapter 2: Financial Report for FY2020
 
-### 2020年度 貸借対照表
+(The 3rd Fiscal Year: from April 1, 2020 to March 31, 2021)
 
-| 科目           | **当年度**    | **前年度**    | **増減**     |
+### Balance Sheet for FY2020
+
+April 1, 2020 to March 31, 2021 (Unit: JPY)
+
+| 科目           | **This FY (2020)**    | **Prev. FY (2019)**    | **Increase/Decrease**     |
 | ------------ | ---------- | ---------- | ---------- |
-| **Ⅰ 資産の部**   |            |            |            |
-| **1 流動資産**   |            |            |            |
-| **現金・預金**    | 345,708    | 52,565     | 293,143    |
-| **流動資産合計**   | 345,708    | 52,565     | 293,143    |
-| **2 固定資産**   |            |            |            |
-| **創立費**      | 113,050    | 113,050    | 0          |
-| **資産合計**     | 458,758    | 165,615    | 293,143    |
-| **Ⅱ 負債の部**   |            |            |            |
-| **1 流動負債**   |            |            |            |
-| **預り金**      | 31,139     | 72,568     | -41,429    |
-| **役員借入金**    | 3,806,561  | 1,186,477  | 2,620,084  |
-| **負債合計**     | 3,837,700  | 1,259,045  | 2,578,655  |
-| **Ⅲ 正味財産の部** |            |            |            |
-| **1 一般正味財産** | -3,378,942 | -1,093,430 | -2,285,512 |
-| **正味財産合計**   | -3,378,942 | -1,093,430 | -2,285,512 |
-| **負債及び正味財産合計**   | 458,758    | 165,615    | 293,143    |
+| **Ⅰ. Assets**   |            |            |            |
+| 1. Current Assets   |            |            |            |
+| Cash and deposits    | 345,708    | 52,565     | 293,143    |
+| Total current assets   | 345,708    | 52,565     | 293,143    |
+| 2. Fixed Assets   |            |            |            |
+| Founding expenses      | 113,050    | 113,050    | 0          |
+| Total assets     | 458,758    | 165,615    | 293,143    |
+| **Ⅱ. Liabilities**   |            |            |            |
+|1. Current Liabilities  |            |            |            |
+| Withholdings     | 31,139     | 72,568     | -41,429    |
+| Loan from officer    | 3,806,561  | 1,186,477  | 2,620,084  |
+| Total liabilities     | 3,837,700  | 1,259,045  | 2,578,655  |
+| **Ⅲ. Net Assets** |            |            |            |
+| 1. General Net Assets | -3,378,942 | -1,093,430 | -2,285,512 |
+| Total net assets   | -3,378,942 | -1,093,430 | -2,285,512 |
+| Total liabilities and net assets   | 458,758    | 165,615    | 293,143    |
 
+### Net Assets Increase/Decrease Statement for FY2020
 
-### 2020年度 正味財産増減計算書
+April 1, 2020 to March 31, 2021 (Unit: JPY)
 
-| 科目                | **当年度**    | **前年度**    | **増減**     |
+| Title                | **This FY (2020)**    | **Prev. FY (2019)**    | **Increase/Decrease**     |
 | ----------------- | ---------- | ---------- | ---------- |
-| **Ⅰ. 一般正味財産増減の部** |            |            |            |
-| 1. 経常増減の部         |            |            |            |
-| ⑴ 経常収益            |            |            |            |
-| ①事業収益             | 1,503,721  | 0          | 1,503,721  |
-| 事業収益1             | 1,503,721  |            | 1,503,721  |
-| ②受け取り寄付金          | 61,209     |            | 61,209     |
-| 受け取り寄付金           | 61,209     | 0          | 61,209     |
-| ③雑収益              | 4          | 1          | 3          |
-| 受取利息              | 4          | 1          | 3          |
-| 経常利益計             | 1,564,934  |            |            |
-| ⑵ 経常費用            |            |            |            |
-| ① 事業費             |            |            |            |
-| 事業経費              | 373,823    | 67,850     | 305,973    |
-| 旅費交通費             | 11,527     | 12,080     | △553       |
-| 通信運搬費             | 252        |            | 252        |
-| 雑費                | 39,064     |            | 39,064     |
-| 事業費・経費1           | 65,575     | 55,770     | 9,805      |
-| 事業費・経費2           | 257,405    |            | 257,405    |
-| 事業費計              | 373,823    | 67,850     | 305,973    |
-| ② 管理費             |            |            |            |
-| 人件費1              | 3,454,000  | 984,881    | 2,469,119  |
-| 会議費               | 2,623      |            | 2,623      |
-| 管理費計              | 3,456,623  | 984,881    | 2,471,742  |
-| 経常費用計             | 3,830,446  | 1,052,731  | 2,777,715  |
-| 評価損益等調整前当期経常増減額   | △2,265,512 | △1,052,730 | △1,212,782 |
-| 評価損益等計            | 0          | 0          | 0          |
-| 当期経常増減額           | △2,265,512 | △1,052,730 | △1,212,782 |
-| 2. 経常外増減の部        |            |            |            |
-| ⑴ 経常外収益           |            |            |            |
-| 経常外収益計            | 0          | 0          | 0          |
-| ⑵ 経常外費用           |            |            |            |
-| 経常外費用計            | 0          | 0          | 0          |
-| 当期経常外増減額          | 0          | 0          | 0          |
-| 他会計振替前当期一般正味財産増減額 | △2,265,512 | △1,052,730 | △1,212,782 |
-| 税引前当期一般正味財産増減額    | △2,265,512 | △1,052,730 | △1,212,782 |
-| 法人税、住民税及び事業税      | 20,000     | 40,700     | △20,700    |
-| 当期一般正味財産増減額       | △2,285,512 | △1,052,730 | △1,192,082 |
-| 一般正味財産期首残高        | △1,093,430 | 0          | △1,093,430 |
-| 一般正味財産期末残高        | △3,378,942 | △1,093,430 | △2,285,512 |
-| **Ⅱ. 指定正味財産増減の部** |            |            |            |
-| 当期指定正味財産増減額       | 0          | 0          | 0          |
-| 指定正味財産期首残高        | 0          | 0          | 0          |
-| 指定正味財産期末残高        | 0          | 0          | 0          |
-| **Ⅲ. 正味財産期末残高**   | △3,378,942 | △1,093,430 | △1,093,430 |
+| **Ⅰ. General Net Assets Increase/Decrease** |            |            |            |
+| 1. Ordinary Increase/Decrease         |            |            |            |
+| ⑴ Ordinary revenues            |            |            |            |
+| ① Business income             | 1,503,721  | 0          | 1,503,721  |
+| Business Income 1             | 1,503,721  |            | 1,503,721  |
+| ② Donation Received          | 61,209     |            | 61,209     |
+| Donation received           | 61,209     | 0          | 61,209     |
+| ③ Other revenues              | 4          | 1          | 3          |
+| Interest received              | 4          | 1          | 3          |
+| Total ordinary revenues            | 1,564,934  |            |            |
+| ⑵ Ordinary expenses          |            |            |            |
+| ① Business expenses             |            |            |            |
+| Business expenses              | 373,823    | 67,850     | 305,973    |
+| Travel and transportation expenses   | 11,527     | 12,080     | △553       |
+| Communication transportation costs  | 252        |            | 252        |
+| Miscellaneous expenses                | 39,064     |            | 39,064     |
+| Business expenses 1           | 65,575     | 55,770     | 9,805      |
+| Business expenses 2           | 257,405    |            | 257,405    |
+| Total business expenses              | 373,823    | 67,850     | 305,973    |
+| ② Administrative expenses             |            |            |            |
+| Personnel expenses 1              | 3,454,000  | 984,881    | 2,469,119  |
+| Meeting fee               | 2,623      |            | 2,623      |
+| Total administrative expenses              | 3,456,623  | 984,881    | 2,471,742  |
+| Total ordinary expenses             | 3,830,446  | 1,052,731  | 2,777,715  |
+| Ordinary increase/decrease before valuation gain/loss this FY   | △2,265,512 | △1,052,730 | △1,212,782 |
+| Total valuation gain/loss            | 0          | 0          | 0          |
+| Ordinary increase/decrease this FY           | △2,265,512 | △1,052,730 | △1,212,782 |
+| 2. Non-ordinary Increase/Decrease        |            |            |            |
+| ⑴ Non-ordinary revenues          |            |            |            |
+| Total non-ordinary revenues            | 0          | 0          | 0          |
+| ⑵ Non-ordinary expenses           |            |            |            |
+| Total non-ordinary expenses            | 0          | 0          | 0          |
+| Non-ordinary increase/decrease this FY          | 0          | 0          | 0          |
+| General net assets increase/decrease before transfer to other accounts this FY | △2,265,512 | △1,052,730 | △1,212,782 |
+| General net assets increase/decrease before taxes this FY    | △2,265,512 | △1,052,730 | △1,212,782 |
+| Corporate tax, resident tax and business tax      | 20,000     | 40,700     | △20,700    |
+| General net assets increase/decrease this FY       | △2,285,512 | △1,052,730 | △1,192,082 |
+| General net assets at beginning of FY        | △1,093,430 | 0          | △1,093,430 |
+| General net assets at end of FY        | △3,378,942 | △1,093,430 | △2,285,512 |
+| **Ⅱ. Designated Net Assets Increase/Decrease** |            |            |            |
+| Designated net assets increase/decrease this FY       | 0          | 0          | 0          |
+| Designated net assets at beginning of FY        | 0          | 0          | 0          |
+| Designated net assets at end of FY        | 0          | 0          | 0          |
+| **Ⅲ. Net Assets at End of FY**   | △3,378,942 | △1,093,430 | △1,093,430 |
 
+### Income and Expenditure Statement for FY2020
 
-### 2020年度収支計算書
+April 1, 2020 to March 31, 2021 (Unit: JPY)
 
-
-| 科目                | 予算額 | 決算額        | 差異         | 備考 |
+| Title                | Budgetary Amount | Settlement Amount        | Difference         | Note |
 | ----------------- | --- | ---------- | ---------- | -- |
-| **Ⅰ. 一般正味財産増減の部** |     |            |            |    |
-| 1. 経常増減の部         |     |            |            |    |
-| ⑴ 経常収益            |     |            |            |    |
-| ①事業収益             | 0   | 1,503,721  | △1,503,721 |    |
-| 事業収益1             |     | 1,503,721  | △1,503,721 |    |
-| ②受け取り寄付金          | 0   | 61,209     | △61,209    |    |
-| 受け取り寄付金           |     | 61,209     | △61,209    |    |
-| ③雑収益              | 0   | 4          | △4         |    |
-| 受取利息              |     | 4          | △4         |    |
-| 経常利益計             | 0   | 1,564,934  | △1,564,934 |    |
-| ⑵ 経常費用            |     |            |            |    |
-| ① 事業費             |     |            |            |    |
-| 事業経費              | 0   | 373,823    | △373,823   |    |
-| 旅費交通費             |     | 11,527     | △11,527    |    |
-| 通信運搬費             |     | 252        | △252       |    |
-| 雑費                |     | 39,064     | △39,064    |    |
-| 事業費・経費1           |     | 65,575     | △65,575    |    |
-| 事業費・経費2           |     | 257,405    | △257,405   |    |
-| 事業費計              | 0   | 373,823    | △373,823   |    |
-| ② 管理費             |     |            |            |    |
-| 人件費1              |     | 3,454,000  | △3,454,000 |    |
-| 会議費               |     | 2,623      | △2,623     |    |
-| 管理費計              | 0   | 3,456,623  | △3,456,623 |    |
-| 経常費用計             | 0   | 3,830,446  | △3,830,446 |    |
-| 評価損益等調整前当期経常増減額   | 0   | △2,265,512 | 2,265,512  |    |
-| 評価損益等計            | 0   | 0          | 0          |    |
-| 当期経常増減額           | 0   | △2,265,512 | 2,265,512  |    |
-| 2. 経常外増減の部        |     |            |            |    |
-| ⑴ 経常外収益           |     |            |            |    |
-| 経常外収益計            | 0   | 0          | 0          |    |
-| ⑵ 経常外費用           |     |            |            |    |
-| 経常外費用計            | 0   | 0          | 0          |    |
-| 当期経常外増減額          | 0   | 0          | 0          |    |
-| 他会計振替前当期一般正味財産増減額 | 0   | △2,265,512 | 2,265,512  |    |
-| 税引前当期一般正味財産増減額    | 0   | △2,265,512 | 2,265,512  |    |
-| 法人税、住民税及び事業税      | 0   | 20,000     | △20,000    |    |
-| 当期一般正味財産増減額       | 0   | △2,285,512 | 2,285,512  |    |
-| 一般正味財産期首残高        | 0   | △1,093,430 | 1,093,430  |    |
-| 一般正味財産期末残高        | 0   | △3,378,942 | 3,378,942  |    |
-| **Ⅱ. 指定正味財産増減の部** |     |            |            |    |
-| 当期指定正味財産増減額       | 0   | 0          | 0          |    |
-| 指定正味財産期首残高        | 0   | 0          | 0          |    |
-| 指定正味財産期末残高        | 0   | 0          | 0          |    |
-| **Ⅲ. 正味財産期末残高**   | 0   | △3,378,942 | 3,378,942  |    |
-
-
+| **Ⅰ. General Net Assets Increase/Decrease** |     |            |            |    |
+| 1. Ordinary Increase/Decrease         |     |            |            |    |
+|⑴ Ordinary revenues            |     |            |            |    |
+| ① Business income             | 0   | 1,503,721  | △1,503,721 |    |
+| Business income 1             |     | 1,503,721  | △1,503,721 |    |
+| ② Donation Received          | 0   | 61,209     | △61,209    |    |
+| Donation Received           |     | 61,209     | △61,209    |    |
+| ③ Other revenues              | 0   | 4          | △4         |    |
+| Interest received              |     | 4          | △4         |    |
+| Total ordinary revenues             | 0   | 1,564,934  | △1,564,934 |    |
+| ⑵ Ordinary expenses            |     |            |            |    |
+| ① Business expenses             |     |            |            |    |
+| Business expenses              | 0   | 373,823    | △373,823   |    |
+| Travel and transportation expenses             |     | 11,527     | △11,527    |    |
+| Communication transportation costs             |     | 252        | △252       |    |
+| Miscellaneous expenses   |     | 39,064     | △39,064    |    |
+| Business expenses 1           |     | 65,575     | △65,575    |    |
+| Business expenses 2           |     | 257,405    | △257,405   |    |
+| Total business expenses              | 0   | 373,823    | △373,823   |    |
+| ② Administrative expenses             |     |            |            |    |
+| Personnel expenses 1  |     | 3,454,000  | △3,454,000 |    |
+| Meeting fee               |     | 2,623      | △2,623     |    |
+| Total administrative expenses              | 0   | 3,456,623  | △3,456,623 |    |
+| Total ordinary expenses             | 0   | 3,830,446  | △3,830,446 |    |
+| Ordinary increase/decrease before valuation gain/loss this FY   | 0   | △2,265,512 | 2,265,512  |    |
+| Total valuation gain/loss            | 0   | 0          | 0          |    |
+| Ordinary increase/decrease this FY           | 0   | △2,265,512 | 2,265,512  |    |
+| 2. Non-ordinary Increase/Decrease        |     |            |            |    |
+| ⑴ Non-ordinary revenues           |     |            |            |    |
+| Total non-ordinary revenues            | 0   | 0          | 0          |    |
+| ⑵ Non-ordinary expenses          |     |            |            |    |
+| Total non-ordinary expenses            | 0   | 0          | 0          |    |
+| Non-ordinary increase/decrease this FY          | 0   | 0          | 0          |    |
+| General net assets increase/decrease before transfer to other accounts this FY | 0   | △2,265,512 | 2,265,512  |    |
+| General net assets increase/decrease before taxes this FY    | 0   | △2,265,512 | 2,265,512  |    |
+| Corporate tax, resident tax and business tax      | 0   | 20,000     | △20,000    |    |
+| General net assets increase/decrease this FY       | 0   | △2,285,512 | 2,285,512  |    |
+| General net assets at beginning of FY        | 0   | △1,093,430 | 1,093,430  |    |
+| General net assets at end of FY        | 0   | △3,378,942 | 3,378,942  |    |
+| **Ⅱ. Designated Net Assets Increase/Decrease** |     |            |            |    |
+| Designated net assets increase/decrease this FY       | 0   | 0          | 0          |    |
+| Designated net assets at beginning of FY        | 0   | 0          | 0          |    |
+| Designated net assets at end of FY        | 0   | 0          | 0          |    |
+| **Ⅲ. Net Assets at End of FY**   | 0   | △3,378,942 | 3,378,942  |    |
