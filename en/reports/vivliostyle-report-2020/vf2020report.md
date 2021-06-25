@@ -171,7 +171,7 @@ April 1, 2020 to March 31, 2021 (Unit: JPY)
 | ⑴ Ordinary revenues            |            |            |            |
 | ① Business income             | 1,503,721  | 0          | 1,503,721  |
 | Business Income 1             | 1,503,721  |            | 1,503,721  |
-| ② Donation Received          | 61,209     |            | 61,209     |
+| ② Donation received          | 61,209     |            | 61,209     |
 | Donation received           | 61,209     | 0          | 61,209     |
 | ③ Other revenues              | 4          | 1          | 3          |
 | Interest received              | 4          | 1          | 3          |
@@ -222,8 +222,8 @@ April 1, 2020 to March 31, 2021 (Unit: JPY)
 |⑴ Ordinary revenues            |     |            |            |    |
 | ① Business income             | 0   | 1,503,721  | △1,503,721 |    |
 | Business income 1             |     | 1,503,721  | △1,503,721 |    |
-| ② Donation Received          | 0   | 61,209     | △61,209    |    |
-| Donation Received           |     | 61,209     | △61,209    |    |
+| ② Donation received          | 0   | 61,209     | △61,209    |    |
+| Donation received           |     | 61,209     | △61,209    |    |
 | ③ Other revenues              | 0   | 4          | △4         |    |
 | Interest received              |     | 4          | △4         |    |
 | Total ordinary revenues             | 0   | 1,564,934  | △1,564,934 |    |
