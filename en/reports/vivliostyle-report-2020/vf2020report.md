@@ -50,16 +50,16 @@ In this section, we will explain the development status of each product for this
 We were able to add many functions to Vivliostyle Core and Vivliostyle Viewer (Vivliostyle.js), which are the foundation of the entire products, this year. As a result, we were able to promote support for [CSS Paged Media](https://www.w3.org/TR/css-page-3/), which had not been sufficiently supported in the past. The main features we added are as follows.
 
  - Implementation of a slide bar for page navigation, and support for mouse wheel. ([v2.2.0 / 2020-11-26](https://github.com/vivliostyle/vivliostyle.js/releases/tag/v2.2.0))
-- Support for specifying EPUB spread view. ([v2.3.0 / 2020-12-7](https://github.com/vivliostyle/vivliostyle.js/releases/tag/v2.3.0))
+- Support for specifying EPUB spread view. ([v2.3.0 / 2020-12-07](https://github.com/vivliostyle/vivliostyle.js/releases/tag/v2.3.0))
 - Support for named strings to realize headers, footers, etc. ([v2.4.0 / 2020-12-28](https://github.com/vivliostyle/vivliostyle.js/releases/tag/v2.4.0))
-- Support for n-th page selector. ([v2.5.0 / 2021-2-26](https://github.com/vivliostyle/vivliostyle.js/releases/tag/v2.5.0))
-- Added the Print button ([v2.6.0 / 2021-3-14](https://github.com/vivliostyle/vivliostyle.js/releases/tag/v2.6.0))
+- Support for n-th page selector. ([v2.5.0 / 2021-02-26](https://github.com/vivliostyle/vivliostyle.js/releases/tag/v2.5.0))
+- Added the Print button ([v2.6.0 / 2021-03-14](https://github.com/vivliostyle/vivliostyle.js/releases/tag/v2.6.0))
 
 #### [Vivliostyle CLI](https://github.com/vivliostyle/vivliostyle-cli)
 
 This is a converter that allows CSS typesetting with a command line interface. With the addition of support for Markdown format input this fiscal year, the scope of its use has expanded dramatically. In addition, since the  As will be discussed later, this is expected to have a positive impact on the future Vivliostyle Pub v1. The details for each release are as follows.
 
-- Replaced the preview UI with Vivliostyle Viewer. ([v3.2.0 / 2021-3-29](https://github.com/vivliostyle/vivliostyle-cli/releases/tag/v3.2.0))
+- Replaced the preview UI with Vivliostyle Viewer. ([v3.2.0 / 2021-03-29](https://github.com/vivliostyle/vivliostyle-cli/releases/tag/v3.2.0))
 - Supports input of various file formats including Markdown; Support for [Themes](https://github.com/vivliostyle/themes); Supports multiple outputs, including web books; Support loading external web pages by URL. ([v3.0.0 / 2021-2-7](https://github.com/vivliostyle/vivliostyle-cli/releases/tag/v3.0.0))
 
 
