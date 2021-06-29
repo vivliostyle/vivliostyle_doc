@@ -31,11 +31,11 @@ As briefly mentioned in [the previous year's activity report](https://vivliostyl
 
 It was difficult to prepare for the developer/user event (see the previous section) at the same time, but we managed to renew the site on April 3, the day before the event. After that, the following information was added.
 
-- 2020-4-10: [Notified that the German National Library of Science and Technology has published a textbook on COVID-19 measures using Vivliostyle.](https://vivliostyle.org/blog/2020/04/10/tib-book-against-covid19/)
-- 2020-4-29: [Called for support from GitHub Sponsors.](https://vivliostyle.org/blog/2020/04/29/become-a-sponsor-to-vivliostyle-via-github-sponsors/)
-- 2020-6-11: [2019 Activity Report released.](https://vivliostyle.github.io/vivliostyle_doc/en/reports/vivliostyle-report-2019/vf2019report.html)
-- 2020-8-19: [Create Book Tutorial Guide Released.](https://vivliostyle.org/make-books-with-create-book/)
-- 2020-8-29: [Announced the start of accepting donations in Japanese yen by credit card.](https://vivliostyle.org/blog/\1-\2-\3/You-can-support-Vivliostyle-without-a-GitHub-account/)
+- 2020-04-10: [Notified that the German National Library of Science and Technology has published a textbook on COVID-19 measures using Vivliostyle.](https://vivliostyle.org/blog/2020/04/10/tib-book-against-covid19/)
+- 2020-04-29: [Called for support from GitHub Sponsors.](https://vivliostyle.org/blog/2020/04/29/become-a-sponsor-to-vivliostyle-via-github-sponsors/)
+- 2020-06-11: [2019 Activity Report released.](https://vivliostyle.github.io/vivliostyle_doc/en/reports/vivliostyle-report-2019/vf2019report.html)
+- 2020-08-19: [Create Book Tutorial Guide Released.](https://vivliostyle.org/make-books-with-create-book/)
+- 2020-08-29: [Announced the start of accepting donations in Japanese yen by credit card.](https://vivliostyle.org/blog/\1-\2-\3/You-can-support-Vivliostyle-without-a-GitHub-account/)
 
 In particular, the appeal for donations is important for a general incorporated association that does not make a profit (and does not distribute profits). In fact, we were able to collect 61,209 yen in total this fiscal year (Fig. 1), which is about 4% of our total ordinary income. This is still not a large amount, but we would like to continue to nurture it as a receptacle for people who support our activities.
 
@@ -113,8 +113,8 @@ Since then, Vivliostyle Pub has had some very minor updates, but the Vivliostyle
 
 Vivliostyle Pub has almost stopped development, while its components, VFM, Themes, Vivliostyle CLI, and Vivliostyle Core / Viewer, have evolved significantly.  However, in order to do so, it was necessary to overcome the impact of the failure of the Mitou Advanced Project. The following document by Representative Director Murakami served as a roadmap.
 
-- [Vivliostyle Pub v1 Req (2020-11-9)](https://github.com/vivliostyle/community/wiki/Vivliostyle-Pub-v1-Req)
-- [Vivliostyle CLI v3.0 new spec (2020-11-9--2021-2-9)](https://github.com/vivliostyle/community/wiki/Vivliostyle-CLI-v3.0-new-spec)
+- [Vivliostyle Pub v1 Req (2020-11-09)](https://github.com/vivliostyle/community/wiki/Vivliostyle-Pub-v1-Req)
+- [Vivliostyle CLI v3.0 new spec (2020-11-09--2021-02-09)](https://github.com/vivliostyle/community/wiki/Vivliostyle-CLI-v3.0-new-spec)
 
 If we can incorporate the VFM, Themes, and Vivliostyle CLI that have been developed in this way, we can successfully release Vivliostyle Pub v1. That will be the task for the next fiscal year. In order to accomplish this, the development is now underway with the aim of releasing the beta version at the end of August 2021 and launching it at the end of December of the same year.
 
