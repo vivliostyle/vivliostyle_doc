@@ -60,7 +60,7 @@ We were able to add many functions to Vivliostyle Core and Vivliostyle Viewer (V
 This is a converter that allows CSS typesetting with a command line interface. With the addition of support for Markdown format input this fiscal year, the scope of its use has expanded dramatically. In addition, since the  As will be discussed later, this is expected to have a positive impact on the future Vivliostyle Pub v1. The details for each release are as follows.
 
 - Replaced the preview UI with Vivliostyle Viewer. ([v3.2.0 / 2021-03-29](https://github.com/vivliostyle/vivliostyle-cli/releases/tag/v3.2.0))
-- Supports input of various file formats including Markdown; Support for [Themes](https://github.com/vivliostyle/themes); Supports multiple outputs, including web books; Support loading external web pages by URL. ([v3.0.0 / 2021-2-7](https://github.com/vivliostyle/vivliostyle-cli/releases/tag/v3.0.0))
+- Supports input of various file formats including Markdown; Support for [Themes](https://github.com/vivliostyle/themes); Supports multiple outputs, including web books; Support loading external web pages by URL. ([v3.0.0 / 2021-02-07](https://github.com/vivliostyle/vivliostyle-cli/releases/tag/v3.0.0))
 
 
 
