@@ -38,7 +38,7 @@ lang: ja
 
 中でも寄付による支援の呼びかけは、営利を目的としない（利益の分配をしない）一般社団法人として重要なもので、実際に今期は全部で61,209円の寄付金を集めることができた（図1）。これは経常収益全体の約4%にあたる。今はまだ決して多いとは言えないが、今後も当法人の活動に賛同してくださる人々の受け皿として、大事に育てていきたいと考えている。
 
-![図1 今期決算における経常収益の内訳](./img/fig-1.png){ width=50% }
+![図1 今期決算における経常収益の内訳](./img/fig-1.png){ width=70% }
  
 ### 3. プロダクトの開発状況
 
@@ -86,7 +86,16 @@ lang: ja
 
 前期末の時点で、最大の懸案は開発資金の確保であり、開発者会議でその解決策が話し合われた。そこでコントリビュータから提案されたのが、Vivliostyle Pubの開発をテーマにして[未踏アドバンスト事業](https://www.ipa.go.jp/jinzai/advanced/2020/koubo_index.html)に応募することだった。
 
-皆で検討した結果「挑戦してみよう」と決まった。規定により法人は応募できないので、村上代表理事と既述したコントリビュータに加え、[youchan](https://github.com/youchan)氏、[takanakahiko](https://github.com/takanakahiko)氏からなる個人の集まりという形で、4月2日に応募を完了。そこから全員が一丸となり、夜を日に継いでVivliostyle Pubの開発作業がはじまる。目指すのは5月中旬に予定されている2次審査である。この時点のバージョン（アルファ版）の概要は下記の通りだ。
+皆で検討した結果「挑戦してみよう」と決まる。規定により法人は応募できないため、以下の個人の集まりという形で、4月2日に応募を終えた。
+
+- [spring-raining](https://github.com/spring-raining) （代表）
+- [youchan](https://github.com/youchan)
+- [takanakahiko](https://github.com/takanakahiko)
+- [uetchy](https://github.com/uetchy)
+- [yamasy1549](https://github.com/yamasy1549)
+- [MurakamiShinyu](https://github.com/MurakamiShinyu)
+
+そこからチームは一丸となり、連携しながらVivliostyle Pubの開発にのめり込んでいった。目指すのは5月中旬に予定されている2次審査である。この時点のバージョン（アルファ版）の概要は下記の通りだ。
 
 - クラウド上にデプロイされたVivliostyle CLIには、VFMのごく初期のパーサーが実装されている
 - Vivliostyle CLIはCSS組版した結果をブラウザに出力できる
@@ -96,13 +105,13 @@ lang: ja
 
 以下は当時takanakahiko氏が作業用に作った、Vivliostyle Pubのフローチャート（図2）だ。
 
-![図2 開発初期のVivliostyle Pubフローチャート（作図：@takanakahiko氏）](./img/fig-2.png){ width=50% }
+![図2 開発初期のVivliostyle Pubフローチャート（作図：@takanakahiko氏）](./img/fig-2.png){ width=78% }
 
 5月15日には無事に第1次審査を通過。翌16日に第2次審査に臨んだものの、残念ながら6月10日に落選通知を受け取ることとなった。その後、Vivliostyle Pubはごくマイナーなアップデートはされたが、今期末の時点で動いているVivliostyle Pubは、アルファ版からあまり変わってはいない。現在のスクリーンショットを示す。
 
-![図3 現在のVivliostyle Pub](./img/fig-3.png){ width=50% }
+![図3 現在のVivliostyle Pub](./img/fig-3.png){ width=75% }
 
-開発がほぼ止まったVivliostyle Pubをよそに、その部品とも位置づけられるVFM、Themes、Vivliostyle CLI、そしてVivliostyle Core / Viewerの方は、大きく進化させることができている。しかしそのためには、未踏アドバンスト事業落選のインパクトを乗り越える必要があった。その指針となったのが、村上代表理事による下記の文書である。
+開発がほぼ止まったVivliostyle Pubをよそに、その部品とも位置づけられるVFM、Themes、Vivliostyle CLI、そしてVivliostyle Core / Viewerの方は、その後大きく進化させることができた。しかしそのためには、まず未踏アドバンスト事業落選のインパクトを乗り越える必要があった。その指針となったのが、村上代表理事による下記の文書である。
 
 - [Vivliostyle Pub v1 Req (11/9)](https://github.com/vivliostyle/community/wiki/Vivliostyle-Pub-v1-Req)
 - [Vivliostyle CLI v3.0 new spec (11/9〜2/9)](https://github.com/vivliostyle/community/wiki/Vivliostyle-CLI-v3.0-new-spec)
