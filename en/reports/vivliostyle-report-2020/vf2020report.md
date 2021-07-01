@@ -39,7 +39,7 @@ It was difficult to prepare for the developer/user event (see the previous secti
 
 In particular, the appeal for donations is important for a general incorporated association that does not make a profit (and does not distribute profits). In fact, we were able to collect 61,209 yen in total this fiscal year (Fig. 1), which is about 4% of our total ordinary income. This is still not a large amount, but we would like to continue to nurture it as a receptacle for people who support our activities.
 
-![Figure 1: Breakdown of ordinary income for the current fiscal year](./img/fig-1.png){ width=50% }
+![Figure 1: Breakdown of ordinary income for the current fiscal year](./img/fig-1.png){ width=60% }
  
 ### 3. Product Development Status
 
@@ -88,13 +88,18 @@ This is an installer that builds an environment for book production using the Vi
 
 The Vivliostyle Pub is the culmination of our products. I will explain the development process in some detail in this section. The starting point is “Viola”, an online editor that runs in a browser. The author, [spring-raining](https://github.com/spring-raining), offered to give it to our organization so that the contributors could work together to recreate it. Later, during the monthly developer's meeting, the project was given the name "Vivliostyle Pub" by Representative Director Murakami, and development was officially started. This was also mentioned in the previous year's activity report.
 
-
 As of the end of the previous fiscal year, the biggest concern was securing development funding, and the solution was discussed at the developer meeting. Therefore, the contributors suggested that they apply for the [Mitou Advanced Project](https://www.ipa.go.jp/jinzai/advanced/2020/koubo_index.html) with the theme of developing Vivliostyle Pub. 
 
-As a result of discussions among the members, it was decided to take on the challenge. Since organizations are not allowed to apply due to regulations, we completed the application on April 2 as a group of individuals consisting of [youchan](https://github.com/youchan) and [takanakahiko](https://github.com/takanakahiko), in addition to the aforementioned contributors and Representative Director Murakami.
+After discussing it with everyone, we decided to give it a try. Since organizations are not allowed to apply due to regulations, the application process was completed on April 2 in the form of the following group of individuals.
+
+- [spring-raining: Representative](https://github.com/spring-raining) 
+- [youchan](https://github.com/youchan)
+- [takanakahiko](https://github.com/takanakahiko)
+- [uetchy](https://github.com/uetchy)
+- [yamasy1549](https://github.com/yamasy1549)
+- [MurakamiShinyu](https://github.com/MurakamiShinyu)
 
 From that point on, the intensive development work on Vivliostyle Pub began. The goal is the second round of review scheduled for mid-May 2020. The following is an overview of the version (alpha version) at this point.
-
 
 - The Vivliostyle CLI deployed in the cloud implements a very early parser for VFM.
 - It can output the result of CSS typesetting to the browser.
@@ -103,13 +108,13 @@ From that point on, the intensive development work on Vivliostyle Pub began. The
 
 The following is a flowchart of the Vivliostyle Pub (Figure 2) that takanakahiko created for collaboration at the time.
 
-![Figure 2: Vivliostyle Pub flowchart in early development (By takanakahiko)](./img/fig-2.png){ width=50% }
+![Figure 2: Vivliostyle Pub flowchart in early development (By takanakahiko)](./img/fig-2.png){ width=70% }
 
 They successfully passed the first round of screening on May 15. On the following day, May 16, they went through the second round of screening, but unfortunately they received a message on June 10 that they had not been selected.
 
 Since then, Vivliostyle Pub has had some very minor updates, but the Vivliostyle Pub that is running as of the end of this fiscal year has not changed much from the alpha version. Here is a screenshot of the current version.
 
-![Figure 3 Current Vivliostyle Pub](./img/fig-3.png){ width=50% }
+![Figure 3 Current Vivliostyle Pub](./img/fig-3.png){ width=70% }
 
 Vivliostyle Pub has almost stopped development, while its components, VFM, Themes, Vivliostyle CLI, and Vivliostyle Core / Viewer, have evolved significantly.  However, in order to do so, it was necessary to overcome the impact of the failure of the Mitou Advanced Project. The following document by Representative Director Murakami served as a roadmap.
 
@@ -139,7 +144,7 @@ In addition, Representative Director Murakami continued to have discussions with
 
 April 1, 2020 to March 31, 2021 (Unit: JPY)
 
-| 科目           | **This FY (2020)**    | **Prev. FY (2019)**    | **Increase/Decrease**     |
+| Title           | **This FY (2020)**    | **Prev. FY (2019)**    | **Increase/Decrease**     |
 | ------------ | ---------- | ---------- | ---------- |
 | **Ⅰ. Assets**   |            |            |            |
 | 1. Current Assets   |            |            |            |

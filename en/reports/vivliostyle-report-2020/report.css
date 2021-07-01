@@ -77,10 +77,6 @@ h2 ~ h2 ~ h3 ~ h3 {
   break-before: column;
 }
 
-#directors {
-  break-before: column;
-}
-
 table {
   border-collapse: collapse;
   font-size: 87.5%;
@@ -100,37 +96,26 @@ td:nth-child(n+2) {
   text-align: right;
 }
 
-#balance-sheet-for-fy2019 + p + table > tbody > tr:nth-child(4),
-#balance-sheet-for-fy2019 + p + table > tbody > tr:nth-child(9),
-#balance-sheet-for-fy2019 + p + table > tbody > tr:nth-child(10),
-#balance-sheet-for-fy2019 + p + table > tbody > tr:nth-child(15),
-#balance-sheet-for-fy2019 + p + table > tbody > tr:nth-child(16),
-#balance-sheet-for-fy2019 + p + table > tbody > tr:nth-child(19),
-#balance-sheet-for-fy2019 + p + table > tbody > tr:nth-child(20),
-#net-assets-increasedecrease-statement-for-fy2019 + p + table > tbody > tr:nth-child(5),
-#net-assets-increasedecrease-statement-for-fy2019 + p + table > tbody > tr:nth-child(10),
-#net-assets-increasedecrease-statement-for-fy2019 + p + table > tbody > tr:nth-child(13),
-#net-assets-increasedecrease-statement-for-fy2019 + p + table > tbody > tr:nth-child(14),
-#net-assets-increasedecrease-statement-for-fy2019 + p + table > tbody > tr:nth-child(16),
-#net-assets-increasedecrease-statement-for-fy2019 + p + table > tbody > tr:nth-child(17),
-#net-assets-increasedecrease-statement-for-fy2019 + p + table > tbody > tr:nth-child(20),
-#net-assets-increasedecrease-statement-for-fy2019 + p + table > tbody > tr:nth-child(22),
-#net-assets-increasedecrease-statement-for-fy2019 + p + table > tbody > tr:nth-child(23),
-#net-assets-increasedecrease-statement-for-fy2019 + p + table > tbody > tr:nth-child(29),
-#net-assets-increasedecrease-statement-for-fy2019 + p + table > tbody > tr:nth-child(33),
-#net-assets-increasedecrease-statement-for-fy2019 + p + table > tbody > tr:nth-child(34),
-#income-and-expenditure-statement-for-fy2019 + p + table > tbody > tr:nth-child(5),
-#income-and-expenditure-statement-for-fy2019 + p + table > tbody > tr:nth-child(10),
-#income-and-expenditure-statement-for-fy2019 + p + table > tbody > tr:nth-child(13),
-#income-and-expenditure-statement-for-fy2019 + p + table > tbody > tr:nth-child(14),
-#income-and-expenditure-statement-for-fy2019 + p + table > tbody > tr:nth-child(16),
-#income-and-expenditure-statement-for-fy2019 + p + table > tbody > tr:nth-child(17),
-#income-and-expenditure-statement-for-fy2019 + p + table > tbody > tr:nth-child(20),
-#income-and-expenditure-statement-for-fy2019 + p + table > tbody > tr:nth-child(22),
-#income-and-expenditure-statement-for-fy2019 + p + table > tbody > tr:nth-child(23),
-#income-and-expenditure-statement-for-fy2019 + p + table > tbody > tr:nth-child(29),
-#income-and-expenditure-statement-for-fy2019 + p + table > tbody > tr:nth-child(33),
-#income-and-expenditure-statement-for-fy2019 + p + table > tbody > tr:nth-child(34) {
+#balance-sheet-for-fy2020 + p + table > tbody > tr:nth-child(4),
+#balance-sheet-for-fy2020 + p + table > tbody > tr:nth-child(7),
+#balance-sheet-for-fy2020 + p + table > tbody > tr:nth-child(12),
+#balance-sheet-for-fy2020 + p + table > tbody > tr:nth-child(15),
+#balance-sheet-for-fy2020 + p + table > tbody > tr:nth-child(16),
+#balance-sheet-for-fy2020 + p + table > tbody > tr:nth-child(19),
+#balance-sheet-for-fy2020 + p + table > tbody > tr:nth-child(20),
+#net-assets-increasedecrease-statement-for-fy2020 + p + table > tbody > tr:nth-child(10),
+#net-assets-increasedecrease-statement-for-fy2020 + p + table > tbody > tr:nth-child(19),
+#net-assets-increasedecrease-statement-for-fy2020 + p + table > tbody > tr:nth-child(23),
+#net-assets-increasedecrease-statement-for-fy2020 + p + table > tbody > tr:nth-child(24),
+#net-assets-increasedecrease-statement-for-fy2020 + p + table > tbody > tr:nth-child(26),
+#net-assets-increasedecrease-statement-for-fy2020 + p + table > tbody > tr:nth-child(30),
+#net-assets-increasedecrease-statement-for-fy2020 + p + table > tbody > tr:nth-child(32),
+#income-and-expenditure-statement-for-fy2020 + p + table > tbody > tr:nth-child(10),
+#income-and-expenditure-statement-for-fy2020 + p + table > tbody > tr:nth-child(19),
+#income-and-expenditure-statement-for-fy2020 + p + table > tbody > tr:nth-child(23),
+#income-and-expenditure-statement-for-fy2020 + p + table > tbody > tr:nth-child(24),
+#income-and-expenditure-statement-for-fy2020 + p + table > tbody > tr:nth-child(30),
+#income-and-expenditure-statement-for-fy2020 + p + table > tbody > tr:nth-child(32) {
   background-color: #EFF6FD;
 }
 
