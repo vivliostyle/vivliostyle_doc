@@ -77,9 +77,6 @@ h2 ~ h2 ~ h3 ~ h3 {
   break-before: column;
 }
 
-#理事 {
-  break-before: column;
-}
 
 table {
   border-collapse: collapse;
