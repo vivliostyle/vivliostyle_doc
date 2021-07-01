@@ -182,7 +182,7 @@ April 1, 2020 to March 31, 2021 (Unit: JPY)
 | ⑵ Ordinary expenses          |            |            |            |
 | ① Business expenses             |            |            |            |
 | Business expenses              | 373,823    | 67,850     | 305,973    |
-| Travel and transportation expenses   | 11,527     | 12,080     | △553       |
+| Travel and transportation expenses   | 11,527     | 12,080     | -553       |
 | Communication transportation costs  | 252        |            | 252        |
 | Miscellaneous expenses                | 39,064     |            | 39,064     |
 | Business expenses 1           | 65,575     | 55,770     | 9,805      |
@@ -193,26 +193,26 @@ April 1, 2020 to March 31, 2021 (Unit: JPY)
 | Meeting fee               | 2,623      |            | 2,623      |
 | Total administrative expenses              | 3,456,623  | 984,881    | 2,471,742  |
 | Total ordinary expenses             | 3,830,446  | 1,052,731  | 2,777,715  |
-| Ordinary increase/decrease before valuation gain/loss this FY   | △2,265,512 | △1,052,730 | △1,212,782 |
+| Ordinary increase/decrease before valuation gain/loss this FY   | -2,265,512 | -1,052,730 | -1,212,782 |
 | Total valuation gain/loss            | 0          | 0          | 0          |
-| Ordinary increase/decrease this FY           | △2,265,512 | △1,052,730 | △1,212,782 |
+| Ordinary increase/decrease this FY           | -2,265,512 | -1,052,730 | -1,212,782 |
 | 2. Non-ordinary Increase/Decrease        |            |            |            |
 | ⑴ Non-ordinary revenues          |            |            |            |
 | Total non-ordinary revenues            | 0          | 0          | 0          |
 | ⑵ Non-ordinary expenses           |            |            |            |
 | Total non-ordinary expenses            | 0          | 0          | 0          |
 | Non-ordinary increase/decrease this FY          | 0          | 0          | 0          |
-| General net assets increase/decrease before transfer to other accounts this FY | △2,265,512 | △1,052,730 | △1,212,782 |
-| General net assets increase/decrease before taxes this FY    | △2,265,512 | △1,052,730 | △1,212,782 |
-| Corporate tax, resident tax and business tax      | 20,000     | 40,700     | △20,700    |
-| General net assets increase/decrease this FY       | △2,285,512 | △1,052,730 | △1,192,082 |
-| General net assets at beginning of FY        | △1,093,430 | 0          | △1,093,430 |
-| General net assets at end of FY        | △3,378,942 | △1,093,430 | △2,285,512 |
+| General net assets increase/decrease before transfer to other accounts this FY | -2,265,512 | -1,052,730 | -1,212,782 |
+| General net assets increase/decrease before taxes this FY    | -2,265,512 | -1,052,730 | -1,212,782 |
+| Corporate tax, resident tax and business tax      | 20,000     | 40,700     | -20,700    |
+| General net assets increase/decrease this FY       | -2,285,512 | -1,052,730 | -1,192,082 |
+| General net assets at beginning of FY        | -1,093,430 | 0          | -1,093,430 |
+| General net assets at end of FY        | -3,378,942 | -1,093,430 | -2,285,512 |
 | **Ⅱ. Designated Net Assets Increase/Decrease** |            |            |            |
 | Designated net assets increase/decrease this FY       | 0          | 0          | 0          |
 | Designated net assets at beginning of FY        | 0          | 0          | 0          |
 | Designated net assets at end of FY        | 0          | 0          | 0          |
-| **Ⅲ. Net Assets at End of FY**   | △3,378,942 | △1,093,430 | △1,093,430 |
+| **Ⅲ. Net Assets at End of FY**   | -3,378,942 | -1,093,430 | -1,093,430 |
 
 ### Income and Expenditure Statement for FY2020
 
@@ -223,44 +223,44 @@ April 1, 2020 to March 31, 2021 (Unit: JPY)
 | **Ⅰ. General Net Assets Increase/Decrease** |     |            |            |    |
 | 1. Ordinary Increase/Decrease         |     |            |            |    |
 |⑴ Ordinary revenues            |     |            |            |    |
-| ① Business income             | 0   | 1,503,721  | △1,503,721 |    |
-| Business income 1             |     | 1,503,721  | △1,503,721 |    |
-| ② Donation received          | 0   | 61,209     | △61,209    |    |
-| Donation received           |     | 61,209     | △61,209    |    |
-| ③ Other revenues              | 0   | 4          | △4         |    |
-| Interest received              |     | 4          | △4         |    |
-| Total ordinary revenues             | 0   | 1,564,934  | △1,564,934 |    |
+| ① Business income             | 0   | 1,503,721  | -1,503,721 |    |
+| Business income 1             |     | 1,503,721  | -1,503,721 |    |
+| ② Donation received          | 0   | 61,209     | -61,209    |    |
+| Donation received           |     | 61,209     | -61,209    |    |
+| ③ Other revenues              | 0   | 4          | -4         |    |
+| Interest received              |     | 4          | -4         |    |
+| Total ordinary revenues             | 0   | 1,564,934  | -1,564,934 |    |
 | ⑵ Ordinary expenses            |     |            |            |    |
 | ① Business expenses             |     |            |            |    |
-| Business expenses              | 0   | 373,823    | △373,823   |    |
-| Travel and transportation expenses             |     | 11,527     | △11,527    |    |
-| Communication transportation costs             |     | 252        | △252       |    |
-| Miscellaneous expenses   |     | 39,064     | △39,064    |    |
-| Business expenses 1           |     | 65,575     | △65,575    |    |
-| Business expenses 2           |     | 257,405    | △257,405   |    |
-| Total business expenses              | 0   | 373,823    | △373,823   |    |
+| Business expenses              | 0   | 373,823    | -373,823   |    |
+| Travel and transportation expenses             |     | 11,527     | -11,527    |    |
+| Communication transportation costs             |     | 252        | -252       |    |
+| Miscellaneous expenses   |     | 39,064     | -39,064    |    |
+| Business expenses 1           |     | 65,575     | -65,575    |    |
+| Business expenses 2           |     | 257,405    | -257,405   |    |
+| Total business expenses              | 0   | 373,823    | -373,823   |    |
 | ② Administrative expenses             |     |            |            |    |
-| Personnel expenses 1  |     | 3,454,000  | △3,454,000 |    |
-| Meeting fee               |     | 2,623      | △2,623     |    |
-| Total administrative expenses              | 0   | 3,456,623  | △3,456,623 |    |
-| Total ordinary expenses             | 0   | 3,830,446  | △3,830,446 |    |
-| Ordinary increase/decrease before valuation gain/loss this FY   | 0   | △2,265,512 | 2,265,512  |    |
+| Personnel expenses 1  |     | 3,454,000  | -3,454,000 |    |
+| Meeting fee               |     | 2,623      | -2,623     |    |
+| Total administrative expenses              | 0   | 3,456,623  | -3,456,623 |    |
+| Total ordinary expenses             | 0   | 3,830,446  | -3,830,446 |    |
+| Ordinary increase/decrease before valuation gain/loss this FY   | 0   | -2,265,512 | 2,265,512  |    |
 | Total valuation gain/loss            | 0   | 0          | 0          |    |
-| Ordinary increase/decrease this FY           | 0   | △2,265,512 | 2,265,512  |    |
+| Ordinary increase/decrease this FY           | 0   | -2,265,512 | 2,265,512  |    |
 | 2. Non-ordinary Increase/Decrease        |     |            |            |    |
 | ⑴ Non-ordinary revenues           |     |            |            |    |
 | Total non-ordinary revenues            | 0   | 0          | 0          |    |
 | ⑵ Non-ordinary expenses          |     |            |            |    |
 | Total non-ordinary expenses            | 0   | 0          | 0          |    |
 | Non-ordinary increase/decrease this FY          | 0   | 0          | 0          |    |
-| General net assets increase/decrease before transfer to other accounts this FY | 0   | △2,265,512 | 2,265,512  |    |
-| General net assets increase/decrease before taxes this FY    | 0   | △2,265,512 | 2,265,512  |    |
-| Corporate tax, resident tax and business tax      | 0   | 20,000     | △20,000    |    |
-| General net assets increase/decrease this FY       | 0   | △2,285,512 | 2,285,512  |    |
-| General net assets at beginning of FY        | 0   | △1,093,430 | 1,093,430  |    |
-| General net assets at end of FY        | 0   | △3,378,942 | 3,378,942  |    |
+| General net assets increase/decrease before transfer to other accounts this FY | 0   | -2,265,512 | 2,265,512  |    |
+| General net assets increase/decrease before taxes this FY    | 0   | -2,265,512 | 2,265,512  |    |
+| Corporate tax, resident tax and business tax      | 0   | 20,000     | -20,000    |    |
+| General net assets increase/decrease this FY       | 0   | -2,285,512 | 2,285,512  |    |
+| General net assets at beginning of FY        | 0   | -1,093,430 | 1,093,430  |    |
+| General net assets at end of FY        | 0   | -3,378,942 | 3,378,942  |    |
 | **Ⅱ. Designated Net Assets Increase/Decrease** |     |            |            |    |
 | Designated net assets increase/decrease this FY       | 0   | 0          | 0          |    |
 | Designated net assets at beginning of FY        | 0   | 0          | 0          |    |
 | Designated net assets at end of FY        | 0   | 0          | 0          |    |
-| **Ⅲ. Net Assets at End of FY**   | 0   | △3,378,942 | 3,378,942  |    |
+| **Ⅲ. Net Assets at End of FY**   | 0   | -3,378,942 | 3,378,942  |    |
