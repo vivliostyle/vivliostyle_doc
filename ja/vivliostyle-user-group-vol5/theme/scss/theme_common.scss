@@ -1,0 +1,159 @@
+@import './variables.scss';
+@import './lib-prism-okaidia.scss';
+@import './lib-prism-override.scss';
+@import './font.scss';
+@import './base.scss';
+@import './counter-content.scss';
+@import './toc.scss';
+@import './page-media.scss';
+
+.doc-author {
+  text-align: right;
+}
+
+.page-break {
+  page-break-after: always !important;
+}
+
+@media print {
+  // footnoteと同じページに共存するtableはmargin: autoが動作しないバグがある
+  #vfm-入門-2021-夏 #nodejs-と-npm > table:nth-child(4) {
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 0;
+  }
+}
+
+@media print {
+  a[href^="http"] {
+    counter-increment: footnote;
+
+    &::before {
+      content: '[' counter(footnote) '] ' attr(href);
+      display: block;
+      font-size: $footnote-font-size-for-print;
+      font-weight: 400;
+      line-height: 1.7;
+      float: footnote;
+      text-align: left;
+    }
+
+    &::after {
+      font-size: 80%;
+      margin: 0 .2rem;
+      content: '[' counter(footnote) ']';
+    }
+  }
+}
+
+#cover {
+  break-after: page;
+  h1 {
+    font-size: 2rem;
+  }
+
+  @media print {
+    color: $color_white;
+  }
+}
+// Cover page
+@page :first {
+  background-color: #474552;
+
+  @top-left-corner {
+    content: none;
+  }
+  @top-center {
+    content: none;
+  }
+  @top-right-corner {
+    content: none;
+  }
+  @bottom-center {
+    content: none;
+  }
+  @bottom-left-corner {
+    content: none;
+  }
+  @bottom-left {
+    content: none;
+  }
+  @bottom-right {
+    content: none;
+  }
+  @bottom-right-corner {
+    content: none;
+  }
+}
+
+#profile {
+  break-before: left;
+}
+
+section#profile {
+  .author {
+    display: flex;
+    margin: 1rem 0;
+    img {
+      margin: 0 10px 8px 0;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+    }
+  }
+
+  code {
+    margin: 0 0 0 0.5em;
+    & > i {
+      vertical-align: -0.03em;
+    }
+  }
+
+  .profile {
+    flex-grow: 1;
+    h4 {
+      display: inline-block;
+      margin: 0 0 4px;
+    }
+  }
+}
+
+section#colophon {
+  position: relative;
+  float-reference: page;
+  float: bottom;
+  margin-bottom: 0;
+
+  @media screen {
+    & {
+      margin-top: 8rem;
+    }
+  }
+
+  ul.editions {
+    padding: 0;
+    list-style: none;
+    time {
+      display: inline-block;
+      width: 14em;
+    }
+  }
+
+  table.info {
+    margin: 0;
+    width: 100%;
+    font-size: 100%;
+    border-top: 2px solid currentColor;
+    tr {
+      border: 0;
+      box-shadow: none;
+    }
+    tr:last-child {
+      border-bottom: 1px solid currentColor;
+    }
+    td {
+      vertical-align: top;
+      padding-left: 0;
+    }
+  }
+}

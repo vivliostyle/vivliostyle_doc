@@ -1,0 +1,64 @@
+@import 'theme_common';
+
+@media screen {
+  body {
+    margin: auto 4rem;
+    margin: 0 auto;
+    padding: 8rem 1rem 4rem;
+    max-width: 60rem;
+
+    @media (min-width: 920px) {
+      padding-right: 12rem;
+    }
+  }
+  section {
+    clear: both;
+  }
+
+  figure {
+    max-width: 50rem;
+  }
+
+  .footnote {
+    background-color: rgba(214, 255, 0, 0.4);
+    display: block;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    font-size: 85%;
+    border-radius: 0.25rem;
+
+    @media (min-width: 920px) {
+      float: right;
+      width: 9rem;
+      margin-right: -11rem;
+    }
+
+    a {
+      word-break: break-all;
+    }
+  }
+
+  a[data-ref='sec'],
+  a[data-ref='subsec'],
+  a[data-ref='fig'],
+  a[data-ref='tbl'],
+  a[data-ref='cite'] {
+    color: $color_red;
+    background-color: rgba(255, 0, 0, 0.3);
+  }
+  a[data-ref='sec']::before {
+    content: 'XXX 章';
+  }
+  a[data-ref='subsec']::before {
+    content: 'XXX.XXX 章';
+  }
+  a[data-ref='fig']::before {
+    content: '図 XXX';
+  }
+  a[data-ref='tbl']::before {
+    content: '表 XXX';
+  }
+  a[data-ref='cite']::before {
+    content: '[XXX]';
+  }
+}
