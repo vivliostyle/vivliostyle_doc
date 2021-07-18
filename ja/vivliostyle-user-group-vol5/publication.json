@@ -1,0 +1,50 @@
+{
+  "@context": [
+    "https://schema.org",
+    "https://www.w3.org/ns/pub-context"
+  ],
+  "type": "Book",
+  "conformsTo": "https://github.com/vivliostyle/vivliostyle-cli",
+  "author": "Vivliostyle ユーザー会",
+  "inLanguage": "ja",
+  "dateModified": "2021-07-16T12:47:35.643Z",
+  "name": "Vivliostyle で本を作ろう Vol. 5",
+  "readingOrder": [
+    {
+      "url": "content/index.html",
+      "title": "Vivliostyle で本を作ろう Vol. 5",
+      "rel": "contents",
+      "type": "LinkedResource"
+    },
+    {
+      "url": "content/maegaki.html",
+      "title": "まえがき"
+    },
+    {
+      "url": "content/yamasy/index.html",
+      "title": "Vivliostyle Theme のつくりかた"
+    },
+    {
+      "url": "content/spring-raining/index.html",
+      "title": "Markdown を拡張する MDX はドキュメント作成の新たな可能性？"
+    },
+    {
+      "url": "content/akabeko/index.html",
+      "title": "VFM 入門 2021 夏"
+    },
+    {
+      "url": "content/ogwata/index.html",
+      "title": "Vivliostyle Foundation 2020 年度の活動まとめ"
+    },
+    {
+      "url": "content/shinyu/index.html",
+      "title": "CSS 組版の基本仕様 CSS Paged Media 入門のススメ"
+    },
+    {
+      "url": "content/atogaki.html",
+      "title": "あとがき"
+    }
+  ],
+  "resources": [],
+  "links": []
+}

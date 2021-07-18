@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Markdown を拡張する MDX はドキュメント作成の新たな可能性？</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../theme/theme_screen.css">
+    <meta name="author" content="spring-raining">
+  </head>
+  <body>
+    <section id="markdown-を拡張する-mdx-はドキュメント作成の新たな可能性？" class="level1">
+      <h1>Markdown を拡張する MDX はドキュメント作成の新たな可能性？</h1>
+      <div class="doc-author">spring-raining</div>
+      <p>はじめましてこんにちは、spring-raining です。今回の記事では、またしても CSS 組版とは直接関係ないものの、個人的にお気に入りの OSS プロジェクト「<a href="https://mdxjs.com/">MDX</a>」を紹介します。</p>
+      <section id="mdx--markdown--jsx" class="level2">
+        <h2>MDX = Markdown + JSX</h2>
+        <p>MDX の名前の由来は Markdown + JSX なので、MDX を理解するためにはまず JSX について知る必要があります。</p>
+        <p>JSX とは JavaScript の拡張構文の一つで、元々 React のために考え出されたものです。Web アプリケーションの開発の経験がないと前提知識が多く難しい内容ですが、React とは Web アプリケーションを作成するための有名なライブラリで、ざっくり言うと JavaScript のソースコードの中で HTML (XML) タグを扱いやすくしたものが JSX です。</p>
+        <p>この JSX を Markdown に埋め込んだものが MDX です。上記の成り立ちの通り、MDX は一見すると Markdown に HTML が埋め込れたもののように見えます。<span class="footnote">この例の <code>style</code> 属性のように、本来の XML とは全然違う構文ももちろんありますが、JSX の詳細についてはこの記事では割愛します</span></p>
+        <pre class="language-mdx"><code class="language-mdx"># Hello, *world*!
+
+Below is an example of JSX embedded in Markdown.
+
+&#x3C;div style={{ padding: '20px', backgroundColor: 'tomato' }}>
+  &#x3C;h3>This is JSX&#x3C;/h3>
+&#x3C;/div></code></pre>
+        <p>CSS 組版のような用途では、最終的に Markdown を HTML に変換するため、直接 Markdown 中に HTML を書けばわざわざ MDX を使わなくても良さそうです。それでは、MDX を使うメリットとは何でしょうか？</p>
+      </section>
+      <section id="mdx-を使うメリット" class="level2">
+        <h2>MDX を使うメリット</h2>
+        <section id="簡単に独自コンポーネントを使える" class="level3">
+          <h3>簡単に独自コンポーネントを使える</h3>
+          <p>JSX (と React) では一つの要素の単位をコンポーネントと呼んでおり、MDX では通常の HTML タグと同じようにユーザーの作ったコンポーネントを使えます。この点では他のテンプレートエンジンと近い機能を備えていますが、ベースとなるテキストが Markdown であることはドキュメントの記法として有利です。</p>
+        </section>
+        <section id="直接-javascript-として読み込める" class="level3">
+          <h3>直接 JavaScript として読み込める</h3>
+          <p>MDX を使うことで、原稿として書かれた Markdown は上記の JSX を通して直接 JavaScript としてみなすことができます。これは、React のようなライブラリを使った Web アプリケーションの上で扱う際に非常に便利です。</p>
+          <p>例えば、あるドキュメントを紙媒体と Web ページ両方に掲載したい状況を考えます。原稿が HTML であれば、もちろんブラウザに表示させることができますが、MDX は一つのコンポーネントとして扱うことができるので、ページの一部分に配置したり、並べて掲載したりすることがとても簡単です。また、フォントやテキスト色を変えるなど、外部からの装飾も既存の CSS にとらわれずに制御できます。</p>
+        </section>
+      </section>
+      <section id="mdx-の始めかた" class="level2">
+        <h2>MDX の始めかた</h2>
+        <p>MDX の公式サイトでは、<a href="https://mdxjs.com/getting-started/">MDX を使う方法</a>について詳しく書かれています。MDX 自体はテキスト変換のためのライブラリを提供しているだけなので、他の Web アプリケーション作成フレームワークと組み合わせて使います。JSX をベースとする都合上、基本的に React を採用したフレームワークを使うほうが良いでしょう。今回は、<strong>Gatsby</strong> というフレームワークと組み合わせて使う例を紹介します。</p>
+        <p>プロジェクトファイルの作成自体はとても簡単です。Node.js が使用できる環境で、以下のコマンドを実行します。</p>
+        <pre class="language-text"><code class="language-text">npm init mdx gatsby</code></pre>
+        <p>これを実行すると、<code>gatsby-mdx</code> というディレクトリに空の Gatsby プロジェクトに MDX プラグインをインストールした状態でセットアップしてくれます。作られたファイルを見てみましょう。</p>
+        <figure>
+          <img src="assets/uIsh5ft.png" alt="gatsby-mdx のプロジェクト構成" width="40%">
+          <figcaption aria-hidden="true">gatsby-mdx のプロジェクト構成</figcaption>
+        </figure>
+        <p><code>src</code> ディレクトリの中の <code>pages/index.mdx</code> が実際にページとして表示される MDX ファイルです。また、<code>components/Layout.js</code> というファイルは各ページで共通して読み込まれるレイアウトコンポーネントで、中身を見てみると外部のスタイルシートが読み込まれているようです。</p>
+        <p>それでは、<code>gatsby-mdx</code> ディレクトリに移動して開発サーバーを起動してみます。以下のコマンドを実行してください。</p>
+        <pre class="language-text"><code class="language-text">npm run start</code></pre>
+        <p>少し待ったあと、<code>http://localhost:8000</code> にアクセスするように表示されます。このページを開くと、「Hello, world!」と表示されており、<code>pages/index.mdx</code> の内容がそのまま表示されていることがわかります。</p>
+        <section id="独自コンポーネントを作成する" class="level3">
+          <h3>独自コンポーネントを作成する</h3>
+          <p>次に、少し CSS 組版っぽいコンポーネントを作成する例を紹介します。</p>
+          <p>「縦中横」は、縦書きの文章中に横組みでテキストを挿入する処理のことで、日本語では数桁の数字を縦中横で組むことがあります。このレイアウトは、CSS では <code>text-combine-upright</code> というプロパティで指定しますが、仕様で定められているもののうち実際にブラウザが実装しているものは <code>none</code> と <code>all</code> のみで、桁数に応じて自動で切り替えてくれる <code>digits &#x3C;integer>?</code> は提供されていません。この問題を、独自コンポーネントで解決してみます。</p>
+          <figure>
+            <img src="assets/UR8ww7o.png" alt="縦中横の適用例 (日本語組版処理の要件より引用)" width="15%">
+            <figcaption aria-hidden="true">縦中横の適用例 (<a href="https://www.w3.org/TR/2012/NOTE-jlreq-20120403/ja/">日本語組版処理の要件</a>より引用)</figcaption>
+          </figure>
+          <p>まず、<code>src/components</code> ディレクトリに <code>Tcy.js</code> ファイル <span class="footnote">一般的に JSX ファイルは通常の JavaScript と区別するために <code>.jsx</code> という拡張子を使う慣習がありますが、Gatsby ではどちらでも良いようです</span> を作成し、以下のようなコードを書きます。</p>
+          <pre class="language-jsx"><code class="language-jsx"><span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">React</span></span> <span class="token keyword module">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+
+<span class="token keyword module">export</span> <span class="token keyword">const</span> <span class="token function-variable function"><span class="token maybe-class-name">Tcy</span></span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> number<span class="token punctuation">,</span> digits <span class="token operator">=</span> <span class="token number">2</span> <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> textCombineUpright <span class="token operator">=</span>
+    <span class="token known-class-name class-name">Number</span><span class="token punctuation">.</span><span class="token method function property-access">isFinite</span><span class="token punctuation">(</span>number<span class="token punctuation">)</span>
+    <span class="token operator">&#x26;&#x26;</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>number<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">.</span><span class="token property-access">length</span> <span class="token operator">&#x3C;=</span> digits
+    <span class="token operator">?</span> <span class="token string">'all'</span> <span class="token operator">:</span> <span class="token string">'none'</span><span class="token punctuation">;</span>
+  <span class="token keyword control-flow">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>span</span> <span class="token attr-name">style</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> textCombineUpright <span class="token punctuation">}</span><span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token punctuation">{</span>number<span class="token punctuation">}</span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>span</span><span class="token punctuation">></span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+          <p>上記の例では、<code>Tcy</code> という名前のコンポーネントを作成しています。<code>number</code> が正しい数字で、テキストで表した際の文字数が <code>digits</code> 以下のとき、<code>text-combine-upright</code> に <code>all</code> を設定するようにしています。</p>
+          <p>このコンポーネントを MDX ファイルで使用するためには、次のように書きます。</p>
+          <pre class="language-markdown"><code class="language-markdown">import { Tcy } from '../components/Tcy';
+
+<span class="token title important"><span class="token punctuation">#</span> Hello, world!</span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>Tcy</span> <span class="token attr-name">number</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>{2021}</span> <span class="token punctuation">/></span></span>年
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>Tcy</span> <span class="token attr-name">number</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>{7}</span> <span class="token punctuation">/></span></span>月
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>Tcy</span> <span class="token attr-name">number</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>{11}</span> <span class="token punctuation">/></span></span>日</code></pre>
+          <p>外部のコンポーネントをインポートするときは、JavaScript と同じように <code>import</code> 文を使います。そして、先ほど作成した <code>Tcy</code> コンポーネントに <code>number</code> プロパティを与えます。<code>digits</code> プロパティは省略していますが、同じように与えることができます。</p>
+          <p>ブラウザーの開発ツールで見てみると、目的通り「7」と「11」にだけ <code>text-combine-upright: all</code> が設定されていることが確認できます。</p>
+          <figure>
+            <img src="assets/RVD8vM5.png" alt="独自コンポーネントのレンダリング結果" width="80%">
+            <figcaption aria-hidden="true">独自コンポーネントのレンダリング結果</figcaption>
+          </figure>
+        </section>
+      </section>
+      <section id="mdx-のしくみ" class="level2">
+        <h2>MDX のしくみ</h2>
+        <p>MDX で書かれた文章を解釈するためのパーサーは、<strong>Remark</strong>というライブラリを使って実装されています。<span class="footnote">最近では Remark の作者である wooorm 氏も MDX の開発に積極的に関わっているので、最近ではむしろ MDX のための機能拡張が Remark に取り入れられるということも多いです。</span>Remark とは、Markdown を HTML など様々な形式に変換するためのライブラリで、テキストを抽象構文木 (AST) に変換して処理することが特徴です。Remark については、過去に「<a href="https://vivliostyle.org/ja/blog/2019/09/25/make-books-with-vivliostyle-vol2/">Vivilostyleで本を作ろう vol.2</a>」で紹介した記事もあるので、そちらもぜひご覧ください。</p>
+        <p>実際に MDX が拡張構文をパースする部分は、Remark のプラグインとして実装されています。そして、生成された AST に従って目的の形式に出力されます。注意したい点は、MDX は Remark とは異なり、入力された MDX ファイルを HTML ではなく JavaScript (もしくは JSX) のコードとして出力される点です。MDX を最終的に HTML の原稿として扱いたい場合は、React などの処理系を通して HTML にレンダリングする必要があります。</p>
+        <figure>
+          <img src="assets/mdx-transpile-flow@4x.png" alt="MDX ファイルのレンダリングフロー">
+          <figcaption aria-hidden="true">MDX ファイルのレンダリングフロー</figcaption>
+        </figure>
+        <p>本来の用途であれば、この JavaScript はブラウザが読み込むことで動的に DOM が構築されるので、HTML に変換する必要はありません。しかし、Vivliostyle は静的な HTML のみを読み込むため、このまま原稿として使うには不便です。そこで、フロントエンドの世界で <strong>スタティックサイトジェネレート</strong> (SSG) と呼ばれる技術<span class="footnote">類似のテクニックにサーバーサイドレンダリング (SSR) があります。どのタイミングでレンダリングするかの違いだけなので、今回の例では本質的な違いはありません。</span>を使い、原稿として読み込める HTML への変換を試みます。</p>
+        <section id="原稿を-ssg-で生成する" class="level3">
+          <h3>原稿を SSG で生成する</h3>
+          <p>大げさな前置きを書いた手前で恐縮ですが、前の章で紹介した Gatsby を使っている場合、実はコマンド一つで生成できます。</p>
+          <pre class="language-text"><code class="language-text">npm run build</code></pre>
+          <p>コマンド実行後、<code>public</code> というディレクトリが作成され、この中の <code>index.html</code> というファイルが生成されたドキュメントになります。このディレクトリをそのまま Vivliostyle に与えてあげれば、PDF に変換されます。簡単ですね！</p>
+          <p>ただし、制約がまったく無いわけではありません。Vivliostyle はドキュメント中の JavaScript を解釈しないので、HTML に埋め込みたいものはすべてビルド時に依存関係を解決させる必要があります。Dynamic import なども使えないので、外部のライブラリを使ったり自分で実装する際は注意が必要です。</p>
+        </section>
+      </section>
+      <section id="mdx-v2-の新機能" class="level2">
+        <h2>MDX v2 の新機能</h2>
+        <p>MDX は現在新しいバージョンが開発中で、この記事の執筆時点では <code>v2.0.0-next.9</code> として公開されています。一見見ただけでもかなり大幅な変更がありそうなので、現時点での変更内容について少しだけ見てみようと思います。</p>
+        <section id="expression-記法" class="level3">
+          <h3>Expression 記法</h3>
+          <p>ドキュメントとしては書き起こされていませんが、MDX v2 では新たに <strong>Expression</strong> の文法が導入されています。JSX では、中括弧 (<code>{}</code>) で囲われた部分を JavaScript の式として評価する文法がありますが、従来これを MDX で使うためには <code>&#x3C;div>&#x3C;/div></code> のように JSX タグで囲われた部分でしか使えませんでした。v2 では、通常の Markdown の文脈でも直接 <code>{}</code> で囲うことによって、その部分が式として評価されるようになります。これは、インラインの Markdown でも同じように解釈されます。</p>
+          <p>例えば、以下のような MDX があった場合、</p>
+          <pre class="language-markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> Hello, {1 + 1}</span>
+
+{
+  'mdx'.toUpperCase()
+}</code></pre>
+          <p>JSX として見るとこのように解釈されます。</p>
+          <pre class="language-jsx"><code class="language-jsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>h1</span><span class="token punctuation">></span></span><span class="token plain-text">Hello, </span><span class="token punctuation">{</span><span class="token number">1</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>h1</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>p</span><span class="token punctuation">></span></span><span class="token punctuation">{</span><span class="token string">'mdx'</span><span class="token punctuation">.</span><span class="token method function property-access">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>p</span><span class="token punctuation">></span></span></code></pre>
+          <p>これが JSX の処理系でレンダリングされると、以下のようになります。</p>
+          <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>h1</span><span class="token punctuation">></span></span>Hello, 2<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>h1</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>p</span><span class="token punctuation">></span></span>MDX<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>p</span><span class="token punctuation">></span></span></code></pre>
+          <p>MDX をドキュメント作成として使う場合、これまでは外部のライブラリはコンポーネントとしてしか読み込めなかったので、使い勝手はあまり良くなかったです。この変更により、インラインで JavaScript の便利な機能を埋め込めるようになるので使い道がぐっと広がっています！</p>
+        </section>
+        <section id="mdast-の変更" class="level3">
+          <h3>MDAST の変更</h3>
+          <p>上記の変更も含めて、MDX をパースした時に生成される MDAST (Markdown AST) の構造が大きく変わっています。MDX v1 では、MDAST に以下のようなタイプ名のノードが拡張されていました。</p>
+          <p><code>jsx</code> <code>import</code> <code>export</code></p>
+          <p>一方で、v2 では以下のようなタイプが定義されています。</p>
+          <p><code>mdxJsxFlowElement</code> <code>mdxJsxTextElement</code> <code>mdxjsEsm</code> <code>mdxFlowExpression</code> <code>mdxTextExpression</code></p>
+          <p>内部的には以下の 3 つのパーサーに分けて実装されているので、それぞれについて見てみます。</p>
+          <section id="mdast-util-mdx-jsx-mdxjsxflowelement-mdxjsxtextelement" class="level4">
+            <h4>mdast-util-mdx-jsx: <code>mdxJsxFlowElement</code> <code>mdxJsxTextElement</code></h4>
+            <p>MDX 中の JSX タグをパースします。ブロックとして JSX が出現した場合 <code>mdxJsxFlowElement</code>、インラインで JSX が出現した場合 <code>mdxJsxTextElement</code> というタイプで出力されます。</p>
+            <p>以下はこのパーサーが出力する AST です。注目すべきは attributes の内容で、これまでは JSX の中身まではパースされなかったものが、attribute についてもしっかりパースされているのがわかります。また、<code>estree</code> という要素が追加されていますが、この内容は JavaScript の AST の仕様である ESTree に従ってパースされたものです。</p>
+            <pre class="language-jsx"><code class="language-jsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span><span class="token class-name">MyComponent</span></span> <span class="token spread"><span class="token punctuation">{</span><span class="token punctuation">...</span><span class="token attr-value">props</span><span class="token punctuation">}</span></span><span class="token punctuation">/></span></span></code></pre>
+            <pre class="language-javascript"><code class="language-javascript"><span class="token punctuation">{</span>
+  type<span class="token operator">:</span> <span class="token string">'root'</span><span class="token punctuation">,</span>
+  children<span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      type<span class="token operator">:</span> <span class="token string">'mdxJsxFlowElement'</span><span class="token punctuation">,</span>
+      name<span class="token operator">:</span> <span class="token string">'MyComponent'</span><span class="token punctuation">,</span>
+      attributes<span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+          type<span class="token operator">:</span> <span class="token string">'mdxJsxExpressionAttribute'</span><span class="token punctuation">,</span>
+          value<span class="token operator">:</span> <span class="token string">'...props'</span><span class="token punctuation">,</span>
+          data<span class="token operator">:</span> <span class="token punctuation">{</span>
+            estree<span class="token operator">:</span> <span class="token punctuation">{</span>
+              type<span class="token operator">:</span> <span class="token string">'Program'</span><span class="token punctuation">,</span>
+              body<span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token punctuation">{</span>
+                  type<span class="token operator">:</span> <span class="token string">'ExpressionStatement'</span><span class="token punctuation">,</span>
+                  expression<span class="token operator">:</span> <span class="token punctuation">{</span>
+                    type<span class="token operator">:</span> <span class="token string">'ObjectExpression'</span><span class="token punctuation">,</span>
+                    properties<span class="token operator">:</span> <span class="token punctuation">[</span>
+                      <span class="token punctuation">{</span>
+                        type<span class="token operator">:</span> <span class="token string">'SpreadElement'</span><span class="token punctuation">,</span>
+                        argument<span class="token operator">:</span> <span class="token punctuation">{</span>type<span class="token operator">:</span> <span class="token string">'Identifier'</span><span class="token punctuation">,</span> name<span class="token operator">:</span> <span class="token string">'props'</span><span class="token punctuation">}</span>
+                      <span class="token punctuation">}</span>
+                    <span class="token punctuation">]</span>
+                  <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>
+              <span class="token punctuation">]</span><span class="token punctuation">,</span>
+              sourceType<span class="token operator">:</span> <span class="token string">'module'</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      children<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span></code></pre>
+          </section>
+          <section id="mdast-util-mdxjs-esm-mdxjsesm" class="level4">
+            <h4>mdast-util-mdxjs-esm: <code>mdxjsEsm</code></h4>
+            <p>MDX 中に登場する ESM 形式の import/export 文をパースします。import も export もまとめて <code>mdxjsEsm</code> タイプとして出力されます。</p>
+            <p>以下のようなテキストが MDX で出現した場合、AST の内容は次のようになります。この AST でも、JavaScript として構文解析された結果が <code>estree</code> の中に格納されます。</p>
+            <pre class="language-jsx"><code class="language-jsx"><span class="token keyword module">import</span> <span class="token imports">a</span> <span class="token keyword module">from</span> <span class="token string">'b'</span>
+<span class="token keyword module">export</span> <span class="token keyword">var</span> c <span class="token operator">=</span> <span class="token string">''</span></code></pre>
+            <pre class="language-javascript"><code class="language-javascript"><span class="token punctuation">{</span>
+  type<span class="token operator">:</span> <span class="token string">'root'</span><span class="token punctuation">,</span>
+  children<span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      type<span class="token operator">:</span> <span class="token string">'mdxjsEsm'</span><span class="token punctuation">,</span>
+      value<span class="token operator">:</span> <span class="token string">"import a from 'b'\nexport var c = ''"</span><span class="token punctuation">,</span>
+      data<span class="token operator">:</span> <span class="token punctuation">{</span>
+        estree<span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token spread operator">...</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span></code></pre>
+          </section>
+          <section id="mdast-util-mdx-expression-mdxflowexpression-mdxtextexpression" class="level4">
+            <h4>mdast-util-mdx-expression: <code>mdxFlowExpression</code> <code>mdxTextExpression</code></h4>
+            <p>MDX 中の Expression をパースします。ブロックとして出現した場合 <code>mdxFlowExpression</code>、インラインで JSX が出現した場合 <code>mdxTextExpression</code> というタイプで出力されます。</p>
+            <pre class="language-mdx"><code class="language-mdx">{
+  a + 1
+}
+
+b {true}.</code></pre>
+            <pre class="language-javascript"><code class="language-javascript"><span class="token punctuation">{</span>
+  type<span class="token operator">:</span> <span class="token string">'root'</span><span class="token punctuation">,</span>
+  children<span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      type<span class="token operator">:</span> <span class="token string">'mdxFlowExpression'</span><span class="token punctuation">,</span>
+      value<span class="token operator">:</span> <span class="token string">'\na + 1\n'</span><span class="token punctuation">,</span>
+      data<span class="token operator">:</span> <span class="token punctuation">{</span>
+        estree<span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token spread operator">...</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      type<span class="token operator">:</span> <span class="token string">'paragraph'</span><span class="token punctuation">,</span>
+      children<span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>type<span class="token operator">:</span> <span class="token string">'text'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token string">'b '</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+          type<span class="token operator">:</span> <span class="token string">'mdxTextExpression'</span><span class="token punctuation">,</span>
+          value<span class="token operator">:</span> <span class="token string">'true'</span><span class="token punctuation">,</span>
+          data<span class="token operator">:</span> <span class="token punctuation">{</span>
+            estree<span class="token operator">:</span> <span class="token punctuation">{</span>
+              <span class="token spread operator">...</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>type<span class="token operator">:</span> <span class="token string">'text'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token string">'.'</span><span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span></code></pre>
+          </section>
+        </section>
+      </section>
+      <section id="まとめ" class="level2">
+        <h2>まとめ</h2>
+        <p>エンジニアではない書き手にとっては、MDX を使うために JSX を習得する必要があるため決してハードルが低いものではありません。しかし、ドキュメントの管理者という目線では、独自記法を提供するためのパーサーなどを用意する手間なく文章を拡張できるためとても魅力的です。また、JSX を使わず通常の Markdown を扱う際でも、MDX を使うことで Markdown を JavaScript のエコシステムに組み込むことができます。</p>
+        <p>このような特徴を考えると、ドキュメントを MDX を使って書くことは、文章を PDF だけでなく React (あるいは JSX を扱える他のフレームワーク) を使った Web サイトに埋め込みたい場合、Markdown に便利な拡張をバリバリ加えて大規模なドキュメントを作りたい場合、周りにフロントエンドエンジニアがいる場合にぴったりな選択肢だと思います。</p>
+      </section>
+    </section>
+  </body>
+</html>
