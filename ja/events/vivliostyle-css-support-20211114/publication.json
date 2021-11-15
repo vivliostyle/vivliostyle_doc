@@ -1,0 +1,20 @@
+{
+  "@context": [
+    "https://schema.org",
+    "https://www.w3.org/ns/pub-context"
+  ],
+  "type": "Book",
+  "conformsTo": "https://github.com/vivliostyle/vivliostyle-cli",
+  "author": "MurakamiShinyu <murakami@vivliostyle.org>",
+  "inLanguage": "ja",
+  "dateModified": "2021-11-15T13:14:44.385Z",
+  "name": "vivliostyle-css-support-20211114",
+  "readingOrder": [
+    {
+      "url": "slide.html",
+      "title": "CSS text-spacingサポート等Vivliostyle.jsの進化と今後の開発予定"
+    }
+  ],
+  "resources": [],
+  "links": []
+}
