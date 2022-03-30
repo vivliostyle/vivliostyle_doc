@@ -1,0 +1,43 @@
+{
+  "@context": [
+    "https://schema.org",
+    "https://www.w3.org/ns/pub-context"
+  ],
+  "type": "Book",
+  "conformsTo": "https://github.com/vivliostyle/vivliostyle-cli",
+  "author": "新美南吉",
+  "inLanguage": "ja",
+  "readingProgression": "rtl",
+  "dateModified": "2022-03-30T09:22:22.676Z",
+  "name": "新美南吉童話集",
+  "readingOrder": [
+    {
+      "url": "cover.html",
+      "name": "新美南吉童話集"
+    },
+    {
+      "url": "toc.html",
+      "name": "新美南吉童話集 目次",
+      "rel": "contents",
+      "type": "LinkedResource"
+    },
+    {
+      "url": "001.html",
+      "name": "新美南吉 ごん狐"
+    },
+    {
+      "url": "002.html",
+      "name": "新美南吉 手袋を買いに"
+    },
+    {
+      "url": "003.html",
+      "name": "新美南吉 赤い蝋燭"
+    },
+    {
+      "url": "004.html",
+      "name": "新美南吉 最後の胡弓弾き"
+    }
+  ],
+  "resources": [],
+  "links": []
+}
