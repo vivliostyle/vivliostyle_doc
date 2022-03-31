@@ -1,6 +1,11 @@
 @charset "UTF-8";
 html {
   writing-mode: vertical-rl;
+  font-family: "游明朝", "YuMincho", serif;
+  text-align: justify;
+  /* 約物の調整 */
+  text-spacing: space-first allow-end;
+  line-height: 2;
   orphans: 1;
   widows: 1;
 }
@@ -10,17 +15,22 @@ html {
   padding: 0;
 }
 
+/* タイトル文字列セット */
+.title {
+  string-set: title content();
+}
+
 @page {
   size: 148mm 210mm;
   width: 360pt;
   height: 468pt;
   margin: auto;
   font-size: 8.5pt;
-  font-family: "游明朝", "YuMincho", serif;
 }
 @page :left {
   @top-left {
-    content: counter(page) "　" env(doc-title);
+    /* 左上ノンブル、柱（タイトル文字列） */
+    content: counter(page) "　" string(title);
     margin-left: 7pt;
     margin-top: 8.5mm;
     writing-mode: horizontal-tb;
@@ -28,17 +38,12 @@ html {
 }
 @page :right {
   @top-right {
+    /* 右上ノンブル */
     content: counter(page);
     margin-right: 7pt;
     margin-top: 8.5mm;
     writing-mode: horizontal-tb;
   }
-}
-
-html {
-  font-family: "游明朝", "YuMincho", serif;
-  text-align: justify;
-  line-height: 2rem;
 }
 
 h1 {
@@ -58,16 +63,13 @@ h2 {
 }
 
 ruby > rt {
-  font-size: 0.5rem;
+  font-size: 50%;
 }
 
 p {
   text-indent: 1em;
-}
-
-/* 括弧で始まる段落 */
-p.q {
-  text-indent: 0;
+  /* 段落先頭約物の調整、行末句読点ぶら下げあり */
+  hanging-punctuation: first allow-end;
 }
 
 /* 縦中横 */
@@ -98,9 +100,4 @@ em.sesame_dot {
   line-height: 1.5rem;
   margin-block-start: 6rem;
   break-inside: avoid;
-}
-
-/* 非表示 */
-[hidden] {
-  display: none;
 }
