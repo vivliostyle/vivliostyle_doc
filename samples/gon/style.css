@@ -1,18 +1,17 @@
 @charset "UTF-8";
 html {
   /* 組み方向 */
-  -epub-writing-mode: vertical-rl;
-  -ms-writing-mode: tb-rl;
   writing-mode: vertical-rl;
-
   orphans: 1;
-  widows: 1;
-}
+  widows: 1; }
 
 * {
   margin: 0;
-  padding: 0;
-}
+  padding: 0; }
+
+/* タイトル文字列セット */
+.title {
+  string-set: title content(); }
 
 @page {
   size: 105mm 148mm;
@@ -21,35 +20,25 @@ html {
   margin-top: 15mm;
   margin-bottom: auto;
   margin-left: auto;
-  margin-right: auto;
-  /* 以下、マージンボックスに継承される */
-  font-size: 6pt;
-  font-family: "游明朝", "YuMincho", serif;
-  /* 本来不要（ルート要素の指定が継承される）だが、現時点のvivliostyle.jsの制限により必要 */
-  vertical-align: top;
-}
+  margin-right: auto; }
 @page :left {
-  margin-right: 10mm;
   @top-left {
-    content: counter(page) "　　ごん狐";
+    /* 左上ノンブル、柱（タイトル文字列） */
+    content: counter(page) "　　" string(title);
+    font-size: 6pt;
+    vertical-align: top;
     margin-left: 3.75pt;
     margin-top: 6mm;
-    writing-mode: horizontal-tb;
-    /* CSS仕様上は@pageルール内に書けばよいが、現時点のvivliostyle.jsの制限によりここに書く */
-  }
-}
+    writing-mode: horizontal-tb; } }
 @page :right {
-  margin-left: 10mm;
-  /* 右下ノンブル */
   @top-right {
+    /* 右上ノンブル */
     content: counter(page);
+    font-size: 6pt;
+    vertical-align: top;
     margin-right: 3.75pt;
     margin-top: 6mm;
-    writing-mode: horizontal-tb;
-    /* CSS仕様上は@pageルール内に書けばよいが、現時点のvivliostyle.jsの制限によりここに書く */
-  }
-}
-
+    writing-mode: horizontal-tb; } }
 html {
   /* フォント */
   font-family: "游明朝", "YuMincho", serif;
@@ -58,7 +47,8 @@ html {
   text-align: justify;
   font-size: 8.5pt;
   line-height: 16pt;
-}
+  /* 約物の調整 */
+  text-spacing: space-first allow-end; }
 
 h1 {
   /* フォント */
@@ -70,8 +60,7 @@ h1 {
   /* 直後の改ページ・改段禁止 */
   break-after: avoid;
   line-height: 48pt;
-  letter-spacing: 1em;
-}
+  letter-spacing: 1em; }
 
 h2 {
   /* フォント */
@@ -82,76 +71,54 @@ h2 {
   text-indent: 6em;
   /* 直後の改ページ・改段禁止 */
   break-after: avoid;
-  line-height: 32pt;
-}
-
-h1 + h2 {
-  margin-right: 16pt;
-}
+  line-height: 32pt; }
 
 ruby > rt {
-  font-size: 4pt;
-}
+  font-size: 50%; }
 
 p {
   text-indent: 1em;
-  hanging-punctuation: force-end;
-}
-
-hr {
-  border: none;
-  border-right: 1pt solid black;
-  height: 6em;
-  margin: auto 8.5pt;
-}
+  /* 段落先頭約物の調整、行末句読点ぶら下げあり */
+  hanging-punctuation: first allow-end; }
 
 /* 縦中横 */
 .tcy {
-  -webkit-text-combine: horizontal;
-  text-combine: horizontal;
-  -ms-text-combine-horizontal: all;
-  text-combine-horizontal: all;
-  text-combine-upright: all;
-}
+  text-combine-upright: all; }
 
 /* 圏点（ゴマ） */
 em.sesame_dot {
   font-style: normal;
-  -webkit-text-emphasis-style: sesame;
-  text-emphasis-style: sesame;
-}
+  text-emphasis-style: sesame; }
 
-/*著作者*/
+/* 著作者 */
 .author {
-  position: absolute;
-  bottom: 0;
-  font-size: 8.5pt;
-  margin-top: 50pt;
-  letter-spacing: normal;
-}
-
-/*画像＋キャプション*/
-figure {
   display: block;
-  width: 236pt;
-  -ms-writing-mode: lr-tb;
-  -webkit-writing-mode: horizontal-tb;
-  writing-mode: horizontal-tb;
-}
+  font-size: 8.5pt;
+  font-weight: bold;
+  text-align: end; }
 
-figure img {
+/* 画像＋キャプション */
+figure {
+  float-reference: page;
+  float: top;
+  width: 236pt;
+  max-width: 100vw;
+  writing-mode: horizontal-tb; }
+
+figure > img {
+  display: block;
   width: 100%;
-  height: auto;
-  vertical-align: bottom;
-}
+  height: auto; }
 
 figcaption {
   text-align: left;
   font-size: 7pt;
-}
+  line-height: 14pt;
+  margin-bottom: 4pt; }
 
-/*奥付*/
+/* 奥付 */
 .colophon {
   font-size: 7pt;
-  margin-right: 48pt;
-}
+  margin-block-start: 48pt; }
+
+/*# sourceMappingURL=style.css.map */

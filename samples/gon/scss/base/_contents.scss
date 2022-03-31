@@ -1,35 +1,36 @@
 @charset "UTF-8";
 
-/*著作者*/
+/* 著作者 */
 .author {
-	position: absolute;
-	bottom: 0;
-	font-size: $base-font-size;
-	margin-top: 50pt;
-	letter-spacing: normal;
+  display: block;
+  font-size: $base-font-size;
+  font-weight: bold;
+  text-align: end;
 }
 
-/*画像＋キャプション*/
+/* 画像＋キャプション */
 figure {
-	display: block;
-    width: 236pt;
-    -ms-writing-mode: lr-tb;
-    -webkit-writing-mode: horizontal-tb;
-    writing-mode: horizontal-tb;
+  float-reference: page;
+  float: top;
+  width: 236pt;
+  max-width: 100vw;
+  writing-mode: horizontal-tb;
 }
-figure img {
-	width: 100%;
-	height: auto;
-	vertical-align: bottom;
+figure > img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 figcaption {
-	text-align: left;
-	font-size: 7pt;
+  text-align: left;
+  font-size: 7pt;
+  line-height: 14pt;
+  margin-bottom: 4pt;
 }
 
-/*奥付*/
+/* 奥付 */
 .colophon {
-	font-size: 7pt;
-	// 3行空け
-	margin-right: $base-line-height * 3;
+  font-size: 7pt;
+  // 3行空け
+  margin-block-start: $base-line-height * 3;
 }
