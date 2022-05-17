@@ -1,0 +1,19 @@
+{
+  "@context": [
+    "https://schema.org",
+    "https://www.w3.org/ns/pub-context"
+  ],
+  "type": "Book",
+  "conformsTo": "https://github.com/vivliostyle/vivliostyle-cli",
+  "author": "",
+  "dateModified": "2022-05-17T08:44:43.473Z",
+  "name": "一般社団法人ビブリオスタイル 2020年度事業報告書",
+  "readingOrder": [
+    {
+      "url": ".vs-1652777075366.vf2021report.html",
+      "name": "一般社団法人ビブリオスタイル 2020年度事業報告書"
+    }
+  ],
+  "resources": [],
+  "links": []
+}
