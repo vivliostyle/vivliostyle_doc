@@ -97,13 +97,13 @@ td:nth-child(n+2) {
   text-align: right;
 }
 
-#年度貸借対照表 + p + table > tbody > tr:nth-child(4),
-#年度貸借対照表 + p + table > tbody > tr:nth-child(7),
+#年度貸借対照表 + p + table>tbody>tr:nth-child(1),
+#年度貸借対照表 + p + table > tbody > tr:nth-child(5),
+#年度貸借対照表 + p + table > tbody > tr:nth-child(11),
 #年度貸借対照表 + p + table > tbody > tr:nth-child(12),
-#年度貸借対照表 + p + table > tbody > tr:nth-child(15),
-#年度貸借対照表 + p + table > tbody > tr:nth-child(16),
 #年度貸借対照表 + p + table > tbody > tr:nth-child(19),
 #年度貸借対照表 + p + table > tbody > tr:nth-child(20),
+#年度貸借対照表 + p + table > tbody > tr:nth-child(22),
 #年度正味財産増減計算書 + p + table > tbody > tr:nth-child(10),
 #年度正味財産増減計算書 + p + table > tbody > tr:nth-child(19),
 #年度正味財産増減計算書 + p + table > tbody > tr:nth-child(23),
