@@ -104,20 +104,32 @@ td:nth-child(n+2) {
 #年度貸借対照表 + p + table > tbody > tr:nth-child(19),
 #年度貸借対照表 + p + table > tbody > tr:nth-child(20),
 #年度貸借対照表 + p + table > tbody > tr:nth-child(22),
+#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(1),
 #年度正味財産増減計算書 + p + table > tbody > tr:nth-child(10),
-#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(19),
-#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(23),
-#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(24),
+#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(21),
+#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(25),
 #年度正味財産増減計算書 + p + table > tbody > tr:nth-child(26),
-#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(30),
+#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(28),
 #年度正味財産増減計算書 + p + table > tbody > tr:nth-child(32),
-#年度収支計算書 + p + table > tbody > tr:nth-child(10),
-#年度収支計算書 + p + table > tbody > tr:nth-child(19),
-#年度収支計算書 + p + table > tbody > tr:nth-child(23),
-#年度収支計算書 + p + table > tbody > tr:nth-child(24),
-#年度収支計算書 + p + table > tbody > tr:nth-child(30),
-#年度収支計算書 + p + table > tbody > tr:nth-child(32) {
+#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(34),
+#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(40),
+#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(41),
+#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(42),
+#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(46),
+#年度収支計算書+p+table>tbody>tr:nth-child(10),
+#年度収支計算書+p+table>tbody>tr:nth-child(19),
+#年度収支計算書+p+table>tbody>tr:nth-child(22),
+#年度収支計算書+p+table>tbody>tr:nth-child(23),
+#年度収支計算書+p+table>tbody>tr:nth-child(29),
+#年度収支計算書+p+table>tbody>tr:nth-child(31),
+#年度収支計算書+p+table>tbody>tr:nth-child(37),
+#年度収支計算書+p+table>tbody>tr:nth-child(38),
+#年度収支計算書+p+table>tbody>tr:nth-child(39),
+#年度収支計算書+p+table>tbody>tr:nth-child(43){
   background-color: #EFF6FD;
 }
 
+#年度正味財産増減計算書+p+table>tbody>tr:nth-child(5){
+    background-color: #f7f6bd;
+  }
 
