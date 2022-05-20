@@ -104,7 +104,7 @@ lang: ja
 
 その「Ⅰ. 一般正味財産増減の部」の中で目を引くのが、事業収益が前期より4,763,529円多い6,267,250円をあげたことだ（淡黄の背景色）。この結果、本業で得た利益を示す経常利益計は、前期より1,564,934円多い6,383,802円をあげることができた。この収益額は前期の約4倍に当たる。これは[前期事業報告書](https://vivliostyle.org/viewer/#src=https://vivliostyle.github.io/vivliostyle_doc/ja/reports/vivliostyle-report-2020/vf2020report.html&bookMode=true&f=epubcfi(/2!/4/84))でも述べた外部企業からの受託開発が、今期に入って拡大したことによる。また、額としては決して多くないものの、受取寄付金も前期より55,337円多い116,546円を得ることができた。
 
-一方、事業をおこなうための経費である事業費計は、前期より47,905円少ない325,918円だった。法人が存続するための費用である管理費計は、前期より1,718,877円多い5,175,500円だった。この増加分は、前述した大幅増となった事業収益に関わる業務委託費（下請への人件費）である。すでに述べたように、前期も事業収益は1,503,721円をあげていた。それを約4倍も拡大できたのは、件数自体が増えたこともあるが、村上代表理事以外の開発者に下請に出せたことが大きく寄与している。来期も同様以上の事業収益を確保できるかは、開発リソースの確保がカギとなろう。なお、ここまで述べた事業費計と管理費計を合算した経常費用計は、前期より1,670,972円多い5,501,418円である。
+一方、事業をおこなうための経費である事業費計は、前期より47,905円少ない325,918円だった。法人が存続するための費用である管理費計は、前期より1,718,877円多い5,175,500円だった。この増加分は、前述した大幅増となった事業収益に関わる業務委託費（下請への人件費）である。すでに述べたように、前期も事業収益は1,503,721円をあげていた。それを約4倍も拡大できたのは、件数自体が増えたこともあるが、村上代表理事以外の開発者へ下請に出せたことが大きく寄与している。来期も同様以上の事業収益を確保できるかは、開発リソースの確保がカギとなろう。なお、ここまで述べた事業費計と管理費計を合算した経常費用計は、前期より1,670,972円多い5,501,418円である。
 
 さらに下に見ていって、有価証券等に関わる保有資産の購入価格と現在価格の差額を示す評価損益等計は0円。有価証券は保有していないからだ。本業以外の収益を示す経常外費用計も0円となっている。
 
@@ -168,6 +168,54 @@ lang: ja
 | 指定正味財産期末残高        | 0   | 0          | 0          |    |
 | **Ⅲ. 正味財産期末残高**   | 0   | -2,516,558 | 2,516,558  |    |
 
-
 ## **第2章  2021年度（第3期 2021年4月1日〜2022年3月31日）事業報告**
+
+### はじめに
+
+前章で述べたように、当法人は今期、単年度黒字を達成することができた。その直接の原因は、既述のように外部企業からの受託開発が拡大したからだ。しかし、背景にはVivliostyleプロダクトが充実したこと、そしてラインナップが整備されたことにより、プロダクト間のエコシステムが機能し始めたことが与って大きい。言い換えれば、これらの要因なしに受託開発の拡大もなかったと考えられる。そこで本章ではVivliostyleプロダクトそれぞれの開発状況を説明する。さらに次期への課題はないかを探っていく。これも繰り返しになるが、当法人は決して少なくない累積赤字を抱えており、その解消が当面の目標となるからだ。
+
+### プロダクトの分類とそれぞれの役目
+
+開発状況について述べる前に、簡単にプロダクトを整理しておこう。近年ラインナップが増えたのは喜ばしいが、それぞれがどのような役割を果たしているのか、全体の中でどのように位置づけられるのか、外側からは分かりづらくなっているからだ。
+
+- ライブラリ（アプリケーションに組み込まれる「共通部品」）
+    - [Vivliostyle.js（Vivliostyle Viewerを含む）](https://github.com/vivliostyle/vivliostyle.js)
+    - [VFM (Vivliostyle Flavored Markdown)](https://github.com/vivliostyle/vfm)
+    - [Themes](https://github.com/vivliostyle/themes)
+- ジェネレータとそのインストーラ（Markdown+CSSをHTML+CSSに変換）
+    - [Vivliostyle CLI](https://github.com/vivliostyle/vivliostyle-cli)
+    - [create-book](https://github.com/vivliostyle/create-book)
+    - [vivliostyle-sitegen](https://github.com/vivliostyle/vivliostyle-sitegen)
+- Webアプリ（上記を統合したアプリケーション）
+    - [ Vivliostyle Pub](https://github.com/vivliostyle/vivliostyle-pub)
+- Webコンテンツ（Vivliostyleに関わるユーザ向けドキュメンテーション）
+    - [vivliostyle.org](https://github.com/vivliostyle/vivliostyle.org)
+    - [docs.vivliostyle.org](https://github.com/vivliostyle/docs.vivliostyle.org) 
+    - [docs-vivliostyle-pub](https://github.com/vivliostyle/docs-vivliostyle-pub) 
+    - [vivliostyle_doc](https://github.com/vivliostyle/vivliostyle_doc)
+
+上記のリンクは、それぞれのリポジトリへのものだ。つまり、上記分類はリポジトリの分類でもある。また、上記分類は必ずしも厳密なものではない。たとえばVFMはライブラリであると同時に、MarkdownをHTMLに変換するジェネレータという一面をもつ。では次節以降、上記分類に従いながら今期における各プロダクトの開発状況を説明していこう。
+
+### ライブラリ：Vivliostyle.js
+
+CSS組版をおこなうVivliostyle.jsは、Vivliostyleプロダクトの中核的存在である。本プロダクトは以下に示すように、幸いなことに今期大幅な機能アップを果たすことができた。
+
+- 組版機能の向上
+     - [Vivliostyle CoreにおけるCSS Paged Media の実装](https://www.youtube.com/watch?v=_y3YBHNN2Oc)
+     - [CSS text-spacingサポート等Vivliostyle.jsの進化と今後の開発予定](https://www.youtube.com/watch?v=2hvsMhTJai4)
+     - [最近のVivliostyle.jsの進化について](https://vivliostyle.org/ja/blog/2021/10/12/recent-vivliostyle-js-updates/)
+     - [行末処理が進化して多様な組版ができるように](https://vivliostyle.org/ja/blog/2022/02/08/Improved-of-line-end-handling-and-support-for-page-progression-direction-in-PDF/)
+- HTMLの中でJavaScriptの実行が可能に
+     - [Vivliostyleの組版でJavaScriptが使えるようになりました](https://vivliostyle.org/ja/blog/2022/01/24/JavaScript-can-now-be-used-in-typesetting-by-Vivliostyle/)
+- Webフォントへの対応
+     - [Vivliostyle PubでWebフォントを使う](https://www.youtube.com/watch?v=Hz5_Wd7d5lw)
+     - [VivliostyleでWebフォントを使う 調査編](https://www.youtube.com/watch?v=czVRSsekLjc)
+
+ここで重要なことは、Vivliostyle.jsの機能アップが、これを組み込んだVivliostyle CLIやVivliostyle Pubにも波及し、直ちにこれらも上記機能を実装してしまったことだ。まさにライブラリの本領が発揮された場面だった。
+
+### ライブラリ：VFM (Vivliostyle Flavored Markdown)
+
+書籍むけ組版に最適化したMarkdown方言であるVFMは、今期バージョン1をリリースすることができた。
+
+- [VFM 1.0 リリースと今後の展望](https://www.youtube.com/watch?v=lF6Mb2DXJK0)
 
