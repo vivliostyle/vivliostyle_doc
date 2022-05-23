@@ -211,6 +211,10 @@ CSS組版をおこなうVivliostyle.jsは、Vivliostyleプロダクトの中核�
      - [Vivliostyle PubでWebフォントを使う](https://www.youtube.com/watch?v=Hz5_Wd7d5lw)
      - [VivliostyleでWebフォントを使う 調査編](https://www.youtube.com/watch?v=czVRSsekLjc)
 
+では、こうした機能はどのようにして開発されたのか。当該リポジトリにおける月毎のプルリクエスト数をグラフ化し、前期と比較してみたのが下記のグラフだ。
+
+![Vivliostyle.jsリポジトリの月間プルリクエスト数（前期との比較）](./img/fig-4.png){ width=100% }
+
 ここで重要なことは、Vivliostyle.jsの機能アップが、これを組み込んだVivliostyle CLIやVivliostyle Pubにも波及し、直ちにこれらも上記機能を実装してしまったことだ。まさにライブラリの本領が発揮された場面だった。
 
 ### ライブラリ：VFM (Vivliostyle Flavored Markdown)
