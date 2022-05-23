@@ -38,6 +38,7 @@
 <li><a href="#プロダクトの分類とそれぞれの役目">プロダクトの分類とそれぞれの役目</a></li>
 <li><a href="#ライブラリvivliostyle.js">ライブラリ：Vivliostyle.js</a></li>
 <li><a href="#ライブラリvfm-vivliostyle-flavored-markdown">ライブラリ：VFM (Vivliostyle Flavored Markdown)</a></li>
+<li><a href="#ライブラリthemes">ライブラリ：Themes</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -852,30 +853,49 @@
 </ul>
 <p>上記のリンクは、それぞれのリポジトリへのものだ。つまり、上記分類はリポジトリの分類でもある。また、上記分類は必ずしも厳密なものではない。たとえばVFMはライブラリであると同時に、MarkdownをHTMLに変換するジェネレータという一面をもつ。では次節以降、上記分類に従いながら今期における各プロダクトの開発状況を説明していこう。</p>
 <h3 id="ライブラリvivliostyle.js">ライブラリ：Vivliostyle.js</h3>
-<p>CSS組版をおこなうVivliostyle.jsは、Vivliostyleプロダクトの中核的存在である。本プロダクトは以下に示すように、幸いなことに今期大幅な機能アップを果たすことができた。</p>
+<p>実際にCSS組版をおこなうVivliostyle.jsは、Vivliostyleプロダクトの中核的存在である。幸いなことに本プロダクトは、以下に引用したように今期大幅な機能アップを果たすことができた。</p>
 <ul>
 <li>組版機能の向上
 <ul>
-<li><a href="https://www.youtube.com/watch?v=_y3YBHNN2Oc">Vivliostyle CoreにおけるCSS Paged Media の実装</a></li>
-<li><a href="https://www.youtube.com/watch?v=2hvsMhTJai4">CSS text-spacingサポート等Vivliostyle.jsの進化と今後の開発予定</a></li>
-<li><a href="https://vivliostyle.org/ja/blog/2021/10/12/recent-vivliostyle-js-updates/">最近のVivliostyle.jsの進化について</a></li>
-<li><a href="https://vivliostyle.org/ja/blog/2022/02/08/Improved-of-line-end-handling-and-support-for-page-progression-direction-in-PDF/">行末処理が進化して多様な組版ができるように</a></li>
+<li><a href="https://www.youtube.com/watch?v=_y3YBHNN2Oc">イベント発表：Vivliostyle CoreにおけるCSS Paged Media の実装</a>（村上真雄）</li>
+<li><a href="https://www.youtube.com/watch?v=2hvsMhTJai4">イベント発表：CSS text-spacingサポート等Vivliostyle.jsの進化と今後の開発予定</a>（村上真雄）</li>
+<li><a href="https://vivliostyle.org/ja/blog/2021/10/12/recent-vivliostyle-js-updates/">ブログ：最近のVivliostyle.jsの進化について</a>（小形克宏）</li>
+<li><a href="https://vivliostyle.org/ja/blog/2022/02/08/Improved-of-line-end-handling-and-support-for-page-progression-direction-in-PDF/">ブログ：行末処理が進化して多様な組版ができるように</a>（小形克宏）</li>
 </ul></li>
 <li>HTMLの中でJavaScriptの実行が可能に
 <ul>
-<li><a href="https://vivliostyle.org/ja/blog/2022/01/24/JavaScript-can-now-be-used-in-typesetting-by-Vivliostyle/">Vivliostyleの組版でJavaScriptが使えるようになりました</a></li>
+<li><a href="https://vivliostyle.org/ja/blog/2022/01/24/JavaScript-can-now-be-used-in-typesetting-by-Vivliostyle/">ブログ：Vivliostyleの組版でJavaScriptが使えるようになりました</a>（小形克宏）</li>
 </ul></li>
 <li>Webフォントへの対応
 <ul>
-<li><a href="https://www.youtube.com/watch?v=Hz5_Wd7d5lw">Vivliostyle PubでWebフォントを使う</a></li>
-<li><a href="https://www.youtube.com/watch?v=czVRSsekLjc">VivliostyleでWebフォントを使う 調査編</a></li>
+<li><a href="https://www.youtube.com/watch?v=Hz5_Wd7d5lw">イベント発表：Vivliostyle PubでWebフォントを使う</a>（小形克宏）</li>
+<li><a href="https://www.youtube.com/watch?v=czVRSsekLjc">イベント発表：VivliostyleでWebフォントを使う 調査編</a>（小形克宏）</li>
 </ul></li>
 </ul>
-<p>ここで重要なことは、Vivliostyle.jsの機能アップが、これを組み込んだVivliostyle CLIやVivliostyle Pubにも波及し、直ちにこれらも上記機能を実装してしまったことだ。まさにライブラリの本領が発揮された場面だった。</p>
+<p>では、これらの機能はどのようにして開発されたのか。当該リポジトリにおける月毎のプルリクエスト数をグラフ化し、前期と比較してみたのが下記のグラフだ。</p>
+<figure>
+<img src="./img/fig-4.png" style="width:100.0%" alt="前期と比較したVivliostyle.jsリポジトリの月間プルリクエスト数" /><figcaption aria-hidden="true">前期と比較したVivliostyle.jsリポジトリの月間プルリクエスト数</figcaption>
+</figure>
+<p>前期も年間を通してコンスタントにプルリクエストを出しているが、今期はそれを上回る開発ペースであったことがわかる。前掲の機能アップも、こうした熱心な開発の結果として実現された。</p>
+<p>ここで重要なことは、Vivliostyle.jsの機能アップが、これを組み込んだVivliostyle CLIやVivliostyle Pubにも波及し、直ちにこれらも新機能を実装していったことだ。まさにライブラリとしての本領が発揮された場面だった。</p>
 <h3 id="ライブラリvfm-vivliostyle-flavored-markdown">ライブラリ：VFM (Vivliostyle Flavored Markdown)</h3>
-<p>書籍むけ組版に最適化したMarkdown方言であるVFMは、今期バージョン1をリリースすることができた。</p>
+<p>書籍むけ組版に最適化したMarkdown方言であるVFMは、今期バージョン1をリリースすることができた。もともとVFMは、Markdownへの変換エンジンとして<a href="https://remark.js.org/">Remark</a>を採用している。しかし、その新バージョンRemark 13には過去のバージョンと非互換な変更が多く含まれていることから、その実装は多大な作業量が予想される。そこで、まずバージョン1としてRemark 13がなくとも実現できる機能をすべて実装しておき、それが終わってからバージョン2としてRemark 13への対応に取り組む方針を決めていた。詳細はメンテナーである<span class="citation" data-cites="akabekobeko">[@akabekobeko]</span>(https://github.com/akabekobeko)の発表を参照しほしい。</p>
 <ul>
-<li><a href="https://www.youtube.com/watch?v=lF6Mb2DXJK0">VFM 1.0 リリースと今後の展望</a></li>
+<li><a href="https://speakerdeck.com/akabekobeko/vfm-dev-stat">イベント発表：VFMの開発状況</a>（<span class="citation" data-cites="akabekobeko">@akabekobeko</span>）</li>
 </ul>
+<p>2021年7月21日にリリースされた<a href="https://github.com/vivliostyle/vfm/releases/tag/v1.0.2">バージョン1.0.2</a>が、この「Remark 13なしに実現できる機能を実装した」ものだ。同じく詳細は下記を参照されたい。</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=lF6Mb2DXJK0">イベント発表：VFM 1.0 リリースと今後の展望</a>（<span class="citation" data-cites="akabekobeko">@akabekobeko</span>）</li>
+</ul>
+<p>バージョン1で解決されたIssue等の一覧は下記の通りだ。</p>
+<ul>
+<li><a href="https://github.com/vivliostyle/vfm/milestone/3?closed=1">v1.x</a></li>
+</ul>
+<p>VFMもリポジトリにおける月毎のプルリクエスト数をグラフ化し、前期と比較してみよう。バージョン1リリースの前後と、その修正版である1.1や1.2をリリースした2021年12月、2022年1月にプルリクエストが集中している。そしてここでもその数は前期を上回っていることが分かる。</p>
+<figure>
+<img src="./img/fig-5.svg" style="width:100.0%" alt="前期と比較したVivliostyle.jsリポジトリの月間プルリクエスト数" /><figcaption aria-hidden="true">前期と比較したVivliostyle.jsリポジトリの月間プルリクエスト数</figcaption>
+</figure>
+<p>来期の課題はバージョン2のリリースとなる。どうか注目していただきたい。</p>
+<h3 id="ライブラリthemes">ライブラリ：Themes</h3>
 </body>
 </html>
