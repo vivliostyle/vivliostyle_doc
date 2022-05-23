@@ -182,7 +182,7 @@ lang: ja
     - [Vivliostyle.js（Vivliostyle Viewerを含む）](https://github.com/vivliostyle/vivliostyle.js)
     - [VFM (Vivliostyle Flavored Markdown)](https://github.com/vivliostyle/vfm)
     - [Themes](https://github.com/vivliostyle/themes)
-- ジェネレータとそのインストーラ（Markdown+CSSをHTML+CSSに変換）
+- ジェネレータ類（Markdown+CSSをHTML+CSSに変換）
     - [Vivliostyle CLI](https://github.com/vivliostyle/vivliostyle-cli)
     - [create-book](https://github.com/vivliostyle/create-book)
     - [vivliostyle-sitegen](https://github.com/vivliostyle/vivliostyle-sitegen)
@@ -211,33 +211,51 @@ lang: ja
      - [イベント発表：Vivliostyle PubでWebフォントを使う](https://www.youtube.com/watch?v=Hz5_Wd7d5lw)（小形克宏）
      - [イベント発表：VivliostyleでWebフォントを使う 調査編](https://www.youtube.com/watch?v=czVRSsekLjc)（小形克宏）
 
-では、これらの機能はどのようにして開発されたのか。当該リポジトリにおける月毎のプルリクエスト数をグラフ化し、前期と比較してみたのが下記のグラフだ。
+では、これらの機能はどのようにして開発されたのか。当該リポジトリにおける月毎のプルリクエスト数をグラフ化し、前期と比較してみたのが下記のグラフだ（自動処理は除外し、人間によるプルリクエストのみを対象にした。以下同）。
 
 ![前期と比較したVivliostyle.jsリポジトリの月間プルリクエスト数](./img/fig-4.png){ width=100% }
 
-前期も年間を通してコンスタントにプルリクエストを出しているが、今期はそれを上回る開発ペースであったことがわかる。前掲の機能アップも、こうした熱心な開発の結果として実現された。
+前期も年間を通してコンスタントにプルリクエストを出していたが、今期はそれを上回る開発ペースであったことがわかる。前掲の機能アップも、こうした熱心な開発の結果として実現された。
 
 ここで重要なことは、Vivliostyle.jsの機能アップが、これを組み込んだVivliostyle CLIやVivliostyle Pubにも波及し、直ちにこれらも新機能を実装していったことだ。まさにライブラリとしての本領が発揮された場面だった。
 
 ### ライブラリ：VFM (Vivliostyle Flavored Markdown)
 
-書籍むけ組版に最適化したMarkdown方言であるVFMは、今期バージョン1をリリースすることができた。もともとVFMは、Markdownへの変換エンジンとして[Remark](https://remark.js.org/)を採用している。しかし、その新バージョンRemark 13には過去のバージョンと非互換な変更が多く含まれていることから、その実装は多大な作業量が予想される。そこで、まずバージョン1としてRemark 13がなくとも実現できる機能をすべて実装しておき、それが終わってからバージョン2としてRemark 13への対応に取り組む方針を決めていた。詳細はメンテナーである[@akabekobeko](https://github.com/akabekobeko)の発表を参照しほしい。
+書籍むけ組版に最適化したMarkdown方言であるVFMは、今期v.1をリリースすることができた。もともとVFMは、Markdownへの変換エンジンとして[Remark](https://remark.js.org/)を採用している。しかし、その新バージョンRemark 13には過去のバージョンと非互換な変更が多く含まれていることから、その実装は多大な作業量が予想される。そこで、まずv.1としてRemark 13がなくとも実現できる機能をすべて実装しておき、それが終わってからv.2としてRemark 13への対応に取り組む方針を決めていた。詳細はメンテナーである[@akabekobeko](https://github.com/akabekobeko)氏の発表を参照しほしい。
 
 - [イベント発表：VFMの開発状況](https://speakerdeck.com/akabekobeko/vfm-dev-stat)（@akabekobeko）
 
-2021年7月21日にリリースされた[バージョン1.0.2 ](https://github.com/vivliostyle/vfm/releases/tag/v1.0.2)が、この「Remark 13なしに実現できる機能を実装した」ものだ。同じく詳細は下記を参照されたい。
+2021年7月21日にリリースされた[v.1.0.2 ](https://github.com/vivliostyle/vfm/releases/tag/v1.0.2)が、この「Remark 13なしに実現できる機能を実装した」ものだ。同じく詳細は下記を参照されたい。
 
 - [イベント発表：VFM 1.0 リリースと今後の展望](https://www.youtube.com/watch?v=lF6Mb2DXJK0)（@akabekobeko）
 
-バージョン1で解決されたIssue等の一覧は下記の通りだ。
+v.1で解決されたIssue等の一覧は下記の通りだ。Vivliostyle.jsと同様、こうした機能アップは速やかにVivliostyle CLIをはじめとしたプロダクトに実装されている。
 
 - [v1.x](https://github.com/vivliostyle/vfm/milestone/3?closed=1)
 
-VFMもリポジトリにおける月毎のプルリクエスト数をグラフ化し、前期と比較してみよう。バージョン1リリースの前後と、その修正版である1.1や1.2をリリースした2021年12月、2022年1月にプルリクエストが集中している。そしてここでもその数は前期を上回っていることが分かる。
+VFMもリポジトリにおける月毎のプルリクエスト数をグラフ化し、前期と比較してみよう。v.1リリースの前後と、その修正版であるv.1.1やv.1.2をリリースした2021年12月、2022年1月にプルリクエストが集中している。そしてここでもその数は前期を上回っていることが分かる。
 
 ![前期と比較したVivliostyle.jsリポジトリの月間プルリクエスト数](./img/fig-5.svg){ width=100% }
 
-来期の課題はバージョン2のリリースとなる。どうか注目していただきたい。
-
 ### ライブラリ：Themes
 
+Vivliostyleプロダクトが共通して使えるスタイルファイルのライブラリーがThemesだ。スタイルを定義した複数のThemeファイル群と、それらThemeを作成するためのツールから成り立っている。
+
+今期の開発状況をみると、たとえば雛形作成ツールであるcreate-vivliostyle-themeは、今期3回のマイナーアップデートをおこなった。
+
+v.0.3.0 (2021年4月9日)→v.0.3.1 (2021年6月19日)→v.0.4.0 (2021年11月7日)
+
+ただし、今期の成果として取り上げるべきは、下記のドキュメント公開であろう。
+
+- [開発チュートリアル](https://vivliostyle.github.io/themes/#/ja/tutorial/step0.md)
+- [運用ガイドライン](https://vivliostyle.github.io/themes/#/ja/official)
+
+
+Vivliostyleプロダクトを使う際、既存のThemeを流用すればユーザは新しくスタイルを設定する手間が不要になり、より早くVivliostyleプロダクトで文書作成ができるようになる。しかし、そのためには多種多様なThemeが不可欠だ。そのためにはユーザが簡単に新しいThemeを作ることができ、また、それを気軽に公開してもらうようにしなくてはならない。そうすることでライブラリーとしてのThemeがより便利になり、それがさらに新しいTheme作成を促すと言ったエコシステムの確立できる。
+
+ところが現状はまだThemeの認知度が極めて低く、まだ道のりは遠いのが現実だ。そこでメンテナーである[yamasy1549](https://github.com/yamasy1549)氏が考えたのが、Themeの使い方、作り方などを詳しく説明するドキュメント整備だった。上記はその第一歩といえるものだ。より詳しくは下記を参照してほしい。
+
+- [イベント発表：Themesのハンズオン](https://www.youtube.com/watch?v=auqefAA0Bx0)
+- [イベント発表：Vivliostyle Theme 開発ガイドラインの公開](https://www.youtube.com/watch?v=NioXx9NFUZU)
+
+### ジェネレータ類：Vivliostyle CLI
