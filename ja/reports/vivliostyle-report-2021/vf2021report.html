@@ -36,10 +36,14 @@
 <ul>
 <li><a href="#はじめに-1">はじめに</a></li>
 <li><a href="#プロダクトの分類とそれぞれの役目">プロダクトの分類とそれぞれの役目</a></li>
-<li><a href="#ライブラリvivliostyle.js">ライブラリ：Vivliostyle.js</a></li>
-<li><a href="#ライブラリvfm-vivliostyle-flavored-markdown">ライブラリ：VFM (Vivliostyle Flavored Markdown)</a></li>
-<li><a href="#ライブラリthemes">ライブラリ：Themes</a></li>
-<li><a href="#ジェネレータ類vivliostyle-cli">ジェネレータ類：Vivliostyle CLI</a></li>
+<li><a href="#ライブラリvivliostyle.jsv2.7.0v2.14.4">ライブラリ：Vivliostyle.js（v2.7.0→v2.14.4 ）</a></li>
+<li><a href="#ライブラリvfmv1.0.0-alpha.18v1.2.1">ライブラリ：VFM（v1.0.0-alpha.18→v1.2.1）</a></li>
+<li><a href="#ライブラリthemesv0.3.0v0.4.0">ライブラリ：Themes（v0.3.0→v0.4.0）</a></li>
+<li><a href="#ジェネレータ類vivliostyle-cliv3.3.0v4.8.2">ジェネレータ類：Vivliostyle CLI（v3.3.0→v4.8.2）</a></li>
+<li><a href="#ジェネレータ類create-bookv0.3.11v0.5.1">ジェネレータ類：create-book（v0.3.11→v0.5.1）</a></li>
+<li><a href="#ジェネレータ類vivliostyle-sitegen">ジェネレータ類：vivliostyle-sitegen</a></li>
+<li><a href="#webアプリvivliostyle-pub">Webアプリ：Vivliostyle Pub</a></li>
+<li><a href="#webコンテンツ">Webコンテンツ</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -828,23 +832,23 @@
 <h3 id="プロダクトの分類とそれぞれの役目">プロダクトの分類とそれぞれの役目</h3>
 <p>開発状況について述べる前に、簡単にプロダクトを整理しておこう。近年ラインナップが増えたのは喜ばしいが、それぞれがどのような役割を果たしているのか、全体の中でどのように位置づけられるのか、外側からは分かりづらくなっているからだ。</p>
 <ul>
-<li>ライブラリ（アプリケーションに組み込まれる「共通部品」）
+<li><strong>ライブラリ（アプリケーションに組み込まれる「共通部品」）</strong>
 <ul>
 <li><a href="https://github.com/vivliostyle/vivliostyle.js">Vivliostyle.js（Vivliostyle Viewerを含む）</a></li>
 <li><a href="https://github.com/vivliostyle/vfm">VFM (Vivliostyle Flavored Markdown)</a></li>
 <li><a href="https://github.com/vivliostyle/themes">Themes</a></li>
 </ul></li>
-<li>ジェネレータ類（Markdown+CSSをHTML+CSSに変換）
+<li><strong>ジェネレータ類（Markdown+CSSをHTML+CSSに変換）</strong>
 <ul>
 <li><a href="https://github.com/vivliostyle/vivliostyle-cli">Vivliostyle CLI</a></li>
 <li><a href="https://github.com/vivliostyle/create-book">create-book</a></li>
 <li><a href="https://github.com/vivliostyle/vivliostyle-sitegen">vivliostyle-sitegen</a></li>
 </ul></li>
-<li>Webアプリ（上記を統合したアプリケーション）
+<li><strong>Webアプリ（上記を統合したアプリケーション）</strong>
 <ul>
 <li><a href="https://github.com/vivliostyle/vivliostyle-pub">Vivliostyle Pub</a></li>
 </ul></li>
-<li>Webコンテンツ（Vivliostyleに関わるユーザ向けドキュメンテーション）
+<li><strong>Webコンテンツ（Vivliostyleに関わるユーザ向けドキュメンテーション）</strong>
 <ul>
 <li><a href="https://github.com/vivliostyle/vivliostyle.org">vivliostyle.org</a></li>
 <li><a href="https://github.com/vivliostyle/docs.vivliostyle.org">docs.vivliostyle.org</a></li>
@@ -852,22 +856,22 @@
 <li><a href="https://github.com/vivliostyle/vivliostyle_doc">vivliostyle_doc</a></li>
 </ul></li>
 </ul>
-<p>上記のリンクは、それぞれのリポジトリへのものだ。つまり、上記分類はリポジトリの分類でもある。また、上記分類は必ずしも厳密なものではない。たとえばVFMはライブラリであると同時に、MarkdownをHTMLに変換するジェネレータという一面をもつ。では次節以降、上記分類に従いながら今期における各プロダクトの開発状況を説明していこう。</p>
-<h3 id="ライブラリvivliostyle.js">ライブラリ：Vivliostyle.js</h3>
-<p>実際にCSS組版をおこなうVivliostyle.jsは、Vivliostyleプロダクトの中核的存在である。幸いなことに本プロダクトは、以下に引用したように今期大幅な機能アップを果たすことができた。</p>
+<p>上記のリンクは、それぞれのリポジトリへのものだ。つまり、上記分類はリポジトリの分類でもある。また、上記分類は必ずしも厳密なものではない。たとえばVFMはライブラリであると同時に、MarkdownをHTMLに変換するジェネレータという一面をもつ。では次節以降、上記分類に従いながら今期における各プロダクトの開発状況を、ユーザイベントでの発表やブログ記事などを参照しながら説明していこう。なお、タイトルのカッコ内は期首時点のバージョン→期末時点のバージョンである。</p>
+<h3 id="ライブラリvivliostyle.jsv2.7.0v2.14.4">ライブラリ：Vivliostyle.js（v2.7.0→v2.14.4 ）</h3>
+<p><a href="https://github.com/vivliostyle/vivliostyle.js">Vivliostyle.js</a>は実際にCSS組版をおこなうソフトウェアであり、Vivliostyleプロダクトの中核的存在である。幸いなことに本プロダクトは、以下に引用したように今期大幅な機能アップを果たすことができた。</p>
 <ul>
-<li>組版機能の向上
+<li><strong>組版機能の向上</strong>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=_y3YBHNN2Oc">イベント発表：Vivliostyle CoreにおけるCSS Paged Media の実装</a>（村上真雄）</li>
 <li><a href="https://www.youtube.com/watch?v=2hvsMhTJai4">イベント発表：CSS text-spacingサポート等Vivliostyle.jsの進化と今後の開発予定</a>（村上真雄）</li>
 <li><a href="https://vivliostyle.org/ja/blog/2021/10/12/recent-vivliostyle-js-updates/">ブログ：最近のVivliostyle.jsの進化について</a>（小形克宏）</li>
 <li><a href="https://vivliostyle.org/ja/blog/2022/02/08/Improved-of-line-end-handling-and-support-for-page-progression-direction-in-PDF/">ブログ：行末処理が進化して多様な組版ができるように</a>（小形克宏）</li>
 </ul></li>
-<li>HTMLの中でJavaScriptの実行が可能に
+<li><strong>HTMLの中でJavaScriptの実行が可能に</strong>
 <ul>
 <li><a href="https://vivliostyle.org/ja/blog/2022/01/24/JavaScript-can-now-be-used-in-typesetting-by-Vivliostyle/">ブログ：Vivliostyleの組版でJavaScriptが使えるようになりました</a>（小形克宏）</li>
 </ul></li>
-<li>Webフォントへの対応
+<li><strong>Webフォントへの対応</strong>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=Hz5_Wd7d5lw">イベント発表：Vivliostyle PubでWebフォントを使う</a>（小形克宏）</li>
 <li><a href="https://www.youtube.com/watch?v=czVRSsekLjc">イベント発表：VivliostyleでWebフォントを使う 調査編</a>（小形克宏）</li>
@@ -879,38 +883,82 @@
 </figure>
 <p>前期も年間を通してコンスタントにプルリクエストを出していたが、今期はそれを上回る開発ペースであったことがわかる。前掲の機能アップも、こうした熱心な開発の結果として実現された。</p>
 <p>ここで重要なことは、Vivliostyle.jsの機能アップが、これを組み込んだVivliostyle CLIやVivliostyle Pubにも波及し、直ちにこれらも新機能を実装していったことだ。まさにライブラリとしての本領が発揮された場面だった。</p>
-<h3 id="ライブラリvfm-vivliostyle-flavored-markdown">ライブラリ：VFM (Vivliostyle Flavored Markdown)</h3>
-<p>書籍むけ組版に最適化したMarkdown方言であるVFMは、今期v.1をリリースすることができた。もともとVFMは、Markdownへの変換エンジンとして<a href="https://remark.js.org/">Remark</a>を採用している。しかし、その新バージョンRemark 13には過去のバージョンと非互換な変更が多く含まれていることから、その実装は多大な作業量が予想される。そこで、まずv.1としてRemark 13がなくとも実現できる機能をすべて実装しておき、それが終わってからv.2としてRemark 13への対応に取り組む方針を決めていた。詳細はメンテナーである<span class="citation" data-cites="akabekobeko">[@akabekobeko]</span>(https://github.com/akabekobeko)氏の発表を参照しほしい。</p>
+<h3 id="ライブラリvfmv1.0.0-alpha.18v1.2.1">ライブラリ：VFM（v1.0.0-alpha.18→v1.2.1）</h3>
+<p>書籍むけ組版に最適化したMarkdown方言である<a href="https://github.com/vivliostyle/vfm">VFM (Vivliostyle Flavored Markdown)</a>は、今期v1をリリースすることができた。もともと本プロダクトは、Markdownへの変換エンジンとして<a href="https://remark.js.org/">Remark</a>を採用していた。しかし、その新バージョンRemark 13には過去のバージョンと非互換な変更が多く含まれていることから、その実装は多大な作業量が予想された。そこで、まずRemark 13なしに実装できる機能を実装したバージョンをv1としてリリースし、その後v2としてRemark 13への対応に取り組む方針を決めていた。詳細はメンテナーである<span class="citation" data-cites="akabekobeko">[@akabekobeko]</span>(https://github.com/akabekobeko)氏の発表を参照してほしい。</p>
 <ul>
 <li><a href="https://speakerdeck.com/akabekobeko/vfm-dev-stat">イベント発表：VFMの開発状況</a>（<span class="citation" data-cites="akabekobeko">@akabekobeko</span>）</li>
 </ul>
-<p>2021年7月21日にリリースされた<a href="https://github.com/vivliostyle/vfm/releases/tag/v1.0.2">v.1.0.2</a>が、この「Remark 13なしに実現できる機能を実装した」ものだ。同じく詳細は下記を参照されたい。</p>
+<p>2021年7月21日にリリースされた<a href="https://github.com/vivliostyle/vfm/releases/tag/v1.0.2">v1.0.2</a>が、このRemark 13なしに実現できる機能を実装したものだ。同じく詳細は下記を参照されたい。</p>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=lF6Mb2DXJK0">イベント発表：VFM 1.0 リリースと今後の展望</a>（<span class="citation" data-cites="akabekobeko">@akabekobeko</span>）</li>
 </ul>
-<p>v.1で解決されたIssue等の一覧は下記の通りだ。Vivliostyle.jsと同様、こうした機能アップは速やかにVivliostyle CLIをはじめとしたプロダクトに実装されている。</p>
+<p>v1で解決されたIssue等の一覧は下記の通りだ。Vivliostyle.jsと同様、こうした機能アップは速やかにVivliostyle CLIをはじめとしたプロダクトに実装されている。</p>
 <ul>
 <li><a href="https://github.com/vivliostyle/vfm/milestone/3?closed=1">v1.x</a></li>
 </ul>
-<p>VFMもリポジトリにおける月毎のプルリクエスト数をグラフ化し、前期と比較してみよう。v.1リリースの前後と、その修正版である1.1や1.2をリリースした2021年12月、2022年1月にプルリクエストが集中している。そしてここでもその数は前期を上回っていることが分かる。</p>
+<p>本プロダクトの月間プルリクエスト数を前期と比較したグラフをご覧いただきたい。v1リリースの前後と、その修正版であるv1.1やv1.2をリリースした2021年12月、2022年1月にプルリクエストが集中している。そして、ここでもその数は前期を上回っていることが分かる。</p>
 <figure>
 <img src="./img/fig-5.svg" style="width:100.0%" alt="前期と比較したVivliostyle.jsリポジトリの月間プルリクエスト数" /><figcaption aria-hidden="true">前期と比較したVivliostyle.jsリポジトリの月間プルリクエスト数</figcaption>
 </figure>
-<h3 id="ライブラリthemes">ライブラリ：Themes</h3>
-<p>Vivliostyleプロダクトが共通して使えるスタイルファイルのライブラリーがThemesだ。スタイルを定義した複数のThemeファイル群と、それらThemeを作成するためのツールから成り立っている。</p>
-<p>今期の開発状況をみると、たとえば雛形作成ツールであるcreate-vivliostyle-themeは、今期3回のマイナーアップデートをおこなった。</p>
-<p>v.0.3.0 (2021年4月9日)→v.0.3.1 (2021年6月19日)→v.0.4.0 (2021年11月7日)</p>
-<p>ただし、今期の成果として取り上げるべきは、下記のドキュメント公開であろう。</p>
+<h3 id="ライブラリthemesv0.3.0v0.4.0">ライブラリ：Themes（v0.3.0→v0.4.0）</h3>
+<p>Vivliostyleプロダクトが共通して使えるスタイルファイルのライブラリーが<a href="https://github.com/vivliostyle/themes">Themes</a>だ。スタイルを定義した複数のThemeファイル群と、それらThemeを作成するためのツールから成り立っている。</p>
+<p>今期は3回のマイナーアップデートをおこなっている。しかし今期の成果として取り上げるべきは、むしろ下記ドキュメントの公開だろう。</p>
 <ul>
 <li><a href="https://vivliostyle.github.io/themes/#/ja/tutorial/step0.md">開発チュートリアル</a></li>
 <li><a href="https://vivliostyle.github.io/themes/#/ja/official">運用ガイドライン</a></li>
 </ul>
-<p>Vivliostyleプロダクトを使う際、既存のThemeを流用すればユーザは新しくスタイルを設定する手間が不要になり、より早くVivliostyleプロダクトで文書作成ができるようになる。しかし、そのためには多種多様なThemeが不可欠だ。そのためにはユーザが簡単に新しいThemeを作ることができ、また、それを気軽に公開してもらうようにしなくてはならない。そうすることでライブラリーとしてのThemeがより便利になり、それがさらに新しいTheme作成を促すと言ったエコシステムの確立できる。</p>
-<p>ところが現状はまだThemeの認知度が極めて低く、まだ道のりは遠いのが現実だ。そこでメンテナーである<a href="https://github.com/yamasy1549">yamasy1549</a>氏が考えたのが、Themeの使い方、作り方などを詳しく説明するドキュメント整備だった。上記はその第一歩といえるものだ。より詳しくは下記を参照してほしい。</p>
+<p>Vivliostyleプロダクトを使う際、公開されているThemeを利用すればユーザは新しくスタイルを設定する手間が不要になり、より早くVivliostyleプロダクトで文書作成ができるようになる。しかし、そのためにはユーザーの需要に応じた多種多様なThemeの公開が不可欠だ。しかし、そうした多くのTheme作成は、私たちだけでは無理だ。ユーザが簡単に新しいThemeを作ることができ、また、それを気軽に公開してもらうようにしなくてはならない。そうすることでライブラリーとしてのThemeがより便利になり、それがさらに新しいTheme作成を促すと言った循環が成立するだろう。</p>
+<p>ところが現状はThemeの認知度が低く、まだまだ道のりは遠いのが現実だ。そこでメンテナーである<a href="https://github.com/yamasy1549">yamasy1549</a>氏が考えたのが、まずThemeの使い方、作り方などを知ってもらうためのドキュメント整備だった。上記はその第一歩といえるものだ。より詳しくは下記を参照してほしい。</p>
 <ul>
-<li><a href="https://www.youtube.com/watch?v=auqefAA0Bx0">イベント発表：Themesのハンズオン</a></li>
-<li><a href="https://www.youtube.com/watch?v=NioXx9NFUZU">イベント発表：Vivliostyle Theme 開発ガイドラインの公開</a></li>
+<li><a href="https://www.youtube.com/watch?v=auqefAA0Bx0">イベント発表：Themesのハンズオン</a>（yamasy1549）</li>
+<li><a href="https://www.youtube.com/watch?v=NioXx9NFUZU">イベント発表：Vivliostyle Theme 開発ガイドラインの公開</a>（yamasy1549）</li>
 </ul>
-<h3 id="ジェネレータ類vivliostyle-cli">ジェネレータ類：Vivliostyle CLI</h3>
+<h3 id="ジェネレータ類vivliostyle-cliv3.3.0v4.8.2">ジェネレータ類：Vivliostyle CLI（v3.3.0→v4.8.2）</h3>
+<p>CLI（コマンドライン・インターフェイス）でMarkdownをHTMLに変換、出力できるのが<a href="https://github.com/vivliostyle/vivliostyle-cli">Vivliostyle CLI</a>だ。まず本プロダクトの月間プルリクエスト数を、前期と比較したグラフを見てほしい。前期ほどではないが、今期もコンスタントに開発が続けられたことが分かる。</p>
+<figure>
+<img src="./img/fig-6.svg" style="width:100.0%" alt="前期と比較したVivliostyle.jsリポジトリの月間プルリクエスト数" /><figcaption aria-hidden="true">前期と比較したVivliostyle.jsリポジトリの月間プルリクエスト数</figcaption>
+</figure>
+<p>このような開発の結果、今期も本プロダクトはさまざまな機能アップを果たすことができた。中でも大きなものは、仮想環境下でプログラムを実行できるDockerモードのサポートだろう（<a href="https://github.com/vivliostyle/vivliostyle-cli/releases/tag/v4.0.0">v4.0.0</a>）。Dockerはプログラムを実行する環境を抽象化／仮想化してくれる。これにより、実行環境やブラウザ、Vivliostyle CLI本体のバージョンの違いによって出力結果が変わってしまうトラブルから解放された。</p>
+<p>これ以外にもマイナーな機能追加がいくつもされた。ここでは本プロダクトのメンテナーである<span class="citation" data-cites="spring-raining">[@spring-raining]</span>(https://github.com/spring-raining)氏が、第4期終了直後に開催されたユーザイベント<a href="https://vivliostyle.connpass.com/event/208401/">「Vivliostyle ユーザーと開発者の集い 2021春」</a>において、<a href="https://www.youtube.com/watch?v=GMzLJ17MLOk">「Vivliostyle CLI update - 2022 Spring」</a>として発表したものに従いながら、v4.0.0以降のアップデート内容をまとめてみよう。</p>
+<ul>
+<li>外部Webフォントサービスを利用する等のために<code>--http</code>オプションを追加<a href="https://github.com/vivliostyle/vivliostyle-cli/pull/234">#234</a></li>
+<li>プリインストール以外のビュアーを指定する<code>--viewer</code>オプションの追加<a href="https://github.com/vivliostyle/vivliostyle-cli/pull/234">#234</a></li>
+<li>出力するPDFのメタ情報をより詳細に改善<a href="https://github.com/vivliostyle/vivliostyle-cli/pull/239">#239</a></li>
+<li>PDFの読み方向（右閉じ／左閉じ）が指定できるように<a href="https://github.com/vivliostyle/vivliostyle-cli/pull/240">#240</a></li>
+<li>CLIコマンドをAPI化し、JavaScriptから操作可能に<a href="https://github.com/vivliostyle/vivliostyle-cli/pull/243">#243</a></li>
+<li>複数出版物の同時出力<a href="https://github.com/vivliostyle/vivliostyle-cli/pull/268">#268</a></li>
+<li>Vivliostyle.config.jsのvfmオプションを、CLI内部でのVFM実行時にそのまま渡すことが可能に<a href="https://github.com/vivliostyle/vivliostyle-cli/pull/264">#264</a></li>
+<li>エラー出力をより読みやすく改善<a href="https://github.com/vivliostyle/vivliostyle-cli/pull/264">#264</a></li>
+</ul>
+<p>本プロダクトもリポジトリにおける月毎のプルリクエスト数をグラフ化し、前期と比較してみよう。前期ほどではないが、今期もコンスタントに開発が続けられたことが分かる。</p>
+<figure>
+<img src="./img/fig-6.svg" style="width:100.0%" alt="前期と比較したVivliostyle.jsリポジトリの月間プルリクエスト数" /><figcaption aria-hidden="true">前期と比較したVivliostyle.jsリポジトリの月間プルリクエスト数</figcaption>
+</figure>
+<p>なお、<span class="citation" data-cites="spring-raining氏はこの時の発表で">@spring-raining氏はこの時の発表で</span>、本プロダクトの将来構想について以下のように述べている。次期への期待が膨らもうと言うものだ。</p>
+<ul>
+<li><strong>エクスポート先の拡充</strong>
+<ul>
+<li>EPUB/MOBI</li>
+<li>他のMarkdown方言</li>
+<li>各種小説投稿サイトのテキストフォーマット</li>
+</ul></li>
+<li><strong>外部画像サービスとの連携による表紙の追加機能</strong></li>
+</ul>
+<h3 id="ジェネレータ類create-bookv0.3.11v0.5.1">ジェネレータ類：create-book（v0.3.11→v0.5.1）</h3>
+<p><a href="https://github.com/vivliostyle/create-book">create-book</a>は、Vivliostyle CLIの実行環境をインタラクティブに構築することができるソフトウェア、つまりインストーラーである。ただし、今期はメインテナンス的なアップデートが多く、大きな機能アップはなかった。</p>
+<h3 id="ジェネレータ類vivliostyle-sitegen">ジェネレータ類：vivliostyle-sitegen</h3>
+<p><a href="https://github.com/vivliostyle/vivliostyle-sitegen">vivliostyle-sitegen</a>は、VFMを使った静的サイトジェネレーター（Static Site Generator）として構想されたもので、今期に入って新しく開発がスタートしたプロダクトだ。</p>
+<p>もともとのきっかけは、秋のユーザイベント（11月14日開催の<a href="https://vivliostyle.connpass.com/event/227954/">CSS組版 Vivliostyle ユーザーと開発者の集い 2021秋</a>）における自由討議のセッションで、せっかくVFMがv1をリリースするまで成長したのに、これを使ってVivliostyleのサイトや各種ドキュメントが書けないのは残念という声が出たことだった。それに応える形でVFMのメンテナーである<span class="citation" data-cites="akabekobeko">[@akabekobeko]</span>(https://github.com/akabekobeko)氏が手を挙げ、2022年1月から開発がはじまったものだ。</p>
+<p>現在、来期中のv1リリースを目指して開発がすすめられている。これが完成すれば、ますますVivliostyleのエコシステムが広がることになるだろう。</p>
+<h3 id="webアプリvivliostyle-pub">Webアプリ：Vivliostyle Pub</h3>
+<h3 id="webコンテンツ">Webコンテンツ</h3>
+<p>ここでは、下記のVivliostyleに関わるユーザ向けドキュメンテーションを一括して取り上げる。</p>
+<ul>
+<li><a href="https://github.com/vivliostyle/vivliostyle.org">vivliostyle.org</a></li>
+<li><a href="https://github.com/vivliostyle/docs.vivliostyle.org">docs.vivliostyle.org</a></li>
+<li><a href="https://github.com/vivliostyle/docs-vivliostyle-pub">docs-vivliostyle-pub</a></li>
+<li><a href="https://github.com/vivliostyle/vivliostyle_doc">vivliostyle_doc</a></li>
+</ul>
+<p>一部Themesの節でも説明したが、</p>
 </body>
 </html>
