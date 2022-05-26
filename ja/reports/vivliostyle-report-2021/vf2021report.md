@@ -190,7 +190,7 @@ lang: ja
     - [vivliostyle-sitegen](https://github.com/vivliostyle/vivliostyle-sitegen)
 - **Webアプリ（上記を統合したアプリケーション）**
     - [Vivliostyle Pub](https://github.com/vivliostyle/vivliostyle-pub)
-- **Webコンテンツとその制作サイト（Vivliostyleに関わるドキュメント・サイト）**
+- **Webコンテンツとその制作システム（Vivliostyleに関わるドキュメント・サイト）**
     - [vivliostyle.org](https://github.com/vivliostyle/vivliostyle.org)（[Webサイト本体](https://vivliostyle.org/ja/)）
     - [docs.vivliostyle.org](https://github.com/vivliostyle/docs.vivliostyle.org) （[各プロダクトのユーザガイド](https://vivliostyle.org/ja/documents/)）
     - [docs-vivliostyle-pub](https://github.com/vivliostyle/docs-vivliostyle-pub) （[Vivliostyle Pubのユーザガイド](https://vivliostyle.github.io/docs-vivliostyle-pub/#/ja/)）
@@ -293,7 +293,7 @@ CLI（コマンドライン・インターフェイス）でMarkdownをHTMLに�
 
 [本プロダクト](https://github.com/vivliostyle/vivliostyle-sitegen)は、VFMを使った静的サイトジェネレーター（Static Site Generator）として構想されたもので、今期に入って新しく開発がスタートしたプロダクトだ。
 
-もともとのきっかけは、秋のユーザイベント（11月14日開催の[CSS組版 Vivliostyle ユーザーと開発者の集い 2021秋](https://vivliostyle.connpass.com/event/227954/)）における自由討議のセッションで、せっかくVFMがv1をリリースするまで成長したのに、これを使ってVivliostyleのサイトや各種ドキュメントが書けないのは残念という声が出たことだった。それに応える形でVFMのメンテナーである[akabekobeko](https://github.com/akabekobeko)氏が手を挙げ、2022年1月から開発がはじまった。
+もともとのきっかけは、秋のユーザイベント（2021年11月14日開催の[CSS組版 Vivliostyle ユーザーと開発者の集い 2021秋](https://vivliostyle.connpass.com/event/227954/)）における自由討議のセッションで、せっかくVFMがv1をリリースするまで成長したのに、これを使ってVivliostyleのサイトや各種ドキュメントが書けないのは残念という声が出たことだった。それに応える形でVFMのメンテナーである[akabekobeko](https://github.com/akabekobeko)氏が手を挙げ、2022年1月から開発がはじまった。
 
 現在、来期中のリリースを目指して開発がすすめられている。リリース後は [vivliostyle.org](https://github.com/vivliostyle/vivliostyle.org)をはじめとする、Vivliostyleに関わるユーザ向けドキュメントの各リポジトリに実装していく予定だ。そうなれば、豊富な表現力をもつVFMを使ってVivliostyleに関する情報発信ができるようになる。こうして、ますますVivliostyleのエコシステムが広がることになるだろう。
 
@@ -303,7 +303,7 @@ CLI（コマンドライン・インターフェイス）でMarkdownをHTMLに�
 
 ![図6 アルファ版を公開したVivliostyle Pub](./img/fig-6.png){ width=100% }
 
-もともとは2019年度（前々期）において、開発資金確保のために未踏アドバンスト事業への応募を目標に急遽立ち上げられたものだ。コミッター達が一丸となった2ヵ月間の集中開発をへて、2020年5月にPoC（Proof of Concept、概念実証）まで完成させた（[前期事業報告書](https://vivliostyle.org/viewer/#src=https://vivliostyle.github.io/vivliostyle_doc/ja/reports/vivliostyle-report-2020/vf2020report.html&bookMode=true&userStyle=data:,/*%3Cviewer%3E*/%0A@page%20%7B%20size:%20A4;%20%7D%0A/*%3C/viewer%3E*/&f=epubcfi(/2!/4/32[%E3%83%97%E3%83%AD%E3%83%80%E3%82%AF%E3%83%88%E3%81%AE%E9%96%8B%E7%99%BA%E7%8A%B6%E6%B3%81]))参照）。
+もともとは2019年度（前々期）において、開発資金確保のために未踏アドバンスト事業への応募を目標に急遽立ち上げられた。コミッター達が一丸となった2ヵ月間の集中開発をへて、2020年5月にPoC（Proof of Concept、概念実証）まで完成させた（[前期事業報告書](https://vivliostyle.org/viewer/#src=https://vivliostyle.github.io/vivliostyle_doc/ja/reports/vivliostyle-report-2020/vf2020report.html&bookMode=true&userStyle=data:,/*%3Cviewer%3E*/%0A@page%20%7B%20size:%20A4;%20%7D%0A/*%3C/viewer%3E*/&f=epubcfi(/2!/4/32[%E3%83%97%E3%83%AD%E3%83%80%E3%82%AF%E3%83%88%E3%81%AE%E9%96%8B%E7%99%BA%E7%8A%B6%E6%B3%81]))参照）。
 
 しかし、2020年6月に落選が決まった後、少しずつコミッターが去っていき、残った[takanakahiko](https://github.com/takanakahiko)氏だけがコツコツと開発を続けてくれていた。そうした状況を一変させたのが2021年11月、[AyumuTakai](https://github.com/AyumuTakai)氏の参入だった。ここで、本プロダクトの月間プルリクエスト数を前期と比較したグラフをご覧いただきたい（図7）。
 
@@ -317,17 +317,17 @@ CLI（コマンドライン・インターフェイス）でMarkdownをHTMLに�
 
 AyumuTakai氏は11月2日から`prototype`ブランチで開発を始めているが、2月に入るまでデフォルトブランチへのプルリクエストは出さず、ひたすら`prototype`ブランチで多くのコミットを積み上げている。もしかしたら、たくさんの改良を次々に加えていった結果、プルリクエストを出すタイミングを失ったのかもしれない。結局、`prototype`ブランチはそのままにして、2月3日に`pre_alpha`というブランチを新規作成し、ここからデフォルトブランチへのプルリクエストを1回だけ出している。
 
-この結果、前掲図7で示したプルリクエスト数にはAyumuTakai氏の作業はほとんど現れなかったが、前掲図8においてprototypeブランチでのコミット数を重ね合わせることで、初めて彼の貢献が可視化できた。この時のプルリクエスト[ アルファ版準備 #142 ](https://github.com/vivliostyle/vivliostyle-pub/pull/142)の記録により、ここで追加されたユーザーインターフェースの変更と追加機能のリストを見ることができる。どれも本プロダクトをごく普通に使うために、必須の要素であったことが分かる。
+この結果、前掲図7で示したプルリクエスト数にはAyumuTakai氏の作業はほとんど現れなかったが、前掲図8においてprototypeブランチでのコミット数を重ね合わせることで、初めて彼の貢献が可視化できた。この時のプルリクエスト[ アルファ版準備 #142 ](https://github.com/vivliostyle/vivliostyle-pub/pull/142)の記録により、ここで追加されたユーザーインターフェースの変更と追加機能のリストを見ることができる。どれも本プロダクトをごく普通に使うために、必須の要素であったことが分かる（なお、AyumuTakai氏は本業多忙を理由に、3月いっぱいで開発から退いた。心から感謝する）。
 
-ここまで本プロダクトの開発を直接担当したAyumuTakai氏やtakanakahiko氏の貢献について述べた。しかし、忘れてはいけないのは、前節まで説明したVivliostyle.js、VFM、Themes、そしてVivliostyle CLIのアップデートの結果を、本プロダクトのコンポーネントを入れ替えるだけで、そのまま取り込むことができたということだ。
+ここまで本プロダクトの開発を直接担当したAyumuTakai氏やtakanakahiko氏の貢献について述べた。しかし忘れてはいけないのは、前節まで説明したVivliostyle.js、VFM、Themes、そしてVivliostyle CLIのアップデートの成果を、本プロダクトのコンポーネントを入れ替えるだけで、そのまま取り込むことができたということだ。
 
-たとえば、前掲図6を見るとWebフォントを表示しているが、これは本プロダクトではなく、Vivliostyle.jsのアップデートの成果だ。まさにエコシステムとしてのVivliostyleプロダクトの力を実感できよう。
+たとえば、前掲図6を見るとWebフォントを表示しているが、これは本プロダクトではなく、Vivliostyle.jsのアップデートによるものだ。まさにエコシステムとしてのVivliostyleプロダクトの力を実感できよう。
 
-このようにして、当初の目標よりも若干ずれ込んだが、202年4月23日開催のユーザイベントで、本プロダクトのアルファ版公開を告知することができたのである。
+このようにして、当初の目標よりもだいぶずれ込んだが、2022年4月23日開催の[CSS組版 Vivliostyle ユーザーと開発者の集い 2021秋](https://vivliostyle.connpass.com/event/227954/)で、本プロダクトのアルファ版公開を告知することができたのである。
 
-### Webコンテンツとその制作サイト
+### Webコンテンツとその制作システム
 
-ここでは、下記のVivliostyleに関わるユーザ向けドキュメント・サイトを一括して取り上げる。
+ここでは、下記のVivliostyleに関わるユーザ向けドキュメントと、その制作システムを一括して取り上げる。
 
 1. [vivliostyle.org](https://github.com/vivliostyle/vivliostyle.org)（[Webサイト本体](https://vivliostyle.org/ja/)）
 2. [docs.vivliostyle.org](https://github.com/vivliostyle/docs.vivliostyle.org) （[各プロダクトのユーザガイド](https://vivliostyle.org/ja/documents/)）
@@ -346,11 +346,21 @@ AyumuTakai氏は11月2日から`prototype`ブランチで開発を始めてい�
 - [2022/01/24 Vivliostyleの組版でJavaScriptが使えるようになりました](https://vivliostyle.org/ja/blog/2022/01/24/JavaScript-can-now-be-used-in-typesetting-by-Vivliostyle/)
 - [2022/02/08 行末処理が進化して多様な組版ができるように](https://vivliostyle.org/ja/blog/2022/02/08/Improved-of-line-end-handling-and-support-for-page-progression-direction-in-PDF/)
 
-また、Themesの節で説明したユーザガイドは、上記2のうちの一つだ。そして上記3はVivliostyle Pubのアルファ版公開にあたって、今期新しく追加したリポジトリだ。
+また、Themesの節で今期追加したことを説明したユーザガイドは、上記2のうちの一つだ。そして上記3も、Vivliostyle Pubのアルファ版公開に備えて、今期新しく追加したユーザガイドだ。
 
-いずれも執筆はMarkdownでおこなうが、これをHTMLに変換するのは1は[Jekyll](http://jekyllrb-ja.github.io/)、2と3は[docute](https://github.com/egoist/docute)、4は[Pandoc](https://pandoc-doc-ja.readthedocs.io/ja/latest/users-guide.html)を組み込んだシェルとバラバラという課題がある。この状況を改善し、さらにVFMの豊富な表現を使えるようにしようというのが、 [vivliostyle-sitegen](https://github.com/vivliostyle/vivliostyle-sitegen)であることは前述したとおりだ。
+いずれも執筆はMarkdownでおこなうが、それをHTMLに変換するコンバーターは、1は[Jekyll](http://jekyllrb-ja.github.io/)、2と3は[docute](https://github.com/egoist/docute)、4は[Pandoc](https://pandoc-doc-ja.readthedocs.io/ja/latest/users-guide.html)を組み込んだシェルとバラバラであるという課題がある。この状況を改善し、さらにVFMの豊富な表現を使えるようにしようというのが、 [vivliostyle-sitegen](https://github.com/vivliostyle/vivliostyle-sitegen)であることは前述したとおりだ。
 
 
-### まとめ
+### 次期への課題とその対処
 
-互いが互いを補完するエコシステム。
+以上、今期におけるVivliostyleプロダクトの開発状況を説明した。創立当初、当法人のプロダクトは現在のVivliostyle Viewer／Vivliostyle.jsと、Vivliostyle CLIにつながるものだけであった。そこから毎年少しずつリポジトリを増やしていき、前節まで述べてきたようなプロダクト間のエコシステムが機能し始めるところまで辿り着いた。
+
+前章において、今期に単年度黒字を達成したことを報告したが、事業収益のほとんどはVivliostyleプロダクトに関わる受託開発、あるいは過去に納品したプロダクトのメンテナンスにより得られたものだ。つまり当法人の場合、プロダクトの開発とその拡充が、ダイレクトに事業収益確保につながっているのである。
+
+とはいえ、Vivliostyleプロダクトを拡充しさえすれば、そのまま事業収益が増えていくという訳ではない。それを阻むものとして、以下のような課題を挙げたい。
+
+1. 収益事業のほとんどが受託開発に限られていること
+2. 受託開発を請け負う開発者が限られていること
+3. 受託開発の発注先がほぼ1社に限られていること
+
+上記1の対策として、受託開発以外の収益源の確保、たとえばVivliostyle Pubを使った収益事業の検討などが挙げられるだろう。同じく2の対策として
