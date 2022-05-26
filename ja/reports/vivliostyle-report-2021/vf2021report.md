@@ -262,7 +262,7 @@ Vivliostyleプロダクトが共通して使えるスタイルファイルのラ
 
 CLI（コマンドライン・インターフェイス）でMarkdownをHTMLに変換、出力できるのが[本プロダクト](https://github.com/vivliostyle/vivliostyle-cli)だ。まず本プロダクトの月間プルリクエスト数を、前期と比較したグラフを見てほしい。前期ほどではないが、今期もコンスタントに開発が続けられたことが分かる（図5）。
 
-![図5 前期と比較したVivliostyle CLIリポジトリの月間プルリクエスト数](./img/fig-5.svg){ width=100% }
+![図5 前期と比較したVivliostyle CLIリポジトリの月間プルリクエスト数](./img/fig-5.png){ width=100% }
 
 このような開発の結果、今期も本プロダクトはさまざまな機能アップを果たすことができた。中でも大きなものは、仮想環境下で実行できるDockerモードのサポートだろう（[v4.0.0](https://github.com/vivliostyle/vivliostyle-cli/releases/tag/v4.0.0)）。Dockerはプログラムの実行環境を仮想化してくれる。これにより、OSやブラウザ、Vivliostyle CLI本体をバージョンアップすることで、出力結果が変わってしまうトラブルから解放された。こうした冪等性／信頼性の確保は、実務でVivliostyle CLIを利用したいユーザにとって不可欠なもののはずだ。
 
