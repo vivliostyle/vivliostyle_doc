@@ -184,7 +184,7 @@ lang: ja
     - [Vivliostyle.js（Vivliostyle Viewerを含む）](https://github.com/vivliostyle/vivliostyle.js)
     - [VFM (Vivliostyle Flavored Markdown)](https://github.com/vivliostyle/vfm)
     - [Themes](https://github.com/vivliostyle/themes)
-- **ジェネレータ類（Markdown+CSSをHTML+CSSに変換）**
+- **ジェネレータ（Markdown+CSSをHTML+CSSに変換）**
     - [Vivliostyle CLI](https://github.com/vivliostyle/vivliostyle-cli)
     - [create-book](https://github.com/vivliostyle/create-book)
     - [vivliostyle-sitegen](https://github.com/vivliostyle/vivliostyle-sitegen)
@@ -258,7 +258,7 @@ Vivliostyleプロダクトが共通して使えるスタイルファイルのラ
 - [イベント発表：Themesのハンズオン](https://www.youtube.com/watch?v=auqefAA0Bx0)（yamasy1549）
 - [イベント発表：Vivliostyle Theme 開発ガイドラインの公開](https://www.youtube.com/watch?v=NioXx9NFUZU)（yamasy1549）
 
-### ジェネレータ類：Vivliostyle CLI（v3.3.0→v4.8.2）
+### ジェネレータ：Vivliostyle CLI（v3.3.0→v4.8.2）
 
 CLI（コマンドライン・インターフェイス）でMarkdownをHTMLに変換、出力できるのが[本プロダクト](https://github.com/vivliostyle/vivliostyle-cli)だ。まず本プロダクトの月間プルリクエスト数を、前期と比較したグラフを見てほしい。前期ほどではないが、今期もコンスタントに開発が続けられたことが分かる（図5）。
 
@@ -285,11 +285,11 @@ CLI（コマンドライン・インターフェイス）でMarkdownをHTMLに�
      - 各種小説投稿サイトのテキストフォーマット
  - **外部画像サービスとの連携による表紙の追加機能**
 
-### ジェネレータ類：create-book（v0.3.11→v0.5.1）
+### ジェネレータ：create-book（v0.3.11→v0.5.1）
 
 [本プロダクト](https://github.com/vivliostyle/create-book)は、Vivliostyle CLIの実行環境をインタラクティブに構築することができるソフトウェア、つまりインストーラーである。ただし、今期はメインテナンス的なアップデートが多く、大きな機能アップはなかった。
 
-### ジェネレータ類：vivliostyle-sitegen
+### ジェネレータ：vivliostyle-sitegen
 
 [本プロダクト](https://github.com/vivliostyle/vivliostyle-sitegen)は、VFMを使った静的サイトジェネレーター（Static Site Generator）として構想されたもので、今期に入って新しく開発がスタートしたプロダクトだ。
 

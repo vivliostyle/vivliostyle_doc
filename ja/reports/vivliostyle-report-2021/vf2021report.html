@@ -39,9 +39,9 @@
 <li><a href="#ライブラリvivliostyle.jsv2.7.0v2.14.4">ライブラリ：Vivliostyle.js（v2.7.0→v2.14.4 ）</a></li>
 <li><a href="#ライブラリvfmv1.0.0-alpha.18v1.2.1">ライブラリ：VFM（v1.0.0-alpha.18→v1.2.1）</a></li>
 <li><a href="#ライブラリthemesv0.3.0v0.4.0">ライブラリ：Themes（v0.3.0→v0.4.0）</a></li>
-<li><a href="#ジェネレータ類vivliostyle-cliv3.3.0v4.8.2">ジェネレータ類：Vivliostyle CLI（v3.3.0→v4.8.2）</a></li>
-<li><a href="#ジェネレータ類create-bookv0.3.11v0.5.1">ジェネレータ類：create-book（v0.3.11→v0.5.1）</a></li>
-<li><a href="#ジェネレータ類vivliostyle-sitegen">ジェネレータ類：vivliostyle-sitegen</a></li>
+<li><a href="#ジェネレータvivliostyle-cliv3.3.0v4.8.2">ジェネレータ：Vivliostyle CLI（v3.3.0→v4.8.2）</a></li>
+<li><a href="#ジェネレータcreate-bookv0.3.11v0.5.1">ジェネレータ：create-book（v0.3.11→v0.5.1）</a></li>
+<li><a href="#ジェネレータvivliostyle-sitegen">ジェネレータ：vivliostyle-sitegen</a></li>
 <li><a href="#webアプリvivliostyle-pub">Webアプリ：Vivliostyle Pub</a></li>
 <li><a href="#webコンテンツとその制作システム">Webコンテンツとその制作システム</a></li>
 <li><a href="#次期への課題とその対処">次期への課題とその対処</a></li>
@@ -841,7 +841,7 @@
 <li><a href="https://github.com/vivliostyle/vfm">VFM (Vivliostyle Flavored Markdown)</a></li>
 <li><a href="https://github.com/vivliostyle/themes">Themes</a></li>
 </ul></li>
-<li><strong>ジェネレータ類（Markdown+CSSをHTML+CSSに変換）</strong>
+<li><strong>ジェネレータ（Markdown+CSSをHTML+CSSに変換）</strong>
 <ul>
 <li><a href="https://github.com/vivliostyle/vivliostyle-cli">Vivliostyle CLI</a></li>
 <li><a href="https://github.com/vivliostyle/create-book">create-book</a></li>
@@ -915,7 +915,7 @@
 <li><a href="https://www.youtube.com/watch?v=auqefAA0Bx0">イベント発表：Themesのハンズオン</a>（yamasy1549）</li>
 <li><a href="https://www.youtube.com/watch?v=NioXx9NFUZU">イベント発表：Vivliostyle Theme 開発ガイドラインの公開</a>（yamasy1549）</li>
 </ul>
-<h3 id="ジェネレータ類vivliostyle-cliv3.3.0v4.8.2">ジェネレータ類：Vivliostyle CLI（v3.3.0→v4.8.2）</h3>
+<h3 id="ジェネレータvivliostyle-cliv3.3.0v4.8.2">ジェネレータ：Vivliostyle CLI（v3.3.0→v4.8.2）</h3>
 <p>CLI（コマンドライン・インターフェイス）でMarkdownをHTMLに変換、出力できるのが<a href="https://github.com/vivliostyle/vivliostyle-cli">本プロダクト</a>だ。まず本プロダクトの月間プルリクエスト数を、前期と比較したグラフを見てほしい。前期ほどではないが、今期もコンスタントに開発が続けられたことが分かる（図5）。</p>
 <figure>
 <img src="./img/fig-5.png" style="width:100.0%" alt="図5 前期と比較したVivliostyle CLIリポジトリの月間プルリクエスト数" /><figcaption aria-hidden="true">図5 前期と比較したVivliostyle CLIリポジトリの月間プルリクエスト数</figcaption>
@@ -942,9 +942,9 @@
 </ul></li>
 <li><strong>外部画像サービスとの連携による表紙の追加機能</strong></li>
 </ul>
-<h3 id="ジェネレータ類create-bookv0.3.11v0.5.1">ジェネレータ類：create-book（v0.3.11→v0.5.1）</h3>
+<h3 id="ジェネレータcreate-bookv0.3.11v0.5.1">ジェネレータ：create-book（v0.3.11→v0.5.1）</h3>
 <p><a href="https://github.com/vivliostyle/create-book">本プロダクト</a>は、Vivliostyle CLIの実行環境をインタラクティブに構築することができるソフトウェア、つまりインストーラーである。ただし、今期はメインテナンス的なアップデートが多く、大きな機能アップはなかった。</p>
-<h3 id="ジェネレータ類vivliostyle-sitegen">ジェネレータ類：vivliostyle-sitegen</h3>
+<h3 id="ジェネレータvivliostyle-sitegen">ジェネレータ：vivliostyle-sitegen</h3>
 <p><a href="https://github.com/vivliostyle/vivliostyle-sitegen">本プロダクト</a>は、VFMを使った静的サイトジェネレーター（Static Site Generator）として構想されたもので、今期に入って新しく開発がスタートしたプロダクトだ。</p>
 <p>もともとのきっかけは、秋のユーザイベント（2021年11月14日開催の<a href="https://vivliostyle.connpass.com/event/227954/">CSS組版 Vivliostyle ユーザーと開発者の集い 2021秋</a>）における自由討議のセッションで、せっかくVFMがv1をリリースするまで成長したのに、これを使ってVivliostyleのサイトや各種ドキュメントが書けないのは残念という声が出たことだった。それに応える形でVFMのメンテナーである<a href="https://github.com/akabekobeko">akabekobeko</a>氏が手を挙げ、2022年1月から開発がはじまった。</p>
 <p>現在、来期中のリリースを目指して開発がすすめられている。リリース後は <a href="https://github.com/vivliostyle/vivliostyle.org">vivliostyle.org</a>をはじめとする、Vivliostyleに関わるユーザ向けドキュメントの各リポジトリに実装していく予定だ。そうなれば、豊富な表現力をもつVFMを使ってVivliostyleに関する情報発信ができるようになる。こうして、ますますVivliostyleのエコシステムが広がることになるだろう。</p>
