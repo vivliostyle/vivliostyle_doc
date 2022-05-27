@@ -303,7 +303,7 @@ CLI（コマンドライン・インターフェイス）でMarkdownをHTMLに�
 
 ![図6 アルファ版を公開したVivliostyle Pub](./img/fig-6.png){ width=100% }
 
-もともとは2019年度（前々期）において、開発資金確保のために未踏アドバンスト事業への応募を目標に急遽立ち上げられた。コミッター達が一丸となった2ヵ月間の集中開発をへて、2020年5月にPoC（Proof of Concept、概念実証）まで完成させた（[前期事業報告書](https://vivliostyle.org/viewer/#src=https://vivliostyle.github.io/vivliostyle_doc/ja/reports/vivliostyle-report-2020/vf2020report.html&bookMode=true&userStyle=data:,/*%3Cviewer%3E*/%0A@page%20%7B%20size:%20A4;%20%7D%0A/*%3C/viewer%3E*/&f=epubcfi(/2!/4/32[%E3%83%97%E3%83%AD%E3%83%80%E3%82%AF%E3%83%88%E3%81%AE%E9%96%8B%E7%99%BA%E7%8A%B6%E6%B3%81]))参照）。
+もともとは2019年度（前々期）において、開発資金確保を目的とした未踏アドバンスト事業への応募のために急遽立ち上げられた。コミッター達が一丸となった2ヵ月間の集中開発をへて、2020年5月にPoC（Proof of Concept、概念実証）まで完成させた（[前期事業報告書](https://vivliostyle.org/viewer/#src=https://vivliostyle.github.io/vivliostyle_doc/ja/reports/vivliostyle-report-2020/vf2020report.html&bookMode=true&userStyle=data:,/*%3Cviewer%3E*/%0A@page%20%7B%20size:%20A4;%20%7D%0A/*%3C/viewer%3E*/&f=epubcfi(/2!/4/32[%E3%83%97%E3%83%AD%E3%83%80%E3%82%AF%E3%83%88%E3%81%AE%E9%96%8B%E7%99%BA%E7%8A%B6%E6%B3%81]))参照）。
 
 しかし、2020年6月に落選が決まった後、少しずつコミッターが去っていき、残った[takanakahiko](https://github.com/takanakahiko)氏だけがコツコツと開発を続けてくれていた。そうした状況を一変させたのが2021年11月、[AyumuTakai](https://github.com/AyumuTakai)氏の参入だった。ここで、本プロダクトの月間プルリクエスト数を前期と比較したグラフをご覧いただきたい（図7）。
 
@@ -317,7 +317,7 @@ CLI（コマンドライン・インターフェイス）でMarkdownをHTMLに�
 
 AyumuTakai氏は11月2日から`prototype`ブランチで開発を始めているが、2月に入るまでデフォルトブランチへのプルリクエストは出さず、ひたすら`prototype`ブランチで多くのコミットを積み上げている。もしかしたら、たくさんの改良を次々に加えていった結果、プルリクエストを出すタイミングを失ったのかもしれない。結局、`prototype`ブランチはそのままにして、2月3日に`pre_alpha`というブランチを新規作成し、ここからデフォルトブランチへのプルリクエストを1回だけ出している。
 
-この結果、前掲図7で示したプルリクエスト数にはAyumuTakai氏の作業はほとんど現れなかったが、前掲図8においてprototypeブランチでのコミット数を重ね合わせることで、初めて彼の貢献が可視化できた。この時のプルリクエスト[ アルファ版準備 #142 ](https://github.com/vivliostyle/vivliostyle-pub/pull/142)の記録により、ここで追加されたユーザーインターフェースの変更と追加機能のリストを見ることができる。どれも本プロダクトをごく普通に使うために、必須の要素であったことが分かる（なお、AyumuTakai氏は本業多忙を理由に、3月いっぱいで開発から退いた。心から感謝する）。
+この結果、前掲図7で示したプルリクエスト数にはAyumuTakai氏の作業はほとんど現れなかったが、前掲図8においてprototypeブランチでのコミット数を重ね合わせることで、初めて彼の貢献が可視化できた。この時のプルリクエスト、[アルファ版準備 #142 ](https://github.com/vivliostyle/vivliostyle-pub/pull/142)の記録により、ここで追加されたユーザーインターフェースの変更や追加した機能のリストを見ることができる。どれも本プロダクトをごく普通に使うためには、必須の要素であったことが分かる（なお、AyumuTakai氏は本業多忙を理由に、3月いっぱいで開発から退いた。心から感謝する）。
 
 ここまで本プロダクトの開発を直接担当したAyumuTakai氏やtakanakahiko氏の貢献について述べた。しかし忘れてはいけないのは、前節まで説明したVivliostyle.js、VFM、Themes、そしてVivliostyle CLIのアップデートの成果を、本プロダクトのコンポーネントを入れ替えるだけで、そのまま取り込むことができたということだ。
 
@@ -348,7 +348,7 @@ AyumuTakai氏は11月2日から`prototype`ブランチで開発を始めてい�
 
 また、Themesの節で今期追加したことを説明したユーザーガイドは、上記2のうちの一つだ。そして上記3も、Vivliostyle Pubのアルファ版公開に備えて、今期新しく追加したユーザーガイドだ。
 
-いずれも執筆はMarkdownでおこなうが、それをHTMLに変換するコンバーターは、1は[Jekyll](http://jekyllrb-ja.github.io/)、2と3は[docute](https://github.com/egoist/docute)、4は[Pandoc](https://pandoc-doc-ja.readthedocs.io/ja/latest/users-guide.html)を組み込んだシェルとバラバラであるという課題がある。この状況を改善し、さらにVFMの豊富な表現を使えるようにしようというのが、 [vivliostyle-sitegen](https://github.com/vivliostyle/vivliostyle-sitegen)であることは前述したとおりだ。
+いずれも執筆はMarkdownでおこなうが、それをHTMLに変換するコンバーターは、1は[Jekyll](http://jekyllrb-ja.github.io/)、2と3は[docute](https://github.com/egoist/docute)、4は[Pandoc](https://pandoc-doc-ja.readthedocs.io/ja/latest/users-guide.html)とバラバラであるという課題がある。この状況を改善し、さらにVFMの豊富な表現を使えるようにしようというのが、 [vivliostyle-sitegen](https://github.com/vivliostyle/vivliostyle-sitegen)であることは前述したとおりだ。
 
 
 ### 次期への課題とその対処
