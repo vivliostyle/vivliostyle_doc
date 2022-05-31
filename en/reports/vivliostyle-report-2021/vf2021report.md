@@ -1,124 +1,124 @@
 ---
-title: "一般社団法人ビブリオスタイル 2021年度事業報告書"
-lang: ja
+title: "Activity Report for FY2021"
+lang: en
 ---
 
 
 
-## 第1章 2021年度（第4期 2021年4月1日〜2022年3月31日）決算報告
+## **Chapter 1: Financial Report for FY2021**
 
-### はじめに
+### Foreword
 
-今期の事業報告から構成を変更し、第1章として過去と比較しながら決算内容を報告し、それを踏まえつつ第2章として今期の事業内容を振り返ることにする。
+The structure has been changed from the annual report for this fiscal year, with the first section reporting the financial results in comparison with the past, and the second section reporting the activities based on that report.
 
-### 2021年度貸借対照表
+### Balance Sheet for FY2021
 
-今期末（2022年3月31日）現在における資産の保有状況（貸借対照表）を以下に示す。なお、単位は円である。
+The following table shows the status of assets held (balance sheet) as of the end of the current period (March 31, 2022). The figures are in yen.
 
-| 科目           | **当年度**    | **前年度**    | **増減**     |
+| Title           | **This FY (2021)**    | **Prev. FY (2020)**    | **Increase/Decrease**     |
 | ------------ | ---------- | ---------- | ---------- |
-| **Ⅰ 資産の部**   |            |            |            |
-| 1 流動資産   |            |            |            |
-| 現金・預金    |   1,180,342  | 345,708     | 834,634    |
-| 他流動資産   |   1,058,750  |      | 1,058,750    |
-| 流動資産合計   |   2,239,092  | 345,708     | 1,893,384    |
-| 2 固定資産   |            |            |            |
-| (1) その他固定資産   |            |            |            |
-| 創立費      | 113,050    | 113,050    | 0          |
-| その他固定資産合計 | 113,050    | 113,050    | 0          |
-| 固定資産合計 | 113,050    | 113,050    | 0          |
-| 資産合計     | 2,352,142    | 458,758    | 1,893,384    |
-| **Ⅱ 負債の部**   |            |            |            |
-|1 流動負債  |            |            |            |
-| 預り金     | 31,139     | 31,139     | 0    |
-| 役員借入金    | 4,806,561  | 3,806,561  | 1,000,000  |
-| 買掛金   |  11,000  |            |  11,000 |
-| 未払法人税等   |  20,000 |            | 20,000  |
-| 流動負債合計   | 4,868,700 | 3,837,700 | 1,031,000 |
-| 負債合計     | 4,868,700 | 3,837,700 | 1,031,000 |
-| **Ⅲ 正味財産の部** |            |            |            |
-| 1 一般正味財産 | -2,516,558 | -3,378,942 | 862,384 |
-| 正味財産合計   | -2,516,558 | -3,378,942 | 862,384 |
-| 負債及び正味財産合計   | 2,352,142    | 458,758    | 1,893,384    |
+| **Ⅰ. Assets**   |            |            |            |
+| 1. Current assets |            |            |            |
+| Cash and deposits |   1,180,342  | 345,708     | 834,634    |
+| Other current assets |   1,058,750  |      | 1,058,750    |
+| Total current assets |   2,239,092  | 345,708     | 1,893,384    |
+| 2 Fixed Assets |            |            |            |
+| (1) Other fixed assets |            |            |            |
+| Founding expenses | 113,050    | 113,050    | 0          |
+| Total other fixed assets | 113,050    | 113,050    | 0          |
+| Total fixed assets | 113,050    | 113,050    | 0          |
+| Total assets | 2,352,142    | 458,758    | 1,893,384    |
+| **Ⅱ. Liabilities**   |            |            |            |
+| 1. Current liabilities |            |            |            |
+| Withholdings | 31,139     | 31,139     | 0    |
+| Loan from officer | 4,806,561  | 3,806,561  | 1,000,000  |
+| Accounts payable |  11,000  |            |  11,000 |
+| Accrued income taxes |  20,000 |            | 20,000  |
+| Total current liabilities | 4,868,700 | 3,837,700 | 1,031,000 |
+| Total liabilities | 4,868,700 | 3,837,700 | 1,031,000 |
+| **Ⅲ. Net Assets** |            |            |            |
+| 1. General Net Assets | -2,516,558 | -3,378,942 | 862,384 |
+| Total net assets | -2,516,558 | -3,378,942 | 862,384 |
+| Total liabilities and net assets | 2,352,142    | 458,758    | 1,893,384    |
 
-1年以内に回収できる資産を流動資産という。今期の流動資産合計は、前期から1,893,384円増加した2,239,092円だった。1年よりも長く保有される固定資産と合計した資産合計は、同じく1,893,384円増の2,352,142円となっている（なお創立以来、固定資産額は変わってない）。
+Assets that can be recovered within one year are called current assets. Total current assets for the current period were 2,239,092 yen, up 1,893,384 yen from the previous period, and total assets, including fixed assets held for longer than one year, were 2,352,142 yen, also up 1,893,384 yen (the amount of fixed assets has not changed since the company was founded).
 
-一方、負債合計は昨年より1,031,000円増えて4,868,700円となった。資産合計から負債合計を引いた正味財産合計は、前期よりも862,384円増加して-2,516,558円だ。ここまでの貸借対照表における主な指標を、第1期から通覧したグラフ1を以下に示そう。創立以来、下降する一方だった正味財産合計が、今期ではまだマイナスながらも上昇に転ずることができたのが目を引く（図1）。
+Total liabilities, on the other hand, increased by 1,031,000 yen from last year to 4,868,700 yen. Total net assets, which are total assets minus total liabilities, increased by 862,384 yen from the previous year to -2,516,558 yen. Graph below shows the main indicators on the balance sheet from the first fiscal year (Figure 1). It is striking that total net assets, which had been on a downward trend since its establishment, was able to turn upward in the current term, although still negative.
 
-![図1 創立以来の貸借対照表における主な指標の変遷](./img/fig-1.png){ width=100% }
+![Figure 1: Changes in Main Indicators in the Balance Sheet since Foundation](./img/fig-1.png){ width=100% }
 
-### 2021年度正味財産増減計算書
+### Net Assets Increase/Decrease Statement for FY2021
 
-次に、今期中（2020年4月1日から2021年3月31日）のお金の使い方や売上の明細がわかる、正味財産増減計算書を見てみよう。これも単位は円である。
+Next, let's look at the statement of changes in net assets, which shows the details of money spent and sales during the current period (April 1, 2020 to March 31, 2021). This is also in yen.
 
-| 科目                | **当年度**    | **前年度**    | **増減**     |
+| Title                | **This FY (2021)** | **Prev. FY (2020)** | **Increase/Decrease** |
 | ----------------- | ---------- | ---------- | ---------- |
-| **Ⅰ. 一般正味財産増減の部** |            |            |            |
-| 1. 経常増減の部         |            |            |            |
-| ⑴ 経常収益            |            |            |            |
-| ①事業収益             | ( 6,267,250) | (1,503,721)  | (4,763,529)  |
-| 事業収益            | 6,267,250  |  1,503,721  | 4,763,529  |
-| ②受取寄付金          | (116,546)  |  (61,209) | (55,337)     |
-| 受取寄付金          | 116,546  |  61,209 | 55,337     |
-| ③雑収益              | (6)          | (4)          | (2)          |
-| 受取利息              | 6          | 4          | 2          |
-| 経常収益計              | 6,383,802   | 1,564,934  | 4,818,868  |
-| ⑵ 経常費用            |            |            |            |
-| ① 事業費             |            |            |            |
-| 事業経費              | (325,918)    | (373,823)     | (-47,905)    |
-| 事）旅費交通費             |      | 11,527   | -11,527  |
-| 事）通信運搬費             | 940    |   252   | 688        |
-| 事）消耗品費             | 22,000    |     | 22,000        |
-| 事）雑費                |      |  39,064  | -39,064     |
-| 事）支払手数料    | 97,624     | 65,575     | 32,049     |
-| 事）支払報酬料   | 198,000    |   257,405 | -59,405    |
-| 事）新聞図書費   | 7,354   |    | 7,354    |
-| 事業費計              | 325,918    | 373,823    | -47,905    |
-| ② 管理費             |            |            |            |
-| 管）業務委託費  | 5,175,500  | 3,454,000    | 1,721,500  |
-| 管）会議費               |       |  2,623 | -2,623      |
-| 管理費計              | 5,175,500  | 3,456,623    | 1,718,877  |
-| 経常費用計             | 5,501,418  | 3,830,446  | 1,670,972  |
-| 評価損益等調整前当期経常増減額   | 882,384 | -2,265,512 | 3,147,896 |
-| 評価損益等計            | 0          | 0          | 0          |
-| 当期経常増減額           | 882,384 | -2,265,512 | 3,147,896 |
-| 2. 経常外増減の部        |            |            |            |
-| ⑴ 経常外収益           |            |            |            |
-| 経常外収益計            | 0          | 0          | 0          |
-| ⑵ 経常外費用           |            |            |            |
-| 経常外費用計            | 0          | 0          | 0          |
-| 当期経常外増減額          | 0          | 0          | 0          |
-| 他会計振替前当期一般正味財産増減額 | 882,384 | -2,265,512 | 3,147,896 |
-| 税引前当期一般正味財産増減額    | 882,384 | -2,265,512 | 3,147,896 |
-| 法人税、住民税及び事業税      | 20,000     | 20,000     | 0    |
-| 当期一般正味財産増減額       | 862,384 | -2,285,512 | 3,147,896 |
-| 一般正味財産期首残高        | -3,378,942 | -1,093,430  | -2,285,512 |
-| 一般正味財産期末残高        | -2,516,558 | -3,378,942 | 862,384 |
-| **Ⅱ. 指定正味財産増減の部** |            |            |            |
-| 当期指定正味財産増減額       | 0          | 0          | 0          |
-| 指定正味財産期首残高        | 0          | 0          | 0          |
-| 指定正味財産期末残高        | 0          | 0          | 0          |
-| **Ⅲ. 正味財産期末残高**   | -2,516,558 | -3,378,942 | 862,384 |
+| **I. General Net Assets Increase/Decrease** |            |            |            |
+| 1. Ordinary Increase/Decrease |            |            |            |
+| ⑴ Ordinary revenues  |            |            |            |
+| ① Business income | ( 6,267,250) | (1,503,721)  | (4,763,529)  |
+| Business income | 6,267,250  |  1,503,721  | 4,763,529  |
+| ② Donation received | (116,546)  |  (61,209) | (55,337)     |
+| Donation received  | 116,546  |  61,209 | 55,337     |
+| ③ Other revenues | (6)          | (4)          | (2)          |
+| Interest received   | 6          | 4          | 2          |
+| Total ordinary revenues | 6,383,802   | 1,564,934  | 4,818,868  |
+| ⑵ Ordinary expenses |            |            |            |
+| ① Business expenses |            |            |            |
+| Business expenses | (325,918)    | (373,823)     | (-47,905)    |
+| Travel and transportation expenses |      | 11,527   | -11,527  |
+| Communication transportation costs | 940    |   252   | 688        |
+| Consumables costs | 22,000    |     | 22,000        |
+| Miscellaneous expenses |      |  39,064  | -39,064     |
+| Commission fee  | 97,624     | 65,575     | 32,049     |
+| Compensation paid | 198,000    |   257,405 | -59,405    |
+| Newspaper book expenses | 7,354   |    | 7,354    |
+| Total business expenses  | 325,918    | 373,823    | -47,905    |
+| ② Administrative expenses  |            |            |            |
+| Outsourcing costs  | 5,175,500  | 3,454,000    | 1,721,500  |
+| Meeting fee  |       |  2,623 | -2,623      |
+| Total administrative expenses | 5,175,500  | 3,456,623    | 1,718,877  |
+| Total ordinary expenses  | 5,501,418  | 3,830,446  | 1,670,972  |
+| Ordinary increase/decrease before valuation gain/loss this FY | 882,384 | -2,265,512 | 3,147,896 |
+| Total valuation gain/loss | 0          | 0          | 0          |
+| Ordinary increase/decrease this FY | 882,384 | -2,265,512 | 3,147,896 |
+| 2. Non-ordinary Increase/Decrease |            |            |            |
+| ⑴ Non-ordinary revenues |            |            |            |
+| Total non-ordinary revenues | 0          | 0          | 0          |
+| ⑵ Non-ordinary expenses |            |            |            |
+| Total non-ordinary expenses | 0          | 0          | 0          |
+| Non-ordinary increase/decrease this FY | 0          | 0          | 0          |
+| General net assets increase/decrease before transfer to other accounts this FY | 882,384 | -2,265,512 | 3,147,896 |
+| General net assets increase/decrease before taxes this FY | 882,384 | -2,265,512 | 3,147,896 |
+| Corporate tax, resident tax and business tax | 20,000     | 20,000     | 0    |
+| General net assets increase/decrease this FY | 862,384 | -2,285,512 | 3,147,896 |
+| General net assets at beginning of FY | -3,378,942 | -1,093,430  | -2,285,512 |
+| General net assets at end of FY | -2,516,558 | -3,378,942 | 862,384 |
+| **II. Designated Net Assets Increase/Decrease** |            |            |            |
+| Designated net assets increase/decrease this FY  | 0          | 0          | 0          |
+| Designated net assets at beginning of FY | 0          | 0          | 0          |
+| Designated net assets at end of FY  | 0          | 0          | 0          |
+| **III. Net Assets at End of FY**   | -2,516,558 | -3,378,942 | 862,384 |
 
-まず「Ⅰ. 一般正味財産増減の部」を見ていこう。ここでいう「一般正味財産」とは「指定正味財産」と対になる用語だ。後者が使途を指定され法人の意志で使い道を決められない財産であるのに対し、前者はその反対、法人が自由に使い道を決められる財産だ。後述するように当法人は指定正味財産は0円なので、このセクションを見ることで、第4期の収入と支出を把握することができるはずだ。
+First, let's look at “I. General Net Assets”. The term “General net assets” here is the opposite of “Designated Net Assets”. While the latter is property that is designated for use and the corporation cannot decide how to use it, the former is the opposite, allowing the corporation to freely decide how to use it. Since our corporation has no “Designated net assets” as described below, we should be able to grasp the income and expenses for the fourth fiscal year by looking at this section.
 
-その「Ⅰ. 一般正味財産増減の部」の中で目を引くのが、事業収益が前期より4,763,529円多い6,267,250円をあげたことだ（淡黄の背景色）。この結果、本業で得た利益を示す経常利益計は、前期より1,564,934円多い6,383,802円をあげることができた。この収益額は前期の約4倍に当たる。これは[前期事業報告書](https://vivliostyle.org/viewer/#src=https://vivliostyle.github.io/vivliostyle_doc/ja/reports/vivliostyle-report-2020/vf2020report.html&bookMode=true&f=epubcfi(/2!/4/84))でも述べた外部企業からの受託開発が、今期に入って拡大したことによる。また、額としては決して多くないものの、受取寄付金も前期より55,337円多い116,546円を得ることができた。
+Among the “I. General Net Assets Increase/Decrease” section, what catches the eye is that “Business income” raised 6,267,250 yen, which is 4,763,529 yen more than the previous fiscal year (pale yellow cell). As a result, the “Total ordinary revenues”, which indicates the profit earned in the main business, was able to raise 6,383,802 yen, which is 1,564,934 yen more than the previous year. This revenue amount is about four times that of the previous fiscal year. This was due to the expansion of contract development from external companies, which was also mentioned in the [Previous Business Report](https://vivliostyle.org/viewer/#src=https://vivliostyle.github.io/vivliostyle_doc/ja/reports/vivliostyle-report-2020/vf2020report.html&bookMode=true&f=epubcfi(/2!/4/84)) in the current fiscal year. In addition, although the amount is not a large amount, we were able to obtain 116,546 yen in “Donations received”, which is 55,337 yen more than the previous fiscal year.
 
-一方、事業をおこなうための経費である事業費計は、前期より47,905円少ない325,918円だった。法人が存続するための費用である管理費計は、前期より1,718,877円多い5,175,500円だった。この増加分は、前述した大幅増となった事業収益に関わる業務委託費（下請への人件費）である。すでに述べたように、前期も事業収益は1,503,721円をあげていた。それを約4倍も拡大できたのは、件数自体が増えたこともあるが、村上代表理事以外の開発者へ下請に出せたことが大きく寄与している。来期も同様以上の事業収益を確保できるかは、開発リソースの確保がカギとなろう。なお、ここまで述べた事業費計と管理費計を合算した経常費用計は、前期より1,670,972円多い5,501,418円である。
+On the other hand, “Total business expenses”, which are the expenses to conduct business, were 325,918 yen, 47,905 yen less than the previous fiscal year. “Total administrative expenses”, which are the costs of maintaining the corporation, totaled 5,175,500 yen, 1,718,877 yen more than in the previous fiscal year. This increase was due to the aforementioned “Outsourcing costs” (labor costs to subcontractors) related to the large increase in “Business income”. As already mentioned, in the previous fiscal year, “Business income” totaled 1,503,721 yen. The reason for the four-fold increase was due in part to the increase in the number of projects, but also to the fact that the company was able to subcontract work to developers other than Representative Director Murakami. Securing development resources will be the key to securing the same or higher business profits in the next fiscal year. “Total ordinary expenses”, which are the sum of the “Total business expenses”and “Total administrative expenses” mentioned above, totaled 5,501,418 yen, 1,670,972 yen more than the previous fiscal year.
 
-さらに下に見ていって、有価証券等に関わる保有資産の購入価格と現在価格の差額を示す評価損益等計は0円。有価証券は保有していないからだ。本業以外の収益を示す経常外費用計も0円となっている。
+Looking further down, “Total valuation gain/loss”, which shows the difference between the purchase price and the current price of assets held related to securities, etc., is 0 yen. This is because we do not hold any securities. “Total non-ordinary expenses”, which represent income other than core business, are also zero.
 
-「Ⅰ. 一般正味財産増減の部」の最後は、一般正味財産期首残高と一般正味財産期末残高だ。これを簡単に言えば、前者が前期からの繰越金であるのに対し、後者は次期への繰越金だ。前者、つまり一般正味財産期首残高が-3,378,942だったところ、後者、つまり一般正味財産期首残高は862,384円増加した-2,516,558を計上した。わかりやすく言えば、前期までの赤字を減らしはしたものの、解消までの道のりはまだまだ遠いことを表している。
+At the end of “I. General Net Assets Increase/Decrease” is “General net assets at beginning of FY” and “General net assets at end of FY”. To put it simply, the former is the money carried forward from the previous term, while the latter is the money carried forward to the next term. The former, that is, the “General net assets at beginning of FY” was -3,378,942, while the latter, that is, the “General net assets at end of FY” increased by 862,384 yen to -2,516,558. To put it simply, it shows that although the deficit up to the previous term has been reduced, there is still a long way to go to eliminate it.
 
-次のセクション「Ⅱ. 指定正味財産増減の部」は前述したとおりすべて0円だ。そして、第5期への繰越金である「Ⅲ. 正味財産期末残高」は-2,516,558円（一般正味財産期末残高と一致）となった。ここまでの正味財産増減計算書における主な指標の変遷を、創立から辿ってグラフ化したものを示す（図2）。事業費を除いた全ての指標が、大きく上昇していることが分かる。
+The next section, “II. Designated Net Assets Increase/Decrease” are all zero yen, as mentioned above. And the carryover to the 5th period, “III. Net Assets at End of FY” was -2,516,558 yen (the same as “General net assets at end of FY”). Figure 2 shows a graphical representation of the changes in the main indicators on the statement of changes in net assets since the foundation of the company. The graph (Figure 2) shows that all indicators, except for “Business expenses”, have increased significantly.
 
-![図2 創立以来の正味財産増減計算書における主な指標の変遷](./img/fig-2.png){ width=100% }
+![Figure 2: Changes in Key Indicators in the Net Assets Increase/Decrease Statement since Foundation](./img/fig-2.png){ width=100% }
 
-最後に当期経常増減額、つまり事業の結果が赤字か黒字かを示す指標を、創立からグラフ化したものを示す（図3）。前期まで赤字額が増える一方だったのを、今期はV字回復で黒字（いわゆる単年度黒字）に転換できたことが分かる。
+Finally, “Ordinary increase/decrease this FY”, an indicator of whether a business is in the red or in the black, is shown graphically from its inception (Figure 3). It can be seen that the deficit amount had been increasing until the previous fiscal year, but this fiscal year it has been able to turn into a surplus (so-called single-year surplus) with a V-shaped recovery.
 
-![図3 創立以来の当期経常増減額の変遷](./img/fig-3.png){ width=100% }
+![Changes in “Ordinary increase/decrease this FY” since foundation](./img/fig-3.png){ width=100% }
 
-### 2021年度収支計算書
+### Income and Expenditure Statement for FY2021
 
 第1章の終わりとして、今期中（2020年4月1日から2021年3月31日）における、予算額と決算額を比較した収支計算書を見よう。ただし、当法人は予算を策定していないので、形式的なものに留まり、前節の正味財産増減計算書と実質的に同じ内容になる。なお、これも単位は円である。
 
@@ -168,7 +168,7 @@ lang: ja
 | 指定正味財産期末残高        | 0   | 0          | 0          |    |
 | **Ⅲ. 正味財産期末残高**   | 0   | -2,516,558 | 2,516,558  |    |
 
-## **第2章  2021年度（第3期 2021年4月1日〜2022年3月31日）事業報告**
+## **Chapter 2: Activity Report for FY2021**
 
 ### はじめに
 
