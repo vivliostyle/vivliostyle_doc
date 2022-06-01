@@ -196,7 +196,7 @@ lang: ja
     - [docs-vivliostyle-pub](https://github.com/vivliostyle/docs-vivliostyle-pub) （[Vivliostyle Pubのユーザーガイド](https://vivliostyle.github.io/docs-vivliostyle-pub/#/ja/)）
     - [vivliostyle_doc](https://github.com/vivliostyle/vivliostyle_doc)（[サンプルページ](https://vivliostyle.org/ja/samples/)や[事業報告書](https://vivliostyle.org/ja/about-us/)）
 
-上記のリンクは、それぞれのリポジトリへのものだ。つまり、上記分類はリポジトリの分類でもある。ただし、上記分類は必ずしも厳密なものではない。たとえばVFMはライブラリであると同時に、MarkdownをHTMLに変換するジェネレータの一面ももつ。
+上記のリンクは、それぞれのリポジトリへのものだ。つまり、上記分類はリポジトリの分類でもある。ただし、上記分類は分かりやすく説明するためのもので、必ずしも厳密なものではない。たとえばVFMはライブラリであると同時に、MarkdownをHTMLに変換するジェネレータの一面ももつ。
 
 では次節以降、上記分類に従いながら今期における各プロダクトの開発状況を、ユーザーイベントでの発表やブログ記事などを参照しながら説明していこう。なお、参考のために期首時点と期末時点のバージョンをカッコ内に示した（プロダクトとしてのリリースの概念がないThemesとVivliostyle Pubを除く）。
 

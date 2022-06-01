@@ -120,53 +120,53 @@ Finally, “Ordinary increase/decrease this FY”, an indicator of whether a bus
 
 ### Income and Expenditure Statement for FY2021
 
-第1章の終わりとして、今期中（2020年4月1日から2021年3月31日）における、予算額と決算額を比較した収支計算書を見よう。ただし、当法人は予算を策定していないので、形式的なものに留まり、前節の正味財産増減計算書と実質的に同じ内容になる。なお、これも単位は円である。
+At the end of Chapter 1, we will look at “Income and Expenditure Statement”, which compares the budgeted amount to the closing amount during the current fiscal year (April 1, 2020 to March 31, 2021). However, since we have not developed a budget, it will remain a formality and will be substantially the same as the statement of changes in net assets in the previous section. The unit of measure is also yen.
 
-| 科目                | 予算額 | 決算額        | 差異         | 備考 |
+| Title   | Budgetary Amount | Settlement Amount | Difference | Note |
 | ----------------- | --- | ---------- | ---------- | -- |
-| **Ⅰ. 一般正味財産増減の部** |     |            |            |    |
-| 1. 経常増減の部         |     |            |            |    |
-| ⑴ 経常収益            |     |            |            |    |
-| ①事業収益             | (0)   | (6,267,250)  | -6,267,250 |    |
-| 事業収益             |     | 6,267,250  | -6,267,250 |    |
-| ②受取寄付金          | (0)   |( 116,546)     | (-116,546)    |    |
-| 受取寄付金           |     | 116,546     | -116,546   |    |
-| ③雑収益              | (0)   | (6)          | (-6)         |    |
-| 受取利息              |  0   | 6          | -6         |    |
-| 経常利益計             | 0   | 6,383,802  | -6,383,802 |    |
-| ⑵ 経常費用            |     |            |            |    |
-| ① 事業費             |     |            |            |    |
-| 事業経費              | (0)   | (325,918)    | -325,918   |    |
-| 事）通信運搬費  |     | 940        | -940      |    |
-| 事）消耗品費   |     | 22,000     | -22,000    |    |
-| 事）支払手数料 |     | 97,624    | -97,624    |    |
-| 事）支払報酬料   |     | 198,000    | -198,000   |    |
-| 事）新聞図書費  |     | 7,354    | -7,354   |    |
-| 事業費計              | 0   | 325,918    | -325,918   |    |
-| ② 管理費             |     |            |            |    |
-| 管）業務委託費    |     | 5,175,500  | -5,175,500 |    |
-| 管理費計              | 0   | 5,175,500  | -5,175,500 |    |
-| 経常費用計             | 0   | 5,501,418  | -5,501,418 |    |
-| 評価損益等調整前当期経常増減額   | 0   | 882,384 |-882,384  |    |
-| 評価損益等計            | 0   | 0          | 0          |    |
-| 当期経常増減額           | 0   | 882,384 | -882,384  |    |
-| 2. 経常外増減の部        |     |            |            |    |
-| ⑴ 経常外収益           |     |            |            |    |
-| 経常外収益計            | 0   | 0          | 0          |    |
-| ⑵ 経常外費用           |     |            |            |    |
-| 経常外費用計            | 0   | 0          | 0          |    |
-| 当期経常外増減額          | 0   | 0          | 0          |    |
-| 他会計振替前当期一般正味財産増減額 | 0   | 882,384 | -882,384  |    |
-| 税引前当期一般正味財産増減額    | 0   | 882,384 | -882,384  |    |
-| 法人税、住民税及び事業税      | 0   | 20,000     | -20,000    |    |
-| 当期一般正味財産増減額       | 0   | 882,384 | -882,384  |    |
-| 一般正味財産期首残高        | 0   | -3,378,942 | 3,378,942  |    |
-| 一般正味財産期末残高        | 0   | -2,516,558 | 2,516,558  |    |
-| **Ⅱ. 指定正味財産増減の部** |     |            |            |    |
-| 当期指定正味財産増減額       | 0   | 0          | 0          |    |
-| 指定正味財産期首残高        | 0   | 0          | 0          |    |
-| 指定正味財産期末残高        | 0   | 0          | 0          |    |
-| **Ⅲ. 正味財産期末残高**   | 0   | -2,516,558 | 2,516,558  |    |
+| **I. General Net Assets Increase/Decrease** |     |            |            |    |
+| 1. Ordinary Increase/Decrease |     |            |            |    |
+| ⑴ Ordinary revenues  |     |            |            |    |
+| ① Business income  | (0)   | (6,267,250)  | -6,267,250 |    |
+| Business income |     | 6,267,250  | -6,267,250 |    |
+| ② Donation received  | (0)   |( 116,546)     | (-116,546)    |    |
+| Donation received |     | 116,546     | -116,546   |    |
+| ③ Other revenues | (0)   | (6)          | (-6)         |    |
+| Interest received  |  0   | 6          | -6         |    |
+| Total ordinary revenues | 0   | 6,383,802  | -6,383,802 |    |
+| ⑵ Ordinary expenses  |     |            |            |    |
+| ① Business expenses |     |            |            |    |
+| Business expenses  | (0)   | (325,918)    | -325,918   |    |
+| Travel and transportation expenses  |     | 940        | -940      |    |
+| Communication transportation costs |     | 22,000     | -22,000    |    |
+| Consumables costs |     | 97,624    | -97,624    |    |
+| Compensation paid   |     | 198,000    | -198,000   |    |
+| Newspaper book expenses |     | 7,354    | -7,354   |    |
+| Total business expenses | 0   | 325,918    | -325,918   |    |
+| ② Administrative expenses  |     |            |            |    |
+| Outsourcing costs |     | 5,175,500  | -5,175,500 |    |
+| Total administrative expenses | 0   | 5,175,500  | -5,175,500 |    |
+| Total ordinary expenses | 0   | 5,501,418  | -5,501,418 |    |
+| Ordinary increase/decrease before valuation gain/loss this FY | 0   | 882,384 |-882,384  |    |
+| Total valuation gain/loss | 0   | 0          | 0          |    |
+| Ordinary increase/decrease this FY | 0   | 882,384 | -882,384  |    |
+| 2. Non-ordinary Increase/Decrease  |     |            |            |    |
+| ⑴ Non-ordinary revenues |     |            |            |    |
+| Total non-ordinary revenues  | 0   | 0          | 0          |    |
+| ⑵ Non-ordinary expenses  |     |            |            |    |
+| Total non-ordinary expenses | 0   | 0          | 0          |    |
+| Non-ordinary increase/decrease this FY  | 0   | 0          | 0          |    |
+| General net assets increase/decrease before transfer to other accounts this FY | 0   | 882,384 | -882,384  |    |
+| General net assets increase/decrease before taxes this FY | 0   | 882,384 | -882,384  |    |
+| Corporate tax, resident tax and business tax | 0   | 20,000     | -20,000    |    |
+| General net assets increase/decrease this FY | 0   | 882,384 | -882,384  |    |
+| General net assets at beginning of FY  | 0   | -3,378,942 | 3,378,942  |    |
+| General net assets at end of FY  | 0   | -2,516,558 | 2,516,558  |    |
+| **Ⅱ. Designated Net Assets Increase/Decrease** |     |            |            |    |
+| II. Designated Net Assets Increase/Decrease | 0   | 0          | 0          |    |
+| Designated net assets at beginning of FY  | 0   | 0          | 0          |    |
+| Designated net assets at end of FY  | 0   | 0          | 0          |    |
+| **III. Net Assets at End of FY**   | 0   | -2,516,558 | 2,516,558  |    |
 
 ## **Chapter 2: Activity Report for FY2021**
 
