@@ -120,4 +120,6 @@ td:nth-child(n+2) {
   background-color: #EFF6FD;
 }
 
-
+#年度正味財産増減計算書+p+table>tbody>tr:nth-child(5) {
+  background-color: #f7f6bd;
+}

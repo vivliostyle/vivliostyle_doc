@@ -172,13 +172,13 @@ lang: ja
 
 ### はじめに
 
-前章で述べたように、当法人は今期、単年度黒字を達成することができた。その直接の原因は、既述のように外部企業からの受託開発が拡大したからだ。しかし、背景にはVivliostyleプロダクトが充実したこと、そしてラインナップが整備されたことにより、プロダクト間のエコシステムが機能し始めたことがある。
+今期、当法人は単年度黒字を達成することができた。その直接の原因は、前章で述べたように外部企業からの受託開発が拡大したからだ。しかし、その背景にはVivliostyleプロダクトが充実したこと、そしてそれによってプロダクト間のエコシステムが機能し始めた事実がある。言い換えれば、これらの要因なしに受託開発の拡大もなかったと考えられる。
 
-言い換えれば、これらの要因なしに受託開発の拡大もなかったと考えられる。そこで本章ではVivliostyleプロダクトそれぞれの開発状況を説明する。さらに次期への課題はないかを探っていく。これも繰り返しになるが、当法人は決して少なくない累積赤字を抱えており、その解消が当面の目標となるからだ。
+そこで本章ではVivliostyleプロダクトそれぞれの開発状況を説明する。さらに次期への課題はないかを探っていく。これも繰り返しになるが、当法人は決して少なくない累積赤字を抱えており、その解消が当面の目標となるからだ。
 
 ### プロダクトの分類とそれぞれの役目
 
-今期の開発状況について報告する前に、簡単にプロダクトの位置づけを整理しておこう。近年プロダクトが増え、ラインナップが整ったのは喜ばしいが、それぞれがどのような役割を果たしているのか、全体の中でどのように位置づけられるのか、外側からは分かりづらくなっているからだ。
+各プロダクトの開発状況について報告する前に、ラインナップにおける位置づけを整理しておこう。近年プロダクトが増えたのは喜ばしいが、それぞれがどのような役割を果たしているのか、全体の中でどのように位置づけられるのか、外側からは分かりづらくなっているからだ。
 
 - **ライブラリ（アプリケーションに組み込まれる「共通部品」）**
     - [Vivliostyle.js（Vivliostyle Viewerを含む）](https://github.com/vivliostyle/vivliostyle.js)
@@ -191,7 +191,7 @@ lang: ja
 - **Webアプリ（上記を統合したアプリケーション）**
     - [Vivliostyle Pub](https://github.com/vivliostyle/vivliostyle-pub)
 - **Webコンテンツとその制作システム（Vivliostyleに関わるドキュメント・サイト）**
-    - [vivliostyle.org](https://github.com/vivliostyle/vivliostyle.org)（[Webサイト本体](https://vivliostyle.org/ja/)）
+    - [vivliostyle.org](https://github.com/vivliostyle/vivliostyle.org)（[法人の公式サイト](https://vivliostyle.org/ja/)）
     - [docs.vivliostyle.org](https://github.com/vivliostyle/docs.vivliostyle.org) （[各プロダクトのユーザーガイド](https://vivliostyle.org/ja/documents/)）
     - [docs-vivliostyle-pub](https://github.com/vivliostyle/docs-vivliostyle-pub) （[Vivliostyle Pubのユーザーガイド](https://vivliostyle.github.io/docs-vivliostyle-pub/#/ja/)）
     - [vivliostyle_doc](https://github.com/vivliostyle/vivliostyle_doc)（[サンプルページ](https://vivliostyle.org/ja/samples/)や[事業報告書](https://vivliostyle.org/ja/about-us/)）
