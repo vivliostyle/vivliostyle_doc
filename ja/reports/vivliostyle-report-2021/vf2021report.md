@@ -183,7 +183,7 @@ lang: ja
 - **ライブラリ（アプリケーションに組み込まれる「共通部品」）**
     - [Vivliostyle.js（Vivliostyle Viewerを含む）](https://github.com/vivliostyle/vivliostyle.js)
     - [VFM (Vivliostyle Flavored Markdown)](https://github.com/vivliostyle/vfm)
-    - [Themes](https://github.com/vivliostyle/themes)
+    - [Vivliostyle Themes](https://github.com/vivliostyle/themes)
 - **ジェネレータ（Markdown+CSSをHTML+CSSに変換）**
     - [Vivliostyle CLI](https://github.com/vivliostyle/vivliostyle-cli)
     - [create-book](https://github.com/vivliostyle/create-book)
@@ -198,7 +198,7 @@ lang: ja
 
 上記のリンクは、それぞれのリポジトリへのものだ。つまり、上記分類はリポジトリの分類でもある。ただし、上記分類は分かりやすく説明するためのもので、必ずしも厳密なものではない。たとえばVFMはライブラリであると同時に、MarkdownをHTMLに変換するジェネレータの一面ももつ。
 
-では次節以降、上記分類に従いながら今期における各プロダクトの開発状況を、ユーザーイベントでの発表やブログ記事などを参照しながら説明していこう。なお、参考のために期首時点と期末時点のバージョンをカッコ内に示した（プロダクトとしてのリリースの概念がないThemesとVivliostyle Pubを除く）。
+では次節以降、上記分類に従いながら今期における各プロダクトの開発状況を、ユーザーイベントでの発表やブログ記事などを参照しながら説明していこう。なお、参考のために期首時点と期末時点のバージョンをカッコ内に示した（プロダクトとしてのリリースの概念がないVivliostyle ThemesとVivliostyle Pubを除く）。
 
 ### ライブラリ：Vivliostyle.js（v2.6.2→v2.14.4 ）
 
@@ -241,7 +241,7 @@ v1で解決されたIssue等の一覧は下記の通りだ。Vivliostyle.jsと�
 
 - [v1.x](https://github.com/vivliostyle/vfm/milestone/3?closed=1)
 
-### ライブラリ：Themes
+### ライブラリ：Vivliostyle Themes
 
 Vivliostyleプロダクトが共通して使えるスタイルファイルのライブラリーが[本プロダクト](https://github.com/vivliostyle/themes)だ。スタイルを定義した複数のThemeファイル群と、それらThemeを作成するためのツール群から成り立っている。
 
@@ -266,15 +266,15 @@ CLI（コマンドライン・インターフェイス）でMarkdownをHTMLに�
 
 このような開発の結果、今期も本プロダクトはさまざまな機能アップを果たすことができた。中でも大きなものは、仮想環境下で実行できるDockerモードのサポートだろう（[v4.0.0](https://github.com/vivliostyle/vivliostyle-cli/releases/tag/v4.0.0)）。Dockerはプログラムの実行環境を仮想化してくれる。これにより、OSやブラウザ、Vivliostyle CLI本体をバージョンアップすることで、出力結果が変わってしまうトラブルから解放された。こうした冪等性／信頼性の確保は、実務でVivliostyle CLIを利用したいユーザーにとって不可欠なもののはずだ。
 
-これ以外にもマイナーながらいくつもの機能が追加されている。ここでは本プロダクトのメンテナーである[spring-raining](https://github.com/spring-raining)氏が、第4期終了直後に開催されたユーザーイベント[「Vivliostyle ユーザーと開発者の集い 2021春」](https://vivliostyle.connpass.com/event/208401/)において、[「Vivliostyle CLI update - 2022 Spring」](https://www.youtube.com/watch?v=GMzLJ17MLOk)として発表したものに従いながら、v4.0.0以降のアップデート内容をまとめてみよう。
+これ以外にもマイナーながらいくつもの機能が追加されている。ここでは本プロダクトのメンテナーである[spring-raining](https://github.com/spring-raining)氏が、第4期終了直後に開催されたユーザーイベント[「Vivliostyle ユーザーと開発者の集い 2022春」](https://vivliostyle.connpass.com/event/208401/)において、[「Vivliostyle CLI update - 2022 Spring」](https://www.youtube.com/watch?v=GMzLJ17MLOk)として発表したものに従いながら、v4.0.0以降のアップデート内容をまとめてみよう。
 
 - 外部Webフォントサービスの利用等のために`--http`オプションを追加 [#234](https://github.com/vivliostyle/vivliostyle-cli/pull/234)
 - プリインストール以外のビュアーを指定する`--viewer`オプションの追加 [#234](https://github.com/vivliostyle/vivliostyle-cli/pull/234)
 - 出力するPDFのメタ情報をより詳細に改善 [#239](https://github.com/vivliostyle/vivliostyle-cli/pull/239)
-- PDFの読み方向（右閉じ／左閉じ）が指定できるように [#240](https://github.com/vivliostyle/vivliostyle-cli/pull/240)
+- PDFの読み方向（右綴じ／左綴じ）が指定できるように [#240](https://github.com/vivliostyle/vivliostyle-cli/pull/240)
 - CLIコマンドをAPI化し、JavaScriptから操作可能に [#243](https://github.com/vivliostyle/vivliostyle-cli/pull/243)
 - 複数出版物の同時出力 [#268](https://github.com/vivliostyle/vivliostyle-cli/pull/268)
-- Vivliostyle.config.jsのvfmオプションを、CLI内部でのVFM実行時にそのまま渡すことが可能に [#264](https://github.com/vivliostyle/vivliostyle-cli/pull/264)
+- Vivliostyle.config.jsの`vfm`オプションを、CLI内部でのVFM実行時にそのまま渡すことが可能に [#264](https://github.com/vivliostyle/vivliostyle-cli/pull/264)
 - エラー出力をより読みやすく改善 [#264](https://github.com/vivliostyle/vivliostyle-cli/pull/264)
 
 なお、spring-raining氏はこの時の発表で、本プロダクトの将来構想について以下のように述べている。次期への期待が膨らむ。
@@ -299,7 +299,7 @@ CLI（コマンドライン・インターフェイス）でMarkdownをHTMLに�
 
 ### Webアプリ：Vivliostyle Pub
 
-[本プロダクト](https://github.com/vivliostyle/vivliostyle-pub)は、ここまで述べてきたVivliostyle.js、VFM、Themes、Vivliostyle CLIをクラウド上にデプロイしたWebアプリだ。ユーザーがブラウザ上の左側画面でMarkdownを書けば、即座にCSS組版して左側画面にプレビュー表示する（図6）。
+[本プロダクト](https://github.com/vivliostyle/vivliostyle-pub)は、ここまで述べてきたVivliostyle.js、VFM、Vivliostyle Themes、Vivliostyle CLIをクラウド上にデプロイしたWebアプリだ。ユーザーがブラウザ上の左側画面でMarkdownを書けば、即座にCSS組版して右側画面にプレビュー表示する（図6）。
 
 ![図6 アルファ版を公開したVivliostyle Pub](./img/fig-6.png){ width=100% }
 
@@ -319,7 +319,7 @@ AyumuTakai氏は11月2日から`prototype`ブランチで開発を始めてい�
 
 この結果、前掲図7で示したプルリクエスト数にはAyumuTakai氏の作業はほとんど現れなかったが、前掲図8においてprototypeブランチのコミット数を重ね合わせることで、彼の貢献が可視化できた。この時のプルリクエスト、[アルファ版準備 #142 ](https://github.com/vivliostyle/vivliostyle-pub/pull/142)の記録をみると、ここで追加されたユーザーインターフェースの変更や追加した機能のリストを見ることができる。どれも本プロダクトをごく普通に使うためには、必須の要素であったことが分かる（なお、AyumuTakai氏は本業多忙を理由に、3月いっぱいで開発から退いた。彼の貢献に心から感謝する）。
 
-ここまで本プロダクトの開発を直接担当したAyumuTakai氏やtakanakahiko氏の貢献について述べた。しかし忘れてはいけないのは、前節まで説明したVivliostyle.js、VFM、Themes、そしてVivliostyle CLIのアップデートの成果を、本プロダクトはコンポーネントを入れ替えるだけで、そのまま取り込むことができたということだ。
+ここまで本プロダクトの開発を直接担当したAyumuTakai氏やtakanakahiko氏の貢献について述べた。しかし忘れてはいけないのは、前節まで説明したVivliostyle.js、VFM、Vivliostyle Themes、そしてVivliostyle CLIのアップデートの成果を、本プロダクトはコンポーネントを入れ替えるだけで、そのまま取り込むことができたということだ。
 
 たとえば、前掲図6を見るとWebフォントを表示しているが、これは本プロダクトではなく、Vivliostyle.jsのアップデートによって実現した機能だ。まさにエコシステムとしてのVivliostyleプロダクトの力を実感できよう。
 
@@ -346,7 +346,7 @@ AyumuTakai氏は11月2日から`prototype`ブランチで開発を始めてい�
 - [2022/01/24 Vivliostyleの組版でJavaScriptが使えるようになりました](https://vivliostyle.org/ja/blog/2022/01/24/JavaScript-can-now-be-used-in-typesetting-by-Vivliostyle/)
 - [2022/02/08 行末処理が進化して多様な組版ができるように](https://vivliostyle.org/ja/blog/2022/02/08/Improved-of-line-end-handling-and-support-for-page-progression-direction-in-PDF/)
 
-また、Themesの節で新しく追加したことに述べたユーザーガイドは、上記2のうちの一つだ。そして上記3も、Vivliostyle Pubのアルファ版公開に備えて、今期新しく追加したユーザーガイドだ。
+また、Vivliostyle Themesの節で新しく追加したことに述べたユーザーガイドは、上記2のうちの一つだ。そして上記3も、Vivliostyle Pubのアルファ版公開に備えて、今期新しく追加したユーザーガイドだ。
 
 いずれも執筆はMarkdownでおこなうが、それをHTMLに変換するコンバーターは、1は[Jekyll](http://jekyllrb-ja.github.io/)、2と3は[docute](https://github.com/egoist/docute)、4は[Pandoc](https://pandoc-doc-ja.readthedocs.io/ja/latest/users-guide.html)とバラバラであるという課題がある。この状況を改善し、さらにVFMの豊富な表現を使えるようにしようというのが、 [vivliostyle-sitegen](https://github.com/vivliostyle/vivliostyle-sitegen)であることは前述したとおりだ。
 
