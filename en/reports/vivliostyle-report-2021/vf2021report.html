@@ -901,29 +901,29 @@
 <p>The previous fiscal year also saw constant pull requests throughout the year, but the pace of development this fiscal year was even faster than that. The functional upgrades mentioned above were also realized as a result of such enthusiastic development.</p>
 <p>The important thing here is that the enhancements Vivliostyle.js also spilled over into the Vivliostyle CLI and Vivliostyle Pub that incorporated it, and they immediately implemented the new features. It was a scene where the true nature of the library was demonstrated.</p>
 <h3 id="library-vfm-v1.0.0-alpha.17---v1.2.1">Library: VFM (v1.0.0-alpha.17 -&gt; v1.2.1)</h3>
-<p>書籍むけ組版に最適化したMarkdown方言である<a href="https://github.com/vivliostyle/vfm">VFM (Vivliostyle Flavored Markdown)</a>は、今期v1をリリースすることができた。このv1は、きたるべきv2への準備という側面もある。</p>
-<p>もともと本プロダクトは、Markdownへの変換エンジンとして<a href="https://remark.js.org/">Remark</a>を採用していた。しかし、その新バージョンRemark 13には過去のバージョンと非互換な変更が多く含まれていることから、その実装は多大な作業量が予想された。</p>
-<p>そこで、まずRemark 13なしに実装できる範囲の機能を備えたバージョンをv1としてリリースし、その後v2としてRemark 13への対応に取り組む方針を決めていた。詳細はメンテナーである<a href="https://github.com/akabekobeko">akabekobeko</a>氏の発表を参照してほしい。</p>
+<p>VFM (Vivliostyle Flavored Markdown)(https://github.com/vivliostyle/vfm), a Markdown dialect optimized for book typesetting, has released v1 this fiscal year. This v1 is partly a preparation for the upcoming v2.</p>
+<p>Originally, this product used <a href="https://remark.js.org/">Remark</a> as its Markdown conversion engine. However, its new version, Remark 13, contains many changes that are incompatible with past versions, and its implementation was expected to be a significant amount of work.</p>
+<p>Therefore, we decided to first release a version with a range of functions that can be implemented without Remark 13 as v1, and then work on support for Remark 13 as v2. For details, please refer to the presentation by <a href="https://github.com/akabekobeko">akabekobeko</a>, the maintainer.</p>
 <ul>
 <li><a href="https://speakerdeck.com/akabekobeko/vfm-dev-stat">Presentation: Development status of Vivliostyle Flavored Markdown; Japanese</a>（akabekobeko）</li>
 </ul>
-<p>2021年7月21日にリリースされた<a href="https://github.com/vivliostyle/vfm/releases/tag/v1.0.2">v1.0.2</a>が、このRemark 13なしに実現できる機能を実装したものだ。同じく詳細は下記を参照されたい。</p>
+<p>The <a href="https://github.com/vivliostyle/vfm/releases/tag/v1.0.2">v1.0.2</a> released on July 21, 2021 implements the functionality that can be achieved without this Remark 13. See below for details.</p>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=lF6Mb2DXJK0">Presentation: Release of VFM 1.0 and future prospects; Japanese</a>（akabekobeko）</li>
 </ul>
-<p>v1で解決されたIssue等の一覧は下記の通りだ。Vivliostyle.jsと同様、こうした機能アップは速やかにVivliostyle CLIをはじめとしたプロダクトに実装されている。</p>
+<p>As with Vivliostyle.js, these enhancements were quickly implemented in the Vivliostyle CLI and other products.</p>
 <ul>
 <li><a href="https://github.com/vivliostyle/vfm/milestone/3?closed=1">v1.x</a></li>
 </ul>
 <h3 id="library-themes">Library: Themes</h3>
-<p>Vivliostyleプロダクトが共通して使えるスタイルファイルのライブラリーが<a href="https://github.com/vivliostyle/themes">本プロダクト</a>だ。スタイルを定義した複数のThemeファイル群と、それらThemeを作成するためのツール群から成り立っている。</p>
-<p>今期も複数回のマイナーアップデートをおこなった。しかし成果として取り上げるべきは、むしろ下記ユーザーガイドの公開だろう。</p>
+<p><a href="https://github.com/vivliostyle/themes">This product</a> is a library of style files that all Vivliostyle products share. It consists of a set of Theme files that define styles and a set of tools for creating these Themes.</p>
+<p>Several minor updates were made this fiscal year. However, the most significant achievement is the release of the User’s Guide, which is shown below.</p>
 <ul>
 <li><a href="https://vivliostyle.github.io/themes/#/tutorial/step0.md">Development Tutorial</a></li>
 <li><a href="https://vivliostyle.github.io/themes/#/official">Operational Guideline</a></li>
 </ul>
-<p>ユーザーは本プロダクトによって、Vivliostyleプロダクトを使う際に新しくスタイルを設定する手間が不要になり、より早く簡単に文書作成ができるようになる。しかし、そのためにはユーザーの需要に応じた多種多様なThemeの公開が必要となる。しかし、私たちだけで多くのThemeを作成・公開するのは現実的ではない。個々のユーザーが簡単に新しいThemeを作ることができ、また、それを気軽に公開してもらうようにしなくてはならない。そうすることでライブラリーとしての本プロダクトがより便利になり、それがさらに新しいTheme作成を促すと言った循環が成立するはずだ。</p>
-<p>ところが現状は本プロダクトの認知度が低く、まだまだ目標への道のりは遠い。そこでメンテナーである<a href="https://github.com/yamasy1549">yamasy1549</a>氏が考えたのが、まずThemeの使い方、作り方などを知ってもらうためのドキュメント整備だった。上記ユーザーガイドはその第一歩といえるものだ。より詳しくは下記を参照してほしい。</p>
+<p>This product will allow users to create documents faster and easier by eliminating the need to set up new styles when using Vivliostyle products. However, to achieve this, it is necessary to publish a wide variety of themes in response to user demand. However, it is not realistic for us to create and publish many themes by ourselves. We need to make it easy for individual users to create new themes and to make them easily available to the public. This will make this product more useful as a library, which in turn will encourage the creation of new themes.</p>
+<p>However, at present, awareness of this product is low and there is still a long way to go to reach the goal. Therefore, <a href="https://github.com/yamasy1549">yamasy1549</a>, the maintainer of this product, decided to develop a document to let people know how to use the Theme and how to create it. The above user guide is the first step. For more details, please refer to the following.</p>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=auqefAA0Bx0">Presentation: Hands-on with Vivliostyle Themes; Japanese</a>（yamasy1549）</li>
 <li><a href="https://www.youtube.com/watch?v=NioXx9NFUZU">Presentation: CSS typesetting tutorial starting at vivliostyle.org; Japanese</a>（yamasy1549）</li>
