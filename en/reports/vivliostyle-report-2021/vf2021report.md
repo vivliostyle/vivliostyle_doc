@@ -205,7 +205,7 @@ From the next section, we will explain the development status of each product in
 [Vivliostyle.js](https://github.com/vivliostyle/vivliostyle.js) is the actual CSS typesetting software and is the core of the Vivliostyle product. Fortunately, we were able to make significant functional improvements to this product this fiscal year, as follows.
 
 - **Improved typesetting capabilities**
-     - [Presentation: Vivliostyle CoreにおけるCSS Paged Media の実装; Japanese](https://www.youtube.com/watch?v=_y3YBHNN2Oc) (Shinyu Murakami)
+     - [Presentation: Implementing CSS Paged Media in Vivliostyle Core; Japanese](https://www.youtube.com/watch?v=_y3YBHNN2Oc) (Shinyu Murakami)
      - [Presentation: Vivliostyle.js evolution and future development plans; Japanese](https://www.youtube.com/watch?v=2hvsMhTJai4) (Shinyu Murakami)
      - [Blog: Recent Vivliostyle.js updates](https://vivliostyle.org/blog/2021/10/12/recent-vivliostyle-js-updates/) (Katsuhiro Ogata)
      - [Blog: Line end handling has been evolved to allow multiple typesetting options](https://vivliostyle.org/blog/2022/02/08/Improved-of-line-end-handling-and-support-for-page-progression-direction-in-PDF/) (Katsuhiro Ogata)
@@ -327,51 +327,50 @@ In this way, although it was far behind our original goal, we were able to annou
 
 ### Web content and its production system
 
-ここでは、下記のVivliostyleに関わるユーザー向けドキュメントと、その制作システムを一括して取り上げる。
+This section will collectively address the following user documents related to Vivliostyle and its production system.
 
-1. [vivliostyle.org](https://github.com/vivliostyle/vivliostyle.org)（[Webサイト本体](https://vivliostyle.org/ja/)）
-2. [docs.vivliostyle.org](https://github.com/vivliostyle/docs.vivliostyle.org) （[各プロダクトのユーザーガイド](https://vivliostyle.org/ja/documents/)）
-3. [docs-vivliostyle-pub](https://github.com/vivliostyle/docs-vivliostyle-pub) （[Vivliostyle Pubのユーザーガイド](https://vivliostyle.github.io/docs-vivliostyle-pub/#/ja/)）
-4. [vivliostyle_doc](https://github.com/vivliostyle/vivliostyle_doc)（[サンプルページ](https://vivliostyle.org/ja/samples/)や[事業報告書](https://vivliostyle.org/ja/about-us/)）
+1. [vivliostyle.org](https://github.com/vivliostyle/vivliostyle.org)（[Foundation's official website](https://vivliostyle.org/ja/)）
+2. [docs.vivliostyle.org](https://github.com/vivliostyle/docs.vivliostyle.org) （[User guides for each product](https://vivliostyle.org/ja/documents/)）
+3. [docs-vivliostyle-pub](https://github.com/vivliostyle/docs-vivliostyle-pub) （[Vivliostyle Pub User Guide](https://vivliostyle.github.io/docs-vivliostyle-pub/#/ja/)）
+4. [vivliostyle_doc](https://github.com/vivliostyle/vivliostyle_doc)（[Sample page](https://vivliostyle.org/ja/samples/) and [Annual reports](https://vivliostyle.org/ja/about-us/)）
 
-当法人にとって、もっとも身近な情報発信のツールは上記1におけるブログである。今期は以下の8本の記事を更新した。
+The most familiar information dissemination tool for us is the blog in #1 above. The following eight articles were updated during this fiscal year.
 
-- [2021/04/21 Vivliostyle の最新アップデート — CLI 改良と CSS Paged Media サポートの充実](https://vivliostyle.org/ja/blog/2021/04/21/vivliostyle-improved-css-paged-media-support/)
-- [2021/04/23 「Vivliostyle ユーザーと開発者の集い 2021春」開催報告](https://vivliostyle.org/ja/blog/2021/04/23/meetup-2021-spring-report/)
-- [2021/06/16 JEPAセミナーでVivliostyleについて報告](https://vivliostyle.org/ja/blog/2021/06/16/Presentation-at-JEPA-Seminar/)
-- [2021/06/26 技術書典 11 出展 & 合同誌無料配布キャンペーンのお知らせ](https://vivliostyle.org/ja/blog/2021/06/26/make-books-with-vivliostyle-vol5/)
-- [2021/07/02 2020年度事業報告書を公開します](https://vivliostyle.org/ja/blog/2021/07/02/New-FY2020-Report-Released/)
-- [2021/10/12 最近のVivliostyle.jsの進化について](https://vivliostyle.org/ja/blog/2021/10/12/recent-vivliostyle-js-updates/)
-- [2021/11/17 「Vivliostyle ユーザーと開発者の集い 2021秋」開催報告](https://vivliostyle.org/ja/blog/2021/11/17/meetup-2021-autumn-report/)
-- [2022/01/24 Vivliostyleの組版でJavaScriptが使えるようになりました](https://vivliostyle.org/ja/blog/2022/01/24/JavaScript-can-now-be-used-in-typesetting-by-Vivliostyle/)
-- [2022/02/08 行末処理が進化して多様な組版ができるように](https://vivliostyle.org/ja/blog/2022/02/08/Improved-of-line-end-handling-and-support-for-page-progression-direction-in-PDF/)
+- [2021/04/21 Updates on Vivliostyle—Improved CLI and CSS Paged Media support](https://vivliostyle.org/blog/2021/04/21/vivliostyle-improved-css-paged-media-support/)
+- [2021/04/23 Event report of “Vivliostyle User/Dev meetup Spring 2021”](https://vivliostyle.org/blog/2021/04/23/meetup-2021-spring-report/)
+- [2021/06/16 Presentation about Vivliostyle at JEPA seminar](https://vivliostyle.org/blog/2021/06/16/Presentation-at-JEPA-Seminar/)
+- [2021/06/26 技術書典 11 出展 & 合同誌無料配布キャンペーンのお知らせ; Japanese](https://vivliostyle.org/ja/blog/2021/06/26/make-books-with-vivliostyle-vol5/)
+- [2021/07/02 New FY2020 Report Released](https://vivliostyle.org/blog/2021/07/02/New-FY2020-Report-Released/)
+- [2021/10/12 Recent Vivliostyle.js updates](https://vivliostyle.org/blog/2021/10/12/recent-vivliostyle-js-updates/)
+- [2021/11/17 Event report of “Vivliostyle User/Dev Meetup Autumn 2021”](https://vivliostyle.org/blog/2021/11/17/meetup-2021-autumn-report/)
+- [2022/01/24 JavaScript can now be used in typesetting by Vivliostyle](https://vivliostyle.org/blog/2022/01/24/JavaScript-can-now-be-used-in-typesetting-by-Vivliostyle/)
+- [2022/02/08 Line end handling has been evolved to allow multiple typesetting options](https://vivliostyle.org/blog/2022/02/08/Improved-of-line-end-handling-and-support-for-page-progression-direction-in-PDF/)
 
-また、Vivliostyle Themesの節で新しく追加したことに述べたユーザーガイドは、上記2のうちの一つだ。そして上記3も、Vivliostyle Pubのアルファ版公開に備えて、今期新しく追加したユーザーガイドだ。
+Also, the user guide mentioned as newly added in the Vivliostyle Themes section is one of the #2 above. And #3 above is another user guide newly added this fiscal year in preparation for the alpha release of Vivliostyle Pub.
 
-いずれも執筆はMarkdownでおこなうが、それをHTMLに変換するコンバーターは、1は[Jekyll](http://jekyllrb-ja.github.io/)、2と3は[docute](https://github.com/egoist/docute)、4は[Pandoc](https://pandoc-doc-ja.readthedocs.io/ja/latest/users-guide.html)とバラバラであるという課題がある。この状況を改善し、さらにVFMの豊富な表現を使えるようにしようというのが、 [vivliostyle-sitegen](https://github.com/vivliostyle/vivliostyle-sitegen)であることは前述したとおりだ。
-
+All of them are written in Markdown, but the converters for converting them to HTML are different: [Jekyll](http://jekyllrb-ja.github.io/) for #1, [docute](https://github.com/egoist/docute) for #2 and #3, and [Pandoc](https://pandoc-doc-ja.readthedocs.io/ja/latest/users-guide.html) for #4. As mentioned above, [vivliostyle-sitegen](https://github.com/vivliostyle/vivliostyle-sitegen) is an attempt to improve this situation and further enable the use of VFM's rich expressions.
 
 ### Challenges for the next fiscal year and how to address them
 
-以上、今期におけるVivliostyleプロダクトの開発状況を説明した。創立当初、当法人のプロダクトは現在のVivliostyle Viewer／Vivliostyle.jsと、Vivliostyle CLIにつながるものだけであった。そこから毎年少しずつリポジトリを増やしていき、前節まで述べてきたようなプロダクト間のエコシステムが機能し始めるところまで辿り着いた。
+So far, we have described the development status of Vivliostyle products during the current term. At the beginning, our products were limited to the current Vivliostyle Viewer/Vivliostyle.js and the Vivliostyle CLI. From there, the number of repositories was gradually increased each year, and we have reached the point where the ecosystem among products as described in the previous section is beginning to function.
 
-前章において、今期に単年度黒字を達成したことを報告したが、事業収益のほとんどはVivliostyleプロダクトに関わる受託開発、あるいは過去に納品したプロダクトのメンテナンスにより得られたものだ。つまり当法人の場合、プロダクトの開発とその拡充が、ダイレクトに事業収益確保につながっている。
+In the previous section, we reported that the foundation achieved a profit for the single fiscal year, and most of the revenue was generated from contracted development related to Vivliostyle products and from maintenance of products that had been delivered in the past. In other words, in our case, the development and expansion of our products are directly linked to securing business income.
 
-とはいえ、Vivliostyleプロダクトを拡充しさえすれば、そのまま事業収益が増えていく訳ではない。つまり増益のためにプロダクト拡充は、必要条件ではなく十分条件なのである。では増益を阻むものはなにか。以下のような課題を挙げたい。
+However, simply expanding Vivliostyle products will not necessarily lead to an increase in business income. In other words, product expansion is not a necessary condition for increasing profits, but a sufficient condition. Then, what are the obstacles to increasing profits? We would like to list the following issues.
 
-1. 事業収益のほとんどが受託開発に限られていること
-2. 受託開発を請け負う開発者が限られていること
-3. 受託開発の発注先がほぼ1社に限られていること
+1. Most of the business income is limited to contracted development.
+2. Limited number of developers who undertake contracted development.
+3. Almost only one company places orders for contracted development.
 
-上記1の対処として、受託開発以外の多様な収益の確保が必要だ。たとえばVivliostyle Pubを使った事業収益などが挙げられるだろう。また、第3期に[スポンサー募集ページ](https://vivliostyle.org/ja/sponsors/)を作った後、ほとんど働きかけをしていない寄付金の拡充も真剣に考えるべきだろう。
+To address #1 above, it is necessary to secure a variety of revenues other than contracted development. For example, business income from Vivliostyle Pub. We should also seriously consider expanding the amount of donations we receive, which we have done little to promote since the creation of the [sponsor solicitation page] in the third period.
 
-同じく2については、前章「2021年度正味財産増減計算書」で述べたように、今期は村上代表以外の受託者を確保できたところ、来期も引き続き受託者を確保できるかがカギとなる。たとえば、コミッターの皆さんに受託開発をお願いすることも検討するべきだ。加えて個々のコミッターの負担を減らすために、プロダクト全体でコミッターを増やす努力が求められるだろう。
+To address #2 above, as discussed in the previous section, "Statement of Net Assets Increase/Decrease for FY2021", we were able to secure a trustee other than Representative Murakami this fiscal year, but the key will be whether we can continue to secure a trustee in the next fiscal year. For example, we should consider asking committers to contracted development. In addition, it will be important to make efforts to increase the number of committers for the entire product in order to reduce the burden on individual committers.
 
-最後に3については、発注先の多様化は当然として、あわせて前述1の対処がそのまま3への対処ともなるはずだ。
+Finally, to address #3 above, diversification of ordering sources is a matter of course, and addressing #1 above should also address #3 as it is.
 
 ### Directors
 
-- [村上真雄 (Shinyu Murakami)](https://github.com/MurakamiShinyu)〈代表理事、設立時社員〉
-- [リボアル・フロリアン (Florian Rivoal)](https://github.com/frivoal)〈理事、設立時社員〉
-- [ヨハネス・ウィルム (Johannes Wilm)](https://github.com/johanneswilm)〈理事、設立時社員〉
-- [小形克宏 (Katsuhiro Ogata)](https://github.com/ogwata)〈理事、2020年1月21日より〉
+- [Shinyu Murakami](https://github.com/MurakamiShinyu) (Representative Director, Founding Member)
+- [Florian Rivoal](https://github.com/frivoal) (Director, Founding Member)
+- [Johannes Wilm](https://github.com/johanneswilm) (Director, Founding Member)
+- [Katsuhiro Ogata](https://github.com/ogwata) (Director, From January 21, 2020)
