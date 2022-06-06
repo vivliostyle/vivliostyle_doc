@@ -43,9 +43,9 @@ The following table shows the status of assets held (balance sheet) as of the en
 | Total net assets | -2,516,558 | -3,378,942 | 862,384 |
 | Total liabilities and net assets | 2,352,142    | 458,758    | 1,893,384    |
 
-Assets that can be recovered within one year are called current assets. Total current assets for this fiscal year were 2,239,092 yen, up 1,893,384 yen from the previous period, and total assets, including fixed assets held for longer than one year, were 2,352,142 yen, also up 1,893,384 yen (the amount of fixed assets has not changed since the company was founded).
+Assets that can be recovered within one year are called current assets. Total current assets for this fiscal year were 2,239,092 yen, up 1,893,384 yen from the previous fiscal year, and total assets, including fixed assets held for longer than one year, were 2,352,142 yen, also up 1,893,384 yen (the amount of fixed assets has not changed since the company was founded).
 
-Total liabilities, on the other hand, increased by 1,031,000 yen from last year to 4,868,700 yen. Total net assets, which are total assets minus total liabilities, increased by 862,384 yen from the previous year to -2,516,558 yen. Graph below shows the main indicators on the balance sheet from the first fiscal year (Figure 1). It is striking that total net assets, which had been on a downward trend since its establishment, was able to turn upward in the current term, although still negative.
+Total liabilities, on the other hand, increased by 1,031,000 yen from last year to 4,868,700 yen. Total net assets, which are total assets minus total liabilities, increased by 862,384 yen from the previous year to -2,516,558 yen. Graph below shows the main indicators on the balance sheet from the 1st fiscal year (Figure 1). It is striking that total net assets, which had been on a downward trend since its establishment, was able to turn upward in the current term, although still negative.
 
 ![Figure 1: Changes in Main Indicators in the Balance Sheet since Foundation](./img/fig-1.png){ width=100% }
 
@@ -102,7 +102,7 @@ Next, let's look at the statement of changes in net assets, which shows the deta
 | Designated net assets at end of FY  | 0          | 0          | 0          |
 | **III. Net Assets at End of FY**   | -2,516,558 | -3,378,942 | 862,384 |
 
-First, let's look at “I. General Net Assets”. The term “General net assets” here is the opposite of “Designated Net Assets”. While the latter is property that is designated for use and the corporation cannot decide how to use it, the former is the opposite, allowing the corporation to freely decide how to use it. Since our corporation has no “Designated net assets” as described below, we should be able to grasp the income and expenses for the fourth fiscal year by looking at this section.
+First, let's look at “I. General Net Assets”. The term “General net assets” here is the opposite of “Designated Net Assets”. While the latter is property that is designated for use and the corporation cannot decide how to use it, the former is the opposite, allowing the corporation to freely decide how to use it. Since our corporation has no “Designated net assets” as described below, we should be able to grasp the income and expenses for the 4th fiscal year by looking at this section.
 
 Among the “I. General Net Assets Increase/Decrease” section, what catches the eye is that “Business income” raised 6,267,250 yen, which is 4,763,529 yen more than the previous fiscal year (pale yellow cell). As a result, the “Total ordinary revenues”, which indicates the profit earned in the main business, was able to raise 6,383,802 yen, which is 1,564,934 yen more than the previous year. This revenue amount is about four times that of the previous fiscal year. This was due to the expansion of contract development from external companies, which was also mentioned in the [Previous Business Report](https://vivliostyle.org/viewer/#src=https://vivliostyle.github.io/vivliostyle_doc/ja/reports/vivliostyle-report-2020/vf2020report.html&bookMode=true&f=epubcfi(/2!/4/84)) in the current fiscal year. In addition, although the amount is not a large amount, we were able to obtain 116,546 yen in “Donations received”, which is 55,337 yen more than the previous fiscal year.
 
@@ -112,7 +112,7 @@ Looking further down, “Total valuation gain/loss”, which shows the differenc
 
 At the end of “I. General Net Assets Increase/Decrease” is “General net assets at beginning of FY” and “General net assets at end of FY”. To put it simply, the former is the money carried forward from the previous term, while the latter is the money carried forward to the next term. The former, that is, the “General net assets at beginning of FY” was -3,378,942, while the latter, that is, the “General net assets at end of FY” increased by 862,384 yen to -2,516,558. To put it simply, it shows that although the deficit up to the previous term has been reduced, there is still a long way to go to eliminate it.
 
-The next section, “II. Designated Net Assets Increase/Decrease” are all zero yen, as mentioned above. And the carryover to the 5th period, “III. Net Assets at End of FY” was -2,516,558 yen (the same as “General net assets at end of FY”). Figure 2 shows a graphical representation of the changes in the main indicators on the statement of changes in net assets since the foundation of the company. The graph (Figure 2) shows that all indicators, except for “Business expenses”, have increased significantly.
+The next section, “II. Designated Net Assets Increase/Decrease” are all zero yen, as mentioned above. And the carryover to the 5th fiscal year, “III. Net Assets at End of FY” was -2,516,558 yen (the same as “General net assets at end of FY”). Figure 2 shows a graphical representation of the changes in the main indicators on the statement of changes in net assets since the foundation of the company. The graph (Figure 2) shows that all indicators, except for “Business expenses”, have increased significantly.
 
 ![Figure 2: Changes in Key Indicators in the Net Assets Increase/Decrease Statement since Foundation](./img/fig-2.png){ width=100% }
 
@@ -176,7 +176,7 @@ At the end of Chapter 1, we will look at “Income and Expenditure Statement”,
 
 This fiscal year we were able to achieve a profit for the single fiscal year. The direct cause of this was the expansion of contracted development from outside companies, as mentioned in the previous chapter. However, behind this is the fact that Vivliostyle products have been enhanced and the ecosystem among these products has begun to function. In other words, without these factors, there would have been no expansion of contract development.
 
-Therefore, this chapter describes the development status of each of the Vivliostyle products. We will also explore the challenges for the next period. Again, this is because we have an accumulated deficit, which is not small, and eliminating it is our immediate goal.
+Therefore, this chapter describes the development status of each of the Vivliostyle products. We will also explore the challenges for the next fiscal year. Again, this is because we have an accumulated deficit, which is not small, and eliminating it is our immediate goal.
 
 ### Classification of products and their roles
 
@@ -364,7 +364,7 @@ However, simply expanding Vivliostyle products will not necessarily lead to an i
 2. Limited number of developers who undertake contracted development.
 3. Almost only one company places orders for contracted development.
 
-To address #1 above, it is necessary to secure a variety of revenues other than contracted development. For example, business income from Vivliostyle Pub. We should also seriously consider expanding the amount of donations we receive, which we have done little to promote since the creation of the [sponsor solicitation page] in the third period.
+To address #1 above, it is necessary to secure a variety of revenues other than contracted development. For example, business income from Vivliostyle Pub. We should also seriously consider expanding the amount of donations we receive, which we have done little to promote since the creation of the [sponsor solicitation page] in the 3rd fiscal year.
 
 To address #2 above, as discussed in the previous section, "Statement of Net Assets Increase/Decrease for FY2021", we were able to secure a trustee other than Representative Murakami this fiscal year, but the key will be whether we can continue to secure a trustee in the next fiscal year. For example, we should consider asking committers to contracted development. In addition, it will be important to make efforts to increase the number of committers for the entire product in order to reduce the burden on individual committers.
 
