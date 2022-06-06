@@ -1,5 +1,5 @@
 ---
-title: "Activity Report for FY2021"
+title: "Vivliostyle Foundation FY2021 Activity Report"
 lang: en
 ---
 
@@ -7,13 +7,15 @@ lang: en
 
 ## **Chapter 1: Financial Report for FY2021**
 
+(The 4th Fiscal Year: from April 1, 2021 to March 31, 2022)
+
 ### Foreword
 
-The structure has been changed from the annual report for this fiscal year, with the first section reporting the financial results in comparison with the past, and the second section reporting the activities based on that report.
+The structure of the annual report for this fiscal year has been changed from previous years, with the first section reporting the financial results in comparison with the past, and the second section reporting the activities based on that report.
 
 ### Balance Sheet for FY2021
 
-The following table shows the status of assets held (balance sheet) as of the end of the current period (March 31, 2022). The figures are in yen.
+The following table shows the status of assets held (balance sheet) as of the end of this fiscal year (March 31, 2022). The figures are in yen.
 
 | Title           | **This FY (2021)**    | **Prev. FY (2020)**    | **Increase/Decrease**     |
 | ------------ | ---------- | ---------- | ---------- |
@@ -41,7 +43,7 @@ The following table shows the status of assets held (balance sheet) as of the en
 | Total net assets | -2,516,558 | -3,378,942 | 862,384 |
 | Total liabilities and net assets | 2,352,142    | 458,758    | 1,893,384    |
 
-Assets that can be recovered within one year are called current assets. Total current assets for the current period were 2,239,092 yen, up 1,893,384 yen from the previous period, and total assets, including fixed assets held for longer than one year, were 2,352,142 yen, also up 1,893,384 yen (the amount of fixed assets has not changed since the company was founded).
+Assets that can be recovered within one year are called current assets. Total current assets for this fiscal year were 2,239,092 yen, up 1,893,384 yen from the previous period, and total assets, including fixed assets held for longer than one year, were 2,352,142 yen, also up 1,893,384 yen (the amount of fixed assets has not changed since the company was founded).
 
 Total liabilities, on the other hand, increased by 1,031,000 yen from last year to 4,868,700 yen. Total net assets, which are total assets minus total liabilities, increased by 862,384 yen from the previous year to -2,516,558 yen. Graph below shows the main indicators on the balance sheet from the first fiscal year (Figure 1). It is striking that total net assets, which had been on a downward trend since its establishment, was able to turn upward in the current term, although still negative.
 
@@ -49,7 +51,7 @@ Total liabilities, on the other hand, increased by 1,031,000 yen from last year 
 
 ### Net Assets Increase/Decrease Statement for FY2021
 
-Next, let's look at the statement of changes in net assets, which shows the details of money spent and sales during the current period (April 1, 2020 to March 31, 2021). This is also in yen.
+Next, let's look at the statement of changes in net assets, which shows the details of money spent and sales during this fiscal year (April 1, 2020 to March 31, 2021). This is also in yen.
 
 | Title                | **This FY (2021)** | **Prev. FY (2020)** | **Increase/Decrease** |
 | ----------------- | ---------- | ---------- | ---------- |

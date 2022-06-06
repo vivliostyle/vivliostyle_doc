@@ -18,14 +18,12 @@
 }
 
 html {
-  font-family: "Helvetica Neue",
-    "Helvetica",
-    "Arial","YuGothic", "Yu Gothic", sans-serif;
+font-family: "Optima", "Arial", sans-serif;
 }
 
 body {
   font-size: 94%;
-  line-height: 2;
+  line-height: 1.75;
 }
 
 @media print {
