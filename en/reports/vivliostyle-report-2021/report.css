@@ -1,7 +1,7 @@
 ﻿@page {
   /* size: a4; */
   margin: 10%;
-  font-family: "YuGothic", "Yu Gothic", sans-serif;
+  font-family: "Helvetica Neue","Helvetica","Arial","YuGothic", "Yu Gothic", sans-serif;
   font-size: 9pt;
   line-height: 1;
   @top-center {
@@ -18,12 +18,12 @@
 }
 
 html {
-  font-family: "YuGothic", "Yu Gothic", sans-serif;
+font-family: "Optima", "Arial", sans-serif;
 }
 
 body {
   font-size: 94%;
-  line-height: 2;
+  line-height: 1.75;
 }
 
 @media print {
@@ -82,7 +82,7 @@ h2 ~ h2 ~ h3 ~ h3 {
 
 table {
   border-collapse: collapse;
-  font-size: 94%;
+  font-size: 87.5%;
   line-height: 1.5;
 }
 
@@ -99,39 +99,39 @@ td:nth-child(n+2) {
   text-align: right;
 }
 
-#年度貸借対照表 + p + table>tbody>tr:nth-child(1),
-#年度貸借対照表 + p + table > tbody > tr:nth-child(5),
-#年度貸借対照表 + p + table > tbody > tr:nth-child(11),
-#年度貸借対照表 + p + table > tbody > tr:nth-child(12),
-#年度貸借対照表 + p + table > tbody > tr:nth-child(19),
-#年度貸借対照表 + p + table > tbody > tr:nth-child(20),
-#年度貸借対照表 + p + table > tbody > tr:nth-child(22),
-#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(1),
-#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(7),
-#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(10),
-#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(21),
-#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(25),
-#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(26),
-#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(28),
-#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(32),
-#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(34),
-#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(40),
-#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(41),
-#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(42),
-#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(46),
-#年度収支計算書+p+table>tbody>tr:nth-child(10),
-#年度収支計算書+p+table>tbody>tr:nth-child(19),
-#年度収支計算書+p+table>tbody>tr:nth-child(22),
-#年度収支計算書+p+table>tbody>tr:nth-child(23),
-#年度収支計算書+p+table>tbody>tr:nth-child(31),
-#年度収支計算書+p+table>tbody>tr:nth-child(37),
-#年度収支計算書+p+table>tbody>tr:nth-child(38),
-#年度収支計算書+p+table>tbody>tr:nth-child(39),
-#年度収支計算書+p+table>tbody>tr:nth-child(43){
+#balance-sheet-for-fy2021  + p + table>tbody>tr:nth-child(1),
+#balance-sheet-for-fy2021  + p + table > tbody > tr:nth-child(5),
+#balance-sheet-for-fy2021  + p + table > tbody > tr:nth-child(11),
+#balance-sheet-for-fy2021  + p + table > tbody > tr:nth-child(12),
+#balance-sheet-for-fy2021  + p + table > tbody > tr:nth-child(19),
+#balance-sheet-for-fy2021  + p + table > tbody > tr:nth-child(20),
+#balance-sheet-for-fy2021  + p + table > tbody > tr:nth-child(22),
+#net-assets-increasedecrease-statement-for-fy2021 + p + table > tbody > tr:nth-child(1),
+#net-assets-increasedecrease-statement-for-fy2021 + p + table > tbody > tr:nth-child(7),
+#net-assets-increasedecrease-statement-for-fy2021 + p + table > tbody > tr:nth-child(10),
+#net-assets-increasedecrease-statement-for-fy2021 + p + table > tbody > tr:nth-child(21),
+#net-assets-increasedecrease-statement-for-fy2021 + p + table > tbody > tr:nth-child(25),
+#net-assets-increasedecrease-statement-for-fy2021 + p + table > tbody > tr:nth-child(26),
+#net-assets-increasedecrease-statement-for-fy2021 + p + table > tbody > tr:nth-child(28),
+#net-assets-increasedecrease-statement-for-fy2021 + p + table > tbody > tr:nth-child(32),
+#net-assets-increasedecrease-statement-for-fy2021 + p + table > tbody > tr:nth-child(34),
+#net-assets-increasedecrease-statement-for-fy2021 + p + table > tbody > tr:nth-child(40),
+#net-assets-increasedecrease-statement-for-fy2021 + p + table > tbody > tr:nth-child(41),
+#net-assets-increasedecrease-statement-for-fy2021 + p + table > tbody > tr:nth-child(42),
+#net-assets-increasedecrease-statement-for-fy2021 + p + table > tbody > tr:nth-child(46),
+#income-and-expenditure-statement-for-fy2021+p+table>tbody>tr:nth-child(10),
+#income-and-expenditure-statement-for-fy2021+p+table>tbody>tr:nth-child(19),
+#income-and-expenditure-statement-for-fy2021+p+table>tbody>tr:nth-child(22),
+#income-and-expenditure-statement-for-fy2021+p+table>tbody>tr:nth-child(23),
+#income-and-expenditure-statement-for-fy2021+p+table>tbody>tr:nth-child(31),
+#income-and-expenditure-statement-for-fy2021+p+table>tbody>tr:nth-child(37),
+#income-and-expenditure-statement-for-fy2021+p+table>tbody>tr:nth-child(38),
+#income-and-expenditure-statement-for-fy2021+p+table>tbody>tr:nth-child(39),
+#income-and-expenditure-statement-for-fy2021+p+table>tbody>tr:nth-child(43){
   background-color: #EFF6FD;
 }
 
-#年度正味財産増減計算書+p+table>tbody>tr:nth-child(5){
+#net-assets-increasedecrease-statement-for-fy2021+p+table>tbody>tr:nth-child(5){
     background-color: #f7f6bd;
   }
 

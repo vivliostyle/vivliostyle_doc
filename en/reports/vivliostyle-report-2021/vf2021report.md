@@ -1,5 +1,5 @@
 ---
-title: "Activity Report for FY2021"
+title: "Vivliostyle Foundation FY2021 Activity Report"
 lang: en
 ---
 
@@ -7,13 +7,15 @@ lang: en
 
 ## **Chapter 1: Financial Report for FY2021**
 
+(The 4th Fiscal Year: from April 1, 2021 to March 31, 2022)
+
 ### Foreword
 
-The structure has been changed from the annual report for this fiscal year, with the first section reporting the financial results in comparison with the past, and the second section reporting the activities based on that report.
+The structure of the annual report for this fiscal year has been changed from previous years, with the first section reporting the financial results in comparison with the past, and the second section reporting the activities based on that report.
 
 ### Balance Sheet for FY2021
 
-The following table shows the status of assets held (balance sheet) as of the end of the current period (March 31, 2022). The figures are in yen.
+The following table shows the status of assets held (balance sheet) as of the end of this fiscal year (March 31, 2022). The figures are in yen.
 
 | Title           | **This FY (2021)**    | **Prev. FY (2020)**    | **Increase/Decrease**     |
 | ------------ | ---------- | ---------- | ---------- |
@@ -41,15 +43,15 @@ The following table shows the status of assets held (balance sheet) as of the en
 | Total net assets | -2,516,558 | -3,378,942 | 862,384 |
 | Total liabilities and net assets | 2,352,142    | 458,758    | 1,893,384    |
 
-Assets that can be recovered within one year are called current assets. Total current assets for the current period were 2,239,092 yen, up 1,893,384 yen from the previous period, and total assets, including fixed assets held for longer than one year, were 2,352,142 yen, also up 1,893,384 yen (the amount of fixed assets has not changed since the company was founded).
+Assets that can be recovered within one year are called current assets. Total current assets for this fiscal year were 2,239,092 yen, up 1,893,384 yen from the previous fiscal year, and total assets, including fixed assets held for longer than one year, were 2,352,142 yen, also up 1,893,384 yen (the amount of fixed assets has not changed since the company was founded).
 
-Total liabilities, on the other hand, increased by 1,031,000 yen from last year to 4,868,700 yen. Total net assets, which are total assets minus total liabilities, increased by 862,384 yen from the previous year to -2,516,558 yen. Graph below shows the main indicators on the balance sheet from the first fiscal year (Figure 1). It is striking that total net assets, which had been on a downward trend since its establishment, was able to turn upward in the current term, although still negative.
+Total liabilities, on the other hand, increased by 1,031,000 yen from last year to 4,868,700 yen. Total net assets, which are total assets minus total liabilities, increased by 862,384 yen from the previous year to -2,516,558 yen. Graph below shows the main indicators on the balance sheet from the 1st fiscal year (Figure 1). It is striking that total net assets, which had been on a downward trend since its establishment, was able to turn upward in the current term, although still negative.
 
 ![Figure 1: Changes in Main Indicators in the Balance Sheet since Foundation](./img/fig-1.png){ width=100% }
 
 ### Net Assets Increase/Decrease Statement for FY2021
 
-Next, let's look at the statement of changes in net assets, which shows the details of money spent and sales during the current period (April 1, 2020 to March 31, 2021). This is also in yen.
+Next, let's look at the statement of changes in net assets, which shows the details of money spent and sales during this fiscal year (April 1, 2020 to March 31, 2021). This is also in yen.
 
 | Title                | **This FY (2021)** | **Prev. FY (2020)** | **Increase/Decrease** |
 | ----------------- | ---------- | ---------- | ---------- |
@@ -100,7 +102,7 @@ Next, let's look at the statement of changes in net assets, which shows the deta
 | Designated net assets at end of FY  | 0          | 0          | 0          |
 | **III. Net Assets at End of FY**   | -2,516,558 | -3,378,942 | 862,384 |
 
-First, let's look at “I. General Net Assets”. The term “General net assets” here is the opposite of “Designated Net Assets”. While the latter is property that is designated for use and the corporation cannot decide how to use it, the former is the opposite, allowing the corporation to freely decide how to use it. Since our corporation has no “Designated net assets” as described below, we should be able to grasp the income and expenses for the fourth fiscal year by looking at this section.
+First, let's look at “I. General Net Assets”. The term “General net assets” here is the opposite of “Designated Net Assets”. While the latter is property that is designated for use and the corporation cannot decide how to use it, the former is the opposite, allowing the corporation to freely decide how to use it. Since our corporation has no “Designated net assets” as described below, we should be able to grasp the income and expenses for the 4th fiscal year by looking at this section.
 
 Among the “I. General Net Assets Increase/Decrease” section, what catches the eye is that “Business income” raised 6,267,250 yen, which is 4,763,529 yen more than the previous fiscal year (pale yellow cell). As a result, the “Total ordinary revenues”, which indicates the profit earned in the main business, was able to raise 6,383,802 yen, which is 1,564,934 yen more than the previous year. This revenue amount is about four times that of the previous fiscal year. This was due to the expansion of contract development from external companies, which was also mentioned in the [Previous Business Report](https://vivliostyle.org/viewer/#src=https://vivliostyle.github.io/vivliostyle_doc/ja/reports/vivliostyle-report-2020/vf2020report.html&bookMode=true&f=epubcfi(/2!/4/84)) in the current fiscal year. In addition, although the amount is not a large amount, we were able to obtain 116,546 yen in “Donations received”, which is 55,337 yen more than the previous fiscal year.
 
@@ -110,7 +112,7 @@ Looking further down, “Total valuation gain/loss”, which shows the differenc
 
 At the end of “I. General Net Assets Increase/Decrease” is “General net assets at beginning of FY” and “General net assets at end of FY”. To put it simply, the former is the money carried forward from the previous term, while the latter is the money carried forward to the next term. The former, that is, the “General net assets at beginning of FY” was -3,378,942, while the latter, that is, the “General net assets at end of FY” increased by 862,384 yen to -2,516,558. To put it simply, it shows that although the deficit up to the previous term has been reduced, there is still a long way to go to eliminate it.
 
-The next section, “II. Designated Net Assets Increase/Decrease” are all zero yen, as mentioned above. And the carryover to the 5th period, “III. Net Assets at End of FY” was -2,516,558 yen (the same as “General net assets at end of FY”). Figure 2 shows a graphical representation of the changes in the main indicators on the statement of changes in net assets since the foundation of the company. The graph (Figure 2) shows that all indicators, except for “Business expenses”, have increased significantly.
+The next section, “II. Designated Net Assets Increase/Decrease” are all zero yen, as mentioned above. And the carryover to the 5th fiscal year, “III. Net Assets at End of FY” was -2,516,558 yen (the same as “General net assets at end of FY”). Figure 2 shows a graphical representation of the changes in the main indicators on the statement of changes in net assets since the foundation of the company. The graph (Figure 2) shows that all indicators, except for “Business expenses”, have increased significantly.
 
 ![Figure 2: Changes in Key Indicators in the Net Assets Increase/Decrease Statement since Foundation](./img/fig-2.png){ width=100% }
 
@@ -174,7 +176,7 @@ At the end of Chapter 1, we will look at “Income and Expenditure Statement”,
 
 This fiscal year we were able to achieve a profit for the single fiscal year. The direct cause of this was the expansion of contracted development from outside companies, as mentioned in the previous chapter. However, behind this is the fact that Vivliostyle products have been enhanced and the ecosystem among these products has begun to function. In other words, without these factors, there would have been no expansion of contract development.
 
-Therefore, this chapter describes the development status of each of the Vivliostyle products. We will also explore the challenges for the next period. Again, this is because we have an accumulated deficit, which is not small, and eliminating it is our immediate goal.
+Therefore, this chapter describes the development status of each of the Vivliostyle products. We will also explore the challenges for the next fiscal year. Again, this is because we have an accumulated deficit, which is not small, and eliminating it is our immediate goal.
 
 ### Classification of products and their roles
 
@@ -183,7 +185,7 @@ Before reporting on the development status of each product, let us review its po
 - **Libraries (“common components” that are built into the application)**
     - [Vivliostyle.js (including Vivliostyle Viewer)](https://github.com/vivliostyle/vivliostyle.js)
     - [VFM (Vivliostyle Flavored Markdown)](https://github.com/vivliostyle/vfm)
-    - [Themes](https://github.com/vivliostyle/themes)
+    - [Vivliostyle Themes](https://github.com/vivliostyle/themes)
 - **Generator (converts Markdown+CSS to HTML+CSS)**
     - [Vivliostyle CLI](https://github.com/vivliostyle/vivliostyle-cli)
     - [create-book](https://github.com/vivliostyle/create-book)
@@ -198,14 +200,14 @@ Before reporting on the development status of each product, let us review its po
 
 The above links are to the respective repositories. In other words, the above classification is also a classification of repositories. However, the above classifications are for the sake of clarity and are not necessarily strict. For example, VFM is not only a library but also a generator that converts Markdown to HTML.
 
-From the next section, we will explain the development status of each product in the current fiscal year according to the above classification, referring to announcements made at user events, blog posts, and other sources. For reference, the beginning of FY and end of FY versions are shown in parentheses (except Themes and Vivliostyle Pub, which have no concept of release as a product).
+From the next section, we will explain the development status of each product in the current fiscal year according to the above classification, referring to announcements made at user events, blog posts, and other sources. For reference, the beginning of FY and end of FY versions are shown in parentheses (except Vivliostyle Themes and Vivliostyle Pub, which have no concept of release as a product).
 
 ### Library: Vivliostyle.js (v2.6.2 -> v2.14.4)
 
 [Vivliostyle.js](https://github.com/vivliostyle/vivliostyle.js) is the actual CSS typesetting software and is the core of the Vivliostyle product. Fortunately, we were able to make significant functional improvements to this product this fiscal year, as follows.
 
 - **Improved typesetting capabilities**
-     - [Presentation: Vivliostyle CoreにおけるCSS Paged Media の実装; Japanese](https://www.youtube.com/watch?v=_y3YBHNN2Oc) (Shinyu Murakami)
+     - [Presentation: Implementing CSS Paged Media in Vivliostyle Core; Japanese](https://www.youtube.com/watch?v=_y3YBHNN2Oc) (Shinyu Murakami)
      - [Presentation: Vivliostyle.js evolution and future development plans; Japanese](https://www.youtube.com/watch?v=2hvsMhTJai4) (Shinyu Murakami)
      - [Blog: Recent Vivliostyle.js updates](https://vivliostyle.org/blog/2021/10/12/recent-vivliostyle-js-updates/) (Katsuhiro Ogata)
      - [Blog: Line end handling has been evolved to allow multiple typesetting options](https://vivliostyle.org/blog/2022/02/08/Improved-of-line-end-handling-and-support-for-page-progression-direction-in-PDF/) (Katsuhiro Ogata)
@@ -241,7 +243,7 @@ As with Vivliostyle.js, these enhancements were quickly implemented in the Vivli
 
 - [v1.x](https://github.com/vivliostyle/vfm/milestone/3?closed=1)
 
-### Library: Themes
+### Library: Vivliostyle Themes
 
 [This product](https://github.com/vivliostyle/themes) is a library of style files that all Vivliostyle products share. It consists of a set of Theme files that define styles and a set of tools for creating these Themes.
 
@@ -249,7 +251,6 @@ Several minor updates were made this fiscal year. However, the most significant 
 
 - [Development Tutorial](https://vivliostyle.github.io/themes/#/tutorial/step0.md)
 - [Operational Guideline](https://vivliostyle.github.io/themes/#/official)
-
 
 This product will allow users to create documents faster and easier by eliminating the need to set up new styles when using Vivliostyle products. However, to achieve this, it is necessary to publish a wide variety of themes in response to user demand. However, it is not realistic for us to create and publish many themes by ourselves. We need to make it easy for individual users to create new themes and to make them easily available to the public. This will make this product more useful as a library, which in turn will encourage the creation of new themes.
 
@@ -260,118 +261,118 @@ However, at present, awareness of this product is low and there is still a long 
 
 ### Generator: Vivliostyle CLI (v3.2.1 -> v4.8.2)
 
-CLI（コマンドライン・インターフェイス）でMarkdownをHTMLに変換、出力できるのが[本プロダクト](https://github.com/vivliostyle/vivliostyle-cli)だ。まず月間プルリクエスト数を、前期と比較したグラフを見てほしい。前期ほどではないが、今期もコンスタントに開発が続けられたことが分かる（図5）。
+[This product]((https://github.com/vivliostyle/vivliostyle-cli)) converts Markdown to HTML by CLI (command line interface) and outputs it. First, please take a look at the graph comparing the number of monthly pull requests with the previous fiscal year. Although not as high as in the previous fiscal year, the graph shows that development continued consistently during this fiscal year (Figure 5).
 
-![図5 前期と比較したVivliostyle CLIリポジトリの月間プルリクエスト数](./img/fig-5.png){ width=80% }
+![Figure 5: Monthly pull requests for the Vivliostyle CLI repository compared to the previous fiscal year](./img/fig-5.png){ width=80% }
 
-このような開発の結果、今期も本プロダクトはさまざまな機能アップを果たすことができた。中でも大きなものは、仮想環境下で実行できるDockerモードのサポートだろう（[v4.0.0](https://github.com/vivliostyle/vivliostyle-cli/releases/tag/v4.0.0)）。Dockerはプログラムの実行環境を仮想化してくれる。これにより、OSやブラウザ、Vivliostyle CLI本体をバージョンアップすることで、出力結果が変わってしまうトラブルから解放された。こうした冪等性／信頼性の確保は、実務でVivliostyle CLIを利用したいユーザーにとって不可欠なもののはずだ。
+As a result of these developments, the product was able to achieve a variety of functional enhancements this fiscal year. The most significant of these is support for Docker mode, which allows execution in a virtual environment ([v4.0.0](https://github.com/vivliostyle/vivliostyle-cli/releases/tag/v4.0.0)). Docker virtualizes the program execution environment. This frees users from the trouble of output results changing when the OS, browser, or Vivliostyle CLI itself is upgraded. This kind of idempotency/reliability should be essential for users who want to use the Vivliostyle CLI in practice.
 
-これ以外にもマイナーながらいくつもの機能が追加されている。ここでは本プロダクトのメンテナーである[spring-raining](https://github.com/spring-raining)氏が、第4期終了直後に開催されたユーザーイベント[「Vivliostyle ユーザーと開発者の集い 2021春」](https://vivliostyle.connpass.com/event/208401/)において、[「Vivliostyle CLI update - 2022 Spring」](https://www.youtube.com/watch?v=GMzLJ17MLOk)として発表したものに従いながら、v4.0.0以降のアップデート内容をまとめてみよう。
+Here, let's explain the update contents after v4.0.0 by referring to the presentation ["Vivliostyle CLI update --2022 Spring"](https://www.youtube.com/watch?v=GMzLJ17MLOk) in ["Vivliostyle User / Dev Meetup 2022 Spring"](https://vivliostyle.connpass.com/event/208401/) by [spring-raining](https://github.com/spring-raining) who is the maintainer of this product.
 
-- 外部Webフォントサービスの利用等のために`--http`オプションを追加 [#234](https://github.com/vivliostyle/vivliostyle-cli/pull/234)
-- プリインストール以外のビュアーを指定する`--viewer`オプションの追加 [#234](https://github.com/vivliostyle/vivliostyle-cli/pull/234)
-- 出力するPDFのメタ情報をより詳細に改善 [#239](https://github.com/vivliostyle/vivliostyle-cli/pull/239)
-- PDFの読み方向（右閉じ／左閉じ）が指定できるように [#240](https://github.com/vivliostyle/vivliostyle-cli/pull/240)
-- CLIコマンドをAPI化し、JavaScriptから操作可能に [#243](https://github.com/vivliostyle/vivliostyle-cli/pull/243)
-- 複数出版物の同時出力 [#268](https://github.com/vivliostyle/vivliostyle-cli/pull/268)
-- Vivliostyle.config.jsのvfmオプションを、CLI内部でのVFM実行時にそのまま渡すことが可能に [#264](https://github.com/vivliostyle/vivliostyle-cli/pull/264)
-- エラー出力をより読みやすく改善 [#264](https://github.com/vivliostyle/vivliostyle-cli/pull/264)
+- Added `--http` option for use of external Web font services, etc. [#234](https://github.com/vivliostyle/vivliostyle-cli/pull/234)
+- Added `--viewer` option to specify a viewer other than the preinstalled one [#234](https://github.com/vivliostyle/vivliostyle-cli/pull/234)
+- Improved meta information in output PDF with more detail [#239](https://github.com/vivliostyle/vivliostyle-cli/pull/239)
+- PDF reading direction (right/left binding) can be specified [#240](https://github.com/vivliostyle/vivliostyle-cli/pull/240)
+- CLI commands are converted to API and can be operated from JavaScript [#243](https://github.com/vivliostyle/vivliostyle-cli/pull/243)
+- Multiple publications can now be output simultaneously [#268](https://github.com/vivliostyle/vivliostyle-cli/pull/268)
+- `vfm` options in vivliostyle.config.js can now be passed directly to the internal VFM execution. [#264](https://github.com/vivliostyle/vivliostyle-cli/pull/264)
+- Improved error output for better readability [#264](https://github.com/vivliostyle/vivliostyle-cli/pull/264)
 
-なお、spring-raining氏はこの時の発表で、本プロダクトの将来構想について以下のように述べている。次期への期待が膨らむ。
+In his presentation, spring-raining described his vision for the future of this product as follows Expectations for the next fiscal year are growing.
 
- - **エクスポート先の拡充**
+ - **Expansion of output destinations**
      - EPUB/MOBI
-     - 他のMarkdown方言
-     - 各種小説投稿サイトのテキストフォーマット
- - **外部画像サービスとの連携による表紙の追加機能**
+     - Other Markdown Dialects
+     - Text formatting for various novel submission sites
+ - **Ability to add a cover page in conjunction with an external image service**
 
 ### Generator: create-book (v0.1.6 -> v0.5.1)
 
-[本プロダクト](https://github.com/vivliostyle/create-book)は、Vivliostyle CLIの実行環境をインタラクティブに構築することができるソフトウェア、つまりインストーラーである。ただし、今期はメインテナンス的なアップデートが多く、大きな機能アップはなかった。
+[This product](https://github.com/vivliostyle/create-book) is a software, or installer, that allows users to interactively build an execution environment for the Vivliostyle CLI. However, there were some maintenance updates this fiscal year and no major functional upgrades.
 
 ### Generator: vivliostyle-sitegen
 
-[本プロダクト](https://github.com/vivliostyle/vivliostyle-sitegen)は、VFMを使った静的サイトジェネレーター（Static Site Generator）として構想されたもので、今期に入って新しく開発がスタートしたプロダクトだ。
+[This product](https://github.com/vivliostyle/vivliostyle-sitegen) was conceived as a static site generator using VFM, and development of this product was newly started this fiscal year.
 
-もともとのきっかけは、秋のユーザーイベント（2021年11月14日開催の[CSS組版 Vivliostyle ユーザーと開発者の集い 2021秋](https://vivliostyle.connpass.com/event/227954/)）における自由討議のセッションで、せっかくVFMがv1をリリースするまで成長したのに、これを使ってVivliostyleのサイトや各種ドキュメントが書けないのは残念という声が出たことだった。それに応える形でVFMのメンテナーである[akabekobeko](https://github.com/akabekobeko)氏が手を挙げ、2022年1月から開発がはじまった。
+The original trigger was a free discussion session at a user event in the fall ("Vivliostyle User/Dev Meetup Autumn 2021"](https://vivliostyle.connpass.com/event/227954/) on November 14, 2021) in which VFM released v1, but there were voices saying that it was a pity that VFM could not use it on the Vivliostyle site. In response, VFM maintainer [akabekobeko](https://github.com/akabekobeko) raised his hand, and development began in January 2022.
 
-現在、来期中のリリースを目指して開発がすすめられている。リリース後は [vivliostyle.org](https://github.com/vivliostyle/vivliostyle.org)をはじめとする、Vivliostyleに関わるユーザー向けドキュメント制作システムに実装していく予定だ。そうなれば、豊富な表現力をもつVFMを使ってVivliostyleに関する情報発信ができるようになる。こうして、ますますVivliostyleのエコシステムが広がることになるだろう。
+Development is currently underway with the aim of releasing the system within the next fiscal year. After the release, the system will be implemented in a document production system for Vivliostyle users, such as [vivliostyle.org](https://github.com/vivliostyle/vivliostyle.org). Once this happens, it will be possible to disseminate information about Vivliostyle using VFM, which has a wealth of expressive power. In this way, the Vivliostyle ecosystem will expand even further.
 
 ### Web application: Vivliostyle Pub
 
-[本プロダクト](https://github.com/vivliostyle/vivliostyle-pub)は、ここまで述べてきたVivliostyle.js、VFM、Themes、Vivliostyle CLIをクラウド上にデプロイしたWebアプリだ。ユーザーがブラウザ上の左側画面でMarkdownを書けば、即座にCSS組版して左側画面にプレビュー表示する（図6）。
+[This product](https://github.com/vivliostyle/vivliostyle-pub) is a web application that deploys Vivliostyle.js, VFM, Vivliostyle Themes, and Vivliostyle CLI on the cloud. When a user writes Markdown on the left side of the browser, CSS typesetting is immediately performed and previewed on the right side of the browser (Figure 6).
 
-![図6 アルファ版を公開したVivliostyle Pub](./img/fig-6.png){ width=100% }
+![Figure 6: Vivliostyle Pub, which released an alpha version](./img/fig-6.png){ width=100% }
 
-もともとは2019年度（前々期）において、開発資金確保を目的とした未踏アドバンスト事業への応募のために急遽立ち上げられた。コミッター達が一丸となった2ヵ月間の集中開発をへて、2020年5月にPoC（Proof of Concept、概念実証）まで完成させた（[前期事業報告書](https://vivliostyle.org/viewer/#src=https://vivliostyle.github.io/vivliostyle_doc/ja/reports/vivliostyle-report-2020/vf2020report.html&bookMode=true&userStyle=data:,/*%3Cviewer%3E*/%0A@page%20%7B%20size:%20A4;%20%7D%0A/*%3C/viewer%3E*/&f=epubcfi(/2!/4/32[%E3%83%97%E3%83%AD%E3%83%80%E3%82%AF%E3%83%88%E3%81%AE%E9%96%8B%E7%99%BA%E7%8A%B6%E6%B3%81]))参照）。
+The project was originally launched in a hurry to apply for the Unexplored Advanced Project in FY2019 with the aim of securing development funds. After two months of intensive development by a team of committers, the project was completed to PoC (Proof of Concept) in May 2020 (see [annual report for the previous fiscal year](https://vivliostyle.org/viewer/#src=https://vivliostyle.github.io/vivliostyle_doc/en/reports/vivliostyle-report-2020/vf2020report.html&bookMode=true&userStyle=data:,/*%3Cviewer%3E*/%0A@page%20%7B%20size:%20A4;%20%7D%0A/*%3C/viewer%3E*/&f=epubcfi(/2!/4/38/1:193[promote,support]))).
 
-しかし、2020年6月に落選が決まった後、少しずつコミッターが去っていき、残った[takanakahiko](https://github.com/takanakahiko)氏だけがコツコツと開発を続けてくれていた。そうした状況を一変させたのが2021年11月、[AyumuTakai](https://github.com/AyumuTakai)氏の参入だった。ここで、本プロダクトの月間プルリクエスト数を前期と比較したグラフをご覧いただきたい（図7）。
+However, after the lose in June 2020, the committers gradually left, and only [takanakahiko](https://github.com/takanakahiko) remained and continued to develop steadily. This situation changed drastically in November 2021, when [AyumuTakai](https://github.com/AyumuTakai) joined the project. The graph below shows the number of monthly pull requests for this product compared to the previous fiscal year (Figure 7).
 
-![図7 前期と比較したVivliostyle Pubリポジトリの月間プルリクエスト数](./img/fig-7.png){ width=100% }
+![Figure 7: Monthly pull requests in the Vivliostyle Pub repository compared to the previous fiscal year](./img/fig-7.png){ width=100% }
 
-一見すると今期前半において前期よりも多くプルリクエストをだしている（これはtakanakahiko氏の仕事）ものの、AyumuTakai氏が加わった11月〜翌年2月に関しては、さほど前期と今期の違いはないように見える。そこで指標を変えて、月間コミット数を前期と比較したグラフを見てみよう（図8）。
+At first glance, there are more pull requests in the first half of this fiscal year than in the previous fiscal year (this is takanakahiko's work), but from November to February of the following year, when Ayumu Takai joined, there does not seem to be much difference between the previous fiscal year and this fiscal year. Let us change the indicator and look at the graph comparing the number of monthly commits with the previous fiscal year (Figure 8).
 
-![図8 前期と比較したVivliostyle Pubリポジトリの月間コミット数](./img/fig-8.svg){ width=100% }
+![Figure 8: Number of monthly commits in the Vivliostyle Pub repository compared to the previous fiscal year](./img/fig-8.svg){ width=100% }
 
-青い線は前期の、緑の線は今期のデフォルトブランチに対するコミット数だ。この2つのラインを見る限り、前掲図7の月間プルリクエスト数と同様、11月〜翌年2月に関してはさほど開発は進んでないように見える。ところがグレイのラインに注目してほしい。これは今期のAyumuTakai氏による`prototype`ブランチでの月間コミット数を重ね合わせたものだ。前期4月〜5月のコミット数は4〜5人のチームで開発した結果なのだが、それを凌駕する数のコミットを、たった1人でしていることが分かる。ただし、その開発方法はいささか変則的と言えるものだった。
+The blue line shows the number of commits to the default branch in the previous fiscal year, and the green line shows the number of commits to the default branch in the current fiscal year. Looking at these two lines, as with the monthly number of pull requests in Figure 7 above, it appears that not much development progress was made from November to February of the following year. However, note the gray line. This is the number of monthly commits by Ayumu Takai on the `prototype` branch for the current term. The number of commits in April and May of the previous fiscal year was the result of a team of four to five developers, but the number of commits by just one person exceeds that number. However, the development method was somewhat irregular.
 
-AyumuTakai氏は11月2日から`prototype`ブランチで開発を始めているが、2月に入るまでデフォルトブランチへのプルリクエストは出さず、ひたすら`prototype`ブランチで多くのコミットを積み上げている。もしかしたら、たくさんの改良を次々に加えていった結果、プルリクエストを出すタイミングを失ったのかもしれない。結局、`prototype`ブランチはそのままにして、2月3日に`pre_alpha`というブランチを新規作成し、ここからデフォルトブランチへのプルリクエストを1回だけ出している。
+AyumuTakai started development on the `prototype` branch on November 2, but did not submit a pull request to the default branch until February, and has been accumulating many commits on the `prototype` branch. Perhaps, as a result of adding many improvements one after another, he lost the timing to submit a pull request. In the end, he left the `prototype` branch as it was and created a new branch called `pre_alpha` on February 3, from which he submitted only one pull request to the default branch.
 
-この結果、前掲図7で示したプルリクエスト数にはAyumuTakai氏の作業はほとんど現れなかったが、前掲図8においてprototypeブランチのコミット数を重ね合わせることで、彼の貢献が可視化できた。この時のプルリクエスト、[アルファ版準備 #142 ](https://github.com/vivliostyle/vivliostyle-pub/pull/142)の記録をみると、ここで追加されたユーザーインターフェースの変更や追加した機能のリストを見ることができる。どれも本プロダクトをごく普通に使うためには、必須の要素であったことが分かる（なお、AyumuTakai氏は本業多忙を理由に、3月いっぱいで開発から退いた。彼の貢献に心から感謝する）。
+As a result, although AyumuTakai's work hardly appeared in the number of pull requests shown in Figure 7 above, his contribution could be visualized by superimposing the number of commits in the prototype branch in Figure 8 above. In this pull request, [アルファ版準備 #142](https://github.com/vivliostyle/vivliostyle-pub/pull/142), you can see a list of user interface changes and added features added at this time. It can be seen that all of them were indispensable elements for the normal use of this product (AyumuTakai withdrew from development at the end of March due to the busyness of its main business. We sincerely appreciate his contribution).
 
-ここまで本プロダクトの開発を直接担当したAyumuTakai氏やtakanakahiko氏の貢献について述べた。しかし忘れてはいけないのは、前節まで説明したVivliostyle.js、VFM、Themes、そしてVivliostyle CLIのアップデートの成果を、本プロダクトはコンポーネントを入れ替えるだけで、そのまま取り込むことができたということだ。
+So far, we have described the contributions of AyumuTakai and takanakahiko, who were directly responsible for the development of this product. However, it is important not to forget that this product has been able to incorporate the results of the Vivliostyle.js, VFM, Vivliostyle Themes, and Vivliostyle CLI updates described in the previous sections, simply by replacing the components. This means that this product has been able to incorporate the results of the Vivliostyle.js, VFM, Vivliostyle Themes, and Vivliostyle CLI updates by simply replacing components.
 
-たとえば、前掲図6を見るとWebフォントを表示しているが、これは本プロダクトではなく、Vivliostyle.jsのアップデートによって実現した機能だ。まさにエコシステムとしてのVivliostyleプロダクトの力を実感できよう。
+For example, in Figure 6 above, the Web font is displayed, but this is not this product, but a function realized by the update of the Vivliostyle .js. You can truly feel the power of Vivliostyle products as an ecosystem.
 
-このようにして、当初の目標よりもだいぶずれ込んだが、2022年4月23日開催の[CSS組版 Vivliostyle ユーザーと開発者の集い 2021秋](https://vivliostyle.connpass.com/event/227954/)で、本プロダクトのアルファ版公開を告知することができたのである。
+In this way, although it was far behind our original goal, we were able to announce the alpha release of this product at the ["Vivliostyle User / Dev Meetup 2022 Spring"](https://vivliostyle.connpass.com/event/227954/) held on April 23, 2022.
+
 
 ### Web content and its production system
 
-ここでは、下記のVivliostyleに関わるユーザー向けドキュメントと、その制作システムを一括して取り上げる。
+This section will collectively address the following user documents related to Vivliostyle and its production system.
 
-1. [vivliostyle.org](https://github.com/vivliostyle/vivliostyle.org)（[Webサイト本体](https://vivliostyle.org/ja/)）
-2. [docs.vivliostyle.org](https://github.com/vivliostyle/docs.vivliostyle.org) （[各プロダクトのユーザーガイド](https://vivliostyle.org/ja/documents/)）
-3. [docs-vivliostyle-pub](https://github.com/vivliostyle/docs-vivliostyle-pub) （[Vivliostyle Pubのユーザーガイド](https://vivliostyle.github.io/docs-vivliostyle-pub/#/ja/)）
-4. [vivliostyle_doc](https://github.com/vivliostyle/vivliostyle_doc)（[サンプルページ](https://vivliostyle.org/ja/samples/)や[事業報告書](https://vivliostyle.org/ja/about-us/)）
+1. [vivliostyle.org](https://github.com/vivliostyle/vivliostyle.org)（[Foundation's official website](https://vivliostyle.org/ja/)）
+2. [docs.vivliostyle.org](https://github.com/vivliostyle/docs.vivliostyle.org) （[User guides for each product](https://vivliostyle.org/ja/documents/)）
+3. [docs-vivliostyle-pub](https://github.com/vivliostyle/docs-vivliostyle-pub) （[Vivliostyle Pub User Guide](https://vivliostyle.github.io/docs-vivliostyle-pub/#/ja/)）
+4. [vivliostyle_doc](https://github.com/vivliostyle/vivliostyle_doc)（[Sample page](https://vivliostyle.org/ja/samples/) and [Annual reports](https://vivliostyle.org/ja/about-us/)）
 
-当法人にとって、もっとも身近な情報発信のツールは上記1におけるブログである。今期は以下の8本の記事を更新した。
+The most familiar information dissemination tool for us is the blog in #1 above. The following eight articles were updated during this fiscal year.
 
-- [2021/04/21 Vivliostyle の最新アップデート — CLI 改良と CSS Paged Media サポートの充実](https://vivliostyle.org/ja/blog/2021/04/21/vivliostyle-improved-css-paged-media-support/)
-- [2021/04/23 「Vivliostyle ユーザーと開発者の集い 2021春」開催報告](https://vivliostyle.org/ja/blog/2021/04/23/meetup-2021-spring-report/)
-- [2021/06/16 JEPAセミナーでVivliostyleについて報告](https://vivliostyle.org/ja/blog/2021/06/16/Presentation-at-JEPA-Seminar/)
-- [2021/06/26 技術書典 11 出展 & 合同誌無料配布キャンペーンのお知らせ](https://vivliostyle.org/ja/blog/2021/06/26/make-books-with-vivliostyle-vol5/)
-- [2021/07/02 2020年度事業報告書を公開します](https://vivliostyle.org/ja/blog/2021/07/02/New-FY2020-Report-Released/)
-- [2021/10/12 最近のVivliostyle.jsの進化について](https://vivliostyle.org/ja/blog/2021/10/12/recent-vivliostyle-js-updates/)
-- [2021/11/17 「Vivliostyle ユーザーと開発者の集い 2021秋」開催報告](https://vivliostyle.org/ja/blog/2021/11/17/meetup-2021-autumn-report/)
-- [2022/01/24 Vivliostyleの組版でJavaScriptが使えるようになりました](https://vivliostyle.org/ja/blog/2022/01/24/JavaScript-can-now-be-used-in-typesetting-by-Vivliostyle/)
-- [2022/02/08 行末処理が進化して多様な組版ができるように](https://vivliostyle.org/ja/blog/2022/02/08/Improved-of-line-end-handling-and-support-for-page-progression-direction-in-PDF/)
+- [2021/04/21 Updates on Vivliostyle—Improved CLI and CSS Paged Media support](https://vivliostyle.org/blog/2021/04/21/vivliostyle-improved-css-paged-media-support/)
+- [2021/04/23 Event report of “Vivliostyle User/Dev meetup Spring 2021”](https://vivliostyle.org/blog/2021/04/23/meetup-2021-spring-report/)
+- [2021/06/16 Presentation about Vivliostyle at JEPA seminar](https://vivliostyle.org/blog/2021/06/16/Presentation-at-JEPA-Seminar/)
+- [2021/06/26 技術書典 11 出展 & 合同誌無料配布キャンペーンのお知らせ; Japanese](https://vivliostyle.org/ja/blog/2021/06/26/make-books-with-vivliostyle-vol5/)
+- [2021/07/02 New FY2020 Report Released](https://vivliostyle.org/blog/2021/07/02/New-FY2020-Report-Released/)
+- [2021/10/12 Recent Vivliostyle.js updates](https://vivliostyle.org/blog/2021/10/12/recent-vivliostyle-js-updates/)
+- [2021/11/17 Event report of “Vivliostyle User/Dev Meetup Autumn 2021”](https://vivliostyle.org/blog/2021/11/17/meetup-2021-autumn-report/)
+- [2022/01/24 JavaScript can now be used in typesetting by Vivliostyle](https://vivliostyle.org/blog/2022/01/24/JavaScript-can-now-be-used-in-typesetting-by-Vivliostyle/)
+- [2022/02/08 Line end handling has been evolved to allow multiple typesetting options](https://vivliostyle.org/blog/2022/02/08/Improved-of-line-end-handling-and-support-for-page-progression-direction-in-PDF/)
 
-また、Themesの節で新しく追加したことに述べたユーザーガイドは、上記2のうちの一つだ。そして上記3も、Vivliostyle Pubのアルファ版公開に備えて、今期新しく追加したユーザーガイドだ。
+Also, the user guide mentioned as newly added in the Vivliostyle Themes section is one of the #2 above. And #3 above is another user guide newly added this fiscal year in preparation for the alpha release of Vivliostyle Pub.
 
-いずれも執筆はMarkdownでおこなうが、それをHTMLに変換するコンバーターは、1は[Jekyll](http://jekyllrb-ja.github.io/)、2と3は[docute](https://github.com/egoist/docute)、4は[Pandoc](https://pandoc-doc-ja.readthedocs.io/ja/latest/users-guide.html)とバラバラであるという課題がある。この状況を改善し、さらにVFMの豊富な表現を使えるようにしようというのが、 [vivliostyle-sitegen](https://github.com/vivliostyle/vivliostyle-sitegen)であることは前述したとおりだ。
-
+All of them are written in Markdown, but the converters for converting them to HTML are different: [Jekyll](http://jekyllrb-ja.github.io/) for #1, [docute](https://github.com/egoist/docute) for #2 and #3, and [Pandoc](https://pandoc-doc-ja.readthedocs.io/ja/latest/users-guide.html) for #4. As mentioned above, [vivliostyle-sitegen](https://github.com/vivliostyle/vivliostyle-sitegen) is an attempt to improve this situation and further enable the use of VFM's rich expressions.
 
 ### Challenges for the next fiscal year and how to address them
 
-以上、今期におけるVivliostyleプロダクトの開発状況を説明した。創立当初、当法人のプロダクトは現在のVivliostyle Viewer／Vivliostyle.jsと、Vivliostyle CLIにつながるものだけであった。そこから毎年少しずつリポジトリを増やしていき、前節まで述べてきたようなプロダクト間のエコシステムが機能し始めるところまで辿り着いた。
+So far, we have described the development status of Vivliostyle products during the current term. At the beginning, our products were limited to the current Vivliostyle Viewer/Vivliostyle.js and the Vivliostyle CLI. From there, the number of repositories was gradually increased each year, and we have reached the point where the ecosystem among products as described in the previous section is beginning to function.
 
-前章において、今期に単年度黒字を達成したことを報告したが、事業収益のほとんどはVivliostyleプロダクトに関わる受託開発、あるいは過去に納品したプロダクトのメンテナンスにより得られたものだ。つまり当法人の場合、プロダクトの開発とその拡充が、ダイレクトに事業収益確保につながっている。
+In the previous section, we reported that the foundation achieved a profit for the single fiscal year, and most of the revenue was generated from contracted development related to Vivliostyle products and from maintenance of products that had been delivered in the past. In other words, in our case, the development and expansion of our products are directly linked to securing business income.
 
-とはいえ、Vivliostyleプロダクトを拡充しさえすれば、そのまま事業収益が増えていく訳ではない。つまり増益のためにプロダクト拡充は、必要条件ではなく十分条件なのである。では増益を阻むものはなにか。以下のような課題を挙げたい。
+However, simply expanding Vivliostyle products will not necessarily lead to an increase in business income. In other words, product expansion is not a necessary condition for increasing profits, but a sufficient condition. Then, what are the obstacles to increasing profits? We would like to list the following issues.
 
-1. 事業収益のほとんどが受託開発に限られていること
-2. 受託開発を請け負う開発者が限られていること
-3. 受託開発の発注先がほぼ1社に限られていること
+1. Most of the business income is limited to contracted development.
+2. Limited number of developers who undertake contracted development.
+3. Almost only one company places orders for contracted development.
 
-上記1の対処として、受託開発以外の多様な収益の確保が必要だ。たとえばVivliostyle Pubを使った事業収益などが挙げられるだろう。また、第3期に[スポンサー募集ページ](https://vivliostyle.org/ja/sponsors/)を作った後、ほとんど働きかけをしていない寄付金の拡充も真剣に考えるべきだろう。
+To address #1 above, it is necessary to secure a variety of revenues other than contracted development. For example, business income from Vivliostyle Pub. We should also seriously consider expanding the amount of donations we receive, which we have done little to promote since the creation of the [sponsor solicitation page] in the 3rd fiscal year.
 
-同じく2については、前章「2021年度正味財産増減計算書」で述べたように、今期は村上代表以外の受託者を確保できたところ、来期も引き続き受託者を確保できるかがカギとなる。たとえば、コミッターの皆さんに受託開発をお願いすることも検討するべきだ。加えて個々のコミッターの負担を減らすために、プロダクト全体でコミッターを増やす努力が求められるだろう。
+To address #2 above, as discussed in the previous section, "Statement of Net Assets Increase/Decrease for FY2021", we were able to secure a trustee other than Representative Murakami this fiscal year, but the key will be whether we can continue to secure a trustee in the next fiscal year. For example, we should consider asking committers to contracted development. In addition, it will be important to make efforts to increase the number of committers for the entire product in order to reduce the burden on individual committers.
 
-最後に3については、発注先の多様化は当然として、あわせて前述1の対処がそのまま3への対処ともなるはずだ。
+Finally, to address #3 above, diversification of ordering sources is a matter of course, and addressing #1 above should also address #3 as it is.
 
 ### Directors
 
-- [村上真雄 (Shinyu Murakami)](https://github.com/MurakamiShinyu)〈代表理事、設立時社員〉
-- [リボアル・フロリアン (Florian Rivoal)](https://github.com/frivoal)〈理事、設立時社員〉
-- [ヨハネス・ウィルム (Johannes Wilm)](https://github.com/johanneswilm)〈理事、設立時社員〉
-- [小形克宏 (Katsuhiro Ogata)](https://github.com/ogwata)〈理事、2020年1月21日より〉
+- [Shinyu Murakami](https://github.com/MurakamiShinyu) (Representative Director, Founding Member)
+- [Florian Rivoal](https://github.com/frivoal) (Director, Founding Member)
+- [Johannes Wilm](https://github.com/johanneswilm) (Director, Founding Member)
+- [Katsuhiro Ogata](https://github.com/ogwata) (Director, From January 21, 2020)
