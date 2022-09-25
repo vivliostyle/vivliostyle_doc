@@ -1,0 +1,50 @@
+{
+  "@context": [
+    "https://schema.org",
+    "https://www.w3.org/ns/pub-context"
+  ],
+  "type": "Book",
+  "conformsTo": "https://github.com/vivliostyle/vivliostyle-cli",
+  "author": "spring-raining <harusamex.com@gmail.com>",
+  "inLanguage": "ja",
+  "dateModified": "2022-09-25T01:55:06.767Z",
+  "name": "Vivliostyle で本を作ろう Vol. 6",
+  "readingOrder": [
+    {
+      "url": "content/index.html",
+      "name": "Vivliostyle で本を作ろう Vol. 6",
+      "rel": "contents",
+      "type": "LinkedResource"
+    },
+    {
+      "url": "content/maegaki.html",
+      "name": "まえがき"
+    },
+    {
+      "url": "content/spring-raining/index.html",
+      "name": "あなたが知らないかもしれない CSS 変数活用法"
+    },
+    {
+      "url": "content/mh35/index.html",
+      "name": "GitLab CI/CD を用いた、Vivliostyle 組版事始め"
+    },
+    {
+      "url": "content/akabeko/index.html",
+      "name": "rem へ寄せてゆく"
+    },
+    {
+      "url": "content/ogwata/index.html",
+      "name": "Vivliostyle Pub がフォントを扱う仕組み"
+    },
+    {
+      "url": "content/shinyu/index.html",
+      "name": "Vivliostyle.js における Web 標準 CSS サポートの大改善"
+    },
+    {
+      "url": "content/atogaki.html",
+      "name": "著者プロフィール"
+    }
+  ],
+  "resources": [],
+  "links": []
+}

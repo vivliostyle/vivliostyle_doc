@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>rem へ寄せてゆく</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="akabeko">
+    <link rel="stylesheet" href="../../theme/theme_screen.css">
+  </head>
+  <body>
+    <section id="rem-へ寄せてゆく" class="level1">
+      <h1>rem へ寄せてゆく</h1>
+      <div class="doc-author">アカベコ</div>
+      <p>CSS におけるサイズ単位のひとつである <code>rem</code>。これは主に文字を対象とするものだが、これを他の要素へ適用することについて考察する。</p>
+      <section id="css-のサイズ単位" class="level2">
+        <h2>CSS のサイズ単位</h2>
+        <p>CSS のサイズ単位は絶対長と相対長へ大別される。詳細は以下の記事を参照のこと。</p>
+        <ul>
+          <li>
+            CSS の値と単位 - ウェブ開発を学ぶ | MDN
+            <a href="https://developer.mozilla.org/ja/docs/Learn/CSS/Building_blocks/Values_and_units">https://developer.mozilla.org/ja/docs/Learn/CSS/Building_blocks/Values_and_units</a>
+          </li>
+        </ul>
+        <p>絶対長は他の長さに影響されず、サイズは常に一定。代表的なものは <code>px</code> や <code>pt</code> など。ディスプレイ (以降、本記事ではこの語を PC 向けディスプレイとして用いる) や紙面などの出力媒体で定められた長さとなる。CSS は主に Web ブラウザーを対象とするため <code>px</code> を利用することが多い。本書のように紙面も想定しているならば <code>@media print</code> で <code>pt</code> や <code>cm</code> へ切り替えることもある。</p>
+        <p>相対長はなんらかの長さに対してサイズが変化する。この性質により出力媒体によるサイズの差へ対応しやすい。代表的なものは <code>em</code>、そして本記事の主題である <code>rem</code> など。<code>%</code> は単位ではなく割合だが、用途としては相対なので本記事ではこちらに含める。</p>
+      </section>
+      <section id="絶対相対長の課題と-rem" class="level2">
+        <h2>絶対・相対長の課題と rem</h2>
+        <p>先に絶対長と相対長それぞれの課題を挙げ、それらを解決する手段としての <code>rem</code> を考察する。</p>
+        <section id="絶対長" class="level3">
+          <h3>絶対長</h3>
+          <p>絶対長はそれ自体の長さこと絶対的だが、出力媒体には依存する。媒体が紙面であれば物理サイズとしての出力は固定なのでよい。しかしディスプレイを対象とする場合、解像度とピクセル密度による可変性が課題となる。</p>
+          <p>かつてディスプレイのピクセルは固定的であった。しかし 2010 年に iPhone 4 が採用した Retina ディスプレイのあたりから、表示上の長さは変えず、ピクセル密度を高めて精細化する方式が普及し始める。そして現在 (2022 年) は様々なプラットフォームで高解像度・高精細化が一般化して、ピクセル固定を前提とする <code>px</code> への影響が目立つようになった</p>
+          <p><code>px</code> を指定しても OS や Web ブラウザーがディスプレイ解像度とピクセル密度を加味して、よしなに長さを変更してくれる。しかしこの処理にも限界があって、例えば 4K ディスプレイ (3840 × 2160) 上で <code>font-size: 12px</code> の文字を表示する際、解像度そのままだとディスプレイの物理サイズによっては読めたものではない。物理サイズが 27 インチぐらいあればよいのだが、15 インチなどでは文字が点のように見えるだろう。そのため OS のディスプレイ設定で拡大指定する必要がある。</p>
+          <p>では <code>14px</code>、<code>16px</code> のように大きくしてゆけばよいのだろうか？そうした場合、逆に低解像度の環境としては大きすぎるかもしれない。ここに課題の本質がある。それは絶対長を想定しても実際には可変、つまり相対長のように振る舞うことである。絶対長を保証するには出力媒体を固定しなければならない。</p>
+        </section>
+        <section id="相対長" class="level3">
+          <h3>相対長</h3>
+          <p>相対長は基準に応じて長さを変える柔軟性があるため、出力媒体の差を緩和した表示を可能とする。ただし基準が課題となる。</p>
+          <p><code>em</code> や <code>%</code> は親に指定された長さを基準とするため、サイズ予想が難しい。例えば以下の HTML/CSS において <code>&#x3C;p></code> の <code>font-size</code> は親の <code>.parent</code> に指定された <code>12px</code> を基準とした <code>0.9em</code> となる。そのため <code>10.8px</code> として出力されるが、これは想定どおりだろうか？</p>
+          <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+  <span class="token selector"><span class="token class">.parent</span></span> <span class="token punctuation">{</span>
+    <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">12</span><span class="token unit">px</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token selector">p</span> <span class="token punctuation">{</span>
+    <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">0.9</span><span class="token unit">em</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>style</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>parent<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>p</span><span class="token punctuation">></span></span>テキスト<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+          <p>親のサイズ指定が絶対長ならば、まだよい。これが相対長になるとますます予想は難しくなる。例えば以下の HTML/CSS で <code>&#x3C;p></code> のサイズを予想できるだろうか？正解は <code>9.72px</code> だが、<code>&#x3C;p></code> の位置を <code>.parent</code> 直下へ移動すると前述の <code>10.8px</code> になる。</p>
+          <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+  <span class="token selector"><span class="token class">.parent</span></span> <span class="token punctuation">{</span>
+    <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">12</span><span class="token unit">px</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token selector"><span class="token class">.child</span></span> <span class="token punctuation">{</span>
+    <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">0.9</span><span class="token unit">em</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token selector">p</span> <span class="token punctuation">{</span>
+    <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">0.9</span><span class="token unit">em</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>style</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>parent<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>child<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>p</span><span class="token punctuation">></span></span>テキスト<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>p</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+          <p>この難しさもあってか、<code>em</code> よりも <code>px</code> を選ばれることがある。もしくは <code>em</code> を採用しつつも HTML/CSS を慎重に設計する、BEM のような CSS 命名で親子関係の明確化とある程度の一意性を担保する、などの方法により想定内へ収めたりする。</p>
+          <p>しかし親の長さを基準とする以上、本質的な課題は解決していない。</p>
+        </section>
+        <section id="rem" class="level3">
+          <h3>rem</h3>
+          <p>相対長のひとつに <code>rem</code> がある。</p>
+          <p>これは長さの基準を親ではなくページのルート要素に設定された文字サイズとする点が特徴。HTML のルート要素は <code>&#x3C;html></code> なので、ここが <code>font-size: 16px</code> ならば <code>1rem</code> は <code>16px</code> になる。<code>&#x3C;html></code> の既定文字サイズは Web ブラウザーの設定となるため、<code>rem</code> にも反映される。</p>
+          <p>つまり相対長でありながら基準をひとつとすることで、絶対長のように扱える。試しに相対長の課題として挙げた HTML/CSS へ <code>rem</code> を適用してみよう。これを Web ブラウザーで表示すると、<code>&#x3C;p></code> の文字は <code>14.4px</code> になった。<code>1rem</code> に変えたら <code>16px</code> となるので、このサイズに対する <code>0.9</code> ということなのだろう。</p>
+          <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+  <span class="token selector"><span class="token class">.parent</span></span> <span class="token punctuation">{</span>
+    <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">12</span><span class="token unit">px</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token selector"><span class="token class">.child</span></span> <span class="token punctuation">{</span>
+    <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">0.9</span><span class="token unit">em</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token selector">p</span> <span class="token punctuation">{</span>
+    <span class="token comment">/* 0.9em を 0.9rem に変更 */</span>
+    <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">0.9</span><span class="token unit">rem</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>style</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>parent<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>child<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>p</span><span class="token punctuation">></span></span>テキスト<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>p</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+          <p>ここでひとつ注意が必要。ルート要素 <code>&#x3C;html></code> の文字サイズがどこのように決定されるか？である。これは Web ブラウザーによって挙動が異なるようだ。MacBook Pro 15 2019 (Monterey) 上で試したところ、以下のようになった。</p>
+          <ul>
+            <li>Firefox 103.0.2
+              <ul>
+                <li><code>&#x3C;html></code> の既定は <code>16px</code></li>
+                <li><code>&#x3C;html></code> 要素へ明示的に <code>font-size: 1rem</code> を指定すると Firefox に設定された文字サイズが反映される</li>
+              </ul>
+            </li>
+            <li>Chrome 104.0.5112.101
+              <ul>
+                <li><code>&#x3C;html></code> 要素の指定がなくとも Chrome に設定されたサイズ (この環境だと大 = 20px) が反映される</li>
+              </ul>
+            </li>
+            <li>Safari 15.6.1
+              <ul>
+                <li><code>&#x3C;html></code> の既定は <code>16px</code></li>
+                <li>Safari は最小の文字サイズのみ設定可能、これを下回る <code>font-size</code> は無視されて最小サイズ設定が反映される</li>
+                <li>既定値 <code>16px</code> を基準とした <code>rem</code> が最小サイズを上回れば、それが反映される</li>
+                <li>最小サイズ <code>24px</code> で <code>1rem</code> だと既定の <code>16px</code> なので <code>24px</code> になるが、<code>2rem</code> なら <code>32px</code> なのでそのまま反映される</li>
+              </ul>
+            </li>
+          </ul>
+          <p>ユーザーが明示的に文字サイズを指定した場合を考慮すると、<code>&#x3C;html></code> に対して明示的に <code>1rem</code> を指定するのがよさそうだ。そうすれば <code>em</code> や <code>%</code> と異なり、親要素になにが設定されていても妥当なサイズを設定してくれるだろう。</p>
+        </section>
+      </section>
+      <section id="rem-へ寄せてゆく-1" class="level2">
+        <h2>rem へ寄せてゆく</h2>
+        <p>基本的に <code>rem</code> は文字サイズに対する相対長の単位として使用される。ならば文字と文章が主体となりがちな Web ページは、<code>px</code> や <code>%</code> よりも <code>rem</code> でレイアウトするほうが管理しやすいのではなかろうか？</p>
+        <section id="ページの本文幅" class="level3">
+          <h3>ページの本文幅</h3>
+          <p>例えばヘッダー、フッター、1 カラム中央寄せの本文で構成されたブログがあるとする。HTML として以下を想定。</p>
+          <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>header</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>h1</span><span class="token punctuation">></span></span>ブログ<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>h1</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>nav</span><span class="token punctuation">></span></span>メニュー<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>nav</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>header</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>article</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>h1</span><span class="token punctuation">></span></span>記事 1<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>h1</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>p</span><span class="token punctuation">></span></span>本文<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>article</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>footer</span><span class="token punctuation">></span></span>連絡先<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>footer</span><span class="token punctuation">></span></span></code></pre>
+          <p><code>&#x3C;article></code> の横書き本文を中央寄せにしたい。全体レイアウトは中央寄せとレスポンシブともに適用済みで、ページ幅が十分に広い場合の <code>max-width</code> を想定している。その際、<code>&#x3C;article></code> の幅へ指定するサイズはどうしたらよいだろうか？サイズ指定の候補としては絶対長から <code>px</code>、相対長は <code>%</code> と <code>rem</code> を選んだ。</p>
+          <ul>
+            <li><code>px</code>
+              <ul>
+                <li>絶対長なので <code>1024px</code> などの固定値を指定</li>
+                <li>ディスプレイの解像度によっては極端に狭い幅となる可能性あり</li>
+              </ul>
+            </li>
+            <li><code>%</code>
+              <ul>
+                <li><code>90%</code> や <code>80%</code> などを指定</li>
+                <li>ディスプレイ解像度によっては極端に広い幅となる可能性あり</li>
+              </ul>
+            </li>
+            <li><code>rem</code>
+              <ul>
+                <li><code>40rem</code> など 1 行に表示したいおおよその文字数を指定</li>
+                <li>文字が基準なので本文幅はページ幅の大小に左右されず常に一定</li>
+              </ul>
+            </li>
+          </ul>
+          <p>本文幅の指定として <code>px</code> は現代でも多数ではなかろうか。しかし狭まる分にはレスポンシブレイアウトするとしても、広くなる場合は想定されていないのではなかろうか？高解像度ディスプレイで Web ブラウザーを広げたとき、幅 <code>1024px</code> ですら狭く感じられることがある。</p>
+          <p><code>%</code> はあまり見かけない。しかし稀に <code>90%</code> や <code>80%</code> を指定しているサイトがあり、ページ幅が広いと行長が 100 文字を超えて文章を読むに厳しいことがある。</p>
+          <p><code>rem</code> はどうか。手前味噌だが私のサイト akabeko.me では <code>max-width: 45rem</code> を指定している。他に <code>rem</code> 幅の例を見たことはないが、少なくとも私のサイトは高解像度ディスプレイの広いページ幅でみても、行長としては最大 <code>45rem</code> なので広くも狭くも感じない。</p>
+          <p>メンテナンス性についても <code>%</code> は論外として、<code>px</code> のように解像度を気にしなくて済むため、意外によい方法ではなかろうか？</p>
+        </section>
+        <section id="余白" class="level3">
+          <h3>余白</h3>
+          <p><code>margin</code> や <code>padding</code> の指定についても <code>rem</code> を推したい。</p>
+          <p>これらは <code>font-size</code> のサイズ単位とあわせることでレイアウト予想を立てやすくなる。<code>font-size</code> が <code>px</code> なら <code>px</code>、<code>rem</code> なら <code>rem</code> へ統一するのが好ましい。</p>
+        </section>
+        <section id="画像" class="level3">
+          <h3>画像</h3>
+          <p>画像のサイズ指定は種類による。図や写真などのラスター画像はピクセル数とアスペクト比、本文などのコンテンツ幅を加味して <code>px</code> や <code>%</code> を指定するのがよいだろう。ラスター画像のサイズはピクセル単位となるため、整数倍 <code>px</code> 以外を指定すると綺麗に描画されない可能性もある。</p>
+          <p>UI 画像 (ボタンのアイコンなど) は文字と併置される機会も多いため、<code>rem</code> が好ましい。かつて <code>rem</code> がない時代は UI 画像と文字サイズを <code>px</code> 統一してレイアウトすることが多かった。ラスター画像の描画的にも <code>px</code> 指定は理にかなっている。現在も <code>font-size</code> に <code>px</code> を採用する向きがあるのは、この慣習が一因かもしれない。</p>
+          <p>しかし現代は <code>rem</code> があり、UI 画像も SVG やアイコンフォントのようなベクター画像を選べる。ベクター画像はサイズを変更しても滑らかに描画されるため、<code>rem</code> 指定を採用するよい機会といえる。</p>
+        </section>
+      </section>
+      <section id="おわりに" class="level2">
+        <h2>おわりに</h2>
+        <p>CSS のサイズ単位を <code>rem</code> 寄せにした場合の考察をまとめてみた。「ページの本文幅」で触れているように、私のサイトで導入してみたところ意外によく、React などの View 系ライブラリーで UI コンポーネントを実装する際もレイアウト予想を立てやすいので導入を検討している。</p>
+        <p>本記事は Vivliostyle の本なので、おわりに本記事の主題と関係する Vivliostyle の新機能を紹介する。</p>
+        <p>Vivliostyle は v2.17.0 で CSS 変数へ対応した。</p>
+        <ul>
+          <li>
+            Release v2.17.0 - vivliostyle/vivliostyle.js
+            <a href="https://github.com/vivliostyle/vivliostyle.js/releases/tag/v2.17.0">https://github.com/vivliostyle/vivliostyle.js/releases/tag/v2.17.0</a>
+          </li>
+          <li>
+            CSS カスタムプロパティ (変数) の使用 - CSS: カスケーディングスタイルシート | MDN
+            <a href="https://developer.mozilla.org/ja/docs/Web/CSS/Using_CSS_custom_properties">https://developer.mozilla.org/ja/docs/Web/CSS/Using_CSS_custom_properties</a>
+          </li>
+        </ul>
+        <p>この機能を利用することでサイズ単位を抽象化できるかもしれない。Web と印刷を <code>@media</code> で分岐するように、サイズ指定をすべて CSS 変数化して出力媒体にあったものへ切り替えるのはどうか。</p>
+        <p>レイアウト検証としても役立ちそうだ。</p>
+        <p>例えばサイズ単位が <code>px</code> 中心のページがあるとする。これを <code>rem</code> へ移行させる場合、まずはサイズ指定を役割や値の内容で命名した CSS 変数へ括りだす。それらをレイアウト検証しながら少しずつ <code>rem</code> へ置き換えてゆくのはどうか。検証で問題が起きたら CSS 変数の値を <code>px</code> へ戻せばよい。</p>
+        <p>このように可能性のある機能で、本書のように Vivliostyle を利用したコンテンツの作成が大きく改善しそうな予感がある。</p>
+      </section>
+    </section>
+  </body>
+</html>
