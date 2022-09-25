@@ -1,0 +1,45 @@
+@import url(theme_common.css);
+@import url(partial/page-counter.css);
+
+:root {
+  --vs-page-bleed: 3mm;
+  --vs-page-marks: crop cross;
+  --vs-page-margin-outer: 18mm;
+  --vs-page-margin-inner: 25mm;
+  --vs-prism-background: #000;
+  --vs-prism-color: #fff;
+}
+
+@page {
+  @bottom-center {
+    content: '';
+  }
+}
+
+@page :left {
+  @top-center {
+    content: env(pub-title);
+    text-align: left;
+    padding-top: 4mm;
+  }
+  @bottom-left {
+    content: counter(page);
+    border-left: 1px solid;
+    margin-top: 10mm;
+    padding: 2mm 4mm 15mm 4mm;
+  }
+}
+
+@page :right {
+  @top-center {
+    content: env(doc-title);
+    text-align: right;
+    padding-top: 4mm;
+  }
+  @bottom-right {
+    content: counter(page);
+    border-right: 1px solid;
+    margin-top: 10mm;
+    padding: 2mm 4mm 15mm 4mm;
+  }
+}

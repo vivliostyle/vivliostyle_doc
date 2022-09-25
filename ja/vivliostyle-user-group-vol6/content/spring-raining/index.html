@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>あなたが知らないかもしれない CSS 変数活用法</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="spring-raining">
+    <link rel="stylesheet" href="../../theme/theme_screen.css">
+  </head>
+  <body>
+    <section id="あなたが知らないかもしれない-css-変数活用法" class="level1">
+      <h1>あなたが知らないかもしれない CSS 変数活用法</h1>
+      <div class="doc-author">spring-raining</div>
+      <p>
+        先日、Vivliostyle に大きなアップデートがあり、現代のブラウザで普及が進みつつある CSS Variable (CSS 変数) が Vivliostyle でも使えるようになりました！
+        この CSS Variable、実はこれまでの CSS の概念を大きく覆すものであり、私たちのような Web フロントエンドエンジニアにとってはもはや当たり前のように使われているものですが、最近の CSS の進化を知らない人にはまだまだその活用方法が知られていないようです。
+        この記事では、CSS Variable で実現できることについて、実例を交えて紹介しようと思います。
+      </p>
+      <p>ちなみに、この記事の内容は特に Vivliostyle 特有のものではないので、Vivliostyle だけでなく普段の Web サイト制作にも活用できる内容になっています。ぜひ使ってみてください。</p>
+      <section id="css-variable-と-css-プリプロセッサとの根本的な違い" class="level2">
+        <h2>CSS Variable と CSS プリプロセッサとの根本的な違い</h2>
+        <p>ご存知の人も多くいると思いますが、念のため本題に入る前に変数 (variable) について紹介します。</p>
+        <p>
+          変数とは、あるデータに対して後から参照ができるように名前をつけたものを表します。
+          適切に変数をつけることにより、複雑で抽象的な内容を簡潔にまとめて扱うことができます。
+          また、ある名前に割り当てられた変数の内容 (値) は後から変えることができます<span class="footnote">プログラミング言語によっては変数の内容を変えられないルールもありますが、CSS Variable はユーザーが定義できる全ての変数が可変です。</span>。
+        </p>
+        <p>
+          よくある勘違いとして、CSS Variable は変数なので、SASS や Stylus などの CSS プリプロセッサの変数と役割は変わらない、というものがあります。
+          確かに CSS Variable に保存できる情報は CSS プリプロセッサに似たものと言えますが、これらとは決定的に異なる機能を持っています。
+          それは、CSS Variable は <strong>その内容を任意のタイミングで変えられる</strong> という点です<span class="footnote">ただし、Vivliostyle の環境では組版のビルド時にスタイルシートの内容が固定されるので、CSS Variable の内容を変えた際に再度ビルドする必要があります。もっとも、PDF や紙へ出力した時点でその内容を変えることは不可能なので、Vivliostyle で動的に CSS Variable の内容を変えたいという状況は無いでしょう。</span>。
+          CSS プリプロセッサの変数はビルド時に内容が決まってしまうので、後からその内容を変更できません。
+        </p>
+        <p>CSS Variable は、その内容を変えたタイミングで文字通りブラウザの表示が変わるというリアクティビティ (反応性) を持っています。このリアクティビティにより、これまでは JavaScript などのプログラムでしか実現できなかったような表現が、最小限の CSS でできるようになっています。</p>
+      </section>
+      <section id="css-variableの基本" class="level2">
+        <h2>CSS Variableの基本</h2>
+        <p>CSS Variable を使うこと自体は非常に簡単です。以下のように CSS で宣言することで、変数 <code>--my-variable</code> が定義されます。</p>
+        <pre class="language-css"><code class="language-css"><span class="token selector"><span class="token pseudo-class">:root</span></span> <span class="token punctuation">{</span>
+  <span class="token variable">--my-variable</span><span class="token punctuation">:</span> <span class="token color">purple</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+        <p>ここでポイントが 2 つあります。</p>
+        <ul>
+          <li>CSS Variable の名前はハイフン 2 つ (<code>--</code>) で始める必要があります。変なルールですが、既存の CSS との互換性を保つためです。慣れましょう。</li>
+          <li>どこでも変数を定義できる一般的なプログラミング言語や CSS プリプロセッサとは異なり、CSS Variable はセレクターの中 (ここでは <code>:root</code>) で宣言する必要があります。この理由については後で紹介します。</li>
+        </ul>
+        <p>この変数を参照するためには、CSS の <code>var()</code> 関数を使います。</p>
+        <pre class="language-css"><code class="language-css"><span class="token selector">h1</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span><span class="token variable">--my-variable</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+        <p>こうすることで、<code>--my-variable</code> の内容が展開され、<code>h1</code> 要素に <code>color: purple</code> のスタイルが適用されます。とても簡単ですね！</p>
+      </section>
+      <section id="css-variableのカスケーディング" class="level2">
+        <h2>CSS Variableのカスケーディング</h2>
+        <p>
+          CSS でよく知られる特徴として、プロパティのカスケーディングがあります。
+          例えば、<code>&#x3C;p class="foo">&#x3C;/p></code> という HTML に対して次のような CSS を適用させることを考えます。
+        </p>
+        <pre class="language-css"><code class="language-css"><span class="token selector"><span class="token class">.foo</span></span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token color">red</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">p</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token color">blue</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+        <p><code>.foo</code> と <code>p</code> という 2 つのセレクターはどちらも <code>&#x3C;p class="foo">&#x3C;/p></code> に対して適用されますが、実際にはこの場合 <code>color: red</code> となります。</p>
+        <p>
+          CSS には <strong>詳細度</strong> という考え方があり、スタイルの指定の中で競合する設定があった場合に、セレクターの詳細度にしたがってスタイルが決まるというルールがあります。
+          この場合、詳細度は <code>p</code> よりも <code>.foo</code> のセレクターの方が高いため、こちらの指定が優先して適用されます。
+          また、セレクターが同じ詳細度の場合、後から指定した方が適用されます。
+        </p>
+        <p>
+          CSS Variable にも同様の考え方があり、CSS Variable を宣言したセレクターによって変数の内容の詳細度が変わってきます。
+          例えば、前の章で紹介した <code>:root</code> セレクターは詳細度が最も低いので、より詳細度の高いセレクターの中で同じ名前の CSS Variable の内容を上書きできます。
+          このことから、他のプログラミング言語とは異なり、CSS では変数の宣言する際の順番についての考え方が希薄です。
+          また、宣言がまだ終わっていない CSS Variable を先に参照できるため、一般的な「変数」を想像すると戸惑うこともあるかもしれません。
+          ただこの機能を使いこなすことで、より複雑なスタイルの指定を簡潔に記述していくことができるでしょう。
+        </p>
+        <p>
+          ちなみに、この詳細度をより細かくプラガブルに設定できる <strong>@layer</strong> ルールという新しい仕様もブラウザでの実装が進んでいます。
+          まだ Vivliostyle では使うことができませんが、こちらもぜひ注目してみてください。
+        </p>
+      </section>
+      <section id="css-variableで色を扱う" class="level2">
+        <h2>CSS Variableで色を扱う</h2>
+        <p>
+          CSS の機能の中で最もわかりやすいものは、色を変える機能についてかもしれません。
+          この記事でも、まずは CSS Variable で色を扱うことを考えてみます。
+        </p>
+        <pre class="language-css"><code class="language-css"><span class="token selector"><span class="token class">.fancy-box</span></span> <span class="token punctuation">{</span>
+  <span class="token variable">--box-theme-color</span><span class="token punctuation">:</span> <span class="token hexcode color">#ff00ff</span><span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span><span class="token variable">--box-theme-color</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+        <p>
+          CSS には、色を指定するために複数の方法があります。
+          おそらく一番有名な 16 進数のカラーコード (<code>#ffffff</code>, <code>#000000</code> など) の他にも、<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/named-color">特定の色</a> は名前で指定できます。
+          また、最近は <code>rgb()</code>、<code>hsl()</code> などの関数でも指定できるようになりました。
+          CSS Variable ではどの色の指定方法も使えます。
+        </p>
+        <p>
+          もちろん上のカラーコードで指定する方法でも問題なく使えますが、ここでは個人的なおすすめの方法「数値のみで指定」の方法を紹介します。
+          この方法では、以下の例のように RGB の数値のみで色を設定して、実際に使用する際に <code>rgb()</code> で <code>var()</code> を囲んでいます。
+        </p>
+        <pre class="language-css"><code class="language-css"><span class="token selector"><span class="token class">.fancy-box</span></span> <span class="token punctuation">{</span>
+  <span class="token variable">--box-theme-color</span><span class="token punctuation">:</span> <span class="token number">255</span> <span class="token number">0</span> <span class="token number">255</span><span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">rgb</span><span class="token punctuation">(</span><span class="token function">var</span><span class="token punctuation">(</span><span class="token variable">--box-theme-color</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+        <p>
+          なぜこの方法をおすすめするかというと、カラーコードではなく数値で指定することで、後々に CSS Variable の値を活用しやすくなるためです。
+          たとえば、<code>--box-theme-color</code> と同じ色で透明度が 50%の色を得たい場合でも、次のように指定できます。
+        </p>
+        <pre class="language-css"><code class="language-css"><span class="token selector"><span class="token class">.fancy-box</span></span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">rgb</span><span class="token punctuation">(</span><span class="token function">var</span><span class="token punctuation">(</span><span class="token variable">--box-theme-color</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+        <p>
+          <code>rgb()</code> 関数 (もしくは <code>rgba()</code> 関数) は、RGB の 3 要素の他に透明度を指定する 4 つ目の引数 (関数に与える値) を与えることができ、この例のように <code>0.5</code> を与えることで透明度が 50%の色が得られます。
+          言い換えると、<code>rgb()</code> 関数の 1〜3 番目の引数は <code>var(--box-theme-color)</code> として、4 つ目の引数は <code>0.5</code> として分割して与えているということです。
+          この例のように、CSS Variable は複数の値をまとめて関数の引数に与えられることも特徴です。
+        </p>
+        <section id="実例-カラーテーマを作る" class="level3">
+          <h3>実例: カラーテーマを作る</h3>
+          <p>
+            もう少し発展させて、ユーザーが好きな色を指定できるカラーテーマ機能を作ってみます。
+            以下の例では、<code>--color-key</code> という CSS Variable を一つだけ使っていますが、この数値を変えてみると <code>.fancy-box</code> の要素がさまざまな色に変化していることが確認できます。
+          </p>
+          <pre class="language-css"><code class="language-css"><span class="token selector"><span class="token class">.fancy-box</span></span> <span class="token punctuation">{</span>
+  <span class="token variable">--color-key</span><span class="token punctuation">:</span> <span class="token number">200</span><span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> <span class="token number">0.5</span><span class="token unit">rem</span> <span class="token number">1</span><span class="token unit">rem</span><span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> <span class="token number">0.5</span><span class="token unit">rem</span><span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>
+    <span class="token function">hsl</span><span class="token punctuation">(</span><span class="token function">var</span><span class="token punctuation">(</span><span class="token variable">--color-key</span><span class="token punctuation">)</span> <span class="token number">100</span><span class="token unit">%</span> <span class="token number">80</span><span class="token unit">%</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function">hsl</span><span class="token punctuation">(</span><span class="token function">var</span><span class="token punctuation">(</span><span class="token variable">--color-key</span><span class="token punctuation">)</span> <span class="token number">100</span><span class="token unit">%</span> <span class="token number">40</span><span class="token unit">%</span><span class="token punctuation">)</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">box-shadow</span><span class="token punctuation">:</span> <span class="token number">0</span> <span class="token number">2</span><span class="token unit">px</span> <span class="token number">10</span><span class="token unit">px</span> <span class="token function">hsl</span><span class="token punctuation">(</span><span class="token function">var</span><span class="token punctuation">(</span><span class="token variable">--color-key</span><span class="token punctuation">)</span> <span class="token number">100</span><span class="token unit">%</span> <span class="token number">30</span><span class="token unit">%</span> <span class="token operator">/</span> <span class="token number">0.8</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+          <style>.fancy-box {
+margin: 0 0.5rem;
+padding: 0.5rem 5rem;
+border-radius: 0.5rem;
+background: linear-gradient(
+hsl(var(--color-key) 100% 80%),
+hsl(var(--color-key) 100% 40%)
+);
+box-shadow: 0 2px 10px hsl(var(--color-key) 100% 30% / 0.8);
+}</style>
+          <figure>
+            <div>
+              <span class="fancy-box" style="--color-key: 50;">color-key: 50</span>
+              <span class="fancy-box" style="--color-key: 200;">color-key: 200</span>
+            </div>
+            <figcaption><code>--color-key</code>による色相変化の例</figcaption>
+          </figure>
+          <p>
+            <code>hsl()</code> とは、1〜3 番目の引数にそれぞれ「色相 (Hue)」「彩度 (Saturation)」「明度 (Lightness)」を指定できる関数です。
+            このうち 1 番目の色相のみ <code>var(--color-key)</code> として CSS Variable で指定することで、色相を固定したまま明るい色、くすんだ色などを表現しています。
+          </p>
+          <p>
+            今のところブラウザへの実装は完了していないものの、CSS Color Module Level 4 ではさらに便利な関数が提案されています。
+            他の色とのコントラストを考慮して適切な色を選択する <code>color-contrast()</code>、
+            複数の色をブレンドする <code>color-mix()</code>、
+            より人間の知覚に近い CIE 色空間から色を選べる <code>lab()</code> や <code>lch()</code> など、色に関する機能は今後大幅に強化される予定です。
+          </p>
+        </section>
+      </section>
+      <section id="css-variableの値を計算する" class="level2">
+        <h2>CSS Variableの値を計算する</h2>
+        <p>
+          CSS Variable とは別に、最近の CSS には新しい機能の <code>calc()</code> 関数も追加されています。
+          この機能はほとんど魔法のようなもので、これまで CSS には無縁だった「計算」が新しくできるようになりました。
+        </p>
+        <pre class="language-css"><code class="language-css"><span class="token selector">div</span> <span class="token punctuation">{</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token unit">rem</span> <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">/* 1rem × 2 = 2rem になる */</span>
+  <span class="token property">padding-left</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token unit">rem</span> <span class="token operator">+</span> <span class="token number">4</span><span class="token unit">px</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">/* 足し算、引き算は異なる単位でも大丈夫 */</span>
+<span class="token punctuation">}</span></code></pre>
+        <p>
+          <code>calc()</code> 関数に渡すことができる式では、四則演算 (<code>+</code> <code>-</code> <code>*</code> <code>/</code>) を使うことができます。
+          CSS ならではのルールとして、以下の点に気をつけてください。
+        </p>
+        <ul>
+          <li><code>+</code> と <code>-</code> の前後には必ずスペースを入れる必要があります。たとえば、<code>calc(1rem * -1)</code> は動かないため、<code>calc(1rem * - 1)</code> とする必要があります。</li>
+          <li><code>*</code> は異なる単位同士を掛け合わせることができないので、片方は単位なしの数値である必要があります。</li>
+          <li><code>/</code> は分母が単位なしの数値である必要があります。</li>
+        </ul>
+        <p>もちろん CSS Variable と <code>calc()</code> を組み合わせて使うこともできます。値の計算を最大限に活用することを考えてみましょう。</p>
+        <section id="実例-フォントサイズへの活用" class="level3">
+          <h3>実例: フォントサイズへの活用</h3>
+          <p>組版に特徴的な要件として、「1 行に含まれる (全角の) 文字数を固定したい」というのはよくある要望の一つかと思います。</p>
+          <p>
+            見る環境にこだわらずはみ出してもよければ、<code>em</code> 単位で文字数だけ横幅をとれば良いです。しかし、できれば Vivliostyle 以外の PC やスマホの環境でも一貫して表示させたいところです。
+            このような場合、CSS Variable で指定することでより柔軟に制御できます。
+          </p>
+          <pre class="language-css"><code class="language-css"><span class="token selector">main</span> <span class="token punctuation">{</span>
+  <span class="token variable">--main-width</span><span class="token punctuation">:</span> <span class="token number">100</span><span class="token unit">vw</span><span class="token punctuation">;</span>
+  <span class="token variable">--row-character-num</span><span class="token punctuation">:</span> <span class="token number">40</span><span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span><span class="token variable">--main-width</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span><span class="token function">var</span><span class="token punctuation">(</span><span class="token variable">--main-width</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token function">var</span><span class="token punctuation">(</span><span class="token variable">--row-character-num</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+          <p>
+            この指定により、<code>&#x3C;main></code> 要素は閲覧環境によらずページの横幅いっぱい (<code>100vw</code>) の幅になり、1 行あたり 40 文字になるようにフォントサイズが自動的に調整されます。
+            この状態でブラウザの横幅を変えてみると、その大きさによってフォントサイズが変化することを確認できます。
+          </p>
+          <p>それでは、さらにルールを追加して「ある一定以上のフォントサイズにならないように、左右に余白を追加する」という CSS を設定してみます。</p>
+          <pre class="language-css"><code class="language-css"><span class="token selector">main</span> <span class="token punctuation">{</span>
+  <span class="token variable">--main-width</span><span class="token punctuation">:</span> <span class="token number">100</span><span class="token unit">vw</span><span class="token punctuation">;</span>
+  <span class="token variable">--row-character-num</span><span class="token punctuation">:</span> <span class="token number">40</span><span class="token punctuation">;</span>
+  <span class="token variable">--max-font-size</span><span class="token punctuation">:</span> <span class="token number">16</span><span class="token unit">px</span><span class="token punctuation">;</span>
+  <span class="token variable">--font-size</span><span class="token punctuation">:</span> <span class="token function">min</span><span class="token punctuation">(</span>
+    <span class="token function">calc</span><span class="token punctuation">(</span><span class="token function">var</span><span class="token punctuation">(</span><span class="token variable">--main-width</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token function">var</span><span class="token punctuation">(</span><span class="token variable">--row-character-num</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function">var</span><span class="token punctuation">(</span><span class="token variable">--max-font-size</span><span class="token punctuation">)</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">0</span> auto<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span><span class="token function">var</span><span class="token punctuation">(</span><span class="token variable">--font-size</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token function">var</span><span class="token punctuation">(</span><span class="token variable">--row-character-num</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span><span class="token variable">--font-size</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+          <p>
+            ここで使われている <code>min()</code> 関数は、与えられた引数から最も小さいものを出力します。
+            <code>--max-font-size</code> では <code>16px</code> と指定されているので、ここでの <code>--font-size</code> は 1 行に 40 文字が入り、かつ <code>16px</code> よりも小さい数字ということになります。
+            そして、<code>&#x3C;main></code> の横幅に <code>--font-size</code> と 40 を掛け合わせた値を指定して、横方向の <code>margin</code> に <code>auto</code> を指定すると、ちょうど横幅が 40 文字分になるように余白が設定されます。
+          </p>
+          <p>
+            上記の <code>min()</code> 以外にも、要素同士の大きさを比較する <code>max()</code>、<code>clamp()</code> 関数が用意されており、これらは <code>calc()</code> と組み合わせて使われることが多いです。
+            また、現在ブラウザに実装されていないものの中には、三角関数の計算をする <code>sin()</code>、<code>cos()</code> など色々な数学関数の仕様が追加されるので、今後はますます <code>calc()</code> の重要性が増してくるでしょう。
+          </p>
+        </section>
+        <section id="実例-chartscssでグラフを作る" class="level3">
+          <h3>実例: Charts.cssでグラフを作る</h3>
+          <p>最後に、これまでの CSS Variable の機能を最大限に活用したライブラリである <a href="https://chartscss.org/">Charts.css</a> を紹介します。</p>
+          <p>
+            グラフを描画するライブラリはこれまでにもいくつもありましたが、このライブラリの最大の特長は JavaScript を一切使わずに CSS だけでグラフを描画しているという点です。
+            CSS Variable と <code>calc()</code> を最大限に活用することで、棒グラフや折れ線グラフまで表現できるのです。
+          </p>
+          <p>実際に使用する際は、以下のように <code>&#x3C;table></code> タグを使います。各項目の大きさは <code>--size</code> を使って指定すると、Charts.css が自動的にレイアウトしてくれます。</p>
+          <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>table</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>charts-css column<span class="token punctuation">"</span></span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">400</span><span class="token unit">px</span><span class="token punctuation">;</span> <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">200</span><span class="token unit">px</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>caption</span><span class="token punctuation">></span></span> Column Example #1 <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>caption</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>tbody</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>tr</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>td</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token variable">--size</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">/</span> <span class="token number">10</span><span class="token punctuation">)</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>td</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>tr</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>tr</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>td</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token variable">--size</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span><span class="token number">4</span> <span class="token operator">/</span> <span class="token number">10</span><span class="token punctuation">)</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>td</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>tr</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>tr</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>td</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token variable">--size</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span><span class="token number">6</span> <span class="token operator">/</span> <span class="token number">10</span><span class="token punctuation">)</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>td</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>tr</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>tr</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>td</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token variable">--size</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span><span class="token number">8</span> <span class="token operator">/</span> <span class="token number">10</span><span class="token punctuation">)</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>td</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>tr</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>tr</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>td</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token variable">--size</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span><span class="token number">10</span> <span class="token operator">/</span> <span class="token number">10</span><span class="token punctuation">)</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>td</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>tr</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>tbody</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>table</span><span class="token punctuation">></span></span></code></pre>
+          <figure>
+            <img src="assets/chart-css-screenshot.png" alt="Charts.css によるレイアウト例">
+            <figcaption aria-hidden="true">Charts.css によるレイアウト例</figcaption>
+          </figure>
+        </section>
+      </section>
+      <section id="まとめ" class="level2">
+        <h2>まとめ</h2>
+        <p>
+          CSS Variable 自体は比較的昔からあったものの、最近はその普及度が加速していると感じています。
+          その理由は、やはり Internet Explorer のサポートの終了の影響が大きいでしょう。
+          これまでは使いたくても使えなかった CSS Variable の恩恵が、ついに誰でも受けられるようになりました。
+        </p>
+        <p>
+          個人的には、今後は自分で CSS Variable を定義するだけではなく、(最後に紹介した Charts.css のように) ライブラリが API として CSS Variable を改変できるような仕組みが普及していくと予想しています。
+          CSS Variable が当たり前に使えるようになり、CSS の書き方がどのように変わっていくか今から楽しみです。
+        </p>
+      </section>
+    </section>
+  </body>
+</html>

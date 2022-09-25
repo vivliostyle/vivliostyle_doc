@@ -1,0 +1,19 @@
+{
+  "name": "theme",
+  "author": "spring-raining <harusamex.com@gmail.com>",
+  "private": true,
+  "keywords": [
+    "vivliostyle",
+    "vivliostyle-theme"
+  ],
+  "license": "CC-BY-3.0",
+  "vivliostyle": {
+    "theme": {
+      "name": "Vivliostyle で本を作ろう Vol. 6",
+      "author": "spring-raining <harusamex.com@gmail.com>",
+      "style": "./theme_print.css",
+      "category": "misc",
+      "topics": []
+    }
+  }
+}

@@ -1,0 +1,91 @@
+@font-face {
+  font-family: 'body';
+  font-weight: 100;
+  src: local('TazuganeInfoStdN-UltLt');
+}
+@font-face {
+  font-family: 'body';
+  font-weight: 200;
+  src: local('TazuganeInfoStdN-Thin');
+}
+@font-face {
+  font-family: 'body';
+  font-weight: 300;
+  src: local('TazuganeInfoStdN-Light');
+}
+@font-face {
+  font-family: 'body';
+  font-weight: 400;
+  src: local('TazuganeInfoStdN-Book');
+}
+@font-face {
+  font-family: 'body';
+  font-weight: 500;
+  src: local('TazuganeInfoStdN-Regular');
+}
+@font-face {
+  font-family: 'body';
+  font-weight: 600;
+  src: local('TazuganeInfoStdN-Medium');
+}
+@font-face {
+  font-family: 'body';
+  font-weight: 700;
+  src: local('TazuganeInfoStdN-Heavy');
+}
+@font-face {
+  font-family: 'body';
+  font-weight: 800;
+  src: local('TazuganeInfoStdN-Black');
+}
+@font-face {
+  font-family: 'body';
+  font-weight: 900;
+  src: local('TazuganeInfoStdN-XBlack');
+}
+
+@font-face {
+  font-family: 'heading';
+  font-weight: 100;
+  src: local('TazuganeGothicStdN-UltLt');
+}
+@font-face {
+  font-family: 'heading';
+  font-weight: 200;
+  src: local('TazuganeGothicStdN-Thin');
+}
+@font-face {
+  font-family: 'heading';
+  font-weight: 300;
+  src: local('TazuganeGothicStdN-Light');
+}
+@font-face {
+  font-family: 'heading';
+  font-weight: 400;
+  src: local('TazuganeGothicStdN-Book');
+}
+@font-face {
+  font-family: 'heading';
+  font-weight: 500;
+  src: local('TazuganeGothicStdN-Regular');
+}
+@font-face {
+  font-family: 'heading';
+  font-weight: 600;
+  src: local('TazuganeGothicStdN-Medium');
+}
+@font-face {
+  font-family: 'heading';
+  font-weight: 700;
+  src: local('TazuganeGothicStdN-Heavy');
+}
+@font-face {
+  font-family: 'heading';
+  font-weight: 800;
+  src: local('TazuganeGothicStdN-Black');
+}
+@font-face {
+  font-family: 'heading';
+  font-weight: 900;
+  src: local('TazuganeGothicStdN-XBlack');
+}
