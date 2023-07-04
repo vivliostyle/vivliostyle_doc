@@ -43,7 +43,7 @@ lang: ja
 
 負債合計は前期から横這いである一方、資産合計は大きく前期を割り込んでいることが目を引く。まさにこれが今期の決算の特徴となっている。具体的には、前期の資産合計は2,239,092円だったところ、今期は1,533,975円マイナスの705,117円となった。そこで、創立以来の貸借対照表における主な指標の変遷を見てみよう（図1）。
 
-![図1 創立以来の貸借対照表における主な指標の変遷](./img/fig-1.png){ width=70% }
+![図1 創立以来の貸借対照表における主な指標の変遷](./img/fig-1.svg){ width=70% }
 
 資産合計は3期、4期と少しずつ上昇していたが、5期で大きく下げている。正味財産は3期まで下がり続けていたのを4期で持ち直したが、再び5期で大きく下げている。負債合計だけは前述の通り横這いである。
 
@@ -100,7 +100,7 @@ lang: ja
 
 上記、正味財産増減計算書のうちの主な指標について、創立以来の増減をグラフにまとめてみた。
 
-![図2 創立以来の正味財産増減計算書における主な指標の変遷](./img/fig-2.png){ width=70% }
+![図2 創立以来の正味財産増減計算書における主な指標の変遷](./img/fig-2.svg){ width=70% }
 
 一つ一つ見ていこう。まず当団体が経常的に得ている収益を表す「経常収益額」（黄色の線）の増減をみると、4期で大きく上昇したのが、5期で大きく下げている。これは前項の資産合計と同じ動きだ。
 
@@ -112,7 +112,7 @@ lang: ja
 
 さて、本節の最後として、経常収益が減少した原因を探ってみよう。前述したように、経常収益のほとんどを占めるのは事業収益（表の黄色背景セル）だ。そこで前期の事業収益6,267,250円と、今期の事業収益3,235,750円の内訳をグラフにしてみた。
 
-![図3 前期と今期における事業収益の内訳](./img/fig-3.png){ width=70% }
+![図3 前期と今期における事業収益の内訳](./img/fig-3.svg){ width=70% }
 
 編集制作が前期から1,000,000円増える一方で、受託開発が前期からじつに4,031,500円マイナスの1,685,750円に減少した。受託開発について[前期の事業報告書](https://github.com/vivliostyle/vivliostyle_doc/tree/gh-pages/ja/reports/vivliostyle-report-2021)では、以下のように説明している。
 
@@ -177,21 +177,19 @@ lang: ja
 
 この章では、今期おこなった事業について報告する。まず当法人のプロダクト開発状況をみてみよう。まず当法人の主要なプロダクトのプルリクエスト（PR）数を集計してみた（図4）。なお、bot等によるPRは排除し、人間によるものだけを集計している。
 
-![図4 過去3期分の主要プロダクトPR数](./img/fig-4.png){ width=100% }
+![図4 過去3期分の主要プロダクトPR数](./img/fig-4.svg){ width=100% }
 
-すべての基盤となるプロダクト、Vivliostyle.jsのPR数が飛び抜けて多く、開発が大きく進捗したことが分かる。それに次ぐのが、Vivliostyle CLI、Vivliostyle Pubで、これらの開発も順調に進んだと言える。
-
-ただし、この3つ以外のプロダクトのPR数は低調のように見えることが気になる。
+すべての基盤となるプロダクト、Vivliostyle.jsのPR数が飛び抜けて多く、開発が大きく進捗したことが分かる。それに次ぐのが、Vivliostyle CLI、Vivliostyle Pubで、これらの開発も順調に進んだと言える。ただし、この3つ以外のプロダクトのPR数は低調に見える。
 
 ### 開発が好調だったプロダクト
 
-そこで、上図に掲げたプロダクトごとに、過去3期分PR数の推移をまとめてみよう（図5〜図7）。まずは前述したVivliostyle.js、Vivliostyle CLI（以下、CLI）、Vivliostyle Pub（以下、Pub）を見てみよう。
+そこで、図4に掲げたプロダクトごとに、過去3期分PR数の推移をまとめてみよう（図5〜図7）。まずは前述したVivliostyle.js、Vivliostyle CLI（以下、CLI）、Vivliostyle Pub（以下、Pub）を見てみよう。
 
-![図5 過去3期分のVivliostyle.jsのPR数](./img/fig-5.png){ width=65% }
+![図5 Vivliostyle.jsのPR数、過去3期分](./img/fig-5.svg){ width=65% }
 
-![図6 過去3期分のVivliostyle CLIのPR数](./img/fig-6.png){ width=65% }
+![図6 Vivliostyle CLIのPR数、過去3期分](./img/fig-6.svg){ width=65% }
 
-![図7 過去3期分のVivliostyle PubのPR数](./img/fig-7.png){ width=65% }
+![図7 Vivliostyle PubのPR数、過去3期分](./img/fig-7.svg){ width=65% }
 
 やはり今期の進捗ぶりが際立っているようだ。ただし、PRの作成者に注目してみると、[Vivliostyle.js](https://github.com/vivliostyle/vivliostyle.js/pulls?q=is%3Apr+is%3Aclosed2022-04-01..2023-03-31+)と[Pub](https://github.com/vivliostyle/vivliostyle-pub/pulls?q=is%3Apr+is%3Aclosed2022-04-01..2023-03-31)は、ほとんどが村上代表理事であり、[CLI](https://github.com/vivliostyle/vivliostyle-cli/pulls?q=is%3Apr+is%3Aclosed2022-04-01..2023-03-31+)もメンテナーのspring-raining氏のPR数は〓〓であり、半分以上はやはり村上代表理事である。
 
@@ -202,9 +200,9 @@ PRの内容を見ると、多くは村上代表理事がメンテナーを務め
 
 一方、それ以外のVFMとThemesについてはどうだろう。
 
-![図8 過去3期分のVFMのPR数](./img/fig-8.png){ width=65% }
+![図8 過去3期分のVFMのPR数](./img/fig-8.svg){ width=65% }
 
-![図9 過去3期分のVivliostyle ThemesのPR数](./img/fig-10.png){ width=65% }
+![図9 過去3期分のVivliostyle ThemesのPR数](./img/fig-9.svg){ width=65% }
 
 グラフを見ると、ほとんど開発は進まなかったことが分かる。いずれもメンテナーの多忙が原因である。
 
