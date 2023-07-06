@@ -191,7 +191,6 @@ lang: ja
 
 表1 Vivliostyle.jsにおけるPR作成者の内訳
 
-
 | 作成者 | PRの数 |
 | ----- | --- |
 | 村上代表理事 | [72](https://github.com/vivliostyle/vivliostyle-cli/pulls?q=is%3Apr+created%3A2022-04-01..2023-03-31+author%3AMurakamiShinyu) |
@@ -208,13 +207,16 @@ lang: ja
 
 表3 Vivliostyle PubにおけるPR作成者の内訳
 
-これらの表を見ると分かるとおり、順調に開発が進んだグループでほとんどのPRを作成したのは村上代表理事だ。一方で、あまり順調と言えなかったグループは、村上代表理事が積極的に開発に関わらなかったゆえに進捗しなかったとも言えるだろう。
+これらの表を見ると分かるとおり、順調に開発が進んだグループにおいて、ほとんどのPRを作成したのは村上代表理事だ。一方で、あまり順調と言えなかったグループでは、村上代表理事の関与が少なかった。
 
-さらに、Vivliostyle CLIとVivliostyle Pubおける村上代表理事のPRの内容を見ると、彼自身がメンテナーを務めるVivliostyle.jsのアップデートを、それぞれに波及させるものだ。つまりCLIやPubに独自機能を追加するようなPRではない。
+さらに、Vivliostyle CLIとVivliostyle Pubにおける村上代表理事のPR内容を見ると、彼自身がメンテナーを務めるVivliostyle.jsにおける機能追加やバグ修正を、それぞれに波及させたものであることがあ分かる。つまりVivliostyle CLIやVivliostyle Pubに独自の機能を追加するようなPRではない。
 
-もちろん、ここまでの分析は主にPR数に注目したものであり、村上代表理事以外のコミッター、とくにspring-raining氏やtakanakahiko氏の貢献を軽視するべきではない。それでも、
+ここまでの分析は単にPRを作成した数量に注目したものであり、そこから漏れた村上代表理事以外のコミッターの貢献を軽視するべきではない。とくにspring-raining氏には、今期Vivliostyle CLIにおいて、ES Modules対応（[v6.0.0 (2022-12-17)](https://github.com/vivliostyle/vivliostyle-cli/blob/main/CHANGELOG.md#600-2022-12-17)）、VFM v2対応（[v7.0.0 (2023-03-13)](https://github.com/vivliostyle/vivliostyle-cli/blob/main/CHANGELOG.md#700-2023-03-13)）等を追加したメジャーアップデートをリリースしていただいた。
 
-村上代表理事の孤軍奮闘
+それでもこうして見ていくと、村上代表理事の孤軍奮闘といった開発状況が浮かび上がってくるのも確かだ。また、第1章で説明したは受託開発の売り上げが大幅に減少し
+て赤字となった状況は、言い方を変えると
+
+バランスのとれた開発
 
 
 
