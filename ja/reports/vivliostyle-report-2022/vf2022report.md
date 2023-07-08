@@ -175,11 +175,15 @@ lang: ja
 
 ## **第2章  2022年度（第5期 2022年4月1日〜2023年3月31日）事業報告**
 
+### PR数からみたプロダクトの開発状況
+
 この章では、今期おこなった事業について報告する。当法人のプロダクト開発状況をみてみよう。当法人の主要なプロダクトのプルリクエスト（PR）数を集計してみた（図4）。なお、ここではbotによるPRは排除し、人間によるものだけを集計している。
 
 ![図4 過去3期分の主要プロダクトPR数](./img/fig-4.svg){ width=100% }
 
 すべての基盤となるプロダクト、[Vivliostyle.js](https://github.com/vivliostyle/vivliostyle.js)のPR数が飛び抜けて多く、開発が大きく進捗したことが分かる（当法人のプロダクトについては[前年度活動報告書](https://vivliostyle.org/viewer/#src=https://vivliostyle.github.io/vivliostyle_doc/ja/reports/vivliostyle-report-2021/vf2021report.html&bookMode=true&userStyle=data:,/*%3Cviewer%3E*/%0A@page%20%7B%20size:%20A4;%20%7D%0A/*%3C/viewer%3E*/&f=epubcfi(/2!/4/52/4/28)&find=%E3%83%97%E3%83%AD%E3%83%80%E3%82%AF%E3%83%88%E3%81%AE%E5%88%86%E9%A1%9E%E3%81%A8%E3%81%9D%E3%82%8C%E3%81%9E%E3%82%8C%E3%81%AE%E5%BD%B9%E7%9B%AE)を参照）。それに次ぐのが、[Vivliostyle CLI](https://github.com/vivliostyle/vivliostyle-cli)、[Vivliostyle Pub](https://github.com/vivliostyle/vivliostyle-pub)で、これらの開発も順調に進んだと言える。ただし、この3つ以外のプロダクトのPR数は低調だった。
+
+### PR作成者の分析
 
 つまり、開発が順調に進んだVivliostyle.js、Vivliostyle CLI、Vivliostyle Pubのグループと、あまり順調とは言えなかった[VFM](https://github.com/vivliostyle/vfm)、[themes](https://github.com/vivliostyle/themes)のグループに明確に分かれる。では、この2つのグループを分けた要因は何か。PRの作成者に注目してみるとそれが分かる。
 
@@ -212,6 +216,8 @@ lang: ja
 さらに、Vivliostyle CLIとVivliostyle Pubにおける村上代表理事のPR内容を見ると、Vivliostyle CLIやVivliostyle Pubに独自の機能を追加するPRという訳ではなく、彼自身がメンテナーを務めるVivliostyle.jsにおける機能追加やバグ修正を、それぞれに波及させるためのものであることが分かる。
 
 ところで、ここまでの分析では作成したPRの数量に注目したが、PR数が村上代表理事より少ないからといって、彼以外のコントリビューターを無視してはいけないだろう。とくにspring-raining氏には、今期Vivliostyle CLIにおいて、ES Modulesに対応した[v6.0.0 (2022-12-17)](https://github.com/vivliostyle/vivliostyle-cli/blob/main/CHANGELOG.md#600-2022-12-17)、VFM v2に対応した[v7.0.0 (2023-03-13)](https://github.com/vivliostyle/vivliostyle-cli/blob/main/CHANGELOG.md#700-2023-03-13)と、メジャーアップデートを2つもリリースしていただいた。
+
+### 来期への提言
 
 それでも、こうして見ていくと村上代表理事の「孤軍奮闘」といった開発状況が浮かび上がってくるのも確かだ。
 
