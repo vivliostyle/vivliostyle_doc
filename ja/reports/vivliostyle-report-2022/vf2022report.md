@@ -187,13 +187,17 @@ lang: ja
 
 つまり、開発が順調に進んだVivliostyle.js、Vivliostyle CLI、Vivliostyle Pubのグループと、あまり順調とは言えなかった[VFM](https://github.com/vivliostyle/vfm)、[themes](https://github.com/vivliostyle/themes)のグループに明確に分かれる。では、この2つのグループを分けた要因は何か。PRの作成者に注目してみるとそれが分かる。
 
+<figure>
+
 | 作成者 | PRの数 |
 | ----- | --- |
 | 村上代表理事 | [119](https://github.com/vivliostyle/vivliostyle.js/pulls?q=is%3Apr++created%3A2022-04-01..2023-03-31+author%3AMurakamiShinyu) |
 | その他  | 6 |
 | 総計  | [125](https://github.com/vivliostyle/vivliostyle.js/pulls?q=is%3Apr++created%3A2022-04-01..2023-03-31+-author%3Aapp%2Fdependabot) |
 
-表1 Vivliostyle.jsにおけるPR作成者の内訳
+<figcaption>表1 Vivliostyle.jsにおけるPR作成者の内訳</figcaption>
+</figure>
+<figure>
 
 | 作成者 | PRの数 |
 | ----- | --- |
@@ -201,7 +205,9 @@ lang: ja
 | spring-raining | [6](https://github.com/vivliostyle/vivliostyle-cli/pulls?q=is%3Apr+created%3A2022-04-01..2023-03-31+author%3Aspring-raining) |
 | 総計  | [83](https://github.com/vivliostyle/vivliostyle-cli/pulls?q=is%3Apr+created%3A2022-04-01..2023-03-31+-author%3Aapp%2Fdependabot) |
 
-表2 Vivliostyle CLIにおけるPR作成者の内訳
+<figcaption>表2 Vivliostyle CLIにおけるPR作成者の内訳</figcaption>
+</figure>
+<figure>
 
 | 作成者 | PRの数 |
 | ----- | --- |
@@ -209,7 +215,9 @@ lang: ja
 | takanakahiko | [7](https://github.com/vivliostyle/vivliostyle-pub/pulls?q=is%3Apr+created%3A2022-04-01..2023-03-31+author%3Atakanakahiko) |
 | 総計  | [40](https://github.com/vivliostyle/vivliostyle-pub/pulls?q=is%3Apr+created%3A2022-04-01..2023-03-31+-author%3Aapp%2Fdependabot) |
 
-表3 Vivliostyle PubにおけるPR作成者の内訳
+<figcaption>表3 Vivliostyle PubにおけるPR作成者の内訳</figcaption>
+</figure>
+
 
 これらの表を見ると分かるとおり、順調に開発が進んだグループにおいて、ほとんどのPRを作成したのは村上代表理事だ。一方で、あまり順調と言えなかったグループでは、村上代表理事の関与が少なかった。
 
