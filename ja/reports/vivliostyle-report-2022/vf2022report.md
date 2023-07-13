@@ -197,6 +197,7 @@ lang: ja
 
 <figcaption>表1 Vivliostyle.jsにおけるPR作成者の内訳</figcaption>
 </figure>
+
 <figure>
 
 | 作成者 | PRの数 |
@@ -207,6 +208,7 @@ lang: ja
 
 <figcaption>表2 Vivliostyle CLIにおけるPR作成者の内訳</figcaption>
 </figure>
+
 <figure>
 
 | 作成者 | PRの数 |
