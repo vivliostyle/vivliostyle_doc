@@ -17,7 +17,7 @@ After achieving a profit for the first time in a single fiscal year in the previ
 
 The following table shows the status of assets held (balance sheet) as of the end of this fiscal year (March 31, 2023). The figures are in yen.
 
-| Title           | **This FY (2021)**    | **Prev. FY (2020)**    | **Increase/Decrease**     |
+| Title           | **This FY (2022)**    | **Prev. FY (2021)**    | **Increase/Decrease**     |
 | ------------ | ---------- | ---------- | ---------- |
 | **I. Assets**   |            |            |            |
 | 1. Current assets |            |            |            |
@@ -43,17 +43,17 @@ The following table shows the status of assets held (balance sheet) as of the en
 | Total net assets |-4,050,533 | -2,516,558 | -1,533,975 |
 | Total liabilities and net assets | 818,167 | 2,352,142  | -1,533,975  |
 
-負債合計が前期から横這いだった一方、資産合計は大きく前期を割り込んだ。まさにこれが今期の決算の特徴となっている。具体的には、前期の資産合計は2,239,092円だったところ、今期は1,533,975円マイナスの705,117円となった。そこで、創立以来の貸借対照表における主な指標の変遷を見てみよう（図1）。
+Total liabilities were unchanged from the previous fiscal year. On the other hand, total assets fell significantly below the previous fiscal year's level. This is precisely what characterized this term's financial results. Specifically, total assets were 2,239,092 yen in the previous period, while they were 1,533,975 yen lower this period, at 705,117 yen. Let us now take a look at the changes in the main indicators on the balance sheet since its establishment (Fig-1).
 
-![図1 創立以来の貸借対照表における主な指標の変遷](./img/fig-1.svg){ width=90% }
+![Fig-1: Changes in Main Indicators in the Balance Sheet since Foundation](./img/fig-1.svg){ width=90% }
 
-資産合計は3期、4期と少しずつ上昇していたが、5期で下げてしまった。正味財産は3期まで下がり続けていたのを4期で持ち直したが、再び5期で下げた。負債合計だけは前述の通り横這いを保った。実のところ、今期は創立以来初めて負債を増やさない期にできた。当法人における最優先課題として、来期以降も負債額の抑制、そして圧縮を目指したい。
 
-### 2022年度正味財産増減計算書
+### Net Assets Increase/Decrease Statement for FY2022
 
-資産から負債を差し引いた価額を「正味財産」という。その増減を記録したのが「正味財産増減計算書」であり、これにより今期中（2022年4月1日から2023年3月31日）のお金の使い方や売上の明細がわかる。
+Total assets had been rising slightly in FY2020 and FY2021, but dropped in this fiscal year. Net assets had been falling until FY2020 and picked up in FY2021, but again went down in this fiscal year. Only total liabilities were the same as in the previous period, as mentioned above. As a matter of fact, this quarter was the first time since its inception that the corporation was able to not increase its debt. As a top priority for the Foundation, we will continue to aim to control and reduce the amount of debt in the next fiscal fiscal year and beyond.
 
-| Title                | **This FY (2021)** | **Prev. FY (2020)** | **Increase/Decrease** |
+
+| Title           | **This FY (2022)**    | **Prev. FY (2021)**    | **Increase/Decrease**     |
 | ----------------- | ---------- | ---------- | ---------- |
 | **I. General Net Assets Increase/Decrease** |            |            |            |
 | 1. Ordinary Increase/Decrease |            |            |            |
@@ -100,13 +100,13 @@ The following table shows the status of assets held (balance sheet) as of the en
 | Designated net assets at end of FY  | 0          | 0          | 0          |
 | **III. Net Assets at End of FY**   |-4,050,533 | -2,516,558 | -1,513,975 |
 
-この正味財産増減計算書のうちの主な指標について、創立以来の増減をグラフにした（図2）。
+The main indicators in this statement of changes in net assets are shown in the graph below (Fig-2), which shows the increase or decrease since the foundation of the company.
 
-![図2 創立以来の正味財産増減計算書における主な指標の変遷](./img/fig-2.svg){ width=90% }
+![Fig-2: Changes in Major Indicators in the Statement of Changes in Net Assets since Foundation](./img/fig-2.svg){ width=90% }
 
-一つ一つ見ていこう。まず当団体が経常的に得た収益を表す「経常収益額」（黄色の線）の増減をみると、4期まで上昇を続けたが5期は下げている。これは前項の資産合計と同じ動きだ。
+Let's look at them one by one. First, if we look at the change in "Total ordinary revenues" (yellow line), which represents the ordinary revenue earned by the foundation, it continued to rise until FY2021, but then dropped in FY2022. This is the same movement as that of total assets in the previous section.
 
-そもそも経常収益は、①事業収益（表の黄色セル）、②受取寄付金、③雑収入からなっている。正味財産増減計算書をみると分かるとおり、②が前期を31,952円上回る健闘をしたものの、ほとんどを占めるのは①だ。つまり、経常収益が減った原因は、事業における収益が前期から下降したことが原因だ。
+To begin with, Ordinary revenues consist of ① Business income (yellow cells in the table), ② Donation received, and ③ Other revenues. As can be seen from the Statement of Changes in Net Assets, although ② did well, exceeding the previous period by 31,952 yen, it is ① that accounts for most of the total. In other words, the reason for the decrease in Ordinary revenues was due to the decline in Business income from the previous fiscal year.
 
 事業の結果が赤字か黒字かを示す指標「当期経常増減額」（ピンク色の線）をみると、前期は882,384円の黒字だったところ、今期はマイナス1,513,975円となった。
 
@@ -124,9 +124,9 @@ The following table shows the status of assets held (balance sheet) as of the en
 
 つまり今期は受託開発の売り上げが大幅に減少し、これにより赤字となった訳である。
 
-### 2022年度収支計算書
+### Income and Expenditure Statement for FY2021
 
-第1章の終わりとして、今期中（2022年4月1日から2023年3月31日）における、予算額と決算額を比較した収支計算書を見よう。ただし、当法人は予算を策定していないので、形式的なものに留まり、前節の正味財産増減計算書と実質的に同じ内容になる。
+At the end of Chapter 1, we will look at “Income and Expenditure Statement”, which compares the budgeted amount to the closing amount during the current fiscal year (April 1, 2020 to March 31, 2021). However, since we have not developed a budget, it will remain a formality and will be substantially the same as the statement of changes in net assets in the previous section. The unit of measure is also yen.
 
 | Title   | Budgetary Amount | Settlement Amount | Difference | Note |
 | ----------------- | --- | ---------- | ---------- | -- |
@@ -175,7 +175,7 @@ The following table shows the status of assets held (balance sheet) as of the en
 | Designated net assets at end of FY  | 0   | 0          | 0          |    |
 | **III. Net Assets at End of FY**   |0   | -4,050,533 | 4,050,533  |    |
 
-## **第2章  2022年度（第5期 2022年4月1日〜2023年3月31日）事業報告**
+## **Chapter 2: Activity Report for FY2022**
 
 ### PR数からみたプロダクトの開発状況
 
