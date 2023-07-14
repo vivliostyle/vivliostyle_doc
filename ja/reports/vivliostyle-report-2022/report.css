@@ -107,7 +107,7 @@ td:nth-child(n+2) {
 #年度正味財産増減計算書 + p + table > tbody > tr:nth-child(23),
 #年度正味財産増減計算書 + p + table > tbody > tr:nth-child(24),
 #年度正味財産増減計算書 + p + table > tbody > tr:nth-child(27),
-#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(44){
+#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(39){
   background-color: #EFF6FD;
 }
 
