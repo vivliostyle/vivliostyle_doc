@@ -1,45 +1,47 @@
 ---
-title: "一般社団法人ビブリオスタイル 2022年度事業報告書"
-lang: ja
+title: "Vivliostyle Foundation FY2022 Activity Report"
+lang: en
 ---
 
 
 
-## **第1章 2022年度（第5期 2022年4月1日〜2023年3月31日）決算報告**
+## **chapter 1: Financial Report for FY2022**
 
-### はじめに
+(The 4th Fiscal Year: from April 1, 2022 to March 31, 2023)
 
-前期に初めて単年度黒字を達成した当法人だが、残念ながら今期は再び赤字となった。以下、その詳細について説明する。
+### Foreword
 
-### 2022年度貸借対照表
+After achieving a profit for the first time in a single fiscal year in the previous fiscal year, the corporation unfortunately posted a loss again in the current fiscal year. The details are explained below.
 
-今期末（2023年3月31日）現在における資産の保有状況（貸借対照表）を以下に示す。なお、単位は円である。
+### Balance Sheet for FY2022
 
-| 科目           | **当年度**    | **前年度**    | **増減**     |
+The following table shows the status of assets held (balance sheet) as of the end of this fiscal year (March 31, 2023). The figures are in yen.
+
+| Title           | **This FY (2021)**    | **Prev. FY (2020)**    | **Increase/Decrease**     |
 | ------------ | ---------- | ---------- | ---------- |
-| **Ⅰ 資産の部**   |            |            |            |
-| 1 流動資産   |            |            |            |
-| 現金・預金    | 493,367 | 1,180,342     | -686,975 |
-| 他流動資産   | 211,750 |  1,058,750 | -847,000 |
-| 流動資産合計   | 705,117 | 2,239,092  | -1,533,975  |
-| 2 固定資産   |            |            |            |
-| (1) その他固定資産   |            |            |            |
-| 創立費      | 113,050    | 113,050    | 0          |
-| その他固定資産合計 | 113,050    | 113,050    | 0          |
-| 固定資産合計 | 113,050    | 113,050    | 0          |
-| 資産合計     | 818,167 | 2,352,142 | -1,533,975 |
-| **Ⅱ 負債の部**   |            |            |            |
-|1 流動負債  |            |            |            |
-| 預り金     | 31,139     | 31,139     | 0    |
-| 役員借入金  | 4,806,561 | 4,806,561  | 0  |
-| 買掛金   |  11,000  | 11,000 |  0 |
-| 未払法人税等   | 20,000 |  20,000 | 0  |
-| 流動負債合計   | 4,868,700 | 4,868,700 | 0 |
-| 負債合計     | 4,868,700 | 4,868,700 | 0 |
-| **Ⅲ 正味財産の部** |            |            |            |
-| 1 一般正味財産 | -4,050,533 | -2,516,558 | -1,533,975 |
-| 正味財産合計   | -4,050,533 | -2,516,558 | -1,533,975 |
-| 負債及び正味財産合計   | 818,167 | 2,352,142  | -1,533,975  |
+| **I. Assets**   |            |            |            |
+| 1. Current assets |            |            |            |
+| Cash and deposits | 493,367 | 1,180,342     | -686,975 |
+| Other current assets  211,750 |  1,058,750 | -847,000 |
+| Total current assets | 705,117 | 2,239,092  | -1,533,975  |
+| 2 Fixed Assets |            |            |            |
+| (1) Other fixed assets |            |            |            |
+| Founding expenses | 113,050    | 113,050    | 0          |
+| Total other fixed assets | 113,050    | 113,050    | 0          |
+| Total fixed assets | 113,050    | 113,050    | 0          |
+| Total assets |818,167 | 2,352,142 | -1,533,975 |
+| **II. Liabilities**   |            |            |            |
+| 1. Current liabilities |            |            |            |
+| Withholdings |31,139     | 31,139     | 0    |
+| Loan from officer | 4,806,561 | 4,806,561  | 0  |
+| Accounts payable |  11,000  | 11,000 |  0 |
+| Accrued income taxes |20,000 |  20,000 | 0  |
+| Total current liabilities |4,868,700 | 4,868,700 | 0 |
+| Total liabilities | 4,868,700 | 4,868,700 | 0 |
+| **III. Net Assets** |            |            |            |
+| 1. General Net Assets |-4,050,533 | -2,516,558 | -1,533,975 |
+| Total net assets |-4,050,533 | -2,516,558 | -1,533,975 |
+| Total liabilities and net assets | 818,167 | 2,352,142  | -1,533,975  |
 
 負債合計が前期から横這いだった一方、資産合計は大きく前期を割り込んだ。まさにこれが今期の決算の特徴となっている。具体的には、前期の資産合計は2,239,092円だったところ、今期は1,533,975円マイナスの705,117円となった。そこで、創立以来の貸借対照表における主な指標の変遷を見てみよう（図1）。
 
@@ -51,52 +53,52 @@ lang: ja
 
 資産から負債を差し引いた価額を「正味財産」という。その増減を記録したのが「正味財産増減計算書」であり、これにより今期中（2022年4月1日から2023年3月31日）のお金の使い方や売上の明細がわかる。
 
-| 科目                | **当年度**    | **前年度**    | **増減**     |
+| Title                | **This FY (2021)** | **Prev. FY (2020)** | **Increase/Decrease** |
 | ----------------- | ---------- | ---------- | ---------- |
-| **Ⅰ. 一般正味財産増減の部** |            |            |            |
-| 1. 経常増減の部         |            |            |            |
-| ⑴ 経常収益            |            |            |            |
-| ①事業収益             | ( 3,235,750 ) | (6,267,250)  | (-3,031,500)  |
-| 事業収益            | 3,235,750  |  6,267,250  | -3,031,500  |
-| ②受取寄付金          | (148,498)  |  (116,546) | (31,952)     |
-| 受取寄付金          | 148,498  |  116,546 | 31,952 |
-| ③雑収益              | (10)          | (6)          | (4)          |
-| 受取利息              | 10          | 6          | 4          |
-| 経常収益計              | 3,384,258   | 6,383,802  | -2,999,544 |
-| ⑵ 経常費用            |            |            |            |
-| ① 事業費             |            |            |            |
-| 事業経費              | (668,733)    | (325,918)     | (342,815)    |
-| 事）旅費交通費             | 1,676 | 0 | 1,676 |
-| 事）通信運搬費             | 1,848 | 940  | 908 |
-| 事）消耗品費             | 204 | 22,000 | -21,796 |
-| 事）支払手数料    | 461,405 | 97,624  | 363,781  |
-| 事）支払報酬料   | 198,000    |  198,000 | 0 |
-| 事）新聞図書費   | 5,600 | 7,354 | -1,754 |
-| 事業費計              | 668,733 | 325,918 | 342,815  |
-| ② 管理費             |            |            |            |
-| 管）業務委託費  | 4,229,500 | 5,175,500  | -946,000 |
-| 管理費計              | 4,229,500  | 5,175,500  | -946,000 |
-| 経常費用計             | 4,898,233  | 5,501,418 | -603,185 |
-| 評価損益等調整前当期経常増減額   | -1,513,975 | 882,384 | -2,396,359 |
-| 評価損益等計            | 0          | 0          | 0          |
-| 当期経常増減額           | -1,513,975 | 882,384 | -2,396,359 |
-| 2. 経常外増減の部        |            |            |            |
-| ⑴ 経常外収益           |            |            |            |
-| 経常外収益計            | 0          | 0          | 0          |
-| ⑵ 経常外費用           |            |            |           |
-| 経常外費用計            | 0          | 0          | 0          |
-| 当期経常外増減額          | 0          | 0          | 0          |
-| 他会計振替前当期一般正味財産増減額 | -1,513,975 | 882,384 | -2,396,359 |
-| 税引前当期一般正味財産増減額    | -1,513,975 | 882,384 | -2,396,359 |
-| 法人税、住民税及び事業税      | 20,000     | 20,000     | 0    |
-| 当期一般正味財産増減額       | -1,513,975 | 862,384 | -2,396,359 |
-| 一般正味財産期首残高        | -2,516,558 | -3,378,942 | 862,384 |
-| 一般正味財産期末残高        | -4,050,533 | -2,516,558 | -1,533,975 |
-| **Ⅱ. 指定正味財産増減の部** |            |            |            |
-| 当期指定正味財産増減額       | 0          | 0          | 0          |
-| 指定正味財産期首残高        | 0          | 0          | 0          |
-| 指定正味財産期末残高        | 0          | 0          | 0          |
-| **Ⅲ. 正味財産期末残高**   | -4,050,533 | -2,516,558 | -1,513,975 |
+| **I. General Net Assets Increase/Decrease** |            |            |            |
+| 1. Ordinary Increase/Decrease |            |            |            |
+| ⑴ Ordinary revenues  |            |            |            |
+| ① Business income |( 3,235,750 ) | (6,267,250)  | (-3,031,500)  |
+| Business income |3,235,750  |  6,267,250  | -3,031,500  |
+| ② Donation received | (148,498)  |  (116,546) | (31,952)     |
+| Donation received  | 148,498  |  116,546 | 31,952 |
+| ③ Other revenues |(10)          | (6)          | (4)          |
+| Interest received   | 10          | 6          | 4          |
+| Total ordinary revenues |3,384,258   | 6,383,802  | -2,999,544 |
+| ⑵ Ordinary expenses |            |            |            |
+| ① Business expenses |            |            |            |
+| Business expenses | (668,733)    | (325,918)     | (342,815)    |
+| Travel and transportation expenses |1,676 | 0 | 1,676 |
+| Communication transportation costs | 1,848 | 940  | 908 |
+| Consumables costs |204 | 22,000 | -21,796 |
+| Commission fee  | 461,405 | 97,624  | 363,781  |
+| Compensation paid |198,000    |  198,000 | 0 |
+| Newspaper book expenses |5,600 | 7,354 | -1,754 |
+| Total business expenses  | 668,733 | 325,918 | 342,815  |
+| ② Administrative expenses  |            |            |            |
+| Outsourcing costs  |4,229,500 | 5,175,500  | -946,000 |
+| Total administrative expenses |4,229,500  | 5,175,500  | -946,000 |
+| Total ordinary expenses  | 4,898,233  | 5,501,418 | -603,185 |
+| Ordinary increase/decrease before valuation gain/loss this FY | -1,513,975 | 882,384 | -2,396,359 |
+| Total valuation gain/loss | 0          | 0          | 0          |
+| Ordinary increase/decrease this FY |-1,513,975 | 882,384 | -2,396,359 |
+| 2. Non-ordinary Increase/Decrease |            |            |            |
+| ⑴ Non-ordinary revenues |            |            |            |
+| Total non-ordinary revenues | 0          | 0          | 0          |
+| ⑵ Non-ordinary expenses |            |            |            |
+| Total non-ordinary expenses | 0          | 0          | 0          |
+| Non-ordinary increase/decrease this FY | 0          | 0          | 0          |
+| General net assets increase/decrease before transfer to other accounts this FY |-1,513,975 | 882,384 | -2,396,359 |
+| General net assets increase/decrease before taxes this FY |-1,513,975 | 882,384 | -2,396,359 |
+| Corporate tax, resident tax and business tax | 20,000     | 20,000     | 0    |
+| General net assets increase/decrease this FY | -1,513,975 | 862,384 | -2,396,359 |
+| General net assets at beginning of FY |-2,516,558 | -3,378,942 | 862,384 |
+| General net assets at end of FY |-4,050,533 | -2,516,558 | -1,533,975 |
+| **II. Designated Net Assets Increase/Decrease** |            |            |            |
+| Designated net assets increase/decrease this FY  | 0          | 0          | 0          |
+| Designated net assets at beginning of FY | 0          | 0          | 0          |
+| Designated net assets at end of FY  | 0          | 0          | 0          |
+| **III. Net Assets at End of FY**   |-4,050,533 | -2,516,558 | -1,513,975 |
 
 この正味財産増減計算書のうちの主な指標について、創立以来の増減をグラフにした（図2）。
 
@@ -126,52 +128,52 @@ lang: ja
 
 第1章の終わりとして、今期中（2022年4月1日から2023年3月31日）における、予算額と決算額を比較した収支計算書を見よう。ただし、当法人は予算を策定していないので、形式的なものに留まり、前節の正味財産増減計算書と実質的に同じ内容になる。
 
-| 科目                | 予算額 | 決算額        | 差異         | 備考 |
+| Title   | Budgetary Amount | Settlement Amount | Difference | Note |
 | ----------------- | --- | ---------- | ---------- | -- |
-| **Ⅰ. 一般正味財産増減の部** |     |            |            |    |
-| 1. 経常増減の部         |     |            |            |    |
-| ⑴ 経常収益            |     |            |            |    |
-| ①事業収益             | (0)   | (3,235,750)  | -3,235,750 |    |
-| 事業収益             |     | 3,235,750  | -3,235,750 |    |
-| ②受取寄付金          | (0)   |(148,498)     | (-148,498)    |    |
-| 受取寄付金           |     | 148,498     | -148,498 |    |
-| ③雑収益              | (0)   | (10)          | (-10)         |    |
-| 受取利息              |  0   | 10          | -10         |    |
-| 経常利益計             | 0   | 3,384,258  | -3,384,258 |    |
-| ⑵ 経常費用            |     |            |            |    |
-| ① 事業費             |     |            |            |    |
-| 事業経費              | (0)   | (668,733)    | -668,733 |    |
-| 事）旅費交通費   |    | 1,676  | -1,676 |    |
-| 事）通信運搬費  |     | 1,848  | -1,848  |    |
-| 事）消耗品費   |     | 204  | -204 |    |
-| 事）支払手数料 |     | 461,405 | -461,405  |    |
-| 事）支払報酬料   |     | 198,000    | -198,000   |    |
-| 事）新聞図書費  |     | 5,600 | -5,600 |    |
-| 事業費計              | 0   | 668,733 | -668,733 |    |
-| ② 管理費             |     |            |            |    |
-| 管）業務委託費    |     | 4,229,500 | -4,229,500 |    |
-| 管理費計              | 0   | 4,229,500  | -4,229,500 |    |
-| 経常費用計             | 0   | 4,898,233  | -4,898,233 |    |
-| 評価損益等調整前当期経常増減額   | 0   | -1,513,975 | -1,513,975  |    |
-| 評価損益等計            | 0   | 0          | 0          |    |
-| 当期経常増減額           | 0   | -1,513,975 | 1,513,975  |    |
-| 2. 経常外増減の部        |     |            |            |    |
-| ⑴ 経常外収益           |     |            |            |    |
-| 経常外収益計            | 0   | 0          | 0          |    |
-| ⑵ 経常外費用           |     |            |            |    |
-| 経常外費用計            | 0   | 0          | 0          |    |
-| 当期経常外増減額          | 0   | 0          | 0          |    |
-| 他会計振替前当期一般正味財産増減額 | 0   | -1,513,975 | 1,513,975  |    |
-| 税引前当期一般正味財産増減額    | 0   | -1,513,975 | 1,513,975  |    |
-| 法人税、住民税及び事業税      | 0   | 20,000     | -20,000    |    |
-| 当期一般正味財産増減額       | 0   | -1,513,975 | 1,513,975  |    |
-| 一般正味財産期首残高        | 0   | -2,516,558 | 2,516,558  |    |
-| 一般正味財産期末残高        | 0   | -4,050,533 | 4,050,533  |    |
-| **Ⅱ. 指定正味財産増減の部** |     |            |            |    |
-| 当期指定正味財産増減額       | 0   | 0          | 0          |    |
-| 指定正味財産期首残高        | 0   | 0          | 0          |    |
-| 指定正味財産期末残高        | 0   | 0          | 0          |    |
-| **Ⅲ. 正味財産期末残高**   | 0   | -4,050,533 | 4,050,533  |    |
+| **I. General Net Assets Increase/Decrease** |     |            |            |    |
+| 1. Ordinary Increase/Decrease |     |            |            |    |
+| ⑴ Ordinary revenues  |     |            |            |    |
+| ① Business income  | (0)   | (3,235,750)  | -3,235,750 |    |
+| Business income |    | 3,235,750  | -3,235,750 |    |
+| ② Donation received  | (0)   |(148,498)     | (-148,498)    |    |
+| Donation received |    | 148,498     | -148,498 |    |
+| ③ Other revenues | (0)   | (10)          | (-10)         |    |
+| Interest received  |  0   | 10          | -10         |    |
+| Total ordinary revenues |0   | 3,384,258  | -3,384,258 |    |
+| ⑵ Ordinary expenses  |     |            |            |    |
+| ① Business expenses |     |            |            |    |
+| Business expenses  |(0)   | (668,733)    | -668,733 |    |
+| Travel and transportation expenses  |    | 1,676  | -1,676 |    |
+| Communication transportation costs |    | 1,848  | -1,848  |    |
+| Consumables costs |    | 204  | -204 |    |
+| 支払手数料 |     | 461,405 | -461,405  |    |
+| Compensation paid   |    | 198,000    | -198,000   |    |
+| Newspaper book expenses |    | 5,600 | -5,600 |    |
+| Total business expenses | 0   | 668,733 | -668,733 |    |
+| ② Administrative expenses  |     |            |            |    |
+| Outsourcing costs |    | 4,229,500 | -4,229,500 |    |
+| Total administrative expenses |0   | 4,229,500  | -4,229,500 |    |
+| Total ordinary expenses | 0   | 4,898,233  | -4,898,233 |    |
+| Ordinary increase/decrease before valuation gain/loss this FY | 0   | -1,513,975 | -1,513,975  |    |
+| Total valuation gain/loss | 0   | 0          | 0          |    |
+| Ordinary increase/decrease this FY |0   | -1,513,975 | 1,513,975  |    |
+| 2. Non-ordinary Increase/Decrease  |     |            |            |    |
+| ⑴ Non-ordinary revenues |     |            |            |    |
+| Total non-ordinary revenues  | 0   | 0          | 0          |    |
+| ⑵ Non-ordinary expenses  |     |            |            |    |
+| Total non-ordinary expenses | 0   | 0          | 0          |    |
+| Non-ordinary increase/decrease this FY  | 0   | 0          | 0          |    |
+| General net assets increase/decrease before transfer to other accounts this FY |0   | -1,513,975 | 1,513,975  |    |
+| General net assets increase/decrease before taxes this FY |0   | -1,513,975 | 1,513,975  |    |
+| Corporate tax, resident tax and business tax |0   | 20,000     | -20,000    |    |
+| General net assets increase/decrease this FY |0   | -1,513,975 | 1,513,975  |    |
+| General net assets at beginning of FY  |0   | -2,516,558 | 2,516,558  |    |
+| General net assets at end of FY  |0   | -4,050,533 | 4,050,533  |    |
+| **Ⅱ. Designated Net Assets Increase/Decrease** |     |            |            |    |
+| II. Designated Net Assets Increase/Decrease | 0   | 0          | 0          |    |
+| Designated net assets at beginning of FY  | 0   | 0          | 0          |    |
+| Designated net assets at end of FY  | 0   | 0          | 0          |    |
+| **III. Net Assets at End of FY**   |0   | -4,050,533 | 4,050,533  |    |
 
 ## **第2章  2022年度（第5期 2022年4月1日〜2023年3月31日）事業報告**
 
