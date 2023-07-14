@@ -22,7 +22,7 @@ The following table shows the status of assets held (balance sheet) as of the en
 | **I. Assets**   |            |            |            |
 | 1. Current assets |            |            |            |
 | Cash and deposits | 493,367 | 1,180,342     | -686,975 |
-| Other current assets  211,750 |  1,058,750 | -847,000 |
+| Other current assets |211,750 |  1,058,750 | -847,000 |
 | Total current assets | 705,117 | 2,239,092  | -1,533,975  |
 | 2 Fixed Assets |            |            |            |
 | (1) Other fixed assets |            |            |            |
@@ -47,10 +47,12 @@ Total liabilities were unchanged from the previous fiscal year. On the other han
 
 ![Fig-1: Changes in Main Indicators in the Balance Sheet since Foundation](./img/fig-1.svg){ width=90% }
 
+Total assets rose slightly in FY2020 and FY2021, but dropped in FY2022. Net assets had been
+continued to fall and picked up in FY2021, but dropped again in FY2022. Only total liabilities remained flat, as mentioned above. As a matter of fact, this fiscal year was the first time since the founding of the corporation that it did not increase its debt. As a top priority for the foundation, we will continue to aim to control and reduce the amount of debt in the next fiscal year and beyond.
 
 ### Net Assets Increase/Decrease Statement for FY2022
 
-Total assets had been rising slightly in FY2020 and FY2021, but dropped in this fiscal year. Net assets had been falling until FY2020 and picked up in FY2021, but again went down in this fiscal year. Only total liabilities were the same as in the previous period, as mentioned above. As a matter of fact, this quarter was the first time since its inception that the corporation was able to not increase its debt. As a top priority for the Foundation, we will continue to aim to control and reduce the amount of debt in the next fiscal fiscal year and beyond.
+The value of assets minus liabilities is called “net assets”. ”The Statement of Net Assets Increase/Decrease” records the increase/decrease in net assets, and shows how money was spent and sales during the current term (from April 1, 2022 to March 31, 2023).
 
 
 | Title           | **This FY (2022)**    | **Prev. FY (2021)**    | **Increase/Decrease**     |
@@ -100,7 +102,7 @@ Total assets had been rising slightly in FY2020 and FY2021, but dropped in this 
 | Designated net assets at end of FY  | 0          | 0          | 0          |
 | **III. Net Assets at End of FY**   |-4,050,533 | -2,516,558 | -1,513,975 |
 
-The main indicators (Light blue cells in the table) in this statement of changes in net assets are shown in the graph below (Fig-2), which shows the increase or decrease since the foundation of the company.
+The main indicators (Light blue cells in the table) in “The Statement of Net Assets Increase/Decrease” are shown in the graph below (Fig-2), which shows the increase or decrease since the foundation of the foundation.
 
 ![Fig-2: Changes in Major Indicators in the Statement of Changes in Net Assets since Foundation](./img/fig-2.svg){ width=90% }
 
@@ -108,21 +110,21 @@ Let's look at them one by one. First, if we look at the change in "Total ordinar
 
 To begin with, Ordinary revenues consist of ① Business income (yellow cells in the table), ② Donation received, and ③ Other revenues. As can be seen from the Statement of Changes in Net Assets, although ② did well, exceeding the previous period by 31,952 yen, it is ① that accounts for most of the total. In other words, the reason for the decrease in Ordinary revenues was due to the decline in Business income from the previous fiscal year.
 
-事業の結果が赤字か黒字かを示す指標「当期経常増減額」（ピンク色の線）をみると、前期は882,384円の黒字だったところ、今期はマイナス1,513,975円となった。
+Looking at the indicator “current year ordinary income/expenses” (pink line), which indicates whether the business results in a loss or a profit, FY2021 showed a surplus of 882,384 yen, while FY2022 showed a negative figure of -1,513,975 yen.
 
-事業費と管理費は経常収益を生み出すための経費であり、経常費用は両者の合計である。事業費は前期よりも342,815円増えた668,733円だった一方、管理費は前期よりも946,000円減った4,229,500円だった。また、経常費用は前期よりも603,185円減の4,898,233円だった。
+Business and administrative expenses are the costs of generating ordinary income, and ordinary expenses are the sum of the two. Business expenses were 668,733 yen, up 342,815 yen from FY2021. Administrative expenses, on the other hand, were ¥4,229,500, down ¥946,000 from FY2021. Also, recurring expenses were ¥4,898,233, down ¥603,185 from FY2021.
 
-今期が終わった時点での正味財産の額である「一般正味財産期末残高」（赤色の線）をみると、3期まで拡大を続けてきた赤字額は、4期でやや持ち直したものの、今期は4,050,533円にもなった。来期以降、これをどのように削減していくかが課題となる。
+Looking at the “General net assets at end of FY” (red line), which is the amount of net assets at the end of FY2022, the deficit, which had continued to grow until FY2020, recovered somewhat in FY2021, but amounted to 4,050,533 yen in FY2022. The issue will be how to reduce the deficit in the next fiscal year and beyond.
 
-さて、本節の最後として、経常収益が減少した原因を探ってみよう。繰り返しになるが、経常収益のほとんどを占めるのは事業収益（表の黄色セル）だ。そこで前期の事業収益6,267,250円と、今期の事業収益3,235,750円の内訳をグラフにしてみた。
+Now, as the last part of this section, let us explore the causes of the decline in recurring revenue. Again, business revenue (yellow cells in the table) accounts for most of the recurring revenue. Therefore, we have graphed the breakdown of business revenue of 6,267,250 yen in FY2021 and 3,235,750 yen in FY2022.
 
-![図3 前期と今期における事業収益の内訳](./img/fig-3.svg){ width=70% }
+![Fig-3: Breakdown of Business Revenue in FY2021 and FY2022](./img/fig-3.svg){ width=70% }
 
-編集制作が前期から1,000,000円増える一方で、保守契約を含めた外部からの受託開発が前期からじつに4,031,500円マイナスの1,685,750円に減少した（なお、編集制作は小形克宏理事が、受託開発は村上真雄代表理事が主に担当）。受託開発について[前期の事業報告書](https://github.com/vivliostyle/vivliostyle_doc/tree/gh-pages/ja/reports/vivliostyle-report-2021)で、以下のように説明している。
+While editorial production increased by 1,000,000 yen from the previous period, contracted development from outside sources, including maintenance contracts, decreased to 1,685,750 yen, a decrease of 4,031,500 yen from the previous period (Katsuhiro Ogata is in charge of editorial production, while Representative Director Shinyu Murakami is mainly responsible for contracted development). In the [business report for FY2021](https://github.com/vivliostyle/vivliostyle_doc/tree/gh-pages/ja/reports/vivliostyle-report-2021), commissioned development is explained as follows.
 
-> 目を引くのが、事業収益が前期より4,763,529円多い6,267,250円をあげたことだ。（中略）これは外部企業からの受託開発が、今期に入って拡大したことによる。
+> Catches the eye is that “Business income” raised 6,267,250 yen, which is 4,763,529 yen more than the previous fi scal year. (omitted) Thiswas due to the expansion of contract development from external companies.
 
-つまり今期は受託開発の売り上げが大幅に減少し、これにより赤字となった訳である。
+In other words, the company's contracted development sales declined significantly in the current fiscal year, resulting in a loss.
 
 ### Income and Expenditure Statement for FY2021
 
@@ -240,17 +242,14 @@ At the end of Chapter 1, we will look at “Income and Expenditure Statement”,
 
 ### 来期への提言
 
-前節で述べたような、村上代表理事が孤軍奮闘をつづける状況をすこしでも改善するため、どんなことが考えられるだろう。以下の3つを挙げておこう。
+前節で述べたような、村上代表理事が孤軍奮闘をつづける状況をすこしでも改善するため、どんなことが考えられるだろう。以下の2つを挙げておこう。
 
-1. バランスのとれた開発
-2. 開発リソースの多角化
-3. 事業収益の多角化
+1. 開発リソースの多角化
+2. 事業収益の多角化
 
-上記1について。Vivliostyleにおけるオープンソースソフトウェア（OSS）開発は、当法人にとってそもそもの設立目的だ。それだけではない。OSS開発によってVivliostyleプロダクトの機能が向上するからこそ、外部からの受託開発を呼び込むことができる。とはいえ、OSS開発だけがすすみ、受託開発による収益が落ち込んで当法人の持続性を損なっては元も子もない。OSS開発と受託開発とで、なるべくバランスのとれた開発を進めることが大事だろう。
+上記1について。村上代表理事の孤軍奮闘はなにも今期に限ったことではない。まことに頭が下がる思いではあるが、彼以外のコントリビューターを持続的に増やす方策を考えないと、当法人の持続は危ういだろう。
 
-上記2について。村上代表理事の孤軍奮闘はなにも今期に限ったことではない。まことに頭が下がる思いではあるが、彼以外のコントリビューターを持続的に増やす方策を考えないと、当法人の持続は危ういだろう。
-
-上記3について。村上代表理事の負担を軽減するためにも、事業収益を受託開発だけに依存しないよう、収益の多角化を図る必要がある。幸いなことに前章図3「前期と今期における事業収益の内訳」を見ると分かるように、編集制作で全体のほぼ半分の収益を得ることができた。来期もこれほどの受注ができるかは不透明だが、引き続き努力を続けるべきだろう。
+上記2について。村上代表理事の負担を軽減するためにも、事業収益を受託開発だけに依存しないよう、収益の多角化を図る必要がある。幸いなことに前章図3「前期と今期における事業収益の内訳」を見ると分かるように、編集制作で全体のほぼ半分の収益を得ることができた。来期もこれほどの受注ができるかは不透明だが、引き続き努力を続けるべきだろう。
 
 ## 理事
 
