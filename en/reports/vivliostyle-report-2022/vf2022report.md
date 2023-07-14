@@ -43,7 +43,7 @@ The following table shows the status of assets held (balance sheet) as of the en
 | Total net assets |-4,050,533 | -2,516,558 | -1,533,975 |
 | Total liabilities and net assets | 818,167 | 2,352,142  | -1,533,975  |
 
-Total liabilities were unchanged from the previous fiscal year. On the other hand, total assets fell significantly below the previous fiscal year's level. This is precisely what characterized this term's financial results. Specifically, total assets were 2,239,092 yen in the previous period, while they were 1,533,975 yen lower this period, at 705,117 yen. Let us now take a look at the changes in the main indicators on the balance sheet since its establishment (Fig-1).
+Total liabilities were unchanged from the previous fiscal year. On the other hand, total assets fell significantly below the previous fiscal year's level. This is precisely what characterized this term's financial results. Specifically, total assets were 2,239,092 yen in the previous period, while they were 1,533,975 yen lower this period, at 705,117 yen. Let us now take a look at the changes in the main indicators (Light blue cells in the table) on the balance sheet since its establishment (Fig-1).
 
 ![Fig-1: Changes in Main Indicators in the Balance Sheet since Foundation](./img/fig-1.svg){ width=90% }
 
@@ -100,7 +100,7 @@ Total assets had been rising slightly in FY2020 and FY2021, but dropped in this 
 | Designated net assets at end of FY  | 0          | 0          | 0          |
 | **III. Net Assets at End of FY**   |-4,050,533 | -2,516,558 | -1,513,975 |
 
-The main indicators in this statement of changes in net assets are shown in the graph below (Fig-2), which shows the increase or decrease since the foundation of the company.
+The main indicators (Light blue cells in the table) in this statement of changes in net assets are shown in the graph below (Fig-2), which shows the increase or decrease since the foundation of the company.
 
 ![Fig-2: Changes in Major Indicators in the Statement of Changes in Net Assets since Foundation](./img/fig-2.svg){ width=90% }
 

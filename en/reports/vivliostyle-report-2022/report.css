@@ -1,16 +1,19 @@
 ﻿@page {
   /* size: a4; */
   margin: 10%;
-  font-family: "YuGothic", "Yu Gothic", sans-serif;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", "YuGothic", "Yu Gothic", sans-serif;
   font-size: 9pt;
   line-height: 1;
+
   @top-center {
     content: env(doc-title);
   }
+
   @bottom-center {
     content: counter(page);
   }
 }
+
 @page :first {
   @top-center {
     content: none;
@@ -18,12 +21,12 @@
 }
 
 html {
-  font-family: "YuGothic", "Yu Gothic", sans-serif;
+  ffont-family: "Optima", "Arial", sans-serif;
 }
 
 body {
   font-size: 94%;
-  line-height: 2;
+  line-height: 1.5;
 }
 
 @media print {
@@ -50,7 +53,7 @@ h1.title {
   margin: 3em auto 5em;
 }
 
-#TOC > ul > li > a {
+#TOC>ul>li>a {
   font-size: 110%;
   font-weight: bold;
 }
@@ -74,6 +77,7 @@ h3 {
 h2 {
   break-before: page;
 }
+
 /*
 h2 ~ h2 ~ h3 ~ h3 {
   break-before: column;
@@ -86,7 +90,8 @@ table {
   line-height: 1.5;
 }
 
-th, td {
+th,
+td {
   border: 1px solid gray;
   padding: 0 0.5em;
 }
@@ -99,39 +104,18 @@ td:nth-child(n+2) {
   text-align: right;
 }
 
-#年度貸借対照表 + p + table>tbody>tr:nth-child(1),
-#年度貸借対照表 + p + table > tbody > tr:nth-child(5),
-#年度貸借対照表 + p + table > tbody > tr:nth-child(11),
-#年度貸借対照表 + p + table > tbody > tr:nth-child(12),
-#年度貸借対照表 + p + table > tbody > tr:nth-child(19),
-#年度貸借対照表 + p + table > tbody > tr:nth-child(20),
-#年度貸借対照表 + p + table > tbody > tr:nth-child(22),
-#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(1),
-#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(7),
-#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(10),
-#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(21),
-#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(25),
-#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(26),
-#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(28),
-#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(32),
-#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(34),
-#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(40),
-#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(41),
-#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(42),
-#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(46),
-#年度収支計算書+p+table>tbody>tr:nth-child(10),
-#年度収支計算書+p+table>tbody>tr:nth-child(19),
-#年度収支計算書+p+table>tbody>tr:nth-child(22),
-#年度収支計算書+p+table>tbody>tr:nth-child(23),
-#年度収支計算書+p+table>tbody>tr:nth-child(31),
-#年度収支計算書+p+table>tbody>tr:nth-child(37),
-#年度収支計算書+p+table>tbody>tr:nth-child(38),
-#年度収支計算書+p+table>tbody>tr:nth-child(39),
-#年度収支計算書+p+table>tbody>tr:nth-child(43){
+#balance-sheet-for-fy2022+p+table>tbody>tr:nth-child(5),
+#balance-sheet-for-fy2022+p+table>tbody>tr:nth-child(11),
+#balance-sheet-for-fy2022+p+table>tbody>tr:nth-child(19),
+#net-assets-increasedecrease-statement-for-fy2022+p+table>tbody>tr:nth-child(10),
+#net-assets-increasedecrease-statement-for-fy2022+p+table>tbody>tr:nth-child(20),
+#net-assets-increasedecrease-statement-for-fy2022+p+table>tbody>tr:nth-child(23),
+#net-assets-increasedecrease-statement-for-fy2022+p+table>tbody>tr:nth-child(24),
+#net-assets-increasedecrease-statement-for-fy2022+p+table>tbody>tr:nth-child(27),
+#net-assets-increasedecrease-statement-for-fy2022+p+table>tbody>tr:nth-child(44) {
   background-color: #EFF6FD;
 }
 
-#年度正味財産増減計算書+p+table>tbody>tr:nth-child(5){
-    background-color: #f7f6bd;
-  }
-
+#net-assets-increasedecrease-statement-for-fy2022+p+table>tbody>tr:nth-child(5) {
+  background-color: #f7f6bd;
+}
