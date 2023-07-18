@@ -238,7 +238,7 @@ However, there were signs that this situation may change this quarter. Vivliosty
 
 ![Fig-5: [Number of commits to master branch in Vivliostyle.js this fiscal year](https://github.com/vivliostyle/vivliostyle.js/graphs/contributors?from=2022-04-01&to=2023-03-31&type=c)](./img/fig-5.png){ width=100% }
 
-The [PR](https://github.com/vivliostyle/vivliostyle.js/pull/1090) by Mr. [hkwi](https://github.com/hkwi), shown above, adds the CSS leader (), which provides the ruled line functionality often used in table of contents and other documents. This has been an issue for some time and is a long-awaited addition.
+The [PR](https://github.com/vivliostyle/vivliostyle.js/pull/1090) by Mr. [hkwi](https://github.com/hkwi), shown above, adds the CSS leader(), which provides the ruled line functionality often used in table of contents. This has been an issue for some time and is a long-awaited addition.
 
 Also, a series of [PRs](https://github.com/vivliostyle/vivliostyle.js/pulls?q=is%3Apr+author%3Adaisuke-tanabe) by Mr. [daisuke-tanabe](https://github.com/daisuke-tanabe) made important corrections, such as bringing the long neglected "@vivliostyle/react" up to the latest version. We need to continue our efforts to increase the number of new contributors in the next fiscal year.
 
