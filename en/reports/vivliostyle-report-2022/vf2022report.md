@@ -122,7 +122,7 @@ Now, as the last part of this section, let us explore the causes of the decline 
 
 While editorial production increased by 1,000,000 yen from the previous period, contracted development from outside sources, including maintenance contracts, decreased to 1,685,750 yen, a decrease of 4,031,500 yen from the previous period (Katsuhiro Ogata is in charge of editorial production, while Representative Director Shinyu Murakami is mainly responsible for contracted development). In the [business report for FY2021](https://github.com/vivliostyle/vivliostyle_doc/tree/gh-pages/ja/reports/vivliostyle-report-2021), commissioned development is explained as follows.
 
-> Catches the eye is that “Business income” raised 6,267,250 yen, which is 4,763,529 yen more than the previous fi scal year. (omitted) Thiswas due to the expansion of contract development from external companies.
+> What catches the eye is that “Business income” raised 6,267,250 yen, which is 4,763,529 yen more than the previous fiscal year. (omitted) This was due to the expansion of contract development from external companies.
 
 In other words, the company's contracted development sales declined significantly in the current fiscal year, resulting in a loss.
 
