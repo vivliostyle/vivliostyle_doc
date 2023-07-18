@@ -84,6 +84,9 @@ h2 ~ h2 ~ h3 ~ h3 {
 }
  */
 
+figure {
+  break-inside: avoid;
+}
 table {
   border-collapse: collapse;
   font-size: 94%;
