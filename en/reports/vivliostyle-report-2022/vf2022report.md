@@ -112,7 +112,7 @@ To begin with, Ordinary revenues consist of ① Business income (yellow cells in
 
 Looking at the indicator “current year ordinary income/expenses” (pink line), which indicates whether the business results in a loss or a profit, FY2021 showed a surplus of 882,384 yen, while FY2022 showed a negative figure of -1,513,975 yen.
 
-Business and administrative expenses are the costs of generating ordinary income, and ordinary expenses are the sum of the two. Business expenses were 668,733 yen, up 342,815 yen from FY2021. Administrative expenses, on the other hand, were ¥4,229,500, down ¥946,000 from FY2021. Also, recurring expenses were ¥4,898,233, down ¥603,185 from FY2021.
+Business and administrative expenses are the costs of generating ordinary income, and ordinary expenses are the sum of the two. Business expenses were 668,733 yen, up 342,815 yen from FY2021. Administrative expenses, on the other hand, were 4,229,500 yen, down 946,000 yen from FY2021. Also, recurring expenses were 4,898,233 yen, down 603,185 yen from FY2021.
 
 Looking at the “General net assets at end of FY” (red line), which is the amount of net assets at the end of FY2022, the deficit, which had continued to grow until FY2020, recovered somewhat in FY2021, but amounted to 4,050,533 yen in FY2022. The issue will be how to reduce the deficit in the next fiscal year and beyond.
 
@@ -148,7 +148,7 @@ At the end of Chapter 1, we will look at “Income and Expenditure Statement”,
 | Travel and transportation expenses  |    | 1,676  | -1,676 |    |
 | Communication transportation costs |    | 1,848  | -1,848  |    |
 | Consumables costs |    | 204  | -204 |    |
-| 支払手数料 |     | 461,405 | -461,405  |    |
+| Commission fee |     | 461,405 | -461,405  |    |
 | Compensation paid   |    | 198,000    | -198,000   |    |
 | Newspaper book expenses |    | 5,600 | -5,600 |    |
 | Total business expenses | 0   | 668,733 | -668,733 |    |
@@ -181,79 +181,81 @@ At the end of Chapter 1, we will look at “Income and Expenditure Statement”,
 
 ### Product development status in terms of number of PRs
 
-In this chapter, we report on the projects we conducted this fiscal year. How was the development of products, which is also the purpose of the foundation of the Foundation? We have tabulated the number of pull requests (PRs) for our main products (Fig-4). Note that this report excludes PRs by bots and only counts those by humans.
+In this chapter, we report on the projects we conducted this fiscal year. How was the development of products, which is also the purpose of the foundation of the Foundation? We have tabulated the number of Pull Requests (PRs) for our main products (Fig-4). Note that this report excludes PRs by bots and only counts those by humans.
 
 ![Fig-4: Number of major product PRs for the past three fiscal years](./img/fig-4.svg){ width=100% }
 
-The number of PRs for [Vivliostyle.js](https://github.com/vivliostyle/vivliostyle.js), the product that forms the basis of all the products, was outstanding, indicating that significant progress was made in its development (for the composition of the corporation's products, see [Activities in the Previous Yearreport](https://vivliostyle.org/viewer/#src=https://vivliostyle.github.io/vivliostyle_doc/ja/reports/vivliostyle-report-2021/vf2021report.html&bookMode=true&userStyle=data:,/*%3Cviewer%3E*/%0A@page%20%7B%20size:%20A4;%20%7D%0A/*%3C/viewer%3E*/&f=epubcfi(/2!/4/52/4/28)&find=%E3%83%97%E3%83%AD%E3%83%80%E3%82%AF%E3%83%88%E3%81%AE%E5%88%86%E9%A1%9E%E3%81%A8%E3%81%9D%E3%82%8C%E3%81%9E%E3%82%8 C%E3%81%AE%E5%BD%B9%E7%9B%AE). Next to that are [Vivliostyle CLI](https://github.com/vivliostyle/vivliostyle-cli), [Vivliostyle Pub](https://github.com/vivliostyle/ vivliostyle-pub), and it can be said that development of these products has also progressed well. However, PR numbers for products other than these three were weak.
+The number of PRs for [Vivliostyle.js](https://github.com/vivliostyle/vivliostyle.js), the product that forms the basis of all the products, was outstanding, indicating that significant progress was made in its development for the composition of the corporation's products, see [Activities in the Previous Yearreport](https://vivliostyle.org/viewer/#src=https://vivliostyle.github.io/vivliostyle_doc/ja/reports/vivliostyle-report-2021/vf2021report.html&bookMode=true&userStyle=data:,/*<viewer>*/%0A@page { size: A4; }%0A/*</viewer>*/). Next to that are [Vivliostyle CLI](https://github.com/vivliostyle/vivliostyle-cli), [Vivliostyle Pub](https://github.com/vivliostyle/vivliostyle-pub), and it can be said that development of these products has also progressed well. However, PR numbers for products other than these three were weak.
 
 ### Analysis of PR Creator
 
-これをまとめると、開発が順調に進んだVivliostyle.js、Vivliostyle CLI、Vivliostyle Pubのグループと、あまり順調とは言えなかった[VFM](https://github.com/vivliostyle/vfm)、[themes](https://github.com/vivliostyle/themes)のグループに明確に分かれる。では、この2つのグループを分けた要因は何か。PRの作成者に注目してみよう。
+To summarize so far, there are two distinct groups: the Vivliostyle.js, Vivliostyle CLI, and Vivliostyle Pub groups, whose development has gone smoothly, and the less successful [VFM](https://github.com/vivliostyle/vfm) and [themes](https://github.com/vivliostyle/themes) groups. Let us now turn our attention to the creators of the PRs.
+
 
 <figure>
 
-| 作成者 | PRの数 |
+| PR creator | number of PRs |
 | ----- | --- |
-| 村上代表理事 | [119](https://github.com/vivliostyle/vivliostyle.js/pulls?q=is%3Apr++created%3A2022-04-01..2023-03-31+author%3AMurakamiShinyu) |
-| その他  | 6 |
-| 総計  | [125](https://github.com/vivliostyle/vivliostyle.js/pulls?q=is%3Apr++created%3A2022-04-01..2023-03-31+-author%3Aapp%2Fdependabot) |
+| Representative Murakami | [119](https://github.com/vivliostyle/vivliostyle.js/pulls?q=is%3Apr++created%3A2022-04-01..2023-03-31+author%3AMurakamiShinyu) |
+| etc.  | 6 |
+| total  | [125](https://github.com/vivliostyle/vivliostyle.js/pulls?q=is%3Apr++created%3A2022-04-01..2023-03-31+-author%3Aapp%2Fdependabot) |
 
-<figcaption>表1 Vivliostyle.jsにおけるPR作成者の内訳</figcaption>
+<figcaption>Table-1 Breakdown of PR creators in Vivliostyle.js</figcaption>
 </figure>
 
 <figure>
 
-| 作成者 | PRの数 |
+| PR creator | number of PRs |
 | ----- | --- |
-| 村上代表理事 | [72](https://github.com/vivliostyle/vivliostyle-cli/pulls?q=is%3Apr+created%3A2022-04-01..2023-03-31+author%3AMurakamiShinyu) |
-| spring-raining | [6](https://github.com/vivliostyle/vivliostyle-cli/pulls?q=is%3Apr+created%3A2022-04-01..2023-03-31+author%3Aspring-raining) |
-| 総計  | [83](https://github.com/vivliostyle/vivliostyle-cli/pulls?q=is%3Apr+created%3A2022-04-01..2023-03-31+-author%3Aapp%2Fdependabot) |
+| Representative Murakami | [72](https://github.com/vivliostyle/vivliostyle-cli/pulls?q=is%3Apr+created%3A2022-04-01..2023-03-31+author%3AMurakamiShinyu) |
+| spring-raining | [11](https://github.com/vivliostyle/vivliostyle-cli/pulls?q=is%3Apr+created%3A2022-04-01..2023-03-31+author%3Aspring-raining) |
+| total  | [83](https://github.com/vivliostyle/vivliostyle-cli/pulls?q=is%3Apr+created%3A2022-04-01..2023-03-31+-author%3Aapp%2Fdependabot) |
 
-<figcaption>表2 Vivliostyle CLIにおけるPR作成者の内訳</figcaption>
+<figcaption>Table-2: Breakdown of PR creators in the Vivliostyle CLI</figcaption>
 </figure>
 
 <figure>
 
-| 作成者 | PRの数 |
+| PR creator | number of PRs |
 | ----- | --- |
-| 村上代表理事 | [33](https://github.com/vivliostyle/vivliostyle-pub/pulls?q=is%3Apr+created%3A2022-04-01..2023-03-31+author%3AMurakamiShinyu) |
+| Representative Murakami | [33](https://github.com/vivliostyle/vivliostyle-pub/pulls?q=is%3Apr+created%3A2022-04-01..2023-03-31+author%3AMurakamiShinyu) |
 | takanakahiko | [7](https://github.com/vivliostyle/vivliostyle-pub/pulls?q=is%3Apr+created%3A2022-04-01..2023-03-31+author%3Atakanakahiko) |
-| 総計  | [40](https://github.com/vivliostyle/vivliostyle-pub/pulls?q=is%3Apr+created%3A2022-04-01..2023-03-31+-author%3Aapp%2Fdependabot) |
+| total  | [40](https://github.com/vivliostyle/vivliostyle-pub/pulls?q=is%3Apr+created%3A2022-04-01..2023-03-31+-author%3Aapp%2Fdependabot) |
 
-<figcaption>表3 Vivliostyle PubにおけるPR作成者の内訳</figcaption>
+<figcaption>Table-3: Breakdown of PR Creators at Vivliostyle Pub.</figcaption>
 </figure>
 
-これらの表を見ると分かるとおり、順調に開発が進んだグループにおいて、多くのPRを作成したのは村上代表理事だった。一方で、あまり順調と言えなかったグループでは、村上代表理事の関与が少なかった。
+As can be seen from these tables, in the groups that developed smoothly, it was Representative Murakami who created many of the PRs. On the other hand, in the group that did not perform so well, the Murakami representatives were less involved.
 
-ちなみに、Vivliostyle CLIとVivliostyle Pubにおける村上代表理事のPR内容を見ると、Vivliostyle CLIやVivliostyle Pubに独自の機能を追加するPRという訳ではなく、彼自身がメンテナーを務めるVivliostyle.jsにおける機能追加やバグ修正を、それぞれに波及させるためのものであることが分かる。
+Incidentally, looking at the PR content of Representative Murakami for Vivliostyle CLI and Vivliostyle Pub, it is clear that it is not PR to add original functions to Vivliostyle CLI or Vivliostyle Pub, but rather to add functions and fix bugs in Vivliostyle.js, for which he himself is a maintainer. for which he is a maintainer, but rather to spread the addition of features and bug fixes in Vivliostyle.js.
 
-こうして見ていくと、村上代表理事のいわば「孤軍奮闘」といった開発状況が浮かび上がってくる。もちろん、Vivliostyleプロジェクトの創始者である村上代表理事のPRが多いのは当然だ。それでも、オープンソースソフトウェア（OSS）開発において創始者に負荷が集中しすぎるのは、持続性の観点から決して好ましいことではない。
+In this way, the development situation of Representative Murakami's “solitary struggle,” so to speak, comes to the fore. Of course, as the founder of the Vivliostyle project, it is only natural that Murakami's PR work is heavy. However, in the development of Open Source Software (OSS), it is not desirable from the standpoint of sustainability to concentrate too much work on the founder.
 
-ただし、今期はそうした状況を変えるかもしれない兆候が見られた。これまでほとんど村上代表理事だけで開発を続けてきたVivliostyle.jsに新たなコントリビューターが、しかも2人も表れた（図3）。もちろん彼等のPRによって追加された機能は、他のプロダクトでも使える。
+However, there were signs that this situation may change this quarter. Vivliostyle.js, which had been developed almost exclusively by Murakami, now had two new contributors (Fig-5). Of course, the functions added by their PR can be used in other products as well.
 
-![図5 [今期Vivliostyle.jsにおけるmasterブランチへのコミット数](https://github.com/vivliostyle/vivliostyle.js/graphs/contributors?from=2022-04-01&to=2023-03-31&type=c)](./img/fig-5.png){ width=100% }
+![図5 [Number of commits to master branch in Vivliostyle.js this fiscal year](https://github.com/vivliostyle/vivliostyle.js/graphs/contributors?from=2022-04-01&to=2023-03-31&type=c)](./img/fig-5.png){ width=100% }
 
-上図のうち、[hkwi](https://github.com/hkwi)氏の[PR](https://github.com/vivliostyle/vivliostyle.js/pull/1090)は以前からの課題だった、目次等でよく使う罫線、CSS leader() 機能を追加するもので、待望の機能追加と言える。
+The [PR](https://github.com/vivliostyle/vivliostyle.js/pull/1090) by Mr. [hkwi](https://github.com/hkwi), shown above, adds the CSS leader (), which provides the ruled line functionality often used in table of contents and other documents. This has been an issue for some time and is a long-awaited addition.
 
-また、[daisuke-tanabe](https://github.com/daisuke-tanabe)氏の一連の[PR](https://github.com/vivliostyle/vivliostyle.js/pulls?q=is%3Apr+author%3Adaisuke-tanabe)も、ずっと顧みられなかった@vivliostyle/reactを最新バージョンに引き上げるなどの重要な修正をおこなったものだ。来期もこうした新しいコントリビューターを一人でも増やす努力が必要だ。
+Also, a series of [PRs](https://github.com/vivliostyle/vivliostyle.js/pulls?q=is%3Apr+author%3Adaisuke-tanabe) by Mr. [daisuke-tanabe](https://github.com/daisuke-tanabe) made important corrections, such as bringing the long neglected "@vivliostyle/react" up to the latest version. We need to continue our efforts to increase the number of new contributors in the next fiscal year.
 
-他にも当法人の創設以来、ずっと貢献してくれている[spring-raining](https://github.com/orgs/vivliostyle/people/spring-raining)氏は、今期Vivliostyle CLIにおいて、ES Modulesに対応した[v6.0.0 (2022-12-17)](https://github.com/vivliostyle/vivliostyle-cli/blob/main/CHANGELOG.md#600-2022-12-17)、VFM v2に対応した[v7.0.0 (2023-03-13)](https://github.com/vivliostyle/vivliostyle-cli/blob/main/CHANGELOG.md#700-2023-03-13)をはじめ、着実で持続的な進歩を遂げてくれた。
+Mr. [spring-raining](https://github.com/orgs/vivliostyle/people/spring-raining), who has been contributing to our foundation since its establishment, has made steady and sustained progress in the Vivliostyle CLI this term, including [v6.0.0 (2022-12-17)](https://github.com/vivliostyle/vivliostyle-cli/blob/main/CHANGELOG.md#600-2022-12-17) that supports ES Modules and [v7.0.0 (2023-03-13)](https://github.com/vivliostyle/vivliostyle-cli/blob/main/CHANGELOG.md#700-2023-03-13) that supports VFM v2.
 
-### 来期への提言
 
-前節で述べたような、村上代表理事が孤軍奮闘をつづける状況をすこしでも改善するため、どんなことが考えられるだろう。以下の2つを挙げておこう。
+### Recommendations for the next fiscal year
 
-1. 開発リソースの多角化
-2. 事業収益の多角化
+What can be done to improve the situation described in the previous section, in which Representative Murakami continues to struggle alone? The following are two suggestions.
 
-上記1について。村上代表理事の孤軍奮闘はなにも今期に限ったことではない。まことに頭が下がる思いではあるが、彼以外のコントリビューターを持続的に増やす方策を考えないと、当法人の持続は危ういだろう。
+1. Diversification of development resources
+2. Diversification of Business income
 
-上記2について。村上代表理事の負担を軽減するためにも、事業収益を受託開発だけに依存しないよう、収益の多角化を図る必要がある。幸いなことに前章図3「前期と今期における事業収益の内訳」を見ると分かるように、編集制作で全体のほぼ半分の収益を得ることができた。来期もこれほどの受注ができるかは不透明だが、引き続き努力を続けるべきだろう。
+Regarding 1 above. Representative Murakami solitary efforts are not limited to this fiscal year. We are truly humbled by his efforts, but unless we can find a way to increase the number of contributors other than Representative Murakami on a sustained basis, the sustainability of our organization will be in jeopardy.
 
-## 理事
+Regarding 2 above. In order to reduce the burden on Representative Murakami, we need to diversify our earnings so that our business income is not solely dependent on contracted development. It is unclear whether the company will be able to receive as many orders in the next fiscal year, but it should continue its efforts.
 
-- [村上真雄 (Shinyu Murakami)](https://github.com/MurakamiShinyu)〈代表理事、設立時社員〉
-- [リボアル・フロリアン (Florian Rivoal)](https://github.com/frivoal)〈理事、設立時社員〉
-- [ヨハネス・ウィルム (Johannes Wilm)](https://github.com/johanneswilm)〈理事、設立時社員〉
-- [小形克宏 (Katsuhiro Ogata)](https://github.com/ogwata)〈理事、2020年1月21日より〉
+## Directors
+
+- [Shinyu Murakami](https://github.com/MurakamiShinyu) (Representative Director, Founding Member)
+- [Florian Rivoal](https://github.com/frivoal) (Director, Founding Member)
+- [Johannes Wilm](https://github.com/johanneswilm) (Director, Founding Member)
+- [Katsuhiro Ogata](https://github.com/ogwata) (Director, From January 21, 2020)
