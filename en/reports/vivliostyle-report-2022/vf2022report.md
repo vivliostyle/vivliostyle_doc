@@ -190,7 +190,7 @@ The number of PRs for all the underlying products, [Vivliostyle.js](https://gith
 
  Next to that are [Vivliostyle CLI](https://github.com/vivliostyle/vivliostyle-cli), [Vivliostyle Pub](https://github.com/vivliostyle/vivliostyle-pub), and it can be said that development of these products has also progressed well. However, PR numbers for products other than these three were weak.
 
-### Analysis of PR Creator
+### Analysis of PR Creators
 
 To summarize so far, there are two distinct groups: the Vivliostyle.js, Vivliostyle CLI, and Vivliostyle Pub groups, whose development has gone smoothly, and the less successful [VFM](https://github.com/vivliostyle/vfm) and [themes](https://github.com/vivliostyle/themes) groups. Let us now turn our attention to the creators of the PRs.
 
