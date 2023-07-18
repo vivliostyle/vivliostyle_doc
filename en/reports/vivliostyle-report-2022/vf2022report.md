@@ -230,7 +230,7 @@ To summarize so far, there are two distinct groups: the Vivliostyle.js, Vivliost
 
 As can be seen from these tables, in the groups that developed smoothly, it was Representative Murakami who created many of the PRs. On the other hand, in the group that did not perform so well, Murakami was less involved.
 
-Incidentally, looking at the PR content of Representative Murakami for Vivliostyle CLI and Vivliostyle Pub, it is clear that it is not PR to add original functions to Vivliostyle CLI or Vivliostyle Pub, but rather to add functions and fix bugs in Vivliostyle.js, for which he himself is a maintainer. for which he is a maintainer, but rather to spread the addition of features and bug fixes in Vivliostyle.js.
+Incidentally, looking at the PR content of Representative Murakami for Vivliostyle CLI and Vivliostyle Pub, it is clear that it is not PR to add original functions to Vivliostyle CLI or Vivliostyle Pub, but rather to spread the feature additions and bug fixes in Vivliostyle.js, for which he himself is the maintainer, to each of them.
 
 In this way, the development situation of Representative Murakami's “solitary struggle,” so to speak, comes to the fore. Of course, as the founder of the Vivliostyle project, it is only natural that Murakami's PR work is heavy. However, in the development of Open Source Software (OSS), it is not desirable from the standpoint of sustainability to concentrate too much work on the founder.
 
