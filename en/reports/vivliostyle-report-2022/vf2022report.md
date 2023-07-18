@@ -247,7 +247,7 @@ Mr. [spring-raining](https://github.com/orgs/vivliostyle/people/spring-raining),
 
 ### Recommendations for the next fiscal year
 
-What can be done to improve the situation described in the previous section, in which Representative Murakami continues to struggle alone? The following are two suggestions.
+What can be done to improve the situation described in the previous section, in which Representative Murakami continues to struggle alone? The following are two recommendations.
 
 1. Diversification of development resources
 2. Diversification of Business income
