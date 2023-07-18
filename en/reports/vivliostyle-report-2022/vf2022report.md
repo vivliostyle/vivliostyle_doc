@@ -185,7 +185,10 @@ In this chapter, we report on the projects we conducted this fiscal year. How wa
 
 ![Fig-4: Number of major product PRs for the past three fiscal years](./img/fig-4.svg){ width=100% }
 
-The number of PRs for [Vivliostyle.js](https://github.com/vivliostyle/vivliostyle.js), the product that forms the basis of all the products, was outstanding, indicating that significant progress was made in its development for the composition of the corporation's products, see [Activities in the Previous Yearreport](https://vivliostyle.org/viewer/#src=https://vivliostyle.github.io/vivliostyle_doc/ja/reports/vivliostyle-report-2021/vf2021report.html&bookMode=true&userStyle=data:,/*<viewer>*/%0A@page { size: A4; }%0A/*</viewer>*/). Next to that are [Vivliostyle CLI](https://github.com/vivliostyle/vivliostyle-cli), [Vivliostyle Pub](https://github.com/vivliostyle/vivliostyle-pub), and it can be said that development of these products has also progressed well. However, PR numbers for products other than these three were weak.
+The number of PRs for all the underlying products, [Vivliostyle.js](https://github.com/vivliostyle/vivliostyle.js) is outstanding, and it can be seen that development has made great progress (For more information on our product structure, see Refer to [FY2021 Activity Report](https://vivliostyle.org/viewer/#src=https://vivliostyle.github.io/vivliostyle_doc/ja/reports/vivliostyle-report-2021/vf2021report.html&bookMode=true&userStyle=data:,/*<viewer>*/%0A@page { size: A4; }%0A/*</viewer>*/)).
+
+
+ Next to that are [Vivliostyle CLI](https://github.com/vivliostyle/vivliostyle-cli), [Vivliostyle Pub](https://github.com/vivliostyle/vivliostyle-pub), and it can be said that development of these products has also progressed well. However, PR numbers for products other than these three were weak.
 
 ### Analysis of PR Creator
 
@@ -233,7 +236,7 @@ In this way, the development situation of Representative Murakami's “solitary 
 
 However, there were signs that this situation may change this quarter. Vivliostyle.js, which had been developed almost exclusively by Murakami, now had two new contributors (Fig-5). Of course, the functions added by their PR can be used in other products as well.
 
-![図5 [Number of commits to master branch in Vivliostyle.js this fiscal year](https://github.com/vivliostyle/vivliostyle.js/graphs/contributors?from=2022-04-01&to=2023-03-31&type=c)](./img/fig-5.png){ width=100% }
+![Fig-5: [Number of commits to master branch in Vivliostyle.js this fiscal year](https://github.com/vivliostyle/vivliostyle.js/graphs/contributors?from=2022-04-01&to=2023-03-31&type=c)](./img/fig-5.png){ width=100% }
 
 The [PR](https://github.com/vivliostyle/vivliostyle.js/pull/1090) by Mr. [hkwi](https://github.com/hkwi), shown above, adds the CSS leader (), which provides the ruled line functionality often used in table of contents and other documents. This has been an issue for some time and is a long-awaited addition.
 
