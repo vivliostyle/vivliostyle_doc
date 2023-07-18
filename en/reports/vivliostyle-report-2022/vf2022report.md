@@ -179,15 +179,15 @@ At the end of Chapter 1, we will look at “Income and Expenditure Statement”,
 
 ## **Chapter 2: Activity Report for FY2022**
 
-### PR数からみたプロダクトの開発状況
+### Product development status in terms of number of PRs
 
-この章では、今期おこなった事業について報告する。当法人の設立目的でもあるプロダクト開発はどうだったのだろう。当法人の主要なプロダクトのプルリクエスト（PR）数を集計してみた（図4）。なお、ここではbotによるPRは排除し、人間によるものだけを集計している。
+In this chapter, we report on the projects we conducted this fiscal year. How was the development of products, which is also the purpose of the foundation of the Foundation? We have tabulated the number of pull requests (PRs) for our main products (Fig-4). Note that this report excludes PRs by bots and only counts those by humans.
 
-![図4 過去3期分の主要プロダクトPR数](./img/fig-4.svg){ width=100% }
+![Fig-4: Number of major product PRs for the past three fiscal years](./img/fig-4.svg){ width=100% }
 
-すべての基盤となるプロダクト、[Vivliostyle.js](https://github.com/vivliostyle/vivliostyle.js)のPR数が飛び抜けて多く、開発が大きく進捗したことが分かる（当法人のプロダクト構成については[前年度活動報告書](https://vivliostyle.org/viewer/#src=https://vivliostyle.github.io/vivliostyle_doc/ja/reports/vivliostyle-report-2021/vf2021report.html&bookMode=true&userStyle=data:,/*%3Cviewer%3E*/%0A@page%20%7B%20size:%20A4;%20%7D%0A/*%3C/viewer%3E*/&f=epubcfi(/2!/4/52/4/28)&find=%E3%83%97%E3%83%AD%E3%83%80%E3%82%AF%E3%83%88%E3%81%AE%E5%88%86%E9%A1%9E%E3%81%A8%E3%81%9D%E3%82%8C%E3%81%9E%E3%82%8C%E3%81%AE%E5%BD%B9%E7%9B%AE)を参照）。それに次ぐのが、[Vivliostyle CLI](https://github.com/vivliostyle/vivliostyle-cli)、[Vivliostyle Pub](https://github.com/vivliostyle/vivliostyle-pub)で、これらの開発も順調に進んだと言える。ただし、この3つ以外のプロダクトのPR数は低調だった。
+The number of PRs for [Vivliostyle.js](https://github.com/vivliostyle/vivliostyle.js), the product that forms the basis of all the products, was outstanding, indicating that significant progress was made in its development (for the composition of the corporation's products, see [Activities in the Previous Yearreport](https://vivliostyle.org/viewer/#src=https://vivliostyle.github.io/vivliostyle_doc/ja/reports/vivliostyle-report-2021/vf2021report.html&bookMode=true&userStyle=data:,/*%3Cviewer%3E*/%0A@page%20%7B%20size:%20A4;%20%7D%0A/*%3C/viewer%3E*/&f=epubcfi(/2!/4/52/4/28)&find=%E3%83%97%E3%83%AD%E3%83%80%E3%82%AF%E3%83%88%E3%81%AE%E5%88%86%E9%A1%9E%E3%81%A8%E3%81%9D%E3%82%8C%E3%81%9E%E3%82%8 C%E3%81%AE%E5%BD%B9%E7%9B%AE). Next to that are [Vivliostyle CLI](https://github.com/vivliostyle/vivliostyle-cli), [Vivliostyle Pub](https://github.com/vivliostyle/ vivliostyle-pub), and it can be said that development of these products has also progressed well. However, PR numbers for products other than these three were weak.
 
-### PR作成者の分析
+### Analysis of PR Creator
 
 これをまとめると、開発が順調に進んだVivliostyle.js、Vivliostyle CLI、Vivliostyle Pubのグループと、あまり順調とは言えなかった[VFM](https://github.com/vivliostyle/vfm)、[themes](https://github.com/vivliostyle/themes)のグループに明確に分かれる。では、この2つのグループを分けた要因は何か。PRの作成者に注目してみよう。
 

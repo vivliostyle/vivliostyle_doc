@@ -31,7 +31,7 @@
 <nav id="TOC" role="doc-toc">
 <ul>
 <li><a href="#chapter-1-financial-report-for-fy2022"
-id="toc-chapter-1-financial-report-for-fy2022"><strong>chapter 1:
+id="toc-chapter-1-financial-report-for-fy2022"><strong>Chapter 1:
 Financial Report for FY2022</strong></a>
 <ul>
 <li><a href="#foreword" id="toc-foreword">Foreword</a></li>
@@ -48,16 +48,17 @@ Expenditure Statement for FY2021</a></li>
 id="toc-chapter-2-activity-report-for-fy2022"><strong>Chapter 2:
 Activity Report for FY2022</strong></a>
 <ul>
-<li><a href="#pr数からみたプロダクトの開発状況"
-id="toc-pr数からみたプロダクトの開発状況">PR数からみたプロダクトの開発状況</a></li>
-<li><a href="#pr作成者の分析"
-id="toc-pr作成者の分析">PR作成者の分析</a></li>
+<li><a href="#product-development-status-in-terms-of-number-of-prs"
+id="toc-product-development-status-in-terms-of-number-of-prs">Product
+development status in terms of number of PRs</a></li>
+<li><a href="#analysis-of-pr-creator"
+id="toc-analysis-of-pr-creator">Analysis of PR Creator</a></li>
 <li><a href="#来期への提言" id="toc-来期への提言">来期への提言</a></li>
 </ul></li>
 <li><a href="#理事" id="toc-理事">理事</a></li>
 </ul>
 </nav>
-<h2 id="chapter-1-financial-report-for-fy2022"><strong>chapter 1:
+<h2 id="chapter-1-financial-report-for-fy2022"><strong>Chapter 1:
 Financial Report for FY2022</strong></h2>
 <p>(The 5th Fiscal Year: from April 1, 2022 to March 31, 2023)</p>
 <h3 id="foreword">Foreword</h3>
@@ -939,23 +940,33 @@ accounts this FY</td>
 </table>
 <h2 id="chapter-2-activity-report-for-fy2022"><strong>Chapter 2:
 Activity Report for FY2022</strong></h2>
-<h3
-id="pr数からみたプロダクトの開発状況">PR数からみたプロダクトの開発状況</h3>
-<p>この章では、今期おこなった事業について報告する。当法人の設立目的でもあるプロダクト開発はどうだったのだろう。当法人の主要なプロダクトのプルリクエスト（PR）数を集計してみた（図4）。なお、ここではbotによるPRは排除し、人間によるものだけを集計している。</p>
+<h3 id="product-development-status-in-terms-of-number-of-prs">Product
+development status in terms of number of PRs</h3>
+<p>In this chapter, we report on the projects we conducted this fiscal
+year. How was the development of products, which is also the purpose of
+the foundation of the Foundation? We have tabulated the number of pull
+requests (PRs) for our main products (Fig-4). Note that this report
+excludes PRs by bots and only counts those by humans.</p>
 <figure>
 <img src="./img/fig-4.svg" style="width:100.0%"
-alt="図4 過去3期分の主要プロダクトPR数" />
-<figcaption aria-hidden="true">図4
-過去3期分の主要プロダクトPR数</figcaption>
+alt="Fig-4: Number of major product PRs for the past three fiscal years" />
+<figcaption aria-hidden="true">Fig-4: Number of major product PRs for
+the past three fiscal years</figcaption>
 </figure>
-<p>すべての基盤となるプロダクト、<a
-href="https://github.com/vivliostyle/vivliostyle.js">Vivliostyle.js</a>のPR数が飛び抜けて多く、開発が大きく進捗したことが分かる（当法人のプロダクト構成については<a
-href="https://vivliostyle.org/viewer/#src=https://vivliostyle.github.io/vivliostyle_doc/ja/reports/vivliostyle-report-2021/vf2021report.html&amp;bookMode=true&amp;userStyle=data:,/*%3Cviewer%3E*/%0A@page%20%7B%20size:%20A4;%20%7D%0A/*%3C/viewer%3E*/&amp;f=epubcfi(/2!/4/52/4/28)&amp;find=%E3%83%97%E3%83%AD%E3%83%80%E3%82%AF%E3%83%88%E3%81%AE%E5%88%86%E9%A1%9E%E3%81%A8%E3%81%9D%E3%82%8C%E3%81%9E%E3%82%8C%E3%81%AE%E5%BD%B9%E7%9B%AE">前年度活動報告書</a>を参照）。それに次ぐのが、<a
+<p>The number of PRs for <a
+href="https://github.com/vivliostyle/vivliostyle.js">Vivliostyle.js</a>,
+the product that forms the basis of all the products, was outstanding,
+indicating that significant progress was made in its development (for
+the composition of the corporation’s products, see <a
+href="https://vivliostyle.org/viewer/#src=https://vivliostyle.github.io/vivliostyle_doc/ja/reports/vivliostyle-report-2021/vf2021report.html&amp;bookMode=true&amp;userStyle=data:,/*%3Cviewer%3E*/%0A@page%20%7B%20size:%20A4;%20%7D%0A/*%3C/viewer%3E*/&amp;f=epubcfi(/2!/4/52/4/28)&amp;find=%E3%83%97%E3%83%AD%E3%83%80%E3%82%AF%E3%83%88%E3%81%AE%E5%88%86%E9%A1%9E%E3%81%A8%E3%81%9D%E3%82%8C%E3%81%9E%E3%82%8%20C%E3%81%AE%E5%BD%B9%E7%9B%AE">Activities
+in the Previous Yearreport</a>. Next to that are <a
 href="https://github.com/vivliostyle/vivliostyle-cli">Vivliostyle
-CLI</a>、<a
-href="https://github.com/vivliostyle/vivliostyle-pub">Vivliostyle
-Pub</a>で、これらの開発も順調に進んだと言える。ただし、この3つ以外のプロダクトのPR数は低調だった。</p>
-<h3 id="pr作成者の分析">PR作成者の分析</h3>
+CLI</a>, <a
+href="https://github.com/vivliostyle/%20vivliostyle-pub">Vivliostyle
+Pub</a>, and it can be said that development of these products has also
+progressed well. However, PR numbers for products other than these three
+were weak.</p>
+<h3 id="analysis-of-pr-creator">Analysis of PR Creator</h3>
 <p>これをまとめると、開発が順調に進んだVivliostyle.js、Vivliostyle
 CLI、Vivliostyle Pubのグループと、あまり順調とは言えなかった<a
 href="https://github.com/vivliostyle/vfm">VFM</a>、<a
