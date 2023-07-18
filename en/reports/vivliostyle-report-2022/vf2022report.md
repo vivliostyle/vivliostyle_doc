@@ -126,7 +126,7 @@ While editorial production increased by 1,000,000 yen from the previous period, 
 
 In other words, the company's contracted development sales declined significantly in the current fiscal year, resulting in a loss.
 
-### Income and Expenditure Statement for FY2021
+### Income and Expenditure Statement for FY2022
 
 At the end of Chapter 1, we will look at “Income and Expenditure Statement”, which compares the budgeted amount to the closing amount during the current fiscal year (April 1, 2020 to March 31, 2021). However, since we have not developed a budget, it will remain a formality and will be substantially the same as the statement of changes in net assets in the previous section. The unit of measure is also yen.
 
