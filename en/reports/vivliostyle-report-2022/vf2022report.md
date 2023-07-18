@@ -228,7 +228,7 @@ To summarize so far, there are two distinct groups: the Vivliostyle.js, Vivliost
 <figcaption>Table-3: Breakdown of PR Creators at Vivliostyle Pub.</figcaption>
 </figure>
 
-As can be seen from these tables, in the groups that developed smoothly, it was Representative Murakami who created many of the PRs. On the other hand, in the group that did not perform so well, the Murakami representatives were less involved.
+As can be seen from these tables, in the groups that developed smoothly, it was Representative Murakami who created many of the PRs. On the other hand, in the group that did not perform so well, Murakami was less involved.
 
 Incidentally, looking at the PR content of Representative Murakami for Vivliostyle CLI and Vivliostyle Pub, it is clear that it is not PR to add original functions to Vivliostyle CLI or Vivliostyle Pub, but rather to add functions and fix bugs in Vivliostyle.js, for which he himself is a maintainer. for which he is a maintainer, but rather to spread the addition of features and bug fixes in Vivliostyle.js.
 
