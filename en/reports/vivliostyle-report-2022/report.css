@@ -1,0 +1,124 @@
+﻿@page {
+  /* size: a4; */
+  margin: 10%;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", "YuGothic", "Yu Gothic", sans-serif;
+  font-size: 9pt;
+  line-height: 1;
+
+  @top-center {
+    content: env(doc-title);
+  }
+
+  @bottom-center {
+    content: counter(page);
+  }
+}
+
+@page :first {
+  @top-center {
+    content: none;
+  }
+}
+
+html {
+  ffont-family: "Optima", "Arial", sans-serif;
+}
+
+body {
+  font-size: 94%;
+  line-height: 1.5;
+}
+
+@media print {
+  body {
+    column-width: 34em;
+    column-gap: 1.5em;
+    column-fill: auto;
+  }
+}
+
+h1.title {
+  margin: 1.5em 0 1em;
+  font-size: 270%;
+  line-height: 1.5;
+  text-align: center;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+#title-block-header::after {
+  content: url(https://vivliostyle.org/assets/vivliostyle-logo.svg);
+  display: block;
+  width: min-content;
+  margin: 3em auto 5em;
+}
+
+#TOC>ul>li>a {
+  font-size: 110%;
+  font-weight: bold;
+}
+
+p {
+  text-align: justify;
+}
+
+h2 {
+  margin: 0 0 3.3em;
+  font-size: 133%;
+  line-height: 1.5;
+}
+
+h3 {
+  margin: 1.5 0 1.5em;
+  font-size: 120%;
+  line-height: 1.5;
+}
+
+h2 {
+  break-before: page;
+}
+
+/*
+h2 ~ h2 ~ h3 ~ h3 {
+  break-before: column;
+}
+ */
+
+figure {
+  break-inside: avoid;
+}
+table {
+  border-collapse: collapse;
+  font-size: 94%;
+  line-height: 1.5;
+}
+
+th,
+td {
+  border: 1px solid gray;
+  padding: 0 0.5em;
+}
+
+th {
+  background-color: #EFF1F2;
+}
+
+td:nth-child(n+2) {
+  text-align: right;
+}
+
+#balance-sheet-for-fy2022+p+table>tbody>tr:nth-child(5),
+#balance-sheet-for-fy2022+p+table>tbody>tr:nth-child(11),
+#balance-sheet-for-fy2022+p+table>tbody>tr:nth-child(19),
+#net-assets-increasedecrease-statement-for-fy2022+p+table>tbody>tr:nth-child(10),
+#net-assets-increasedecrease-statement-for-fy2022+p+table>tbody>tr:nth-child(20),
+#net-assets-increasedecrease-statement-for-fy2022+p+table>tbody>tr:nth-child(23),
+#net-assets-increasedecrease-statement-for-fy2022+p+table>tbody>tr:nth-child(24),
+#net-assets-increasedecrease-statement-for-fy2022+p+table>tbody>tr:nth-child(27),
+#net-assets-increasedecrease-statement-for-fy2022+p+table>tbody>tr:nth-child(39) {
+  background-color: #EFF6FD;
+}
+
+#net-assets-increasedecrease-statement-for-fy2022+p+table>tbody>tr:nth-child(5) {
+  background-color: #f7f6bd;
+}
