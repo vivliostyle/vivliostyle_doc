@@ -185,7 +185,7 @@ In this chapter, we report on the projects we conducted this fiscal year. How wa
 
 ![Fig-4: Number of major product PRs for the past three fiscal years](./img/fig-4.svg){ width=100% }
 
-The number of PRs for all the underlying products, [Vivliostyle.js](https://github.com/vivliostyle/vivliostyle.js) is outstanding, and it can be seen that development has made great progress (For more information on our product structure, see Refer to [FY2021 Activity Report](https://vivliostyle.org/viewer/#src=https://vivliostyle.github.io/vivliostyle_doc/ja/reports/vivliostyle-report-2021/vf2021report.html&bookMode=true&userStyle=data:,/*<viewer>*/%0A@page { size: A4; }%0A/*</viewer>*/)).
+The number of PRs for all the underlying products, [Vivliostyle.js](https://github.com/vivliostyle/vivliostyle.js) is outstanding, and it can be seen that development has made great progress (For more information on our product structure, see Refer to [FY2021 Activity Report](https://vivliostyle.org/viewer/#src=https://vivliostyle.github.io/vivliostyle_doc/en/reports/vivliostyle-report-2021/vf2021report.html&bookMode=true&userStyle=data:,/*<viewer>*/%0A@page { size: A4; }%0A/*</viewer>*/)).
 
 
  Next to that are [Vivliostyle CLI](https://github.com/vivliostyle/vivliostyle-cli), [Vivliostyle Pub](https://github.com/vivliostyle/vivliostyle-pub), and it can be said that development of these products has also progressed well. However, PR numbers for products other than these three were weak.
