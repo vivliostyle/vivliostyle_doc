@@ -120,7 +120,7 @@ Now, as the last part of this section, let us explore the causes of the decline 
 
 ![Fig-3: Breakdown of Business Revenue in FY2021 and FY2022](./img/fig-3.svg){ width=70% }
 
-While editorial production increased by 1,000,000 yen from the previous period, contracted development from outside sources, including maintenance contracts, decreased to 1,685,750 yen, a decrease of 4,031,500 yen from the previous period (Katsuhiro Ogata is in charge of editorial production, while Representative Director Shinyu Murakami is mainly responsible for contracted development). In the [business report for FY2021](https://github.com/vivliostyle/vivliostyle_doc/tree/gh-pages/ja/reports/vivliostyle-report-2021), commissioned development is explained as follows.
+While editorial production increased by 1,000,000 yen from the previous period, contracted development from outside sources, including maintenance contracts, decreased to 1,685,750 yen, a decrease of 4,031,500 yen from the previous period (Katsuhiro Ogata is in charge of editorial production, while Representative Director Shinyu Murakami is mainly responsible for contracted development). In the [Activity Report for FY2021](https://github.com/vivliostyle/vivliostyle_doc/tree/gh-pages/en/reports/vivliostyle-report-2021), commissioned development is explained as follows.
 
 > What catches the eye is that “Business income” raised 6,267,250 yen, which is 4,763,529 yen more than the previous fiscal year. (omitted) This was due to the expansion of contract development from external companies.
 
@@ -185,7 +185,7 @@ In this chapter, we report on the projects we conducted this fiscal year. How wa
 
 ![Fig-4: Number of major product PRs for the past three fiscal years](./img/fig-4.svg){ width=100% }
 
-The number of PRs for all the underlying products, [Vivliostyle.js](https://github.com/vivliostyle/vivliostyle.js) is outstanding, and it can be seen that development has made great progress (For more information on our product structure, see Refer to [FY2021 Activity Report](https://vivliostyle.org/viewer/#src=https://vivliostyle.github.io/vivliostyle_doc/ja/reports/vivliostyle-report-2021/vf2021report.html&bookMode=true&userStyle=data:,/*<viewer>*/%0A@page { size: A4; }%0A/*</viewer>*/)).
+The number of PRs for all the underlying products, [Vivliostyle.js](https://github.com/vivliostyle/vivliostyle.js) is outstanding, and it can be seen that development has made great progress (For more information on our product structure, refer to [FY2021 Activity Report](https://vivliostyle.org/viewer/#src=https://vivliostyle.github.io/vivliostyle_doc/en/reports/vivliostyle-report-2021/vf2021report.html&bookMode=true&userStyle=data:,/*<viewer>*/%0A@page { size: A4; }%0A/*</viewer>*/)).
 
 
  Next to that are [Vivliostyle CLI](https://github.com/vivliostyle/vivliostyle-cli), [Vivliostyle Pub](https://github.com/vivliostyle/vivliostyle-pub), and it can be said that development of these products has also progressed well. However, PR numbers for products other than these three were weak.
