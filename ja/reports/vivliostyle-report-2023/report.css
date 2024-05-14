@@ -41,6 +41,7 @@ h1.title {
   text-align: center;
   word-break: keep-all;
   overflow-wrap: break-word;
+  font-feature-settings: "palt";
 }
 
 #title-block-header::after {
@@ -63,12 +64,14 @@ h2 {
   margin: 0 0 3.3em;
   font-size: 133%;
   line-height: 1.5;
+  font-feature-settings: "palt";
 }
 
 h3 {
   margin: 1.5 0 1.5em;
   font-size: 120%;
   line-height: 1.5;
+  font-feature-settings: "palt";
 }
 
 h2 {
