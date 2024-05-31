@@ -124,29 +124,30 @@ lang: ja
 
 今期が終わった時点での正味財産の額である「一般正味財産期末残高」（赤色の線）をみると前期よりも1,331,963円減少し、マイナス5,402,496円となった。これは、前期のマイナス4,050,533円よりもさらに赤字が拡大したことになる。
 
-### 2023年度収支計算書
+### Statement of Income and Expenditure for Fiscal 2023
 
-第1章の終わりとして、今期中（2023年4月1日から2024年3月31日）における、予算額と決算額を比較した収支計算書を見よう。ただし、当法人は予算を策定していないので、形式的なものに留まり、前節の正味財産増減計算書と実質的に同じ内容になる。
+At the end of Chapter 1, let's look at the statement of income and expenditure comparing the budget and the actual amount during this term (from April 1, 2023, to March 31, 2024). However, since our corporation does not formulate a budget, it remains formal and will be substantially the same as the statement of changes in net assets in the previous section.
 
-| 科目                | 予算額 | 決算額        | 差異         | 備考 |
-| ----------------- | --- | ---------- | ---------- | -- |
-| **Ⅰ. 一般正味財産増減の部** |     |            |            |    |
-| 1. 経常増減の部         |     |            |            |    |
-| ⑴ 経常収益            |     |            |            |    |
-| ①事業収益             | (0)   | (3,407,300)  | -3,407,300 |    |
-| 事業収益             |     | 3,407,300  | -3,407,300 |    |
-| ②受取寄付金          | (0)   |(243,254)     | (-243,254)    |    |
-| 受取寄付金           |     | 243,254     | -243,254 |    |
-| ③雑収益              | (0)   | (7)          | (-7)         |    |
-| 受取利息              |  0   | 7          | -7         |    |
-| 経常利益計             | 0   | 3,650,561  | -3,650,561 |    |
-| ⑵ 経常費用            |     |            |            |    |
-| ① 事業費             |     |            |            |    |
-| 事業経費              | (0)   | (1,530,724)    | -1,530,724 |    |
-| 事）旅費交通費   |    | 8,188  | -8,188 |    |
-| 事）通信運搬費  |     | 1,221  | -1,221  |    |
-| 事）租税公課    |   | 30,000  | -30,000  |    |
-| 雑費    |      | 9,650  | -9,650  |    |
+| Item | Budget | Actual Amount | Difference | Remarks |
+| --- | --- | --- | --- | --- |
+| **Ⅰ. Changes in General Net Assets** | | | | |
+| 1. Changes in Ordinary Income | | | | |
+| ⑴ Ordinary Income | | | | |
+| ① Business Income | (0) | (3,407,300) | -3,407,300 | |
+| Business Income | | 3,407,300 | -3,407,300 | |
+| ② Received Donations | (0) | (243,254) | (-243,254) | |
+| Received Donations | | 243,254 | -243,254 | |
+| ③ Miscellaneous Income | (0) | (7) | (-7) | |
+| Received Interest | 0 | 7 | -7 | |
+| Total Ordinary Income | 0 | 3,650,561 | -3,650,561 | |
+| ⑵ Ordinary Expenses | | | | |
+| ① Business Expenses | | | | |
+| Business Expenses | (0) | (1,530,724) | -1,530,724 | |
+| Travel Expenses | | 8,188 | -8,188 | |
+| Communication and Transportation Expenses | | 1,221 | -1,221 | |
+| Rent, Taxes and Public Dues | | 30,000 | -30,000 | |
+| Miscellaneous Expenses | | 9,650 | -9,650 | |
+
 | 事）支払手数料 |     | 1,129,665 | -1,129,665  |    |
 | 事）支払報酬料   |     | 352,000    | -352,000   |    |
 | 事業費計              | 0   | 1,530,724 | -1,530,724 |    |
