@@ -67,33 +67,42 @@ The amount obtained by subtracting liabilities from assets is called "net assets
 | ③ Miscellaneous Income              | (7)          | (10)          | (-3)   |
 | Received Interest              | 7          | 10          | -3          |
 | Total Ordinary Revenue              | 3,650,561   | 3,384,258  | 266,303 |
-| ⑵ Ordinary Expenses            |            |            |            |
-| ① Business Expenses             |            |            |            |
-| Business Expenses              | (1,530,724)    | (668,733)     | (861,991)    |
-| Travel Expenses             | 8,188 | 1,676 | 6,512 |
-| Communication and Transportation Expenses             | 1,221 | 1,848 | -627 |
-| Consumables Expenses             |  | 204 | -204 |
-| Taxes and Public Dues    | 30,000 |    | 30,000  |
-| Miscellaneous Expenses    | 9,650 |    | 9,650  |
-| Payment Fees    | 1,129,665 | 461,405  | 668,260 |
-| Payment Remuneration   | 352,000 |  198,000 | 154,000 |
-| ② Non-operating Expenses             |            |            |            |
-| Non-operating Expenses             | (1,000)    | (1,000)     |    |
-| Bank Charges             | 1,000 | 1,000 |  |
-| Total Ordinary Expenses             | 1,531,724 | 669,733 | 862,991 |
-| Ordinary Income (Loss)             | 2,118,837 | 2,714,525 | -595,688 |
-| 2. Changes in Extraordinary Income and Losses    |    |    |    |
-| ⑴ Extraordinary Income             |            |            |            |
-| Extraordinary Income             |  |  |  |
-| ⑵ Extraordinary Losses             |            |            |            |
-| Extraordinary Losses             |  |  |  |
-| Total Extraordinary Income and Losses             |  |  |  |
-| Current Term Net Assets             | 2,118,837 | 2,714,525 | -595,688 |
-| **Ⅱ. Changes in Designated Net Assets** |            |            |            |
-| Changes in Current Term Designated Net Assets       | 0          | 0  | 0    |
-| Balance of Designated Net Assets at Beginning of Term        | 0          | 0          | 0     |
-| Balance of Designated Net Assets at End of Term        | 0          | 0          | 0          |
-| **Ⅲ. Balance of Net Assets at End of Term**   | -5,402,496 | -4,050,533 | -1,331,963 |
+| ⑵ Ordinary expenses            |            |            |            |
+| ① Business expenses             |            |            |            |
+| Business expenses              | (1,530,724)    | (668,733)     | (861,991)    |
+|  Travel expenses             | 8,188 | 1,676 | 6,512 |
+|  Communication and transportation expenses             | 1,221 | 1,848 | -627 |
+|  Consumables expenses             |  | 204 | -204 |
+| Taxes and public dues    | 30,000 |    | 30,000  |
+|  Miscellaneous expenses    | 9,650 |    | 9,650  |
+|  Payment fees    | 1,129,665 | 461,405  | 668,260 |
+|  Payment remuneration   | 352,000 |  198,000 | 154,000 |
+|  Newspaper and book expenses   |         | 5,600 | -5,600 |
+| Total business expenses              | 1,530,724 | 668,733 | 861,991 |
+| ② Administrative expenses             |            |            |            |
+|  Business outsourcing expenses  | 3,451,800 |  4,229,500  | -777,700 |
+| Total administrative expenses              |  3,451,800  | 4,229,500 | -777,700 |
+| Total ordinary expenses             |  4,982,524  | 4,898,233 | 84,291 |
+| Ordinary profit or loss before adjustments   | -1,331,963 | -1,513,975 | 182,012 |
+| Total valuation and other profits or losses            | 0          | 0          | 0          |
+| Ordinary profit or loss           | -1,331,963 | -1,513,975 | 182,012 |
+| 2. Non-ordinary profit or loss        |            |            |            |
+| ⑴ Non-ordinary income           |            |            |            |
+| Total non-ordinary income            | 0          | 0          | 0          |
+| ⑵ Non-ordinary expenses           |            |            |           |
+| Total non-ordinary expenses            | 0          | 0          | 0          |
+| Non-ordinary profit or loss          | 0          | 0          | 0          |
+| Net assets increase or decrease before other accounting transfers | -1,331,963 | -1,513,975 | 182,012 |
+| Net assets increase or decrease before tax    | -1,331,963 | -1,513,975 | 182,012 |
+| Corporate, inhabitant and enterprise taxes      | 20,000     | 20,000     | 0    |
+| Net assets increase or decrease       | -1,331,963 | -1,513,975 | 182,012 |
+| Net assets at the beginning of the term        | -4,050,533 | -2,516,558 | -1,533,975 |
+| Net assets at the end of the term        | -5,402,496 | -4,050,533 | -1,331,963 |
+| **Ⅱ. Designated net assets increase or decrease** |            |            |            |
+| Designated net assets increase or decrease       | 0          | 0          | 0          |
+| Designated net assets at the beginning of the term        | 0          | 0          | 0          |
+| Designated net assets at the end of the term        | 0          | 0          | 0          |
+| **Ⅲ. Net assets at the end of the term**   | -5,402,496 | -4,050,533 | -1,331,963 |
 
 
 The main indicators (the cells in light blue) of this Statement of Changes in Net Assets have been graphed to show the increase and decrease since our establishment (Figure 2).
@@ -104,7 +113,7 @@ Let's look at each one. First, the "Ordinary Income" (the light blue line) that 
 
 ![Figure 3: Breakdown of business income since the 4th term](./img/fig-3.svg){ width=45% }
 
-In recent years, our corporation's business income has been centered on contract development and editing production. Figure 3 shows the transition since the 4th term (excluding the seminar fees that were newly added this term). It can be seen that contract development is gradually decreasing, and editing production is increasing.
+In recent years, our corporation's business income has been centered on contract development and editing production. Figure 3 shows the transition since the 4th term (excluding the Revenue from seminars that were newly added this term). It can be seen that contract development is gradually decreasing, and editing production is increasing.
 
 ![Figure 4: Breakdown of business income in the previous term and this term](./img/fig-4.svg){ width=70% }
 

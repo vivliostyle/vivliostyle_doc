@@ -1,0 +1,67 @@
+原語, 英訳語
+資産, Assets
+流動資産, Current assets
+現金・預金, Cash and deposits
+他流動資産, Other current assets
+流動資産合計, Total current assets
+固定資産, Fixed Assets
+その他固定資産, Other fixed assets
+創立費, Founding expenses
+その他固定資産合計, Total other fixed assets
+固定資産合計, Total fixed assets
+資産合計, Total assets
+負債, Liabilities
+流動負債, Current liabilities
+預り金, Withholdings
+役員借入金, Loan from officer
+買掛金, Accounts payable
+未払法人税等, Accrued income taxes
+流動負債合計, Total current liabilities
+負債合計, Total liabilities
+正味財産, Net Assets
+一般正味財産, General Net Assets
+正味財産合計, Total net assets
+負債及び正味財産合計, Total liabilities and net assets
+一般正味財産増減, General Net Assets Increase/Decrease
+経常増減の部, Ordinary Increase/Decrease
+経常収益, Ordinary revenues
+事業収益, Business income
+受取寄付金, Donation received
+雑収益, Other revenues
+受取利息, Interest received
+経常収益計, Total ordinary revenues
+経常費用, Ordinary expenses
+事業費, Business expenses
+事業経費, Business expenses
+旅費交通費, Travel and transportation expenses
+通信運搬費, Communication transportation costs
+消耗品費, Consumables costs
+支払手数料, Commission fee
+支払報酬料, Compensation paid
+新聞図書費, Newspaper book expenses
+事業費計, Total business expenses
+管理費, Administrative expenses
+業務委託費, Outsourcing costs
+管理費計, Total administrative expenses
+経常費用計, Total ordinary expenses
+評価損益等調整前当期経常増減額, Ordinary increase/decrease before valuation gain/loss this FY
+評価損益等計, Total valuation gain/loss
+当期経常増減額, Ordinary increase/decrease this FY
+経常外増減, Non-ordinary Increase/Decrease
+経常外収益, Non-ordinary revenues
+経常外収益計, Total non-ordinary revenues
+経常外費用, Non-ordinary expenses
+経常外費用計, Total non-ordinary expenses
+当期経常外増減額, Non-ordinary increase/decrease this FY
+他会計振替前当期一般正味財産増減額, General net assets increase/decrease before transfer to other accounts this FY
+税引前当期一般正味財産増減額, General net assets increase/decrease before taxes this FY
+法人税、住民税及び事業税, Corporate tax, resident tax and business tax
+当期一般正味財産増減額, General net assets increase/decrease this FY
+一般正味財産期首残高, General net assets at beginning of FY
+一般正味財産期末残高, General net assets at end of FY
+指定正味財産増減, Designated Net Assets Increase/Decrease
+当期指定正味財産増減額, Designated net assets increase/decrease this FY
+指定正味財産期首残高, Designated net assets at beginning of FY
+指定正味財産期末残高, Designated net assets at end of FY
+正味財産期末残高, Net Assets at End of FY
+, 
