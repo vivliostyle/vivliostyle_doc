@@ -1,5 +1,6 @@
-一般社団法人ビブリオスタイル,Vivliostyle Foundation
 原語, 英訳語
+一般社団法人ビブリオスタイル,Vivliostyle Foundation
+図1,Fig-1
 資産, Assets
 流動資産, Current assets
 現金・預金, Cash and deposits
