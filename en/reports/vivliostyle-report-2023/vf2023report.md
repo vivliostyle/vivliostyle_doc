@@ -7,11 +7,11 @@ lang: en
 
 ## **Chapter 1: Financial Report for FY2023**
 
-### Introduction
+### Foreword
 
-The General Incorporated Association Vivliostyle (hereinafter referred to as "the Association") was established in August 2018 and has been active for five terms until March 2023. Here, we report the financial statements for the sixth term starting in April 2023.
+Vivliostyle Foundation was established in August 2018 and has been active for five terms until March 2023. Here we report on the results of the sixth term, which begins in April 2023.
 
-### Balance Sheet for FY 2023
+### Balance Sheet for FY2023
 
 The following shows the status of asset holdings (balance sheet) as of the end of this term (March 31, 2024). The unit is yen.
 
@@ -42,20 +42,18 @@ The following shows the status of asset holdings (balance sheet) as of the end o
 | Total net assets |-5,402,496 | -4,050,533 | -1,351,963 |
 | Total liabilities and net assets | 466,204 | 818,167  | -351,963  |
 
+Let's look at the transition of the main indicators in the balance sheet since the establishment (Fig-1).
 
-
-Let's look at the transition of the main indicators in the balance sheet since the establishment (Figure 1).
-
-![Figure 1: Transition of the main indicators in the balance sheet since the establishment](./img/fig-1.svg){ width=90% }
+![Fig-1: Transition of the main indicators in the balance sheet since the establishment](./img/fig-1.svg){ width=90% }
 
 The total assets, which had been rising little by little in the third and fourth terms, decreased in the fifth and sixth terms. The net assets also decreased in the fifth and sixth terms following the fifth term. The total liabilities increased by 1 million yen from the previous term. This is due to the increase in loans from officers.
 
-### Statement of Changes in Net Assets for FY 2023
+### Statement of Changes in Net Assets for FY2023
 
 
 The amount obtained by subtracting liabilities from assets is called "net assets". The "Statement of Changes in Net Assets" records the increase and decrease of this, and from this, we can understand the details of how money was used and sales during this term (from April 1, 2023, to March 31, 2024).
 
-| Title                | **This FY**    | **Prev. FY**    | **Increase/Decrease**     |
+| Title                | **This FY (2023)**    | **Prev. FY (2022)**    | **Increase/Decrease**     |
 | ----------------- | ---------- | ---------- | ---------- |
 | **Ⅰ. Changes in General Net Assets** |            |            |            |
 | 1. Changes in Ordinary Income         |            |            |            |
@@ -105,31 +103,31 @@ The amount obtained by subtracting liabilities from assets is called "net assets
 | **Ⅲ. Net assets at the end of the term**   | -5,402,496 | -4,050,533 | -1,331,963 |
 
 
-The main indicators (the cells in light blue) of this Statement of Changes in Net Assets have been graphed to show the increase and decrease since our establishment (Figure 2).
+The main indicators (the cells in light blue) of this Statement of Changes in Net Assets have been graphed to show the increase and decrease since our establishment (Fig-2).
 
-![Figure 2: Changes in the main indicators in the Statement of Changes in Net Assets since establishment](./img/fig-2.svg){ width=90% }
+![Fig-2: Changes in the main indicators in the Statement of Changes in Net Assets since establishment](./img/fig-2.svg){ width=90% }
 
-Let's look at each one. First, the "Ordinary Income" (the light blue line) that represents the revenue our organization regularly earns was 3,650,561 yen, 266,303 yen more than the previous term. Looking at the breakdown, the business income, which is our main business, was 3,407,300 yen, 171,550 yen more than the previous term, and the donations received were 243,254 yen, 94,756 yen more than the previous term. The 5th term, which was the previous term, had a significant drop in sales compared to the 4th term, but this term has recovered slightly. Figure 3 shows the breakdown of this business income. It is clear that editing and production, which accounts for more than half at 72%, is the main component.
+Let's look at each one. First, the "Ordinary Income" (the light blue line) that represents the revenue our organization regularly earns was 3,650,561 yen, 266,303 yen more than the previous term. Looking at the breakdown, the business income, which is our main business, was 3,407,300 yen, 171,550 yen more than the previous term, and the donations received were 243,254 yen, 94,756 yen more than the previous term. The 5th term, which was the previous term, had a significant drop in sales compared to the 4th term, but this term has recovered slightly. Fig-3 shows the breakdown of this business income. It is clear that editing and production, which accounts for more than half at 72%, is the main component.
 
-![Figure 3: Breakdown of business income since the 4th term](./img/fig-3.svg){ width=45% }
+![Fig-3: Breakdown of business income since the 4th term](./img/fig-3.svg){ width=45% }
 
-In recent years, our corporation's business income has been centered on contract development and editing production. Figure 3 shows the transition since the 4th term (excluding the Revenue from seminars that were newly added this term). It can be seen that contract development is gradually decreasing, and editing production is increasing.
+In recent years, our corporation's business income has been centered on contract development and editing production. Fig-3 shows the transition since the 4th term (excluding the Revenue from seminars that were newly added this term). It can be seen that contract development is gradually decreasing, and editing production is increasing.
 
-![Figure 4: Breakdown of business income in the previous term and this term](./img/fig-4.svg){ width=70% }
+![Fig-4: Breakdown of business income in the previous term and this term](./img/fig-4.svg){ width=70% }
 
-Returning to Figure 2, looking at the Ordinary Expenses (the yellow line), which are the expenses for generating ordinary income, they were 4,982,524 yen, an increase of 84,291 yen from the previous term. Looking at the breakdown, the total business expenses (the green line), which are miscellaneous expenses, increased by 861,991 yen from the previous term to 1,530,724 yen, and the total management fees (the gray line), which are outsourcing fees, decreased by 777,700 yen from the previous term to 3,451,800 yen. In other words, while management fees have decreased, business expenses have increased.
+Returning to Fig-2, looking at the Ordinary Expenses (the yellow line), which are the expenses for generating ordinary income, they were 4,982,524 yen, an increase of 84,291 yen from the previous term. Looking at the breakdown, the total business expenses (the green line), which are miscellaneous expenses, increased by 861,991 yen from the previous term to 1,530,724 yen, and the total management fees (the gray line), which are outsourcing fees, decreased by 777,700 yen from the previous term to 3,451,800 yen. In other words, while management fees have decreased, business expenses have increased.
 
-Looking at the breakdown of business expenses, it is noticeable that the payment fees are 1,129,665 yen, which is 668,260 yen more than the previous term. In other words, it can be seen that there was an increase in payment fees that exceeded the reduction in outsourcing fees. Let's take a look at the breakdown of payment fees (Figure 5).
+Looking at the breakdown of business expenses, it is noticeable that the payment fees are 1,129,665 yen, which is 668,260 yen more than the previous term. In other words, it can be seen that there was an increase in payment fees that exceeded the reduction in outsourcing fees. Let's take a look at the breakdown of payment fees (Fig-5).
 
-![Figure 5: Breakdown of payment fees](./img/fig-5.svg){ width=70% }
+![Fig-5: Breakdown of payment fees](./img/fig-5.svg){ width=70% }
 
-88% of the payment fees are for printing. We showed in Figure 3 that editing and production costs have increased, and along with that, it can be seen that printing costs have significantly increased. This is because the contract for editing and production included printing costs, but at the same time, it should be noted that editing and production, which accounts for a large portion of business income, actually has a higher proportion of expenses compared to contract development.
+88% of the payment fees are for printing. We showed in Fig-3 that editing and production costs have increased, and along with that, it can be seen that printing costs have significantly increased. This is because the contract for editing and production included printing costs, but at the same time, it should be noted that editing and production, which accounts for a large portion of business income, actually has a higher proportion of expenses compared to contract development.
 
-Returning again to Figure 2, looking at the "Current Ordinary Increase/Decrease" (the pink line), which is an indicator of whether the business result is a deficit or a surplus, it was a deficit of minus 1,331,963 yen, although it was 182,012 yen more than the previous term.
+Returning again to Fig-2, looking at the "Current Ordinary Increase/Decrease" (the pink line), which is an indicator of whether the business result is a deficit or a surplus, it was a deficit of minus 1,331,963 yen, although it was 182,012 yen more than the previous term.
 
 Looking at the "General Net Assets End-of-Term Balance" (the red line), which is the amount of net assets at the end of this term, it decreased by 1,331,963 yen from the previous term to minus 5,402,496 yen. This means that the deficit has expanded further from the minus 4,050,533 yen of the previous term.
 
-### Statement of Income and Expenditure for Fiscal 2023
+### Statement of Income and Expenditure for FY2023
 
 At the end of Chapter 1, let's look at the statement of income and expenditure comparing the budget and the actual amount during this term (from April 1, 2023, to March 31, 2024). However, since our corporation does not formulate a budget, it remains formal and will be substantially the same as the statement of changes in net assets in the previous section.
 
@@ -181,13 +179,13 @@ At the end of Chapter 1, let's look at the statement of income and expenditure c
 | **Ⅲ. Balance of Net Assets at End of Term** | 0 | -5,402,496 | 5,402,496 | |
 
 
-## **Chapter 2  Fiscal 2023 (6th Term: April 1, 2023 - March 31, 2024) Business Report**
+## **Chapter 2: Activity Report for FY2023**
 
 ### Product Development
 
-In Chapter 2, we will report on the business activities conducted this term. First, let's report on product development, which is also the purpose of our establishment. Figure 6 shows the number of PRs for major products over the past four terms.
+In Chapter 2, we will report on the business activities conducted this term. First, let's report on product development, which is also the purpose of our establishment. Fig-6 shows the number of PRs for major products over the past four terms.
 
-![Figure 6: Number of PRs for major products over the past four terms](./img/fig-6.svg){ width=100% }
+![Fig-6: Number of PRs for major products over the past four terms](./img/fig-6.svg){ width=100% }
 
 The number of PRs for Vivliostyle.js and Vivliostyle CLI, which are key among the major products, has decreased compared to the previous term. Vivliostyle Pub also fell below the previous term. On the other hand, while VFM and Themes exceeded the previous term, the absolute numbers are small, so overall, unfortunately, it can be said that it was subdued compared to the previous term.
 
@@ -205,7 +203,7 @@ With the cooperation of [欧文印刷株式会社 (Obun Printing Co., Ltd.)](htt
 
 ### Serial Publication on gihyo.jp
 
-An unexpected outcome of the hands-on seminar was the start of a serial publication on gihyo.jp. The discussion began when an editor from Gijutsu-Hyohron Co., Ltd. proposed the idea at a social gathering after the end of the hands-on seminar. The idea is not for a specific person to write, but for all committers to bring the themes they want to write about. As of the time of writing this article, the following articles have been published.
+An unexpected outcome of the hands-on seminar was the start of a serial publication on gihyo.jp. The discussion began when an editor from Gijutsu-Hyoron Co., Ltd. proposed the idea at a social gathering after the end of the hands-on seminar. The idea is not for a specific person to write, but for all committers to bring the themes they want to write about. As of the time of writing this article, the following articles have been published.
 
 - [第1回：Vivliostyleでなにができるの？（村上真雄・小形克宏）](https://gihyo.jp/article/2024/01/vivliostyle-01)
 - [第2回：Vivliostyleに特化したMarkdown - VFMの使い方（akabeko）](https://gihyo.jp/article/2024/03/vivliostyle-02)

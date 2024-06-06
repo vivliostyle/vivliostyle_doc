@@ -107,15 +107,15 @@ td:nth-child(n+2) {
   text-align: right;
 }
 
-#balance-sheet-for-fy-2023+p+table>tbody>tr:nth-child(11),
-#balance-sheet-for-fy-2023+p+table>tbody>tr:nth-child(19),
-#balance-sheet-for-fy-2023+p+table>tbody>tr:nth-child(22),
-#statement-of-changes-in-net-assets-for-fy-2023+p+table>tbody>tr:nth-child(10),
-#statement-of-changes-in-net-assets-for-fy-2023+p+table>tbody>tr:nth-child(22),
-#statement-of-changes-in-net-assets-for-fy-2023+p+table>tbody>tr:nth-child(25),
-#statement-of-changes-in-net-assets-for-fy-2023+p+table>tbody>tr:nth-child(26),
-#statement-of-changes-in-net-assets-for-fy-2023+p+table>tbody>tr:nth-child(29),
-#statement-of-changes-in-net-assets-for-fy-2023+p+table>tbody>tr:nth-child(41) {
+#balance-sheet-for-fy2023+p+table>tbody>tr:nth-child(11),
+#balance-sheet-for-fy2023+p+table>tbody>tr:nth-child(19),
+#balance-sheet-for-fy2023+p+table>tbody>tr:nth-child(22),
+#statement-of-changes-in-net-assets-for-fy2023+p+table>tbody>tr:nth-child(10),
+#statement-of-changes-in-net-assets-for-fy2023+p+table>tbody>tr:nth-child(22),
+#statement-of-changes-in-net-assets-for-fy2023+p+table>tbody>tr:nth-child(25),
+#statement-of-changes-in-net-assets-for-fy2023+p+table>tbody>tr:nth-child(26),
+#statement-of-changes-in-net-assets-for-fy2023+p+table>tbody>tr:nth-child(29),
+#statement-of-changes-in-net-assets-for-fy2023+p+table>tbody>tr:nth-child(41) {
   background-color: #EFF6FD;
 }
 
