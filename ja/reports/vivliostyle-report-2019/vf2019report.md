@@ -3,7 +3,7 @@ title: "一般社団法人ビブリオスタイル 2019年度事業報告書"
 lang: ja
 ---
 
-## **第1章 2019年度（第2期 2019年4月1日〜2020年3月31日）事業報告**
+## **2019年度（第2期 2019年4月1日〜2020年3月31日）事業報告**
 
 ### 今期の基本方針とその考え方
 
@@ -161,7 +161,4 @@ TypeScript は JavaScript を拡張したオープンなプログラム言語だ
 - [リボアル・フロリアン](https://github.com/frivoal) [(Florian Rivoal)](https://github.com/frivoal)〈理事、設立時社員〉
 - [ヨハネス・ウィルム (Johannes Wilm)](https://github.com/johanneswilm)〈理事、設立時社員〉
 - [小形](https://github.com/ogwata) [](https://github.com/ogwata)[克宏](https://github.com/ogwata) [(Katsuhiro Ogata)](https://github.com/ogwata)〈理事、2020年1月21日より〉
-
-[第2章 2019年度（第2期 2019年4月1日〜2020年3月31日）決算報告](/Financial%20Report/financial-report.md)
-
 
