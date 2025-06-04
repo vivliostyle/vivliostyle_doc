@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Vivliostyle Theme のつくりかた</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../theme/theme_screen.css">
+    <meta name="author" content="やましー">
+  </head>
+  <body>
+    <section id="vivliostyle-theme-のつくりかた" class="level1">
+      <h1>Vivliostyle Theme のつくりかた</h1>
+      <div class="doc-author">やましー</div>
+      <p>本稿は、Vivliostyle Theme を自作して配布する方法について書かれたものです。内容は<a href="https://vivliostyle.connpass.com/event/208401/">Vivliostyle ユーザーと開発者の集い 2021春</a>で話したものです。</p>
+      <section id="はじめに" class="level2">
+        <h2>はじめに</h2>
+        <p>こんにちは、<a href="https://twitter.com/yamasy1549">やましー</a>といいます。Vivliostyle ユーザ歴はもう 4 年近くなります。</p>
+        <p>最初の同人誌<a href="https://vivliostyle.github.io/vivliostyle_doc/ja/vivliostyle-user-group-vol1/">『Vivliostyle で本を作ろう Vol.1』</a> では、『CSS 組版やってみた！』という題で Vivliostyle を使って同人誌や卒論を書いた際の tips を紹介しています。前回の同人誌<a href="https://vivliostyle.github.io/vivliostyle_doc/ja/vivliostyle-user-group-vol4/">『Vivliostyle で本を作ろう Vol.4』</a> では『@vivliostyle/theme-academic でレポート書いてみた！』という題で記事を書いています。本稿では、Vivliostyle を使って出版物を作る際に必要になる Vivliostyle Theme を自作する方法を紹介します。</p>
+      </section>
+      <section id="vivliostyle-theme-とは" class="level2">
+        <h2>Vivliostyle Theme とは</h2>
+        <p>Vivliostyle Theme は、Vivliostyle で出版物を作る際に使うスタイルテーマです。Theme の実体は、CSS ファイルと package.json とサンプル原稿です。</p>
+        <p>Vivliostyle Foundation では、汎用的で多くの人に使ってもらえそうなスタイルを公式 Theme として公開しています。それ以外の個人や組織が公開したものを便宜上非公式 Theme と呼びますが、公式・非公式の違いは管理者以外にはありません。本稿執筆現在、公式 Theme として次の 4 つの Theme といくつかの非公式 Theme が公開されています。</p>
+        <ul>
+          <li>theme-bunko：A5 サイズの縦書きテーマ</li>
+          <li>theme-slide：スライド資料用テーマ</li>
+          <li>theme-techbook：印刷用に小口・ノドの余白を調整した、B5 サイズの横書きテーマ</li>
+          <li>theme-academic：A4 サイズの横書きレポート用テーマ</li>
+        </ul>
+      </section>
+      <section id="theme-を作ってみよう" class="level2">
+        <h2>Theme を作ってみよう</h2>
+        <p>それではオリジナルの Theme を作ってみましょう。今回作るのは、複数人の書き手による小説合同誌のための Theme です。かんたんな条件は以下のとおりです。</p>
+        <ul>
+          <li>1 人が 1 章分＝1 つの原稿ファイル（.md）を担当</li>
+          <li>全体を通したページ番号、章番号がほしい</li>
+          <li>目次がほしい</li>
+          <li>見た目は統一するが、書き手によってテーマカラーを変えたい</li>
+        </ul>
+        <p>CSS やサンプル原稿など具体的な部分は Theme ごとに変わりますが、作成手順はどの Theme も同じです。なお、完成品は <a href="https://github.com/yamasy1549/vivliostyle-theme-my-doujin">yamasy1549/vivliostyle-theme-my-doujin</a> にあります。</p>
+        <section id="バージョン情報" class="level3">
+          <h3>バージョン情報</h3>
+          <ul>
+            <li>create-vivliostyle-theme: 0.3.1</li>
+            <li>@vivliostyle/cli: 3.5.0</li>
+            <li>@vivliostyle/vfm: v1.0.0-alpha.21</li>
+            <li>@vivliostyle/viewer: 2.8.0</li>
+          </ul>
+        </section>
+        <section id="①-雛形から作ります" class="level3">
+          <h3>① 雛形から作ります</h3>
+          <p><a href="https://vivliostyle.github.io/themes/packages/create-vivliostyle-theme/">create-vivliostyle-theme</a> は Theme を作るのに便利な雛形を提供しています。これを使って、npm または yarn で Theme の原型を作成します。本稿では yarn を使います。</p>
+          <pre class="language-text"><code class="language-text">$ yarn create vivliostyle-theme my-doujin
+? description すごい合同誌のTheme
+? author name わたし
+? author email watashi@example.com
+? license AGPL-3.0
+? choose category novel
+
+Success! Created vivliostyle-theme-my-doujin.
+
+1. cd vivliostyle-theme-my-doujin
+2. edit scss/*.scss
+3. publish to npm ($ npm publish)
+
+✨  Done in 46.57s.</code></pre>
+          <p>これが Theme の原型です。Theme の作り手が編集するファイルには🖋マークをつけて示しています。</p>
+          <pre class="language-text"><code class="language-text">$ cd vivliostyle-theme-my-doujin
+$ tree . -I node_modules
+.
+├── LICENSE
+├── README.md
+├── example                  サンプル原稿
+│   ├── default.html
+│   └── default.md           🖋Markdownを書く
+├── package.json             🖋Themeの情報を書く
+├── scss                     デフォルトで3つのスタイルファイル
+│   ├── theme_common.scss    🖋 Themeの共通部分
+│   ├── theme_print.scss     🖋 出版物 (PDF) 印刷用スタイル
+│   └── theme_screen.scss    🖋 出版物 (HTML) 閲覧用スタイル
+├── vivliostyle.config.js    🖋 プレビュー用設定ファイル
+└── yarn.lock</code></pre>
+          <p>example/ にはその Theme の適用例となるサンプル原稿を置きます。サンプル原稿は <a href="https://github.com/vivliostyle/create-book">Create Book</a> を使って出版物を作る際、デフォルトの原稿として採用されます。</p>
+          <p>scss/ にはスタイルを置きます。Vivliostyle Theme では SCSS を推奨しています。デフォルトで 3 つの SCSS ファイルが作成されており、それぞれの役割は以下のとおりです。もちろん、SCSS ファイルを増やしてもかまいません。</p>
+          <ul>
+            <li>theme_print.scss：PDF 形式の出版物を印刷するときに適用するスタイル。トンボのスタイルなどはここで定義するとよいでしょう。</li>
+            <li>theme_screen.scss：HTML 形式の出版物を閲覧するときに適用するスタイル。コンテンツが画面幅いっぱいに表示されるのを防ぐために表示幅を制限したり、文字サイズを調整したりするとよいでしょう。</li>
+            <li>theme_common.scss：theme_print.scss や theme_screen.scss で共通して使うスタイル。</li>
+          </ul>
+        </section>
+        <section id="②-サンプル原稿を用意します" class="level3">
+          <h3>② サンプル原稿を用意します</h3>
+          <p>次にサンプル原稿を用意します。この Theme のコンセプトは複数人の書き手による小説合同誌なので、それらしいサンプルを用意してみましょう。原稿は <a href="https://github.com/vivliostyle/vfm">VFM</a> を使って書くことができます。</p>
+          <pre class="language-example/ch01.md"><code class="language-example/ch01.md"># {吾輩|わがはい}は猫である。
+## 夏目 漱石
+{吾輩|わがはい}は猫である。名前はまだ無い。...</code></pre>
+          <pre class="language-example/ch02.md"><code class="language-example/ch02.md"># 羅生門
+## 芥川 龍之介
+ある日の暮方の事である。一人の{下人|げにん}が...</code></pre>
+          <p>サンプル原稿を追加したら vivliostyle.config.js の entry にこれらを登録して、スタイルを適用した原稿をリアルタイムでプレビューできるようにします。</p>
+          <pre class="language-vivliostyle.config.js"><code class="language-vivliostyle.config.js">module.exports = {
+  language: 'ja',
+  theme: 'theme_print.css',
+  entry: [
+    'example/ch01.md',
+    'example/ch02.md',
+  ],
+}</code></pre>
+        </section>
+        <section id="③-yarn-dev-でプレビューします" class="level3">
+          <h3>③ yarn dev でプレビューします</h3>
+          <p>それでは、今作ったサンプル原稿にスタイル (theme_print.scss) を適用したものをプレビューしてみましょう。デフォルトの theme_print.scss には、トンボや左上の theme_print という文字を表示するようなスタイルが定義されています。</p>
+          <pre class="language-text"><code class="language-text">$ yarn dev</code></pre>
+          <figure>
+            <img src="assets/preview1.png" alt="これはデフォルトのスタイル">
+            <figcaption aria-hidden="true">これはデフォルトのスタイル</figcaption>
+          </figure>
+        </section>
+        <section id="④-ページ番号と章番号を表示します" class="level3">
+          <h3>④ ページ番号と章番号を表示します</h3>
+          <p>次に、ページ番号と章番号を表示してみましょう。theme_common.scss に追記していってもよいのですが、わかりやすさのため、本稿では新しく _my_style.scss というファイルを作ってそこに書いていくことにします。</p>
+          <pre class="language-scss/theme_{print,screen}.scss"><code class="language-scss/theme_{print,screen}.scss">/* ... */
+@import "_my_style";</code></pre>
+          <p>まずはページ番号です。全ページの中で一番最初のページで <code>p</code> カウンタをリセットし、各ページでインクリメントします。</p>
+          <pre class="language-scss/_my_style.scss"><code class="language-scss/_my_style.scss">@page :first { counter-reset: p; }
+@page { counter-increment: p; }
+
+/* 小口側、上にページ番号 */
+@page :left {
+  @top-left { content: counter(p); }
+}
+@page :right {
+  @top-right { content: counter(p); }
+}</code></pre>
+          <p>次に章番号です。vivliostyle.config.js の entry に指定した各ファイルの一番最初のページで、<code>chapter</code> と <code>p</code> カウンタをインクリメントします。 <code>@page :first</code> と <code>@page :nth(1)</code> の違いに注意してください。</p>
+          <pre class="language-scss/_my_style.scss"><code class="language-scss/_my_style.scss">/* ... */
+
+/* 章番号 */
+@page :nth(1) {
+  counter-increment: chapter p;
+}
+
+/* 章タイトル */
+h1 {
+  &#x26;::before {
+    content: "第 " counter(chapter) " 章";
+    display: block;
+  }
+}</code></pre>
+          <p>すると、プレビューはこのようになります。オートリロードされない場合はもう一度 <code>yarn dev</code> をしてみてください。</p>
+          <figure>
+            <img src="assets/preview3.png" alt="ページ番号と章番号が表示された" width="50%">
+            <figcaption aria-hidden="true">ページ番号と章番号が表示された</figcaption>
+          </figure>
+          <p>せっかくなのでもっと本らしい見た目にしてみましょう。</p>
+          <pre class="language-scss/_my_style.scss"><code class="language-scss/_my_style.scss">/* ... */
+
+/* 章タイトル */
+h1 {
+  border-top: 10pt solid black;
+  &#x26;::before {
+    content: "第 " counter(chapter) " 章";
+    display: block;
+    font-size: 80%;
+    margin: 10pt auto;
+  }
+}
+
+/* 著者名 */
+h2 {
+  text-align: right;
+  border-bottom: 10pt solid black;
+}
+
+/* 全体 */
+html {
+  line-height: 2rem;
+}</code></pre>
+          <figure>
+            <img src="assets/preview4.png" alt="ちょっと古い教科書みたいですね" width="50%">
+            <figcaption aria-hidden="true">ちょっと古い教科書みたいですね</figcaption>
+          </figure>
+        </section>
+        <section id="⑤-目次を表示します" class="level3">
+          <h3>⑤ 目次を表示します</h3>
+          <p>ここまででページ番号と章番号を表示できました。次は目次です。Vivliostyle には <code>&#x3C;h1></code> 見出しをもとに目次を自動生成する機能があるので、これを使います。vivliostyle.config.js に以下の記述を加えて再度 <code>yarn dev</code> します。すると、一番最初のページに目次が表示されるようになりました。</p>
+          <pre class="language-vivliostyle.config.js"><code class="language-vivliostyle.config.js">module.exports = {
+  // ...
+  entry: [
+    { rel: 'contents', theme: 'theme_toc.css' },
+    'example/ch01.md'
+    'example/ch02.md'
+  ],
+  toc: true,
+  tocTitle: "目次",
+}</code></pre>
+          <p>続いて scss/theme_toc.scss という目次専用のスタイルファイルを作ります。ひとまず theme_common.scss を import しておきます。</p>
+          <pre class="language-scss/theme_toc.scss"><code class="language-scss/theme_toc.scss">@import "theme_common";</code></pre>
+          <figure>
+            <img src="assets/preview5.png" alt="デフォルトの目次" width="50%">
+            <figcaption aria-hidden="true">デフォルトの目次</figcaption>
+          </figure>
+          <p>もうすこしシュッとした見た目にしてみましょう。まず、不要な部分を隠します。</p>
+          <pre class="language-scss/theme_toc.scss"><code class="language-scss/theme_toc.scss">@import "theme_common";
+
+/* いらないところを消す */
+@page :left {
+  @top-left { content: ""; }
+}
+@page :right {
+  @top-right { content: ""; }
+}
+h1 { display: none; }
+h2 { text-indent: 0; }
+
+nav ol {
+  padding: 0;
+  list-style: none;
+}</code></pre>
+          <figure>
+            <img src="assets/preview6.png" alt="素っ気ない目次" width="50%">
+            <figcaption aria-hidden="true">素っ気ない目次</figcaption>
+          </figure>
+          <p>目次にも対応するページ番号と章番号を表示してみましょう。一気に本らしくなりましたね！　これはもう誰が見ても本です。</p>
+          <pre class="language-scss/theme_toc.scss"><code class="language-scss/theme_toc.scss">/* ... */
+
+nav ol {
+  /* ... */
+  li a {
+    text-decoration: none;
+    color: inherit;
+    &#x26;::before {
+      content: "第 " target-counter(attr(href url), chapter) " 章";
+      margin-right: 1rem;
+    }
+    &#x26;::after {
+      content: target-counter(attr(href url), p);
+      float: right;
+    }
+  }
+}</code></pre>
+          <figure>
+            <img src="assets/preview7.png" alt="便利な目次" width="50%">
+            <figcaption aria-hidden="true">便利な目次</figcaption>
+          </figure>
+        </section>
+        <section id="⑥-原稿ごとのテーマカラーを設定します" class="level3">
+          <h3>⑥ 原稿ごとのテーマカラーを設定します</h3>
+          <p>せっかくなので、原稿ごと（今回はつまり、著者ごと）にテーマカラーを決めてみましょう。サンプル原稿を少し編集します。<code>---</code> で囲まれた <a href="https://vivliostyle.github.io/vfm/#/vfm#frontmatter">Frontmatter</a> 部分に class を指定すると、body 要素にその名前の class を付与できます。これを使って、原稿ファイルごとに別々のスタイルを適用できます。便利ですね。</p>
+          <pre class="language-example/ch01.md"><code class="language-example/ch01.md">---
+class: natsume
+---
+
+# {吾輩|わがはい}は猫である。
+...</code></pre>
+          <pre class="language-example/ch02.md"><code class="language-example/ch02.md">---
+class: akutagawa
+---
+
+# 羅生門
+...</code></pre>
+          <pre class="language-scss/_my_style.scss"><code class="language-scss/_my_style.scss">/* ... */
+
+body.natsume {
+  h1, h2 {
+    border-color: darkcyan;
+  }
+}
+
+body.akutagawa {
+  h1, h2 {
+    border-color: sienna;
+  }
+}</code></pre>
+          <figure>
+            <img src="assets/preview8.png" alt="たとえば、夏目さんは緑色" width="50%">
+            <figcaption aria-hidden="true">たとえば、夏目さんは緑色</figcaption>
+          </figure>
+        </section>
+        <section id="⑦完成！" class="level3">
+          <h3>⑦完成！</h3>
+          <p>おつかれさまです！　これで Theme が完成しました。<code>yarn publish</code> して npm package として公開すると、Create Book で出版物を作る際にその Theme を選択できるようになります。</p>
+          <figure>
+            <img src="assets/92cee753-ea68-4d5e-846c-43623392c4b0.png" alt="Create Book の Theme 選択画面">
+            <figcaption aria-hidden="true">Create Book の Theme 選択画面</figcaption>
+          </figure>
+        </section>
+      </section>
+      <section id="おわりに" class="level2">
+        <h2>おわりに</h2>
+        <p>本稿では Vivliostyle Theme を作成する方法を紹介しました。公開された便利な Theme は、Create Book を通して他の人に使ってもらうことができます。ぜひ公開してみてください。</p>
+        <p>現時点では、文庫ライクな縦書きの本、スライド、技術同人誌、論文やレポートといった公式 Theme が公開されています。今後は欧文文庫本や 2 段組み小説同人誌の公式 Theme を作成・公開していく予定です。 ご期待ください。</p>
+        <p>GitHub へのリンク：<a href="https://github.com/vivliostyle/themes">https://github.com/vivliostyle/themes</a></p>
+      </section>
+    </section>
+  </body>
+</html>

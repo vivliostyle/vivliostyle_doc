@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>GitLab CI/CD を用いた、Vivliostyle 組版事始め</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="MH35">
+    <link rel="stylesheet" href="../../theme/theme_screen.css">
+  </head>
+  <body>
+    <section id="gitlab-cicd-を用いたvivliostyle-組版事始め" class="level1">
+      <h1>GitLab CI/CD を用いた、Vivliostyle 組版事始め</h1>
+      <div class="doc-author">MH35</div>
+      <p>GitLab CI/CD を用いて、Vivliostyle での製本を行うことにした。</p>
+      <section id="前提条件" class="level2">
+        <h2>前提条件</h2>
+        <p>今回、以下の条件で行うものとする。</p>
+        <ul>
+          <li>Runner は Docker ベースである</li>
+          <li>必要なレポジトリは自前で準備する</li>
+        </ul>
+      </section>
+      <section id="手順" class="level2">
+        <h2>手順</h2>
+        <p>大まかな手順としては、以下の通りである。</p>
+        <ol>
+          <li>ビルド用の Docker イメージを、GitLab サーバに作成する</li>
+          <li>本のプロジェクトを作成する</li>
+          <li>CI の設定ファイルを作成する</li>
+          <li>執筆する</li>
+        </ol>
+        <p>では、それぞれの手順を見ていこう。</p>
+      </section>
+      <section id="dockerイメージの作成" class="level2">
+        <h2>Dockerイメージの作成</h2>
+        <p>Docker イメージの作成には、専用のプロジェクトを作成する。まずは Dockerfile 本体。</p>
+        <pre class="language-docker"><code class="language-docker"><span class="token instruction"><span class="token keyword">FROM</span> node:18</span>
+<span class="token instruction"><span class="token keyword">RUN</span> apt-get update &#x26;&#x26; apt-get install -y fonts-noto fonts-ipafont fonts-mona <span class="token operator">\</span>
+chromium chromium-driver chromium-l10n &#x26;&#x26; <span class="token operator">\</span>
+apt-get clean &#x26;&#x26; rm -rf /var/lib/apt/lists/*</span>
+<span class="token instruction"><span class="token keyword">RUN</span> npm install -g @vivliostyle/cli</span></code></pre>
+        <p>次に、.gitlab-ci.yml</p>
+        <pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">stages</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> build
+<span class="token key atrule">build_image</span><span class="token punctuation">:</span>
+  <span class="token key atrule">stage</span><span class="token punctuation">:</span> build
+  <span class="token key atrule">image</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> gcr.io/kaniko<span class="token punctuation">-</span>project/executor<span class="token punctuation">:</span>debug
+    <span class="token key atrule">entrypoint</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">""</span><span class="token punctuation">]</span>
+  <span class="token key atrule">script</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> echo "<span class="token punctuation">{</span>\"auths\"<span class="token punctuation">:</span><span class="token punctuation">{</span>\"$CI_REGISTRY\"<span class="token punctuation">:</span><span class="token punctuation">{</span>\"username\"<span class="token punctuation">:</span>\"$CI_REGISTRY_USER\"<span class="token punctuation">,</span>\"password\"<span class="token punctuation">:</span>\"$CI_REGISTRY_PASSWORD\"<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">}</span>" <span class="token punctuation">></span> /kaniko/.docker/config.json
+    <span class="token punctuation">-</span> /kaniko/executor <span class="token punctuation">-</span><span class="token punctuation">-</span>context $CI_PROJECT_DIR <span class="token punctuation">-</span><span class="token punctuation">-</span>dockerfile $CI_PROJECT_DIR/Dockerfile <span class="token punctuation">-</span><span class="token punctuation">-</span>destination $CI_REGISTRY_IMAGE<span class="token punctuation">:</span>latest
+  <span class="token key atrule">only</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> main</code></pre>
+        <p>これらを作成し、プロジェクトに push することにより、ビルダーのイメージが生成される。</p>
+      </section>
+      <section id="本のプロジェクトを作成する" class="level2">
+        <h2>本のプロジェクトを作成する</h2>
+        <p>まずは、GitLab 上でプロジェクトを作成する。その後、そのプロジェクトを clone する。</p>
+        <p>そこまで行ったら、レポジトリを空にして、<code>npm create book .</code> でプロジェクトの中身を作成する(空レポジトリを clone したなら何もしない)。</p>
+        <p>そうしたら、package.json の build のスクリプトに <code>--no-sandbox</code> のオプションをつける。Docker コンテナは root 権限で動くため、このオプションをつけないと動作しない。</p>
+        <p>その後、.gitlab-ci.yml を、以下の内容で作成する</p>
+        <pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">stages</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> build
+<span class="token key atrule">build_doc</span><span class="token punctuation">:</span>
+  <span class="token key atrule">stage</span><span class="token punctuation">:</span> build
+  <span class="token key atrule">image</span><span class="token punctuation">:</span> container<span class="token punctuation">-</span>reg.local<span class="token punctuation">-</span>gitlab.mh35.info/books/vivliostyle<span class="token punctuation">-</span>image<span class="token punctuation">:</span>latest
+  <span class="token key atrule">before_script</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> npm install
+  <span class="token key atrule">script</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> npm run build
+  <span class="token key atrule">artifacts</span><span class="token punctuation">:</span>
+    <span class="token key atrule">paths</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token string">'*.pdf'</span>
+    <span class="token key atrule">expire_in</span><span class="token punctuation">:</span> <span class="token string">'1 day'</span></code></pre>
+        <p>あとは <code>git add .</code> して、<code>git commit</code> して、<code>git push</code> する。ここまできたら、あとは執筆していくだけである。</p>
+      </section>
+    </section>
+  </body>
+</html>

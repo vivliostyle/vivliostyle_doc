@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>CSS text-spacingサポート等Vivliostyle.jsの進化と今後の開発予定</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="theme-slide/theme.css">
+  </head>
+  <body>
+    <section id="css-text-spacingサポート等vivliostylejsの進化と今後の開発予定" class="level1">
+      <h1>CSS text-spacingサポート等Vivliostyle.jsの進化と今後の開発予定</h1>
+      <p>2021-11-14<br>Shinyu Murakami<br>Vivliostyle Foundation</p>
+    </section>
+    <section class="level1 toc" role="doc-toc" id="目次">
+      <h1 class="toc" role="doc-toc">目次</h1>
+      <ol>
+        <li><a href="#vivliostyle-updates">Vivliostyle.js Updates</a>
+          <ol>
+            <li><a href="#new-features">Vivliostyle.jsの最近の主な機能追加</a></li>
+          </ol>
+        </li>
+        <li><a href="#css-ts-hp">CSS text-spacing &#x26; hanging-punctuation</a>
+          <ol>
+            <li><a href="#text-spacing">text-spacingで約物の詰め、和欧文間アキ</a></li>
+            <li><a href="#hp-end">hanging-punctuation: force-end/allow-endで句読点の行末ぶら下げ</a></li>
+            <li><a href="#hp-first-last">hanging-punctuation: firstとlastの使い道</a></li>
+          </ol>
+        </li>
+        <li><a href="#upcoming">今後の開発予定</a>
+          <ol>
+            <li><a href="#todo">優先度の高いVivliostyle.jsのissue</a></li>
+          </ol>
+        </li>
+      </ol>
+    </section>
+    <section id="vivliostyle-updates" class="level1">
+      <h1>Vivliostyle.js Updates</h1>
+      <section id="new-features" class="level2">
+        <h2>Vivliostyle.jsの最近の主な機能追加</h2>
+        <ul>
+          <li>v2.12 (2021-11-13)
+            <ul>
+              <li><a href="https://drafts.csswg.org/css-text-3/#hanging-punctuation-property">CSS Text hanging-punctuationプロパティ</a>をサポート</li>
+              <li><a href="https://drafts.csswg.org/css-text-4/#text-spacing-property">CSS Text text-spacingプロパティ</a>をサポート</li>
+            </ul>
+          </li>
+        </ul>
+        <p>以下については記事 <a href="https://vivliostyle.org/ja/blog/2021/10/12/recent-vivliostyle-js-updates/">最近のVivliostyle.jsの進化について</a> 参照：</p>
+        <ul>
+          <li>v2.11 (2021-09-29)
+            <ul>
+              <li>Viewerにテキスト検索機能を追加</li>
+            </ul>
+          </li>
+          <li>v2.10 (2021-09-17)
+            <ul>
+              <li><a href="https://www.w3.org/TR/css-fonts-3/#unicode-range-desc">CSS unicode-range</a>をサポート、その他</li>
+            </ul>
+          </li>
+          <li>v2.9 (2021-09-03)
+            <ul>
+              <li><a href="https://www.w3.org/TR/css-conditional-3/">CSS <code>@supports</code>ルール</a>をサポート</li>
+            </ul>
+          </li>
+        </ul>
+        <p>以下については、前回の発表「<a href="http://bit.ly/vivliostyle202104">Vivliostyle.js における CSS Paged Media の実装 (2021-04-10)</a>」を参照：</p>
+        <ul>
+          <li>v2.8 (2021-04-16)
+            <ul>
+              <li><a href="https://drafts.csswg.org/css-page-3/#blank-pseudo">CSS Page <code>:blank</code>ページセレクタ</a>をサポート</li>
+            </ul>
+          </li>
+          <li>v2.7 (2021-04-07)
+            <ul>
+              <li><a href="https://drafts.csswg.org/css-page-3/#using-named-pages">CSS Page named page機能</a>をサポート</li>
+            </ul>
+          </li>
+          <li>v2.5 (2021-02-26)
+            <ul>
+              <li><a href="https://drafts.csswg.org/css-gcpm/#document-page-selectors">CSS GCPM <code>:nth()</code>ページセレクタ</a>をサポート</li>
+            </ul>
+          </li>
+          <li>v2.4 (2020-12-28)
+            <ul>
+              <li><a href="https://drafts.csswg.org/css-gcpm/#named-strings">CSS GCPM named string機能</a>をサポート</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+    </section>
+    <section id="css-ts-hp" class="level1">
+      <h1>CSS text-spacing &#x26; hanging-punctuation</h1>
+      <section id="text-spacing" class="level2">
+        <h2>text-spacingで約物の詰め、和欧文間アキ</h2>
+        <p><code>text-spacing: normal</code> （デフォルトの約物詰め）の例：</p>
+        <blockquote class="example" style="text-spacing: normal;">
+          <p>〈約物〉は、〈句点〉・〈読点〉「括弧（類）」、他！　「《英（数）》字ABC-123とか。」〈約物〉は、<b>〈句点〉</b>・<b>〈読点〉「括弧（類）」</b>「<i>《英（数）》</i>字<i>ABC-123</i>とか。」</p>
+        </blockquote>
+        <p><code>text-spacing: auto</code> の例：</p>
+        <blockquote class="example" style="text-spacing: auto;">
+          <p>〈約物〉は、〈句点〉・〈読点〉「括弧（類）」、他！　「《英（数）》字ABC-123とか。」〈約物〉は、<b>〈句点〉</b>・<b>〈読点〉「括弧（類）」</b>「<i>《英（数）》</i>字<i>ABC-123</i>とか。」</p>
+        </blockquote>
+        <ul>
+          <li><code>auto</code>はデフォルトの約物詰め＋先頭詰め＋和欧文間アキ</li>
+        </ul>
+        <p><code>text-spacing: none</code> の場合：</p>
+        <blockquote class="example" style="text-spacing: none;">
+          <p>〈約物〉は、〈句点〉・〈読点〉「括弧（類）」、他！　「《英（数）》字ABC-123とか。」〈約物〉は、<b>〈句点〉</b>・<b>〈読点〉「括弧（類）」</b>「<i>《英（数）》</i>字<i>ABC-123</i>とか。」</p>
+        </blockquote>
+        <p><code>normal</code>、<code>auto</code>、<code>none</code>のほかに指定できる値：</p>
+        <pre class="language-text"><code class="language-text">[ trim-start | space-start | space-first ] ||
+[ trim-end | space-end | allow-end ] ||
+[ trim-adjacent | space-adjacent ] ||
+ideograph-alpha || ideograph-numeric</code></pre>
+        <ul>
+          <li><code>normal</code>は<code>space-first trim-end trim-adjacent</code>と同じ（注）</li>
+          <li><code>auto</code>は<code>trim-start trim-end trim-adjacent ideograph-alpha ideograph-numeric</code>と同じ</li>
+        </ul>
+        <p>注：現在の<a href="https://www.w3.org/TR/css-text-4/#valdef-text-spacing-normal">ドラフト仕様のtext-spacing: normalの定義</a>では<code>normal</code>は<code>space-start allow-end trim-adjacent</code>と同じとなっている。<code>space-start</code>（行頭を詰めない）を<code>space-first</code>（段落先頭を詰めないが折り返し行頭は詰める）に変更することについて、<a href="https://github.com/w3c/csswg-drafts/issues/2462">仕様の議論中</a>。</p>
+        <ul>
+          <li>
+            <p>値<code>auto</code>は、実装によりタイポグラフィ的に高品質になるような指定とされている（<a href="https://drafts.csswg.org/css-text-4/#valdef-text-spacing-auto">CSS Text Level 4 Editor's Draftのtext-spacing: autoの定義</a>）。</p>
+          </li>
+          <li>
+            <p><code>ideograph-alpha</code>（漢字・カナと欧文文字の間にアキ）と<code>ideograph-numeric</code>（漢字・カナと数字の間にアキ）は個別に指定可能。アキの幅は1/6em（注：現在の<a href="https://www.w3.org/TR/css-text-4/#valdef-text-spacing-ideograph-alpha">CSSドラフト仕様</a>や<a href="https://www.w3.org/TR/jlreq/#id209">JLREQ</a>）では1/4emだが<a href="https://github.com/w3c/jlreq/issues/280">その見直しの議論</a>がある。</p>
+          </li>
+          <li>
+            <p><code>allow-end</code>（行末約物を全角どりできなければ詰める）は未サポートで<code>trim-end</code>（行末約物を常に詰める）と同じ扱い。</p>
+          </li>
+          <li>
+            <p>text-spacingによる約物の詰めは、実際に文字幅が全角幅である約物だけに機能し、フォントによってはプロポーショナルでもともと幅が狭い約物には影響しない。</p>
+          </li>
+        </ul>
+        <p><code>font-feature-settings: "palt"</code>（詰め組みフォント機能設定） を指定した例（<code>text-spacing</code>はデフォルトの<code>normal</code>だが<code>none</code>でも結果は変わらない）：</p>
+        <blockquote class="example" style="text-spacing: normal; font-feature-settings: &#x27;palt&#x27;;">
+          <p>〈約物〉は、〈句点〉・〈読点〉「括弧（類）」、他！　「《英（数）》字ABC-123とか。」〈約物〉は、<b>〈句点〉</b>・<b>〈読点〉「括弧（類）」</b>「<i>《英（数）》</i>字<i>ABC-123</i>とか。」</p>
+        </blockquote>
+      </section>
+      <section id="hp-end" class="level2">
+        <h2>hanging-punctuation: force-end/allow-endで句読点の行末ぶら下げ</h2>
+        <p><code>hanging-punctuation: force-end</code>（行末強制ぶら下げ）の例：</p>
+        <blockquote class="example" style="hanging-punctuation: force-end; text-indent: 1em;">
+          <p>ごんは、村の小川の堤まで出て来ました。あたりの、すすきの穂には、まだ雨のしずくが光っていました。川はいつもは、水が少いのですが、三日もの雨で、水が、どっとましていました。ただのときは水につかることのない、川べりのすすきや、萩の株が、黄いろくにごった水に横だおしになってもまれています。ごんは川下の方へと、ぬかるみみちを歩いていきました。</p>
+        </blockquote>
+        <p><code>allow-end</code>のほうは、行末に収まらない句読点だけぶら下げる指定。（注：現在は未サポートで<code>force-end</code>と同じ扱い。）</p>
+      </section>
+      <section id="hp-first-last" class="level2">
+        <h2>hanging-punctuation: firstとlastの使い道</h2>
+        <section id="hp-first-last-1" class="level3">
+          <h3>①<code>text-indent: 1em</code>で段落行頭を1字下げするが開き括弧類は1字分も下げたくない場合</h3>
+          <p><code>text-indent: 1em; hanging-punctuation: first;</code> の使用例：</p>
+          <blockquote class="example" style="hanging-punctuation: first; text-indent: 1em;">
+            <p>ふと見ると、川の中に人がいて、何かやっています。ごんは、見つからないように、そうっと草の深いところへ歩きよって、そこからじっとのぞいてみました。</p>
+            <p>「兵十だな」と、ごんは思いました。兵十はぼろぼろの黒いきものをまくし上げて、腰のところまで水にひたりながら、魚をとる、はりきりという、網をゆすぶっていました。</p>
+          </blockquote>
+        </section>
+        <section id="hp-first-last-2" class="level3">
+          <h3>②引用符を突き出すスタイル</h3>
+          <p><code>hanging-punctuation: first last;</code> の使用例：</p>
+          <blockquote class="example" style="hanging-punctuation: first last; text-align: justify; text-align-last: end;">
+            <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dapibus elit eu diam semper, ut feugiat elit mollis. Etiam lobortis hendrerit venenatis. Aliquam sagittis, nibh et rhoncus congue nibh arcu suscipit diam, id imperdiet lorem enim eu dui.”</p>
+          </blockquote>
+          <ul>
+            <li>行末ぶら下げ（force-end、allow-end）の対象文字は句読点（。 、 ． ， ）だが、段落先頭（first）・段落末（last）のぶら下げ対象は引用符・括弧類（欧文用・和文用を問わず）。</li>
+          </ul>
+        </section>
+      </section>
+    </section>
+    <section id="upcoming" class="level1">
+      <h1>今後の開発予定</h1>
+      <section id="todo" class="level2">
+        <h2>優先度の高いVivliostyle.jsのissue</h2>
+        <ul>
+          <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/735">Support Web fonts loaded via JavaScript</a>
+            <blockquote>
+              <p>
+                Webフォントのサービスのうち、とくに日中韓国語フォントはダイナミックサブセッティングが使われているために、JavaScript 埋め込みコードによって利用するようになっています。
+                しかし、Vivliostyleでは HTML 文書内の JavaScript を無視するため、それを利用できません。
+              </p>
+            </blockquote>
+          </li>
+        </ul>
+        <p>以下のCSSの機能は、数年前からWebブラウザで利用できて普及しているのに、Vivliostyle.jsで対応できてなかった：</p>
+        <ul>
+          <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/539">Support CSS Grid Layout</a></li>
+          <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/540">Support CSS custom properties (variables)</a></li>
+        </ul>
+        <p>これらを含め、今後も以下の課題に取り組んでいく予定：</p>
+        <ul>
+          <li>Webブラウザで利用できる標準のCSS機能がVivliostyle.jsで利用できない問題が残っているのを解消</li>
+          <li>まだ多く残っている<a href="https://github.com/vivliostyle/vivliostyle.js/issues?q=is%3Aopen+is%3Aissue+label%3Abug">不具合</a>を直して組版品質を高める</li>
+          <li>CSS組版にとって重要なCSS機能の先行実装をさらに進める</li>
+        </ul>
+        <p>Vivliostyle.jsのこれからに、乞うご期待！</p>
+      </section>
+    </section>
+  </body>
+</html>

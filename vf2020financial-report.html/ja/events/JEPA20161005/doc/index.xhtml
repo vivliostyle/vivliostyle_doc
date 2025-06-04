@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+	<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta charset="utf-8"/>
+		<title>シークレット・オブ・CSSシークレット</title>
+		<link rel="stylesheet" type="text/css" href="../css-secrets-jp/pdf/pdf_jslide.css"/>
+		<link rel="stylesheet" type="text/css" href="theme/pdf/pdf.css"/>
+	</head>
+<body data-type="book">
+<section data-type="titlepage" data-pdf-bookmark="シークレット・オブ・CSSシークレット" id="jp-cover">
+  <header>
+    <h1>シークレット・オブ・<span class="alphanum">CSS</span>シークレット</h1>
+    <p data-type="subtitle"><span class="alphanum">Vivliostyle</span>・<span class="alphanum">CSS</span>組版による書籍制作の実例紹介</p>
+  </header>
+  <img class="the_book_cover" src="img/css_secrets_hyousi.jpg" alt="『CSSシークレット』本の表紙"/>
+  <p class="date"><span class="alphanum">2016</span>年<wbr/><span class="alphanum">10</span>月<wbr/><span class="alphanum">5</span>日<span class="revision"> <span class="open-zenkaku">（</span>改訂：<wbr/><span class="alphanum">2016</span>年<wbr/><span class="alphanum">10</span>月<wbr/><span class="alphanum">17</span>日）</span></p>
+  <img class="company_logo" src="img/vivliostyle_logo.png" alt="Vivliostyle logo"/>
+  <p class="author">村上 真雄 <span lang="en" class="alphanum">(<span class="surname alphanum">Murakami</span> <span class="givenname alphanum">Shinyu</span>)</span></p>
+  <p class="company">株式会社ビブリオスタイル</p>
+</section>
+<nav data-type="toc" id="idp140273443686752"><h1 class="alphanum">Table of Contents</h1><span class="dup alphanum">Table of Contents</span><ol><li data-type="chapter"><a href="#idp140273443687232">はじめに</a><ol>
+
+
+<li data-type="sect1"><a href="#idp140273443688320">株式会社ビブリオスタイルの紹介</a></li>
+
+
+<li data-type="sect1"><a href="#making">メイキング</a><ol>
+
+
+
+<li data-type="sect2"><a href="#idp140273443691008">本の <span class="open-zenkaku">「</span>メイキング」から紹介</a></li>
+
+<li data-type="sect2"><a href="#idp140273443698832"> <span class="open-zenkaku">「</span>日本語版について」から</a></li>
+
+<li data-type="sect2"><a href="#idp140273443706048">この資料のメイキング</a></li>
+
+</ol></li>
+
+</ol></li><li data-type="chapter"><a href="#chapter-vivliostyle"><span class="alphanum">CSS</span>組版・<wbr/><span class="alphanum">Vivliostyle</span><wbr/>の紹介</a><ol>
+
+
+<li data-type="sect1"><a href="#idp140273443709392">印刷の<wbr/>世界と<wbr/>画<wbr/><span class="alphanum">⾯</span>の<wbr/>世界を<wbr/><span class="alphanum">⼀</span>元化</a><ol>
+
+
+
+
+<li data-type="sect2"><a href="#idp140273443714176"><span class="alphanum">Web</span>標準<wbr/>ブラウザベース<wbr/><span class="alphanum">CSS</span>組版</a></li>
+</ol></li>
+
+<li data-type="sect1"><a href="#idp140273443723024"><span class="alphanum">Vivliostyle</span>の<wbr/>組版機能</a></li>
+
+<li data-type="sect1"><a href="#idp140273443735744">ひとつのソースで、<wbr/>執筆・<wbr/>編集・<wbr/>校正・<wbr/>レイアウトを<wbr/>可能に</a></li>
+</ol></li><li data-type="chapter"><a href="#chapter-heracles">制作システム<wbr/><span class="alphanum">Heracles</span>と<wbr/><span class="alphanum">Vivliostyle</span></a><ol>
+
+
+<li data-type="sect1"><a href="#idp140273443744848"><span class="alphanum">Heracles</span>とは</a></li>
+
+<li data-type="sect1"><a href="#idp140273443763344">目次の<wbr/>自動生成</a></li>
+
+<li data-type="sect1"><a href="#idp140273443768928">索引作成<wbr/>の<wbr/>自動化</a></li>
+
+
+</ol></li><li data-type="chapter"><a href="#chapter-making-secrets"><span class="alphanum">CSS</span>シークレットの<wbr/><span class="alphanum">CSS</span>組版の実際</a><ol>
+
+
+<li data-type="sect1"><a href="#idp140273443779072">制作ワークフロー</a></li>
+
+
+<li data-type="sect1"><a href="#idp140273443784368"><span class="alphanum">CSS</span>組版とは<wbr/>ルールを<wbr/>作ること</a></li>
+
+<li data-type="sect1"><a href="#idp140273443790384">コードブロックの<wbr/>ページ分割の装飾</a></li>
+
+
+<li data-type="sect1"><a href="#idp140273443794144">見出しの<wbr/>改行</a></li>
+
+<li data-type="sect1"><a href="#secret-justify">ジャスティフィ<wbr/>ケー<wbr/>ション<wbr/>の調整</a></li>
+
+<li data-type="sect1"><a href="#idp140273443822160">これから<wbr/>の<wbr/>課題</a></li>
+
+</ol></li><li data-type="index" class="alphanum"><a href="#idp140273443835520" class="alphanum">Index</a></li></ol></nav>
+<section data-type="chapter" class="introduction" data-pdf-bookmark="章 1. はじめに" id="idp140273443687232">
+<h1>はじめに</h1><wbr/><span class="dup">はじめに</span>
+
+<section data-type="sect1" data-pdf-bookmark="株式会社ビブリオスタイルの紹介" id="idp140273443688320">
+<h1>株式会社ビブリオスタイルの紹介</h1><wbr/><span class="dup">株式会社ビブリオスタイルの紹介</span>
+
+株式会社ビブリオスタイル <span class="open-zenkaku">（</span>Vivliostyle Inc.）は2014年創業の電子出版システム開発企業。ブラウザで紙の本のようにページをめくって読書ができ、かつ画面に表示されている本をそのまま印刷できる <span class="open-zenkaku">「</span>Vivliostyle」を開発し、Webと紙の本の垣根を取り除くことを目指すしている。W3Cメンバー企業としてCSSワーキンググループでも活動中。社名の <span class="open-zenkaku">「</span>Vivliostyle」はギリシャ語で <span class="open-zenkaku">「</span>本」を表すvivlioとstyleの組み合わせたもので、本書の著者リア・ヴェルーが名付け親。URL：<wbr/><a href="http://vivliostyle.com" target="_blank" class="alphanum">http://vivliostyle.com</a>
+</section>
+
+
+<section data-type="sect1" data-pdf-bookmark="メイキング" id="making">
+
+<h1>メイキング</h1><wbr/><span class="dup">メイキング</span>
+
+<section data-type="sect2" data-pdf-bookmark="本の「メイキング」から紹介" id="idp140273443691008">
+<h2>本の「メイキング」から紹介</h2>
+
+<blockquote>
+<p><a data-primary="HTMLBook" data-type="indexterm" data-primary-sortas="HTMLBook" id="idp140273443692256"/><strong>本書 <span class="open-zenkaku">（</span>英語版）は自己完結的に執筆</strong>されています。<wbr/><strong>ク<wbr/><span class="no-inline-break">リー</span>ンな<wbr/><span class="alphanum">HTML5</span></strong>と、<wbr/><span class="alphanum">O’Reilly</span>の<wbr/><a href="http://oreillymedia.github.io/HTMLBook" target="_blank"><span class="alphanum">HTMLBook</span>規格</a><span class="print_url_in_parens"> <span class="open-zenkaku">（</span><a href="http://oreillymedia.github.io/HTMLBook" class="print_url alphanum in_parens" target="_blank">oreillymedia.<wbr/>github.<wbr/>io/<wbr/>HTMLBook</a>）</span>で定義されたいくつかの<wbr/><code>data-</code>属性を使って記述しました。つまり、本書で目にするものすべて <span class="open-zenkaku">（</span>レイアウトや画像そして色も含む）は<wbr/><strong><span class="alphanum">CSS</span>を使ってスタイルが指定されています</strong>。……</p>
+
+<p><a contenteditable="false" data-primary="Atlas" data-type="indexterm" data-primary-sortas="Atlas" id="idp140273443695488"/>近年では、<wbr/><span class="alphanum">O’Reilly</span>が出版する書籍の多くで同様の仕組みが取り入れられています。このシステムは <span class="open-zenkaku">「</span><span class="alphanum in_parens">Atlas</span>」と名づけられています <span class="open-zenkaku">（</span><a href="http://atlas.oreilly.com" class="print_url alphanum in_parens" target="_blank">atlas.<wbr/>oreilly.<wbr/>com</a><span class="ts-ta-r">）</span>。<wbr/><span class="alphanum">Atlas</span>は<wbr/><span class="alphanum">O’Reilly</span>社内で使われるだけでなく、誰でも利用できるという特長があり<wbr/><span class="no-inline-break">ます。</span></p>
+
+<p>ただし、本書は<wbr/><span class="alphanum">Atlas</span>の典型的な利用例というわけではありませんでした。筆者の知る限り他に例のないやり方で、印刷用の<wbr/><span class="alphanum">CSS</span>の限界に挑んだのが本書です。……</p>
+</blockquote>
+</section>
+
+<section data-type="sect2" data-pdf-bookmark="「日本語版について」から" id="idp140273443698832">
+<h2>「日本語版について」から</h2>
+
+<blockquote>
+<p>日本語版 <span class="open-zenkaku">（</span>本書）も原書にならい、<wbr/><span class="alphanum">HTML</span>や<wbr/><span class="alphanum">CSS</span>、<wbr/><span class="alphanum">SVG</span>などで組版を行いました。従来の<wbr/><span class="alphanum">DTP</span>システムを使ってレイアウトを再現することはもちろん可能でしたが、こだわり抜かれた原書のデザインと <span class="open-zenkaku">「</span>他に例のないやり方で、印刷用の<wbr/><span class="alphanum">CSS</span>の限界に挑んだ」というこの <span class="open-zenkaku">『</span><span class="alphanum in_parens">CSS Secrets</span>』の要となるコンセプトを外した本作りをするわけにはいかなかったから<wbr/><span class="no-inline-break">です。</span></p>
+
+<p><a data-primary="Vivliostyle Formatter" data-type="indexterm" data-primary-sortas="Vivliostyle Formatter" id="idp140273443701456"/>そこで、<wbr/><strong class="alphanum">Vivliostyle</strong> <span class="open-zenkaku">（</span>ビブリオスタイル）社の全面協力のもと、原書の<wbr/><span class="no-inline-break">デー</span>タをもとに日本語用の<wbr/><span class="alphanum">CSS</span>を作成することになりました。<wbr/><span class="alphanum">Atlas</span>用に書かれた<wbr/><span class="no-inline-break">ソー</span>スを再現するため、<wbr/><span class="alphanum">Vivliostyle</span>社が<wbr/><span class="alphanum">Atlas</span>の<wbr/><span class="no-inline-break">オー</span>プン<wbr/><span class="no-inline-break">ソー</span>スの部分を再利用して<wbr/><span class="alphanum">Ruby </span><span class="open-zenkaku">（</span>約<wbr/><span class="alphanum">600</span>行）で開発した<wbr/><strong class="alphanum">Heracles</strong> <span class="open-zenkaku">（</span>仮称）と<wbr/><span class="alphanum">PDF</span>生成エンジン<wbr/><a href="http://vivliostyle.com/ja/products/" target="_blank" class="alphanum">Vivliostyle Formatter</a><span class="print_url_in_parens"> <span class="open-zenkaku">（</span><a href="http://vivliostyle.com/ja/products/" class="print_url alphanum in_parens" target="_blank">vivliostyle.<wbr/>com/<wbr/>ja/<wbr/>products/<wbr/></a>）</span>の組み合わせを、原書で使われた膨大な<wbr/><span class="alphanum">CSS</span>に対応させることに成功しました。これにより本書の<wbr/><span class="no-inline-break">ペー</span>ジレイアウト、目次や索引の相互参照、<wbr/><span class="no-inline-break">ペー</span>ジ番号参照、日本語組版に対応した文字組みなどが<wbr/><span class="alphanum">HTML+CSS</span>で実現しています。その上、<wbr/><span class="alphanum">HTML+CSS</span>であることを利用して<wbr/><span class="alphanum">Web</span>サイトの形で<wbr/><a href="http://vivliostyle.com/ja/samples/css-secrets/" target="_blank">サンプル版</a><span class="print_url_in_parens"> <span class="open-zenkaku">（</span><a href="http://vivliostyle.com/ja/samples/css-secrets/" class="print_url alphanum in_parens" target="_blank">vivliostyle.<wbr/>com/<wbr/>ja/<wbr/>samples/<wbr/>css-secrets/<wbr/></a>）</span>等を出せるようにもなりま<wbr/><span class="no-inline-break">した。</span></p>
+</blockquote>
+
+</section>
+
+<section data-type="sect2" data-pdf-bookmark="この資料のメイキング" id="idp140273443706048">
+<h2>この資料のメイキング</h2>
+<p>この資料も <span class="open-zenkaku">『</span><span class="alphanum">CSS</span><span class="no-inline-break">シー</span>クレット』と同じ<wbr/><span class="alphanum">CSS</span>組版のしくみで作成してい<wbr/><span class="no-inline-break">ます。</span></p>
+
+</section>
+
+</section>
+
+</section>
+<section data-type="chapter" data-pdf-bookmark="章 2. CSS組版・Vivliostyleの紹介" id="chapter-vivliostyle">
+<h1><span class="alphanum">CSS</span>組版・<wbr/><span class="alphanum">Vivliostyle</span><wbr/>の紹介</h1><wbr/><span class="dup"><span class="alphanum">CSS</span>組版・<span class="alphanum">Vivliostyle</span>の紹介</span>
+
+<section data-type="sect1" class="secret secrets1-9" data-pdf-bookmark="印刷の世界と画⾯の世界を⼀元化" id="idp140273443709392">
+<h1>印刷の<wbr/>世界と<wbr/>画<wbr/><span class="alphanum">⾯</span>の<wbr/>世界を<wbr/><span class="alphanum">⼀</span>元化</h1><wbr/><span class="dup">印刷の世界と画<wbr/><span class="alphanum">⾯</span>の世界を<wbr/><span class="alphanum">⼀</span>元化</span>
+
+<figure>
+	<img src="img/vivliostyle-osmu.png" alt="Vivliostyleでワンソース・マルチユース、多様なデバイスに出力するイメージ" height="210"/>
+	<figcaption><a data-primary="ワンソース・マルチユース" data-type="indexterm" data-primary-sortas="ワンソおス・マルチユうス" id="idp140273443713264"/><span class="alphanum">Vivliostyle</span>でワン<wbr/><span class="no-inline-break">ソー</span>ス・マルチ<wbr/><span class="no-inline-break">ユー</span>ス、多様なデバイスに対応可</figcaption>
+</figure>
+
+<section data-type="sect2" data-pdf-bookmark="Web標準ブラウザベースCSS組版" id="idp140273443714176">
+<h2><span class="alphanum">Web</span>標準<wbr/>ブラウザベース<wbr/><span class="alphanum">CSS</span>組版</h2>
+<ul>
+	<li><a data-primary="Vivliostyle Formatter" data-type="indexterm" data-primary-sortas="Vivliostyle Formatter" id="idp140273443715840"/><a data-primary="Vivliostyle Viewer" data-type="indexterm" data-primary-sortas="Vivliostyle Viewer" id="idp140273443716416"/><a data-primary="リフロー" data-type="indexterm" data-primary-sortas="リフロお" id="idp140273443717104"/><a data-primary="レスポンシブ" data-type="indexterm" data-primary-sortas="レスポンシブ" id="idp140273443717680"/>組版結果を<wbr/><span class="alphanum">PDF</span>出力する<wbr/><strong class="alphanum">Vivliostyle Formatter</strong>とブラウザで動く<wbr/><strong class="alphanum">Vivliostyle Viewer</strong>により、印刷の世界と画<wbr/><span class="alphanum">⾯</span>の世界 <span class="open-zenkaku">（</span>リフ<wbr/><span class="no-inline-break">ロー</span>、レスポンシブ）を<wbr/><span class="alphanum">⼀</span><span class="no-inline-break">元化。</span></li>
+	<li><span class="alphanum">Web</span>ブラウザで動く ＝ どこでも動く！
+		<ul>
+			<li><a data-primary="Vivliostyle.js" data-type="indexterm" data-primary-sortas="Vivliostyle.js" id="idp140273443720032"/>ブラウザ上で高度な組版機能を実現する<wbr/><span class="alphanum">JavaScript</span>ライブラリ <span class="open-zenkaku">（</span><span class="alphanum in_parens">Vivliostyle.js</span>）を<wbr/><span class="no-inline-break">オー</span>プン<wbr/><span class="no-inline-break">ソー</span>スで開発</li>
+		</ul>
+	</li>
+	<li>次世代の<wbr/><span class="alphanum">CSS</span>組版仕様の標準を、世界に先駆けて実装。
+		<ul>
+			<li><span class="alphanum">W3C</span>メン<wbr/><span class="no-inline-break">バー</span>として仕様策定に参加しながら実装、<wbr/><span class="alphanum">Web</span>と電子出版の標準化を<wbr/><span class="no-inline-break">推進。</span></li>
+		</ul>
+	</li>
+</ul>
+
+</section>
+</section>
+
+<section data-type="sect1" class="secret secrets1-9" data-pdf-bookmark="Vivliostyleの組版機能" id="idp140273443723024">
+<h1><span class="alphanum">Vivliostyle</span>の<wbr/>組版機能</h1><wbr/><span class="dup"><span class="alphanum">Vivliostyle</span>の組版機能</span>
+
+<ul>
+	<li><a data-primary="柱" data-type="indexterm" data-primary-sortas="柱" id="idp140273443724864"/><a data-primary="ノンブル" data-type="indexterm" data-primary-sortas="ノンブル" id="idp140273443725440"/>柱・ノンブル <span class="open-zenkaku">（</span><span class="no-inline-break">ペー</span>ジ番号）</li>
+	<li><span class="no-inline-break">ペー</span>ジ番号参照・クロスリファレンス機能</li>
+	<li><span class="no-inline-break">ペー</span>ジテンプ<wbr/><span class="no-inline-break">レー</span>ト機能 <span class="open-zenkaku">（</span><span class="no-inline-break">ペー</span>ジマス<wbr/><span class="no-inline-break">ター</span>定義と選択）</li>
+	<li>改<wbr/><span class="no-inline-break">ペー</span>ジの制御：分割禁止、強制改<wbr/><span class="no-inline-break">ペー</span>ジ</li>
+	<li>空白<wbr/><span class="no-inline-break">ペー</span>ジ生成</li>
+	<li>段組み</li>
+	<li>表組</li>
+	<li>傍注・脚注</li>
+	<li><a data-primary="縦書き" data-type="indexterm" data-primary-sortas="縦書き" id="idp140273443729088"/>縦書き、縦中横、ルビなど日本語組版機能</li>
+	<li><a data-primary="TeX" data-type="indexterm" data-primary-sortas="TeX" id="idp140273443730048"/><a data-primary="MathML" data-type="indexterm" data-primary-sortas="MathML" id="idp140273443730624"/><a data-primary="MathJax" data-type="indexterm" data-primary-sortas="MathJax" id="idp140273443731200"/>数式：<wbr/><span class="alphanum">TeX</span>形式と<wbr/><span class="alphanum">MathML</span>形式に対応 <span class="open-zenkaku">（</span><span class="alphanum">MathJax</span>使用）</li>
+	<li><a data-primary="Webフォント" data-type="indexterm" data-primary-sortas="Webフォント" id="idp140273443732160"/><span class="alphanum">Web</span>フォント</li>
+</ul>
+
+<p>…など。詳しくは：</p>
+
+<footer class="specs">
+<h1>関連仕様</h1>
+<ul>
+	<li><a href="http://vivliostyle.com/en/documentation/supported-features/" target="_blank"><span class="alphanum">Vivliostyle</span>がサポートする<wbr/><span class="alphanum">CSS</span>機能一覧</a><span class="print_url_in_parens alphanum"> <a href="http://vivliostyle.com/en/documentation/supported-features/" class="print_url alphanum" target="_blank">vivliostyle.<wbr/>com/<wbr/>en/<wbr/>documentation/<wbr/>supported-features/<wbr/></a></span></li>
+</ul>
+</footer>
+
+</section>
+
+<section data-type="sect1" class="secret secrets1-9" data-pdf-bookmark="ひとつのソースで、執筆・編集・校正・レイアウトを可能に" id="idp140273443735744">
+<h1>ひとつのソースで、<wbr/>執筆・<wbr/>編集・<wbr/>校正・<wbr/>レイアウトを<wbr/>可能に</h1><wbr/><span class="dup">ひとつの<wbr/><span class="no-inline-break">ソー</span>スで、執筆・編集・校正・レイアウトを可能に</span>
+
+<ul>
+	<li><a data-primary="出版ワークフロー" data-primary-sortas="しゅっぱんわあくふろお" data-type="indexterm" id="idp140273443738720"/>従来の一般的な出版<wbr/><span class="no-inline-break">ワー</span>クフ<wbr/><span class="no-inline-break">ロー</span>では、執筆・編集・組版のそれぞれで別々の<wbr/><span class="no-inline-break">ソー</span>スを扱い、<wbr/><span class="alphanum">Web</span>版・電子版の作成にはまた手作業で<wbr/><span class="alphanum">HTML</span>タグ付けなどして<wbr/><span class="no-inline-break">いた。</span></li>
+	<li><span class="alphanum">Vivliostyle</span>により、ひとつの<wbr/><span class="no-inline-break">ソー</span>スで執筆・編集・校正・レイアウト。<wbr/><span class="alphanum">Web</span>版・電子版も同時制作<wbr/><span class="no-inline-break">可能。</span></li>
+</ul>
+
+<figure>
+	<img src="img/workflows.png" alt="従来の出版ワークフローとVivliostyleの出版ワークフローの比較図"/>
+	<figcaption>従来の出版<wbr/><span class="no-inline-break">ワー</span>クフ<wbr/><span class="no-inline-break">ロー</span>と<wbr/><span class="alphanum">Vivliostyle</span>の出版<wbr/><span class="no-inline-break">ワー</span>クフ<wbr/><span class="no-inline-break">ロー</span>の比較<br/>
+		<small> <span class="open-zenkaku">（</span><span class="ts-ta-l">『</span>CSSシークレット』制作の場合、CMS <span class="open-zenkaku">（</span>コンテンツ管理システム）に相当するのは、GitHub＋Heracles）</small></figcaption>
+</figure>
+
+</section>
+</section>
+<section data-type="chapter" data-pdf-bookmark="章 3. 制作システムHeraclesとVivliostyle" id="chapter-heracles">
+<h1>制作システム<wbr/><span class="alphanum">Heracles</span>と<wbr/><span class="alphanum">Vivliostyle</span></h1><span class="dup">制作システム<wbr/><span class="alphanum">Heracles</span>と<wbr/><span class="alphanum">Vivliostyle</span></span>
+
+<section data-type="sect1" class="secret secrets1-9" data-pdf-bookmark="Heraclesとは" id="idp140273443744848">
+<h1><span class="alphanum">Heracles</span>とは</h1><wbr/><span class="dup"><span class="alphanum">Heracles</span>とは</span>
+
+<ul>
+	<li><a data-primary="Heracles" data-type="indexterm" data-primary-sortas="Heracles" id="idp140273443746224"/><span class="alphanum">Heracles</span>は、<wbr/><span class="alphanum">Vivliostyle</span>自動組版の前処理として、<wbr/><span class="no-inline-break">ソー</span>スの<wbr/><span class="alphanum">HTML</span>に加工を加えて、書籍組版に必要な要素の<wbr/><span class="alphanum">HTML</span><span class="no-inline-break">コー</span>ドの自動生成など行うプログラム
+		<ul>
+			<li> <span class="open-zenkaku">「</span><span class="alphanum">CSS</span><span class="no-inline-break">シー</span>クレット」組版プロジェクトのために開発したもの。今後は、ほかの利用も…。</li>
+			<li> <span class="open-zenkaku">「</span><span class="alphanum in_parens">Heracles</span>」は、この開発者の<wbr/><span class="alphanum">Florian Rivoal </span><span class="open-zenkaku">（</span>今回の書籍制作プロジェクトを村上と共に担当）が名付けた<wbr/><span class="no-inline-break">仮称。</span></li>
+		</ul>
+	</li>
+	<li>米<wbr/><span class="alphanum">O’Reilly Media</span>社の書籍制作システム<wbr/><strong class="alphanum">Atlas</strong>で使われている書籍制作のための<wbr/><span class="alphanum">HTML5</span><span class="no-inline-break">マー</span>クアップ方式 <span class="open-zenkaku">（</span><span class="alphanum in_parens">HTMLBook</span>）に対応。
+		<ul>
+			<li><a data-primary="Atlas" data-type="indexterm" data-primary-sortas="Atlas" id="idp140273443750032"/><span class="alphanum">Atlas</span>の機能のうち<wbr/><span class="no-inline-break">オー</span>プン<wbr/><span class="no-inline-break">ソー</span>スで公開されているものを一部再利用している <span class="open-zenkaku">（</span>目次・索引の生成など）</li>
+		</ul>
+	</li>
+	<li><span class="alphanum">Heracles</span>は<wbr/><span class="alphanum">Ruby</span>で書かれたプログラムであり、<wbr/><span class="alphanum">CSS</span>組版の前処理を柔軟にカスタマイズ可能。
+		<ul>
+			<li>禁則処理：<wbr/><span class="alphanum">URL</span>の分割、行頭禁則文字の設定など</li>
+			<li>約物の詰め <span class="open-zenkaku">（</span>行頭や連続する全角約物を半角幅に<span class="ts-ta-r">）</span>、和欧文間のアキ</li>
+		</ul>
+	</li>
+</ul>
+
+<figure>
+	<div style="text-align: center; padding: 1em 0; line-height: 1;"><span style="display: inline-block; vertical-align: middle;"><span style="color: blue; font-size: 80%;">著者・編集者<br/><span class="alphanum">↓</span><br/></span><span class="no-inline-break">ソー</span>ス<wbr/><span class="alphanum">HTML</span><br/><span class="alphanum">SCSS</span><span style="color: blue; font-size: 80%;"><br/><span class="alphanum">↑</span><br/>デザイ<wbr/><span class="no-inline-break">ナー</span></span></span><span class="alphanum">→</span><span style="display: inline-block; vertical-align: middle; text-align: left;"><span style="display: block; color: red; padding: .5em 0;"><span class="alphanum">↦</span><span style="font-size: 80%;">自動</span></span><wbr/><strong style="display: block; border: solid 1px; padding: .5em .125em;" class="alphanum">Heracles</strong><span style="display: block; padding: .5em 0; position: relative; left: 5em;"><span class="alphanum">↘</span><span style="position: absolute; left: 1em; top: 2em; width: 10em; font-size: 80%;"><span class="alphanum">EPUB </span><span class="open-zenkaku">（</span>オプション）</span></span></span><wbr/><span class="alphanum">→</span><span style="display: inline-block; vertical-align: middle;">出力<wbr/><span class="alphanum">HTML</span><br/><span class="alphanum">CSS</span></span><span class="alphanum">→</span><strong style="display: inline-block; vertical-align: middle; border: solid 1px; padding: .5em .125em;" class="alphanum">Vivliostyle</strong><span style="display: inline-block; vertical-align: middle; text-align: left;" class="alphanum">→PDF<br/>→Web</span></div>
+	<figcaption><a data-primary="制作の流れ" data-primary-sortas="せいさくのながれ" data-type="indexterm" id="idp140273443762160"/><span class="alphanum">Heracles</span>＋<span class="alphanum">Vivliostyle</span>での制作の流れ</figcaption>
+</figure>
+
+</section>
+
+<section data-type="sect1" class="secret secrets1-9" data-pdf-bookmark="目次の自動生成" id="idp140273443763344">
+<h1>目次の<wbr/>自動生成</h1><wbr/><span class="dup">目次の自動生成</span>
+
+<figure>
+	<img src="img/toc.png" alt="目次の画像"/>
+	<figcaption> <span class="open-zenkaku">（</span><span class="ts-ta-l">『</span><span class="alphanum">CSS</span><span class="no-inline-break">シー</span>クレット』の目次から）
+		<ul>
+			<li><a data-primary="目次" data-primary-sortas="もくじ" data-type="indexterm" id="idp140273443766512"/><span class="alphanum">Vivliostyle</span>・<span class="alphanum">CSS</span>組版の<wbr/><span class="no-inline-break">ペー</span>ジ番号参照機能で目次を<wbr/><span class="no-inline-break">実現。</span></li>
+			<li><span class="alphanum">Heracles</span>による前処理で目次項目にする章や節のタイトルを集めて、目次<wbr/><span class="no-inline-break">ペー</span>ジの<wbr/><span class="alphanum">HTML</span><span class="no-inline-break">コー</span>ドを生成して<wbr/><span class="no-inline-break">いる。</span></li>
+		</ul>
+	</figcaption>
+</figure>
+
+</section>
+
+<section data-type="sect1" class="secret secrets1-9" data-pdf-bookmark="索引作成の自動化" id="idp140273443768928">
+<h1>索引作成<wbr/>の<wbr/>自動化</h1><wbr/><span class="dup">索引作成の自動化</span>
+
+<figure>
+	<img src="img/index.png" alt="索引の画像" height="170"/>
+	<figcaption> <span class="open-zenkaku">（</span><span class="ts-ta-l">『</span><span class="alphanum">CSS</span><span class="no-inline-break">シー</span>クレット』の索引から）
+		<ul>
+			<li><a data-primary="索引" data-primary-sortas="さくいん" data-type="indexterm" id="idp140273443772384"/><span class="alphanum">Vivliostyle</span>・<span class="alphanum">CSS</span>組版の<wbr/><span class="no-inline-break">ペー</span>ジ番号参照機能で索引を<wbr/><span class="no-inline-break">実現。</span></li>
+			<li><span class="alphanum">Heracles</span>による前処理で索引語 <span class="open-zenkaku">（</span><span class="alphanum">HTML</span>に<wbr/><span class="no-inline-break">マー</span>クアップ）を集めて、索引<wbr/><span class="no-inline-break">ペー</span>ジの<wbr/><span class="alphanum">HTML</span><span class="no-inline-break">コー</span>ドを生成して<wbr/><span class="no-inline-break">いる。</span></li>
+		</ul>
+	</figcaption>
+</figure>
+
+<p>索引語の<wbr/><span class="no-inline-break">マー</span>クアップの例：</p>
+<pre data-type="programlisting" data-code-language="html"> 
+<div class="ragged start">​</div><div class="ragged start cover">​</div><span class="nt alphanum">&lt;a</span> <span class="na alphanum">data-type=</span><span class="s alphanum">"indexterm"</span> 
+   <span class="na alphanum">data-primary=</span><span class="s">"半透明"</span> 
+   <span class="na alphanum">data-primary-sortas=</span><span class="s">"はんとうめい"</span><span class="nt alphanum">&gt;&lt;/a&gt;</span>
+<div class="ragged end">​</div><div class="ragged end cover">​</div></pre>
+
+<p>２レベルの索引語の例：</p>
+<pre data-type="programlisting" data-code-language="html"> 
+<div class="ragged start">​</div><div class="ragged start cover">​</div><span class="nt alphanum">&lt;a</span> <span class="na alphanum">data-type=</span><span class="s alphanum">"indexterm"</span> 
+   <span class="na alphanum">data-primary=</span><span class="s">"<span class="no-inline-break">ボー</span><span class="no-inline-break">ダー</span>"</span>
+   <span class="na alphanum">data-secondary=</span><span class="s">"半透明"</span> 
+   <span class="na alphanum">data-secondary-sortas=</span><span class="s">"はんとうめい"</span><span class="nt alphanum">&gt;&lt;/a&gt;</span>
+<div class="ragged end">​</div><div class="ragged end cover">​</div></pre>
+
+</section>
+
+
+</section>
+<section data-type="chapter" data-pdf-bookmark="章 4. CSSシークレットのCSS組版の実際" id="chapter-making-secrets">
+<h1><span class="alphanum">CSS</span>シークレットの<wbr/><span class="alphanum">CSS</span>組版の実際</h1><wbr/><span class="dup"><span class="alphanum">CSS</span><span class="no-inline-break">シー</span>クレットの<wbr/><span class="alphanum">CSS</span>組版の実際</span>
+
+<section data-type="sect1" class="secret secrets1-9" data-pdf-bookmark="制作ワークフロー" id="idp140273443779072">
+<h1>制作ワークフロー</h1><span class="dup">制作<wbr/><span class="no-inline-break">ワー</span>クフ<wbr/><span class="no-inline-break">ロー</span></span>
+
+<ul>
+	<li><a data-primary="制作ワークフロー" data-primary-sortas="せいさくわあくふろお" data-type="indexterm" id="idp140273443780768"/><a data-primary="GitHub" data-type="indexterm" data-primary-sortas="GitHub" id="idp140273443781632"/><span class="no-inline-break">ソー</span>ス<wbr/><span class="alphanum">HTML</span>、画像、<wbr/><span class="alphanum">CSS</span>、<wbr/><span class="alphanum">Heracles</span>などの一式を、オライ<wbr/><span class="no-inline-break">リー</span>側と<wbr/><span class="alphanum">GitHub</span>で共有。
+		<ul>
+			<li>翻訳原稿から<wbr/><span class="no-inline-break">ソー</span>ス<wbr/><span class="alphanum">HTML</span>作成はオライ<wbr/><span class="no-inline-break">リー</span>側で、<wbr/><span class="alphanum">CSS</span>・<span class="alphanum">Heracles</span>開発をビブリオスタイル<wbr/><span class="no-inline-break">側で。</span></li>
+			<li>どちら側でも<wbr/><span class="alphanum">Heracles</span>、<wbr/><span class="alphanum">Vivliostyle Formatter</span>で組版結果を<wbr/><span class="no-inline-break">確認。</span></li>
+			<li>問題点の相談、修正指示などは<wbr/><span class="alphanum">GitHub issues</span>で。</li>
+		</ul>
+	</li>
+</ul>
+
+</section>
+
+
+<section data-type="sect1" class="secret secrets1-9" data-pdf-bookmark="CSS組版とはルールを作ること" id="idp140273443784368">
+<h1><span class="alphanum">CSS</span>組版とは<wbr/>ルールを<wbr/>作ること</h1><wbr/><span class="dup"><span class="alphanum">CSS</span>組版とは<wbr/><span class="no-inline-break">ルー</span>ルを作ること</span>
+
+<ul>
+	<li><span class="alphanum">CSS</span>組版作業は、<wbr/><span class="alphanum">1</span><span class="no-inline-break">ペー</span>ジずつ作るのではなく、<wbr/><span class="no-inline-break">ルー</span>ルを作ること。
+		<ul>
+			<li><span class="alphanum">HTML</span>の文書構造の論理的な要素の種類ごとの体裁を決めていく<wbr/><span class="no-inline-break">ルー</span>ルを<wbr/><span class="alphanum">CSS</span>で書いていく<wbr/><span class="no-inline-break">作業。</span></li>
+			<li><span class="no-inline-break">ルー</span>ルを作るのは手間だけど、あとは自動組版になるので、<wbr/><span class="no-inline-break">ペー</span>ジ数が多くなっても、<wbr/><span class="no-inline-break">ソー</span>ス<wbr/><span class="alphanum">HTML</span>内容に大幅な変更が入っても、すぐに組版結果が得られるのが<wbr/><strong><span class="alphanum">CSS</span>組版のメリット</strong>。</li>
+		</ul>
+	</li>
+	<li>とはいっても、最終的には<wbr/><span class="alphanum">1</span><span class="no-inline-break">ペー</span>ジずつ目で見て確認、組版体裁がまずいところは直していくという作業も。<wbr/><a data-type="xref" href="#secret-justify" data-xref-pagenum-style="decimal" class="pagenum ts-ta-l-e">「ジャスティフィ<wbr/>ケー<wbr/>ション<wbr/>の調整」</a><wbr/><span class="no-inline-break">など。</span></li>
+</ul>
+
+</section>
+
+<section data-type="sect1" class="secret secrets1-9" data-pdf-bookmark="コードブロックのページ分割の装飾" id="idp140273443790384">
+<h1>コードブロックの<wbr/>ページ分割の装飾</h1><wbr/><span class="dup"><span class="no-inline-break">コー</span>ドブロックの<wbr/><span class="no-inline-break">ペー</span>ジ分割の装飾</span>
+
+<figure>
+	<img src="img/code-break.png" height="170"/>
+	<figcaption><span class="no-inline-break">コー</span>ドブロックの<wbr/><span class="no-inline-break">ペー</span>ジ分割装飾の例<small> <span class="open-zenkaku">（</span><span class="ts-ta-l">『</span>CSSシークレット』P.34-P.35）</small><br/>
+	分割が起きたときに自動的に現れるギザギザの装飾を<wbr/><span class="alphanum">CSS</span>で実現。
+	</figcaption>
+</figure>
+
+</section>
+
+
+<section data-type="sect1" class="secret secrets10-19" data-pdf-bookmark="見出しの改行" id="idp140273443794144">
+<h1>見出しの<wbr/>改行</h1><wbr/><span class="dup">見出しの改行</span>
+
+<ul>
+	<li>見出しが複数行になるとき、なるべく意味のある区切りで改行し<wbr/><span class="no-inline-break">たい。</span></li>
+	<li>強制改行<wbr/><code>&lt;br/&gt;</code>を入れる方法もあるが、それでは１行に入る文字数が変わると余計な改行が生じてダ<wbr/><span class="no-inline-break">メに。</span></li>
+</ul>
+
+<p>そこで、次のようにして、日本語文字列の途中では自動で改行しないようにして、</p>
+<pre data-type="programlisting" data-code-language="css"> 
+<div class="ragged start">​</div><div class="ragged start cover">​</div><span class="nt alphanum">h1</span><span class="o alphanum">,</span> <span class="nt alphanum">h2</span><span class="o alphanum">,</span> <span class="nt alphanum">h3</span> <span class="p alphanum">{</span>
+	<span class="nl alphanum">word-break</span><span class="p alphanum">:</span> <span class="n alphanum">keep-all</span><span class="p alphanum">;</span>
+<span class="p alphanum">}</span>
+<div class="ragged end">​</div><div class="ragged end cover">​</div></pre>
+
+<p>改行して良いところ <span class="open-zenkaku">（</span>文節区切りなど）には、次のように任意改行のタグ<wbr/><code>&lt;wbr/&gt;</code>を挿入：</p>
+
+<pre data-type="programlisting" data-code-language="html"> 
+<div class="ragged start">​</div><div class="ragged start cover">​</div><span class="nt alphanum">&lt;h1&gt;</span>CSS組版作業は<wbr/><span class="nt alphanum">&lt;wbr/&gt;</span>ルールを<wbr/><span class="nt alphanum">&lt;wbr/&gt;</span>
+作ること<wbr/><span class="nt alphanum">&lt;/h1&gt;</span>
+<div class="ragged end">​</div><div class="ragged end cover">​</div></pre>
+
+<aside data-type="note" id="idp140273443800576">
+今回は手作業で見出しに<wbr/><code>&lt;wbr/&gt;</code>を入れてますが、自動的に日本語の文節区切りなどで<wbr/><code>&lt;wbr/&gt;</code>を入れることも考えられます。そのしくみを<wbr/><span class="alphanum">Heracles</span>に入れるなど。あるいは、<wbr/><span class="alphanum">CSS</span>の標準機能として文節区切り改行<wbr/><span class="no-inline-break">モー</span>ドがあればよいかも <span class="open-zenkaku">（</span><span class="alphanum">word-break</span>プロパティをもっと便利に<span class="ts-ta-r">）</span>。
+</aside>
+
+</section>
+
+<section data-type="sect1" class="secret secrets10-19" data-pdf-bookmark="ジャスティフィケーションの調整" id="secret-justify">
+<h1>ジャスティフィ<wbr/>ケー<wbr/>ション<wbr/>の調整</h1><wbr/><span class="dup">ジャスティフィ<wbr/><span class="no-inline-break">ケー</span>ションの調整</span>
+
+<ul>
+	<li><a data-primary="ジャスティフィケーション" data-type="indexterm" data-primary-sortas="ジャスティフィケえション" id="idp140273443804992"/>日本語組版では行末を揃えるジャスティフィ<wbr/><span class="no-inline-break">ケー</span>ションが<wbr/><span class="no-inline-break">必須。</span></li>
+	<li><span class="alphanum">CSS</span>では、<wbr/><code>text-align: justify</code>でジャスティフィ<wbr/><span class="no-inline-break">ケー</span>ションが<wbr/><span class="no-inline-break">有効。</span></li>
+	<li> <span class="open-zenkaku">『</span><span class="alphanum">CSS</span><span class="no-inline-break">シー</span>クレット』のように、英数字列や<wbr/><span class="alphanum">URL</span>などが文章中に頻繁に現れると、<wbr/><span class="no-inline-break">ワー</span>ドラップで長い単語を追い出すために文字間のアキが大きくなるのが目<wbr/><span class="no-inline-break">立つ。</span></li>
+</ul>
+
+<figure id="justify-space">
+	<img src="img/justify-space.png" height="170"/>
+	<figcaption>ジャスティフィ<wbr/><span class="no-inline-break">ケー</span>ション改善のための調整<small> <span class="open-zenkaku">（</span><span class="ts-ta-l">『</span>CSSシークレット』P.231の図のキャプション、<wbr/><code>class="justify-space"</code>を指定）</small><br/>
+	<strong>左：</strong>適用前<br/>
+	<strong>右：</strong>適用後</figcaption>
+</figure>
+
+<p>このような調整をどうしたかというと、次の<wbr/><span class="alphanum">3</span>通り：</p>
+<ul>
+	<li>文字間に少しだけアキを追加<small> <span class="open-zenkaku">（</span><code>class="justify-space"</code>）</small><br/><small>これで１行に入る文字が１文字少なくなり、文字が送られて、アキができていた行に収まるこ<wbr/><span class="no-inline-break">とに。</span></small></li>
+	<li>文字間を少し詰める<small> <span class="open-zenkaku">（</span><code>class="justify-compress"</code>）</small><br/><small>これでワードラップしていた長い単語が行に収まるよ<wbr/><span class="no-inline-break">うに。</span></small></li>
+	<li>場合によっては、あきらめ<small> <span class="open-zenkaku">（</span><code>class="giveup-justify"</code>）</small></li>
+</ul>
+
+<pre data-type="programlisting" data-code-language="css"> 
+<div class="ragged start">​</div><div class="ragged start cover">​</div><span class="nc alphanum">.justify-space</span> <span class="p alphanum">{</span>
+	<span class="nl alphanum">letter-spacing</span><span class="p alphanum">:</span> <span class="m alphanum">0.005em</span><span class="p alphanum">;</span>
+<span class="p alphanum">}</span>
+<span class="nc alphanum">.justify-compress</span> <span class="p alphanum">{</span>
+	<span class="nl alphanum">letter-spacing</span><span class="p alphanum">:</span> <span class="m alphanum">-0.02em</span><span class="p alphanum">;</span>
+<span class="p alphanum">}</span>
+<span class="nc alphanum">.giveup-justify</span> <span class="p alphanum">{</span>
+	<span class="nl alphanum">text-align</span><span class="p alphanum">:</span> <span class="nb alphanum">left</span><span class="p alphanum">;</span>
+<span class="p alphanum">}</span>
+<div class="ragged end">​</div><div class="ragged end cover">​</div></pre>
+
+<ul>
+	<li>それから、編集の側で日本語の表現を変えて文字数を調整して対応というこ<wbr/><span class="no-inline-break">とも。</span></li>
+</ul>
+
+<aside data-type="note" id="idp140273443818080">
+	<ul>
+		<li><a data-primary="ジャスティフィケーション" data-type="indexterm" data-primary-sortas="ジャスティフィケえション" id="idp140273443819056"/>ジャスティフィ<wbr/><span class="no-inline-break">ケー</span>ションについては、将来的には<wbr/><span class="alphanum">Vivliostyle</span>組版エンジン側で自動で段落の最適な改行位置を決めるよう改善したいと<wbr/><span class="no-inline-break">ころ。</span></li>
+		<li><a data-primary="ハイフネーション" data-type="indexterm" data-primary-sortas="ハイフネえション" id="idp140273443820320"/>ハイフ<wbr/><span class="no-inline-break">ネー</span>ション <span class="open-zenkaku">（</span><span class="alphanum">CSS</span>では<wbr/><code>hyphens: auto</code>）については、現状では<wbr/><span class="alphanum">Vivliostyle</span>はブラウザに依存。<wbr/><span class="alphanum">Google Chrome</span>以外のブラウザでは可能。<wbr/><span class="alphanum">Chrome</span>でもハイフ<wbr/><span class="no-inline-break">ネー</span>ション実装が進んでいて、もうすぐ標準で利用可能になる見<wbr/><span class="no-inline-break">込み。</span></li>
+	</ul>
+</aside>
+
+</section>
+
+<section data-type="sect1" class="secret secrets10-19" data-pdf-bookmark="これからの課題" id="idp140273443822160">
+<h1>これから<wbr/>の<wbr/>課題</h1><wbr/><span class="dup">これからの課題</span>
+
+<ul>
+	<li><span class="alphanum">Vivliostyle.js/Viewer/Formatter</span>の開発を進めて、いまある制限をなくしていくことはもちろん！</li>
+	<li><span class="alphanum">HTML5+CSS</span>組版の標準を確立し、学びやすくすること
+		<ul>
+			<li><p><span class="alphanum">Web</span>の標準仕様を利用する<wbr/><span class="alphanum">EPUB</span>がきっかけなり、<wbr/><span class="alphanum">W3C</span>で電子出版に関する標準化も行うようになったことで、<wbr/><span class="alphanum">CSS</span>の<wbr/><span class="no-inline-break">ペー</span>ジレイアウト仕様の標準化を進めやすくなると<wbr/><span class="no-inline-break">期待。</span></p>
+				<ul>
+					<li>より使いやすい仕様にして標準として広めることで利用の<wbr/><span class="no-inline-break">ハー</span>ドルは<wbr/><span class="no-inline-break">低く。</span></li>
+					<li>将来的には、もっと簡単に、<wbr/><span class="alphanum">CSS</span>のプロパティや<wbr/><span class="no-inline-break">ルー</span>ルなんて知らなくても<wbr/><span class="alphanum">CSS</span>組版ができるデザイン<wbr/><span class="no-inline-break">ツー</span>ルなどでき<wbr/><span class="no-inline-break">そう。</span></li>
+				</ul>
+			</li>
+			<li><p><a data-primary="HTMLBook" data-type="indexterm" data-primary-sortas="HTMLBook" id="idp140273443827968"/>今回利用した<wbr/><span class="alphanum">O’Reilly</span>の<wbr/><span class="alphanum">HTMLBook</span>のように、<wbr/><span class="alphanum">HTML5</span>で出版物の文書構造を表現する仕様があると、それに対応する<wbr/><span class="alphanum">CSS</span>スタイル<wbr/><span class="no-inline-break">シー</span>トが作りやすく、再利用もしやすくなり<wbr/><span class="no-inline-break">ます。</span></p>
+				<ul class="pagebreak-before" style="margin-top: 0"><!-- workaround for list page break bug -->
+					<li><a data-primary="Digital Publishing WAI-ARIA" data-type="indexterm" data-primary-sortas="Digital Publishing WAI-ARIA" id="idp140273443830096"/><span class="alphanum">W3C</span>では、<wbr/><a href="http://www.w3.org/TR/dpub-aria-1.0/" target="_blank" class="alphanum">Digital Publishing WAI-ARIA</a><span class="print_url_in_parens"> <span class="open-zenkaku">（</span><a href="http://www.w3.org/TR/dpub-aria-1.0/" class="print_url alphanum in_parens" target="_blank">w3.<wbr/>org/<wbr/>TR/<wbr/>dpub-aria-1.<wbr/>0/<wbr/></a>）</span>という仕様 <span class="open-zenkaku">（</span>現在ドラフト）で、電子出版物の文書構造の表現の語彙を定め、<wbr/><span class="alphanum">HTML</span>の要素に<wbr/><code>role</code>属性で指定することを標準にしようとしてます。その語彙は<wbr/><span class="alphanum">HTMLBook</span>の<wbr/><code>data-type</code>属性のものと似ているので、移行や併用は可能<wbr/><span class="no-inline-break">です。</span></li>
+					<li><a data-primary="Scholarly HTML" data-type="indexterm" data-primary-sortas="Scholarly HTML" id="idp140273443832976"/>関連して、学術論文用の<wbr/><a href="https://w3c.github.io/scholarly-html/" target="_blank" class="alphanum">Scholarly HTML</a><span class="print_url_in_parens"> <span class="open-zenkaku">（</span><a href="https://w3c.github.io/scholarly-html/" class="print_url alphanum in_parens" target="_blank">w3c.<wbr/>github.<wbr/>io/<wbr/>scholarly-html/<wbr/></a>）</span>など分野に特化した<wbr/><span class="alphanum">HTML</span><span class="no-inline-break">マー</span>クアップ標準化を推進することも、<wbr/><span class="alphanum">CSS</span>組版を利用しやすくするのにつながり<wbr/><span class="no-inline-break">ます。</span></li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+
+</section>
+
+</section>
+<section data-type="index" id="idp140273443835520"><h1 class="alphanum">Index</h1><span class="dup alphanum">Index</span><div data-type="index"><div data-type="indexdiv"><h3><span data-gentext="indexsymbols">数字・記号</span></h3><ul><li><span data-type="index-term">柱</span><span class="leader"/><a data-type="index:locator" data-xref-pagenum-style="decimal" href="#idp140273443724864"/></li><li><span data-type="index-term">縦書き</span><span class="leader"/><a data-type="index:locator" data-xref-pagenum-style="decimal" href="#idp140273443729088"/></li></ul></div><div data-type="indexdiv" class="alphanum"><h3 class="alphanum">A</h3><ul><li class="alphanum"><span data-type="index-term" class="alphanum">Atlas</span><span class="leader"/><a data-type="index:locator" data-xref-pagenum-style="decimal" href="#idp140273443695488"/>, <a data-type="index:locator" data-xref-pagenum-style="decimal" href="#idp140273443750032"/></li></ul></div><div data-type="indexdiv" class="alphanum"><h3 class="alphanum">D</h3><ul><li class="alphanum"><span data-type="index-term" class="alphanum">Digital Publishing WAI-ARIA</span><span class="leader"/><a data-type="index:locator" data-xref-pagenum-style="decimal" href="#idp140273443830096"/></li></ul></div><div data-type="indexdiv" class="alphanum"><h3 class="alphanum">G</h3><ul><li class="alphanum"><span data-type="index-term" class="alphanum">GitHub</span><span class="leader"/><a data-type="index:locator" data-xref-pagenum-style="decimal" href="#idp140273443781632"/></li></ul></div><div data-type="indexdiv" class="alphanum"><h3 class="alphanum">H</h3><ul><li class="alphanum"><span data-type="index-term" class="alphanum">Heracles</span><span class="leader"/><a data-type="index:locator" data-xref-pagenum-style="decimal" href="#idp140273443746224"/></li><li class="alphanum"><span data-type="index-term" class="alphanum">HTMLBook</span><span class="leader"/><a data-type="index:locator" data-xref-pagenum-style="decimal" href="#idp140273443692256"/>, <a data-type="index:locator" data-xref-pagenum-style="decimal" href="#idp140273443827968"/></li></ul></div><div data-type="indexdiv" class="alphanum"><h3 class="alphanum">M</h3><ul><li class="alphanum"><span data-type="index-term" class="alphanum">MathJax</span><span class="leader"/><a data-type="index:locator" data-xref-pagenum-style="decimal" href="#idp140273443731200"/></li><li class="alphanum"><span data-type="index-term" class="alphanum">MathML</span><span class="leader"/><a data-type="index:locator" data-xref-pagenum-style="decimal" href="#idp140273443730624"/></li></ul></div><div data-type="indexdiv" class="alphanum"><h3 class="alphanum">S</h3><ul><li class="alphanum"><span data-type="index-term" class="alphanum">Scholarly HTML</span><span class="leader"/><a data-type="index:locator" data-xref-pagenum-style="decimal" href="#idp140273443832976"/></li></ul></div><div data-type="indexdiv" class="alphanum"><h3 class="alphanum">T</h3><ul><li class="alphanum"><span data-type="index-term" class="alphanum">TeX</span><span class="leader"/><a data-type="index:locator" data-xref-pagenum-style="decimal" href="#idp140273443730048"/></li></ul></div><div data-type="indexdiv" class="alphanum"><h3 class="alphanum">V</h3><ul><li class="alphanum"><span data-type="index-term" class="alphanum">Vivliostyle Formatter</span><span class="leader"/><a data-type="index:locator" data-xref-pagenum-style="decimal" href="#idp140273443701456"/>, <a data-type="index:locator" data-xref-pagenum-style="decimal" href="#idp140273443715840"/></li><li class="alphanum"><span data-type="index-term" class="alphanum">Vivliostyle Viewer</span><span class="leader"/><a data-type="index:locator" data-xref-pagenum-style="decimal" href="#idp140273443716416"/></li><li class="alphanum"><span data-type="index-term" class="alphanum">Vivliostyle.js</span><span class="leader"/><a data-type="index:locator" data-xref-pagenum-style="decimal" href="#idp140273443720032"/></li></ul></div><div data-type="indexdiv"><h3 class="alphanum">W</h3><ul><li><span data-type="index-term"><span class="alphanum">Web</span>フォント</span><span class="leader"/><a data-type="index:locator" data-xref-pagenum-style="decimal" href="#idp140273443732160"/></li></ul></div><div data-type="indexdiv"><h3>さ</h3><ul><li><span data-type="index-term">索引</span><span class="leader"/><a data-type="index:locator" data-xref-pagenum-style="decimal" href="#idp140273443772384"/></li></ul></div><div data-type="indexdiv"><h3>し</h3><ul><li><span data-type="index-term">ジャスティフィ<wbr/><span class="no-inline-break">ケー</span>ション</span><span class="leader"/><a data-type="index:locator" data-xref-pagenum-style="decimal" href="#idp140273443804992"/><span class="alphanum">, </span><a data-type="index:locator" data-xref-pagenum-style="decimal" href="#idp140273443819056"/></li><li><span data-type="index-term">出版<wbr/><span class="no-inline-break">ワー</span>クフ<wbr/><span class="no-inline-break">ロー</span></span><span class="leader"/><a data-type="index:locator" data-xref-pagenum-style="decimal" href="#idp140273443738720"/></li></ul></div><div data-type="indexdiv"><h3>せ</h3><ul><li><span data-type="index-term">制作の流れ</span><span class="leader"/><a data-type="index:locator" data-xref-pagenum-style="decimal" href="#idp140273443762160"/></li><li><span data-type="index-term">制作<wbr/><span class="no-inline-break">ワー</span>クフ<wbr/><span class="no-inline-break">ロー</span></span><span class="leader"/><a data-type="index:locator" data-xref-pagenum-style="decimal" href="#idp140273443780768"/></li></ul></div><div data-type="indexdiv"><h3>の</h3><ul><li><span data-type="index-term">ノンブル</span><span class="leader"/><a data-type="index:locator" data-xref-pagenum-style="decimal" href="#idp140273443725440"/></li></ul></div><div data-type="indexdiv"><h3>は</h3><ul><li><span data-type="index-term">ハイフ<wbr/><span class="no-inline-break">ネー</span>ション</span><span class="leader"/><a data-type="index:locator" data-xref-pagenum-style="decimal" href="#idp140273443820320"/></li></ul></div><div data-type="indexdiv"><h3>も</h3><ul><li><span data-type="index-term">目次</span><span class="leader"/><a data-type="index:locator" data-xref-pagenum-style="decimal" href="#idp140273443766512"/></li></ul></div><div data-type="indexdiv"><h3>り</h3><ul><li><span data-type="index-term">リフ<wbr/><span class="no-inline-break">ロー</span></span><span class="leader"/><a data-type="index:locator" data-xref-pagenum-style="decimal" href="#idp140273443717104"/></li></ul></div><div data-type="indexdiv"><h3>れ</h3><ul><li><span data-type="index-term">レスポンシブ</span><span class="leader"/><a data-type="index:locator" data-xref-pagenum-style="decimal" href="#idp140273443717680"/></li></ul></div><div data-type="indexdiv"><h3>わ</h3><ul><li><span data-type="index-term">ワン<wbr/><span class="no-inline-break">ソー</span>ス・マルチ<wbr/><span class="no-inline-break">ユー</span>ス</span><span class="leader"/><a data-type="index:locator" data-xref-pagenum-style="decimal" href="#idp140273443713264"/></li></ul></div></div></section>
+<section data-type="colophon" data-pdf-bookmark="奥付" id="idp140273443836000">
+
+	<h1>奥付</h1><wbr/><span class="dup">奥付</span>
+
+	<section class="last-info" id="idp140273443836864">
+		<h2>『<span class="alphanum">CSS</span>シークレット』<wbr/><span class="alphanum">Web</span>サンプル版</h2>
+		<ul class="no-bullet">
+			<li class="alphanum"><a href="http://vivliostyle.com/ja/samples/css-secrets/" target="_blank" class="alphanum">http://vivliostyle.com/ja/samples/css-secrets/</a></li>
+		</ul>
+	</section>
+	
+	<section class="last-info" id="idp140273443839344">
+		<h2><span class="alphanum">JEPA</span>セミナー報告（<span class="alphanum">2016</span>年<wbr/><span class="alphanum">10</span>月<wbr/><span class="alphanum">5</span>日）<br/>「<span class="ts-ta-l">『</span><span class="alphanum">CSS</span>シークレット』制作秘話～<span class="alphanum">CSS</span>組版がもたらす新たな可能性」</h2>
+		<ul class="no-bullet">
+			<li class="alphanum"><a href="http://www.jepa.or.jp/sem/20161005/" target="_blank" class="alphanum">http://www.jepa.or.jp/sem/20161005/</a></li>
+		</ul>
+	</section>
+
+	<section data-type="sect1" data-pdf-bookmark="シークレット・オブ・CSSシークレット" id="idp140273443842224">
+		<header>
+			<h1>シークレット・オブ・<span class="alphanum">CSS</span>シークレット</h1>
+			<p>――<span class="alphanum">Vivliostyle</span>・<span class="alphanum">CSS</span>組版による書籍制作の実例紹介</p>
+		</header>
+		<div class="details">
+			<ul class="editions">
+				<li><time datetime="2016-10-05"><span class="alphanum">2016</span>年<wbr/><span class="alphanum">10</span>月<wbr/><span class="alphanum">5</span>日</time>　初版発行</li>
+				<li><time datetime="2016-10-08"><span class="alphanum">2016</span>年<wbr/><span class="alphanum">10</span>月<wbr/><span class="alphanum">17</span>日</time>　第<wbr/><span class="alphanum">1.1</span>版発行</li>
+			</ul>
+
+			<table>
+				<tr>
+					<td>作者</td><td>村上 真雄 <span class="open-zenkaku">（</span>むらかみ しんゆう）</td>
+				</tr>
+				<tr>
+					<td>発行所</td>
+					<td>株式会社ビブリオスタイル<br/>
+					    〒<span class="alphanum">151-0051</span><br/>東京都渋谷区千駄ヶ谷<wbr/><span class="alphanum">1-13-11 co-lab</span>千駄ヶ谷<wbr/><span class="alphanum">4-6</span><br/>
+					    <span class="alphanum">Tel  </span><span class="open-zenkaku">（</span><span class="alphanum in_parens">03</span>）<wbr/><span class="alphanum">5775-7296</span><br/>
+					    電子メール <a href="mailto:info@vivliostyle.com" target="_blank" class="alphanum">info@vivliostyle.com</a></td>
+				</tr>
+			</table>
+		</div>
+	</section>
+</section>
+</body>
+</html>

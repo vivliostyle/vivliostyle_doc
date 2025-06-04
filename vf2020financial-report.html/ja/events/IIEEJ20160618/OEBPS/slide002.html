@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8" />
+  <title>文書構造と体裁の分離</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="contents">
+
+  <h1>文書構造と体裁の分離</h1>
+
+  <section>
+    <h1>ワンソースマルチユース出版の基本<br/>
+      ＝文書構造と体裁の分離</h1>
+    <ul>
+      <li>文書構造は共通に、体裁（スタイル）はそれぞれの出力媒体用に調整できるようにする。</li>
+      <li>そのための技術として、
+        <ul>
+          <li>マークアップ言語（HTML など）</li>
+          <li>スタイルシート（CSS など）</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h1>マークアップ言語の標準：XML と HTML</h1>
+    <ul>
+      <li>1980年代に生まれた SGML（標準汎用マークアップ言語）から進化して：
+        <ul>
+          <li>XML（拡張可能マークアップ言語）1998年に W3C 勧告
+            <ul>
+              <li>さまざまな応用がされている
+                <ul>
+                  <li>オフィス文書形式、数式、組版ソフト、などなど</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>HTML（ハイパーテキスト・マークアップ言語）
+            <ul>
+              <li>XHTML（XML 構文の HTML）</li>
+              <li>HTML5（最新版の HTML）2014年に W3C 勧告
+                <ul>
+                  <li>文書構造を表現しやすく（<code>section</code> 要素など）</li>
+                  <li>数式やベクターグラフィックが標準で埋め込める（<code>math</code>, <code>svg</code>）</li>
+                  <li>動画などマルチメディア埋め込みが標準に（<code>video</code>, <code>audio</code>）</li>
+                  <li>あらゆる端末で動くアプリのプラットフォーム</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h1>簡易マークアップ</h1>
+    <ul>
+      <li>XML や HTML のタグを書くのはめんどう、そこで、より簡単に</li>
+      <li>代表的な簡易マークアップは markdown （マークダウン）
+        <ul>
+          <li>ほぼ普通のテキストで、見出しなどに簡単な印をつけるだけ</li>
+          <li>HTML への変換が簡単</li>
+          <li>いろいろな Web のシステムでのテキスト入力に使われている</li>
+        </ul>
+      </li>
+    </ul>
+<table class="border-simple nopb">
+  <tr>
+    <th>markdown 記法の例</th>
+    <th>対応する HTML</th>
+  </tr>
+  <tr>
+    <td>
+<pre>
+# 見出し1
+## 見出し2
+### 見出し3
+* リスト
+> 引用
+</pre>
+    </td>
+    <td>
+<pre>
+&lt;h1>見出し1&lt;/h1>
+&lt;h2>見出し2&lt;/h2>
+&lt;h3>見出し3&lt;/h3>
+&lt;ul>&lt;li>リスト&lt;/li>&lt;/ul>
+&lt;blockquote>引用&lt;/blockquote>
+</pre>
+</td>
+</tr>
+</table>
+  </section>
+
+  <section>
+    <h1>Web 標準化団体 W3C について</h1>
+    <a href="https://www.w3.org/" class="rs"><img src="https://www.w3.org/Icons/w3c_main" alt="[W3C ロゴ]"/></a>
+    <ul>
+      <li>マークアップ言語の標準仕様 XML や HTML、スタイルシート仕様 CSS、その他 Web の各種技術の標準化を行っている国際的な非営利団体 <a href="https://www.w3.org/">World Wide Web Consortium</a>、略称 W3C（ダブリュースリーシー）。</li>
+      <li>Web の発明者であるティム・バーナーズ＝リーが1994年に創設。</li>
+      <li>ブラウザベンダーや大手 IT 企業はじめ世界中から参加（現在約420社）。</li>
+      <li>仕様策定の議論は公開され、メーリングリストなどで誰でも意見できる。</li>
+      <li>EPUB など電子出版の技術の標準化については、<a href="http://idpf.org/">国際電子出版フォーラム(IDPF)</a>が W3C 標準を利用する形で進められてきたが、両方の標準化団体は密接に連携していて、最近では、両組織の統合（2017年1月を目指して、IDPF を W3C に統合する計画）が検討されていることが<a href="https://www.w3.org/2016/05/digpub.html.ja" title="ワールドワイド・ウェブ・コンソーシアム W3C とインターナショナル・デジタル・パブリッシング・フォーラム IDPF が両組織の統合を検討中">発表</a>されている。</li>
+    </ul>
+  </section>
+</body>
+
+</html>

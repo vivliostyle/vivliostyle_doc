@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8" />
+  <title>HTML5+CSS の出版への活用と課題</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="contents">
+
+  <h1 class="nobr">HTML5+CSS の<wbr/>出版への<wbr/>活用と課題</h1>
+
+  <section>
+    <h1>Web の標準 ＝ 電子出版の標準へ</h1>
+    <ul>
+      <li>電子出版の標準形式である EPUB は、コンテンツとその体裁の表現に Web の標準である HTML と CSS を利用する。Amazon の Kindle 版の電子書籍も基本的に同様である。
+        <p>したがって、HTML と CSS を用意できれば、同じ電子出版コンテンツを、ワンソースマルチユースで、Web、EPUB、Kindle へと展開可能。</p>
+      </li>
+      <li>EPUB で利用できる HTML と CSS は、Web で利用できるものよりも制約はある。XHTML 形式（XML 構文の HTML）を使う必要があること、利用できる CSS3 の機能が限られていることなど。しかし、Web の標準を作る W3C と電子出版の標準を作る IDPF とは密接な連携から、統合へと向かっており、いずれ Web と電子出版の標準の違いはなくなる方向である。<br/>
+        ☞<a href="https://www.w3.org/2016/05/digpub.html.ja">ワールドワイド・ウェブ・コンソーシアム W3C とインターナショナル・デジタル・パブリッシング・フォーラム IDPF が両組織の統合を検討中</a>
+
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h1>印刷用 CSS Paged Media 仕様</h1>
+    <ul>
+      <li>デジタルファーストのワンソースマルチユース出版で、同時に紙の本の制作も行う場合、問題になるのは印刷用の組版をどうするかである。
+        <p>原理的には、同じ HTML+CSS で印刷用の組版までできれば、効率的なはずである。</p>
+      </li>
+      <li>CSS でのページ媒体の組版に関して、以下のドラフト仕様などがある：
+        <ul>
+          <li><a href="https://drafts.csswg.org/css-page/">CSS Paged Media Module Level 3</a>
+            <ul>
+              <li>ページサイズと余白、ページヘッダーとフッター、ページ番号など</li>
+            </ul>
+          </li>
+          <li><a href="https://www.w3.org/TR/css-content-3/">CSS Generated Content Module Level 3</a>
+            <ul>
+              <li>ページ番号参照などクロスレファレンス、欄外見出し生成など</li>
+            </ul>
+          </li>
+          <li><a href="https://www.w3.org/TR/css-page-floats-3/">CSS Page Floats</a>
+            <ul>
+              <li>ページ上のフロート図版配置</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h1>ワンソースマルチユース出版に HTML+CSS 組版を利用している有名出版社の例</h1>
+    <ul>
+      <li>米国の技術書出版社 O'Reilly の書籍は HTML5+CSS で制作されて、印刷・PDF、EPUB、Kindle、Web (online) へと多媒体展開。
+        <p class="note">参照: <a href="http://balisage.net/Proceedings/vol10/html/Kleinfeld01/BalisageVol10-Kleinfeld01.html">“The Case for Authoring and Producing Books in (X)HTML5”, Sanders Kleinfeld, O'Reilly Meida, Presented at Balisage: The Markup Conference 2013.</a><br/>（HTML5 をソースと出力フォーマットの両方に使っていること、CSS3 Paged Media 対応の組版エンジンを印刷用 PDF 生成に利用していること、Web ベースで WYSIWYG のオーサリングについて、HTMLBook という HTML5 で本を書くしくみについて紹介）</p>
+      </li>
+      <li>米アシェット社は一般本を HTML+CSS で制作、電子版・紙版を同時出版。
+        <p class="note">参照: <a href="http://infogridpacific.typepad.com/files/idpf-2012-cramer-smaller.pdf">“Production as if Digital Mattered:
+Making books with HTML and CSS”, Dave Cramer, Hachette Book Group</a></p>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h1>HTML+CSS の出版への活用における課題</h1>
+
+    <ul>
+      <li>従来ワークフロー（紙の組版用のDTPソフト中心）からの移行は、一般にはハードルが高い</li>
+      <li>印刷用の CSS 組版仕様は未完成のドラフト仕様であり、それを部分的に実装した処理系はあるが標準的ではないし、仕様が変わる可能性がある。</li>
+      <li>一般の Web ブラウザには印刷用の CSS 組版仕様は実装されていない。また、印刷用の CSS 組版を実装した処理系には、Web ブラウザで利用できる最新の CSS3 の機能が必ずしも実装されていない。したがって、印刷用と Web （画面）用とで共通の CSS で同じレイアウトを実現するということができない。</li>
+      <li>印刷だけでなくブラウザの画面上でもページネーションを行う必要性は高まっているが、そのための CSS 仕様の標準化はまだ初期の段階にある。</li>
+    </ul>
+
+  </section>
+
+</body>
+
+</html>

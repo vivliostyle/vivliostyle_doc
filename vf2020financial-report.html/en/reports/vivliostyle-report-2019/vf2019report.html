@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Vivliostyle Foundation FY2019 Activity Report</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="report.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Vivliostyle Foundation FY2019 Activity Report</h1>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#chapter-1-activity-report-for-fy2019">Chapter 1: Activity Report for FY2019</a>
+<ul>
+<li><a href="#basic-policy-and-its-concept-for-this-term">Basic policy and its concept for this term</a></li>
+<li><a href="#completed-source-code-migration-to-typescript">Completed source code migration to TypeScript</a></li>
+<li><a href="#holding-of-userdeveloper-events">Holding of user/developer events</a></li>
+<li><a href="#enhancement-of-the-internal-structure">Enhancement of the internal structure</a></li>
+<li><a href="#regular-developer-meetings-and-the-development-concept-of-the-vivliostyle-pub">Regular developer meetings and the development concept of the “Vivliostyle Pub”</a></li>
+<li><a href="#participation-in-xml-publishing-exchange-meeting">Participation in XML Publishing Exchange Meeting</a></li>
+<li><a href="#renewal-of-official-website">Renewal of official website</a></li>
+<li><a href="#directors">Directors</a></li>
+</ul></li>
+<li><a href="#chapter-2-financial-report-for-fy2019">Chapter 2: Financial Report for FY2019</a>
+<ul>
+<li><a href="#balance-sheet-for-fy2019">Balance Sheet for FY2019</a></li>
+<li><a href="#net-assets-increasedecrease-statement-for-fy2019">Net Assets Increase/Decrease Statement for FY2019</a></li>
+<li><a href="#income-and-expenditure-statement-for-fy2019">Income and Expenditure Statement for FY2019</a></li>
+</ul></li>
+</ul>
+</nav>
+<h2 id="chapter-1-activity-report-for-fy2019">Chapter 1: Activity Report for FY2019</h2>
+<p>(The 2nd Fiscal Year: from April 1, 2019 to March 31, 2020)</p>
+<h3 id="basic-policy-and-its-concept-for-this-term">Basic policy and its concept for this term</h3>
+<p>In our Articles of Incorporation, we set the following seven items as activity objectives:</p>
+<ol type="1">
+<li>Maintenance and management of the Vivliostyle open source project and community</li>
+<li>Research and development of Vivliostyle and related technologies</li>
+<li>Promotion and education about Vivliostyle and CSS typesetting</li>
+<li>Promote standardization in cooperation with groups related to standard technologies such as Web, publishing, and accessibility</li>
+<li>Cooperation with external projects working with Vivliostyle</li>
+<li>Maintenance of the Vivliostyle brand and intellectual property rights</li>
+<li>Supplementary or related activities to each of the preceding items</li>
+</ol>
+<p>A simple summary of the above would be “to strive for the development of Web / publishing / accessibility by maintaining / developing / disseminating Vivliostyle as an open source project.”</p>
+<p>The activities in the previous term (the first fiscal year = FY2018) were, so to speak, minimal, such as launching an official website after establishing the Vivliostyle Foundation, and launching migrating source code to TypeScript (described later). Nonetheless, all were essential activities for us.</p>
+<p>Generally speaking, the issue in this term (the second term = FY2019) is how to carry out the activities of the previous term and how to achieve the above-mentioned activity objectives.</p>
+<p>However, the problem is that our human and economic resources are extremely limited. At the beginning of the term, there were three directors including Shinyu Murakami, who is the representative director, but only Murakami was active as a full-time officer. In addition, financial resources are extremely small, as can be seen from the fact that the previous fiscal year’s settlement of accounts was only 123,050 yen of incorporation expenses from loan payable from officer.</p>
+<p>Our plan for these years is best described by means of an analogy with a ‘triple jump’: The leap distance of three consecutive jumps is much larger than the total of the leap distances of three jumps separated by one. Applying this analogy, if the activity of the first term is the first “hop” (takeoff), the second term, which is this term (FY2019), is the “step” (small jump), and the third term (FY2020), taking over that, will be the longest “jump” (great leap).</p>
+<p>In other words, we admit we cannot fulfill the purposes of the articles of incorporation sufficiently this term. However, we will consider what should be done as the “preparation term” so that the purpose can be achieved after the third term. This basic policy is important because of scarce resources.</p>
+<p>At first glance, you may be wondering how each of the activities described in the following section fits the purpose of the Articles of Incorporation. However, all should be prepared for the “great leap” of the 3rd term and after.</p>
+<h3 id="completed-source-code-migration-to-typescript">Completed source code migration to TypeScript</h3>
+<p>Vivliostyle was originally written in vanilla JavaScript. That made it rather difficult to maintain as the source code was of a rather large scale.</p>
+<p>TypeScript is an open programming language that adds static typing and class-based object orientation while remaining compatible with JavaScript, which increases the maintainability for large scale projects.</p>
+<p>Because of this relationship, the cost of migrating from JavaScript to TypeScript is considered to be relatively low, but on the other hand, there is an advantage that type suggestions and accurate type checking can be provided for coding. In addition, you can use various advanced tools for developers, including those made by TypeScript developer Microsoft. In general, the source code is easy to write and read, development by a large number of people, and, as a result, an environment that facilitates open source development can be expected to be obtained at low cost.</p>
+<p>As mentioned above, the transition work itself started in August 2018. However, the transition process, which should have been easy, had various difficulties when it was actually started. The work was finally completed in August 2019, which means it took a year.</p>
+<ul>
+<li>Reference URL: <a href="https://github.com/vivliostyle/vivliostyle.js/pull/536">GitHub vivliostyle.js</a> <a href="https://github.com/vivliostyle/vivliostyle.js/pull/536">repository</a> <a href="https://github.com/vivliostyle/vivliostyle.js/pull/536">“JS-to-TS migration #536”</a></li>
+</ul>
+<h3 id="holding-of-userdeveloper-events">Holding of user/developer events</h3>
+<p>For our Foundation, which has limited human and financial resources, a pressing issue is to obtain developers (committers). To do this, we first need to make the project Vivliostyle widely known. To do that, it is effective to hold events with the theme of Vivliostyle. However, it is difficult to hold these kinds of events without a supportive person. Thankfully, our Foundation has had people and organizations that have been able to reach out for us.</p>
+<p>First of all, <a href="https://github.com/spring-raining">spring-raining</a> who found Vivliostyle early and made many contributions to development including the TypeScript conversion. He has edited and published the self-published book “Make Books with Vivliostyle” under the name of “Vivliostyle User Group”, and continued to participate in the technical self-published book fair “Tech Book Fest”. In that way, he has made many contributions.</p>
+<p>The other is the XML Publishing Study Group. The study group has evolved from a voluntary study group of member companies of the Japan Association of Graphic Arts Technology (JAGAT) and has a history of about 10 years. JAGAT holds an annual printing general event “PAGE”, where every year a room is given to the group for <a href="https://page.jagat.or.jp/2019/openevent/5c36f3bbadbe1d0001d723a3.html">hosting a seminar</a>. The Representative Director Murakami, who participated in this group before founded this Foundation, also attended PAGE seminars as a lecturer almost every year.</p>
+<p>With these connections, we held the “Vivliostyle Developers and Users Meeting 2019 Summer” jointly with Vivliostyle Users Group and XML Publishing Study Group on August 31, 2019. About 30 people participated on the day. The first half was a “Vivliostyle Developers Meeting” in which Representative Murakami reported on the current development issues, and the second half was a “Vivliostyle / CSS typesetting user meeting” in which a total of 7 people made presentations.</p>
+<p>In the first part, Representative Director Murakami took a microphone to explain the development status, and took a poll to the participants by show of hands. For details, please refer to “<a href="https://vivliostyle.github.io/vivliostyle_doc/ja/vivliostyle-user-group-vol2/shinyu/index.html">Future development issues of Vivliostyle</a>”, but it was clear that many of the participants were expecting to implement the latest standard along with bug fixes and documentation.</p>
+<p>About the presentations in the second part, please refer to “<a href="https://vivliostyle.org/blog/2019/09/04/vivliostyle-dev-user-meetup-tokyo20190831/">Vivliostyle Developer and User Meeting 2019 Summer was held!</a>” What I would like to pay attention to is that the presenters have produced people who will be deeply involved with this Foundation. For example, as will be described later, Katsuhiro Ogata, who will be appointed as a director from January 2020, <a href="https://github.com/youchan">youchan</a>, one of the developers of “Vivliostyle Pub”, which will be described later, and <a href="https://github.com/yamasy1549">yamasy</a><a href="https://github.com/yamasy1549">1549</a>, who we also ask for a renewal of the official website, which will be described later. All of these people are presenters at that time. It can be said that it is a good example of the hop step jump, which connects the small jump mentioned above with the larger jump.</p>
+<p>The content of this event was turned into a paper and was published as “Make Books with Vivliostyle” Vol. 2 by <a href="https://github.com/spring-raining">spring-raining</a>’s Vivliostyle User Group mentioned above and was sold at the “Tech Book Fest 7th” held on September 22, 2019. Currently, all the manuscripts <a href="https://vivliostyle.github.io/vivliostyle_doc/ja/vivliostyle-user-group-vol2/index.html">can be read on the official website</a>.</p>
+<h3 id="enhancement-of-the-internal-structure">Enhancement of the internal structure</h3>
+<p>On September 22, 2019, the technical self-published book sale event “<a href="https://techbookfest.org/event/tbf07">Tech Book Fest 7</a>” was held. The Vivliostyle Users Group sold “Make books with Vivliostyle” Vol. 2 which summarizes the announcement content of the event mentioned in the previous section, and our representative director Murakami also participated with Katsuhiro Ogata and other authors as help. The visitors were very responsive, and fortunately we were able to sell out many of the books we prepared.</p>
+<p>At a social gathering after that, Ogata reported that he was likely to retire from the company he was working at that time. Ogata is not only a member of the XML Publishing Study Group mentioned above, but he has also had a friendship with Murakami as a freelance writer since about 10 years ago while covering character codes, Japanese typesetting, and standardization.</p>
+<p>Murakami, who had begun to feel the limits of working alone full-time, requested Ogata to participate in this Foundation on the spot, and Ogata who had seen the future in Vivliostyle accepted it. As a result, an internal structure was established to enable full-scale activities as an OSS development organization.</p>
+<p>That is, Murakami will be in charge of development, and Ogata will be in charge of non-development. Both discuss management and the final decision is made by the representative director, Murakami, while listening to the opinions of other directors.</p>
+<p>It was in January of the following year that Ogata officially joined as the fourth director due to his previous job, but immediately after acceptance, he participated in decision making in various activities, including the developer meeting that was approaching.</p>
+<h3 id="regular-developer-meetings-and-the-development-concept-of-the-vivliostyle-pub">Regular developer meetings and the development concept of the “Vivliostyle Pub”</h3>
+<p>For Vivliostyle, while obtaining developers was a challenge, it was a great benefit to get to know young developers during the “Vivliostyle Developer and User Meeting 2019 Summer”.</p>
+<p>Representative Director Murakami took this one step further and decided to hold developer meetings once a month on a regular basis with developers such as <a href="https://github.com/spring-raining">spring-raining</a> who had been a committer for a long time and presenter at the aforementioned event as core members. This allows developers to proceed with development while sharing goals. For the venue, thanks to Mr. Masaaki Furukado, President of Denshoku Co., Ltd., a member of the XML Publishing Study Group, we were able to use his company’s meeting room and line facilities.</p>
+<p>However, since it is OSS development, the developer meetings must be open. We decided to try to ensure transparency by announcing the schedule in advance in slack, etc. so that anyone can participate, and by publishing the minutes after the end. It should be noted that <a href="https://github.com/akabekobeko">akabeko</a><a href="https://github.com/akabekobeko">beko</a> made an effort of taking minutes and automated process of publishing the minutes.</p>
+<p>When we actually held a developer meeting, the following ideas that would reinvent Vivliostyle that followed were presented one after another and immediately put into practice.</p>
+<ul>
+<li>Repository integration / reorganization</li>
+<li>Development of “Vivliostyle Pub”</li>
+<li>Official website renewal</li>
+<li>Logo renewal</li>
+<li>Version upgrade of Vivliostyle</li>
+</ul>
+<p>Of particular note is the “Vivliostyle Pub,” which was gradually embodied as a new development theme during the developer meetings. This was first proposed at the social gathering after the end of the 2nd developer meeting (November 2019) by <a href="https://github.com/spring-raining">spring-raining</a> mentioned above.</p>
+<p>Originally, he completed an online service called “<a href="https://viola.pub/">Viola</a>” in January 2018. With this service, you can write manuscripts in a simple notation called Markdown on the left side of the split screen, and the formatted result by vivliostyle.js will be immediately displayed on the right side, and you can also export it to PDF.</p>
+<p>Unfortunately, because it was personal development, the number of users did not increase as expected and the monthly maintenance cost was a burden. Still, it was clear to everyone on the scene that the concept was not only accurate and realistic, but could be marketed. <a href="https://github.com/spring-raining">spring-raining</a>’s suggestion was to transfer this “Viola” to this Foundation, and recreate it from scratch by our team. “That sounds good!” Everyone who heard it erupted in joy.</p>
+<p>After that, Representative Director Murakami proposed “Vivliostyle Pub” as a new project name, and it quickly became the next development goal. For the next term, a beta version is announced in August 2020, and the development is underway with the aim of launching in January 2021.</p>
+<p>In this way, a development theme and a structure to make it a reality were established, but ironically, this time the issue of how to obtain funds for it emerged. This is a form in which the weakness of the economic base of this Foundation was exposed immediately. Of course, if “Vivliostyle Pub” is on track, as expected, we will return a lot of profits to our Foundation. But the launch is in 2021, so the question is how to obtain working capital up to that point. This solution will be the ultimate proposition for the next term.</p>
+<ul>
+<li><a href="https://github.com/vivliostyle/discussion/wiki/slack-meeting-log-2019-10-05">1st Developer Meeting (2019-10-05, Denshoku meeting room)</a></li>
+<li><a href="https://github.com/vivliostyle/discussion/wiki/slack-meeting-log-2019-11-03">2nd Developer Meeting (2019-11-03, Denshoku meeting room)</a></li>
+<li><a href="https://github.com/vivliostyle/discussion/wiki/slack-meeting-log-2019-12-07">3rd Developer Meeting (2019-12-07, Denshoku meeting room)</a></li>
+<li><a href="https://github.com/vivliostyle/discussion/wiki/slack-meeting-log-2020-01-12">4th Developer Meeting (2020-01-12, Denshoku meeting room)</a></li>
+<li><a href="https://github.com/vivliostyle/discussion/wiki/slack-meeting-log-2020-02-02">5th Developer Meeting (2020-02-02, Denshoku meeting room)</a></li>
+<li><a href="https://github.com/vivliostyle/discussion/wiki/slack-meeting-log-2020-03-07">6th Developer Meeting (2020-03-07, Denshoku meeting room)</a></li>
+</ul>
+<h3 id="participation-in-xml-publishing-exchange-meeting">Participation in XML Publishing Exchange Meeting</h3>
+<p>As mentioned above, the XML Publishing Study Group is assigned a room at the annual printing general event “PAGE” held by JAGAT, and it is customary to hold a seminar and social gathering here called “XML Publishing Exchange Meeting”. PAGE has attracted a great deal of attention in the printing, DTP, and publishing industries, and it has been a long time since this exchange meeting has become familiar to all concerned.</p>
+<p>This year, the study group has set two themes: (1) investigate how much the text layout requirements defined in the W3C “Requirements for Japanese Text Layout” are implemented by each vender’s e-book reader, and (2) try to typeset ourselves using Vivliostyle as an implementation example of CSS typesetting (Director Ogata’s presentation at the “Vivliostyle Developer and User Meeting 2019 Summer” was also an extension of this activity).</p>
+<p>Therefore, at the XML Publishing Exchange Meeting held on February 7, 2020, with the event title “The Future of Web Publishing and Japanese Text Layout”, the person in charge of “Requirements for Japanese Text Layout” reported on its revision work, and we reported the development status of Vivliostyle.</p>
+<p>It can be said that this is a great opportunity for our Foundation, which has repeatedly discussed “Vivliostyle Pub” at the developer meetings, to appeal to the printing, DTP, publishing and other industries. However, the organizer, JAGAT, is a public interest incorporated association, and the purpose of the activities of the XML Publishing Exchange Party is mutually beneficial. In order to stay in line with such situations, we avoided direct advertising, and first, Representative Director Murakami explained the CSS typesetting introducing the overall activities of Vivliostyle as an implementation, and then, Director Ogata announced “Vivliostyle Pub” as a future activity target.</p>
+<ul>
+<li><a href="https://vivliostyle.github.io/vivliostyle.js/viewer/vivliostyle-viewer.html#b=/vivliostyle_doc/ja/events/page2020xpub/&amp;spread=false&amp;renderAllPages=true">The future of web publishing with Japanese text layout and Vivliostyle CSS typesetting</a> (Japanese)</li>
+<li><a href="https://www.slideshare.net/ogwata_1959/cssvivliostyle-227189333">The future of CSS typesetting and Vivliostyle</a> (Japanese)</li>
+</ul>
+<p>Fortunately, the visitors were very pleased and we were able to receive many favorable reactions at the reception after the seminar.</p>
+<ul>
+<li>Reference URL ①: <a href="https://page.jagat.or.jp/session/detail_82.html">PAGE2020 XML Publishing Exchange Meeting</a> (Japanese)</li>
+<li>Reference URL ②: <a href="https://kokucheese.com/event/index/589362/">XML Publishing Exchange Meeting — The Future of Web Publishing and Japanese Text Layout</a> (Japanese)</li>
+</ul>
+<h3 id="renewal-of-official-website">Renewal of official website</h3>
+<p>We launched our official website in March 2018, which is still in preparation for establishment. From the beginning, it was launched as a minimally multilingual site with an English page with the same content as the Japanese page. Because we are an OSS development organization, it was extremely important to start a website that could be read by as many people as possible in the world. Since then, it has continued to have almost the same design and page composition for about two years.</p>
+<p>However, since we started activities with new developers (collaborators) gathered on the monthly developer meetings, it was time to review the existing site and make a new design. From December 2019, we asked <a href="https://github.com/yamasy1549">yamasy</a><a href="https://github.com/yamasy1549">1549</a>, who is also a member of the developer meetings, to start production.</p>
+<p>The basic policy of the new site was to aim for a site to increase the number of collaborators. Although a new development structure has been established, the number of collaborators is not sufficient considering the scale of the “Vivliostyle Pub”. In addition, as an OSS development organization, it is essential to always try to attract new collaborators. We wanted the new site to function as a “gateway” for this. Specifically, we implemented the following measures based on <a href="https://github.com/yamasy1549">yamasy</a><a href="https://github.com/yamasy1549">1549</a>’s proposal:</p>
+<ul>
+<li>Single column layout for mobile environments</li>
+<li>An animation that makes it easy to understand “What is Vivliostyle” on the top page</li>
+<li>Place a link to the GitHub repository in a prominent place on each page</li>
+<li>For the convenience for developers and users, the following pages have been added
+<ul>
+<li>Getting Started</li>
+<li>Development Documentation</li>
+<li>FAQ</li>
+</ul></li>
+</ul>
+<p>The general design and coding was done by <a href="https://github.com/yamasy1549">yamasy</a><a href="https://github.com/yamasy1549">1549</a>, and the design system such as color scheme and font setting was done by <a href="https://github.com/uetchy">Yasuaki Uechi (uetchy)</a> who is also a member of the developer meetings. The new logo was also created by <a href="https://github.com/uetchy">u</a><a href="https://github.com/uetchy">etchy</a>. He changed the old logo, which had a huge V-shaped book floating above the earth, into a flat and vivid color scheme, trimming it boldly to revamp the image. The development status of the site was reported at the monthly developer meetings, and the site was created with feedback from the participants. Thus, on April 3, 2020, we were able to relaunch the site with a new design.</p>
+<h3 id="directors">Directors</h3>
+<ul>
+<li><a href="https://github.com/MurakamiShinyu">Shinyu Murakami</a> (Representative Director, Founding Member)</li>
+<li><a href="https://github.com/frivoal">Florian Rivoal</a> (Director, Founding Member)</li>
+<li><a href="https://github.com/johanneswilm">Johannes Wilm</a> (Director, Founding Member)</li>
+<li><a href="https://github.com/ogwata">Katsuhiro Ogata</a> (Director, From January 21, 2020)</li>
+</ul>
+<h2 id="chapter-2-financial-report-for-fy2019">Chapter 2: Financial Report for FY2019</h2>
+<p>(The 2nd Fiscal Year: from April 1, 2019 to March 31, 2020)</p>
+<h3 id="balance-sheet-for-fy2019">Balance Sheet for FY2019</h3>
+<p>As of March 31, 2020 (Unit: JPY)</p>
+<table>
+<thead>
+<tr class="header">
+<th>Title</th>
+<th>This FY (2019)</th>
+<th>Prev. FY (2018)</th>
+<th>Increase/Decrease</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Ⅰ. Assets</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>1. Current Assets</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Cash and deposits</td>
+<td>52,565</td>
+<td>10,000</td>
+<td>42,565</td>
+</tr>
+<tr class="even">
+<td>Total current assets</td>
+<td>52,565</td>
+<td>10,000</td>
+<td>42,565</td>
+</tr>
+<tr class="odd">
+<td>2. Fixed Assets</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>⑴ Other fixed assets</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Founding expenses</td>
+<td>113,050</td>
+<td>113,050</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Total other fixed assets</td>
+<td>113,050</td>
+<td>113,050</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>Total fixed assets</td>
+<td>113,050</td>
+<td>113,050</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Total assets</td>
+<td>165,615</td>
+<td>123,050</td>
+<td>42,565</td>
+</tr>
+<tr class="odd">
+<td><strong>Ⅱ. Liabilities</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>1. Current Liabilities</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Withholdings</td>
+<td>72,568</td>
+<td></td>
+<td>72,568</td>
+</tr>
+<tr class="even">
+<td>Loan from officer</td>
+<td>1,186,477</td>
+<td>123,050</td>
+<td>1,063,427</td>
+</tr>
+<tr class="odd">
+<td>Total current liabilities</td>
+<td>1,259,045</td>
+<td>123,050</td>
+<td>1,135,995</td>
+</tr>
+<tr class="even">
+<td>Total liabilities</td>
+<td>1,259,045</td>
+<td>123,050</td>
+<td>1,135,995</td>
+</tr>
+<tr class="odd">
+<td><strong>Ⅲ. Net Assets</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>1. General Net Assets</td>
+<td>-1,093,430</td>
+<td>0</td>
+<td>-1,093,430</td>
+</tr>
+<tr class="odd">
+<td>Total net assets</td>
+<td>-1,093,430</td>
+<td>0</td>
+<td>-1,093,430</td>
+</tr>
+<tr class="even">
+<td>Total liabilities and net assets</td>
+<td>165,615</td>
+<td>123,050</td>
+<td>42,565</td>
+</tr>
+</tbody>
+</table>
+<h3 id="net-assets-increasedecrease-statement-for-fy2019">Net Assets Increase/Decrease Statement for FY2019</h3>
+<p>April 1, 2019 to March 31, 2020 (Unit: JPY)</p>
+<table>
+<colgroup>
+<col style="width: 62%" />
+<col style="width: 11%" />
+<col style="width: 12%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Title</th>
+<th>This FY (2019)</th>
+<th>Prev. FY (2018)</th>
+<th>Increase/Decrease</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Ⅰ. General Net Assets Increase/Decrease</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>1. Ordinary Increase/Decrease</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>⑴ Ordinary revenues</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Interest received</td>
+<td>1</td>
+<td></td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Total ordinary revenues</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>⑵ Ordinary expenses</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>① Business expenses</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Travel and transportation expenses</td>
+<td>12,080</td>
+<td></td>
+<td>12,080</td>
+</tr>
+<tr class="odd">
+<td>Business expenses 1</td>
+<td>55,770</td>
+<td></td>
+<td>55,770</td>
+</tr>
+<tr class="even">
+<td>Total business expenses</td>
+<td>67,850</td>
+<td>0</td>
+<td>67,850</td>
+</tr>
+<tr class="odd">
+<td>② Administrative expenses</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Personnel expenses 1</td>
+<td>984,881</td>
+<td></td>
+<td>984,881</td>
+</tr>
+<tr class="odd">
+<td>Total administrative expenses</td>
+<td>984,881</td>
+<td>0</td>
+<td>984,881</td>
+</tr>
+<tr class="even">
+<td>Total ordinary expenses</td>
+<td>1,052,731</td>
+<td>0</td>
+<td>1,052,731</td>
+</tr>
+<tr class="odd">
+<td>Ordinary increase/decrease before valuation gain/loss this FY</td>
+<td>-1,052,730</td>
+<td>0</td>
+<td>-1,052,730</td>
+</tr>
+<tr class="even">
+<td>Total valuation gain/loss</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>Ordinary increase/decrease this FY</td>
+<td>-1,052,730</td>
+<td>0</td>
+<td>-1,052,730</td>
+</tr>
+<tr class="even">
+<td>2. Non-ordinary Increase/Decrease</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>⑴ Non-ordinary revenues</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Total non-ordinary revenues</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>⑵ Non-ordinary expenses</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Total non-ordinary expenses</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>Non-ordinary increase/decrease this FY</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>General net assets increase/decrease before transfer to other accounts this FY</td>
+<td>-1,052,730</td>
+<td>0</td>
+<td>-1,052,730</td>
+</tr>
+<tr class="odd">
+<td>General net assets increase/decrease before taxes this FY</td>
+<td>-1,052,730</td>
+<td>0</td>
+<td>-1,052,730</td>
+</tr>
+<tr class="even">
+<td>Corporate tax, resident tax and business tax</td>
+<td>40,700</td>
+<td>0</td>
+<td>40,700</td>
+</tr>
+<tr class="odd">
+<td>General net assets increase/decrease this FY</td>
+<td>-1,093,430</td>
+<td>0</td>
+<td>-1,093,430</td>
+</tr>
+<tr class="even">
+<td>General net assets at beginning of FY</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>General net assets at end of FY</td>
+<td>-1,093,430</td>
+<td>0</td>
+<td>-1,093,430</td>
+</tr>
+<tr class="even">
+<td><strong>Ⅱ. Designated Net Assets Increase/Decrease</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Designated net assets increase/decrease this FY</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Designated net assets at beginning of FY</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>Designated net assets at end of FY</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td><strong>Ⅲ. Net Assets at End of FY</strong></td>
+<td>-1,093,430</td>
+<td>0</td>
+<td>-1,093,430</td>
+</tr>
+</tbody>
+</table>
+<h3 id="income-and-expenditure-statement-for-fy2019">Income and Expenditure Statement for FY2019</h3>
+<p>April 1, 2019 to March 31, 2020 (Unit: JPY)</p>
+<table>
+<colgroup>
+<col style="width: 62%" />
+<col style="width: 12%" />
+<col style="width: 13%" />
+<col style="width: 8%" />
+<col style="width: 3%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Title</th>
+<th>Budgetary Amount</th>
+<th>Settlement Amount</th>
+<th>Difference</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Ⅰ. General Net Assets Increase/Decrease</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>1. Ordinary Increase/Decrease</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>⑴ Ordinary revenues</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Interest received</td>
+<td></td>
+<td>1</td>
+<td>-1</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Total ordinary revenues</td>
+<td>0</td>
+<td>1</td>
+<td>-1</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>⑵ Ordinary expenses</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>① Business expenses</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Travel and transportation expenses</td>
+<td></td>
+<td>12,080</td>
+<td>-12,080</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Business expenses 1</td>
+<td></td>
+<td>55,770</td>
+<td>-55,770</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Total business expenses</td>
+<td>0</td>
+<td>67,850</td>
+<td>-67,850</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>② Administrative expenses</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Personnel expenses 1</td>
+<td></td>
+<td>984,881</td>
+<td>-984,881</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Total administrative expenses</td>
+<td>0</td>
+<td>984,881</td>
+<td>-984,881</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Total ordinary expenses</td>
+<td>0</td>
+<td>1,052,731</td>
+<td>-1,052,731</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Ordinary increase/decrease before valuation gain/loss this FY</td>
+<td>0</td>
+<td>-1,052,730</td>
+<td>1,052,730</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Total valuation gain/loss</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Ordinary increase/decrease this FY</td>
+<td>0</td>
+<td>-1,052,730</td>
+<td>1,052,730</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2. Non-ordinary Increase/Decrease</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>⑴ Non-ordinary revenues</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Total non-ordinary revenues</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>⑵ Non-ordinary expenses</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Total non-ordinary expenses</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Non-ordinary increase/decrease this FY</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>General net assets increase/decrease before transfer to other accounts this FY</td>
+<td>0</td>
+<td>-1,052,730</td>
+<td>1,052,730</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>General net assets increase/decrease before taxes this FY</td>
+<td>0</td>
+<td>-1,052,730</td>
+<td>1,052,730</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Corporate tax, resident tax and business tax</td>
+<td>0</td>
+<td>40,700</td>
+<td>-40,700</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>General net assets increase/decrease this FY</td>
+<td>0</td>
+<td>-1,093,430</td>
+<td>1,093,430</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>General net assets at beginning of FY</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>General net assets at end of FY</td>
+<td>0</td>
+<td>-1,093,430</td>
+<td>1,093,430</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>Ⅱ. Designated Net Assets Increase/Decrease</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Designated net assets increase/decrease this FY</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Designated net assets at beginning of FY</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Designated net assets at end of FY</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>Ⅲ. Net Assets at End of FY</strong></td>
+<td>0</td>
+<td>-1,093,430</td>
+<td>1,093,430</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

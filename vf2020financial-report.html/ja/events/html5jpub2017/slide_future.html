@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8" />
+  <title>html5j 電子出版部セッション「Webと本の未来どうなる？」</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+@page {
+  @top-right {
+    content: "html5j 電子出版部セッション「Webと本の未来どうなる？」";
+  }
+}
+
+.speakers {
+  font-size: 70%;
+  overflow: hidden;
+}
+
+.speakers ul {
+  padding: 0;
+  margin: 1em -4em 0 0;
+}
+
+.speakers li {
+  vertical-align: top;
+  display: inline-block;
+  width: 12em;
+  padding: 0;
+  margin: 0 1em 1em 0;
+}
+
+.speakers a {
+  text-decoration: none;
+  display: block;
+}
+
+.speakerImage {
+  width: 72px;
+  height: 72px;
+  margin-bottom: 4px;
+}
+
+.speakerImage img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  padding: 5px;
+  border: 1px solid #c7c7c7;
+}
+
+.speakerName {
+  font-size: 100%;
+}
+
+.speakerAffil {
+  font-size: 83%;
+  font-weight: bold;
+}
+
+  </style>
+</head>
+
+<body class="contents">
+
+  <h1>それで、<br/>Webと本の未来どうなる？</h1>
+  <section>
+    <h2>もっと読みやすく美しいレイアウトをWebでも本でも</h2>
+    <ul>
+      <li>スクロールとページ方式のそれぞれの良さ、使いやすさがある</li>
+      <li>CSS仕様の進化により、さらに豊かなページレイアウト表現が実現（期待）<br/><br/>
+        <figure class="float">
+          <a target="_blank" href="http://vivliostyle.github.io/vivliostyle.js/viewer/vivliostyle-viewer.html#x=../samples/adaptive-layout/apollo8/index.xhtml&spread=false"><img src="img/apollo.png" style="width: 17em;" alt="段組・回り込みのサンプル" /></a>
+        </figure>
+        <ul>
+          <li>段組み：<a target="_blank" href="https://www.w3.org/TR/css3-multicol/">CSS Multi-column Layout</a></li>
+          <li>任意の形の回り込み：<a target="_blank" href="https://www.w3.org/TR/css-shapes-1/">CSS Shapes</a></li>
+          <li>ページのレイアウト
+            <ul>
+              <li><a target="_blank" href="https://drafts.csswg.org/css-page/">CSS Paged Media</a></li>
+              <li><a target="_blank" href="https://drafts.csswg.org/css-content/">CSS Generated Content</a></li>
+              <li><a target="_blank" href="https://drafts.csswg.org/css-page-template/">CSS Page Templates</a></li>
+              <li><a target="_blank" href="https://drafts.csswg.org/css-page-floats/">CSS Page Floats</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h2>Webでも本でもリンクを張って参照したり気になる箇所をマークしたり注釈をつけたりできること</h2>
+    <br/>
+    <figure class="float">
+      <img src="img/book_fusen_yoko.png" style="height: 14em;" alt="付箋を貼り付けた本のページのイメージ"/>
+    </figure>
+    
+    <ul>
+      <li>Web/EPUB Annotationの標準
+        <ul>
+          <li><a target="_blank" href="https://web.hypothes.is/">Hypothes.is</a>というオープンな実装も</li>
+        </ul>
+      </li>
+      <li>「Web出版物」を一意に表す識別子（URIなど）とその中身の特定箇所を指す識別子</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Webと本をもっとアクセシブルで便利に</h2>
+    <br/>
+    <figure class="float">
+      <a target="_blank" href="http://www.irasutoya.com/2015/10/blog-post_923.html"><img src="img/computer_screenreader_shikakusyougai.png" style="height: 14em;" alt="スクリーンリーダーを使う人のイラスト"/></a>
+      <figcaption>画面を音声で読み上げるスクリーンリーダーを<br/>使う人のイラスト（<a target="_blank" href="http://www.irasutoya.com/2015/10/blog-post_923.html">「いらすとや」より</a>）</figcaption>
+    </figure>
+    <ul>
+      <li>コンテンツが「Web出版物」の標準に従うことで、コンテンツ内のナビゲーションや、音声読み上げでの利用がより便利に</li>
+      <li>コンテンツにセマンティックなメタデータ
+        <ul>
+          <li><a target="_blank" href="https://www.w3.org/TR/dpub-aria-1.0/">DPUB-ARIA (Digital Publishing WAI-ARIA)</a></li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h2>「Web出版物」を先取りしてる事例</h2>
+    <ul>
+      <li>Webブラウザでのページネーション<br/>
+        <figure>
+          <a target="_blank" href="http://vivliostyle.com/ja/samples/"><img src="img/css-secrets.png" style="height: 10em;" alt="（Vivliostyleによるページレイアウト例）"></a>
+          <a target="_blank" href="http://bibi.epub.link/"><img src="img/bibidemo.png" style="height: 10em; margin: 0 0 0 2em;" alt="（BiB/iの画面キャプチャ）"></a>
+        </figure>
+        <ul class="multicol">
+          <li><a target="_blank" href="http://vivliostyle.com/ja/samples/">Vivliostyle</a><br/>
+            次世代CSSページレイアウト仕様をJavaScriptで実装し、ブラウザ上のレイアウト機能を拡張
+          </li>
+          <li><a target="_blank" href="http://bibi.epub.link/">BiB/i</a><br/>
+            「BiB/i（ビビ）は、電子書籍とウェブをひとつに結び、本を届けるための EPUB リーダです」
+          </li>
+        </ul>
+      </li>
+      <li>複数のWebページをスクロールで連続して読む<br/>
+        <figure class="float">
+          <a target="_blank" href="https://jp.reuters.com/article/monarch-idJPKCN1BJ0MB"><img src="img/reuters.png" style="height: 10em; margin: 0 0 0 1em;" alt="（ロイターのニュースの画面キャプチャ）"></a>
+          <a target="_blank" href="http://sai-zen-sen.jp/comics/twi4/moutele/"><img src="img/twi4.png" style="height: 10em; margin: 0 0 0 1em;" alt="（ツイ4マンガの画面キャプチャ）"></a>
+        </figure>
+        <ul>
+          <li>ニュースサイト（例： <a target="_blank" href="https://jp.reuters.com/article/monarch-idJPKCN1BJ0MB">ロイター</a>）</li>
+          <li>コミックス（例： <a target="_blank" href="http://sai-zen-sen.jp/comics/twi4/moutele/">ツイ4</a>）</li>
+        </ul>
+        <p>これらのWebサイトでは、下にスクロールしていくと次の記事／HTMLページに移り（ブラウザでのURL表示も変化）、連続して読み進めることができる。</p>
+      </li>
+      <li>スクロールとページ、横書きと縦書きの切り替えができるEPUBリーダー<br/>（紀伊國屋書店Kinoppyアプリ）
+        <figure>
+          <img src="img/kinoppy-s.png" style="float: left; height: 18em; margin: 0 0 0 2em;" alt="スクロール表示の例"/>
+          <img src="img/kinoppy-v.png" style="height: 9em;" alt="ページ（縦書き）表示の例"/>
+          <img src="img/kinoppy-h.png" style="height: 9em;" alt="ページ（横書き）表示の例"/>
+        </figure>
+      </li>
+    </ul>
+
+  </section>
+
+  <section>
+    <h2>パネル・ディスカッション： Webと本の未来はどうなる？</h2>
+    <div><a target="_blank" href="http://events.html5j.org/conference/2017/9/session/#e2">http://events.html5j.org/conference/2017/9/session/#e2</a></div>
+    <div class="speakers">
+      <ul>
+        <li>
+          <a target="_blank" href="http://events.html5j.org/conference/2017/9/speaker/index.html#murakami">
+            <div class="speakerImage"><img src="http://events.html5j.org/conference/2017/9/assets/img/page-speaker/murakami.jpg" alt="" width="60" height="60"></div>
+            <div class="speakerName">村上 真雄</div>
+            <div class="speakerAffil">Vivliostyle Inc.<br/>（株式会社ビブリオスタイル）</div>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="http://events.html5j.org/conference/2017/9/speaker/index.html#matsushima">
+            <div class="speakerImage"><img src="http://events.html5j.org/conference/2017/9/assets/img/page-speaker/matsushima.png" alt="" width="60" height="60"></div>
+            <div class="speakerName">松島 智</div>
+            <div class="speakerAffil">String &amp; Letters</div>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="http://events.html5j.org/conference/2017/9/speaker/index.html#tajima">
+            <div class="speakerImage"><img src="http://events.html5j.org/conference/2017/9/assets/img/page-speaker/tajima.jpg" alt="" width="60" height="60"></div>
+            <div class="speakerName">田嶋 淳</div>
+            <div class="speakerAffil">（株）三陽社</div>
+          </a>
+        </li>
+        <br/>
+        <li>
+          <a target="_blank" href="http://events.html5j.org/conference/2017/9/speaker/index.html#ando">
+            <div class="speakerImage"><img src="http://events.html5j.org/conference/2017/9/assets/img/page-speaker/ando.jpg" alt="" width="60" height="60"></div>
+            <div class="speakerName">安藤 一博</div>
+            <div class="speakerAffil">国立国会図書館</div>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="http://events.html5j.org/conference/2017/9/speaker/index.html#ito">
+            <div class="speakerImage"><img src="http://events.html5j.org/conference/2017/9/assets/img/page-speaker/ito.jpg" alt="" width="60" height="60"></div>
+            <div class="speakerName">伊藤 俊輔</div>
+            <div class="speakerAffil">株式会社キーポート・<br/>ソリューションズ</div>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="http://events.html5j.org/conference/2017/9/speaker/index.html#kieda">
+            <div class="speakerImage"><img src="http://events.html5j.org/conference/2017/9/assets/img/page-speaker/kieda.png" alt="" width="60" height="60"></div>
+            <div class="speakerName">木枝 祐介</div>
+            <div class="speakerAffil">清閑堂</div>
+          </a>
+          <div class="speakerRole">モデレーター</div>
+        </li>
+        <li>
+          <a target="_blank" href="http://events.html5j.org/conference/2017/9/speaker/index.html#shimokawa">
+            <div class="speakerImage"><img src="http://events.html5j.org/conference/2017/9/assets/img/page-speaker/shimokawa.jpg" alt="" width="60" height="60"></div>
+            <div class="speakerName">下川 和男</div>
+            <div class="speakerAffil">イースト株式会社</div>
+          </a>
+          <div class="speakerRole">「APL」の紹介</div>
+        </li>
+      </ul>
+    </div>
+    <a target="_blank" href="https://www.facebook.com/groups/html5j.epublishing/" style="float: right; height: 0;"><img src="img/html5jpub-logo.png" alt="html5j電子出版部ロゴ"/></a>
+    <h3>ハッシュタグ　<a target="_blank" href="https://twitter.com/search?src=typd&q=%23html5jpub">#html5jpub</a></h3>
+  </section>
+
+</body>
+
+</html>

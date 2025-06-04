@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../bundle.css">
+    <title>Vivliostyle のこれからの開発課題</title>
+  </head>
+  <body role="doc-chapter">
+    <article>
+      <h1 id="vivliostyle-のこれからの開発課題">Vivliostyle のこれからの開発課題</h1>
+      <div class="draft-author">村上 真雄 (@MurakamiShinyu)<br>Vivliostyle Foundation 代表</div>
+      <p>先日のイベント〈<strong>Vivliostyle 開発者とユーザーの集い 2019 夏</strong>〉<span class="footnote">Vivliostyle 開発者とユーザーの集い 2019 夏開催しました！ <a href="https://vivliostyle.org/ja/blog/2019/09/04/vivliostyle-dev-user-meetup-tokyo20190831/">https://vivliostyle.org/ja/blog/2019/09/04/vivliostyle-dev-user-meetup-tokyo20190831/</a></span> の《第 1 部》開発者ミーティング「<strong>Vivliostyle 開発のこれまでと、これからへ</strong>」<span class="footnote">「Vivliostyle開発のこれまでと、これからへ」<a href="http://bit.ly/vivdev20190831">http://bit.ly/vivdev20190831</a></span>で、Vivliostyle.js ソースコードの TypeScript 化が完了したことで今後の開発が楽になったことと、開発課題(issue)を課題カテゴリーごとのプロジェクトに整理して GitHub Projects<span class="footnote"><a href="https://github.com/vivliostyle/vivliostyle.js/projects/">https://github.com/vivliostyle/vivliostyle.js/projects/</a></span> で管理するようにしたことを説明して、ミーティング参加者（30 名くらい）にどのプロジェクトが重要か聞きました（複数回答）。結果は以下：</p>
+      <ul>
+        <li>Bugs（レイアウトの不具合など直す）: 7 人</li>
+        <li>PDF printing（PDF 出力および印刷に関する問題を解決する）: 7 人</li>
+        <li>Input formats（多様な入力文書フォーマットのサポート）: 7 人</li>
+        <li>Paged media（CSS ページメディア関連仕様のサポート）: 15 人</li>
+        <li>Typography（文字組版関連 CSS 仕様サポート）: 8 人</li>
+        <li>Layout enhancement（高度なレイアウトの CSS 仕様サポート）: 10 人</li>
+        <li>Web standards（Web 標準仕様のサポート）: 7 人</li>
+        <li>Other improvements（その他の改良）:
+          <ul>
+            <li>Improved error handling (エラー処理改良): 5 人</li>
+            <li>UI multilingualization（UI の多言語化）: 3 人</li>
+            <li>Search function（Viewer に検索機能）: 3 人</li>
+            <li>Chrome extension（Chrome ブラウザ拡張）: 6 人</li>
+            <li>Documentation（ドキュメントの充実）: 12 人</li>
+          </ul>
+        </li>
+      </ul>
+      <p>この結果を見てわかるのは、どのプロジェクトもそれぞれ重要だけど、特に CSS ページメディア関連仕様や高度なレイアウトの CSS 仕様のサポートを拡充することへの期待が高いということです。それからドキュメントの充実ということも。</p>
+      <p>これを踏まえて今後、とくに要望が多い項目を意識しながらも、どのプロジェクトも進めていきたいところです。とはいうものの、どれもそんなに簡単なプロジェクトではありません。もっと<strong>皆様の協力が得られることが必要</strong>であるし、そのためには、その課題について理解を広めなければと思います。そこで、各プロジェクトの主な課題について、解説します。</p>
+      <h2 id="bugs（レイアウトの不具合など直す）">Bugs（レイアウトの不具合など直す）</h2>
+      <p>現在、約 30 数件のバグが残っています。プログラムの誤りや、実装が不十分であるために期待されるレイアウトにならないなどです。バグというより現在の実装での制限事項であって解決には本格的な処理の見直し・再設計が必要という問題は別のプロジェクトに割り振っているので、ここにあるのは比較的単純な問題です。</p>
+      <p>そのいくつか：</p>
+      <ul>
+        <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/544">#544: <code>column-fill: balance</code> on vertical writing mode causes columns left-aligned</a>
+          <ul>
+            <li><strong>不具合</strong>：縦書きの段組の最後のページの段が左寄せになる。</li>
+            <li><strong>回避方法</strong>：縦書きの段組では <code>column-fill: auto</code> を指定する。（初期値 <code>column-fill: balance</code> が縦書きのとき問題あり）</li>
+          </ul>
+        </li>
+        <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/438">#438: footnotes in table are ignored</a>
+          <ul>
+            <li><strong>不具合</strong>：テーブル内の脚注が無視される。</li>
+          </ul>
+        </li>
+        <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/534">#534: Table break when there are footnotes</a>
+          <ul>
+            <li><strong>不具合</strong>：ページに脚注があるときテーブル内での改ページがされずテーブルの前で改ページが発生する。</li>
+          </ul>
+        </li>
+        <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/546">#546: Inline-block or ruby at beginning of a block causes unexpected page/column break</a>
+          <ul>
+            <li><strong>不具合</strong>：ブロックの先頭にルビや inline-block があるときブロックの途中での改ページ／改段がされずにブロックの前で改ページ／改段が発生する。</li>
+          </ul>
+        </li>
+        <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/516">#516: Absolute positioned elements causes unwanted page break when its height is more than page height</a>
+          <ul>
+            <li><strong>不具合</strong>：絶対位置指定で配置する要素の高さがページに収まらないとき同一ページに配置したい他の要素との間で改ページが発生する。</li>
+          </ul>
+        </li>
+      </ul>
+      <h2 id="pdf-printing（pdf出力および印刷に関する問題を解決する）">PDF printing（PDF出力および印刷に関する問題を解決する）</h2>
+      <p>現状はブラウザの PDF 出力に依存するため、これらの問題があります。</p>
+      <ul>
+        <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/437">#437: please use CID instead of Type3</a>
+          <ul>
+            <li><strong>問題</strong>：Chrome ブラウザの「PDF に保存」で PDF を生成すると、OpenType/CFF フォントが Type3 フォントとして埋め込まれる。これでは印刷に向かない。</li>
+            <li><strong>代替手段その 1</strong>：TrueType フォントのみを使用する。</li>
+            <li><strong>代替手段その 2</strong>：Chrome 以外のブラウザ（Safari や Firefox）を使用する。</li>
+            <li><strong>代替手段その 3（PDF の後処理で解決）</strong>：Vivliostyle + Chrome ブラウザで出力した PDF を Mac の「プレビュー」アプリで開いてファイルメニューの「書き出す」で「フォーマット: PDF」「Quartz フィルタ: Create Generic PDFX-3 Document」で別の PDF に書き出すと Type3 フォントの埋め込みの代わりに、テキストがグラフィック（アウトライン）に変換される。テキストデータを取り出せない PDF になるが、印刷には使える。</li>
+          </ul>
+        </li>
+        <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/429">#429: support PDF standard</a>
+          <ul>
+            <li><strong>要望</strong>：印刷用の PDF の標準である PDF/X-1a や PDF/X-4 をサポートしてほしい。</li>
+            <li><strong>代替手段（PDF の後処理で解決）</strong>：前項の「代替手段その 3」でできた PDF を Acrobat Pro で開き、「プリフライト: PDF/X に変換」で「PDF/X-1a (Japan Color 2001 Coated) に変換」など選んで変換すると、PDF/X-1a 準拠の PDF になります。</li>
+          </ul>
+        </li>
+        <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/419">#419: Minimum width of borders is too thick</a>
+          <ul>
+            <li><strong>問題</strong>：Chrome ブラウザで PDF 出力すると border の最小幅は 1px = 0.75pt = 0.265mm で、border がそれより細くならない。</li>
+          </ul>
+        </li>
+        <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/418">#418: Add TrimBox and BleedBox to output PDF</a>
+          <ul>
+            <li><strong>要望</strong>：Vivliostyle でトンボ付きで PDF 出力したとき TrimBox と BleedBox の情報も出力されてほしい。</li>
+          </ul>
+        </li>
+        <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/432">#432: @page size value ignores decimal numbers</a>
+          <ul>
+            <li><strong>問題</strong>：Chrome ブラウザでは CSS の <code>@page { size: … }</code> で指定のページサイズで PDF が生成されるが、そのとき整数ポイント単位に丸められてしまい正確なページサイズにならない。</li>
+          </ul>
+        </li>
+      </ul>
+      <h2 id="input-formats（多様な入力文書フォーマットのサポート）">Input formats（多様な入力文書フォーマットのサポート）</h2>
+      <p>Vivliostyle は現在、入力文書フォーマットとして (X)HTML 文書、複数の HTML 文書をまとめた Web 出版物、および、ZIP 解凍済みの EPUB をサポートしています。また、文書中で使える数式のフォーマットとして、MathML、AsciiMath、TeX の数式をサポートしています（MathJax ライブラリを利用）。これをもっと充実させたいという要望があります。主なもの：</p>
+      <ul>
+        <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/541">#541: Support non-unzipped EPUB loading</a>
+          <ul>
+            <li><strong>要望</strong>：EPUB ファイルを直接（解凍していなくても）ロードできるようにしてほしい。</li>
+          </ul>
+        </li>
+        <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/524">#524: Vexflow and vextab</a>
+          <ul>
+            <li><strong>要望</strong>：HTML 上で楽譜を表示するための API と簡易言語である VexFlow と VexTab をサポートしてほしい。</li>
+          </ul>
+        </li>
+        <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/168">#168: Let authors use their own MathJax configuration</a>
+          <ul>
+            <li><strong>要望</strong>：数式を表示するのに使用される MathJax の設定を制作者側でカスタマイズできるようにしてほしい。</li>
+          </ul>
+        </li>
+      </ul>
+      <h2 id="paged-media（cssページメディア関連仕様のサポート）">Paged media（CSSページメディア関連仕様のサポート）</h2>
+      <p><a href="https://drafts.csswg.org/css-page-3/">CSS Paged Media</a> および <a href="https://drafts.csswg.org/css-gcpm/">CSS Generated Content for Paged Media</a> 仕様のサポートに関する課題です。主なもの：</p>
+      <ul>
+        <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/59">#59: Root element styles are not inherited to page context</a>
+          <ul>
+            <li><strong>問題</strong>：ルート要素に指定したスタイル（フォント指定など）が、ページコンテキストつまり <code>@page { … }</code> のブロック内に継承されない。</li>
+          </ul>
+        </li>
+        <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/545">#545: Support named strings for running headers and footers</a>
+          <ul>
+            <li><strong>要望</strong>：本文中の見出しの内容のテキストを <code>string-set</code> プロパティで名前付き文字列としてセットして、それをページマージン領域に柱（欄外見出し）として表示できるようにする機能。</li>
+            <li><strong>代替手段</strong>：現在の Vivliostyle では、複数の HTML 文書で構成される本の場合は、<code>env(pub-title)</code>、<code>env(doc-title)</code> で本のタイトル（メインの HTML のタイトル）と個別 HTML 文書のタイトルをそれぞれ出力できる。</li>
+          </ul>
+        </li>
+        <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/424">#424: Support for running elements?</a>
+          <ul>
+            <li><strong>要望</strong>：本文中の見出しの要素をページマージン領域に柱（欄外見出し）として表示できるようにする機能。string-set が単純なテキストだけ扱えるのに対して、こちらは HTML 要素を扱える。</li>
+            <li><strong>代替手段</strong>: EPUB Adaptive Layout を使用する。<code>-epubx-flow-into: 名前</code> の指定がある要素を <code>-epubx-flow-from: 名前</code> の指定があるページ区画に配置できる。</li>
+          </ul>
+        </li>
+        <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/425">#425: Support for named pages?</a>
+          <ul>
+            <li><strong>要望</strong>：ページの種類（例：扉、序文、本文、奥付、など）ごとに名前付きのページのスタイルを <code>@page 名前 { … }</code> で定義して、それを文書中の該当要素に <code>page: 名前</code> というプロパティ指定で割り当てる機能</li>
+            <li><strong>代替手段その 1</strong>：複数の HTML 文書で構成される本にして、ページの種類ごとに別のスタイルシートを HTML 文書に指定することで、ページのスタイルを切り替えることができる。</li>
+            <li><strong>代替手段その 2</strong>: EPUB Adaptive Layout を使用する。ページの種類ごとにページテンプレートを定義できる。</li>
+          </ul>
+        </li>
+        <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/428">#428: Support "@page :blank"</a>
+          <ul>
+            <li><strong>要望</strong>：改丁（章を奇数ページから開始するなど）で空白ページができるときに、その空白ページのスタイルを指定できるようにする <code>:blank</code> ページセレクターのサポート。</li>
+          </ul>
+        </li>
+        <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/149">#149: Add support for GCPM bookmarks</a>
+          <ul>
+            <li><strong>要望</strong>：本文中の HTML の見出しの要素に <code>bookmark-level</code> プロパティで階層レベルを設定して、それを Viewer の目次パネルや PDF の「しおり」に出力できるようにする。</li>
+          </ul>
+        </li>
+      </ul>
+      <h2 id="typography（文字組版関連css仕様サポート）">Typography（文字組版関連CSS仕様サポート）</h2>
+      <p>文字組版の問題：<a href="https://drafts.csswg.org/css-text-3/">CSS Text 3</a>, <a href="https://drafts.csswg.org/css-text-4/">CSS Text 4</a> や <a href="https://drafts.csswg.org/css-fonts/">CSS Fonts</a> 仕様などのサポートに関する課題です。主なもの：</p>
+      <ul>
+        <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/182">#182: Support text-spacing</a>
+          <ul>
+            <li><strong>要望</strong>：行頭・行末・連続約物の詰め、和欧文間のアキなどを自動で処理する <code>text-spacing</code> プロパティのサポート。</li>
+            <li><strong>メモ</strong>：日本語の文字組みを美しく読みやすくするためにほしい機能。いずれブラウザでこれが標準になるのが期待されるけれど、Vivliostyle 側で先行実装するのも可能だろう。</li>
+          </ul>
+        </li>
+        <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/204">#204: Support unicode-range descriptor</a>
+          <ul>
+            <li><strong>要望</strong>：Unicode コードポイントの範囲によってフォントを割り当てる <code>unicode-range</code> 記述子のサポート。</li>
+            <li><strong>メモ</strong>：ブラウザでは標準的に使えるようになっているのに Vivliostyle で現在これが使えないのは残念なところ。</li>
+          </ul>
+        </li>
+        <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/154">#154: Support the font-variant-* longhands</a>
+          <ul>
+            <li><strong>要望</strong>：フォントの字形を切り替える <code>font-variant-*</code>（font-variant-caps, font-variant-east-asian, font-variant-ligatures, font-variant-numeric, font-variant-position）プロパティのサポート。</li>
+          </ul>
+        </li>
+      </ul>
+      <h2 id="layout-enhancement（高度なレイアウトのcss仕様サポート）">Layout enhancement（高度なレイアウトのCSS仕様サポート）</h2>
+      <p>高度なレイアウトを実現する CSS 仕様のサポート：<a href="https://drafts.csswg.org/css-page-floats/">CSS Page Floats</a>、<a href="https://drafts.csswg.org/css-grid/">CSS Grid Layout</a><a href="https://drafts.csswg.org/css-multicol/">CSS Multi-column Layout</a> などに関する課題です。</p>
+      <ul>
+        <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/539">#539: Support CSS Grid Layout</a>
+          <ul>
+            <li><strong>要望</strong>：CSS グリッドレイアウトのサポート。</li>
+            <li><strong>メモ</strong>：すでにブラウザで実装されてるのでそれを利用可能にしたい。</li>
+          </ul>
+        </li>
+        <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/543">#543: Update CSS Page Floats</a>
+          <ul>
+            <li><strong>要望</strong>：CSS Page Float は現在の Vivliostyle に実装されています。これをもっと使いやすく便利なものにするために改良したい。</li>
+          </ul>
+        </li>
+        <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/107">#107: Broken multi-column inside a non-root element</a>
+          <ul>
+            <li><strong>問題</strong>：ルートあるいは body 以外の要素に指定した段組が正常に組版できない。</li>
+            <li><strong>メモ</strong>：現在の段組の実装は、EPUB Adaptive Layout でのページ区画で指定する段組の実装がベースで、ルートまたは body 要素に指定された段組をページエリア全体の段組の扱いに変えてサポートしている。それ以外の要素での段組のプロパティはそのままブラウザに渡されるので、ページの中で部分的に使われたときに機能するが、複数ページに渡るときの分割処理などはできていない。</li>
+          </ul>
+        </li>
+        <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/542">#542: Support column-span</a>
+          <ul>
+            <li><strong>要望</strong>：段組の段抜きを指定する <code>column-span</code> プロパティのサポート。</li>
+            <li><strong>代替手段</strong>: EPUB Adaptive Layout を使用する。ページテンプレートでページ区画を定義することで、段組で段抜きの区画があるようなレイアウトが実現できる。</li>
+          </ul>
+        </li>
+      </ul>
+      <h2 id="web-standards（web標準仕様のサポート）">Web standards（Web標準仕様のサポート）</h2>
+      <p>Web 標準仕様のサポート：最新ブラウザでサポートされている HTML や CSS の機能など。他のプロジェクトに分類できるものを除きます。</p>
+      <ul>
+        <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/266">#266: Support the fill, max-content, min-content, and fit-content values for width and height.</a>
+          <ul>
+            <li><strong>要望</strong>：ボックスのサイズを指定する <code>width</code> や <code>height</code> プロパティの値 <code>min-content</code>, <code>max-contant</code>, <code>fit-content</code> のサポート。</li>
+          </ul>
+        </li>
+        <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/265">#265: Support 'base' element</a>
+          <ul>
+            <li><strong>要望</strong>：HTML 文書のベース URL を指定する <code>&#x3C;base></code> 要素のサポート。</li>
+          </ul>
+        </li>
+        <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/540">#540: Support CSS custom properties (variables)</a>
+          <ul>
+            <li><strong>要望</strong>：CSS カスタムプロパティ（CSS 変数）のサポート。</li>
+            <li><strong>代替手段その 1</strong>: Sass など CSS のプリプロセッサの変数を使う。</li>
+            <li><strong>代替手段その 2</strong>: EPUB Adaptive Layout の名前付きの値の定義 <code>@-epubx-define</code> を使う。</li>
+          </ul>
+        </li>
+        <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/145">#145: add support for user-select</a>
+          <ul>
+            <li><strong>要望</strong>：ユーザーが文章を範囲選択できるかどうかを設定する <code>user-select</code> プロパティのサポート。</li>
+          </ul>
+        </li>
+      </ul>
+      <h2 id="other-improvements（その他の改良）">Other improvements（その他の改良）</h2>
+      <p>その他の課題として、エラー処理の改善、Viewer UI の課題、ブラウザ拡張機能の要望、ドキュメンテーションについて、などがあります。</p>
+      <ul>
+        <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/460">#460: autokill option</a>
+          <ul>
+            <li><strong>要望</strong>：組版処理の異常によって処理が止まらなくなったときに自動的に処理を止めるオプションがほしい。</li>
+          </ul>
+        </li>
+        <li><a href="https://github.com/vivliostyle/vivliostyle-ui/issues">Vivliostyle UI issues</a>
+          <ul>
+            <li><a href="https://github.com/vivliostyle/vivliostyle-ui/issues/71">Localization of Vivliostyle Viewer UI</a>
+              <ul>
+                <li><strong>要望</strong>：Viewer UI 言語が現在は英語だけなのだけど、ほかの言語のリソースも追加して、ブラウザの言語設定によって切り替えられるようにしたい。</li>
+              </ul>
+            </li>
+            <li><a href="https://github.com/vivliostyle/vivliostyle-ui/issues/20">Include a search function in the UI</a>
+              <ul>
+                <li><strong>要望</strong>：Vivliostyle Viewer に、文書中のテキストの検索機能がほしい。現在は、ブラウザのテキスト検索で表示中のページ内しか検索されない。</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>Browser extension of Vivliostyle viewer
+          <ul>
+            <li><strong>要望</strong>：ブラウザ拡張機能バージョンの Vivliostyle Viewer がほしい。（かつて存在した Vivliostyle Chrome Extension）</li>
+          </ul>
+        </li>
+        <li><a href="https://github.com/vivliostyle/vivliostyle.js/issues/423">#423: Documentation: supported-features</a>
+          <ul>
+            <li><strong>要望</strong>：サポートする機能のドキュメンテーションを改善してほしい。</li>
+          </ul>
+        </li>
+      </ul>
+      <h2 id="まとめ">まとめ</h2>
+      <p>以上、Vivliostyle の今後の開発課題の主なものでした。</p>
+      <h3 id="開発体制の現状と、まずできること">開発体制の現状と、まずできること</h3>
+      <p>さて、これらをどうしていくかです。現在このオープンソース・プロジェクトの主体である Vivliostyle Foundation は、昨年、それまで Vivliostyle を開発してきた会社（現在の社名は Trim-marks Inc.）がオープンソース製品の取り扱いを終了したことに伴い、会社から独立してオープンソース・プロジェクトを維持していくために発足したものです。代表の私は、元々の Vivliostyle 社の創業者ですが、自分が Vivliostyle.js のメインの開発者だったことはそれまでなくて、そのコードに少しずつ手を入れ始めたのは昨年からです。そんな私と数名のボランティアの協力で維持しているものなので、開発リソースはとても限られていて、資金があるわけでもありません。</p>
+      <p>この記事の最初のほうで「とくに要望が多い項目を意識しながらも、どのプロジェクトも進めていきたい」と書いたものの、実際は今すぐ取りかかれそうなことはバグを直していくことや、すでにブラウザで実装されている機能を Vivliostyle から利用可能にするなど、比較的簡単な作業に限られそうです。</p>
+      <p>要望が多い、Paged media（CSS ページメディア関連仕様のサポート）の柱（欄外見出し）の機能や、Layout enhancement（高度なレイアウトの CSS 仕様サポート）の段組レイアウトの制限をなくすことなどは、それぞれ本格的な開発作業を要するものであり、それらを進められるようにするためには、資金的な支援が得られてじっくり開発に取り組めるようになることや、あるいはボランティアでの貢献をしたい開発者・協力者たちのコミュニティを育てられるかということに掛かっています。</p>
+      <h3 id="vivliostyle-を活用してください！-それから、開発支援に感謝！">Vivliostyle を活用してください！ それから、開発支援に感謝！</h3>
+      <p>多くの人に使ってもらえることで Vivliostyle が世の中に認知されて、プロジェクトへの協力が得られやすくなることを期待しています。</p>
+      <p>Vivliostyle をどう活用するかは、そのオープンソースのライセンス（AGPLv3）に違反しないかぎり自由です。自費出版への利用などはもちろんですが、企業内での利用、商業出版への利用、出版コンテンツの閲覧サービスへの利用、Web コンテンツの印刷機能への利用など、いろいろと使い道があるでしょう。</p>
+      <p>そのような Vivliostyle 活用の相談については、コミュニティでの投稿歓迎ですが、オープンにできない案件については私に直接ご相談くだされば対応します（内容によって有料でのコンサルティングも）。また、現在の Vivliostyle に足りない機能や修正が必要な問題（すでに issue 登録されている課題でもそれ以外でも）がある場合、その開発についてご相談ください。オープンソースですので、特定ユーザー（企業など）の必要によりそのユーザーの負担（共同開発や開発費負担）で開発された機能もオープンソースで公開されて、あとから利用する別のユーザーにも恩恵があるということになります。現在 Vivliostyle で利用できる機能の一部はそのような形で支援を受けて開発されたものです。Vivliostyle のリリースノートの謝辞（Acknowledgements）に開発貢献・支援いただいた企業などのお名前を入れております。開発支援に感謝します。</p>
+      <h3 id="開発に興味ある人は、一緒に-vivliostyle-のソースコードを読もう">開発に興味ある人は、一緒に Vivliostyle のソースコードを読もう</h3>
+      <p>Vivliostyle.js ソースコードの TypeScript への移行は、ソースコードを読みやすくして、今後の開発がよりスムーズに行えるようにと行ったものですが、それでもこのプログラムを理解して開発できるまでになるのは容易ではないと思います。</p>
+      <p>そこで、みんなでソースコードを読もうという、Vivliostyle コードリーディング会をやっていこうという声が上がってます。そのスケジュールなど決まったら案内しますのでご参加ください。</p>
+      <p>Vivliostyle Viewer (vivliostyle.js + vivliostyle-ui) をソースコードからビルドして、テスト、デバッグ実行する手順などは、<a href="https://github.com/vivliostyle/vivliostyle.js/wiki/Development">Vivliostyle.js Development</a> にあります。ぜひこの手順でビルドして試してみてください。</p>
+      <p>以下、Vivliostyle の開発に関係する URL のまとめです：</p>
+      <ul>
+        <li>Vivliostyle 公式サイト（日本語）: <a href="https://vivliostyle.org/ja/">https://vivliostyle.org/ja/</a>
+          <ul>
+            <li>コミュニティ: <a href="https://vivliostyle.org/ja/community/">https://vivliostyle.org/ja/community/</a></li>
+            <li>ドキュメント: <a href="https://vivliostyle.org/ja/docs/">https://vivliostyle.org/ja/docs/</a>
+              <ul>
+                <li>Vivliostyle.js Development: <a href="https://github.com/vivliostyle/vivliostyle.js/wiki/Development">https://github.com/vivliostyle/vivliostyle.js/wiki/Development</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>vivliostyle.js: <a href="https://github.com/vivliostyle/vivliostyle.js">https://github.com/vivliostyle/vivliostyle.js</a>
+          <ul>
+            <li>issues: <a href="https://github.com/vivliostyle/vivliostyle.js/issues">https://github.com/vivliostyle/vivliostyle.js/issues</a></li>
+            <li>projects: <a href="https://github.com/vivliostyle/vivliostyle.js/projects">https://github.com/vivliostyle/vivliostyle.js/projects</a></li>
+          </ul>
+        </li>
+        <li>vivliostyle-ui: <a href="https://github.com/vivliostyle/vivliostyle-ui">https://github.com/vivliostyle/vivliostyle-ui</a></li>
+        <li>vivliostyle-print: <a href="https://github.com/vivliostyle/vivliostyle-print">https://github.com/vivliostyle/vivliostyle-print</a></li>
+        <li>vivliostyle-savepdf: <a href="https://github.com/vivliostyle/vivliostyle-savepdf">https://github.com/vivliostyle/vivliostyle-savepdf</a></li>
+      </ul>
+      <h3 id="不具合や要望などフィードバックをお寄せください">不具合や要望などフィードバックをお寄せください</h3>
+      <p>Vivliostyle を使っていて気になったことや、必要な機能の要望などは、どんどんお寄せください。ユーザーからのフィードバックがあることは励みになります。</p>
+      <p>不具合や要望などのフィードバックは、GitHub の issue に登録してくれるとありがたいですが、Vivliostyle のコミュニティ: Slack、Twitter、Facebook グループでの質問やフィードバックも歓迎します。</p>
+      <h3 id="vivliostyle-コミュニティをチェック！">Vivliostyle コミュニティをチェック！</h3>
+      <ul>
+        <li>Vivliostyle コミュニティ <a href="https://vivliostyle.org/ja/community/">https://vivliostyle.org/ja/community/</a></li>
+      </ul>
+      <p>
+        ここから参加できる Vivliostyle の Slack が、Vivliostyle 開発者とユーザーのコミュニティの中心になっています。現在の参加者数45名くらい。
+        まだの方はぜひご参加ください。次のチャンネルなどがあります：
+      </p>
+      <ul>
+        <li>#general: いろいろお知らせなど</li>
+        <li>#random: 自己紹介や雑多な話題をどうぞ</li>
+        <li>#issues: Vivliostyle のバグや機能追加の要望をどうぞ</li>
+        <li>#q-and-a: Vivliostyle についての質問と回答</li>
+        <li>#techbookfest: 技術書典向けに Vivliostyle ユーザー会の合同誌を作る相談など</li>
+      </ul>
+      <p>
+        それから Vivliostyle の Twitter や Facebook グループもどうぞよろしく。
+        Vivliostyle への皆様のご支援に感謝します！
+      </p>
+    </article>
+  </body>
+</html>

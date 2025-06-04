@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8" />
+  <title>HTMLをセマンティックに</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+@page {
+  @top-right {
+    content: "HTMLをセマンティックに";
+  }
+}
+  </style>
+</head>
+
+<body class="contents">
+
+  <h1>HTMLをセマンティックに</h1>
+
+  <section>
+    <h1>HTML5でセマンティックな文書構造化が標準に</h1>
+    <ul>
+      <li>2014年にHTML5がW3C勧告、2016年には改訂版の<a target="_blank" href="https://www.w3.org/TR/html51/">HTML 5.1</a>が勧告</li>
+      <li>HTML5の新要素（section、article、nav、header、footer、aside、figure、figcaption 等）でセマンティックな文書構造が明確に</li>
+      <li>従来からのHTML要素もよりセマンティックな定義に</li>
+    </ul>
+  </section>
+  <section>
+    <h1>role属性でHTML要素にさらに意味を付加</h1>
+    <ul>
+      <li><a target="_blank" href="https://www.w3.org/TR/wai-aria/">WAI-ARIA</a>：Webのアクセシビリティのためにセマンティックな情報をHTML要素に</li>
+      <li><a target="_blank" href="https://www.w3.org/TR/dpub-aria-1.0/">DPUB-ARIA</a>：出版のためのセマンティックな語彙を定義</li>
+    </ul>
+    <p>Scholarly HTMLで使えるrole属性の語彙の例：</p>
+    <ul class="multicol">
+      <li>contentinfo（コンテンツ情報）</li>
+      <li>doc-abstract（要旨）</li>
+      <li>doc-acknowledgments（謝辞）</li>
+      <li>doc-appendix（付録）</li>
+      <li>doc-bibliography（参考文献）</li>
+      <li>doc-conclusion（結論）</li>
+      <li>doc-endnote（後注）</li>
+      <li>doc-footnote（脚注）</li>
+      <li>doc-introduction（序論）</li>
+      <li>doc-subtitle（副題）</li>
+    </ul>
+  </section>
+  <section>
+    <h1>RDFa：セマンティックなメタ情報をHTMLに埋め込む方法</h1>
+    <ul>
+      <li>RDFa = Resource Description Framework in Attributes</li>
+      <li>HTML5標準の要素とrole属性に加えてRDFaを利用することで、より詳細なメタ情報をHTML文書中に埋め込むことが可能に</li>
+      <li>Scholarly HTMLでは <a target="_blank" href="https://schema.org/ScholarlyArticle">schema.org/ScholarlyArticle</a> の語彙を利用</li>
+    </ul>
+  </section>
+</body>
+</html>

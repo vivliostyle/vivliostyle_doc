@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=s, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>私が組版オペレータになっても？</title>
+    <link rel="stylesheet" href="main.css"/>
+  </head>
+  <body>
+    <article>
+<h1 id="私がwbr組版wbrオペレータにwbrなっても">私が<wbr>組版<wbr>オペレータに<wbr>なっても?</h1>
+<div class="draft-author">takanakahiko</div>
+<h2 id="はじめに">はじめに</h2>
+<p>
+  コミックマーケット 95 にて IM@Study というコミュニティから，5 人が寄稿する合同本を出しました<span class="footnote"><a href="https://webcatalog-free.circle.ms/Circle/14222968">https://webcatalog-free.circle.ms/Circle/14222968</a></span>．
+  そこで，私は「組版オペレータ」というかたちで手伝わせていただけたので，その時のお話をできたらと思います．
+  ここでお話する内容は，あくまで知見の共有ですので，<strong>最善の方法ではない</strong>といった前提で読んでいただけると嬉しいです．
+</p>
+<h2 id="出した本について">出した本について</h2>
+<p>今回は執筆フローに関する解説であるため，本の内容については割愛させていただきます．</p>
+<p>
+  さて，前途にもあるとおり，私達が作ったものは「合同誌」といったものです．
+  つまりは，複数人で書いた原稿を一つの PDF にすることが目的となります．(A)
+</p>
+<p>
+  また，「技術書」という性格を考え，全章でデザインが統一されることが良いと判断しました．
+  このため，原稿の内容とデザインの定義(設定)に関しては切り分けて作業ができるような仕組みが必要でした．(B)
+</p>
+<h2 id="技術解説">技術解説</h2>
+<p>以上の特性を考慮して，以下の様な組版フローを採用することとなりました．</p>
+<p></p>
+<figure>
+  <img src="../assets/takanakahiko/26VaZnc.png">
+</figure>
+<p></p>
+<p>これらのタスクは，Grunt (NPM で公開されているタスクランナー)によって束ねられ，ワンコマンドで PDF のプレビューや書き出しを可能としました．</p>
+<p>この技術選定のポイントは 2 つあります．</p>
+<p>
+  まず，上記「出した本について」における B について，<code>Vivliostyle.js</code>を採用することで条件をクリアしました．
+  HTML/CSS の利点は，<strong>内容とデザインを分離して記述が可能である</strong>点であると私は考えています．この利点を組版に持ち込むことで生産性の向上等を図ったのが<code>Vivliostyle.js</code>です．
+</p>
+<p></p>
+<figure>
+  <img src="../assets/takanakahiko/K1vHiOm.png">
+</figure>
+<p></p>
+<p>
+  次に，上記「出した本について」における A について，Markdown をマージし HTML への変換を行うことでその条件を満たしました．
+  ここで，最初から HTML を採用しない理由としては，<strong>HTML の構造が統一される</strong>ことに加え，<strong>Markdown の表現力で十分な内容であった</strong>ことが挙げられます．
+</p>
+<p>
+  この同人誌に関しては，作業内容を GitHub ですべて公開した上で作成しています．
+  詳しくは <a href="https://github.com/imas/imasbook">https://github.com/imas/imasbook</a> を参照してください．
+</p>
+<h2 id="作業の進め方について">作業の進め方について</h2>
+<h3 id="準備編">準備編</h3>
+<p>
+  まず，私が用意したテンプレートをコピーし，作業用リポジトリに適用しました．
+  <strong>あとは Markdown と CSS を書き換えるだけ</strong>という状態のものを作成して，準備としました．
+</p>
+<p>
+  テンプレートのリポジトリは以下です．
+  spring-raining さんの過去プロダクトを多く参考にさせていただきました．
+  私が慣れているという理由で Grunt を採用したのですが，古い技術であるため少し反省しています．
+</p>
+<p><a href="https://github.com/takanakahiko/markdown-css-typesetting">https://github.com/takanakahiko/markdown-css-typesetting</a></p>
+<h3 id="執筆編">執筆編</h3>
+<p>執筆は，1 人が 1 つの Markdown を操作する形で行います．</p>
+<p>
+  ここで，執筆者はリポジトリを Fork して執筆を行います．
+  執筆後に PullRequest を用いて，master ブランチへのマージを行いました．
+  PullRequest では，複数人が任意でレビューを行いました．
+</p>
+<p><strong>「ここは誤字じゃない?」</strong> <strong>「oo は xx と表現したほうがわかりやすいのでは」</strong></p>
+<p>
+  といった推敲を相互で行えたのは良かったです．
+  各々の進捗管理もしやすかったですし，他の人の PR を見た執筆者のモチベーションにもいい影響があったと感じましたし，利点が多かったです．
+</p>
+<h3 id="デザイン編">デザイン編</h3>
+<p>
+  私はこの部分を主に担当しました．
+  執筆作業とは完全に切り離して作業を行いました．
+</p>
+<p>主に，以下の表現を読みやすいようにデザイニングしていきます．</p>
+<ul>
+  <li>
+    <p>Web ページとしての要素</p>
+    <ul>
+      <li>見出し( <code>h1</code> , <code>h2</code> , <code>h3</code> 等)</li>
+      <li>箇条書き( <code>ol</code> , <code>ul</code> 等)</li>
+      <li>図表( <code>figure</code> 等)</li>
+    </ul>
+  </li>
+  <li>
+    <p>組版特有の要素</p>
+    <ul>
+      <li>サイズ( <code>@page</code> の <code>size</code> )</li>
+      <li>マージン( <code>@page</code> の <code>margin</code> )</li>
+      <li>ページ数( <code>@page</code> の <code>@bottom-right</code> 等)</li>
+    </ul>
+  </li>
+</ul>
+<p>
+  ここで，<strong>組版特有の要素</strong>では，特殊な <code>@page</code> 等の要素を用いた CSS の記述が必要になります．
+  ここは適宜 spring-raining さんの「CSS ではじめる同人誌制作」という同人誌で細かく解説されているので，参考にさせていただきました．
+</p>
+<p>CSS 自体の変更も PullRequest を用いて，レビュー後に master ブランチへのマージを行いました．</p>
+<h2 id="振り返って">振り返って</h2>
+<p>合同誌の執筆において<code>Vivliostyle.js</code>を用いたメリットを下記に挙げます．</p>
+<ul>
+  <li>内容とデザインを分離して作業が行えた</li>
+  <li>GitHub を使用した複数人での執筆が行えた</li>
+</ul>
+<p>逆に，デメリットや注意点を挙げます．</p>
+<ul>
+  <li>前提として必要な知識が多く，また資料も少ない．</li>
+  <li>内容に合わせたデザイン修正が多くなる</li>
+</ul>
+<p>採用するメリットに関しては十分に大きく，特に合同誌においては特に有効であると考えています．</p>
+<p>
+  デメリットに関しては，「経験者がいない場合には採用すべきでない」に尽きると思いました．
+  これに関しては，採用事例や資料等が多くないことが原因であると思いました．
+</p>
+<p>
+  その点において， spring-raining さんの同人誌等は貴重な情報源となっており，その普及に大きく尽力していると感じました．
+  その活動を応援するとともに，私も何かしらで手伝っていければと思い，今回筆を執らせていただきました．
+</p>
+<p>今後，OSS 等の分野でも何かしら貢献していきたいと考えています．</p>
+
+    </article>
+  </body>
+</html>
