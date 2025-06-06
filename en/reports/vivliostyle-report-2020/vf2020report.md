@@ -3,7 +3,7 @@ title: "Vivliostyle Foundation FY2020 Activity Report"
 lang: en
 ---
 
-# ** Activity Report for FY2020**
+# **Activity Report for FY2020**
 
 (The 3rd Fiscal Year: from April 1, 2020 to March 31, 2021)
 

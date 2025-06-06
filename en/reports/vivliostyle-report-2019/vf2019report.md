@@ -3,7 +3,7 @@ title: "Vivliostyle Foundation FY2019 Activity Report"
 lang: en
 ---
 
-# ** Activity Report for FY2019**
+# **Activity Report for FY2019**
 
 (The 2nd Fiscal Year: from April 1, 2019 to March 31, 2020)
  

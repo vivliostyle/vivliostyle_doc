@@ -4,7 +4,7 @@ lang: en
 ---
 
 
-## ** Activity Report for FY2021**
+## **Activity Report for FY2021**
 
 ### Foreword
 
