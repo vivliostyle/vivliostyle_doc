@@ -69,10 +69,6 @@ h3 {
   line-height: 1.5;
 }
 
-h2 {
-  break-before: page;
-}
-
 h2 ~ h2 ~ h3 ~ h3 {
   break-before: column;
 }
@@ -117,6 +113,10 @@ td:nth-child(n+2) {
 #income-and-expenditure-statement-for-fy2020 + p + table > tbody > tr:nth-child(30),
 #income-and-expenditure-statement-for-fy2020 + p + table > tbody > tr:nth-child(32) {
   background-color: #EFF6FD;
+}
+
+#TOC {
+  break-after: page;
 }
 
 
