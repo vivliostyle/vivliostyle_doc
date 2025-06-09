@@ -74,16 +74,6 @@ h3 {
   line-height: 1.5;
 }
 
-h2 {
-  break-before: page;
-}
-
-/*
-h2 ~ h2 ~ h3 ~ h3 {
-  break-before: column;
-}
- */
-
 figure {
   break-inside: avoid;
 }
@@ -121,4 +111,8 @@ td:nth-child(n+2) {
 
 #net-assets-increasedecrease-statement-for-fy2022+p+table>tbody>tr:nth-child(5) {
   background-color: #f7f6bd;
+}
+
+#TOC {
+  break-after: page;
 }

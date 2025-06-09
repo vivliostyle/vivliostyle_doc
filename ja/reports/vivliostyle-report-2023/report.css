@@ -118,4 +118,8 @@ td:nth-child(n+2) {
   background-color: #EFF6FD;
 }
 
+#TOC {
+  break-after: page;
+}
+
 

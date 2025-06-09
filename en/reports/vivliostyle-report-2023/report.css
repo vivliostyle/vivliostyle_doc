@@ -74,15 +74,9 @@ h3 {
   line-height: 1.5;
 }
 
-h2 {
-  break-before: page;
+#TOC {
+  break-after: page;
 }
-
-/*
-h2 ~ h2 ~ h3 ~ h3 {
-  break-before: column;
-}
- */
 
 figure {
   break-inside: avoid;

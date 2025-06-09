@@ -8,16 +8,21 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="report.css" />
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
@@ -25,928 +30,321 @@
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
-<li><a href="#chapter-1-financial-report-for-fy2021"><strong>Chapter 1: Financial Report for FY2021</strong></a>
+<li><a href="#activity-report-for-fy2021"
+id="toc-activity-report-for-fy2021"><strong>Activity Report for
+FY2021</strong></a>
 <ul>
-<li><a href="#foreword">Foreword</a></li>
-<li><a href="#balance-sheet-for-fy2021">Balance Sheet for FY2021</a></li>
-<li><a href="#net-assets-increasedecrease-statement-for-fy2021">Net Assets Increase/Decrease Statement for FY2021</a></li>
-<li><a href="#income-and-expenditure-statement-for-fy2021">Income and Expenditure Statement for FY2021</a></li>
-</ul></li>
-<li><a href="#chapter-2-activity-report-for-fy2021"><strong>Chapter 2: Activity Report for FY2021</strong></a>
-<ul>
-<li><a href="#foreword-1">Foreword</a></li>
-<li><a href="#classification-of-products-and-their-roles">Classification of products and their roles</a></li>
-<li><a href="#library-vivliostyle.js-v2.6.2---v2.14.4">Library: Vivliostyle.js (v2.6.2 -&gt; v2.14.4)</a></li>
-<li><a href="#library-vfm-v1.0.0-alpha.17---v1.2.1">Library: VFM (v1.0.0-alpha.17 -&gt; v1.2.1)</a></li>
-<li><a href="#library-vivliostyle-themes">Library: Vivliostyle Themes</a></li>
-<li><a href="#generator-vivliostyle-cli-v3.2.1---v4.8.2">Generator: Vivliostyle CLI (v3.2.1 -&gt; v4.8.2)</a></li>
-<li><a href="#generator-create-book-v0.1.6---v0.5.1">Generator: create-book (v0.1.6 -&gt; v0.5.1)</a></li>
-<li><a href="#generator-vivliostyle-sitegen">Generator: vivliostyle-sitegen</a></li>
-<li><a href="#web-application-vivliostyle-pub">Web application: Vivliostyle Pub</a></li>
-<li><a href="#web-content-and-its-production-system">Web content and its production system</a></li>
-<li><a href="#challenges-for-the-next-fiscal-year-and-how-to-address-them">Challenges for the next fiscal year and how to address them</a></li>
-<li><a href="#directors">Directors</a></li>
+<li><a href="#foreword" id="toc-foreword">Foreword</a></li>
+<li><a href="#classification-of-products-and-their-roles"
+id="toc-classification-of-products-and-their-roles">Classification of
+products and their roles</a></li>
+<li><a href="#library-vivliostyle.js-v2.6.2---v2.14.4"
+id="toc-library-vivliostyle.js-v2.6.2---v2.14.4">Library: Vivliostyle.js
+(v2.6.2 -&gt; v2.14.4)</a></li>
+<li><a href="#library-vfm-v1.0.0-alpha.17---v1.2.1"
+id="toc-library-vfm-v1.0.0-alpha.17---v1.2.1">Library: VFM
+(v1.0.0-alpha.17 -&gt; v1.2.1)</a></li>
+<li><a href="#library-vivliostyle-themes"
+id="toc-library-vivliostyle-themes">Library: Vivliostyle Themes</a></li>
+<li><a href="#generator-vivliostyle-cli-v3.2.1---v4.8.2"
+id="toc-generator-vivliostyle-cli-v3.2.1---v4.8.2">Generator:
+Vivliostyle CLI (v3.2.1 -&gt; v4.8.2)</a></li>
+<li><a href="#generator-create-book-v0.1.6---v0.5.1"
+id="toc-generator-create-book-v0.1.6---v0.5.1">Generator: create-book
+(v0.1.6 -&gt; v0.5.1)</a></li>
+<li><a href="#generator-vivliostyle-sitegen"
+id="toc-generator-vivliostyle-sitegen">Generator:
+vivliostyle-sitegen</a></li>
+<li><a href="#web-application-vivliostyle-pub"
+id="toc-web-application-vivliostyle-pub">Web application: Vivliostyle
+Pub</a></li>
+<li><a href="#web-content-and-its-production-system"
+id="toc-web-content-and-its-production-system">Web content and its
+production system</a></li>
+<li><a
+href="#challenges-for-the-next-fiscal-year-and-how-to-address-them"
+id="toc-challenges-for-the-next-fiscal-year-and-how-to-address-them">Challenges
+for the next fiscal year and how to address them</a></li>
+<li><a href="#directors" id="toc-directors">Directors</a></li>
 </ul></li>
 </ul>
 </nav>
-<h2 id="chapter-1-financial-report-for-fy2021"><strong>Chapter 1: Financial Report for FY2021</strong></h2>
-<p>(The 4th Fiscal Year: from April 1, 2021 to March 31, 2022)</p>
+<h2 id="activity-report-for-fy2021"><strong>Activity Report for
+FY2021</strong></h2>
 <h3 id="foreword">Foreword</h3>
-<p>The structure of the annual report for this fiscal year has been changed from previous years, with the first section reporting the financial results in comparison with the past, and the second section reporting the activities based on that report.</p>
-<h3 id="balance-sheet-for-fy2021">Balance Sheet for FY2021</h3>
-<p>The following table shows the status of assets held (balance sheet) as of the end of this fiscal year (March 31, 2022). The figures are in yen.</p>
-<table>
-<thead>
-<tr class="header">
-<th>Title</th>
-<th><strong>This FY (2021)</strong></th>
-<th><strong>Prev. FY (2020)</strong></th>
-<th><strong>Increase/Decrease</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>I. Assets</strong></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>1. Current assets</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Cash and deposits</td>
-<td>1,180,342</td>
-<td>345,708</td>
-<td>834,634</td>
-</tr>
-<tr class="even">
-<td>Other current assets</td>
-<td>1,058,750</td>
-<td></td>
-<td>1,058,750</td>
-</tr>
-<tr class="odd">
-<td>Total current assets</td>
-<td>2,239,092</td>
-<td>345,708</td>
-<td>1,893,384</td>
-</tr>
-<tr class="even">
-<td>2 Fixed Assets</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>(1) Other fixed assets</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Founding expenses</td>
-<td>113,050</td>
-<td>113,050</td>
-<td>0</td>
-</tr>
-<tr class="odd">
-<td>Total other fixed assets</td>
-<td>113,050</td>
-<td>113,050</td>
-<td>0</td>
-</tr>
-<tr class="even">
-<td>Total fixed assets</td>
-<td>113,050</td>
-<td>113,050</td>
-<td>0</td>
-</tr>
-<tr class="odd">
-<td>Total assets</td>
-<td>2,352,142</td>
-<td>458,758</td>
-<td>1,893,384</td>
-</tr>
-<tr class="even">
-<td><strong>II. Liabilities</strong></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>1. Current liabilities</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Withholdings</td>
-<td>31,139</td>
-<td>31,139</td>
-<td>0</td>
-</tr>
-<tr class="odd">
-<td>Loan from officer</td>
-<td>4,806,561</td>
-<td>3,806,561</td>
-<td>1,000,000</td>
-</tr>
-<tr class="even">
-<td>Accounts payable</td>
-<td>11,000</td>
-<td></td>
-<td>11,000</td>
-</tr>
-<tr class="odd">
-<td>Accrued income taxes</td>
-<td>20,000</td>
-<td></td>
-<td>20,000</td>
-</tr>
-<tr class="even">
-<td>Total current liabilities</td>
-<td>4,868,700</td>
-<td>3,837,700</td>
-<td>1,031,000</td>
-</tr>
-<tr class="odd">
-<td>Total liabilities</td>
-<td>4,868,700</td>
-<td>3,837,700</td>
-<td>1,031,000</td>
-</tr>
-<tr class="even">
-<td><strong>III. Net Assets</strong></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>1. General Net Assets</td>
-<td>-2,516,558</td>
-<td>-3,378,942</td>
-<td>862,384</td>
-</tr>
-<tr class="even">
-<td>Total net assets</td>
-<td>-2,516,558</td>
-<td>-3,378,942</td>
-<td>862,384</td>
-</tr>
-<tr class="odd">
-<td>Total liabilities and net assets</td>
-<td>2,352,142</td>
-<td>458,758</td>
-<td>1,893,384</td>
-</tr>
-</tbody>
-</table>
-<p>Assets that can be recovered within one year are called current assets. Total current assets for this fiscal year were 2,239,092 yen, up 1,893,384 yen from the previous fiscal year, and total assets, including fixed assets held for longer than one year, were 2,352,142 yen, also up 1,893,384 yen (the amount of fixed assets has not changed since the company was founded).</p>
-<p>Total liabilities, on the other hand, increased by 1,031,000 yen from last year to 4,868,700 yen. Total net assets, which are total assets minus total liabilities, increased by 862,384 yen from the previous year to -2,516,558 yen. Graph below shows the main indicators on the balance sheet from the 1st fiscal year (Figure 1). It is striking that total net assets, which had been on a downward trend since its establishment, was able to turn upward in the current term, although still negative.</p>
-<figure>
-<img src="./img/fig-1.png" style="width:100.0%" alt="Figure 1: Changes in Main Indicators in the Balance Sheet since Foundation" /><figcaption aria-hidden="true">Figure 1: Changes in Main Indicators in the Balance Sheet since Foundation</figcaption>
-</figure>
-<h3 id="net-assets-increasedecrease-statement-for-fy2021">Net Assets Increase/Decrease Statement for FY2021</h3>
-<p>Next, let’s look at the statement of changes in net assets, which shows the details of money spent and sales during this fiscal year (April 1, 2020 to March 31, 2021). This is also in yen.</p>
-<table>
-<colgroup>
-<col style="width: 36%" />
-<col style="width: 21%" />
-<col style="width: 21%" />
-<col style="width: 21%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Title</th>
-<th><strong>This FY (2021)</strong></th>
-<th><strong>Prev. FY (2020)</strong></th>
-<th><strong>Increase/Decrease</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>I. General Net Assets Increase/Decrease</strong></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>1. Ordinary Increase/Decrease</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>⑴ Ordinary revenues</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>① Business income</td>
-<td>( 6,267,250)</td>
-<td>(1,503,721)</td>
-<td>(4,763,529)</td>
-</tr>
-<tr class="odd">
-<td>Business income</td>
-<td>6,267,250</td>
-<td>1,503,721</td>
-<td>4,763,529</td>
-</tr>
-<tr class="even">
-<td>② Donation received</td>
-<td>(116,546)</td>
-<td>(61,209)</td>
-<td>(55,337)</td>
-</tr>
-<tr class="odd">
-<td>Donation received</td>
-<td>116,546</td>
-<td>61,209</td>
-<td>55,337</td>
-</tr>
-<tr class="even">
-<td>③ Other revenues</td>
-<td>(6)</td>
-<td>(4)</td>
-<td>(2)</td>
-</tr>
-<tr class="odd">
-<td>Interest received</td>
-<td>6</td>
-<td>4</td>
-<td>2</td>
-</tr>
-<tr class="even">
-<td>Total ordinary revenues</td>
-<td>6,383,802</td>
-<td>1,564,934</td>
-<td>4,818,868</td>
-</tr>
-<tr class="odd">
-<td>⑵ Ordinary expenses</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>① Business expenses</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Business expenses</td>
-<td>(325,918)</td>
-<td>(373,823)</td>
-<td>(-47,905)</td>
-</tr>
-<tr class="even">
-<td>Travel and transportation expenses</td>
-<td></td>
-<td>11,527</td>
-<td>-11,527</td>
-</tr>
-<tr class="odd">
-<td>Communication transportation costs</td>
-<td>940</td>
-<td>252</td>
-<td>688</td>
-</tr>
-<tr class="even">
-<td>Consumables costs</td>
-<td>22,000</td>
-<td></td>
-<td>22,000</td>
-</tr>
-<tr class="odd">
-<td>Miscellaneous expenses</td>
-<td></td>
-<td>39,064</td>
-<td>-39,064</td>
-</tr>
-<tr class="even">
-<td>Commission fee</td>
-<td>97,624</td>
-<td>65,575</td>
-<td>32,049</td>
-</tr>
-<tr class="odd">
-<td>Compensation paid</td>
-<td>198,000</td>
-<td>257,405</td>
-<td>-59,405</td>
-</tr>
-<tr class="even">
-<td>Newspaper book expenses</td>
-<td>7,354</td>
-<td></td>
-<td>7,354</td>
-</tr>
-<tr class="odd">
-<td>Total business expenses</td>
-<td>325,918</td>
-<td>373,823</td>
-<td>-47,905</td>
-</tr>
-<tr class="even">
-<td>② Administrative expenses</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Outsourcing costs</td>
-<td>5,175,500</td>
-<td>3,454,000</td>
-<td>1,721,500</td>
-</tr>
-<tr class="even">
-<td>Meeting fee</td>
-<td></td>
-<td>2,623</td>
-<td>-2,623</td>
-</tr>
-<tr class="odd">
-<td>Total administrative expenses</td>
-<td>5,175,500</td>
-<td>3,456,623</td>
-<td>1,718,877</td>
-</tr>
-<tr class="even">
-<td>Total ordinary expenses</td>
-<td>5,501,418</td>
-<td>3,830,446</td>
-<td>1,670,972</td>
-</tr>
-<tr class="odd">
-<td>Ordinary increase/decrease before valuation gain/loss this FY</td>
-<td>882,384</td>
-<td>-2,265,512</td>
-<td>3,147,896</td>
-</tr>
-<tr class="even">
-<td>Total valuation gain/loss</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="odd">
-<td>Ordinary increase/decrease this FY</td>
-<td>882,384</td>
-<td>-2,265,512</td>
-<td>3,147,896</td>
-</tr>
-<tr class="even">
-<td>2. Non-ordinary Increase/Decrease</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>⑴ Non-ordinary revenues</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Total non-ordinary revenues</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="odd">
-<td>⑵ Non-ordinary expenses</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Total non-ordinary expenses</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="odd">
-<td>Non-ordinary increase/decrease this FY</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="even">
-<td>General net assets increase/decrease before transfer to other accounts this FY</td>
-<td>882,384</td>
-<td>-2,265,512</td>
-<td>3,147,896</td>
-</tr>
-<tr class="odd">
-<td>General net assets increase/decrease before taxes this FY</td>
-<td>882,384</td>
-<td>-2,265,512</td>
-<td>3,147,896</td>
-</tr>
-<tr class="even">
-<td>Corporate tax, resident tax and business tax</td>
-<td>20,000</td>
-<td>20,000</td>
-<td>0</td>
-</tr>
-<tr class="odd">
-<td>General net assets increase/decrease this FY</td>
-<td>862,384</td>
-<td>-2,285,512</td>
-<td>3,147,896</td>
-</tr>
-<tr class="even">
-<td>General net assets at beginning of FY</td>
-<td>-3,378,942</td>
-<td>-1,093,430</td>
-<td>-2,285,512</td>
-</tr>
-<tr class="odd">
-<td>General net assets at end of FY</td>
-<td>-2,516,558</td>
-<td>-3,378,942</td>
-<td>862,384</td>
-</tr>
-<tr class="even">
-<td><strong>II. Designated Net Assets Increase/Decrease</strong></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Designated net assets increase/decrease this FY</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="even">
-<td>Designated net assets at beginning of FY</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="odd">
-<td>Designated net assets at end of FY</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="even">
-<td><strong>III. Net Assets at End of FY</strong></td>
-<td>-2,516,558</td>
-<td>-3,378,942</td>
-<td>862,384</td>
-</tr>
-</tbody>
-</table>
-<p>First, let’s look at “I. General Net Assets”. The term “General net assets” here is the opposite of “Designated Net Assets”. While the latter is property that is designated for use and the corporation cannot decide how to use it, the former is the opposite, allowing the corporation to freely decide how to use it. Since our corporation has no “Designated net assets” as described below, we should be able to grasp the income and expenses for the 4th fiscal year by looking at this section.</p>
-<p>Among the “I. General Net Assets Increase/Decrease” section, what catches the eye is that “Business income” raised 6,267,250 yen, which is 4,763,529 yen more than the previous fiscal year (pale yellow cell). As a result, the “Total ordinary revenues”, which indicates the profit earned in the main business, was able to raise 6,383,802 yen, which is 1,564,934 yen more than the previous year. This revenue amount is about four times that of the previous fiscal year. This was due to the expansion of contract development from external companies, which was also mentioned in the <a href="https://vivliostyle.org/viewer/#src=https://vivliostyle.github.io/vivliostyle_doc/ja/reports/vivliostyle-report-2020/vf2020report.html&amp;bookMode=true&amp;f=epubcfi(/2!/4/84)">Previous Business Report</a> in the current fiscal year. In addition, although the amount is not a large amount, we were able to obtain 116,546 yen in “Donations received”, which is 55,337 yen more than the previous fiscal year.</p>
-<p>On the other hand, “Total business expenses”, which are the expenses to conduct business, were 325,918 yen, 47,905 yen less than the previous fiscal year. “Total administrative expenses”, which are the costs of maintaining the corporation, totaled 5,175,500 yen, 1,718,877 yen more than in the previous fiscal year. This increase was due to the aforementioned “Outsourcing costs” (labor costs to subcontractors) related to the large increase in “Business income”. As already mentioned, in the previous fiscal year, “Business income” totaled 1,503,721 yen. The reason for the four-fold increase was due in part to the increase in the number of projects, but also to the fact that the company was able to subcontract work to developers other than Representative Director Murakami. Securing development resources will be the key to securing the same or higher business profits in the next fiscal year. “Total ordinary expenses”, which are the sum of the “Total business expenses”and “Total administrative expenses” mentioned above, totaled 5,501,418 yen, 1,670,972 yen more than the previous fiscal year.</p>
-<p>Looking further down, “Total valuation gain/loss”, which shows the difference between the purchase price and the current price of assets held related to securities, etc., is 0 yen. This is because we do not hold any securities. “Total non-ordinary expenses”, which represent income other than core business, are also zero.</p>
-<p>At the end of “I. General Net Assets Increase/Decrease” is “General net assets at beginning of FY” and “General net assets at end of FY”. To put it simply, the former is the money carried forward from the previous term, while the latter is the money carried forward to the next term. The former, that is, the “General net assets at beginning of FY” was -3,378,942, while the latter, that is, the “General net assets at end of FY” increased by 862,384 yen to -2,516,558. To put it simply, it shows that although the deficit up to the previous term has been reduced, there is still a long way to go to eliminate it.</p>
-<p>The next section, “II. Designated Net Assets Increase/Decrease” are all zero yen, as mentioned above. And the carryover to the 5th fiscal year, “III. Net Assets at End of FY” was -2,516,558 yen (the same as “General net assets at end of FY”). Figure 2 shows a graphical representation of the changes in the main indicators on the statement of changes in net assets since the foundation of the company. The graph (Figure 2) shows that all indicators, except for “Business expenses”, have increased significantly.</p>
-<figure>
-<img src="./img/fig-2.png" style="width:100.0%" alt="Figure 2: Changes in Key Indicators in the Net Assets Increase/Decrease Statement since Foundation" /><figcaption aria-hidden="true">Figure 2: Changes in Key Indicators in the Net Assets Increase/Decrease Statement since Foundation</figcaption>
-</figure>
-<p>Finally, “Ordinary increase/decrease this FY”, an indicator of whether a business is in the red or in the black, is shown graphically from its inception (Figure 3). It can be seen that the deficit amount had been increasing until the previous fiscal year, but this fiscal year it has been able to turn into a surplus (so-called single-year surplus) with a V-shaped recovery.</p>
-<figure>
-<img src="./img/fig-3.png" style="width:100.0%" alt="Changes in “Ordinary increase/decrease this FY” since foundation" /><figcaption aria-hidden="true">Changes in “Ordinary increase/decrease this FY” since foundation</figcaption>
-</figure>
-<h3 id="income-and-expenditure-statement-for-fy2021">Income and Expenditure Statement for FY2021</h3>
-<p>At the end of Chapter 1, we will look at “Income and Expenditure Statement”, which compares the budgeted amount to the closing amount during the current fiscal year (April 1, 2020 to March 31, 2021). However, since we have not developed a budget, it will remain a formality and will be substantially the same as the statement of changes in net assets in the previous section. The unit of measure is also yen.</p>
-<table>
-<colgroup>
-<col style="width: 40%" />
-<col style="width: 7%" />
-<col style="width: 23%" />
-<col style="width: 23%" />
-<col style="width: 4%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Title</th>
-<th>Budgetary Amount</th>
-<th>Settlement Amount</th>
-<th>Difference</th>
-<th>Note</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>I. General Net Assets Increase/Decrease</strong></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>1. Ordinary Increase/Decrease</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>⑴ Ordinary revenues</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>① Business income</td>
-<td>(0)</td>
-<td>(6,267,250)</td>
-<td>-6,267,250</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Business income</td>
-<td></td>
-<td>6,267,250</td>
-<td>-6,267,250</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>② Donation received</td>
-<td>(0)</td>
-<td>( 116,546)</td>
-<td>(-116,546)</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Donation received</td>
-<td></td>
-<td>116,546</td>
-<td>-116,546</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>③ Other revenues</td>
-<td>(0)</td>
-<td>(6)</td>
-<td>(-6)</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Interest received</td>
-<td>0</td>
-<td>6</td>
-<td>-6</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Total ordinary revenues</td>
-<td>0</td>
-<td>6,383,802</td>
-<td>-6,383,802</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>⑵ Ordinary expenses</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>① Business expenses</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Business expenses</td>
-<td>(0)</td>
-<td>(325,918)</td>
-<td>-325,918</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Travel and transportation expenses</td>
-<td></td>
-<td>940</td>
-<td>-940</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Communication transportation costs</td>
-<td></td>
-<td>22,000</td>
-<td>-22,000</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Consumables costs</td>
-<td></td>
-<td>97,624</td>
-<td>-97,624</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Compensation paid</td>
-<td></td>
-<td>198,000</td>
-<td>-198,000</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Newspaper book expenses</td>
-<td></td>
-<td>7,354</td>
-<td>-7,354</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Total business expenses</td>
-<td>0</td>
-<td>325,918</td>
-<td>-325,918</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>② Administrative expenses</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Outsourcing costs</td>
-<td></td>
-<td>5,175,500</td>
-<td>-5,175,500</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Total administrative expenses</td>
-<td>0</td>
-<td>5,175,500</td>
-<td>-5,175,500</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Total ordinary expenses</td>
-<td>0</td>
-<td>5,501,418</td>
-<td>-5,501,418</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Ordinary increase/decrease before valuation gain/loss this FY</td>
-<td>0</td>
-<td>882,384</td>
-<td>-882,384</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Total valuation gain/loss</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Ordinary increase/decrease this FY</td>
-<td>0</td>
-<td>882,384</td>
-<td>-882,384</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>2. Non-ordinary Increase/Decrease</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>⑴ Non-ordinary revenues</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Total non-ordinary revenues</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>⑵ Non-ordinary expenses</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Total non-ordinary expenses</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Non-ordinary increase/decrease this FY</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>General net assets increase/decrease before transfer to other accounts this FY</td>
-<td>0</td>
-<td>882,384</td>
-<td>-882,384</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>General net assets increase/decrease before taxes this FY</td>
-<td>0</td>
-<td>882,384</td>
-<td>-882,384</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Corporate tax, resident tax and business tax</td>
-<td>0</td>
-<td>20,000</td>
-<td>-20,000</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>General net assets increase/decrease this FY</td>
-<td>0</td>
-<td>882,384</td>
-<td>-882,384</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>General net assets at beginning of FY</td>
-<td>0</td>
-<td>-3,378,942</td>
-<td>3,378,942</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>General net assets at end of FY</td>
-<td>0</td>
-<td>-2,516,558</td>
-<td>2,516,558</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><strong>Ⅱ. Designated Net Assets Increase/Decrease</strong></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>II. Designated Net Assets Increase/Decrease</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Designated net assets at beginning of FY</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Designated net assets at end of FY</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><strong>III. Net Assets at End of FY</strong></td>
-<td>0</td>
-<td>-2,516,558</td>
-<td>2,516,558</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h2 id="chapter-2-activity-report-for-fy2021"><strong>Chapter 2: Activity Report for FY2021</strong></h2>
-<h3 id="foreword-1">Foreword</h3>
-<p>This fiscal year we were able to achieve a profit for the single fiscal year. The direct cause of this was the expansion of contracted development from outside companies, as mentioned in the previous chapter. However, behind this is the fact that Vivliostyle products have been enhanced and the ecosystem among these products has begun to function. In other words, without these factors, there would have been no expansion of contract development.</p>
-<p>Therefore, this chapter describes the development status of each of the Vivliostyle products. We will also explore the challenges for the next fiscal year. Again, this is because we have an accumulated deficit, which is not small, and eliminating it is our immediate goal.</p>
-<h3 id="classification-of-products-and-their-roles">Classification of products and their roles</h3>
-<p>Before reporting on the development status of each product, let us review its position in the product lineup. The increase in the number of products in recent years has been gratifying, but it has become difficult to understand from the outside what role each product plays and how it fits into the overall product lineup.</p>
+<p>This fiscal year we were able to achieve a profit for the single
+fiscal year. The direct cause of this was the expansion of contracted
+development from outside companies, as mentioned in the previous
+chapter. However, behind this is the fact that Vivliostyle products have
+been enhanced and the ecosystem among these products has begun to
+function. In other words, without these factors, there would have been
+no expansion of contract development.</p>
+<p>Therefore, this chapter describes the development status of each of
+the Vivliostyle products. We will also explore the challenges for the
+next fiscal year. Again, this is because we have an accumulated deficit,
+which is not small, and eliminating it is our immediate goal.</p>
+<h3 id="classification-of-products-and-their-roles">Classification of
+products and their roles</h3>
+<p>Before reporting on the development status of each product, let us
+review its position in the product lineup. The increase in the number of
+products in recent years has been gratifying, but it has become
+difficult to understand from the outside what role each product plays
+and how it fits into the overall product lineup.</p>
 <ul>
-<li><strong>Libraries (“common components” that are built into the application)</strong>
+<li><strong>Libraries (“common components” that are built into the
+application)</strong>
 <ul>
-<li><a href="https://github.com/vivliostyle/vivliostyle.js">Vivliostyle.js (including Vivliostyle Viewer)</a></li>
-<li><a href="https://github.com/vivliostyle/vfm">VFM (Vivliostyle Flavored Markdown)</a></li>
-<li><a href="https://github.com/vivliostyle/themes">Vivliostyle Themes</a></li>
+<li><a
+href="https://github.com/vivliostyle/vivliostyle.js">Vivliostyle.js
+(including Vivliostyle Viewer)</a></li>
+<li><a href="https://github.com/vivliostyle/vfm">VFM (Vivliostyle
+Flavored Markdown)</a></li>
+<li><a href="https://github.com/vivliostyle/themes">Vivliostyle
+Themes</a></li>
 </ul></li>
 <li><strong>Generator (converts Markdown+CSS to HTML+CSS)</strong>
 <ul>
-<li><a href="https://github.com/vivliostyle/vivliostyle-cli">Vivliostyle CLI</a></li>
-<li><a href="https://github.com/vivliostyle/create-book">create-book</a></li>
-<li><a href="https://github.com/vivliostyle/vivliostyle-sitegen">vivliostyle-sitegen</a></li>
+<li><a href="https://github.com/vivliostyle/vivliostyle-cli">Vivliostyle
+CLI</a></li>
+<li><a
+href="https://github.com/vivliostyle/create-book">create-book</a></li>
+<li><a
+href="https://github.com/vivliostyle/vivliostyle-sitegen">vivliostyle-sitegen</a></li>
 </ul></li>
 <li><strong>Web application (application integrating the above)</strong>
 <ul>
-<li><a href="https://github.com/vivliostyle/vivliostyle-pub">Vivliostyle Pub</a></li>
+<li><a href="https://github.com/vivliostyle/vivliostyle-pub">Vivliostyle
+Pub</a></li>
 </ul></li>
-<li><strong>Web content and its production system (documents sites related to Vivliostyle)</strong>
+<li><strong>Web content and its production system (documents sites
+related to Vivliostyle)</strong>
 <ul>
-<li><a href="https://github.com/vivliostyle/vivliostyle.org">vivliostyle.org</a>（<a href="https://vivliostyle.org/ja/">Foundation’s official website</a>）</li>
-<li><a href="https://github.com/vivliostyle/docs.vivliostyle.org">docs.vivliostyle.org</a> （<a href="https://vivliostyle.org/ja/documents/">User guides for each product</a>）</li>
-<li><a href="https://github.com/vivliostyle/docs-vivliostyle-pub">docs-vivliostyle-pub</a> （<a href="https://vivliostyle.github.io/docs-vivliostyle-pub/#/ja/">Vivliostyle Pub User Guide</a>）</li>
-<li><a href="https://github.com/vivliostyle/vivliostyle_doc">vivliostyle_doc</a>（<a href="https://vivliostyle.org/ja/samples/">Sample pages</a>や<a href="https://vivliostyle.org/ja/about-us/">Activity Reports</a>）</li>
+<li><a
+href="https://github.com/vivliostyle/vivliostyle.org">vivliostyle.org</a>（<a
+href="https://vivliostyle.org/ja/">Foundation’s official
+website</a>）</li>
+<li><a
+href="https://github.com/vivliostyle/docs.vivliostyle.org">docs.vivliostyle.org</a>
+（<a href="https://vivliostyle.org/ja/documents/">User guides for each
+product</a>）</li>
+<li><a
+href="https://github.com/vivliostyle/docs-vivliostyle-pub">docs-vivliostyle-pub</a>
+（<a
+href="https://vivliostyle.github.io/docs-vivliostyle-pub/#/ja/">Vivliostyle
+Pub User Guide</a>）</li>
+<li><a
+href="https://github.com/vivliostyle/vivliostyle_doc">vivliostyle_doc</a>（<a
+href="https://vivliostyle.org/ja/samples/">Sample pages</a>や<a
+href="https://vivliostyle.org/ja/about-us/">Activity Reports</a>）</li>
 </ul></li>
 </ul>
-<p>The above links are to the respective repositories. In other words, the above classification is also a classification of repositories. However, the above classifications are for the sake of clarity and are not necessarily strict. For example, VFM is not only a library but also a generator that converts Markdown to HTML.</p>
-<p>From the next section, we will explain the development status of each product in the current fiscal year according to the above classification, referring to announcements made at user events, blog posts, and other sources. For reference, the beginning of FY and end of FY versions are shown in parentheses (except Vivliostyle Themes and Vivliostyle Pub, which have no concept of release as a product).</p>
-<h3 id="library-vivliostyle.js-v2.6.2---v2.14.4">Library: Vivliostyle.js (v2.6.2 -&gt; v2.14.4)</h3>
-<p><a href="https://github.com/vivliostyle/vivliostyle.js">Vivliostyle.js</a> is the actual CSS typesetting software and is the core of the Vivliostyle product. Fortunately, we were able to make significant functional improvements to this product this fiscal year, as follows.</p>
+<p>The above links are to the respective repositories. In other words,
+the above classification is also a classification of repositories.
+However, the above classifications are for the sake of clarity and are
+not necessarily strict. For example, VFM is not only a library but also
+a generator that converts Markdown to HTML.</p>
+<p>From the next section, we will explain the development status of each
+product in the current fiscal year according to the above
+classification, referring to announcements made at user events, blog
+posts, and other sources. For reference, the beginning of FY and end of
+FY versions are shown in parentheses (except Vivliostyle Themes and
+Vivliostyle Pub, which have no concept of release as a product).</p>
+<h3 id="library-vivliostyle.js-v2.6.2---v2.14.4">Library: Vivliostyle.js
+(v2.6.2 -&gt; v2.14.4)</h3>
+<p><a
+href="https://github.com/vivliostyle/vivliostyle.js">Vivliostyle.js</a>
+is the actual CSS typesetting software and is the core of the
+Vivliostyle product. Fortunately, we were able to make significant
+functional improvements to this product this fiscal year, as
+follows.</p>
 <ul>
 <li><strong>Improved typesetting capabilities</strong>
 <ul>
-<li><a href="https://www.youtube.com/watch?v=_y3YBHNN2Oc">Presentation: Implementing CSS Paged Media in Vivliostyle Core; Japanese</a> (Shinyu Murakami)</li>
-<li><a href="https://www.youtube.com/watch?v=2hvsMhTJai4">Presentation: Vivliostyle.js evolution and future development plans; Japanese</a> (Shinyu Murakami)</li>
-<li><a href="https://vivliostyle.org/blog/2021/10/12/recent-vivliostyle-js-updates/">Blog: Recent Vivliostyle.js updates</a> (Katsuhiro Ogata)</li>
-<li><a href="https://vivliostyle.org/blog/2022/02/08/Improved-of-line-end-handling-and-support-for-page-progression-direction-in-PDF/">Blog: Line end handling has been evolved to allow multiple typesetting options</a> (Katsuhiro Ogata)</li>
+<li><a href="https://www.youtube.com/watch?v=_y3YBHNN2Oc">Presentation:
+Implementing CSS Paged Media in Vivliostyle Core; Japanese</a> (Shinyu
+Murakami)</li>
+<li><a href="https://www.youtube.com/watch?v=2hvsMhTJai4">Presentation:
+Vivliostyle.js evolution and future development plans; Japanese</a>
+(Shinyu Murakami)</li>
+<li><a
+href="https://vivliostyle.org/blog/2021/10/12/recent-vivliostyle-js-updates/">Blog:
+Recent Vivliostyle.js updates</a> (Katsuhiro Ogata)</li>
+<li><a
+href="https://vivliostyle.org/blog/2022/02/08/Improved-of-line-end-handling-and-support-for-page-progression-direction-in-PDF/">Blog:
+Line end handling has been evolved to allow multiple typesetting
+options</a> (Katsuhiro Ogata)</li>
 </ul></li>
 <li><strong>Enables JavaScript execution from within HTML</strong>
 <ul>
-<li><a href="https://vivliostyle.org/blog/2022/01/24/JavaScript-can-now-be-used-in-typesetting-by-Vivliostyle/">Blog: JavaScript can now be used in typesetting by Vivliostyle</a> (Katsuhiro Ogata)</li>
+<li><a
+href="https://vivliostyle.org/blog/2022/01/24/JavaScript-can-now-be-used-in-typesetting-by-Vivliostyle/">Blog:
+JavaScript can now be used in typesetting by Vivliostyle</a> (Katsuhiro
+Ogata)</li>
 </ul></li>
 <li><strong>Web font support</strong>
 <ul>
-<li><a href="https://www.youtube.com/watch?v=Hz5_Wd7d5lw">Presentation: Trying to use web fonts in Vivliostyle Pub; Japanese</a> (Katsuhiro Ogata)</li>
-<li><a href="https://www.youtube.com/watch?v=czVRSsekLjc">Presentation: Survey for using Web fonts in Vivliostyle; Japanese</a> (Katsuhiro Ogata)</li>
+<li><a href="https://www.youtube.com/watch?v=Hz5_Wd7d5lw">Presentation:
+Trying to use web fonts in Vivliostyle Pub; Japanese</a> (Katsuhiro
+Ogata)</li>
+<li><a href="https://www.youtube.com/watch?v=czVRSsekLjc">Presentation:
+Survey for using Web fonts in Vivliostyle; Japanese</a> (Katsuhiro
+Ogata)</li>
 </ul></li>
 </ul>
-<p>So how were these features developed? The graph shows the number of pull requests per month in the repository and compared with the previous fiscal year (Fig. 4 / Excluding automatic processing, only pull requests by humans were targeted. The same applies hereafter).</p>
+<p>So how were these features developed? The graph shows the number of
+pull requests per month in the repository and compared with the previous
+fiscal year (Fig. 4 / Excluding automatic processing, only pull requests
+by humans were targeted. The same applies hereafter).</p>
 <figure>
-<img src="./img/fig-4.png" style="width:100.0%" alt="Figure 4: Monthly pull requests for the Vivliostyle.js repository compared to the previous fiscal year" /><figcaption aria-hidden="true">Figure 4: Monthly pull requests for the Vivliostyle.js repository compared to the previous fiscal year</figcaption>
+<img src="./img/fig-4.png" style="width:100.0%"
+alt="Figure 4: Monthly pull requests for the Vivliostyle.js repository compared to the previous fiscal year" />
+<figcaption aria-hidden="true">Figure 4: Monthly pull requests for the
+Vivliostyle.js repository compared to the previous fiscal
+year</figcaption>
 </figure>
-<p>The previous fiscal year also saw constant pull requests throughout the year, but the pace of development this fiscal year was even faster than that. The functional upgrades mentioned above were also realized as a result of such enthusiastic development.</p>
-<p>The important thing here is that the enhancements Vivliostyle.js also spilled over into the Vivliostyle CLI and Vivliostyle Pub that incorporated it, and they immediately implemented the new features. It was a scene where the true nature of the library was demonstrated.</p>
-<h3 id="library-vfm-v1.0.0-alpha.17---v1.2.1">Library: VFM (v1.0.0-alpha.17 -&gt; v1.2.1)</h3>
-<p>VFM (Vivliostyle Flavored Markdown)(https://github.com/vivliostyle/vfm), a Markdown dialect optimized for book typesetting, has released v1 this fiscal year. This v1 is partly a preparation for the upcoming v2.</p>
-<p>Originally, this product used <a href="https://remark.js.org/">Remark</a> as its Markdown conversion engine. However, its new version, Remark 13, contains many changes that are incompatible with past versions, and its implementation was expected to be a significant amount of work.</p>
-<p>Therefore, we decided to first release a version with a range of functions that can be implemented without Remark 13 as v1, and then work on support for Remark 13 as v2. For details, please refer to the presentation by <a href="https://github.com/akabekobeko">akabekobeko</a>, the maintainer.</p>
+<p>The previous fiscal year also saw constant pull requests throughout
+the year, but the pace of development this fiscal year was even faster
+than that. The functional upgrades mentioned above were also realized as
+a result of such enthusiastic development.</p>
+<p>The important thing here is that the enhancements Vivliostyle.js also
+spilled over into the Vivliostyle CLI and Vivliostyle Pub that
+incorporated it, and they immediately implemented the new features. It
+was a scene where the true nature of the library was demonstrated.</p>
+<h3 id="library-vfm-v1.0.0-alpha.17---v1.2.1">Library: VFM
+(v1.0.0-alpha.17 -&gt; v1.2.1)</h3>
+<p>VFM (Vivliostyle Flavored
+Markdown)(https://github.com/vivliostyle/vfm), a Markdown dialect
+optimized for book typesetting, has released v1 this fiscal year. This
+v1 is partly a preparation for the upcoming v2.</p>
+<p>Originally, this product used <a
+href="https://remark.js.org/">Remark</a> as its Markdown conversion
+engine. However, its new version, Remark 13, contains many changes that
+are incompatible with past versions, and its implementation was expected
+to be a significant amount of work.</p>
+<p>Therefore, we decided to first release a version with a range of
+functions that can be implemented without Remark 13 as v1, and then work
+on support for Remark 13 as v2. For details, please refer to the
+presentation by <a
+href="https://github.com/akabekobeko">akabekobeko</a>, the
+maintainer.</p>
 <ul>
-<li><a href="https://speakerdeck.com/akabekobeko/vfm-dev-stat">Presentation: Development status of Vivliostyle Flavored Markdown; Japanese</a>（akabekobeko）</li>
+<li><a
+href="https://speakerdeck.com/akabekobeko/vfm-dev-stat">Presentation:
+Development status of Vivliostyle Flavored Markdown;
+Japanese</a>（akabekobeko）</li>
 </ul>
-<p>The <a href="https://github.com/vivliostyle/vfm/releases/tag/v1.0.2">v1.0.2</a> released on July 21, 2021 implements the functionality that can be achieved without this Remark 13. See below for details.</p>
+<p>The <a
+href="https://github.com/vivliostyle/vfm/releases/tag/v1.0.2">v1.0.2</a>
+released on July 21, 2021 implements the functionality that can be
+achieved without this Remark 13. See below for details.</p>
 <ul>
-<li><a href="https://www.youtube.com/watch?v=lF6Mb2DXJK0">Presentation: Release of VFM 1.0 and future prospects; Japanese</a>（akabekobeko）</li>
+<li><a href="https://www.youtube.com/watch?v=lF6Mb2DXJK0">Presentation:
+Release of VFM 1.0 and future prospects;
+Japanese</a>（akabekobeko）</li>
 </ul>
-<p>As with Vivliostyle.js, these enhancements were quickly implemented in the Vivliostyle CLI and other products.</p>
+<p>As with Vivliostyle.js, these enhancements were quickly implemented
+in the Vivliostyle CLI and other products.</p>
 <ul>
-<li><a href="https://github.com/vivliostyle/vfm/milestone/3?closed=1">v1.x</a></li>
+<li><a
+href="https://github.com/vivliostyle/vfm/milestone/3?closed=1">v1.x</a></li>
 </ul>
 <h3 id="library-vivliostyle-themes">Library: Vivliostyle Themes</h3>
-<p><a href="https://github.com/vivliostyle/themes">This product</a> is a library of style files that all Vivliostyle products share. It consists of a set of Theme files that define styles and a set of tools for creating these Themes.</p>
-<p>Several minor updates were made this fiscal year. However, the most significant achievement is the release of the User’s Guide, which is shown below.</p>
+<p><a href="https://github.com/vivliostyle/themes">This product</a> is a
+library of style files that all Vivliostyle products share. It consists
+of a set of Theme files that define styles and a set of tools for
+creating these Themes.</p>
+<p>Several minor updates were made this fiscal year. However, the most
+significant achievement is the release of the User’s Guide, which is
+shown below.</p>
 <ul>
-<li><a href="https://vivliostyle.github.io/themes/#/tutorial/step0.md">Development Tutorial</a></li>
-<li><a href="https://vivliostyle.github.io/themes/#/official">Operational Guideline</a></li>
+<li><a
+href="https://vivliostyle.github.io/themes/#/tutorial/step0.md">Development
+Tutorial</a></li>
+<li><a
+href="https://vivliostyle.github.io/themes/#/official">Operational
+Guideline</a></li>
 </ul>
-<p>This product will allow users to create documents faster and easier by eliminating the need to set up new styles when using Vivliostyle products. However, to achieve this, it is necessary to publish a wide variety of themes in response to user demand. However, it is not realistic for us to create and publish many themes by ourselves. We need to make it easy for individual users to create new themes and to make them easily available to the public. This will make this product more useful as a library, which in turn will encourage the creation of new themes.</p>
-<p>However, at present, awareness of this product is low and there is still a long way to go to reach the goal. Therefore, <a href="https://github.com/yamasy1549">yamasy1549</a>, the maintainer of this product, decided to develop a document to let people know how to use the Theme and how to create it. The above user guide is the first step. For more details, please refer to the following.</p>
+<p>This product will allow users to create documents faster and easier
+by eliminating the need to set up new styles when using Vivliostyle
+products. However, to achieve this, it is necessary to publish a wide
+variety of themes in response to user demand. However, it is not
+realistic for us to create and publish many themes by ourselves. We need
+to make it easy for individual users to create new themes and to make
+them easily available to the public. This will make this product more
+useful as a library, which in turn will encourage the creation of new
+themes.</p>
+<p>However, at present, awareness of this product is low and there is
+still a long way to go to reach the goal. Therefore, <a
+href="https://github.com/yamasy1549">yamasy1549</a>, the maintainer of
+this product, decided to develop a document to let people know how to
+use the Theme and how to create it. The above user guide is the first
+step. For more details, please refer to the following.</p>
 <ul>
-<li><a href="https://www.youtube.com/watch?v=auqefAA0Bx0">Presentation: Hands-on with Vivliostyle Themes; Japanese</a>（yamasy1549）</li>
-<li><a href="https://www.youtube.com/watch?v=NioXx9NFUZU">Presentation: CSS typesetting tutorial starting at vivliostyle.org; Japanese</a>（yamasy1549）</li>
+<li><a href="https://www.youtube.com/watch?v=auqefAA0Bx0">Presentation:
+Hands-on with Vivliostyle Themes; Japanese</a>（yamasy1549）</li>
+<li><a href="https://www.youtube.com/watch?v=NioXx9NFUZU">Presentation:
+CSS typesetting tutorial starting at vivliostyle.org;
+Japanese</a>（yamasy1549）</li>
 </ul>
-<h3 id="generator-vivliostyle-cli-v3.2.1---v4.8.2">Generator: Vivliostyle CLI (v3.2.1 -&gt; v4.8.2)</h3>
-<p><a href="(https://github.com/vivliostyle/vivliostyle-cli)">This product</a> converts Markdown to HTML by CLI (command line interface) and outputs it. First, please take a look at the graph comparing the number of monthly pull requests with the previous fiscal year. Although not as high as in the previous fiscal year, the graph shows that development continued consistently during this fiscal year (Figure 5).</p>
+<h3 id="generator-vivliostyle-cli-v3.2.1---v4.8.2">Generator:
+Vivliostyle CLI (v3.2.1 -&gt; v4.8.2)</h3>
+<p><a href="(https://github.com/vivliostyle/vivliostyle-cli)">This
+product</a> converts Markdown to HTML by CLI (command line interface)
+and outputs it. First, please take a look at the graph comparing the
+number of monthly pull requests with the previous fiscal year. Although
+not as high as in the previous fiscal year, the graph shows that
+development continued consistently during this fiscal year (Figure
+5).</p>
 <figure>
-<img src="./img/fig-5.png" style="width:80.0%" alt="Figure 5: Monthly pull requests for the Vivliostyle CLI repository compared to the previous fiscal year" /><figcaption aria-hidden="true">Figure 5: Monthly pull requests for the Vivliostyle CLI repository compared to the previous fiscal year</figcaption>
+<img src="./img/fig-5.png" style="width:80.0%"
+alt="Figure 5: Monthly pull requests for the Vivliostyle CLI repository compared to the previous fiscal year" />
+<figcaption aria-hidden="true">Figure 5: Monthly pull requests for the
+Vivliostyle CLI repository compared to the previous fiscal
+year</figcaption>
 </figure>
-<p>As a result of these developments, the product was able to achieve a variety of functional enhancements this fiscal year. The most significant of these is support for Docker mode, which allows execution in a virtual environment (<a href="https://github.com/vivliostyle/vivliostyle-cli/releases/tag/v4.0.0">v4.0.0</a>). Docker virtualizes the program execution environment. This frees users from the trouble of output results changing when the OS, browser, or Vivliostyle CLI itself is upgraded. This kind of idempotency/reliability should be essential for users who want to use the Vivliostyle CLI in practice.</p>
-<p>Here, let’s explain the update contents after v4.0.0 by referring to the presentation <a href="https://www.youtube.com/watch?v=GMzLJ17MLOk">“Vivliostyle CLI update –2022 Spring”</a> in <a href="https://vivliostyle.connpass.com/event/208401/">“Vivliostyle User / Dev Meetup 2022 Spring”</a> by <a href="https://github.com/spring-raining">spring-raining</a> who is the maintainer of this product.</p>
+<p>As a result of these developments, the product was able to achieve a
+variety of functional enhancements this fiscal year. The most
+significant of these is support for Docker mode, which allows execution
+in a virtual environment (<a
+href="https://github.com/vivliostyle/vivliostyle-cli/releases/tag/v4.0.0">v4.0.0</a>).
+Docker virtualizes the program execution environment. This frees users
+from the trouble of output results changing when the OS, browser, or
+Vivliostyle CLI itself is upgraded. This kind of idempotency/reliability
+should be essential for users who want to use the Vivliostyle CLI in
+practice.</p>
+<p>Here, let’s explain the update contents after v4.0.0 by referring to
+the presentation <a
+href="https://www.youtube.com/watch?v=GMzLJ17MLOk">“Vivliostyle CLI
+update –2022 Spring”</a> in <a
+href="https://vivliostyle.connpass.com/event/208401/">“Vivliostyle User
+/ Dev Meetup 2022 Spring”</a> by <a
+href="https://github.com/spring-raining">spring-raining</a> who is the
+maintainer of this product.</p>
 <ul>
-<li>Added <code>--http</code> option for use of external Web font services, etc. <a href="https://github.com/vivliostyle/vivliostyle-cli/pull/234">#234</a></li>
-<li>Added <code>--viewer</code> option to specify a viewer other than the preinstalled one <a href="https://github.com/vivliostyle/vivliostyle-cli/pull/234">#234</a></li>
-<li>Improved meta information in output PDF with more detail <a href="https://github.com/vivliostyle/vivliostyle-cli/pull/239">#239</a></li>
-<li>PDF reading direction (right/left binding) can be specified <a href="https://github.com/vivliostyle/vivliostyle-cli/pull/240">#240</a></li>
-<li>CLI commands are converted to API and can be operated from JavaScript <a href="https://github.com/vivliostyle/vivliostyle-cli/pull/243">#243</a></li>
-<li>Multiple publications can now be output simultaneously <a href="https://github.com/vivliostyle/vivliostyle-cli/pull/268">#268</a></li>
-<li><code>vfm</code> options in vivliostyle.config.js can now be passed directly to the internal VFM execution. <a href="https://github.com/vivliostyle/vivliostyle-cli/pull/264">#264</a></li>
-<li>Improved error output for better readability <a href="https://github.com/vivliostyle/vivliostyle-cli/pull/264">#264</a></li>
+<li>Added <code>--http</code> option for use of external Web font
+services, etc. <a
+href="https://github.com/vivliostyle/vivliostyle-cli/pull/234">#234</a></li>
+<li>Added <code>--viewer</code> option to specify a viewer other than
+the preinstalled one <a
+href="https://github.com/vivliostyle/vivliostyle-cli/pull/234">#234</a></li>
+<li>Improved meta information in output PDF with more detail <a
+href="https://github.com/vivliostyle/vivliostyle-cli/pull/239">#239</a></li>
+<li>PDF reading direction (right/left binding) can be specified <a
+href="https://github.com/vivliostyle/vivliostyle-cli/pull/240">#240</a></li>
+<li>CLI commands are converted to API and can be operated from
+JavaScript <a
+href="https://github.com/vivliostyle/vivliostyle-cli/pull/243">#243</a></li>
+<li>Multiple publications can now be output simultaneously <a
+href="https://github.com/vivliostyle/vivliostyle-cli/pull/268">#268</a></li>
+<li><code>vfm</code> options in vivliostyle.config.js can now be passed
+directly to the internal VFM execution. <a
+href="https://github.com/vivliostyle/vivliostyle-cli/pull/264">#264</a></li>
+<li>Improved error output for better readability <a
+href="https://github.com/vivliostyle/vivliostyle-cli/pull/264">#264</a></li>
 </ul>
-<p>In his presentation, spring-raining described his vision for the future of this product as follows Expectations for the next fiscal year are growing.</p>
+<p>In his presentation, spring-raining described his vision for the
+future of this product as follows Expectations for the next fiscal year
+are growing.</p>
 <ul>
 <li><strong>Expansion of output destinations</strong>
 <ul>
@@ -954,74 +352,255 @@
 <li>Other Markdown Dialects</li>
 <li>Text formatting for various novel submission sites</li>
 </ul></li>
-<li><strong>Ability to add a cover page in conjunction with an external image service</strong></li>
+<li><strong>Ability to add a cover page in conjunction with an external
+image service</strong></li>
 </ul>
-<h3 id="generator-create-book-v0.1.6---v0.5.1">Generator: create-book (v0.1.6 -&gt; v0.5.1)</h3>
-<p><a href="https://github.com/vivliostyle/create-book">This product</a> is a software, or installer, that allows users to interactively build an execution environment for the Vivliostyle CLI. However, there were some maintenance updates this fiscal year and no major functional upgrades.</p>
-<h3 id="generator-vivliostyle-sitegen">Generator: vivliostyle-sitegen</h3>
-<p><a href="https://github.com/vivliostyle/vivliostyle-sitegen">This product</a> was conceived as a static site generator using VFM, and development of this product was newly started this fiscal year.</p>
-<p>The original trigger was a free discussion session at a user event in the fall (“Vivliostyle User/Dev Meetup Autumn 2021”](https://vivliostyle.connpass.com/event/227954/) on November 14, 2021) in which VFM released v1, but there were voices saying that it was a pity that VFM could not use it on the Vivliostyle site. In response, VFM maintainer <a href="https://github.com/akabekobeko">akabekobeko</a> raised his hand, and development began in January 2022.</p>
-<p>Development is currently underway with the aim of releasing the system within the next fiscal year. After the release, the system will be implemented in a document production system for Vivliostyle users, such as <a href="https://github.com/vivliostyle/vivliostyle.org">vivliostyle.org</a>. Once this happens, it will be possible to disseminate information about Vivliostyle using VFM, which has a wealth of expressive power. In this way, the Vivliostyle ecosystem will expand even further.</p>
-<h3 id="web-application-vivliostyle-pub">Web application: Vivliostyle Pub</h3>
-<p><a href="https://github.com/vivliostyle/vivliostyle-pub">This product</a> is a web application that deploys Vivliostyle.js, VFM, Vivliostyle Themes, and Vivliostyle CLI on the cloud. When a user writes Markdown on the left side of the browser, CSS typesetting is immediately performed and previewed on the right side of the browser (Figure 6).</p>
+<h3 id="generator-create-book-v0.1.6---v0.5.1">Generator: create-book
+(v0.1.6 -&gt; v0.5.1)</h3>
+<p><a href="https://github.com/vivliostyle/create-book">This product</a>
+is a software, or installer, that allows users to interactively build an
+execution environment for the Vivliostyle CLI. However, there were some
+maintenance updates this fiscal year and no major functional
+upgrades.</p>
+<h3 id="generator-vivliostyle-sitegen">Generator:
+vivliostyle-sitegen</h3>
+<p><a href="https://github.com/vivliostyle/vivliostyle-sitegen">This
+product</a> was conceived as a static site generator using VFM, and
+development of this product was newly started this fiscal year.</p>
+<p>The original trigger was a free discussion session at a user event in
+the fall (“Vivliostyle User/Dev Meetup Autumn
+2021”](https://vivliostyle.connpass.com/event/227954/) on November 14,
+2021) in which VFM released v1, but there were voices saying that it was
+a pity that VFM could not use it on the Vivliostyle site. In response,
+VFM maintainer <a href="https://github.com/akabekobeko">akabekobeko</a>
+raised his hand, and development began in January 2022.</p>
+<p>Development is currently underway with the aim of releasing the
+system within the next fiscal year. After the release, the system will
+be implemented in a document production system for Vivliostyle users,
+such as <a
+href="https://github.com/vivliostyle/vivliostyle.org">vivliostyle.org</a>.
+Once this happens, it will be possible to disseminate information about
+Vivliostyle using VFM, which has a wealth of expressive power. In this
+way, the Vivliostyle ecosystem will expand even further.</p>
+<h3 id="web-application-vivliostyle-pub">Web application: Vivliostyle
+Pub</h3>
+<p><a href="https://github.com/vivliostyle/vivliostyle-pub">This
+product</a> is a web application that deploys Vivliostyle.js, VFM,
+Vivliostyle Themes, and Vivliostyle CLI on the cloud. When a user writes
+Markdown on the left side of the browser, CSS typesetting is immediately
+performed and previewed on the right side of the browser (Figure 6).</p>
 <figure>
-<img src="./img/fig-6.png" style="width:100.0%" alt="Figure 6: Vivliostyle Pub, which released an alpha version" /><figcaption aria-hidden="true">Figure 6: Vivliostyle Pub, which released an alpha version</figcaption>
+<img src="./img/fig-6.png" style="width:100.0%"
+alt="Figure 6: Vivliostyle Pub, which released an alpha version" />
+<figcaption aria-hidden="true">Figure 6: Vivliostyle Pub, which released
+an alpha version</figcaption>
 </figure>
-<p>The project was originally launched in a hurry to apply for the Unexplored Advanced Project in FY2019 with the aim of securing development funds. After two months of intensive development by a team of committers, the project was completed to PoC (Proof of Concept) in May 2020 (see <a href="https://vivliostyle.org/viewer/#src=https://vivliostyle.github.io/vivliostyle_doc/en/reports/vivliostyle-report-2020/vf2020report.html&amp;bookMode=true&amp;userStyle=data:,/*%3Cviewer%3E*/%0A@page%20%7B%20size:%20A4;%20%7D%0A/*%3C/viewer%3E*/&amp;f=epubcfi(/2!/4/38/1:193%5Bpromote,support%5D)">annual report for the previous fiscal year</a>).</p>
-<p>However, after the lose in June 2020, the committers gradually left, and only <a href="https://github.com/takanakahiko">takanakahiko</a> remained and continued to develop steadily. This situation changed drastically in November 2021, when <a href="https://github.com/AyumuTakai">AyumuTakai</a> joined the project. The graph below shows the number of monthly pull requests for this product compared to the previous fiscal year (Figure 7).</p>
+<p>The project was originally launched in a hurry to apply for the
+Unexplored Advanced Project in FY2019 with the aim of securing
+development funds. After two months of intensive development by a team
+of committers, the project was completed to PoC (Proof of Concept) in
+May 2020 (see <a
+href="https://vivliostyle.org/viewer/#src=https://vivliostyle.github.io/vivliostyle_doc/en/reports/vivliostyle-report-2020/vf2020report.html&amp;bookMode=true&amp;userStyle=data:,/*%3Cviewer%3E*/%0A@page%20%7B%20size:%20A4;%20%7D%0A/*%3C/viewer%3E*/&amp;f=epubcfi(/2!/4/38/1:193%5Bpromote,support%5D)">annual
+report for the previous fiscal year</a>).</p>
+<p>However, after the lose in June 2020, the committers gradually left,
+and only <a href="https://github.com/takanakahiko">takanakahiko</a>
+remained and continued to develop steadily. This situation changed
+drastically in November 2021, when <a
+href="https://github.com/AyumuTakai">AyumuTakai</a> joined the project.
+The graph below shows the number of monthly pull requests for this
+product compared to the previous fiscal year (Figure 7).</p>
 <figure>
-<img src="./img/fig-7.png" style="width:100.0%" alt="Figure 7: Monthly pull requests in the Vivliostyle Pub repository compared to the previous fiscal year" /><figcaption aria-hidden="true">Figure 7: Monthly pull requests in the Vivliostyle Pub repository compared to the previous fiscal year</figcaption>
+<img src="./img/fig-7.png" style="width:100.0%"
+alt="Figure 7: Monthly pull requests in the Vivliostyle Pub repository compared to the previous fiscal year" />
+<figcaption aria-hidden="true">Figure 7: Monthly pull requests in the
+Vivliostyle Pub repository compared to the previous fiscal
+year</figcaption>
 </figure>
-<p>At first glance, there are more pull requests in the first half of this fiscal year than in the previous fiscal year (this is takanakahiko’s work), but from November to February of the following year, when Ayumu Takai joined, there does not seem to be much difference between the previous fiscal year and this fiscal year. Let us change the indicator and look at the graph comparing the number of monthly commits with the previous fiscal year (Figure 8).</p>
+<p>At first glance, there are more pull requests in the first half of
+this fiscal year than in the previous fiscal year (this is
+takanakahiko’s work), but from November to February of the following
+year, when Ayumu Takai joined, there does not seem to be much difference
+between the previous fiscal year and this fiscal year. Let us change the
+indicator and look at the graph comparing the number of monthly commits
+with the previous fiscal year (Figure 8).</p>
 <figure>
-<img src="./img/fig-8.svg" style="width:100.0%" alt="Figure 8: Number of monthly commits in the Vivliostyle Pub repository compared to the previous fiscal year" /><figcaption aria-hidden="true">Figure 8: Number of monthly commits in the Vivliostyle Pub repository compared to the previous fiscal year</figcaption>
+<img src="./img/fig-8.svg" style="width:100.0%"
+alt="Figure 8: Number of monthly commits in the Vivliostyle Pub repository compared to the previous fiscal year" />
+<figcaption aria-hidden="true">Figure 8: Number of monthly commits in
+the Vivliostyle Pub repository compared to the previous fiscal
+year</figcaption>
 </figure>
-<p>The blue line shows the number of commits to the default branch in the previous fiscal year, and the green line shows the number of commits to the default branch in the current fiscal year. Looking at these two lines, as with the monthly number of pull requests in Figure 7 above, it appears that not much development progress was made from November to February of the following year. However, note the gray line. This is the number of monthly commits by Ayumu Takai on the <code>prototype</code> branch for the current term. The number of commits in April and May of the previous fiscal year was the result of a team of four to five developers, but the number of commits by just one person exceeds that number. However, the development method was somewhat irregular.</p>
-<p>AyumuTakai started development on the <code>prototype</code> branch on November 2, but did not submit a pull request to the default branch until February, and has been accumulating many commits on the <code>prototype</code> branch. Perhaps, as a result of adding many improvements one after another, he lost the timing to submit a pull request. In the end, he left the <code>prototype</code> branch as it was and created a new branch called <code>pre_alpha</code> on February 3, from which he submitted only one pull request to the default branch.</p>
-<p>As a result, although AyumuTakai’s work hardly appeared in the number of pull requests shown in Figure 7 above, his contribution could be visualized by superimposing the number of commits in the prototype branch in Figure 8 above. In this pull request, <a href="https://github.com/vivliostyle/vivliostyle-pub/pull/142">アルファ版準備 #142</a>, you can see a list of user interface changes and added features added at this time. It can be seen that all of them were indispensable elements for the normal use of this product (AyumuTakai withdrew from development at the end of March due to the busyness of its main business. We sincerely appreciate his contribution).</p>
-<p>So far, we have described the contributions of AyumuTakai and takanakahiko, who were directly responsible for the development of this product. However, it is important not to forget that this product has been able to incorporate the results of the Vivliostyle.js, VFM, Vivliostyle Themes, and Vivliostyle CLI updates described in the previous sections, simply by replacing the components. This means that this product has been able to incorporate the results of the Vivliostyle.js, VFM, Vivliostyle Themes, and Vivliostyle CLI updates by simply replacing components.</p>
-<p>For example, in Figure 6 above, the Web font is displayed, but this is not this product, but a function realized by the update of the Vivliostyle .js. You can truly feel the power of Vivliostyle products as an ecosystem.</p>
-<p>In this way, although it was far behind our original goal, we were able to announce the alpha release of this product at the <a href="https://vivliostyle.connpass.com/event/227954/">“Vivliostyle User / Dev Meetup 2022 Spring”</a> held on April 23, 2022.</p>
-<h3 id="web-content-and-its-production-system">Web content and its production system</h3>
-<p>This section will collectively address the following user documents related to Vivliostyle and its production system.</p>
+<p>The blue line shows the number of commits to the default branch in
+the previous fiscal year, and the green line shows the number of commits
+to the default branch in the current fiscal year. Looking at these two
+lines, as with the monthly number of pull requests in Figure 7 above, it
+appears that not much development progress was made from November to
+February of the following year. However, note the gray line. This is the
+number of monthly commits by Ayumu Takai on the <code>prototype</code>
+branch for the current term. The number of commits in April and May of
+the previous fiscal year was the result of a team of four to five
+developers, but the number of commits by just one person exceeds that
+number. However, the development method was somewhat irregular.</p>
+<p>AyumuTakai started development on the <code>prototype</code> branch
+on November 2, but did not submit a pull request to the default branch
+until February, and has been accumulating many commits on the
+<code>prototype</code> branch. Perhaps, as a result of adding many
+improvements one after another, he lost the timing to submit a pull
+request. In the end, he left the <code>prototype</code> branch as it was
+and created a new branch called <code>pre_alpha</code> on February 3,
+from which he submitted only one pull request to the default branch.</p>
+<p>As a result, although AyumuTakai’s work hardly appeared in the number
+of pull requests shown in Figure 7 above, his contribution could be
+visualized by superimposing the number of commits in the prototype
+branch in Figure 8 above. In this pull request, <a
+href="https://github.com/vivliostyle/vivliostyle-pub/pull/142">アルファ版準備
+#142</a>, you can see a list of user interface changes and added
+features added at this time. It can be seen that all of them were
+indispensable elements for the normal use of this product (AyumuTakai
+withdrew from development at the end of March due to the busyness of its
+main business. We sincerely appreciate his contribution).</p>
+<p>So far, we have described the contributions of AyumuTakai and
+takanakahiko, who were directly responsible for the development of this
+product. However, it is important not to forget that this product has
+been able to incorporate the results of the Vivliostyle.js, VFM,
+Vivliostyle Themes, and Vivliostyle CLI updates described in the
+previous sections, simply by replacing the components. This means that
+this product has been able to incorporate the results of the
+Vivliostyle.js, VFM, Vivliostyle Themes, and Vivliostyle CLI updates by
+simply replacing components.</p>
+<p>For example, in Figure 6 above, the Web font is displayed, but this
+is not this product, but a function realized by the update of the
+Vivliostyle .js. You can truly feel the power of Vivliostyle products as
+an ecosystem.</p>
+<p>In this way, although it was far behind our original goal, we were
+able to announce the alpha release of this product at the <a
+href="https://vivliostyle.connpass.com/event/227954/">“Vivliostyle User
+/ Dev Meetup 2022 Spring”</a> held on April 23, 2022.</p>
+<h3 id="web-content-and-its-production-system">Web content and its
+production system</h3>
+<p>This section will collectively address the following user documents
+related to Vivliostyle and its production system.</p>
 <ol type="1">
-<li><a href="https://github.com/vivliostyle/vivliostyle.org">vivliostyle.org</a>（<a href="https://vivliostyle.org/ja/">Foundation’s official website</a>）</li>
-<li><a href="https://github.com/vivliostyle/docs.vivliostyle.org">docs.vivliostyle.org</a> （<a href="https://vivliostyle.org/ja/documents/">User guides for each product</a>）</li>
-<li><a href="https://github.com/vivliostyle/docs-vivliostyle-pub">docs-vivliostyle-pub</a> （<a href="https://vivliostyle.github.io/docs-vivliostyle-pub/#/ja/">Vivliostyle Pub User Guide</a>）</li>
-<li><a href="https://github.com/vivliostyle/vivliostyle_doc">vivliostyle_doc</a>（<a href="https://vivliostyle.org/ja/samples/">Sample page</a> and <a href="https://vivliostyle.org/ja/about-us/">Annual reports</a>）</li>
+<li><a
+href="https://github.com/vivliostyle/vivliostyle.org">vivliostyle.org</a>（<a
+href="https://vivliostyle.org/ja/">Foundation’s official
+website</a>）</li>
+<li><a
+href="https://github.com/vivliostyle/docs.vivliostyle.org">docs.vivliostyle.org</a>
+（<a href="https://vivliostyle.org/ja/documents/">User guides for each
+product</a>）</li>
+<li><a
+href="https://github.com/vivliostyle/docs-vivliostyle-pub">docs-vivliostyle-pub</a>
+（<a
+href="https://vivliostyle.github.io/docs-vivliostyle-pub/#/ja/">Vivliostyle
+Pub User Guide</a>）</li>
+<li><a
+href="https://github.com/vivliostyle/vivliostyle_doc">vivliostyle_doc</a>（<a
+href="https://vivliostyle.org/ja/samples/">Sample page</a> and <a
+href="https://vivliostyle.org/ja/about-us/">Annual reports</a>）</li>
 </ol>
-<p>The most familiar information dissemination tool for us is the blog in #1 above. The following eight articles were updated during this fiscal year.</p>
+<p>The most familiar information dissemination tool for us is the blog
+in #1 above. The following eight articles were updated during this
+fiscal year.</p>
 <ul>
-<li><a href="https://vivliostyle.org/blog/2021/04/21/vivliostyle-improved-css-paged-media-support/">2021/04/21 Updates on Vivliostyle—Improved CLI and CSS Paged Media support</a></li>
-<li><a href="https://vivliostyle.org/blog/2021/04/23/meetup-2021-spring-report/">2021/04/23 Event report of “Vivliostyle User/Dev meetup Spring 2021”</a></li>
-<li><a href="https://vivliostyle.org/blog/2021/06/16/Presentation-at-JEPA-Seminar/">2021/06/16 Presentation about Vivliostyle at JEPA seminar</a></li>
-<li><a href="https://vivliostyle.org/ja/blog/2021/06/26/make-books-with-vivliostyle-vol5/">2021/06/26 技術書典 11 出展 &amp; 合同誌無料配布キャンペーンのお知らせ; Japanese</a></li>
-<li><a href="https://vivliostyle.org/blog/2021/07/02/New-FY2020-Report-Released/">2021/07/02 New FY2020 Report Released</a></li>
-<li><a href="https://vivliostyle.org/blog/2021/10/12/recent-vivliostyle-js-updates/">2021/10/12 Recent Vivliostyle.js updates</a></li>
-<li><a href="https://vivliostyle.org/blog/2021/11/17/meetup-2021-autumn-report/">2021/11/17 Event report of “Vivliostyle User/Dev Meetup Autumn 2021”</a></li>
-<li><a href="https://vivliostyle.org/blog/2022/01/24/JavaScript-can-now-be-used-in-typesetting-by-Vivliostyle/">2022/01/24 JavaScript can now be used in typesetting by Vivliostyle</a></li>
-<li><a href="https://vivliostyle.org/blog/2022/02/08/Improved-of-line-end-handling-and-support-for-page-progression-direction-in-PDF/">2022/02/08 Line end handling has been evolved to allow multiple typesetting options</a></li>
+<li><a
+href="https://vivliostyle.org/blog/2021/04/21/vivliostyle-improved-css-paged-media-support/">2021/04/21
+Updates on Vivliostyle—Improved CLI and CSS Paged Media support</a></li>
+<li><a
+href="https://vivliostyle.org/blog/2021/04/23/meetup-2021-spring-report/">2021/04/23
+Event report of “Vivliostyle User/Dev meetup Spring 2021”</a></li>
+<li><a
+href="https://vivliostyle.org/blog/2021/06/16/Presentation-at-JEPA-Seminar/">2021/06/16
+Presentation about Vivliostyle at JEPA seminar</a></li>
+<li><a
+href="https://vivliostyle.org/ja/blog/2021/06/26/make-books-with-vivliostyle-vol5/">2021/06/26
+技術書典 11 出展 &amp; 合同誌無料配布キャンペーンのお知らせ;
+Japanese</a></li>
+<li><a
+href="https://vivliostyle.org/blog/2021/07/02/New-FY2020-Report-Released/">2021/07/02
+New FY2020 Report Released</a></li>
+<li><a
+href="https://vivliostyle.org/blog/2021/10/12/recent-vivliostyle-js-updates/">2021/10/12
+Recent Vivliostyle.js updates</a></li>
+<li><a
+href="https://vivliostyle.org/blog/2021/11/17/meetup-2021-autumn-report/">2021/11/17
+Event report of “Vivliostyle User/Dev Meetup Autumn 2021”</a></li>
+<li><a
+href="https://vivliostyle.org/blog/2022/01/24/JavaScript-can-now-be-used-in-typesetting-by-Vivliostyle/">2022/01/24
+JavaScript can now be used in typesetting by Vivliostyle</a></li>
+<li><a
+href="https://vivliostyle.org/blog/2022/02/08/Improved-of-line-end-handling-and-support-for-page-progression-direction-in-PDF/">2022/02/08
+Line end handling has been evolved to allow multiple typesetting
+options</a></li>
 </ul>
-<p>Also, the user guide mentioned as newly added in the Vivliostyle Themes section is one of the #2 above. And #3 above is another user guide newly added this fiscal year in preparation for the alpha release of Vivliostyle Pub.</p>
-<p>All of them are written in Markdown, but the converters for converting them to HTML are different: <a href="http://jekyllrb-ja.github.io/">Jekyll</a> for #1, <a href="https://github.com/egoist/docute">docute</a> for #2 and #3, and <a href="https://pandoc-doc-ja.readthedocs.io/ja/latest/users-guide.html">Pandoc</a> for #4. As mentioned above, <a href="https://github.com/vivliostyle/vivliostyle-sitegen">vivliostyle-sitegen</a> is an attempt to improve this situation and further enable the use of VFM’s rich expressions.</p>
-<h3 id="challenges-for-the-next-fiscal-year-and-how-to-address-them">Challenges for the next fiscal year and how to address them</h3>
-<p>So far, we have described the development status of Vivliostyle products during the current term. At the beginning, our products were limited to the current Vivliostyle Viewer/Vivliostyle.js and the Vivliostyle CLI. From there, the number of repositories was gradually increased each year, and we have reached the point where the ecosystem among products as described in the previous section is beginning to function.</p>
-<p>In the previous section, we reported that the foundation achieved a profit for the single fiscal year, and most of the revenue was generated from contracted development related to Vivliostyle products and from maintenance of products that had been delivered in the past. In other words, in our case, the development and expansion of our products are directly linked to securing business income.</p>
-<p>However, simply expanding Vivliostyle products will not necessarily lead to an increase in business income. In other words, product expansion is not a necessary condition for increasing profits, but a sufficient condition. Then, what are the obstacles to increasing profits? We would like to list the following issues.</p>
+<p>Also, the user guide mentioned as newly added in the Vivliostyle
+Themes section is one of the #2 above. And #3 above is another user
+guide newly added this fiscal year in preparation for the alpha release
+of Vivliostyle Pub.</p>
+<p>All of them are written in Markdown, but the converters for
+converting them to HTML are different: <a
+href="http://jekyllrb-ja.github.io/">Jekyll</a> for #1, <a
+href="https://github.com/egoist/docute">docute</a> for #2 and #3, and <a
+href="https://pandoc-doc-ja.readthedocs.io/ja/latest/users-guide.html">Pandoc</a>
+for #4. As mentioned above, <a
+href="https://github.com/vivliostyle/vivliostyle-sitegen">vivliostyle-sitegen</a>
+is an attempt to improve this situation and further enable the use of
+VFM’s rich expressions.</p>
+<h3
+id="challenges-for-the-next-fiscal-year-and-how-to-address-them">Challenges
+for the next fiscal year and how to address them</h3>
+<p>So far, we have described the development status of Vivliostyle
+products during the current term. At the beginning, our products were
+limited to the current Vivliostyle Viewer/Vivliostyle.js and the
+Vivliostyle CLI. From there, the number of repositories was gradually
+increased each year, and we have reached the point where the ecosystem
+among products as described in the previous section is beginning to
+function.</p>
+<p>In the previous section, we reported that the foundation achieved a
+profit for the single fiscal year, and most of the revenue was generated
+from contracted development related to Vivliostyle products and from
+maintenance of products that had been delivered in the past. In other
+words, in our case, the development and expansion of our products are
+directly linked to securing business income.</p>
+<p>However, simply expanding Vivliostyle products will not necessarily
+lead to an increase in business income. In other words, product
+expansion is not a necessary condition for increasing profits, but a
+sufficient condition. Then, what are the obstacles to increasing
+profits? We would like to list the following issues.</p>
 <ol type="1">
-<li>Most of the business income is limited to contracted development.</li>
-<li>Limited number of developers who undertake contracted development.</li>
-<li>Almost only one company places orders for contracted development.</li>
+<li>Most of the business income is limited to contracted
+development.</li>
+<li>Limited number of developers who undertake contracted
+development.</li>
+<li>Almost only one company places orders for contracted
+development.</li>
 </ol>
-<p>To address #1 above, it is necessary to secure a variety of revenues other than contracted development. For example, business income from Vivliostyle Pub. We should also seriously consider expanding the amount of donations we receive, which we have done little to promote since the creation of the [sponsor solicitation page] in the 3rd fiscal year.</p>
-<p>To address #2 above, as discussed in the previous section, “Statement of Net Assets Increase/Decrease for FY2021”, we were able to secure a trustee other than Representative Murakami this fiscal year, but the key will be whether we can continue to secure a trustee in the next fiscal year. For example, we should consider asking committers to contracted development. In addition, it will be important to make efforts to increase the number of committers for the entire product in order to reduce the burden on individual committers.</p>
-<p>Finally, to address #3 above, diversification of ordering sources is a matter of course, and addressing #1 above should also address #3 as it is.</p>
+<p>To address #1 above, it is necessary to secure a variety of revenues
+other than contracted development. For example, business income from
+Vivliostyle Pub. We should also seriously consider expanding the amount
+of donations we receive, which we have done little to promote since the
+creation of the [sponsor solicitation page] in the 3rd fiscal year.</p>
+<p>To address #2 above, as discussed in the previous section, “Statement
+of Net Assets Increase/Decrease for FY2021”, we were able to secure a
+trustee other than Representative Murakami this fiscal year, but the key
+will be whether we can continue to secure a trustee in the next fiscal
+year. For example, we should consider asking committers to contracted
+development. In addition, it will be important to make efforts to
+increase the number of committers for the entire product in order to
+reduce the burden on individual committers.</p>
+<p>Finally, to address #3 above, diversification of ordering sources is
+a matter of course, and addressing #1 above should also address #3 as it
+is.</p>
 <h3 id="directors">Directors</h3>
 <ul>
-<li><a href="https://github.com/MurakamiShinyu">Shinyu Murakami</a> (Representative Director, Founding Member)</li>
-<li><a href="https://github.com/frivoal">Florian Rivoal</a> (Director, Founding Member)</li>
-<li><a href="https://github.com/johanneswilm">Johannes Wilm</a> (Director, Founding Member)</li>
-<li><a href="https://github.com/ogwata">Katsuhiro Ogata</a> (Director, From January 21, 2020)</li>
+<li><a href="https://github.com/MurakamiShinyu">Shinyu Murakami</a>
+(Representative Director, Founding Member)</li>
+<li><a href="https://github.com/frivoal">Florian Rivoal</a> (Director,
+Founding Member)</li>
+<li><a href="https://github.com/johanneswilm">Johannes Wilm</a>
+(Director, Founding Member)</li>
+<li><a href="https://github.com/ogwata">Katsuhiro Ogata</a> (Director,
+From January 21, 2020)</li>
 </ul>
 </body>
 </html>
