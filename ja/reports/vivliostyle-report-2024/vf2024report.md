@@ -13,7 +13,7 @@ lang: ja
 
 ## 技術評論社gihyo.jpでの連載記事
 
-開発以外のトピックとしては、まず[gihyo.jp](https://gihyo.jp/about/site)での連載、[Vivliostyleが拓くCSS組版の可能性](https://gihyo.jp/list/group/Vivliostyle%E3%81%8C%E6%8B%93%E3%81%8FCSS%E7%B5%84%E7%89%88%E3%81%AE%E5%8F%AF%E8%83%BD%E6%80%A7)が挙げられる。この連載では、Vivliostyleの技術的な特徴や活用事例、CSS組版の可能性について、実践的な例を交えながら解説している。以下に執筆時点での記事一覧を示す。なお、連載の趣旨と経緯については[前期の活動報告書](https://vivliostyle.org/viewer/#src=https://vivliostyle.github.io/vivliostyle_doc/ja/reports/vivliostyle-report-2023/vf2023report.html&bookMode=true)を参照されたい。
+開発以外のトピックスとしては、まず[gihyo.jp](https://gihyo.jp/about/site)での連載、[Vivliostyleが拓くCSS組版の可能性](https://gihyo.jp/list/group/Vivliostyle%E3%81%8C%E6%8B%93%E3%81%8FCSS%E7%B5%84%E7%89%88%E3%81%AE%E5%8F%AF%E8%83%BD%E6%80%A7)が挙げられる。この連載では、Vivliostyleの技術的な特徴や活用事例、CSS組版の可能性について、実践的な例を交えながら解説している。以下に執筆時点での記事一覧を示す。なお、連載の趣旨と経緯については[前期の活動報告書](https://vivliostyle.org/viewer/#src=https://vivliostyle.github.io/vivliostyle_doc/ja/reports/vivliostyle-report-2023/vf2023report.html&bookMode=true)を参照されたい。
 
 - [Vivliostyleでなにができるの？（村上真雄、小形克宏）](https://gihyo.jp/article/2024/01/vivliostyle-01)
 - [Vivliostyleに特化したMarkdown - VFMの使い方（akabeko）](https://gihyo.jp/article/2024/03/vivliostyle-02)
@@ -28,7 +28,7 @@ lang: ja
 
 一方、CSS組版のWebアプリVivliostyle Pubを、長文が安定的に組版できるところまで育ててきた当法人にとって、課題はVScodeに似たインターフェイスだった。初心者にとってあまりに難解だが、直すには相当な工数が必要だからだ。
 
-Bookoも当法人も使っている技術は共通である。その一方でお互いに自分にないものを持っている、つまり相互補完的な関係にある。このことに気付いた長谷川恵子氏と当法人の村上代表理事、小形理事は、3人で資金を持ち寄り合同会社を立ち上げることにした。これが2025年2月に設立したビブリオブッコ合同会社なのである。
+Bookoも当法人も使っている技術は共通である。その一方でお互いに自分にないものを持っている、つまり相互補完的な関係にある。このことに気付いた長谷川氏と当法人の村上代表理事、小形理事は、3人で資金を持ち寄り合同会社を立ち上げることにした。これが2025年2月に設立したビブリオブッコ合同会社なのである。
 
 ただし、会社を新しく作ったからと言って、オープンソース開発をやめる訳ではない。Vivliostyle Pubをオープンソースのまま全面的に刷新し公開する。新会社はそれを初心者向けのプロプライエタリなサービスとして作り直す予定だ。なお、[Vivliostyle Pubのライセンス](https://github.com/vivliostyle/vivliostyle-pub?tab=License-1-ov-file)はApache 2.0である。
 
