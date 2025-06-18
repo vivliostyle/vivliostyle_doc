@@ -1,9 +1,9 @@
 ---
-title: "一般社団法人ビブリオスタイル 2024年度活動報告書"
-lang: ja
+title: "Vivliostyle Foundation FY2023 Activity Report"
+lang: en
 ---
 
-# **2024年度（第7期 2024年4月1日〜2025年3月31日）活動報告**
+# **Activity Report for FY2024**
 
 ## プロダクト開発
 
@@ -11,16 +11,16 @@ lang: ja
 
 ![図1：主要プロダクトのPR数](./img/fig-1.svg){ width=100% }
 
-## 技術評論社gihyo.jpでの連載記事
+## Serial Publication on gihyo.jp
 
-開発以外のトピックスとしては、まず[gihyo.jp](https://gihyo.jp/about/site)での連載、[Vivliostyleが拓くCSS組版の可能性](https://gihyo.jp/list/group/Vivliostyle%E3%81%8C%E6%8B%93%E3%81%8FCSS%E7%B5%84%E7%89%88%E3%81%AE%E5%8F%AF%E8%83%BD%E6%80%A7)が挙げられる。この連載では、Vivliostyleの技術的な特徴や活用事例、CSS組版の可能性について、実践的な例を交えながら解説している。以下に執筆時点での記事一覧を示す。なお、連載の趣旨と経緯については[前期の活動報告書](https://vivliostyle.org/viewer/#src=https://vivliostyle.github.io/vivliostyle_doc/ja/reports/vivliostyle-report-2023/vf2023report.html&bookMode=true)を参照されたい。
+One of the non-development topics is the serial publication on [gihyo.jp](https://gihyo.jp/about/site), titled [Vivliostyleが拓くCSS組版の可能性 (The Possibilities of CSS Typesetting with Vivliostyle)](https://gihyo.jp/list/group/Vivliostyle%E3%81%8C%E6%8B%93%E3%81%8FCSS%E7%B5%84%E7%89%88%E3%81%AE%E5%8F%AF%E8%83%BD%E6%80%A7). This series explains Vivliostyle's technical features, use cases, and the possibilities of CSS typesetting with practical examples. Below is the list of articles published as of the time of writing. For the purpose and background of this series, please refer to the [previous year's activity report](https://vivliostyle.org/viewer/#src=https://vivliostyle.github.io/vivliostyle_doc/en/reports/vivliostyle-report-2023/vf2023report.html&bookMode=true).
 
-- [Vivliostyleでなにができるの？（村上真雄、小形克宏）](https://gihyo.jp/article/2024/01/vivliostyle-01)
-- [Vivliostyleに特化したMarkdown - VFMの使い方（akabeko）](https://gihyo.jp/article/2024/03/vivliostyle-02)
-- [CSSフレームワークVivliostyle Themeで簡単にページデザインを編集する（spring-raining）](https://gihyo.jp/article/2024/04/vivliostyle-03)
-- [Vivliostyleで市販書籍とそっくりに組んでみよう（大津雄一郎）](https://gihyo.jp/article/2024/05/vivliostyle-040)
-- [VFMで学会論文を書いてVivliostyleで組んで投稿する［前編］（yamahige）](https://gihyo.jp/article/2025/02/vivliostyle-05)
-- [VFMで学会論文を書いてVivliostyleで組んで投稿する［後編］（yamahige）](https://gihyo.jp/article/2025/02/vivliostyle-05-2)
+- [Vivliostyleでなにができるの？ (What can you do with Vivliostyle?) (Shinyu Murakami, Katsuhiro Ogata)](https://gihyo.jp/article/2024/01/vivliostyle-01)
+- [Vivliostyleに特化したMarkdown - VFMの使い方 (VFM: Markdown specialized for Vivliostyle) (akabeko)](https://gihyo.jp/article/2024/03/vivliostyle-02)
+- [CSSフレームワークVivliostyle Themeで簡単にページデザインを編集する (Easily edit page design with Vivliostyle Theme CSS framework) (spring-raining)](https://gihyo.jp/article/2024/04/vivliostyle-03)
+- [Vivliostyleで市販書籍とそっくりに組んでみよう (Let's typeset exactly like commercial books with Vivliostyle) (Yuichiro Otsu)](https://gihyo.jp/article/2024/05/vivliostyle-040)
+- [VFMで学会論文を書いてVivliostyleで組んで投稿する (Writing academic papers with VFM and typesetting with Vivliostyle for submission) [Part 1] (yamahige)](https://gihyo.jp/article/2025/02/vivliostyle-05)
+- [VFMで学会論文を書いてVivliostyleで組んで投稿する (Writing academic papers with VFM and typesetting with Vivliostyle for submission) [Part 2] (yamahige)](https://gihyo.jp/article/2025/02/vivliostyle-05-2)
 
 ## Vivliostyle Pubの再起動
 
