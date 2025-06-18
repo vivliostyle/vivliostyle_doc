@@ -5,11 +5,11 @@ lang: en
 
 # **Activity Report for FY2024**
 
-## プロダクト開発
+## Product Development
 
-まず、今期における主要プロダクトのPR数（ただしアプリケーションによるものを除く）を示す。比較のために3期〜6期も併記している。
+First, let's show the number of PRs for major products this term (excluding those from applications). For comparison, we also include data from terms 3-6.
 
-![図1：主要プロダクトのPR数](./img/fig-1.svg){ width=100% }
+![Figure 1: Number of PRs for major products](./img/fig-1.svg){ width=100% }
 
 ## Serial Publication on gihyo.jp
 
