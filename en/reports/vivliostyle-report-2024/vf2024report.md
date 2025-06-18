@@ -22,17 +22,17 @@ One of the non-development topics is the serial publication on [gihyo.jp](https:
 - [VFMで学会論文を書いてVivliostyleで組んで投稿する (Writing academic papers with VFM and typesetting with Vivliostyle for submission) [Part 1] (yamahige)](https://gihyo.jp/article/2025/02/vivliostyle-05)
 - [VFMで学会論文を書いてVivliostyleで組んで投稿する (Writing academic papers with VFM and typesetting with Vivliostyle for submission) [Part 2] (yamahige)](https://gihyo.jp/article/2025/02/vivliostyle-05-2)
 
-## Vivliostyle Pubの再起動
+## Reboot of Vivliostyle Pub
 
-もう一つの今期のトピックスは、Vivliostyle Pubの再起動である。本プロダクトは2022年4月にアルファ版を公開したがその後、開発が停滞していた。Vivliostyle Pubは、インストール不要で簡単にCSS組版を楽しめるWebアプリを目指していたが、このアルファ版では簡単に使えるという目標には程遠いものであり、目標を実現するために開発リソースを確保する余裕がこれまでなかった。
+Another topic of this term is the reboot of Vivliostyle Pub. This product was released as an alpha version in April 2022, but development had stagnated since then. Vivliostyle Pub aimed to be a web application that allows users to enjoy CSS typesetting without installation, but the alpha version was far from being easy to use, and we had not been able to secure development resources to achieve this goal.
 
-この開発再開を決めるきっかけとなったのは、自費出版のWebサービスBooko（代表・長谷川恵子氏）との出会いである。Bookoは、Web上で簡単に本が作れるユーザーインターフェイスが優れている反面、見開きを超える長文の組版に技術的課題を抱えており、それを解決するためにVivliostyle Pubの技術を必要としていた。そこで、私たちはBookoと協力して、Vivliostyle Pub開発を再起動することにした。また、オープンソースのVivliostyle Pub開発を促進し、それを活用した新しいBookoのサービス（VivlioBooko）の開発・運営を行う目的で、2025年2月にビブリオブッコ合同会社が設立された。これにはBookoの長谷川恵子代表と当法人の村上代表理事と小形理事が参加している。
+The catalyst for deciding to restart development was meeting with Booko (CEO: Keiko Hasegawa), a self-publishing web service. While Booko has an excellent user interface for easily creating books on the web, it faced technical challenges in typesetting long texts that span across spreads, and needed Vivliostyle Pub's technology to solve this. Therefore, we decided to restart Vivliostyle Pub development in collaboration with Booko. Additionally, to promote the development of open-source Vivliostyle Pub and develop and operate a new Booko service (VivlioBooko) utilizing it, BiblioBooko LLC was established in February 2025. This includes Booko's CEO Keiko Hasegawa and our foundation's Representative Director Shinyu Murakami and Director Katsuhiro Ogata.
 
-新たな協力者を得たことでVivliostyle Pubのみならず、Vivliostyleプロジェクト全体の開発が促進されることが期待される。オープンソースで世界の誰もが自由に利用できるものを目指すプロジェクトの理念は変わらない。引き続きVivliostyleの開発やその活用に関心を持ってくれる協力者を増やしていきたい。
+With the addition of new collaborators, we expect not only Vivliostyle Pub but also the entire Vivliostyle project's development to be accelerated. The project's philosophy of aiming to create something that anyone in the world can freely use as open source remains unchanged. We hope to continue increasing the number of collaborators interested in Vivliostyle's development and its applications.
 
-## 理事
+## Directors
 
-- [村上真雄 (Shinyu Murakami)](https://github.com/MurakamiShinyu)〈代表理事、設立時社員〉
-- [リボアル・フロリアン (Florian Rivoal)](https://github.com/frivoal)〈理事、設立時社員〉
-- [ヨハネス・ウィルム (Johannes Wilm)](https://github.com/johanneswilm)〈理事、設立時社員〉
-- [小形克宏 (Katsuhiro Ogata)](https://github.com/ogwata)〈理事、2020年1月21日より〉
+- [Shinyu Murakami](https://github.com/MurakamiShinyu) (Representative Director, Founding Member)
+- [Florian Rivoal](https://github.com/frivoal) (Director, Founding Member)
+- [Johannes Wilm](https://github.com/johanneswilm) (Director, Founding Member)
+- [Katsuhiro Ogata](https://github.com/ogwata) (Director, From January 21, 2020)
