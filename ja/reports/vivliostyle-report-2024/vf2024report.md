@@ -1,17 +1,22 @@
 ---
 title: "一般社団法人ビブリオスタイル 2024年度活動報告書"
 lang: ja
+link:
+  - rel: "stylesheet"
+    href: "report.css"
 ---
 
-# **2024年度（第7期 2024年4月1日〜2025年3月31日）活動報告**
+# 一般社団法人ビブリオスタイル 2024年度活動報告書
 
-## プロダクト開発
+## 2024年度（第7期 2024年4月1日〜2025年3月31日）活動報告
+
+### プロダクト開発
 
 まず、今期における主要プロダクトのPR数（ただしアプリケーションによるものを除く）を示す。比較のために3期〜6期も併記している。
 
 ![図1：主要プロダクトのPR数](./img/fig-1.svg){ width=100% }
 
-## 技術評論社gihyo.jpでの連載記事
+### 技術評論社gihyo.jpでの連載記事
 
 開発以外のトピックスとしては、まず[gihyo.jp](https://gihyo.jp/about/site)での連載、[Vivliostyleが拓くCSS組版の可能性](https://gihyo.jp/list/group/Vivliostyle%E3%81%8C%E6%8B%93%E3%81%8FCSS%E7%B5%84%E7%89%88%E3%81%AE%E5%8F%AF%E8%83%BD%E6%80%A7)が挙げられる。この連載では、Vivliostyleの技術的な特徴や活用事例、CSS組版の可能性について、実践的な例を交えながら解説している。以下に執筆時点での記事一覧を示す。なお、連載の趣旨と経緯については[前期の活動報告書](https://vivliostyle.org/viewer/#src=https://vivliostyle.github.io/vivliostyle_doc/ja/reports/vivliostyle-report-2023/vf2023report.html&bookMode=true)を参照されたい。
 
@@ -22,7 +27,7 @@ lang: ja
 - [VFMで学会論文を書いてVivliostyleで組んで投稿する［前編］（yamahige）](https://gihyo.jp/article/2025/02/vivliostyle-05)
 - [VFMで学会論文を書いてVivliostyleで組んで投稿する［後編］（yamahige）](https://gihyo.jp/article/2025/02/vivliostyle-05-2)
 
-## Vivliostyle Pubの再起動
+### Vivliostyle Pubの再起動
 
 もう一つの今期のトピックは、Vivliostyle Pubの再起動である。本プロダクトは2022年4月にアルファ版を公開したがその後、開発が停滞していた。Vivliostyle Pubは、インストール不要で簡単にCSS組版を楽しめるWebアプリを目指していたが、このアルファ版の段階では簡単に使えるという目標には程遠いものであり、目標を実現するために開発リソースを確保する余裕がこれまでなかった。
 
@@ -30,7 +35,7 @@ lang: ja
 
 新たな協力者を得たことでVivliostyle Pubのみならず、Vivliostyleプロジェクト全体の開発が促進されることが期待される。オープンソースで世界の誰もが自由に利用できるものを目指すプロジェクトの理念は変わらない。引き続きVivliostyleの開発やその活用に関心を持ってくれる協力者を増やしていきたい。
 
-## 理事
+### 理事
 
 - [村上真雄 (Shinyu Murakami)](https://github.com/MurakamiShinyu)〈代表理事、設立時社員〉
 - [リボアル・フロリアン (Florian Rivoal)](https://github.com/frivoal)〈理事、設立時社員〉

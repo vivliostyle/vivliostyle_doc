@@ -1,5 +1,5 @@
 ﻿@page {
-  /* size: a4; */
+  size: a4;
   margin: 10%;
   font-family: "YuGothic", "Yu Gothic", sans-serif;
   font-size: 9pt;
@@ -26,15 +26,7 @@ body {
   line-height: 2;
 }
 
-@media print {
-  body {
-    column-width: 34em;
-    column-gap: 1.5em;
-    column-fill: auto;
-  }
-}
-
-h1.title {
+h1 {
   margin: 1.5em 0 1em;
   font-size: 270%;
   line-height: 1.5;
@@ -44,16 +36,11 @@ h1.title {
   font-feature-settings: "palt";
 }
 
-#title-block-header::after {
+h1::after {
   content: url(https://vivliostyle.org/assets/vivliostyle-logo.svg);
   display: block;
   width: min-content;
   margin: 3em auto 5em;
-}
-
-#TOC > ul > li > a {
-  font-size: 110%;
-  font-weight: bold;
 }
 
 p {
@@ -65,6 +52,7 @@ h2 {
   font-size: 133%;
   line-height: 1.5;
   font-feature-settings: "palt";
+  break-before: page;
 }
 
 h3 {
@@ -73,15 +61,6 @@ h3 {
   line-height: 1.5;
   font-feature-settings: "palt";
 }
-
-h2 {
-  break-before: page;
-}
-/*
-h2 ~ h2 ~ h3 ~ h3 {
-  break-before: column;
-}
- */
 
 figure {
   break-inside: avoid;
@@ -101,25 +80,3 @@ th, td {
 th {
   background-color: #EFF1F2;
 }
-
-td:nth-child(n+2) {
-  text-align: right;
-}
-
-#年度貸借対照表 + p + table > tbody > tr:nth-child(11),
-#年度貸借対照表 + p + table > tbody > tr:nth-child(19),
-#年度貸借対照表 + p + table > tbody > tr:nth-child(22),
-#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(10),
-#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(22),
-#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(25),
-#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(26),
-#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(29),
-#年度正味財産増減計算書 + p + table > tbody > tr:nth-child(41){
-  background-color: #EFF6FD;
-}
-
-#TOC {
-  break-after: page;
-}
-
-

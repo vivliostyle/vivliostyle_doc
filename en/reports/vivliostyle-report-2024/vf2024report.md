@@ -1,17 +1,22 @@
 ---
 title: "Vivliostyle Foundation FY2023 Activity Report"
 lang: en
+link:
+  - rel: "stylesheet"
+    href: "report.css"
 ---
 
-# **Activity Report for FY2024**
+# Vivliostyle Foundation FY2023 Activity Report
 
-## Product Development
+## Activity Report for FY2024
+
+### Product Development
 
 First, let's show the number of PRs for major products this term (excluding those from applications). For comparison, we also include data from terms 3-6.
 
 ![Figure 1: Number of PRs for major products](./img/fig-1.svg){ width=100% }
 
-## Serial Publication on gihyo.jp
+### Serial Publication on gihyo.jp
 
 One of the non-development topics is the serial publication on [gihyo.jp](https://gihyo.jp/about/site), titled [Vivliostyleが拓くCSS組版の可能性 (The Possibilities of CSS Typesetting with Vivliostyle)](https://gihyo.jp/list/group/Vivliostyle%E3%81%8C%E6%8B%93%E3%81%8FCSS%E7%B5%84%E7%89%88%E3%81%AE%E5%8F%AF%E8%83%BD%E6%80%A7). This series explains Vivliostyle's technical features, use cases, and the possibilities of CSS typesetting with practical examples. Below is the list of articles published as of the time of writing. For the purpose and background of this series, please refer to the [previous year's activity report](https://vivliostyle.org/viewer/#src=https://vivliostyle.github.io/vivliostyle_doc/en/reports/vivliostyle-report-2023/vf2023report.html&bookMode=true).
 
@@ -22,7 +27,7 @@ One of the non-development topics is the serial publication on [gihyo.jp](https:
 - [VFMで学会論文を書いてVivliostyleで組んで投稿する (Writing academic papers with VFM and typesetting with Vivliostyle for submission) [Part 1] (yamahige)](https://gihyo.jp/article/2025/02/vivliostyle-05)
 - [VFMで学会論文を書いてVivliostyleで組んで投稿する (Writing academic papers with VFM and typesetting with Vivliostyle for submission) [Part 2] (yamahige)](https://gihyo.jp/article/2025/02/vivliostyle-05-2)
 
-## Reboot of Vivliostyle Pub
+### Reboot of Vivliostyle Pub
 
 Another topic of this term is the reboot of Vivliostyle Pub. This product was released as an alpha version in April 2022, but development had stagnated since then. Vivliostyle Pub aimed to be a web application that allows users to enjoy CSS typesetting without installation, but the alpha version was far from being easy to use, and we had not been able to secure development resources to achieve this goal.
 
@@ -30,7 +35,7 @@ The catalyst for deciding to restart development was meeting with Booko (CEO: Ke
 
 With the addition of new collaborators, we expect not only Vivliostyle Pub but also the entire Vivliostyle project's development to be accelerated. The project's philosophy of aiming to create something that anyone in the world can freely use as open source remains unchanged. We hope to continue increasing the number of collaborators interested in Vivliostyle's development and its applications.
 
-## Directors
+### Directors
 
 - [Shinyu Murakami](https://github.com/MurakamiShinyu) (Representative Director, Founding Member)
 - [Florian Rivoal](https://github.com/frivoal) (Director, Founding Member)
