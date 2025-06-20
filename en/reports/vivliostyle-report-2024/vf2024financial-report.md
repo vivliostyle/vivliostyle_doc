@@ -10,7 +10,7 @@ The following shows the status of asset holdings (balance sheet) as of the end o
 | **I. Assets**  |            |            |            |
 | 1. Current assets   |            |            |            |
 | Cash and deposits    |  32,304     | 353,154     | -320,850 |
-| Accounts receivable       |   1,350,000  |  1,350,000    | 0 |
+| Accounts receivable       |   1,350,000  |  0   |  1,350,000 |
 | Total current assets   |    1,382,304  |353,154  | 1,029,150 |
 | 2. Fixed assets   |            |            |            |
 | (1) Other fixed assets   |            |            |            |
