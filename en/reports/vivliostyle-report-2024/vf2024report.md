@@ -1,12 +1,12 @@
 ---
-title: "Vivliostyle Foundation FY2023 Activity Report"
+title: "Vivliostyle Foundation FY2024 Activity Report"
 lang: en
 link:
   - rel: "stylesheet"
     href: "report.css"
 ---
 
-# Vivliostyle Foundation FY2023 Activity Report
+# Vivliostyle Foundation FY2024 Activity Report
 
 ## Activity Report for FY2024
 
