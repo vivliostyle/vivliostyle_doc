@@ -16,7 +16,7 @@ The number of PRs for our major products this term (excluding those from applica
 
 ![Figure 1: Number of PRs for major products](./img/fig-1.svg){ width=100% }
 
-The biggest topic of this term is the marked acceleration of development. The number of PRs for Vivliostyle.js reached 175, more than doubling the 74 of the previous term and setting an all-time high. Vivliostyle CLI also grew significantly, from 41 to 99. VFM, which had dropped to only 3 in the previous term, recovered to 19. On the other hand, Vivliostyle Pub slightly decreased to 6, and Themes recorded its lowest count yet at 3. Overall, it was a year of substantial progress on the core products centered around Vivliostyle.js and Vivliostyle CLI.
+The biggest topic of this term is the marked acceleration of development. The number of PRs for Vivliostyle.js reached 175, more than doubling the 74 of the previous term and setting an all-time high. Vivliostyle CLI also grew significantly, from 41 to 89. VFM, which had dropped to only 3 in the previous term, recovered to 19. On the other hand, Vivliostyle Pub slightly decreased to 6, and Themes recorded its lowest count yet at 2. Overall, it was a year of substantial progress on the core products centered around Vivliostyle.js and Vivliostyle CLI.
 
 ### Grant from the NLnet Foundation
 
