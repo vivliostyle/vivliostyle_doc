@@ -16,7 +16,7 @@ link:
 
 ![図1：主要プロダクトのPR数](./img/fig-1.svg){ width=100% }
 
-今期最大のトピックは、開発の活発化である。Vivliostyle.jsのPR数は175と前期の74から2倍以上に増加し、過去最高を記録した。Vivliostyle CLIも前期の41から89へと大きく伸びた。さらに、前期はわずか3にとどまっていたVFMも19にまで回復している。一方、Vivliostyle Pubは6と微減、Themesも2とこれまでで最も少ない数となった。総じて、Vivliostyle.jsとCLIを中心としたコア開発が大きく前進した1年であったといえる。
+今期最大のトピックは、開発の活発化である。Vivliostyle.jsのPR数は175と前期の74から2倍以上に増加し、過去最高を記録した。Vivliostyle CLIも前期の41から89へと大きく伸びた。さらに、前期はわずか3にとどまっていたVFMも19にまで回復し、Vivliostyle Pubも6から16へと増えている。なお、Vivliostyle Pubは今期、後述するゼロベースでの再構築を新リポジトリ[`vivliostyle.pub`](https://github.com/vivliostyle/vivliostyle.pub)で開始しており、ここでのPR数（10件）と旧リポジトリ[`vivliostyle-pub`](https://github.com/vivliostyle/vivliostyle-pub)の保守PR数（6件）を合計したものを当期の数値としている。Themesは2とこれまでで最も少ない数となったが、これは開発の重心が他プロダクトへシフトしたためである。総じて、Vivliostyle.jsとCLIを中心としたコア開発が大きく前進した1年であったといえる。
 
 ### NLnet財団からの助成金獲得
 
@@ -32,6 +32,22 @@ NLnet財団は、欧州委員会のNext Generation Internet（NGI）イニシア
 - ドキュメントサイトの整備
 
 前掲の主要プロダクトのPR数の大幅な増加は、この助成によって開発リソースが確保されたことの直接的な成果でもある。
+
+### Vivliostyle Pubのゼロベース再構築
+
+前期の活動報告書では、自費出版Webサービス[Booko](https://www.booko.co.jp/)との協業を契機に、長らく停滞していたVivliostyle Pubの開発を再起動することを述べた。今期はそれを具体化し、ゼロベースでの再構築に着手した1年であった。
+
+旧リポジトリ[`vivliostyle-pub`](https://github.com/vivliostyle/vivliostyle-pub)で公開されていたアルファ版は、技術スタックの古さや設計上の制約から発展的な拡張が難しかったため、新リポジトリ[`vivliostyle.pub`](https://github.com/vivliostyle/vivliostyle.pub)を2025年1月に作成し、フロントエンドのセットアップから組み直すこととした。この新Vivliostyle Pubの開発は、前述のNLnet財団からの助成金を主たる原資として[spring-raining氏](https://github.com/spring-raining)に開発を委託する形で進めている。
+
+今期の主な進捗としては、新リポジトリにおいて以下のPRがマージされた（FY2025期間中、すべてspring-raining氏による）。
+
+- 基本機能：エディタ機能の改善、エントリ並び替え機能、AST viewerへのCSSペイン追加、プレビューページの追加
+- 出力機能：PDFエクスポート
+- 配信基盤：デプロイCIの整備、ビルドエラーの修正
+
+成果物は[`alpha.vivliostyle.pub`](https://alpha.vivliostyle.pub)で公開しており、ブラウザ上でMarkdownを編集して即座にプレビュー・PDF出力できる段階まで到達している。なお、旧リポジトリも今期中はVivliostyle CLI/Viewerの最新版追従を目的とした保守更新が継続された（村上代表理事による6件のPR）。
+
+来期は引き続きspring-raining氏による開発を継続し、共同編集機能や国際化など、当初の目標であった「誰もが簡単にCSS組版を楽しめるWebアプリ」の実現に向けて開発を加速していく予定である。
 
 ### ドキュメントサイトの刷新
 
