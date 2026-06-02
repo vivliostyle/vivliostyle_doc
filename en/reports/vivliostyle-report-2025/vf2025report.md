@@ -53,9 +53,21 @@ In the next term, we plan to continue development with spring-raining, accelerat
 
 The acceleration of development also created a need to strengthen our outreach to users. To that end, during this term we worked on building a new official documentation site at [docs.vivliostyle.org](https://docs.vivliostyle.org/).
 
-The site aims to comprehensively cover the four products that make up the Vivliostyle ecosystem (Viewer, CLI, VFM, and Themes), from beginner-oriented tutorials to developer-oriented API references. It consists of tutorials, FAQs, references, practical usage guides (footnotes, CMYK conversion, page-group support, and more), and a contribution guide, with each document available for download in WebPub, PDF, and EPUB formats. This embodies Vivliostyle's advantage of "Single Source Multi Output" — generating multiple formats from a single Markdown source.
+The site aims to comprehensively cover the four products that make up the Vivliostyle ecosystem (Viewer, CLI, VFM, and Themes), from beginner-oriented tutorials to developer-oriented API references. It consists of tutorials, FAQs, references, practical usage guides (footnotes, CMYK conversion, page-group support, and more), and a contribution guide.
 
-Until now, information about Vivliostyle has been scattered across GitHub repository READMEs, blog posts and tutorials on `vivliostyle.org`, and articles authored by volunteers. The new documentation site reorganizes these resources and is positioned as a central hub where users can easily find the information they need. We plan to continue expanding it going forward.
+#### One-stop access
+
+Until now, documentation for our products was distributed inconsistently — some products kept their docs inside their own repository, while others lived on the previous documentation site. Users first had to figure out where the relevant material lived before they could even start reading, and for anyone trying to compare or combine multiple products, the cost of navigating was substantial. To eliminate this friction, the new documentation site pulls in each product's repository as a submodule, providing **one-stop access to all of the product documentation**.
+
+#### Dogfooding and SSMO
+
+The other intent behind the site is dogfooding by Vivliostyle itself. The documentation is written in [VFM](https://github.com/vivliostyle/vfm) (Vivliostyle Flavored Markdown) and rendered with [Vivliostyle CLI](https://github.com/vivliostyle/vivliostyle-cli) into the following three formats:
+
+- **WebPub** — HTML pages for online reading
+- **PDF** — printable document
+- **EPUB** — e-book format
+
+This is a direct embodiment of **SSMO (Single Source Multi Output)**, one of Vivliostyle's core propositions. By generating multiple output formats from a single Markdown source, we both validate our own products against a realistic use case and demonstrate their value to users. Continued expansion of the site is planned.
 
 ### Directors
 

@@ -49,8 +49,21 @@
         <section class="level3" aria-labelledby="ドキュメントサイトの刷新">
           <h3 id="ドキュメントサイトの刷新">ドキュメントサイトの刷新</h3>
           <p>開発の活発化を受けて、利用者向けの情報発信もまた強化する必要が生じた。そこで今期取り組んだのが、新たな公式ドキュメントサイト<a href="https://docs.vivliostyle.org/ja/">docs.vivliostyle.org</a>の構築である。</p>
-          <p>このサイトは、Vivliostyleエコシステムを構成する4つのプロダクト（Viewer、CLI、VFM、Themes）について、初心者向けのチュートリアルから開発者向けのAPIリファレンスまで網羅的に提供することを目的としている。チュートリアル、FAQ、リファレンス、実践的な活用ガイド（脚注、CMYK変換、ページグループ対応など）、貢献ガイドといった構成で、各ドキュメントはWebPub・PDF・EPUB形式でダウンロード可能としている。これはVivliostyleの利点である「Single Source Multi Output」（1つのMarkdownソースから複数形式を生成する）を活かしたサイト設計でもある。</p>
-          <p>従来、Vivliostyleに関する情報はGitHubリポジトリのREADMEや<code>vivliostyle.org</code>のブログ・チュートリアル、有志による記事などに分散していた。新ドキュメントサイトは、これらを再整理し、利用者が必要な情報に辿りやすい一元的な場として位置づけている。今後も継続的な拡充を予定している。</p>
+          <p>このサイトは、Vivliostyleエコシステムを構成する4つのプロダクト（Viewer、CLI、VFM、Themes）について、初心者向けのチュートリアルから開発者向けのAPIリファレンスまで網羅的に提供することを目的としている。チュートリアル、FAQ、リファレンス、実践的な活用ガイド（脚注、CMYK変換、ページグループ対応など）、貢献ガイドといった構成である。</p>
+          <section class="level4" aria-labelledby="ワンストップ化">
+            <h4 id="ワンストップ化">ワンストップ化</h4>
+            <p>従来、各プロダクトのドキュメントは、それぞれのリポジトリに置かれているものもあれば、旧ドキュメントサイトに置かれているものもあり、置き場所が一貫していなかった。そのため、あるプロダクトの使い方を調べようとすると、まずどこに該当ドキュメントがあるのかを利用者自身が見極める必要があり、複数のプロダクトを横断的に調べたいときには、なおさら大きな負担を強いていた。この状態を解消するために、新ドキュメントサイトでは各プロダクトのリポジトリをsubmoduleとして読み込み、<strong>ワンストップですべてのドキュメントを参照できる場</strong> として整備した。</p>
+          </section>
+          <section class="level4" aria-labelledby="ドッグフーディングとssmo">
+            <h4 id="ドッグフーディングとssmo">ドッグフーディングとSSMO</h4>
+            <p>もう一つの主旨は、Vivliostyle自身によるドッグフーディングである。本サイトのドキュメントは <a href="https://github.com/vivliostyle/vfm">VFM</a>（Vivliostyle Flavored Markdown）で記述し、<a href="https://github.com/vivliostyle/vivliostyle-cli">Vivliostyle CLI</a> を用いて以下の3形式に出力している。</p>
+            <ul>
+              <li><strong>WebPub</strong> — オンライン閲覧用HTMLページ</li>
+              <li><strong>PDF</strong> — 印刷可能なドキュメント</li>
+              <li><strong>EPUB</strong> — 電子書籍フォーマット</li>
+            </ul>
+            <p>これは、Vivliostyleが標榜する <strong>SSMO（Single Source Multi Output）</strong> の実践そのものでもある。同一のMarkdownソースから複数形式を生成することで、Vivliostyleプロダクトの機能をリアルなユースケースで自ら検証しつつ、その有用性を利用者に示すことを最終的な狙いとしている。今後も継続的な拡充を予定している。</p>
+          </section>
         </section>
         <section class="level3" aria-labelledby="理事">
           <h3 id="理事">理事</h3>
