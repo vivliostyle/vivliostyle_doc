@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh --version)",
+      "Bash(gh auth *)",
+      "Bash(pip3 install *)",
+      "WebFetch(domain:docs.vivliostyle.org)",
+      "Bash(mkdir -p /Users/ogwata/dev/vivliostyle/vivliostyle_doc/ja/reports/vivliostyle-report-2025/img)",
+      "Bash(mkdir -p /Users/ogwata/dev/vivliostyle/vivliostyle_doc/en/reports/vivliostyle-report-2025/img)",
+      "Bash(npx --version)",
+      "Bash(./conv.sh)",
+      "Bash(git checkout *)",
+      "Bash(gh pr create --base gh-pages --head add-vf2025report --title 'Add FY2025 activity report and financial report' --body ' *)",
+      "Bash(awk '$1 >= \"2024-04-01\" && $1 < \"2025-04-01\"')",
+      "Bash(awk '{print $2\"\\\\t\"$3}')",
+      "Bash(gh pr *)",
+      "Bash(open \"https://vivliostyle.org/viewer/#src=http://localhost:8000/ja/reports/vivliostyle-report-2025/vf2025financial-report.html&bookMode=true\")",
+      "Bash(kill %1)",
+      "Bash(pkill -f \"http.server 8000\")",
+      "Bash(curl -sI http://localhost:8000/ja/reports/vivliostyle-report-2025/vf2025financial-report.html)",
+      "Bash(open \"https://vivliostyle.org/viewer/#src=http://localhost:8000/ja/reports/vivliostyle-report-2025/vf2025report.html&bookMode=true\")",
+      "Bash(find / -name \"matplotlib\" -type d 2>/dev/null | head -5 *)",
+      "Read(//Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/**)",
+      "Bash(iconv -l)",
+      "Bash(curl -sI http://localhost:8000/ja/reports/vivliostyle-report-2025/vf2025report.html)"
+    ]
+  }
+}
