@@ -16,7 +16,7 @@ link:
 
 ![図1：主要プロダクトのPR数](./img/fig-1.svg){ width=100% }
 
-今期最大のトピックは、開発の活発化である。Vivliostyle.jsのPR数は175と前期の74から2倍以上に増加し、過去最高を記録した。Vivliostyle CLIも前期の41から89へと大きく伸びた。さらに、前期はわずか3にとどまっていたVFMも19にまで回復し、Vivliostyle Pubも6から16へと増えている。なお、Vivliostyle Pubは今期、後述するゼロベースでの再構築を新リポジトリ[`vivliostyle.pub`](https://github.com/vivliostyle/vivliostyle.pub)で開始しており、ここでのPR数（10件）と旧リポジトリ[`vivliostyle-pub`](https://github.com/vivliostyle/vivliostyle-pub)の保守PR数（6件）を合計したものを当期の数値としている。Themesは2とこれまでで最も少ない数となったが、これは開発の重心が他プロダクトへシフトしたためである。総じて、Vivliostyle.jsとCLIを中心としたコア開発が大きく前進した1年であったといえる。
+今期最大のトピックは、開発の活発化である。Vivliostyle.jsのPR数は175と前期の74から2倍以上に増加し、過去最高を記録した。Vivliostyle CLIも前期の41から89へと大きく伸びた。さらに、前期はわずか3にとどまっていたVFMも19にまで回復し、Vivliostyle Pubも6から16へと増えている。なお、Vivliostyle Pubは今期、後述するゼロベースでの再構築を新リポジトリ[`vivliostyle.pub`](https://github.com/vivliostyle/vivliostyle.pub)で開始しており、ここでのPR数（10件）と旧リポジトリ[`vivliostyle-pub`](https://github.com/vivliostyle/vivliostyle-pub)のPR数（6件）を合計したものを当期の数値としている。Themesは2とこれまでで最も少ない数となったが、これは開発の重心が他プロダクトへシフトしたためである。総じて、Vivliostyle.jsとCLIを中心としたコア開発が大きく前進した1年であったといえる。
 
 ### NLnet財団からの助成金獲得
 
@@ -45,7 +45,7 @@ NLnet財団は、欧州委員会のNext Generation Internet（NGI）イニシア
 - 出力機能：PDFエクスポート
 - 配信基盤：デプロイCIの整備、ビルドエラーの修正
 
-成果物は[`alpha.vivliostyle.pub`](https://alpha.vivliostyle.pub)で公開しており、ブラウザ上でMarkdownを編集して即座にプレビュー・PDF出力できる段階まで到達している。なお、旧リポジトリも今期中はVivliostyle CLI/Viewerの最新版追従を目的とした保守更新が継続された（村上代表理事による6件のPR）。
+成果物は[`alpha.vivliostyle.pub`](https://alpha.vivliostyle.pub)で公開しており、ブラウザ上でMarkdownを編集して即座にプレビュー・PDF出力できる段階まで到達している。
 
 来期は引き続きspring-raining氏による開発を継続し、共同編集機能や国際化など、当初の目標であった「誰もが簡単にCSS組版を楽しめるWebアプリ」の実現に向けて開発を加速していく予定である。
 

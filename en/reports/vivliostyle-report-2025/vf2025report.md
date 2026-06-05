@@ -16,7 +16,7 @@ The number of PRs for our major products this term (excluding those from applica
 
 ![Figure 1: Number of PRs for major products](./img/fig-1.svg){ width=100% }
 
-The biggest topic of this term is the marked acceleration of development. The number of PRs for Vivliostyle.js reached 175, more than doubling the 74 of the previous term and setting an all-time high. Vivliostyle CLI also grew significantly, from 41 to 89. VFM, which had dropped to only 3 in the previous term, recovered to 19, and Vivliostyle Pub also grew from 6 to 16. Note that for Vivliostyle Pub, we began a complete rewrite (described later) in a new repository, [`vivliostyle.pub`](https://github.com/vivliostyle/vivliostyle.pub), during this term. The reported count combines its 10 PRs with the 6 maintenance PRs in the old repository [`vivliostyle-pub`](https://github.com/vivliostyle/vivliostyle-pub). Themes recorded its lowest count yet at 2, reflecting a shift in development focus toward the other products. Overall, it was a year of substantial progress on the core products centered around Vivliostyle.js and Vivliostyle CLI.
+The biggest topic of this term is the marked acceleration of development. The number of PRs for Vivliostyle.js reached 175, more than doubling the 74 of the previous term and setting an all-time high. Vivliostyle CLI also grew significantly, from 41 to 89. VFM, which had dropped to only 3 in the previous term, recovered to 19, and Vivliostyle Pub also grew from 6 to 16. Note that for Vivliostyle Pub, we began a complete rewrite (described later) in a new repository, [`vivliostyle.pub`](https://github.com/vivliostyle/vivliostyle.pub), during this term. The reported count combines its 10 PRs with the 6 PRs in the old repository [`vivliostyle-pub`](https://github.com/vivliostyle/vivliostyle-pub). Themes recorded its lowest count yet at 2, reflecting a shift in development focus toward the other products. Overall, it was a year of substantial progress on the core products centered around Vivliostyle.js and Vivliostyle CLI.
 
 ### Grant from the NLnet Foundation
 
@@ -45,7 +45,7 @@ The following PRs were merged in the new repository during FY2025 (all by spring
 - Output: PDF export
 - Delivery infrastructure: deploy CI setup, build-error fixes
 
-The build is published at [`alpha.vivliostyle.pub`](https://alpha.vivliostyle.pub) and has reached a stage where users can edit Markdown in the browser and immediately preview and export to PDF. The old repository also continued to receive maintenance updates throughout the term to track the latest Vivliostyle CLI/Viewer releases (6 PRs by Representative Director Murakami).
+The build is published at [`alpha.vivliostyle.pub`](https://alpha.vivliostyle.pub) and has reached a stage where users can edit Markdown in the browser and immediately preview and export to PDF.
 
 In the next term, we plan to continue development with spring-raining, accelerating the work toward our original goal of "a web application that lets anyone easily enjoy CSS typesetting," including features such as collaborative editing and internationalization.
 

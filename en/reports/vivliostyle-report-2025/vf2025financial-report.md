@@ -32,25 +32,29 @@ The following shows the status of asset holdings (balance sheet) as of the end o
 | Loan from officer  | 8,806,561  | 7,806,561  | 1,000,000  |
 | Accounts payable   | 440,000    | 275,000    | 165,000 |
 | Accrued income taxes | 20,000     | 20,000     | 0 |
-| Total current liabilities | 9,382,442  | 8,140,865  | 1,241,577 |
-| Total liabilities     | 9,382,442  | 8,140,865  | 1,241,577 |
+| Accrued consumption tax | 135,000 | 0 | 135,000 |
+| Total current liabilities | 9,517,442  | 8,140,865  | 1,376,577 |
+| Total liabilities     | 9,517,442  | 8,140,865  | 1,376,577 |
 | **III. Net Assets** |            |            |            |
-| 1. General Net Assets | -8,117,158 | -6,645,511 | -1,471,647 |
-| Total net assets   | -8,117,158 | -6,645,511 | -1,471,647 |
+| 1. General Net Assets | -8,252,158 | -6,645,511 | -1,606,647 |
+| Total net assets   | -8,252,158 | -6,645,511 | -1,606,647 |
 | Total liabilities and net assets | 1,265,284  | 1,495,354  | -230,070 |
 
 
 ## Statement of Changes in Net Assets for FY2025
 
-| Title | **This FY (2025)** | **Prev. FY (2024)** | **Increase/Decrease** |
+**Note:** The prior period's revenue classification contained an error: a portion that should have been classified as "Business Revenue (contract development)" was booked as "Received Donations." Accordingly, the prior-year column below shows the restated figures. Total ordinary revenue and net income are unaffected.
+
+
+| Title | **This FY (2025)** | **Prev. FY (2024, restated)** | **Increase/Decrease** |
 | :--- | ---: | ---: | ---: |
 | **Ⅰ. Changes in General Net Assets** | | | |
 | 1. Changes in Ordinary Income | | | |
 | ⑴ Ordinary Revenue | | | |
-| ① Business Revenue | 1,489,540  | 1,394,000  | 95,540 |
-| Business Revenue | 1,489,540  | 1,394,000  | 95,540 |
-| ② Received Donations | 469,927  | 1,669,278  | -1,199,351 |
-| Received Donations | 469,927  | 1,669,278  | -1,199,351 |
+| ① Business Revenue | 1,489,540  | 2,879,000  | -1,389,460 |
+| Business Revenue | 1,489,540  | 2,879,000  | -1,389,460 |
+| ② Received Donations | 469,927  | 184,278  | 285,649 |
+| Received Donations | 469,927  | 184,278  | 285,649 |
 | ③ Miscellaneous Income | 1,628,884  | 56,137  | 1,572,747 |
 | Received Interest | 1,257  | 423  | 834 |
 | Grants received | 1,433,271  | 0 | 1,433,271 |
@@ -77,32 +81,23 @@ The following shows the status of asset holdings (balance sheet) as of the end o
 | ⑴ Non-ordinary income | | | |
 | Total non-ordinary income | 0  | 0  | 0 |
 | ⑵ Non-ordinary expenses | | | |
-| Total non-ordinary expenses | 0  | 0  | 0 |
-| Non-ordinary profit or loss | 0  | 0  | 0 |
-| Net assets increase or decrease before other accounting transfers | -1,451,647  | -1,223,015  | -228,632 |
-| Net assets increase or decrease before tax | -1,451,647  | -1,223,015  | -228,632 |
+| ① Prior-period adjustment loss (consumption tax) | 135,000  | 0  | 135,000 |
+| Total non-ordinary expenses | 135,000  | 0  | 135,000 |
+| Non-ordinary profit or loss | -135,000  | 0  | -135,000 |
+| Net assets increase or decrease before other accounting transfers | -1,586,647  | -1,223,015  | -363,632 |
+| Net assets increase or decrease before tax | -1,586,647  | -1,223,015  | -363,632 |
 | Corporate, inhabitant and enterprise taxes | 20,000  | 20,000  | 0 |
-| Net assets increase or decrease | -1,471,647  | -1,243,015  | -228,632 |
+| Net assets increase or decrease | -1,606,647  | -1,243,015  | -363,632 |
 | Net assets at the beginning of the term | -6,645,511  | -5,402,496  | -1,243,015 |
-| Net assets at the end of the term | -8,117,158  | -6,645,511  | -1,471,647 |
+| Net assets at the end of the term | -8,252,158  | -6,645,511  | -1,606,647 |
 | **Ⅱ. Designated net assets increase or decrease** | | | |
 | Designated net assets increase or decrease | 0  | 0  | 0 |
 | Designated net assets at the beginning of the term | 0  | 0  | 0 |
 | Designated net assets at the end of the term | 0  | 0  | 0 |
-| **Ⅲ. Net assets at the end of the term** | **-8,117,158**  | **-6,645,511**  | **-1,471,647** |
-
-Total ordinary revenue was 3,588,351 yen, an increase of 468,936 yen from the previous term. Looking at the breakdown, business revenue from our main operations was 1,489,540 yen, only 95,540 yen more than the previous term. Donations received were 469,927 yen, almost entirely the regular flow of monthly contributions via GitHub Sponsors — a normal level of recurring support (the previous term's 1,669,278 yen included a large one-off donation, so the year-over-year change of -1,199,351 yen reflects that anomaly). On the other hand, miscellaneous income reached 1,628,884 yen — an increase of 1,572,747 yen from the previous term — largely thanks to the newly recognized grants received of 1,433,271 yen (the grant from the NLnet Foundation). The other miscellaneous income of 194,356 yen is the refund of consumption tax paid in the previous term.
-
-Total ordinary expenses were 5,039,998 yen, an increase of 697,568 yen from the previous term. Business expenses decreased by 83,432 yen from the previous term to 254,998 yen, while administrative expenses (business outsourcing expenses) increased by 781,000 yen from the previous term to 4,785,000 yen. This shows that the share of business outsourcing has grown compared to the previous term.
-
-The ordinary profit or loss — total ordinary revenue minus total ordinary expenses — was -1,451,647 yen, so we again posted a deficit. The deficit widened by 228,632 yen compared to the previous term's -1,223,015 yen.
-
-After deducting corporate and inhabitant taxes, the net assets increase or decrease for the term was -1,471,647 yen. As a result, the net assets at the end of the term were -8,117,158 yen, further widening the negative balance from -6,645,511 yen at the end of the previous term.
+| **Ⅲ. Net assets at the end of the term** | **-8,252,158**  | **-6,645,511**  | **-1,606,647** |
 
 
 ### Statement of Income and Expenditure for FY2025
-
-Finally, let us look at the statement of income and expenditure comparing the budget and the actual amount during this term (from April 1, 2025, to March 31, 2026). However, since our corporation does not formulate a budget, it remains formal and will be substantially the same as the statement of changes in net assets in the previous section.
 
 | Item | Budget | Actual Amount | Difference | Remarks |
 | --- | --- | --- | --- | --- |
@@ -137,16 +132,17 @@ Finally, let us look at the statement of income and expenditure comparing the bu
 | ⑴ Non-Ordinary Income | | | | |
 | Total Non-Ordinary Income | 0 | 0 | 0 | |
 | ⑵ Non-Ordinary Expenses | | | | |
-| Total Non-Ordinary Expenses | 0 | 0 | 0 | |
-| Non-Ordinary Income and Expenditure | 0 | 0 | 0 | |
-| Net Assets Increase/Decrease Before Inter-Account Transfers | 0 | -1,451,647 | 1,451,647 | |
-| Net Assets Increase/Decrease Before Tax | 0 | -1,451,647 | 1,451,647 | |
+| ① Prior-period adjustment loss (consumption tax) | 0 | 135,000 | -135,000 | |
+| Total Non-Ordinary Expenses | 0 | 135,000 | -135,000 | |
+| Non-Ordinary Income and Expenditure | 0 | -135,000 | 135,000 | |
+| Net Assets Increase/Decrease Before Inter-Account Transfers | 0 | -1,586,647 | 1,586,647 | |
+| Net Assets Increase/Decrease Before Tax | 0 | -1,586,647 | 1,586,647 | |
 | Corporate Tax, Resident Tax, and Business Tax | 0 | 20,000 | -20,000 | |
-| Net Assets Increase/Decrease | 0 | -1,471,647 | 1,471,647 | |
+| Net Assets Increase/Decrease | 0 | -1,606,647 | 1,606,647 | |
 | Balance of General Net Assets at Beginning of Term | 0 | -6,645,511 | 6,645,511 | |
-| Balance of General Net Assets at End of Term | 0 | -8,117,158 | 8,117,158 | |
+| Balance of General Net Assets at End of Term | 0 | -8,252,158 | 8,252,158 | |
 | **Ⅱ. Changes in Designated Net Assets** | | | | |
 | Changes in Current Term Designated Net Assets | 0 | 0 | 0 | |
 | Balance of Designated Net Assets at Beginning of Term | 0 | 0 | 0 | |
 | Balance of Designated Net Assets at End of Term | 0 | 0 | 0 | |
-| **Ⅲ. Balance of Net Assets at End of Term** | 0 | -8,117,158 | 8,117,158 | |
+| **Ⅲ. Balance of Net Assets at End of Term** | 0 | -8,252,158 | 8,252,158 | |
