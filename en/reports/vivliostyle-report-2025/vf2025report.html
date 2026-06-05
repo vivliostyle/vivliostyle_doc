@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Vivliostyle Foundation FY2025 Activity Report</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="report.css">
+  </head>
+  <body>
+    <section class="level1" aria-labelledby="vivliostyle-foundation-fy2025-activity-report">
+      <h1 id="vivliostyle-foundation-fy2025-activity-report">Vivliostyle Foundation FY2025 Activity Report</h1>
+      <section class="level2" aria-labelledby="activity-report-for-fy2025-term-8-april-1-2025--march-31-2026">
+        <h2 id="activity-report-for-fy2025-term-8-april-1-2025--march-31-2026">Activity Report for FY2025 (Term 8, April 1, 2025 – March 31, 2026)</h2>
+        <section class="level3" aria-labelledby="product-development">
+          <h3 id="product-development">Product Development</h3>
+          <p>The number of PRs for our major products this term (excluding those from applications) is shown below. For comparison, we also include data from terms 4–7.</p>
+          <figure>
+            <img src="./img/fig-1.svg" alt="Figure 1: Number of PRs for major products" width="100%">
+            <figcaption aria-hidden="true">Figure 1: Number of PRs for major products</figcaption>
+          </figure>
+          <p>The biggest topic of this term is the marked acceleration of development. The number of PRs for Vivliostyle.js reached 175, more than doubling the 74 of the previous term and setting an all-time high. Vivliostyle CLI also grew significantly, from 41 to 89. VFM, which had dropped to only 3 in the previous term, recovered to 19, and Vivliostyle Pub also grew from 6 to 16. Note that for Vivliostyle Pub, we began a complete rewrite (described later) in a new repository, <a href="https://github.com/vivliostyle/vivliostyle.pub"><code>vivliostyle.pub</code></a>, during this term. The reported count combines its 10 PRs with the 6 PRs in the old repository <a href="https://github.com/vivliostyle/vivliostyle-pub"><code>vivliostyle-pub</code></a>. Themes recorded its lowest count yet at 2, reflecting a shift in development focus toward the other products. Overall, it was a year of substantial progress on the core products centered around Vivliostyle.js and Vivliostyle CLI.</p>
+        </section>
+        <section class="level3" aria-labelledby="grant-from-the-nlnet-foundation">
+          <h3 id="grant-from-the-nlnet-foundation">Grant from the NLnet Foundation</h3>
+          <p>Another major topic of this term is that we were selected as a grantee of the <a href="https://nlnet.nl/commonsfund/">NGI0 Commons Fund</a> administered by the European open-source support organization <a href="https://nlnet.nl/">NLnet Foundation</a>. For details, please refer to <a href="https://vivliostyle.org/blog/2025/07/07/obtained-a-grant-from-nlnet/">our blog post</a>.</p>
+          <p>The NLnet Foundation, as part of the European Commission's Next Generation Internet (NGI) initiative, supports open-source technology projects that enhance the public nature, privacy, and security of the internet. Vivliostyle began receiving funding from this program, and during this term the first three installments totaling approximately 1.43 million yen were disbursed (see "Grants received" in the financial report).</p>
+          <p>This grant has enabled us to concentrate on the following areas, where progress had previously been slow due to a lack of development resources:</p>
+          <ul>
+            <li>Supporting the latest CSS specifications in Vivliostyle.js (improvements to the page-break algorithm, footnote handling, and so on)</li>
+            <li>Expanding the editor features and themes of Vivliostyle Pub</li>
+            <li>Broadening browser support in Vivliostyle CLI</li>
+            <li>Building out the documentation site</li>
+          </ul>
+          <p>The substantial increase in PRs for the major products noted above is also a direct outcome of the development resources secured through this grant.</p>
+        </section>
+        <section class="level3" aria-labelledby="complete-rewrite-of-vivliostyle-pub">
+          <h3 id="complete-rewrite-of-vivliostyle-pub">Complete Rewrite of Vivliostyle Pub</h3>
+          <p>In the previous year's activity report, we noted that our collaboration with the self-publishing web service <a href="https://www.booko.co.jp/">Booko</a> had triggered the decision to restart the long-stalled development of Vivliostyle Pub. This term, that intention materialized as a full ground-up rewrite.</p>
+          <p>The alpha version published in the old repository <a href="https://github.com/vivliostyle/vivliostyle-pub"><code>vivliostyle-pub</code></a> was difficult to extend further due to the age of its technology stack and design constraints. We therefore created a new repository, <a href="https://github.com/vivliostyle/vivliostyle.pub"><code>vivliostyle.pub</code></a>, in January 2025 and restarted the work from the frontend setup. Development of the new Vivliostyle Pub is being carried out by <a href="https://github.com/spring-raining">spring-raining</a> under contract, primarily funded by the NLnet Foundation grant mentioned above.</p>
+          <p>The following PRs were merged in the new repository during FY2025 (all by spring-raining):</p>
+          <ul>
+            <li>Core editor: improvements to editor behavior, entry reordering, a CSS pane in the AST viewer, and the preview page</li>
+            <li>Output: PDF export</li>
+            <li>Delivery infrastructure: deploy CI setup, build-error fixes</li>
+          </ul>
+          <p>The build is published at <a href="https://alpha.vivliostyle.pub"><code>alpha.vivliostyle.pub</code></a> and has reached a stage where users can edit Markdown in the browser and immediately preview and export to PDF.</p>
+          <p>In the next term, we plan to continue development with spring-raining, accelerating the work toward our original goal of "a web application that lets anyone easily enjoy CSS typesetting," including features such as collaborative editing and internationalization.</p>
+        </section>
+        <section class="level3" aria-labelledby="renewal-of-the-documentation-site">
+          <h3 id="renewal-of-the-documentation-site">Renewal of the Documentation Site</h3>
+          <p>The acceleration of development also created a need to strengthen our outreach to users. To that end, during this term we worked on building a new official documentation site at <a href="https://docs.vivliostyle.org/">docs.vivliostyle.org</a>.</p>
+          <p>The site aims to comprehensively cover the four products that make up the Vivliostyle ecosystem (Viewer, CLI, VFM, and Themes), from beginner-oriented tutorials to developer-oriented API references. It consists of tutorials, FAQs, references, practical usage guides (footnotes, CMYK conversion, page-group support, and more), and a contribution guide.</p>
+          <section class="level4" aria-labelledby="one-stop-access">
+            <h4 id="one-stop-access">One-stop access</h4>
+            <p>Until now, documentation for our products was distributed inconsistently — some products kept their docs inside their own repository, while others lived on the previous documentation site. Users first had to figure out where the relevant material lived before they could even start reading, and for anyone trying to compare or combine multiple products, the cost of navigating was substantial. To eliminate this friction, the new documentation site pulls in each product's repository as a submodule, providing <strong>one-stop access to all of the product documentation</strong>.</p>
+          </section>
+          <section class="level4" aria-labelledby="dogfooding-and-ssmo">
+            <h4 id="dogfooding-and-ssmo">Dogfooding and SSMO</h4>
+            <p>The other intent behind the site is dogfooding by Vivliostyle itself. The documentation is written in <a href="https://github.com/vivliostyle/vfm">VFM</a> (Vivliostyle Flavored Markdown) and rendered with <a href="https://github.com/vivliostyle/vivliostyle-cli">Vivliostyle CLI</a> into the following three formats:</p>
+            <ul>
+              <li><strong>WebPub</strong> — HTML pages for online reading</li>
+              <li><strong>PDF</strong> — printable document</li>
+              <li><strong>EPUB</strong> — e-book format</li>
+            </ul>
+            <p>This is a direct embodiment of <strong>SSMO (Single Source Multi Output)</strong>, one of Vivliostyle's core propositions. By generating multiple output formats from a single Markdown source, we both validate our own products against a realistic use case and demonstrate their value to users. Continued expansion of the site is planned.</p>
+          </section>
+        </section>
+        <section class="level3" aria-labelledby="directors">
+          <h3 id="directors">Directors</h3>
+          <ul>
+            <li><a href="https://github.com/MurakamiShinyu">Shinyu Murakami</a> (Representative Director, Founding Member)</li>
+            <li><a href="https://github.com/frivoal">Florian Rivoal</a> (Director, Founding Member)</li>
+            <li><a href="https://github.com/johanneswilm">Johannes Wilm</a> (Director, Founding Member)</li>
+            <li><a href="https://github.com/ogwata">Katsuhiro Ogata</a> (Director, From January 21, 2020)</li>
+          </ul>
+        </section>
+      </section>
+    </section>
+  </body>
+</html>
+
